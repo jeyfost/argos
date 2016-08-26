@@ -20,6 +20,7 @@
     </style>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
 
     <script type="text/javascript">
         $(window).on('load', function () {
@@ -39,15 +40,55 @@
         <div class="container" style="height: 100%;">
             <a href="index.php"><img src="img/system/logo.png" id="logo" /></a>
             <div id="menuLinks">
-            1/ 2/ 3/ 4/ 5/ 6
-        </div>
+                <div class="menuLink" id="catalogueLink" onmouseover="showDropdownList('1', 'catalogueLink')">
+                    <a href="catalogue.php" class="menuPoint">Каталог</a>
+                    <img src="img/system/downArrow.png" />
+                    <span class="slash"> /</span>
+                </div>
+                <div class="menuLink" id="aboutLink" onmouseover="showDropdownList('1', 'aboutLink')">
+                    <a href="about.php">О компании</a>
+                    <img src="img/system/downArrow.png" />
+                    <span class="slash"> /</span>
+                </div>
+                <div class="menuLinkNotDD">
+                    <a href="news.php">Новости</a>
+                    <span class="slash"> /</span>
+                </div>
+                <div class="menuLink" id="storesLink" onmouseover="showDropdownList('1', 'storesLink')">
+                    <a href="stores.php">Где купить</a>
+                    <img src="img/system/downArrow.png" />
+                    <span class="slash"> /</span>
+                </div>
+                <div class="menuLinkNotDD">
+                    <a href="actions.php">Акции</a>
+                    <span class="slash"> /</span>
+                </div>
+                <div class="menuLink" id="partnersLink" onmouseover="showDropdownList('1', 'partnersLink')">
+                    <a href="partners.php">Партнерам</a>
+                    <img src="img/system/downArrow.png" />
+                    <span class="slash"> /</span>
+                </div>
+                <div class="menuLink" id="contactsLink" onmouseover="showDropdownList('1', 'contactsLink')">
+                    <a href="contacts.php">Контакты</a>
+                    <img src="img/system/downArrow.png" />
+                </div>
+                <div style="clear: both;"></div>
+            </div>
         <div style="clear: both;"></div>
         </div>
+        <div id="menuIcon"><img src="img/system/mobile/menuIcon.png" title="Меню" /></div>
+        <div style="clear: both;"></div>
 
+    </div>
+    <div id="dropDownLine">
+        <div id="dropDownArrowContainer">
+            <img src="img/system/dropDownListArrow.png" id="dropDownArrow" />
+        </div>
+        <div id="dropDownList"></div>
     </div>
     <div id="menuShadow"></div>
 
-    <div id="mainImg"><img src="img/system/main.JPG" width="100%" /></div>
+    <div id="mainImg"><img src="img/system/main.JPG" /></div>
 
 </body>
 
