@@ -97,3 +97,10 @@ function showDropDownList() {
     $('#dropDownList').show();
     $('#dropDownArrowContainer').show();
 }
+
+$(document).mouseup(function (e) {
+    var container = $("#dropDownList");
+    if (container.has(e.target).length === 0){
+        container.hide();
+    }
+});
