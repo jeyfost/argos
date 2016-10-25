@@ -142,7 +142,14 @@ include ("scripts/connect.php");
     </div>
 
     <div id="footerShadow"></div>
-    <div id="footer"></div>
+    <div id="footer">
+		<div class="container">
+			<div class="copy">&copy; ЧТУП &laquo;Аргос-ФМ&raquo;<br />2008 - <?php echo date('Y'); ?></div>
+			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="contacts.php?page=main">Контактная информация</a></div>
+			<div class="copy" style="float: right;">Разработка сайта<br /><a href="http://airlab.by/">airlab</a></div>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
 
 </body>
 

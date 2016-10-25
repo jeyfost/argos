@@ -41,8 +41,10 @@ function scrollUp() {
 	}
 
 	if($('#mic2').offset().top > parseInt($('#mainText2').offset().top - 200) && $('#mainText2').offset().top > $('#mic2').offset().top) {
-		resetAttributes();
-		document.getElementById('mainText1').setAttribute('class', 'mainBigText');
+		setTimeout(function() {
+			resetAttributes();
+			document.getElementById('mainText1').setAttribute('class', 'mainBigText');
+		}, 300);
 
 		$.ajax({
 			type: 'POST',
@@ -62,8 +64,10 @@ function scrollUp() {
 	}
 
 	if($('#mic3').offset().top > parseInt($('#mainText3').offset().top - 200) && $('#mainText3').offset().top > $('#mic3').offset().top) {
-		resetAttributes();
-		document.getElementById('mainText2').setAttribute('class', 'mainBigText');
+		setTimeout(function() {
+			resetAttributes();
+			document.getElementById('mainText2').setAttribute('class', 'mainBigText');
+		}, 300);
 
 		$.ajax({
 			type: 'POST',
@@ -83,8 +87,10 @@ function scrollUp() {
 	}
 
 	if($('#mic4').offset().top > parseInt($('#mainText4').offset().top - 200) && $('#mainText4').offset().top > $('#mic4').offset().top) {
-		resetAttributes();
-		document.getElementById('mainText3').setAttribute('class', 'mainBigText');
+		setTimeout(function() {
+			resetAttributes();
+			document.getElementById('mainText3').setAttribute('class', 'mainBigText');
+		}, 300);
 
 		$.ajax({
 			type: 'POST',
@@ -122,8 +128,10 @@ function scrollDown() {
 	}
 
 	if($('#mic2').offset().top < parseInt($('#mainText2').offset().top + 200) && $('#mainText2').offset().top < $('#mic2').offset().top) {
-		resetAttributes();
-		document.getElementById('mainText2').setAttribute('class', 'mainBigText');
+		setTimeout(function() {
+			resetAttributes();
+			document.getElementById('mainText2').setAttribute('class', 'mainBigText');
+		}, 300);
 
 		$.ajax({
 			type: 'POST',
@@ -143,8 +151,10 @@ function scrollDown() {
 	}
 
 	if($('#mic3').offset().top < parseInt($('#mainText3').offset().top + 200) && $('#mainText3').offset().top < $('#mic3').offset().top) {
-		resetAttributes();
-		document.getElementById('mainText3').setAttribute('class', 'mainBigText');
+		setTimeout(function() {
+			resetAttributes();
+			document.getElementById('mainText3').setAttribute('class', 'mainBigText');
+		}, 300);
 
 		$.ajax({
 			type: 'POST',
@@ -164,8 +174,10 @@ function scrollDown() {
 	}
 
 	if($('#mic4').offset().top < parseInt($('#mainText4').offset().top + 200) && $('#mainText4').offset().top < $('#mic4').offset().top) {
-		resetAttributes();
-		document.getElementById('mainText4').setAttribute('class', 'mainBigText');
+		setTimeout(function() {
+			resetAttributes();
+			document.getElementById('mainText4').setAttribute('class', 'mainBigText');
+		}, 300);
 
 		$.ajax({
 			type: 'POST',
@@ -205,9 +217,11 @@ function scrollFirst() {
 	$('#mic4').offset({top: $('#mic4').offset().top + difference});
 
 	if(document.getElementById('mainText1').getAttribute('class') != "mainBigText") {
-		resetAttributes();
-		document.getElementById('mainText1').removeAttribute('class');
-		document.getElementById('mainText1').setAttribute('class', 'mainBigText');
+		setTimeout(function() {
+			resetAttributes();
+			document.getElementById('mainText1').removeAttribute('class');
+			document.getElementById('mainText1').setAttribute('class', 'mainBigText');
+		}, 300);
 
 		$.ajax({
 			type: 'POST',
@@ -236,9 +250,11 @@ function scrollSecond() {
 	$('#mic4').offset({top: $('#mic4').offset().top + difference});
 
 	if(document.getElementById('mainText2').getAttribute('class') != "mainBigText") {
-		resetAttributes();
-		document.getElementById('mainText2').removeAttribute('class');
-		document.getElementById('mainText2').setAttribute('class', 'mainBigText');
+		setTimeout(function() {
+			resetAttributes();
+			document.getElementById('mainText2').removeAttribute('class');
+			document.getElementById('mainText2').setAttribute('class', 'mainBigText');
+		}, 300);
 
 		$.ajax({
 			type: 'POST',
@@ -267,9 +283,11 @@ function scrollThird() {
 	$('#mic4').offset({top: $('#mic4').offset().top + difference});
 
 	if(document.getElementById('mainText3').getAttribute('class') != "mainBigText") {
-		resetAttributes();
-		document.getElementById('mainText3').removeAttribute('class');
-		document.getElementById('mainText3').setAttribute('class', 'mainBigText');
+		setTimeout(function() {
+			resetAttributes();
+			document.getElementById('mainText3').removeAttribute('class');
+			document.getElementById('mainText3').setAttribute('class', 'mainBigText');
+		}, 300);
 
 		$.ajax({
 			type: 'POST',
@@ -298,9 +316,11 @@ function scrollFourth() {
 	$('#mic4').offset({top: $('#mic4').offset().top + difference});
 
 	if(document.getElementById('mainText4').getAttribute('class') != "mainBigText") {
-		resetAttributes();
-		document.getElementById('mainText4').removeAttribute('class');
-		document.getElementById('mainText4').setAttribute('class', 'mainBigText');
+		setTimeout(function() {
+			resetAttributes();
+			document.getElementById('mainText4').removeAttribute('class');
+			document.getElementById('mainText4').setAttribute('class', 'mainBigText');
+		}, 300);
 
 		$.ajax({
 			type: 'POST',
