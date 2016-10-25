@@ -105,7 +105,7 @@ include ("scripts/connect.php");
 
         <div id="leftSideBlock">
             <span id="mainText1" class="mainBigText" onclick="scrollFirst()">Мебельная фурнитура</span>
-            <br /><br /><br />
+            <br /><br />
             <span id='mainText2' class="mainSmallText" onclick="scrollSecond()">Кромочные материалы</span>
             <br /><br />
             <span id='mainText3' class="mainSmallText" onclick="scrollThird()">Аксессуары для штор</span>
