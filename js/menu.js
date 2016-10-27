@@ -104,3 +104,13 @@ $(document).mouseup(function (e) {
         container.hide();
     }
 });
+
+function changeIcon(id, img, depth) {
+	var d = "";
+
+	for(var i = 0; i < depth; i++) {
+		d += "../";
+	}
+
+    document.getElementById(id).src = d + "img/system/" + img;
+}

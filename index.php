@@ -27,11 +27,6 @@ include ("scripts/connect.php");
 		}
 	?>
 
-    <style>
-        #page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
-        #page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
-    </style>
-
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -40,6 +35,11 @@ include ("scripts/connect.php");
 			echo "<script type='text/javascript' src='js/indexOpera.js'></script>";
 		}
 	?>
+
+	<style>
+		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
+		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
+	</style>
 
     <script type="text/javascript">
         $(window).on('load', function () {
@@ -58,6 +58,15 @@ include ("scripts/connect.php");
     <div id="menu">
         <div class="container" style="height: 100%;">
             <a href="index.php"><img src="img/system/logo.png" id="logo" /></a>
+			<div id="personalButtons">
+				<?php
+					if(empty($_SESSION['userID'])) {
+						echo "<a href='personal/login.php'><img src='img/system/login.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon(\"loginIMG\", \"loginRed.png\", 0)' onmouseout='changeIcon(\"loginIMG\", \"login.png\", 0)' /></a>";
+					} else {
+						echo "<a href='scripts/logout.php'><img src='img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon(\"exitIMG\", \"exitRed.png\", 0)' onmouseout='changeIcon(\"exitIMG\", \"exit.png\", 0)' /></a>";
+					}
+				?>
+			</div>
             <div id="menuLinks">
                 <div class="menuLink" id="catalogueLink" onmouseover="showDropdownList('1', 'catalogueLink')">
                     <a href="catalogue.php" class="menuPoint">Каталог</a>
