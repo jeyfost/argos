@@ -21,6 +21,11 @@ include ("scripts/connect.php");
     <link rel='shortcut icon' href='img/icons/favicon.ico' type='image/x-icon'>
 	<link rel='icon' href='img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='css/style.css'>
+    <?php
+		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== false) {
+			echo "<link rel='stylesheet' media='screen' type='text/css' href='css/styleOpera.css'>";
+		}
+	?>
 
     <style>
         #page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -30,6 +35,11 @@ include ("scripts/connect.php");
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <?php
+		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== false) {
+			echo "<script type='text/javascript' src='js/indexOpera.js'></script>";
+		}
+	?>
 
     <script type="text/javascript">
         $(window).on('load', function () {
@@ -41,7 +51,7 @@ include ("scripts/connect.php");
 
 </head>
 
-<body>
+<body id="bodyIndex">
 
     <div id="page-preloader"><span class="spinner"></span></div>
 

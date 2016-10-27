@@ -24,14 +24,14 @@ img, a {border: none; text-decoration: none;}
     .menuLink img {margin: auto auto 3px 3px;}
     .slash {font-size: 14px; margin-left: 5px;}
     .menuLink, .menuLinkNotDD {float: left; margin-left: 5px;}
-    .dropDownLink {width: calc(100% - 20px); height: 25px; cursor: pointer; transition: .3s; padding: 5px 10px;}
+    .dropDownLink {width: calc(100% - 20px); width: -moz-calc(100% - 20px); height: 25px; cursor: pointer; transition: .3s; padding: 5px 10px;}
     .dropDownLink a {font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; color: #4c4c4c;}
     .mainBigText {font-size: 48px; color: #fff; text-decoration: none; cursor: pointer; transition: .3s;}
     .mainSmallText {font-size: 18px; color: #fff; cursor: pointer; top: 30px;}
     .rightSideBlockHeader {width: 100%; height: 30px; padding-top: 10px; text-align: center; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 17px; color: #df4e47; text-transform: uppercase;}
     .rsbSpace {position: relative; float: left; width: 15px; height: 1px;}
-    .rsbLine {position: relative; float: left; width: calc(100% - 30px); height: 1px; background-color: #ccc;}
-    .rightSideBlock {background-color: #fff; z-index: 2; position: absolute; top: 10px; left: calc(95% - 200px); transition: .2s;}
+    .rsbLine {position: relative; float: left; width: calc(100% - 30px); width: -moz-calc(100% - 30px); height: 1px; background-color: #ccc;}
+    .rightSideBlock {background-color: #fff; z-index: 2; position: absolute; top: 10px; right: 5%; transition: .2s;}
     .rightSideBlock ul {padding-left: 20px; padding-right: 20px; list-style: none; transition: .2s;}
     .rightSideBlock ul li {margin: 10px auto auto auto;}
 }
@@ -41,11 +41,11 @@ img, a {border: none; text-decoration: none;}
 #footer {width: 100%; height: 60px; position: fixed; bottom: 0; left: 0; z-index: 2; background-color: #fff; font-family: Verdana, Arial, sans-serif; font-size: 12px;}
 #menuShadow {width: 100%; height: 14px; background: url(../img/system/shadow.png) 50% 0 no-repeat; position: fixed; left: 0; top: 60px; z-index: 3;}
 #footerShadow {width: 100%; height: 14px; background: url(../img/system/shadowInverted.png) 50% 0 no-repeat; position: fixed; left: 0; bottom: 60px; z-index: 3;}
-#mainImg {width: 100%; height: calc(100% - 120px); overflow: hidden; position: absolute; left: 0; top: 60px; z-index: 1;}
+#mainImg {width: 100%; height: calc(100% - 120px); height: -moz-calc(100% - 120px); max-height: calc(100% - 120px); max-height: -moz-calc(100% - 120px); overflow: hidden; position: absolute; left: 0; top: 60px; z-index: 1;}
 #logo {float: left; margin-top: 5px;}
 
 .container {width: 90%; margin: 0 auto; z-index: 3;}
-.mainImgContainer {width: 100%; height: 100%; overflow: hidden; transition: .3s;}
+.mainImgContainer {width: 100%; height: 100%; overflow: hidden; transition: .3s; margin: 0; padding: 0;}
 .mainImgContainer img {min-height: 100%; width: 100%;}
 .copy {float: left; position: relative; height: 100%; padding-top: 15px;}
 .copy a {color: #df4e47; text-decoration: underline;}
