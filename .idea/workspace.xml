@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/personal/newPassword.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/personal/recovery.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/personal/password.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/personal/recovery.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/personal/confirm.php" afterPath="$PROJECT_DIR$/personal/confirm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/personal/register.php" afterPath="$PROJECT_DIR$/personal/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/personal/register.php" afterPath="$PROJECT_DIR$/scripts/personal/register.php" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,8 +37,8 @@
       <file leaf-file-name="confirm.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/personal/confirm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.713885">
-              <caret line="137" column="40" selection-start-line="137" selection-start-column="40" selection-end-line="137" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.4516129">
+              <caret line="127" column="27" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
               <folding>
                 <marker date="1477917310010" expanded="true" signature="211:255" placeholder="SELECT * FRO... users" />
                 <marker date="1477917310010" expanded="true" signature="385:442" placeholder="UPDATE users... " />
@@ -144,11 +136,11 @@
         <option value="$PROJECT_DIR$/scripts/personal/recovery.php" />
         <option value="$PROJECT_DIR$/personal/pasword.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/personal/confirm.php" />
         <option value="$PROJECT_DIR$/scripts/personal/register.php" />
         <option value="$PROJECT_DIR$/personal/password.php" />
         <option value="$PROJECT_DIR$/personal/newPassword.php" />
         <option value="$PROJECT_DIR$/scripts/personal/password.php" />
+        <option value="$PROJECT_DIR$/personal/confirm.php" />
       </list>
     </option>
   </component>
@@ -424,7 +416,13 @@
       <option name="project" value="LOCAL" />
       <updated>1477913006159</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Добавлено восстановление пароля">
+      <created>1477919259514</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1477919259514</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -472,7 +470,8 @@
     <MESSAGE value="Добавлена регистрация" />
     <MESSAGE value="Добавлена автоавторизация (cookie)" />
     <MESSAGE value="Исправлена авторизация" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлена авторизация" />
+    <MESSAGE value="Добавлено восстановление пароля" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлено восстановление пароля" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1108,8 +1107,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/personal/confirm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.713885">
-          <caret line="137" column="40" selection-start-line="137" selection-start-column="40" selection-end-line="137" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.4516129">
+          <caret line="127" column="27" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
           <folding>
             <marker date="1477917310010" expanded="true" signature="211:255" placeholder="SELECT * FRO... users" />
             <marker date="1477917310010" expanded="true" signature="385:442" placeholder="UPDATE users... " />
