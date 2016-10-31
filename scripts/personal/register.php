@@ -2,6 +2,7 @@
 
 session_start();
 include('../connect.php');
+require_once("../recaptcha.php");
 
 if(!empty($_POST['registrationLogin']) and strlen($_POST['registrationLogin']) >= 3) {
 	if(!empty($_POST['registrationPassword'])) {
@@ -23,28 +24,51 @@ if(!empty($_POST['registrationLogin']) and strlen($_POST['registrationLogin']) >
 							$usersCount = $usersCountResult->fetch_array(MYSQLI_NUM);
 
 							if($usersCount[0] == 0) {
-								$name = $mysqli->real_escape_string($_POST['registrationName']);
+								$secret = "6Ld5MwATAAAAANoU2JPNZUfzMGWXg3-S-DxXTOuN";
+								$response = null;
+								$reCaptcha = new ReCaptcha($secret);
 
-								if(!empty($_POST['registrationCompany'])) {
-									$company = $mysqli->real_escape_string($_POST['registrationCompany']);
-								} else {
-									$company = "";
+								if($_POST['g-recaptcha-response']) {
+									$response = $reCaptcha->verifyResponse(
+										$_SERVER["REMOTE_ADDR"],
+										$_POST['g-recaptcha-response']
+									);
 								}
 
-								if(!empty($_POST['registrationPosition'])) {
-									$position = $mysqli->real_escape_string($_POST['registrationPosition']);
-								} else {
-									$position = "";
-								}
+								if($response != null && $response->success) {
+									$name = $mysqli->real_escape_string($_POST['registrationName']);
 
-								$hash = md5($login.$password.$email.$company.$name.$position.$phone);
+									if(!empty($_POST['registrationCompany'])) {
+										$company = $mysqli->real_escape_string($_POST['registrationCompany']);
+									} else {
+										$company = "";
+									}
 
-								if($mysqli->query("INSERT INTO users (login, password, email, hash, company, name, position, phone, activated) VALUES ('".$login."', '".md5(md5($password))."', '".$email."', '".$hash."', '".$company."', '".$name."', '".$position."', '".$phone."', '0')")) {
-									sendMail($email, $hash);
-									$_SESSION['registration'] = "ok";
-									header("Location: ../../personal/success.php");
+									if(!empty($_POST['registrationPosition'])) {
+										$position = $mysqli->real_escape_string($_POST['registrationPosition']);
+									} else {
+										$position = "";
+									}
+
+									$hash = md5($login.$password.$email.$company.$name.$position.$phone.date('YmdHis'));
+
+									if($mysqli->query("INSERT INTO users (login, password, email, hash, company, name, position, phone, activated) VALUES ('".$login."', '".md5(md5($_POST['registrationPassword']))."', '".$email."', '".$hash."', '".$company."', '".$name."', '".$position."', '".$phone."', '0')")) {
+										sendMail($email, $hash);
+										$_SESSION['registration'] = "ok";
+										header("Location: ../../personal/success.php");
+									} else {
+										$_SESSION['registration'] = "false";
+										$_SESSION['registrationLogin'] = $_POST['registrationLogin'];
+										$_SESSION['registrationEmail'] = $_POST['registrationEmail'];
+										$_SESSION['registrationCompany'] = $_POST['registrationCompany'];
+										$_SESSION['registrationName'] = $_POST['registrationName'];
+										$_SESSION['registrationPosition'] = $_POST['registrationPosition'];
+										$_SESSION['registrationPhone'] = $_POST['registrationPhone'];
+
+										header("Location: ../../personal/register.php");
+									}
 								} else {
-									$_SESSION['registration'] = "false";
+									$_SESSION['registration'] = "captcha";
 									$_SESSION['registrationLogin'] = $_POST['registrationLogin'];
 									$_SESSION['registrationEmail'] = $_POST['registrationEmail'];
 									$_SESSION['registrationCompany'] = $_POST['registrationCompany'];

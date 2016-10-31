@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include('connect.php');
+include('../connect.php');
 
 $login = $mysqli->real_escape_string($_POST['loginLogin']);
 
@@ -21,10 +21,9 @@ if($userID[0] > 0) {
 		header("Location: ".$referer);
 	} else {
 		$_SESSION['loginError'] = 1;
-		header("Location: ../personal/login.php");
+		header("Location: ../../personal/login.php");
 	}
-
 } else {
 	$_SESSION['loginError'] = 1;
-	header("Location: ../personal/login.php");
+	header("Location: ../../personal/login.php");
 }

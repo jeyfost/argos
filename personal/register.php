@@ -17,7 +17,6 @@
     <link rel='stylesheet' media='screen' type='text/css' href='../css/style.css'>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script src="https://www.google.com/recaptcha/api.js"></script>
     <script type="text/javascript" src="../js/menu.js"></script>
 	<script type="text/javascript" src="../js/register.js"></script>
 	<script type="text/javascript" src="../js/common.js"></script>
@@ -118,6 +117,9 @@
 							case "false":
 								echo "При создании новой учётной записи произошла ошибка. Попробуйте снова.";
 								break;
+							case "captcha":
+								echo "Вы не прошли проверку на робота.";
+								break;
 							case "login":
 								echo "Вы не ввели логин либо ввели его в недопустимом формате.";
 								break;
@@ -213,6 +215,8 @@
 		</div>
 		<div style="clear: both;"></div>
 	</div>
+
+	<script src="https://www.google.com/recaptcha/api.js?hl=ru"></script>
 
 </body>
 
