@@ -4,6 +4,33 @@ session_start();
 
 include ("scripts/connect.php");
 
+if(isset($_SESSION['userID'])) {
+	if(isset($_COOKIE['argosfm_login']) and isset($_COOKIE['argosfm_password'])) {
+		setcookie("argosfm_login", "", 0, '/');
+		setcookie("argosfm_password", "", 0, '/');
+		setcookie("argosfm_login", $_COOKIE['argosfm_login'], time()+60*60*24*30*12, '/');
+		setcookie("argosfm_password", $_COOKIE['argosfm_password'], time()+60*60*24*30*12, '/');
+	}
+	else {
+		$userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
+		$user = $userResult->fetch_assoc();
+		setcookie("argosfm_login", $user['login'], time()+60*60*24*30*12, '/');
+		setcookie("argosfm_password", $user['password'], time()+60*60*24*30*12, '/');
+	}
+} else {
+	if(isset($_COOKIE['argosfm_login']) and isset($_COOKIE['argosfm_password']) and !empty($_COOKIE['argosfm_login']) and !empty($_COOKIE['argosfm_password'])) {
+		$userResult = $mysqli->query("SELECT * FROM users WHERE login = '".$_COOKIE['argosfm_login']."'");
+		$user = $userResult->fetch_assoc();
+
+		if(!empty($user) and $user['password'] == $_COOKIE['argosfm_password']) {
+			$_SESSION['userID'] = $user['id'];
+		} else {
+			setcookie("argosfm_login", "", 0, '/');
+			setcookie("argosfm_password", "", 0, '/');
+		}
+	}
+}
+
 ?>
 
 <!doctype html>

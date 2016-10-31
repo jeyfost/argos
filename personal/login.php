@@ -1,6 +1,10 @@
 <?php
 session_start();
 $_SESSION['referer'] = $_SERVER['HTTP_REFERER'];
+
+if(isset($_SESSION['userID'])) {
+	header("Location: ../index.php");
+}
 ?>
 
 <!doctype html>
