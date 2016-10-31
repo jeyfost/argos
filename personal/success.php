@@ -1,6 +1,11 @@
 <?php
-session_start();
-$_SESSION['referer'] = $_SERVER['HTTP_REFERER'];
+	session_start();
+
+	if($_SESSION['registration'] != "ok") {
+		header("Location: ../index.php");
+	} else {
+		unset($_SESSION['registration']);
+	}
 ?>
 
 <!doctype html>
@@ -11,7 +16,7 @@ $_SESSION['referer'] = $_SERVER['HTTP_REFERER'];
 
     <meta charset="utf-8">
 
-    <title>Вход в учётную запись</title>
+    <title>Завершение регистрации</title>
 
     <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
 	<link rel='icon' href='../img/icons/favicon.ico' type='image/x-icon'>
@@ -19,7 +24,6 @@ $_SESSION['referer'] = $_SERVER['HTTP_REFERER'];
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/menu.js"></script>
-	<script type="text/javascript" src="../js/login.js"></script>
 	<script type="text/javascript" src="../js/common.js"></script>
 
 	<style>
@@ -104,41 +108,14 @@ $_SESSION['referer'] = $_SERVER['HTTP_REFERER'];
 
 	<div id="centralBlock">
 		<div id="topSection">
-			<h1>Вход в учётную запись</h1>
+			<h1>Почти готово!</h1>
 			<div id="breadCrumbs">
-				<a href="../index.php"><span class="breadCrumbsText">Главная</span></a> > <a href="login.php"><span class="breadCrumbsText">Вход в учётную запись</span></a>
+				<a href="../index.php"><span class="breadCrumbsText">Главная</span></a> > <a href="success.php"><span class="breadCrumbsText">Завершение регистрации</span></a>
 			</div>
 		</div>
 
-		<div id="loginStatus">
-			<?php
-				if(isset($_SESSION['loginError'])) {
-					echo "<span style='color: #df4e47; font-size: 16px; font-style: italic;'>Вы неверно ввели логин (email) или пароль.</span><br/><br/>";
-				}
-
-			unset($_SESSION['loginError']);
-			?>
-		</div>
-
-		<form id="loginForm" method="post" action="../scripts/personal/login.php" onsubmit="return loginCheck();">
-			<label for="loginLoginInput">Логин или email:</label>
-			<br />
-			<input type="text" id="loginLoginInput" name="loginLogin" />
-			<br /><br />
-			<label for="loginPasswordInput">Пароль:</label>
-			<br />
-			<input type="password" id="loginPasswordInput" name="loginPassword" />
-			<br /><br />
-			<input type="submit" value="Войти" id="loginSubmit" onmouseover="buttonChange('loginSubmit', 1)" onmouseout="buttonChange('loginSubmit', 0)" />
-		</form>
-
-		<div style="margin-top: 40px; width: 100%;">
-			<a href="register.php" class="basicLink">Ещё не зарегистрированы?</a>
-			<br />
-			<a href="recovery.php" class="basicLink">Забыли пароль?</a>
-		</div>
-	</div>
-	<div style="overflow: hidden;"></div>
+		<p>Поздравляем! Регистрация прошла успешно.<br />Однако, чтобы получить доступ к полному функционалу, вам необходимо подтвердить, что введённый вами адрес электронной почты действительно принадлежит вам. Для этого вам необходимо перейти по ссылке из полученного от нас письма.</p>
+		<p>Спасибо за терпение!</p>
 
 	<div id="footerShadow"></div>
     <div id="footer">

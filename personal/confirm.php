@@ -1,6 +1,22 @@
 <?php
-session_start();
-$_SESSION['referer'] = $_SERVER['HTTP_REFERER'];
+	include("../scripts/connect.php");
+
+	if(empty($_REQUEST['hash'])) {
+		header("Location: ../index.php");
+	} else {
+		$hash = $mysqli->real_escape_string($_REQUEST['hash']);
+		$userResult = $mysqli->query("SELECT * FROM users WHERE hash = '".$hash."'");
+		if($userResult->num_rows > 0) {
+			$user = $userResult->fetch_assoc();
+			if($user['activated'] == 0) {
+				$mysqli->query("UPDATE users SET activated = '1' WHERE hash = '".$hash."'");
+			} else {
+				header("Location: ../index.php");
+			}
+		} else {
+			header("Location: ../index.php");
+		}
+	}
 ?>
 
 <!doctype html>
@@ -11,7 +27,7 @@ $_SESSION['referer'] = $_SERVER['HTTP_REFERER'];
 
     <meta charset="utf-8">
 
-    <title>Вход в учётную запись</title>
+    <title>Регистрация завершена</title>
 
     <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
 	<link rel='icon' href='../img/icons/favicon.ico' type='image/x-icon'>
@@ -19,7 +35,6 @@ $_SESSION['referer'] = $_SERVER['HTTP_REFERER'];
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/menu.js"></script>
-	<script type="text/javascript" src="../js/login.js"></script>
 	<script type="text/javascript" src="../js/common.js"></script>
 
 	<style>
@@ -104,41 +119,14 @@ $_SESSION['referer'] = $_SERVER['HTTP_REFERER'];
 
 	<div id="centralBlock">
 		<div id="topSection">
-			<h1>Вход в учётную запись</h1>
+			<h1>Регистрация завершена</h1>
 			<div id="breadCrumbs">
-				<a href="../index.php"><span class="breadCrumbsText">Главная</span></a> > <a href="login.php"><span class="breadCrumbsText">Вход в учётную запись</span></a>
+				<a href="../index.php"><span class="breadCrumbsText">Главная</span></a> > <a href="confirm.php"><span class="breadCrumbsText">Завершение регистрации</span></a>
 			</div>
 		</div>
 
-		<div id="loginStatus">
-			<?php
-				if(isset($_SESSION['loginError'])) {
-					echo "<span style='color: #df4e47; font-size: 16px; font-style: italic;'>Вы неверно ввели логин (email) или пароль.</span><br/><br/>";
-				}
-
-			unset($_SESSION['loginError']);
-			?>
-		</div>
-
-		<form id="loginForm" method="post" action="../scripts/personal/login.php" onsubmit="return loginCheck();">
-			<label for="loginLoginInput">Логин или email:</label>
-			<br />
-			<input type="text" id="loginLoginInput" name="loginLogin" />
-			<br /><br />
-			<label for="loginPasswordInput">Пароль:</label>
-			<br />
-			<input type="password" id="loginPasswordInput" name="loginPassword" />
-			<br /><br />
-			<input type="submit" value="Войти" id="loginSubmit" onmouseover="buttonChange('loginSubmit', 1)" onmouseout="buttonChange('loginSubmit', 0)" />
-		</form>
-
-		<div style="margin-top: 40px; width: 100%;">
-			<a href="register.php" class="basicLink">Ещё не зарегистрированы?</a>
-			<br />
-			<a href="recovery.php" class="basicLink">Забыли пароль?</a>
-		</div>
-	</div>
-	<div style="overflow: hidden;"></div>
+		<p>Поздравляем! Регистрация завершена успешно.<br />Теперь вы можете совершать онлайн-заказы и пользоваться полным функционалом сайта.</p>
+		<p><a href="../index.php">Вернуть на главную страницу</a></p>
 
 	<div id="footerShadow"></div>
     <div id="footer">

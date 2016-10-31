@@ -102,6 +102,7 @@ $(document).mouseup(function (e) {
     var container = $("#dropDownList");
     if (container.has(e.target).length === 0){
         container.hide();
+		$("#dropDownArrowContainer").hide();
     }
 });
 

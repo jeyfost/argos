@@ -4,8 +4,7 @@ label {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-
 input {width: 300px; height: 30px; padding: 0 10px; font-style: italic;}
 h1 {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 50px;}
 
-#breadCrumbs a span:hover {text-decoration: none;}
-.basicLink:hover, .copy a {text-decoration: none;}
+#breadCrumbs a span:hover, .basicLink:hover, .copy a:hover, p a:hover {text-decoration: none;}
 
 /* mobile */
 @media screen and (max-width: 960px) {
@@ -52,12 +51,16 @@ h1 {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-siz
 #centralBlock {position: relative; margin: 80px auto 0 auto; width: 70%; z-index: 1;}
 #breadCrumbs, .breadCrumbsText {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 14px; margin-top: -30px;}
 #topSection {padding-bottom: 40px; width: 100%;}
-#loginSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer;}
+#loginSubmit, #registrationSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer;}
+#registrationSubmit {width: 200px;}
+#registrationDescription {position: relative; float: left; padding-left: 40px;}
+#registrationContainer {width: 350px; position: relative; float: left;}
+#registrationStatus {color: #df4e47;}
 
 .container {width: 90%; margin: 0 auto; z-index: 3;}
 .mainImgContainer {width: 100%; height: 100%; overflow: hidden; transition: .3s; margin: 0; padding: 0;}
 .mainImgContainer img {min-height: 100%; width: 100%;}
 .copy {float: left; position: relative; height: 100%; padding-top: 15px;}
-.copy a {color: #df4e47; text-decoration: underline;}
+.copy a, p a {color: #df4e47; text-decoration: underline;}
 .breadCrumbsText {text-decoration: underline;}
 .basicLink {color: #df4e47; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; text-decoration: underline;}

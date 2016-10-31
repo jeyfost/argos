@@ -63,7 +63,7 @@ include ("scripts/connect.php");
 					if(empty($_SESSION['userID'])) {
 						echo "<a href='personal/login.php'><img src='img/system/login.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon(\"loginIMG\", \"loginRed.png\", 0)' onmouseout='changeIcon(\"loginIMG\", \"login.png\", 0)' /></a>";
 					} else {
-						echo "<a href='scripts/logout.php'><img src='img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon(\"exitIMG\", \"exitRed.png\", 0)' onmouseout='changeIcon(\"exitIMG\", \"exit.png\", 0)' /></a>";
+						echo "<a href='scripts/personal/logout.php'><img src='img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon(\"exitIMG\", \"exitRed.png\", 0)' onmouseout='changeIcon(\"exitIMG\", \"exit.png\", 0)' /></a>";
 					}
 				?>
 			</div>
@@ -147,7 +147,7 @@ include ("scripts/connect.php");
                         echo "<li><a href='catalogue.php?type=".$categories['type']."&c=".$categories['id']."&p=1'>".$categories['name']."</a></li>";
                     }
 
-                    echo "<li><a href='catalogue.php?type=".$categories['type']."&&p=1'>+ Другие разделы</a></li>";
+                    echo "<li><a href='catalogue.php?type=".$categories['type']."&p=1'>+ Другие разделы</a></li>";
                 } else {
 					$categoriesResult = $mysqli->query("SELECT * FROM categories_new WHERE type = 'fa' ORDER BY name");
 
