@@ -152,7 +152,7 @@
 				?>
 			</div>
 			<div id="registrationContainer">
-				<form id="registrationForm" method="post" action="../scripts/personal/register.php" onsubmit="return registerCheck();">
+				<form id="registrationForm" method="post" action="../scripts/personal/register.php">
 					<label for="registrationLoginInput">Логин:</label>
 					<br />
 					<input type="text" id="registrationLoginInput" name="registrationLogin" <?php if(isset($_SESSION['registrationLogin'])) {echo "value=".$_SESSION['registrationLogin']; unset($_SESSION['registrationLogin']);} ?> />

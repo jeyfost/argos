@@ -1,24 +1,3 @@
-<?php
-	include("../scripts/connect.php");
-
-	if(empty($_REQUEST['hash'])) {
-		header("Location: ../index.php");
-	} else {
-		$hash = $mysqli->real_escape_string($_REQUEST['hash']);
-		$userResult = $mysqli->query("SELECT * FROM users WHERE hash = '".$hash."'");
-		if($userResult->num_rows > 0) {
-			$user = $userResult->fetch_assoc();
-			if($user['activated'] == 0) {
-				$mysqli->query("UPDATE users SET activated = '1' WHERE hash = '".$hash."'");
-			} else {
-				header("Location: ../index.php");
-			}
-		} else {
-			header("Location: ../index.php");
-		}
-	}
-?>
-
 <!doctype html>
 
 <html>
@@ -27,7 +6,7 @@
 
     <meta charset="utf-8">
 
-    <title>Регистрация завершена</title>
+    <title>Пароль изменён</title>
 
     <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
 	<link rel='icon' href='../img/icons/favicon.ico' type='image/x-icon'>
@@ -35,7 +14,6 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/menu.js"></script>
-	<script type="text/javascript" src="../js/common.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -119,13 +97,13 @@
 
 	<div id="centralBlock">
 		<div id="topSection">
-			<h1>Регистрация завершена</h1>
+			<h1>Пароль изменён</h1>
 			<div id="breadCrumbs">
-				<a href="../index.php"><span class="breadCrumbsText">Главная</span></a> > <a href="confirm.php"><span class="breadCrumbsText">Завершение регистрации</span></a>
+				<a href="../index.php"><span class="breadCrumbsText">Главная</span></a> > <a href="newPassword.php"><span class="breadCrumbsText">Смена пароля</span></a>
 			</div>
 		</div>
 
-		<p>Поздравляем! Регистрация завершена успешно.<br />Теперь вы можете совершать онлайн-заказы и пользоваться полным функционалом сайта.</p>
+		<p>Поздравляем! Ваш пароль был успешно изменён.</p>
 		<p><a href="login.php">Войти под своей учётной записью</a><br /><a href="../index.php">Вернуться на главную страницу</a></p>
 
 	<div id="footerShadow"></div>

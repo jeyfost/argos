@@ -1,22 +1,11 @@
 <?php
-	include("../scripts/connect.php");
 
-	if(empty($_REQUEST['hash'])) {
+	session_start();
+
+	if(isset($_SESSION['userID'])) {
 		header("Location: ../index.php");
-	} else {
-		$hash = $mysqli->real_escape_string($_REQUEST['hash']);
-		$userResult = $mysqli->query("SELECT * FROM users WHERE hash = '".$hash."'");
-		if($userResult->num_rows > 0) {
-			$user = $userResult->fetch_assoc();
-			if($user['activated'] == 0) {
-				$mysqli->query("UPDATE users SET activated = '1' WHERE hash = '".$hash."'");
-			} else {
-				header("Location: ../index.php");
-			}
-		} else {
-			header("Location: ../index.php");
-		}
 	}
+
 ?>
 
 <!doctype html>
@@ -27,7 +16,7 @@
 
     <meta charset="utf-8">
 
-    <title>Регистрация завершена</title>
+    <title>Восстановление пароля</title>
 
     <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
 	<link rel='icon' href='../img/icons/favicon.ico' type='image/x-icon'>
@@ -119,14 +108,44 @@
 
 	<div id="centralBlock">
 		<div id="topSection">
-			<h1>Регистрация завершена</h1>
+			<h1>Восстановление пароля</h1>
 			<div id="breadCrumbs">
-				<a href="../index.php"><span class="breadCrumbsText">Главная</span></a> > <a href="confirm.php"><span class="breadCrumbsText">Завершение регистрации</span></a>
+				<a href="../index.php"><span class="breadCrumbsText">Главная</span></a> > <a href="recovery.php"><span class="breadCrumbsText">Восстановление пароля</span></a>
 			</div>
 		</div>
 
-		<p>Поздравляем! Регистрация завершена успешно.<br />Теперь вы можете совершать онлайн-заказы и пользоваться полным функционалом сайта.</p>
-		<p><a href="login.php">Войти под своей учётной записью</a><br /><a href="../index.php">Вернуться на главную страницу</a></p>
+		<div id="recoveryStatus">
+			<?php
+				if(isset($_SESSION['recovery'])) {
+					switch($_SESSION['recovery']) {
+						case "empty":
+							echo "<span style='color: #df4e47; font-size: 16px; font-style: italic;'>Вы не ввели логин или email.</span><br/><br/>";
+							break;
+						case "failed":
+							echo "<span style='color: #df4e47; font-size: 16px; font-style: italic;'>Вы ввели несуществующий логин или email.</span><br/><br/>";
+							break;
+						default: break;
+					}
+					unset($_SESSION['recovery']);
+				}
+			?>
+		</div>
+
+		<form id="loginForm" method="post" action="../scripts/personal/recovery.php">
+			<label for="recoveryLoginInput">Логин или email:</label>
+			<br />
+			<input type="text" id="recoveryLoginInput" name="recoveryLogin" />
+			<br /><br />
+			<input type="submit" value="Восстановить" id="recoverySubmit" onmouseover="buttonChange('recoverySubmit', 1)" onmouseout="buttonChange('recoverySubmit', 0)" />
+		</form>
+
+		<div style="margin-top: 40px; width: 100%;">
+			<a href="register.php" class="basicLink">Ещё не зарегистрированы?</a>
+			<br />
+			<a href="login.php" class="basicLink">Я помню пароль!</a>
+		</div>
+	</div>
+	<div style="overflow: hidden;"></div>
 
 	<div id="footerShadow"></div>
     <div id="footer">

@@ -50,9 +50,10 @@ if(!empty($_POST['registrationLogin']) and strlen($_POST['registrationLogin']) >
 										$position = "";
 									}
 
+									$password = md5(md5($mysqli->real_escape_string($_POST['registrationPassword'])));
 									$hash = md5($login.$password.$email.$company.$name.$position.$phone.date('YmdHis'));
 
-									if($mysqli->query("INSERT INTO users (login, password, email, hash, company, name, position, phone, activated) VALUES ('".$login."', '".md5(md5($_POST['registrationPassword']))."', '".$email."', '".$hash."', '".$company."', '".$name."', '".$position."', '".$phone."', '0')")) {
+									if($mysqli->query("INSERT INTO users (login, password, email, hash, company, name, position, phone, activated) VALUES ('".$login."', '".$password."', '".$email."', '".$hash."', '".$company."', '".$name."', '".$position."', '".$phone."', '0')")) {
 										sendMail($email, $hash);
 										$_SESSION['registration'] = "ok";
 										header("Location: ../../personal/success.php");
