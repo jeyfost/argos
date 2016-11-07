@@ -59,7 +59,7 @@
 			</div>
             <div id="menuLinks">
                 <div class="menuLink" id="catalogueLink" onmouseover="showDropdownList('1', 'catalogueLink')">
-                    <a href="../catalogue.php" class="menuPoint">Каталог</a>
+                    <a href="../catalogue.php?type=fa&p=1" class="menuPoint">Каталог</a>
                     <img src="../img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
