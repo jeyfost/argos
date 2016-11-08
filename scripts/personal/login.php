@@ -18,6 +18,13 @@ if($userID[0] > 0) {
 		unset($_SESSION['referer']);
 		setcookie("argosfm_login", $login, time()+60*60*24*30*12, '/');
 		setcookie("argosfm_password", $password[0], time()+60*60*24*30*12, '/');
+
+		$loginsCountResult = $mysqli->query("SELECT logins_count FROM users WHERE id = '".$userID[0]."'");
+		$loginsCount = $loginsCountResult->fetch_array(MYSQLI_NUM);
+		$count = $loginsCount[0] + 1;
+
+		$mysqli->query("UPDATE users SET last_login = '".date('d-m-Y H:i:s')."', logins_count = '".$count."' WHERE id = '".$userID[0]."'");
+
 		header("Location: ".$referer);
 	} else {
 		$_SESSION['loginError'] = 1;

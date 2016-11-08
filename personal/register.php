@@ -155,7 +155,7 @@
 				<form id="registrationForm" method="post" action="../scripts/personal/register.php">
 					<label for="registrationLoginInput">Логин:</label>
 					<br />
-					<input type="text" id="registrationLoginInput" name="registrationLogin" <?php if(isset($_SESSION['registrationLogin'])) {echo "value=".$_SESSION['registrationLogin']; unset($_SESSION['registrationLogin']);} ?> />
+					<input type="text" id="registrationLoginInput" name="registrationLogin" <?php if(isset($_SESSION['registrationLogin'])) {echo "value='".$_SESSION['registrationLogin']."'"; unset($_SESSION['registrationLogin']);} ?> />
 					<br /><br />
 					<label for="registrationPasswordInput">Пароль:</label>
 					<br />
@@ -163,23 +163,23 @@
 					<br /><br />
 					<label for="registrationEmailInput">Email:</label>
 					<br />
-					<input type="text" id="registrationEmailInput" name="registrationEmail" <?php if(isset($_SESSION['registrationEmail'])) {echo "value=".$_SESSION['registrationEmail']; unset($_SESSION['registrationEmail']);} ?> />
+					<input type="text" id="registrationEmailInput" name="registrationEmail" <?php if(isset($_SESSION['registrationEmail'])) {echo "value='".$_SESSION['registrationEmail']."'"; unset($_SESSION['registrationEmail']);} ?> />
 					<br /><br />
 					<label for="registrationCompanyInput">Название организации:</label>
 					<br />
-					<input type="text" id="registrationCompanyInput" name="registrationCompany" <?php if(isset($_SESSION['registrationCompany'])) {echo "value=".$_SESSION['registrationCompany']; unset($_SESSION['registrationCompany']);} ?> />
+					<input type="text" id="registrationCompanyInput" name="registrationCompany" <?php if(isset($_SESSION['registrationCompany'])) {echo "value='".$_SESSION['registrationCompany']."'"; unset($_SESSION['registrationCompany']);} ?> />
 					<br /><br />
 					<label for="registrationNameInput">Контактное лицо:</label>
 					<br />
-					<input type="text" id="registrationNameInput" name="registrationName" <?php if(isset($_SESSION['registrationName'])) {echo "value=".$_SESSION['registrationName']; unset($_SESSION['registrationName']);} ?> />
+					<input type="text" id="registrationNameInput" name="registrationName" <?php if(isset($_SESSION['registrationName'])) {echo "value='".$_SESSION['registrationName']."'"; unset($_SESSION['registrationName']);} ?> />
 					<br /><br />
 					<label for="registrationPositionInput">Должность:</label>
 					<br />
-					<input type="text" id="registrationPositionInput" name="registrationPosition" <?php if(isset($_SESSION['registrationPosition'])) {echo "value=".$_SESSION['registrationPosition']; unset($_SESSION['registrationPosition']);} ?> />
+					<input type="text" id="registrationPositionInput" name="registrationPosition" <?php if(isset($_SESSION['registrationPosition'])) {echo "value='".$_SESSION['registrationPosition']."'"; unset($_SESSION['registrationPosition']);} ?> />
 					<br /><br />
 					<label for="registrationPhoneInput">Контактный телефон:</label>
 					<br />
-					<input type="text" id="registrationPhoneInput" name="registrationPhone" <?php if(isset($_SESSION['registrationPhone'])) {echo "value=".$_SESSION['registrationPhone']; unset($_SESSION['registrationPhone']);} ?> />
+					<input type="text" id="registrationPhoneInput" name="registrationPhone" <?php if(isset($_SESSION['registrationPhone'])) {echo "value='".$_SESSION['registrationPhone']."'"; unset($_SESSION['registrationPhone']);} ?> />
 					<br /><br />
 					<div class="g-recaptcha" data-sitekey="6Ld5MwATAAAAAN7L3GdbaS_dafMZdRicn-Jm8jVM"></div>
 					<br />

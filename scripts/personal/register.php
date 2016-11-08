@@ -53,110 +53,110 @@ if(!empty($_POST['registrationLogin']) and strlen($_POST['registrationLogin']) >
 									$password = md5(md5($mysqli->real_escape_string($_POST['registrationPassword'])));
 									$hash = md5($login.$password.$email.$company.$name.$position.$phone.date('YmdHis'));
 
-									if($mysqli->query("INSERT INTO users (login, password, email, hash, company, name, position, phone, activated) VALUES ('".$login."', '".$password."', '".$email."', '".$hash."', '".$company."', '".$name."', '".$position."', '".$phone."', '0')")) {
+									if($mysqli->query("INSERT INTO users (login, password, email, hash, company, name, position, phone, activated, registration_date, last_login, logins_count) VALUES ('".$login."', '".$password."', '".$email."', '".$hash."', '".$company."', '".$name."', '".$position."', '".$phone."', '0', '".date('d-m-Y H:i:s')."', '', '0')")) {
 										sendMail($email, $hash);
 										$_SESSION['registration'] = "ok";
 										header("Location: ../../personal/success.php");
 									} else {
 										$_SESSION['registration'] = "false";
-										$_SESSION['registrationLogin'] = $_POST['registrationLogin'];
-										$_SESSION['registrationEmail'] = $_POST['registrationEmail'];
-										$_SESSION['registrationCompany'] = $_POST['registrationCompany'];
-										$_SESSION['registrationName'] = $_POST['registrationName'];
-										$_SESSION['registrationPosition'] = $_POST['registrationPosition'];
-										$_SESSION['registrationPhone'] = $_POST['registrationPhone'];
+										$_SESSION['registrationLogin'] = $login;
+										$_SESSION['registrationEmail'] = $email;
+										$_SESSION['registrationCompany'] = $company;
+										$_SESSION['registrationName'] = $name;
+										$_SESSION['registrationPosition'] = $position;
+										$_SESSION['registrationPhone'] = $phone;
 
 										header("Location: ../../personal/register.php");
 									}
 								} else {
 									$_SESSION['registration'] = "captcha";
-									$_SESSION['registrationLogin'] = $_POST['registrationLogin'];
-									$_SESSION['registrationEmail'] = $_POST['registrationEmail'];
-									$_SESSION['registrationCompany'] = $_POST['registrationCompany'];
-									$_SESSION['registrationName'] = $_POST['registrationName'];
-									$_SESSION['registrationPosition'] = $_POST['registrationPosition'];
-									$_SESSION['registrationPhone'] = $_POST['registrationPhone'];
+									$_SESSION['registrationLogin'] = $login;
+									$_SESSION['registrationEmail'] = $email;
+									$_SESSION['registrationCompany'] = $mysqli->real_escape_string($_POST['registrationCompany']);
+									$_SESSION['registrationName'] = $mysqli->real_escape_string($_POST['registrationName']);
+									$_SESSION['registrationPosition'] = $mysqli->real_escape_string($_POST['registrationPosition']);
+									$_SESSION['registrationPhone'] = $phone;
 
 									header("Location: ../../personal/register.php");
 								}
 							} else {
 								$_SESSION['registration'] = "phoneDuplicate";
-								$_SESSION['registrationLogin'] = $_POST['registrationLogin'];
-								$_SESSION['registrationCompany'] = $_POST['registrationCompany'];
-								$_SESSION['registrationEmail'] = $_POST['registrationEmail'];
-								$_SESSION['registrationPosition'] = $_POST['registrationPosition'];
-								$_SESSION['registrationName'] = $_POST['registrationName'];
+								$_SESSION['registrationLogin'] = $login;
+								$_SESSION['registrationCompany'] = $mysqli->real_escape_string($_POST['registrationCompany']);
+								$_SESSION['registrationEmail'] = $email;
+								$_SESSION['registrationPosition'] = $mysqli->real_escape_string($_POST['registrationPosition']);
+								$_SESSION['registrationName'] = $mysqli->real_escape_string($_POST['registrationName']);
 
 								header("Location: ../../personal/register.php");
 							}
 						} else {
 							$_SESSION['registration'] = "emailDuplicate";
-							$_SESSION['registrationLogin'] = $_POST['registrationLogin'];
-							$_SESSION['registrationCompany'] = $_POST['registrationCompany'];
-							$_SESSION['registrationName'] = $_POST['registrationName'];
-							$_SESSION['registrationPosition'] = $_POST['registrationPosition'];
-							$_SESSION['registrationPhone'] = $_POST['registrationPhone'];
+							$_SESSION['registrationLogin'] = $login;
+							$_SESSION['registrationCompany'] = $mysqli->real_escape_string($_POST['registrationCompany']);
+							$_SESSION['registrationName'] = $mysqli->real_escape_string($_POST['registrationName']);
+							$_SESSION['registrationPosition'] = $mysqli->real_escape_string($_POST['registrationPosition']);
+							$_SESSION['registrationPhone'] = $mysqli->real_escape_string($_POST['registrationPhone']);
 
 							header("Location: ../../personal/register.php");
 						}
 					} else {
 						$_SESSION['registration'] = "loginDuplicate";
-						$_SESSION['registrationEmail'] = $_POST['registrationEmail'];
-						$_SESSION['registrationCompany'] = $_POST['registrationCompany'];
-						$_SESSION['registrationName'] = $_POST['registrationName'];
-						$_SESSION['registrationPosition'] = $_POST['registrationPosition'];
-						$_SESSION['registrationPhone'] = $_POST['registrationPhone'];
+						$_SESSION['registrationEmail'] = $mysqli->real_escape_string($_POST['registrationEmail']);
+						$_SESSION['registrationCompany'] = $mysqli->real_escape_string($_POST['registrationCompany']);
+						$_SESSION['registrationName'] = $mysqli->real_escape_string($_POST['registrationName']);
+						$_SESSION['registrationPosition'] = $mysqli->real_escape_string($_POST['registrationPosition']);
+						$_SESSION['registrationPhone'] = $mysqli->real_escape_string($_POST['registrationPhone']);
 
 						header("Location: ../../personal/register.php");
 					}
 				} else {
 					$_SESSION['registration'] = "phone";
-					$_SESSION['registrationLogin'] = $_POST['registrationLogin'];
-					$_SESSION['registrationCompany'] = $_POST['registrationCompany'];
-					$_SESSION['registrationEmail'] = $_POST['registrationEmail'];
-					$_SESSION['registrationPosition'] = $_POST['registrationPosition'];
-					$_SESSION['registrationName'] = $_POST['registrationName'];
+					$_SESSION['registrationLogin'] = $mysqli->real_escape_string($_POST['registrationLogin']);
+					$_SESSION['registrationCompany'] = $mysqli->real_escape_string($_POST['registrationCompany']);
+					$_SESSION['registrationEmail'] = $mysqli->real_escape_string($_POST['registrationEmail']);
+					$_SESSION['registrationPosition'] = $mysqli->real_escape_string($_POST['registrationPosition']);
+					$_SESSION['registrationName'] = $mysqli->real_escape_string($_POST['registrationName']);
 
 					header("Location: ../../personal/register.php");
 				}
 			} else {
 				$_SESSION['registration'] = "name";
-				$_SESSION['registrationLogin'] = $_POST['registrationLogin'];
-				$_SESSION['registrationCompany'] = $_POST['registrationCompany'];
-				$_SESSION['registrationEmail'] = $_POST['registrationEmail'];
-				$_SESSION['registrationPosition'] = $_POST['registrationPosition'];
-				$_SESSION['registrationPhone'] = $_POST['registrationPhone'];
+				$_SESSION['registrationLogin'] = $mysqli->real_escape_string($_POST['registrationLogin']);
+				$_SESSION['registrationCompany'] = $mysqli->real_escape_string($_POST['registrationCompany']);
+				$_SESSION['registrationEmail'] = $mysqli->real_escape_string($_POST['registrationEmail']);
+				$_SESSION['registrationPosition'] = $mysqli->real_escape_string($_POST['registrationPosition']);
+				$_SESSION['registrationPhone'] = $mysqli->real_escape_string($_POST['registrationPhone']);
 
 				header("Location: ../../personal/register.php");
 			}
 		} else {
 			$_SESSION['registration'] = "email";
-			$_SESSION['registrationLogin'] = $_POST['registrationLogin'];
-			$_SESSION['registrationCompany'] = $_POST['registrationCompany'];
-			$_SESSION['registrationName'] = $_POST['registrationName'];
-			$_SESSION['registrationPosition'] = $_POST['registrationPosition'];
-			$_SESSION['registrationPhone'] = $_POST['registrationPhone'];
+			$_SESSION['registrationLogin'] = $mysqli->real_escape_string($_POST['registrationLogin']);
+			$_SESSION['registrationCompany'] = $mysqli->real_escape_string($_POST['registrationCompany']);
+			$_SESSION['registrationName'] = $mysqli->real_escape_string($_POST['registrationName']);
+			$_SESSION['registrationPosition'] = $mysqli->real_escape_string($_POST['registrationPosition']);
+			$_SESSION['registrationPhone'] = $mysqli->real_escape_string($_POST['registrationPhone']);
 
 			header("Location: ../../personal/register.php");
 		}
 	} else {
 		$_SESSION['registration'] = "password";
-		$_SESSION['registrationLogin'] = $_POST['registrationLogin'];
-		$_SESSION['registrationEmail'] = $_POST['registrationEmail'];
-		$_SESSION['registrationCompany'] = $_POST['registrationCompany'];
-		$_SESSION['registrationName'] = $_POST['registrationName'];
-		$_SESSION['registrationPosition'] = $_POST['registrationPosition'];
-		$_SESSION['registrationPhone'] = $_POST['registrationPhone'];
+		$_SESSION['registrationLogin'] = $mysqli->real_escape_string($_POST['registrationLogin']);
+		$_SESSION['registrationEmail'] = $mysqli->real_escape_string($_POST['registrationEmail']);
+		$_SESSION['registrationCompany'] = $mysqli->real_escape_string($_POST['registrationCompany']);
+		$_SESSION['registrationName'] = $mysqli->real_escape_string($_POST['registrationName']);
+		$_SESSION['registrationPosition'] = $mysqli->real_escape_string($_POST['registrationPosition']);
+		$_SESSION['registrationPhone'] = $mysqli->real_escape_string($_POST['registrationPhone']);
 
 		header("Location: ../../personal/register.php");
 	}
 } else {
 	$_SESSION['registration'] = "login";
-	$_SESSION['registrationEmail'] = $_POST['registrationEmail'];
-	$_SESSION['registrationCompany'] = $_POST['registrationCompany'];
-	$_SESSION['registrationName'] = $_POST['registrationName'];
-	$_SESSION['registrationPosition'] = $_POST['registrationPosition'];
-	$_SESSION['registrationPhone'] = $_POST['registrationPhone'];
+	$_SESSION['registrationEmail'] = $mysqli->real_escape_string($_POST['registrationEmail']);
+	$_SESSION['registrationCompany'] = $mysqli->real_escape_string($_POST['registrationCompany']);
+	$_SESSION['registrationName'] = $mysqli->real_escape_string($_POST['registrationName']);
+	$_SESSION['registrationPosition'] = $mysqli->real_escape_string($_POST['registrationPosition']);
+	$_SESSION['registrationPhone'] = $mysqli->real_escape_string($_POST['registrationPhone']);
 
 	header("Location: ../../personal/register.php");
 }

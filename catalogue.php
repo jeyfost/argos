@@ -1,8 +1,7 @@
 <?php
 
 session_start();
-
-include ("scripts/connect.php");
+include("scripts/connect.php");
 
 if(isset($_SESSION['userID'])) {
 	if(isset($_COOKIE['argosfm_login']) and isset($_COOKIE['argosfm_password'])) {
@@ -39,6 +38,17 @@ if(isset($_SESSION['userID'])) {
 	$mysqli->query("UPDATE users SET last_login = '".date('d-m-Y H:i:s')."', logins_count = '".$count."' WHERE id = '".$_SESSION['userID']."'");
 }
 
+if(empty($_REQUEST['type'])) {
+	header("Location: catalogue.php?type=fa&p=1");
+} else {
+	$typeResult = $mysqli->query("SELECT COUNT(id) FROM types WHERE type = '".$mysqli->real_escape_string($_REQUEST['type'])."'");
+	$type = $typeResult->fetch_array(MYSQLI_NUM);
+
+	if($type[0] == 0) {
+		header("Location: catalogue.php?type=fa&p=1");
+	}
+}
+
 ?>
 
 <!doctype html>
@@ -51,7 +61,7 @@ if(isset($_SESSION['userID'])) {
     <meta name='keywords' content='мебельная фурнитура, комплектующие для мебели, Аргос-ФМ, комплектующие для мебели Могилев, Могилев, кромочные материалы, кромка, кромка ПВХ, ручки мебельные, мебельная фурнитура Могилев, кромка ПВХ Могилев, лента кромочная, лента кромочная Могилев, ручки мебельные Могилев, кромка Могилев'>
     <meta name='description' content='Комплексные поставки всех видов мебельной фурнитуры импортного и отечественного производства. Республика Беларусь, г. Могилёв.'>
 
-    <title>Аргос-ФМ | Мебельная фурнитура</title>
+    <title>Аргос-ФМ | Каталог</title>
 
     <link rel='shortcut icon' href='img/icons/favicon.ico' type='image/x-icon'>
 	<link rel='icon' href='img/icons/favicon.ico' type='image/x-icon'>
@@ -64,7 +74,6 @@ if(isset($_SESSION['userID'])) {
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <?php
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== false) {
 			echo "<script type='text/javascript' src='js/indexOpera.js'></script>";
@@ -86,7 +95,7 @@ if(isset($_SESSION['userID'])) {
 
 </head>
 
-<body id="bodyIndex">
+<body>
 
     <div id="page-preloader"><span class="spinner"></span></div>
 
@@ -150,50 +159,6 @@ if(isset($_SESSION['userID'])) {
         <div id="dropDownList"></div>
     </div>
     <div id="menuShadow"></div>
-
-    <div id="mainImg">
-        <div class="mainImgContainer" id="mic1"><img src="img/system/main1.jpg" id="mainImg1" /></div>
-        <div class="mainImgContainer" id="mic2"><img src="img/system/main2.jpg" id="mainImg2" /></div>
-        <div class="mainImgContainer" id="mic3"><img src="img/system/main3.jpg" id="mainImg3" /></div>
-        <div class="mainImgContainer" id="mic4"><img src="img/system/main4.jpg" id="mainImg4" /></div>
-
-        <div id="leftSideBlock">
-            <span id="mainText1" class="mainBigText" onclick="scrollFirst()">Мебельная фурнитура</span>
-            <br /><br />
-            <span id='mainText2' class="mainSmallText" onclick="scrollSecond()">Кромочные материалы</span>
-            <br /><br />
-            <span id='mainText3' class="mainSmallText" onclick="scrollThird()">Аксессуары для штор</span>
-            <br /><br />
-            <span id='mainText4' class="mainSmallText" onclick="scrollFourth()">Сопутствующие товары</span>
-        </div>
-        <div id="rightSideBlock" class="rightSideBlock">
-            <div class="rightSideBlockHeader">Разделы</div>
-            <div class="rsbSpace"></div>
-            <div class="rsbLine"></div>
-            <div class="rsbSpace"></div>
-            <ul id="rightSideBlockCategories">
-                <?php
-                $categoriesCountResult = $mysqli->query("SELECT COUNT(id) from categories_new WHERE type = 'fa'");
-                $categoriesCount = $categoriesCountResult->fetch_array(MYSQLI_NUM);
-
-                if($categoriesCount[0] > 10) {
-                    $categoriesResult = $mysqli->query("SELECT * FROM categories_new WHERE type = 'fa' ORDER BY name LIMIT 10");
-                    while($categories = $categoriesResult->fetch_assoc()) {
-                        echo "<li><a href='catalogue.php?type=".$categories['type']."&c=".$categories['id']."&p=1'>".$categories['name']."</a></li>";
-                    }
-
-                    echo "<li><a href='catalogue.php?type=".$categories['type']."&p=1'>+ Другие разделы</a></li>";
-                } else {
-					$categoriesResult = $mysqli->query("SELECT * FROM categories_new WHERE type = 'fa' ORDER BY name");
-
-                    while($categories = $categoriesResult->fetch_assoc()) {
-                        echo "<li><a href='catalogue.php?type=".$categories['type']."&c=".$categories['id']."&p=1'>".$categories['name']."</a></li>";
-                    }
-                }
-            ?>
-            </ul>
-        </div>
-    </div>
 
     <div id="footerShadow"></div>
     <div id="footer">
