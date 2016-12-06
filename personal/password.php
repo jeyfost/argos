@@ -2,6 +2,10 @@
 	session_start();
 	include("../scripts/connect.php");
 
+	if(isset($_SESSION['userID'])) {
+		header("Location: ../index.php");
+	}
+
 	if(!empty($_REQUEST['hash'])) {
 		$hash = $mysqli->real_escape_string($_REQUEST['hash']);
 		$userResult = $mysqli->query("SELECT * FROM users WHERE hash = '".$hash."'");

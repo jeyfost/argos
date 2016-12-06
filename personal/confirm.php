@@ -1,6 +1,10 @@
 <?php
 	include("../scripts/connect.php");
 
+	if(isset($_SESSION['userID'])) {
+		header("Location: ../index.php");
+	}
+
 	if(empty($_REQUEST['hash'])) {
 		header("Location: ../index.php");
 	} else {
