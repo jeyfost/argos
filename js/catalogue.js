@@ -88,10 +88,6 @@ function addToBasket(good_id, input, response_field) {
 					default: break;
 				}
 			},
-			error: function( xhr, textStatus ) {
-    			alert( [ xhr.status, textStatus ] );
-			}
-
 		});
 	} else {
 		if(document.getElementById(response_field).style.opacity == 1) {
