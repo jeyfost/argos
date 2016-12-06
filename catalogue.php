@@ -437,11 +437,12 @@ if(isset($_SESSION['userID'])) {
 							<br />
 							<div class='addingResult' id='addingResult".$catalogue['id']."' onclick='hideBlock(\"addingResult".$catalogue['id']."\")'></div>
 						</div>
-						<div style='clear: both;'></div>
+
 					";
 				}
 
 				echo "
+						<div style='clear: both;'></div>
 					</div>
 					<div style='width: 100%; height: 20px;'></div>
 					<div style='width: 100%; height: 1px; background-color: #d7d5d1; margin-top: 10px;'></div>
