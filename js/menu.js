@@ -139,3 +139,19 @@ function changeIcon(id, img, depth) {
 
     document.getElementById(id).src = d + "img/system/" + img;
 }
+
+$(window).on('load', function() {
+	$('#searchFieldInput').focus(function() {
+		if($('#searchFieldInput').val() == "Поиск...") {
+			$('#searchFieldInput').val('');
+			document.getElementById('searchFieldInput').style.color = "#4c4c4c";
+		}
+	});
+
+	$('#searchFieldInput').on('blur', function() {
+		if($('#searchFieldInput').val() == '') {
+			$('#searchFieldInput').val("Поиск...");
+			$('#searchFieldInput').css('color', '#777;');
+		}
+	});
+});

@@ -197,11 +197,39 @@ if(isset($_SESSION['userID'])) {
             <a href="index.php"><img src="img/system/logo.png" id="logo" /></a>
 			<div id="personalButtons">
 				<?php
-					if(empty($_SESSION['userID'])) {
-						echo "<a href='personal/login.php'><img src='img/system/login.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon(\"loginIMG\", \"loginRed.png\", 0)' onmouseout='changeIcon(\"loginIMG\", \"login.png\", 0)' /></a>";
+					if(isset($_SESSION['userID'])) {
+						echo "
+							<div class='headerIcon'>
+								<a href='scripts/personal/logout.php'><img src='img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon(\"exitIMG\", \"exitRed.png\", 0)' onmouseout='changeIcon(\"exitIMG\", \"exit.png\", 0)' /></a>
+							</div>
+							<div class='headerIcon'>
+								<a href='scripts/personal/personal.php'><img src='img/system/personal.png' title='Личный кабинет' id='personalIMG' onmouseover='changeIcon(\"personalIMG\", \"personalRed.png\", 0)' onmouseout='changeIcon(\"personalIMG\", \"personal.png\", 0)' /></a>
+							</div>
+						";
+						if($_SESSION['userID'] == 1) {
+							echo "
+								<div class='headerIcon'>
+									<a href='scripts/personal/orders.php'><img src='img/system/basketFull.png' title='Заявки' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)' /></a>
+								</div>
+							";
+						} else {
+
+						}
 					} else {
-						echo "<a href='scripts/personal/logout.php'><img src='img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon(\"exitIMG\", \"exitRed.png\", 0)' onmouseout='changeIcon(\"exitIMG\", \"exit.png\", 0)' /></a>";
+						echo "
+							<div class='headerIcon'>
+								<a href='personal/login.php'><img src='img/system/login.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon(\"loginIMG\", \"loginRed.png\", 0)' onmouseout='changeIcon(\"loginIMG\", \"login.png\", 0)' /></a>
+							</div>
+						";
 					}
+					echo "
+						<div id='searchBlock'>
+							<form method='post'>
+								<input type='text' id='searchFieldInput' name=searchField' value='Поиск...' />
+							</form>
+						</div>
+					";
+					echo "<div style='clear: both;'></div>";
 				?>
 			</div>
             <div id="menuLinks">
@@ -363,18 +391,22 @@ if(isset($_SESSION['userID'])) {
 			}
 
 			while($catalogue = $catalogueResult->fetch_array()) {
+				$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$catalogue['unit']."'");
+				$unit = $unitResult->fetch_assoc();
+
 				echo "
 					<div class='catalogueItem'>
-						<div class='catalogueIMG'>
-							<a href='img/catalogue/big/".$catalogue['picture']."' class='lightview' data-lightview-title='".$catalogue['name']."' data-lightview-caption='".nl2br(strip_tags($catalogue['description']))."'><img src='img/catalogue/small/".$catalogue['small']."' /></a>
-						</div>
-						<div class='catalogueInfo'>
-							<div class='catalogueName'>
-								<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
-								<div style='margin-left: 15px;'>".$catalogue['name']."</div>
-								<div style='clear: both;'></div>
+						<div class='itemDescription'>
+							<div class='catalogueIMG'>
+								<a href='img/catalogue/big/".$catalogue['picture']."' class='lightview' data-lightview-title='".$catalogue['name']."' data-lightview-caption='".nl2br(strip_tags($catalogue['description']))."'><img src='img/catalogue/small/".$catalogue['small']."' /></a>
 							</div>
-							<div class='catalogueDescription'>
+							<div class='catalogueInfo'>
+								<div class='catalogueName'>
+									<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
+									<div style='margin-left: 15px;'>".$catalogue['name']."</div>
+									<div style='clear: both;'></div>
+								</div>
+								<div class='catalogueDescription'>
 				";
 				$strings = explode("<br />", $catalogue['description']);
 				for($i = 0; $i < count($strings); $i++) {
@@ -386,11 +418,30 @@ if(isset($_SESSION['userID'])) {
 					}
 				}
 				echo "
-								<br />
-								<b>Артикул: </b>".$catalogue['code']."
+									<br />
+									<b>Артикул: </b>".$catalogue['code']."
+								</div>
 							</div>
+							<div style='clear: both;'></div>
+						</div>
+				";
+
+				if(isset($_SESSION['userID'])) {
+					echo "
+						<div class='itemPurchase'>
+							<img src='img/system/toBasket.png' id='toBasketIMG".$catalogue['id']."' class='toBasketIMG' onmouseover='changeIcon(\"toBasketIMG".$catalogue['id']."\", \"toBasketRed.png\", 0)' onmouseout='changeIcon(\"toBasketIMG".$catalogue['id']."\", \"toBasket.png\", 0)' title='Добавить в корзину' onclick='addToBasket(\"".$catalogue['id']."\", \"quantityInput".$catalogue['id']."\", \"addingResult".$catalogue['id']."\")' />
+							<form method='post'>
+								<label for='quantityInput".$catalogue['id']."'>Кол-во в ".$unit['in_name'].":</label>
+								<input type='number' id='quantityInput".$catalogue['id']."' min='1' step='1' value='1' class='itemQuantityInput' />
+							</form>
+							<br />
+							<div class='addingResult' id='addingResult".$catalogue['id']."' onclick='hideBlock(\"addingResult".$catalogue['id']."\")'></div>
 						</div>
 						<div style='clear: both;'></div>
+					";
+				}
+
+				echo "
 					</div>
 					<div style='width: 100%; height: 20px;'></div>
 					<div style='width: 100%; height: 1px; background-color: #d7d5d1; margin-top: 10px;'></div>
