@@ -288,7 +288,7 @@ if(isset($_SESSION['userID'])) {
 			echo "
 				<h1 style='margin-top: 80px;'>".$type['type_name']."</h1>
 				<div id='breadCrumbs'>
-				<a href='index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='catalogue.php?type=fa&p=1'><span class='breadCrumbsText'>Каталог</span></a> > <a href='".$_SERVER['REQUEST_URI']."'><span class='breadCrumbsText'>".$type['type_name']."</span></a>
+				<a href='index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='catalogue.php?type=fa&p=1'><span class='breadCrumbsText'>Каталог</span></a> > <a href='catalogue.php?type=".$type['catalogue_type']."&p=1'><span class='breadCrumbsText'>".$type['type_name']."</span></a>
 			";
 
 			if(!empty($_REQUEST['c'])) {
