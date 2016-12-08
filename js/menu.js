@@ -180,7 +180,9 @@ function showSearchList() {
 			url: "scripts/ajaxSearch.php",
 			success: function(response) {
 				$('#searchList').html(response);
-				$('#searchList').offset({left: parseInt($('#searchFieldInput').offset().left - 280)});
+				if($('#searchList').offset().left != parseInt($('#searchFieldInput').offset().left - 220)) {
+					$('#searchList').offset({left: parseInt($('#searchFieldInput').offset().left - 220)});
+				}
 				$('#searchList').show('fast');
 			}
 		});
