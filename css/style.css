@@ -23,17 +23,21 @@ h1 {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-siz
     #menuLinks {float: right; text-align: right; margin-top: 32px; line-height: 24px;}
     #menuLinks a, .rightSideBlock ul li a {font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; color: #4c4c4c;}
     #menuIcon {display: none;}
-    #dropDownLine {width: 100%; z-index: 4; position: fixed; top: 60px;}
-    #dropDownList {position: fixed; top: 60px; background-color: #fff; border: 1px solid #dedede; padding-top: 10px; padding-bottom: 10px; vertical-align: top; display: none; transition: opacity .3s; z-index: 4; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4);}
-    #dropDownArrowContainer {position: relative; top: -15px; z-index: 5; display: none;}
+    #dropDownLine {width: 100%; z-index: 12; position: fixed; top: 60px;}
+    #dropDownList {position: fixed; top: 60px; background-color: #fff; border: 1px solid #dedede; padding-top: 10px; padding-bottom: 10px; vertical-align: top; display: none; transition: opacity .3s; z-index: 12; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4);}
+    #dropDownArrowContainer {position: relative; top: -15px; z-index: 13; display: none;}
     #leftSideBlock {position: absolute; top: 10px; left: 5%; z-index: 2; transition: .3s;}
-    #personalButtons {position: absolute; top: 0; right: 5%; height: 30px; z-index: 3;}
+    #personalButtons {position: absolute; top: 0; right: 5%; height: 30px; z-index: 11;}
     #personalButtons img {margin-top: 10px;}
     #catalogueMenu {position: relative; float: left; margin-top: 20px; width: 19%; padding: 10px; border: 1px solid #d7d5d1;}
     #catalogueContent {position: relative; float: right; margin-top: 20px; width: 78%;}
     #pageNumbers {position: relative; margin: 0 auto; text-align: center; font-size: 15px;}
     #searchBlock {position: relative; float: right; width: 200px; height: 30px;}
     #searchFieldInput {width: 180px; height: 20px; line-height: 20px; margin-top: 7px; margin-left: -10px; color: #777;}
+    #changeGoodPriceInput {width: 60px; margin-left: 10px;}
+    #changeGoodPriceForm {position: relative; float: left;}
+    #searchList {position: absolute; top: 0; width: 480px; z-index: 5; background-color: #fff; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); padding: 10px; display: none; overflow: hidden;}
+    #space {width: 100%; height: 80px;}
 
     .menuLink img {margin: auto auto 3px 3px;}
     .slash {font-size: 14px; margin-left: 5px;}
@@ -67,15 +71,18 @@ h1 {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-siz
     .itemDescription {position: relative; float: left;}
     .itemPurchase {position: relative; float: right; width: 100px; text-align: center;}
     .itemPurchase form label {font-size: 14px;}
-    .addingResult {transition: .3s; opacity: 0; font-size: 14px;}
+    .addingResult, #goodResponseFiled {transition: .3s; opacity: 0; font-size: 14px;}
+    .searchItem {width: 100%;}
+    .searchIMG {width: 100px; position: relative; float: left; margin-top: 5px; margin-left: 5px;}
+    .searchInfo {width: 365px; padding-left: 10px; position: relative; float: left;}
 }
 
 /* home index.php */
 
-#menu {width: 100%; height: 60px; position: fixed; top: 0; left: 0; z-index: 2; background-color: #fff;}
-#footer {width: 100%; height: 60px; position: fixed; bottom: 0; left: 0; z-index: 2; background-color: #fff; font-family: Verdana, Arial, sans-serif; font-size: 12px;}
-#menuShadow {width: 100%; height: 14px; background: url(../img/system/shadow.png) 50% 0 no-repeat; position: fixed; left: 0; top: 60px; z-index: 3;}
-#footerShadow {width: 100%; height: 14px; background: url(../img/system/shadowInverted.png) 50% 0 no-repeat; position: fixed; left: 0; bottom: 60px; z-index: 3;}
+#menu {width: 100%; height: 60px; position: fixed; top: 0; left: 0; z-index: 10; background-color: #fff;}
+#footer {width: 100%; height: 60px; position: fixed; bottom: 0; left: 0; z-index: 4; background-color: #fff; font-family: Verdana, Arial, sans-serif; font-size: 12px;}
+#menuShadow {width: 100%; height: 14px; background: url(../img/system/shadow.png) 50% 0 no-repeat; position: fixed; left: 0; top: 60px; z-index: 11;}
+#footerShadow {width: 100%; height: 14px; background: url(../img/system/shadowInverted.png) 50% 0 no-repeat; position: fixed; left: 0; bottom: 60px; z-index: 4;}
 #mainImg {width: 100%; height: calc(100% - 120px); height: -moz-calc(100% - 120px); max-height: calc(100% - 120px); max-height: -moz-calc(100% - 120px); overflow: hidden; position: absolute; left: 0; top: 60px; z-index: 1;}
 #logo {float: left; margin-top: 5px;}
 #centralBlock {position: relative; margin: 80px auto 0 auto; width: 70%; z-index: 1;}
@@ -89,7 +96,7 @@ h1 {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-siz
 #registrationStatus {color: #df4e47;}
 #page {position: relative; margin: 60px auto auto auto; width: 90%; height: 400px;}
 
-.container {width: 90%; margin: 0 auto; z-index: 3;}
+.container {width: 90%; margin: 0 auto; z-index: 11;}
 .mainImgContainer {width: 100%; height: 100%; overflow: hidden; transition: .3s; margin: 0; padding: 0;}
 .mainImgContainer img {min-height: 100%; width: 100%;}
 .copy {float: left; position: relative; height: 100%; padding-top: 15px;}

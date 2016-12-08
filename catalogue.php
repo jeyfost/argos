@@ -282,6 +282,7 @@ if(isset($_SESSION['userID'])) {
     <div id="menuShadow"></div>
 
 	<div id="page">
+		<div id='searchList'></div>
 		<?php
 			$type = $typeResult->fetch_assoc();
 			echo "
@@ -394,6 +395,16 @@ if(isset($_SESSION['userID'])) {
 				$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$catalogue['unit']."'");
 				$unit = $unitResult->fetch_assoc();
 
+				$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$catalogue['currency']."'");
+				$currency = $currencyResult->fetch_assoc();
+
+				$price = $catalogue['price'] * $currency['rate'];
+				$price = round($price, 2, PHP_ROUND_HALF_UP);
+
+				$roubles = floor($price);
+				$kopeck = ($price - $roubles) * 100;
+
+
 				echo "
 					<div class='catalogueItem'>
 						<div class='itemDescription'>
@@ -420,6 +431,10 @@ if(isset($_SESSION['userID'])) {
 				echo "
 									<br />
 									<b>Артикул: </b>".$catalogue['code']."
+									<br />
+									<div id='goodPrice".$catalogue['id']."'>
+										<span"; if($_SESSION['userID'] == 1) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['short_name'].": </b>"; if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>
+									</div>
 								</div>
 							</div>
 							<div style='clear: both;'></div>
@@ -570,7 +585,7 @@ if(isset($_SESSION['userID'])) {
 		<div style="clear: both;"></div>
 	</div>
 	<div style="clear: both;"></div>
-	<div style='width: 100%; height: 80px;'></div>
+	<div id="space"></div>
 
     <div id="footerShadow"></div>
     <div id="footer">

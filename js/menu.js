@@ -141,10 +141,12 @@ function changeIcon(id, img, depth) {
 }
 
 $(window).on('load', function() {
-	$('#searchFieldInput').focus(function() {
+	$('#searchFieldInput').on('focus', function() {
 		if($('#searchFieldInput').val() == "Поиск...") {
 			$('#searchFieldInput').val('');
 			document.getElementById('searchFieldInput').style.color = "#4c4c4c";
+		} else {
+			showSearchList();
 		}
 	});
 
@@ -154,4 +156,33 @@ $(window).on('load', function() {
 			$('#searchFieldInput').css('color', '#777;');
 		}
 	});
+
+	$('#searchFieldInput').on('keyup', function() {
+		if($('#searchFieldInput').val() != '') {
+			showSearchList();
+		} else {
+			if($('#searchList').css('display') != "none") {
+				$('#searchList').hide("fast");
+			}
+		}
+	});
+
+	$('#searchList').on('scroll', function() {
+
+	});
 });
+
+function showSearchList() {
+	if($('#searchFieldInput').val() != "Поиск..." && $('#searchFieldInput').val() != "") {
+		$.ajax({
+			type: 'POST',
+			data: {"query": $('#searchFieldInput').val()},
+			url: "scripts/ajaxSearch.php",
+			success: function(response) {
+				$('#searchList').html(response);
+				$('#searchList').offset({left: parseInt($('#searchFieldInput').offset().left - 280)});
+				$('#searchList').show('fast');
+			}
+		});
+	}
+}

@@ -111,3 +111,42 @@ function hideBlock(id) {
 		document.getElementById(id).innerHTML = "";
 	}, 300);
 }
+
+function changePrice(good_id, block, price, currency, unit, rate) {
+	document.getElementById(block).innerHTML = "<form id='changeGoodPriceForm' method='post'><b>Стоимость за " + unit + " в " + currency + ": </b><input type='number' value='" + price + "' min='0.0001' step='0.0001' id='changeGoodPriceInput' onblur='saveGoodPrice(\"" + good_id + "\", \"" + block + "\", \"" + currency + "\", \"" + unit + "\", \"" + rate + "\")' autofocus /></form><div style='clear: both;'><br /><br /><div id='goodResponseField'></div></div>";
+}
+
+function saveGoodPrice(good_id, block, currency, unit, rate) {
+	$.ajax({
+		type: 'POST',
+		data: {"goodID": good_id, "price": $('#changeGoodPriceInput').val()},
+		url: "scripts/catalogue/ajaxSaveGoodPrice.php",
+		success: function(response) {
+			if(response == "a") {
+				var price = $('#changeGoodPriceInput').val();
+				price = parseFloat(price * rate);
+				var roubles = Math.floor(price);
+				var kopeck = parseInt(parseFloat(parseFloat(price - roubles).toFixed(2)) * 100);
+
+				if(roubles > 0) {
+					price = roubles + " руб. " + kopeck + " коп.";
+				} else {
+					price = kopeck + " коп.";
+				}
+
+				document.getElementById(block).innerHTML = "<span style='cursor: pointer;' onclick='changePrice(\"" + good_id + "\", \"" + block + "\", \"" + $('#changeGoodPriceInput').val() + "\", \"" + currency + "\", \"" + unit + "\", \"" + rate + "\")' title='Изменить стоимость товара'><b>Стоимость за " + unit + ": </b>" + price + "</span>";
+			} else {
+				if($('#goodResponseFiled').css('opacity') == '0') {
+					$('#goodResponseFiled').css('color', '#df4e47');
+					$('#goodResponseFiled').val("Введите положительное значение");
+				} else {
+					$('#goodResponseFiled').css('opacity', '0');
+					setTimeout(function() {
+						$('#goodResponseFiled').val("Введите положительное значение");
+						$('#goodResponseFiled').css('opacity', '1');
+					}, 300);
+				}
+			}
+		}
+	});
+}
