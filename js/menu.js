@@ -128,6 +128,13 @@ $(document).mouseup(function (e) {
         container.hide();
 		$("#dropDownArrowContainer").hide();
     }
+
+	var sl = $("#searchList");
+	if(document.getElementById('searchFieldInput') != document.activeElement) {
+		if (sl.has(e.target).length === 0){
+			sl.hide('fast');
+		}
+	}
 });
 
 function changeIcon(id, img, depth) {
@@ -180,9 +187,6 @@ function showSearchList() {
 			url: "scripts/ajaxSearch.php",
 			success: function(response) {
 				$('#searchList').html(response);
-				if($('#searchList').offset().left != parseInt($('#searchFieldInput').offset().left - 220)) {
-					$('#searchList').offset({left: parseInt($('#searchFieldInput').offset().left - 220)});
-				}
 				$('#searchList').show('fast');
 			}
 		});
