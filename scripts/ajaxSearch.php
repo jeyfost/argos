@@ -32,7 +32,7 @@ if($searchResult->num_rows == 0) {
 					<a href='img/catalogue/big/".$search['picture']."' class='lightview' data-lightview-title='".$search['name']."' data-lightview-caption='".nl2br(strip_tags($search['description']))."'><img src='img/catalogue/small/".$search['small']."' /></a>
 				</div>
 				<div class='searchInfo'>
-					<span>".$search['name']."</span>
+					<span style='font-size: 18px; font-style: italic;'>".$search['name']."</span>
 					<br /><br />
 		";
 

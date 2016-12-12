@@ -42,6 +42,19 @@ function addToBasket(good_id, input, response_field) {
 			data: {"goodID": good_id, "quantity": quantity},
 			url: "scripts/catalogue/ajaxAddToBasket.php",
 			success: function(response) {
+				$.ajax({
+					type: 'POST',
+					data: {"goodID": good_id},
+					url: 'scripts/catalogue/ajaxCheckBasket.php',
+					success: function(result) {
+						if (result == "a") {
+							$('#basketIcon').html("<a href='scripts/personal/basket.php' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: 1' id='basketIMG' /><div id='basketLabel'>1</div></a>");
+						} else {
+							$('#basketLabel').html(result);
+						}
+					}
+				});
+
 				switch(response) {
 					case "a":
 						if(document.getElementById(response_field).style.opacity == 1) {
@@ -87,7 +100,7 @@ function addToBasket(good_id, input, response_field) {
 						break;
 					default: break;
 				}
-			},
+			}
 		});
 	} else {
 		if(document.getElementById(response_field).style.opacity == 1) {

@@ -213,7 +213,22 @@ if(isset($_SESSION['userID'])) {
 								</div>
 							";
 						} else {
+							$basketQuantityResult = $mysqli->query("SELECT COUNT(id) FROM basket WHERE user_id = '".$_SESSION['userID']."'");
+							$basketQuantity = $basketQuantityResult->fetch_array(MYSQLI_NUM);
 
+							if($basketQuantity[0] > 0) {
+								echo "
+									<div class='headerIcon' id='basketIcon'>
+										<a href='scripts/personal/basket.php' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
+									</div>
+								";
+							} else {
+								echo "
+									<div class='headerIcon' id='basketIcon'>
+										<a href='scripts/personal/basket.php'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)' /></a>
+									</div>
+								";
+							}
 						}
 					} else {
 						echo "
