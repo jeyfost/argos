@@ -456,7 +456,7 @@ if(isset($_SESSION['userID'])) {
 						</div>
 				";
 
-				if(isset($_SESSION['userID'])) {
+				if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
 					echo "
 						<div class='itemPurchase'>
 							<img src='img/system/toBasket.png' id='toBasketIMG".$catalogue['id']."' class='toBasketIMG' onmouseover='changeIcon(\"toBasketIMG".$catalogue['id']."\", \"toBasketRed.png\", 0)' onmouseout='changeIcon(\"toBasketIMG".$catalogue['id']."\", \"toBasket.png\", 0)' title='Добавить в корзину' onclick='addToBasket(\"".$catalogue['id']."\", \"quantityInput".$catalogue['id']."\", \"addingResult".$catalogue['id']."\")' />
