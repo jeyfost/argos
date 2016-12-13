@@ -251,6 +251,19 @@ if(isset($_SESSION['userID'])) {
 						";
 						break;
 					case 3:
+						echo "
+							<form method='post'>
+								<label for='personalPasswordInput'>Новый пароль:</label>
+								<br />
+								<input type='password' id='personalPasswordInput' />
+								<br /><br />
+								<label for='personalPasswordConfirmInput'>Подтвердите новый пароль:</label>
+								<br />
+								<input type='password' id='personalPasswordConfirmInput' />
+								<br /><br />
+								<input type='button' value='Изменить' id='personalSubmit' onmouseover='buttonChange(\"personalSubmit\", 1)' onmouseout='buttonChange(\"personalSubmit\", 0)' onclick='editUserPassword()' />
+							</form>
+						";
 						break;
 					default:
 						break;
