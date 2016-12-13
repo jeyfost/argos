@@ -16,6 +16,29 @@ if($_SESSION['userID'] == 1) {
 
 include("../scripts/connect.php");
 
+if(isset($_SESSION['userID'])) {
+	if(isset($_COOKIE['argosfm_login']) and isset($_COOKIE['argosfm_password'])) {
+		setcookie("argosfm_login", "", 0, '/');
+		setcookie("argosfm_password", "", 0, '/');
+		setcookie("argosfm_login", $_COOKIE['argosfm_login'], time()+60*60*24*30*12, '/');
+		setcookie("argosfm_password", $_COOKIE['argosfm_password'], time()+60*60*24*30*12, '/');
+	}
+	else {
+		$userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
+		$user = $userResult->fetch_assoc();
+		setcookie("argosfm_login", $user['login'], time()+60*60*24*30*12, '/');
+		setcookie("argosfm_password", $user['password'], time()+60*60*24*30*12, '/');
+	}
+}
+
+if(isset($_SESSION['userID'])) {
+	$loginsCountResult = $mysqli->query("SELECT logins_count FROM users WHERE id = '".$_SESSION['userID']."'");
+	$loginsCount = $loginsCountResult->fetch_array(MYSQLI_NUM);
+	$count = $loginsCount[0] + 1;
+
+	$mysqli->query("UPDATE users SET last_login = '".date('d-m-Y H:i:s')."', logins_count = '".$count."' WHERE id = '".$_SESSION['userID']."'");
+}
+
 ?>
 
 <!doctype html>
@@ -147,7 +170,7 @@ include("../scripts/connect.php");
 							echo "<a href='personal.php?section=1'><span class='breadCrumbsText'>Личные данные</span></a>";
 							break;
 						case 2:
-							echo "<a href='personal.php?section=2'><span class='breadCrumbsText'>Изменение e-mail адреса</span></a>";
+							echo "<a href='personal.php?section=2'><span class='breadCrumbsText'>Изменение email адреса</span></a>";
 							break;
 						case 3:
 							echo "<a href='personal.php?section=3'><span class='breadCrumbsText'>Изменение пароля</span></a>";
@@ -168,7 +191,7 @@ include("../scripts/connect.php");
 					<div id='personalMenu'>
 						<a href='personal.php?section=1'><div "; if($_REQUEST['section'] == 1) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb1' onmouseover='buttonChange(\"pb1\", 1)' onmouseout='buttonChange(\"pb1\", 0)'";} echo ">Личные данные</div></a>
 						<div style='width: 100%; height: 5px;'></div>
-						<a href='personal.php?section=2'><div "; if($_REQUEST['section'] == 2) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb2' onmouseover='buttonChange(\"pb2\", 1)' onmouseout='buttonChange(\"pb2\", 0)'";} echo ">Изменить e-mail</div></a>
+						<a href='personal.php?section=2'><div "; if($_REQUEST['section'] == 2) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb2' onmouseover='buttonChange(\"pb2\", 1)' onmouseout='buttonChange(\"pb2\", 0)'";} echo ">Изменить email</div></a>
 						<div style='width: 100%; height: 5px;'></div>
 						<a href='personal.php?section=3'><div "; if($_REQUEST['section'] == 3) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb3' onmouseover='buttonChange(\"pb3\", 1)' onmouseout='buttonChange(\"pb3\", 0)'";} echo ">Изменить пароль</div></a>
 					</div>
@@ -176,11 +199,11 @@ include("../scripts/connect.php");
 						<div id='goodResponseFiled'></div>
 				";
 
+				$personalResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
+				$personal = $personalResult->fetch_assoc();
+
 				switch($_REQUEST['section']) {
 					case 1:
-						$personalResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
-						$personal = $personalResult->fetch_assoc();
-
 						echo "
 							<form method='post'>
 								<label for='personalCompanyInput'>Название компании:</label>
@@ -204,6 +227,28 @@ include("../scripts/connect.php");
 						";
 						break;
 					case 2:
+						if(isset($_SESSION['editEmail'])) {
+							switch($_SESSION['editEmail']) {
+								case "ok":
+									echo "<span style='color: #53acff;'>Адрес электронной почты был успешно изменён.</span>";
+									break;
+								case "failed":
+									echo "<span style='color: #df4e47;'>Произошла ошибка. Попробуйте снова.</span>";
+									break;
+								default: break;
+							}
+							echo "<br /><br />";
+							unset($_SESSION['editEmail']);
+						}
+						echo "
+							<form method='post'>
+								<label for='personalEmailInput'>Новый email адрес:</label>
+								<br />
+								<input type='text' id='personalEmailInput' value='".$personal['email']."' />
+								<br /><br />
+								<input type='button' value='Редактиовать' id='personalSubmit' onmouseover='buttonChange(\"personalSubmit\", 1)' onmouseout='buttonChange(\"personalSubmit\", 0)' onclick='editUserEmail()' />
+							</form>
+						";
 						break;
 					case 3:
 						break;
