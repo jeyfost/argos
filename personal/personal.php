@@ -1,0 +1,222 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['userID'])) {
+	header("Location: ../index.php");
+}
+
+if($_SESSION['userID'] == 1) {
+
+} else {
+	if($_REQUEST['section'] != 1 and $_REQUEST['section'] != 2 and $_REQUEST['section'] != 3) {
+		header("Location: personal.php?section=1");
+	}
+}
+
+include("../scripts/connect.php");
+
+?>
+
+<!doctype html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title><?php if($_SESSION['userID'] == 1) {echo "Управление сайтом";} else {echo "Личный кабинет";} ?></title>
+
+    <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
+    <link rel='stylesheet' media='screen' type='text/css' href='../css/style.css'>
+	<link rel="stylesheet" type="text/css" href="../js/lightview/css/lightview/lightview.css" />
+    <?php
+		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== false) {
+			echo "<link rel='stylesheet' media='screen' type='text/css' href='../css/styleOpera.css'>";
+		}
+	?>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/menu1.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/personal.js"></script>
+	<!--[if lt IE 9]>
+  		<script type="text/javascript" src="../js/lightview/js/excanvas/excanvas.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="../js/lightview/js/spinners/spinners.min.js"></script>
+	<script type="text/javascript" src="../js/lightview/js/lightview/lightview.js"></script>
+
+	<style>
+		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
+		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('../img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
+	</style>
+
+	<script type="text/javascript">
+        $(window).on('load', function () {
+            var $preloader = $('#page-preloader'), $spinner = $preloader.find('.spinner');
+            $spinner.delay(500).fadeOut();
+            $preloader.delay(850).fadeOut('slow');
+        });
+    </script>
+
+</head>
+
+<body>
+
+	<div id="page-preloader"><span class="spinner"></span></div>
+
+    <div id="menu">
+        <div class="container" style="height: 100%;">
+            <a href="../index.php"><img src="../img/system/logo.png" id="logo" /></a>
+			<div id="personalButtons">
+				<div class='headerIcon'>
+					<a href='../scripts/personal/logout.php'><img src='../img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon("exitIMG", "exitRed.png", 1)' onmouseout='changeIcon("exitIMG", "exit.png", 1)' /></a>
+				</div>
+				<div class='headerIcon'>
+					<a href='../personal/personal.php?section=1'><img src='../img/system/personalRed.png' title='Личный кабинет' id='personalIMG' onmouseover='changeIcon("personalIMG", "personal.png", 1)' onmouseout='changeIcon("personalIMG", "personalRed.png", 1)' /></a>
+				</div>
+				<div id='searchBlock'>
+					<form method='post'>
+						<input type='text' id='searchFieldInput' name=searchField' value='Поиск...' />
+					</form>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<div id="menuLinks">
+				<div class="menuLink" id="catalogueLink" onmouseover="showDropdownList('1', 'catalogueLink')">
+					<a href="../catalogue.php?type=fa&p=1" class="menuPoint">Каталог</a>
+					<img src="../img/system/downArrow.png" />
+					<span class="slash"> /</span>
+				</div>
+				<div class="menuLink" id="aboutLink" onmouseover="showDropdownList('1', 'aboutLink')">
+					<a href="../about.php">О компании</a>
+					<img src="../img/system/downArrow.png" />
+					<span class="slash"> /</span>
+				</div>
+				<div class="menuLinkNotDD">
+					<a href="../news.php">Новости</a>
+					<span class="slash"> /</span>
+				</div>
+				<div class="menuLink" id="storesLink" onmouseover="showDropdownList('1', 'storesLink')">
+					<a href="../stores.php">Где купить</a>
+					<img src="../img/system/downArrow.png" />
+					<span class="slash"> /</span>
+				</div>
+				<div class="menuLinkNotDD">
+					<a href="../actions.php">Акции</a>
+					<span class="slash"> /</span>
+				</div>
+				<div class="menuLink" id="partnersLink" onmouseover="showDropdownList('1', 'partnersLink')">
+					<a href="../partners.php">Партнерам</a>
+					<img src="../img/system/downArrow.png" />
+					<span class="slash"> /</span>
+				</div>
+				<div class="menuLink" id="contactsLink" onmouseover="showDropdownList('1', 'contactsLink')">
+					<a href="../contacts.php">Контакты</a>
+					<img src="../img/system/downArrow.png" />
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<div style="clear: both;"></div>
+        </div>
+
+    </div>
+    <div id="dropDownLine">
+        <div id="dropDownArrowContainer">
+            <img src="../img/system/dropDownListArrow.png" id="dropDownArrow" />
+        </div>
+        <div id="dropDownList"></div>
+    </div>
+    <div id="menuShadow"></div>
+
+	<div id="page">
+		<div id='searchList'></div>
+
+		<h1 style='margin-top: 80px;'><?php if($_SESSION['userID'] == 1) {echo "Управление сайтом";} else {echo "Личный кабинет";} ?></h1>
+		<div id='breadCrumbs'>
+			<a href='../index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='personal.php?section=1'><span class='breadCrumbsText'><?php if($_SESSION['userID'] == 1) {echo "Управление сайтом";} else {echo "Личный кабинет";} ?></span></a> >
+			<?php
+				if($_SESSION['userID'] == 1) {
+					switch($_REQUEST['section']) {
+
+					}
+				} else {
+					switch($_REQUEST['section']) {
+						case 1:
+							echo "<a href='personal.php?section=1'><span class='breadCrumbsText'>Личные данные</span></a>";
+							break;
+						case 2:
+							echo "<a href='personal.php?section=2'><span class='breadCrumbsText'>Изменение e-mail адреса</span></a>";
+							break;
+						case 3:
+							echo "<a href='personal.php?section=3'><span class='breadCrumbsText'>Изменение пароля</span></a>";
+							break;
+						default: break;
+					}
+				}
+			?>
+		</div>
+
+		<?php
+			if($_SESSION['userID'] == 1) {
+				switch($_REQUEST['section']) {
+
+				}
+			} else {
+				echo "
+					<div id='personalMenu'>
+						<a href='personal.php?section=1'><div "; if($_REQUEST['section'] == 1) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb1' onmouseover='buttonChange(\"pb1\", 1)' onmouseout='buttonChange(\"pb1\", 0)'";} echo ">Личные данные</div></a>
+						<div style='width: 100%; height: 5px;'></div>
+						<a href='personal.php?section=2'><div "; if($_REQUEST['section'] == 2) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb2' onmouseover='buttonChange(\"pb2\", 1)' onmouseout='buttonChange(\"pb2\", 0)'";} echo ">Изменить e-mail</div></a>
+						<div style='width: 100%; height: 5px;'></div>
+						<a href='personal.php?section=3'><div "; if($_REQUEST['section'] == 3) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb3' onmouseover='buttonChange(\"pb3\", 1)' onmouseout='buttonChange(\"pb3\", 0)'";} echo ">Изменить пароль</div></a>
+					</div>
+					<div id='personalContent'>
+						<div id='goodResponseFiled'></div>
+				";
+
+				switch($_REQUEST['section']) {
+					case 1:
+						$personalResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
+						$personal = $personalResult->fetch_assoc();
+
+						echo "
+							<form method='post'>
+								<label for='personalCompanyInput'>Название компании:</label>
+								<br />
+								<input type='text' id='personalCompanyInput' name='personalCompany' value='".$personal['company']."' />
+								<br /><br />
+								<label for='personalNameInput'>Контактное лицо:</label>
+								<br />
+								<input type='text' id='personalNameInput' name='personalName' value='".$personal['name']."' />
+								<br /><br />
+								<label for='personalPositionInput'>Должность:</label>
+								<br />
+								<input type='text' id='personalPositionInput' name='personalPosition' value='".$personal['position']."' />
+								<br /><br />
+								<label for='personalPhoneInput'>Номер телефона:</label>
+								<br />
+								<input type='text' id='personalPhoneInput' name='personalPhone' value='".$personal['phone']."' />
+								<br /><br />
+								<input type='button' value='Редактиовать' id='personalSubmit' onmouseover='buttonChange(\"personalSubmit\", 1)' onmouseout='buttonChange(\"personalSubmit\", 0)' onclick='editUserInfo()' />
+							</form>
+						";
+						break;
+					case 2:
+						break;
+					case 3:
+						break;
+					default:
+						break;
+				}
+
+				echo "</div>";
+			}
+
+		?>
+	</div>
+
+</body>
+
+</html>

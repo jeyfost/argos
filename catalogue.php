@@ -149,7 +149,6 @@ if(isset($_SESSION['userID'])) {
     <title>Аргос-ФМ | Каталог</title>
 
     <link rel='shortcut icon' href='img/icons/favicon.ico' type='image/x-icon'>
-	<link rel='icon' href='img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='css/style.css'>
 	<link rel="stylesheet" type="text/css" href="js/lightview/css/lightview/lightview.css" />
     <?php
@@ -203,13 +202,13 @@ if(isset($_SESSION['userID'])) {
 								<a href='scripts/personal/logout.php'><img src='img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon(\"exitIMG\", \"exitRed.png\", 0)' onmouseout='changeIcon(\"exitIMG\", \"exit.png\", 0)' /></a>
 							</div>
 							<div class='headerIcon'>
-								<a href='scripts/personal/personal.php'><img src='img/system/personal.png' title='Личный кабинет' id='personalIMG' onmouseover='changeIcon(\"personalIMG\", \"personalRed.png\", 0)' onmouseout='changeIcon(\"personalIMG\", \"personal.png\", 0)' /></a>
+								<a href='personal/personal.php?section=1'><img src='img/system/personal.png' title='Личный кабинет' id='personalIMG' onmouseover='changeIcon(\"personalIMG\", \"personalRed.png\", 0)' onmouseout='changeIcon(\"personalIMG\", \"personal.png\", 0)' /></a>
 							</div>
 						";
 						if($_SESSION['userID'] == 1) {
 							echo "
 								<div class='headerIcon'>
-									<a href='scripts/personal/orders.php'><img src='img/system/basketFull.png' title='Заявки' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)' /></a>
+									<a href='personal/orders.php'><img src='img/system/basketFull.png' title='Заявки' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)' /></a>
 								</div>
 							";
 						} else {
@@ -219,13 +218,13 @@ if(isset($_SESSION['userID'])) {
 							if($basketQuantity[0] > 0) {
 								echo "
 									<div class='headerIcon' id='basketIcon'>
-										<a href='scripts/personal/basket.php' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
+										<a href='personal/basket.php' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
 									</div>
 								";
 							} else {
 								echo "
 									<div class='headerIcon' id='basketIcon'>
-										<a href='scripts/personal/basket.php'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)' /></a>
+										<a href='personal/basket.php'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)' /></a>
 									</div>
 								";
 							}
