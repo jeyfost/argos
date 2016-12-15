@@ -99,6 +99,32 @@ if(isset($_SESSION['userID'])) {
 				<div class='headerIcon'>
 					<a href='../personal/personal.php?section=1'><img src='../img/system/personalRed.png' title='Личный кабинет' id='personalIMG' onmouseover='changeIcon("personalIMG", "personal.png", 1)' onmouseout='changeIcon("personalIMG", "personalRed.png", 1)' /></a>
 				</div>
+				<?php
+					if($_SESSION['userID'] == 1) {
+						echo "
+							<div class='headerIcon'>
+								<a href='orders.php'><img src='../img/system/basketFull.png' title='Заявки' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
+							</div>
+						";
+					} else {
+						$basketQuantityResult = $mysqli->query("SELECT COUNT(id) FROM basket WHERE user_id = '".$_SESSION['userID']."'");
+						$basketQuantity = $basketQuantityResult->fetch_array(MYSQLI_NUM);
+
+						if($basketQuantity[0] > 0) {
+							echo "
+								<div class='headerIcon' id='basketIcon'>
+									<a href='basket.php' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
+								</div>
+								";
+						} else {
+							echo "
+								<div class='headerIcon' id='basketIcon'>
+									<a href='basket.php'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
+								</div>
+							";
+						}
+					}
+				?>
 				<div id='searchBlock'>
 					<form method='post'>
 						<input type='text' id='searchFieldInput' name=searchField' value='Поиск...' />

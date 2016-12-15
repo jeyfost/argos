@@ -448,6 +448,13 @@ if(isset($_SESSION['userID'])) {
 									<br />
 									<div id='goodPrice".$catalogue['id']."'>
 										<span"; if($_SESSION['userID'] == 1) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['short_name'].": </b>"; if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>
+				";
+
+				if($catalogue['sketch'] != '') {
+					echo "<br /><br /><a href='img/catalogue/sketch/".$catalogue['sketch']."' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
+				}
+
+				echo "
 									</div>
 								</div>
 							</div>
