@@ -51,6 +51,13 @@ if($searchResult->num_rows == 0) {
 					<b>Артикул: </b>".$search['code']."
 					<br />
 					<b>Стоимость за ".$unit['short_name'].": </b>".$price."
+		";
+
+		if($search['sketch'] != '') {
+			echo "<br /><br /><a href='img/catalogue/sketch/".$search['sketch']."' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
+		}
+
+		echo "
 					<br /><br />
 				</div>
 				<div style='clear: both;'></div>

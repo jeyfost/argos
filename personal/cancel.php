@@ -34,7 +34,7 @@
     <link rel='stylesheet' media='screen' type='text/css' href='../css/style.css'>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/menu.js"></script>
+    <script type="text/javascript" src="../js/menu1.js"></script>
 	<script type="text/javascript" src="../js/common.js"></script>
 
 	<style>
@@ -60,13 +60,15 @@
         <div class="container" style="height: 100%;">
             <a href="../index.php"><img src="../img/system/logo.png" id="logo" /></a>
 			<div id="personalButtons">
-				<?php
-					if(empty($_SESSION['userID'])) {
-						echo "<a href='login.php'><img src='../img/system/loginRed.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon(\"loginIMG\", \"login.png\", 1)' onmouseout='changeIcon(\"loginIMG\", \"loginRed.png\", 1)' /></a>";
-					} else {
-						echo "<a href='../scripts/personal/logout.php'><img src='../img/system/exitRed.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon(\"exitIMG\", \"exit.png\", 1)' onmouseout='changeIcon(\"exitIMG\", \"exitRed.png\", 1)' /></a>";
-					}
-				?>
+				<div class="headerIcon">
+					<a href='login.php'><img src='../img/system/loginRed.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon("loginIMG", "login.png", 1)' onmouseout='changeIcon("loginIMG", "loginRed.png", 1)' /></a>
+				</div>
+				<div id='searchBlock'>
+					<form method='post'>
+						<input type='text' id='searchFieldInput' name=searchField' value='Поиск...' />
+					</form>
+				</div>
+				<div style="clear: both;"></div>
 			</div>
             <div id="menuLinks">
                 <div class="menuLink" id="catalogueLink" onmouseover="showDropdownList('1', 'catalogueLink')">
@@ -117,7 +119,8 @@
     </div>
     <div id="menuShadow"></div>
 
-	<div id="centralBlock">
+	<div id="page" style="margin-top: 80px;">
+		<div id="searchList"></div>
 		<div id="topSection">
 			<h1>Регистрация отменена</h1>
 			<div id="breadCrumbs">
