@@ -1,3 +1,44 @@
+$(window).on('load', function() {
+	$('#innerSearchInput').focus(function() {
+		if($('#innerSearchInput').val() == "Поиск пользователей...") {
+			$('#innerSearchInput').val('');
+		} else {
+			$.ajax({
+				type: 'POST',
+				data: {"query": $('#innerSearchInput').val()},
+				url: "../scripts/personal/ajaxUserSearch.php",
+				success: function(response) {
+					$('#innerSearchList').html(response);
+					$('#innerSearchList').show('fast');
+				}
+			});
+		}
+	});
+
+	$('#innerSearchInput').blur(function() {
+		if($('#innerSearchInput').val() == '') {
+			$('#innerSearchInput').val("Поиск пользователей...");
+		}
+	});
+
+	$('#innerSearchInput').keyup(function() {
+		if($('#innerSearchInput').val() != '') {
+			$.ajax({
+				type: 'POST',
+				data: {"query": $('#innerSearchInput').val()},
+				url: "../scripts/personal/ajaxUserSearch.php",
+				success: function(response) {
+					$('#innerSearchList').html(response);
+					$('#innerSearchList').show('fast');
+				}
+			});
+		} else {
+			$('#innerSearchList').hide('fast');
+			$('#innerSearchList').html('');
+		}
+	});
+});
+
 function editUserInfo() {
 	var company = $('#personalCompanyInput').val();
 	var name = $('#personalNameInput').val();
@@ -336,3 +377,23 @@ function setRates(ids) {
 		}
 	});
 }
+
+function sortBy(sort) {
+	$.ajax({
+		type: "POST",
+		data: {"sort": sort},
+		url: "../scripts/personal/ajaxSort.php",
+		success: function() {
+			location.reload();
+		}
+	});
+}
+
+$(document).mouseup(function (e) {
+    var container = $("#innerSearchList");
+	if(document.getElementById('innerSearchInput') != document.activeElement) {
+		if (container.has(e.target).length === 0) {
+			container.hide();
+		}
+	}
+});

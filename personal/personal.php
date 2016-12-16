@@ -18,6 +18,47 @@ if($_SESSION['userID'] == 1) {
 
 include("../scripts/connect.php");
 
+if($_SESSION['userID'] == 1) {
+	if(!empty($_REQUEST['user'])) {
+		if($_REQUEST['section'] != 2) {
+			header("Location: personal.php?section=2");
+		} else {
+			$userCheckResult = $mysqli->query("SELECT COUNT(id) FROM users WHERE id = '".$mysqli->real_escape_string($_REQUEST['user'])."'");
+			$userCheck = $userCheckResult->fetch_array(MYSQLI_NUM);
+
+			if($userCheck[0] == 0) {
+				header("Location: personal.php?section=2");
+			}
+		}
+	} else {
+		if($_REQUEST['section'] == 2) {
+			if(empty($_REQUEST['p'])) {
+				header("Location: personal.php?section=2&p=1");
+			} else {
+				$quantityResult = $mysqli->query("SELECT COUNT(id) FROM users WHERE id <> '1' AND activated = '1'");
+				$quantity = $quantityResult->fetch_array(MYSQLI_NUM);
+
+				if($quantity[0] > 10) {
+					if($quantity[0] % 10 != 0) {
+						$numbers = intval(($quantity[0] / 10) + 1);
+					} else {
+						$numbers = intval($quantity[0] / 10);
+					}
+				} else {
+					$numbers = 1;
+				}
+
+				$page = $mysqli->real_escape_string($_REQUEST['p']);
+				$start = $page * 10 - 10;
+
+				if($page > $numbers or $page <= 0) {
+					header("Location: personal.php?section=2&p=1");
+				}
+			}
+		}
+	}
+}
+
 if(isset($_SESSION['userID'])) {
 	if(isset($_COOKIE['argosfm_login']) and isset($_COOKIE['argosfm_password'])) {
 		setcookie("argosfm_login", "", 0, '/');
@@ -194,7 +235,7 @@ if(isset($_SESSION['userID'])) {
 							echo "<a href='personal.php?section=1'><span class='breadCrumbsText'>Установка курсов валют</span></a>";
 							break;
 						case 2:
-							echo "<a href='personal.php?section=2'><span class='breadCrumbsText'>Управление пользователями</span></a>";
+							echo "<a href='personal.php?section=2&p=1'><span class='breadCrumbsText'>Управление пользователями</span></a>";
 							break;
 						default: break;
 					}
@@ -219,9 +260,11 @@ if(isset($_SESSION['userID'])) {
 			if($_SESSION['userID'] == 1) {
 				echo "
 					<div id='personalMenu'>
-						<a href='personal.php?section=1'><div "; if($_REQUEST['section'] == 1) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb1' onmouseover='buttonChange(\"pb1\", 1)' onmouseout='buttonChange(\"pb1\", 0)'";} echo ">Курсы валют</div></a>
+						<a href='personal.php?section=1'><div "; if($_REQUEST['section'] == 1) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='p1' onmouseover='buttonChange(\"p1\", 1)' onmouseout='buttonChange(\"p1\", 0)'";} echo ">Курсы валют</div></a>
 						<div style='width: 100%; height: 5px;'></div>
-						<a href='personal.php?section=2'><div "; if($_REQUEST['section'] == 2) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb2' onmouseover='buttonChange(\"pb2\", 1)' onmouseout='buttonChange(\"pb2\", 0)'";} echo ">Управление пользователями</div></a>
+						<a href='personal.php?section=2&p=1'><div "; if($_REQUEST['section'] == 2) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='p2' onmouseover='buttonChange(\"p2\", 1)' onmouseout='buttonChange(\"p2\", 0)'";} echo ">Управление пользователями</div></a>
+						<div style='width: 100%; height: 5px;'></div>
+						<a href='../admin'><div class='personalMenuLink' id='p3' onmouseover='buttonChange(\"p3\", 1)' onmouseout='buttonChange(\"p3\", 0)'>Панель администрирования</div></a>
 					</div>
 					<div id='personalContent'>
 						<div id='goodResponseFiled'></div>
@@ -248,6 +291,182 @@ if(isset($_SESSION['userID'])) {
 						";
 						break;
 					case 2:
+						if(empty($_REQUEST['user']))
+						{
+							if(!isset($_SESSION['sort'])) {
+								$_SESSION['sort'] = "login";
+							}
+
+							if(!isset($_SESSION['sort_type'])) {
+								$_SESSION['sort_type'] = "ASC";
+							}
+
+							$count = 0;
+							$usersResult = $mysqli->query("SELECT * FROM users WHERE id <> '1' AND activated = '1' ORDER BY ".$_SESSION['sort']." ".$_SESSION['sort_type']." LIMIT ".$start.", 10");
+
+							echo "
+								<div style='height: 10px; width: 100%;'></div>
+								<div id='innerSearch'>
+									<form method='post'>
+										<input type='text' id='innerSearchInput' value='Поиск пользователей...' />
+									</form>
+								</div>
+								<div id='innerSearchList'></div>
+								<div style='overflow: hidden;'></div>
+								<br /><br />
+								<table>
+									<tr class='headTR'>
+										<td id='td1' onclick='sortBy(\"id\")' title='Сортировать по id' nowrap>ID"; if($_SESSION['sort'] == "id") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td id='td2' onclick='sortBy(\"login\")' title='Сортировать по логину' nowrap>Логин"; if($_SESSION['sort'] == "login") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td id='td3' onclick='sortBy(\"email\")' title='Сортировать по email' nowrap>Email"; if($_SESSION['sort'] == "email") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td id='td4' onclick='sortBy(\"name\")' title='Сортировать по имени' nowrap>Имя"; if($_SESSION['sort'] == "name") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td id='td5' onclick='sortBy(\"company\")' title='Сортировать по названию организации' nowrap>Организация"; if($_SESSION['sort'] == "company") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td id='td6' onclick='sortBy(\"position\")' title='Сортировать по должности' nowrap>Должность"; if($_SESSION['sort'] == "position") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td id='td7' onclick='sortBy(\"registration_date\")' title='Сортировать по дате регистрации' nowrap>Дата регистрации"; if($_SESSION['sort'] == "registration_date") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td id='td8' onclick='sortBy(\"last_login\")' title='Сортировать по дате последнего визита' nowrap>Последний визит"; if($_SESSION['sort'] == "last_login") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td id='td9' onclick='sortBy(\"logins_count\")' title='Сортировать по количеству просмотренных страниц' nowrap>Просмотрено страниц"; if($_SESSION['sort'] == "logins_count") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td style='cursor: default;'>Редактирование</td>
+									</tr>
+							";
+
+							while($users = $usersResult->fetch_assoc()) {
+								$count++;
+
+								echo "
+									<tr"; if($count % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
+										<td style='text-align: center;'>".$users['id']."</td>
+										<td>".$users['login']."</td>
+										<td>".$users['email']."</td>
+										<td>".$users['name']."</td>
+										<td>".$users['company']."</td>
+										<td>".$users['position']."</td>
+										<td>".$users['registration_date']."</td>
+										<td>".$users['last_login']."</td>
+										<td style='text-align: center;'>".$users['logins_count']."</td>
+										<td style='text-align: center;'><a href='personal.php?section=2&user=".$users['id']."'>Редактировать</a></td>
+									</tr>
+								";
+							}
+
+							echo "</table>";
+
+							echo "<div id='pageNumbers'>";
+
+							if($numbers > 1) {
+								$uri = explode("&p=", $_SERVER['REQUEST_URI']);
+								$link = $uri[0]."&p=";
+								if($numbers <= 7) {
+									echo "<br /><br />";
+
+									if($_REQUEST['p'] == 1) {
+										echo "<div class='pageNumberBlockSide' id='pbPrev' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>Предыдущая</span></div>";
+									} else {
+										echo "<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev'>Предыдущая</span></div></a>";
+									}
+
+									for($i = 1; $i <= $numbers; $i++) {
+										if($_REQUEST['p'] != $i) {
+											echo "<a href='".$link.$i."' class='noBorder'>";
+										}
+
+										echo "<div id='pb".$i."' "; if($i == $_REQUEST['p']) {echo "class='pageNumberBlockActive'";} else {echo "class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$i."\", \"pbt".$i."\")' onmouseout='pageBlock(0, \"pb".$i."\", \"pbt".$i."\")'";} echo "><span "; if($i == $_REQUEST['p']) {echo "class='goodStyleWhite'";} else {echo "class='goodStyleRed' id='pbt".$i."'";} echo ">".$i."</span></div>";
+
+										if($_REQUEST['p'] != $i) {
+											echo "</a>";
+										}
+									}
+
+									if($_REQUEST['p'] == $numbers) {
+										echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
+									} else {
+										echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>";
+									}
+
+									echo "</div>";
+
+								} else {
+									if($_REQUEST['p'] < 5) {
+										if($_REQUEST['p'] == 1) {
+											echo "<div class='pageNumberBlockSide' id='pbPrev' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>Предыдущая</span></div>";
+										} else {
+											echo "<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev'>Предыдущая</span></div></a>";
+										}
+
+										for($i = 1; $i <= 5; $i++) {
+											if($_REQUEST['p'] != $i) {
+												echo "<a href='".$link.$i."' class='noBorder'>";
+											}
+
+											echo "<div id='pb".$i."' "; if($i == $_REQUEST['p']) {echo "class='pageNumberBlockActive'";} else {echo "class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$i."\", \"pbt".$i."\")' onmouseout='pageBlock(0, \"pb".$i."\", \"pbt".$i."\")'";} echo "><span "; if($i == $_REQUEST['p']) {echo "class='goodStyleWhite'";} else {echo "class='goodStyleRed' id='pbt".$i."'";} echo ">".$i."</span></div>";
+
+											if($_REQUEST['p'] != $i) {
+												echo "</a>";
+											}
+										}
+
+										echo "<div class='pageNumberBlock' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>";
+										echo "<a href='".$link.$numbers."' class='noBorder'><div id='pb".$numbers."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$numbers."\", \"pbt".$numbers."\")' onmouseout='pageBlock(0, \"pb".$numbers."\", \"pbt".$numbers."\")'><span class='goodStyleRed' id='pbt".$numbers."'>".$numbers."</span></div></a>";
+
+										if($_REQUEST['p'] == $numbers) {
+											echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
+										} else {
+											echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>";
+										}
+
+										echo "</div>";
+									} else {
+										$check = $numbers - 3;
+
+										if($_REQUEST['p'] >= 5 and $_REQUEST['p'] < $check) {
+											echo "
+												<br /><br />
+												<div id='pageNumbers'>
+													<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev'>Предыдущая</span></div></a>
+													<a href='".$link."1' class='noBorder'><div id='pb1' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1\", \"pbt1\")' onmouseout='pageBlock(0, \"pb1\", \"pbt1\")'><span class='goodStyleRed' id='pbt1'>1</span></div></a>
+													<div class='pageNumberBlock' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>
+													<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div id='pb".($_REQUEST['p'] - 1)."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".($_REQUEST['p'] - 1)."\", \"pbt".($_REQUEST['p'] - 1)."\")' onmouseout='pageBlock(0, \"pb".($_REQUEST['p'] - 1)."\", \"pbt".($_REQUEST['p'] - 1)."\")'><span class='goodStyleRed' id='pbt".($_REQUEST['p'] - 1)."'>".($_REQUEST['p'] - 1)."</span></div></a>
+													<div class='pageNumberBlockActive'><span class='goodStyleWhite'>".$_REQUEST['p']."</span></div>
+													<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div id='pb".($_REQUEST['p'] + 1)."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".($_REQUEST['p'] + 1)."\", \"pbt".($_REQUEST['p'] + 1)."\")' onmouseout='pageBlock(0, \"pb".($_REQUEST['p'] + 1)."\", \"pbt".($_REQUEST['p'] + 1)."\")'><span class='goodStyleRed' id='pbt".($_REQUEST['p'] + 1)."'>".($_REQUEST['p'] + 1)."</span></div></a>
+													<div class='pageNumberBlock' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>
+													<a href='".$link.$numbers."' class='noBorder'><div id='pb".$numbers."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$numbers."\", \"pbt".$numbers."\")' onmouseout='pageBlock(0, \"pb".$numbers."\", \"pbt".$numbers."\")'><span class='goodStyleRed' id='pbt".$numbers."'>".$numbers."</span></div></a>
+													<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>
+												</div>
+											";
+										} else {
+											echo "
+												<br /><br />
+												<div id='pageNumbers'>
+													<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev'>Предыдущая</span></div></a>
+													<a href='".$link."1' class='noBorder'><div id='pb1' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1\", \"pbt1\")' onmouseout='pageBlock(0, \"pb1\", \"pbt1\")'><span class='goodStyleRed' id='pbt1'>1</span></div></a>
+													<div class='pageNumberBlock' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>
+											";
+
+											for($i = ($numbers - 4); $i <= $numbers; $i++) {
+												if($_REQUEST['p'] != $i) {
+													echo "<a href='".$link.$i."' class='noBorder'>";
+												}
+
+												echo "<div id='pb".$i."' "; if($i == $_REQUEST['p']) {echo "class='pageNumberBlockActive'";} else {echo "class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$i."\", \"pbt".$i."\")' onmouseout='pageBlock(0, \"pb".$i."\", \"pbt".$i."\")'";} echo "><span "; if($i == $_REQUEST['p']) {echo "class='goodStyleWhite'";} else {echo "class='goodStyleRed' id='pbt".$i."'";} echo ">".$i."</span></div>";
+
+												if($_REQUEST['p'] != $i) {
+													echo "</a>";
+												}
+											}
+
+											if($_REQUEST['p'] == $numbers) {
+												echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
+											} else {
+												echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>";
+											}
+										}
+									}
+								}
+							}
+
+							echo "</div><div style='clear: both;'></div>";
+						} else {
+
+						}
 						break;
 					default: break;
 				}
@@ -338,6 +557,19 @@ if(isset($_SESSION['userID'])) {
 			}
 
 		?>
+	</div>
+
+	<div style="clear: both;"></div>
+	<div id="space"></div>
+
+    <div id="footerShadow"></div>
+    <div id="footer">
+		<div class="container">
+			<div class="copy">&copy; ЧТУП &laquo;Аргос-ФМ&raquo;<br />2008 - <?php echo date('Y'); ?></div>
+			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="../contacts.php?page=main">Контактная информация</a></div>
+			<div class="copy" style="float: right;">Разработка сайта<br /><a href="http://airlab.by/">airlab</a></div>
+		</div>
+		<div style="clear: both;"></div>
 	</div>
 
 </body>

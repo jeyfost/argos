@@ -23,16 +23,6 @@ function subcategoryStyle(action, id) {
 	}
 }
 
-function pageBlock(action, block, text) {
-	if(action == 1) {
-		document.getElementById(block).style.backgroundColor = "#df4e47";
-		document.getElementById(text).style.color = "#fff";
-	} else {
-		document.getElementById(block).style.backgroundColor = "#fff";
-		document.getElementById(text).style.color = "#df4e47";
-	}
-}
-
 function addToBasket(good_id, input, response_field) {
 	var quantity = parseInt(document.getElementById(input).value);
 
