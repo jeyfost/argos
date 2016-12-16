@@ -249,3 +249,90 @@ function editUserPassword() {
 		}
 	}
 }
+
+function setRates(ids) {
+	var response_field = $('#goodResponseFiled');
+
+	$.ajax({
+		type: "POST",
+		url: "../scripts/personal/ajaxSelectCurrency.php",
+		success: function(response) {
+			var ids = response.split(',');
+			var form = document.forms.currencyForm;
+			var values = "";
+
+			for(var i = 0; i < ids.length; i++) {
+				values += form.elements[i].value + ';';
+			}
+
+			values = values.substr(0, parseInt(values.length - 1));
+
+			$.ajax({
+				type: "POST",
+				data: {"values": values, "ids": response},
+				url: "../scripts/personal/ajaxSetRates.php",
+				success: function(result) {
+					switch(result) {
+						case "a":
+							if(response_field.css('opacity') == 1) {
+								response_field.css('opacity', '0');
+								setTimeout(function() {
+									response_field.css('color', '#53acff');
+									response_field.html('Курсы были успешно установлены.<br /><br />');
+									response_field.css('opacity', '1');
+								}, 300);
+							} else {
+								response_field.css('color', '#53acff');
+								response_field.html('Курсы были успешно установлены.<br /><br />');
+								response_field.css('opacity', '1');
+							}
+							break;
+						case "b":
+							if(response_field.css('opacity') == 1) {
+								response_field.css('opacity', '0');
+								setTimeout(function() {
+									response_field.css('color', '#df4e47');
+									response_field.html('Произошла ошибка. Не все курсы были установлены.<br /><br />');
+									response_field.css('opacity', '1');
+								}, 300);
+							} else {
+								response_field.css('color', '#df4e47');
+								response_field.html('Произошла ошибка. Не все курсы были установлены.<br /><br />');
+								response_field.css('opacity', '1');
+							}
+							break;
+						case "c":
+							if(response_field.css('opacity') == 1) {
+								response_field.css('opacity', '0');
+								setTimeout(function() {
+									response_field.css('color', '#df4e47');
+									response_field.html('Неверный формат ввода.<br /><br />');
+									response_field.css('opacity', '1');
+								}, 300);
+							} else {
+								response_field.css('color', '#df4e47');
+								response_field.html('Неверный формат ввода.<br /><br />');
+								response_field.css('opacity', '1');
+							}
+							break;
+						case "d":
+							if(response_field.css('opacity') == 1) {
+								response_field.css('opacity', '0');
+								setTimeout(function() {
+									response_field.css('color', '#df4e47');
+									response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
+									response_field.css('opacity', '1');
+								}, 300);
+							} else {
+								response_field.css('color', '#df4e47');
+								response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
+								response_field.css('opacity', '1');
+							}
+							break;
+						default: break;
+					}
+				}
+			});
+		}
+	});
+}

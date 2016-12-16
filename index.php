@@ -56,6 +56,7 @@ if(isset($_SESSION['userID'])) {
     <link rel='shortcut icon' href='img/icons/favicon.ico' type='image/x-icon'>
 	<link rel='icon' href='img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='css/style.css'>
+	<link rel="stylesheet" type="text/css" href="js/lightview/css/lightview/lightview.css" />
     <?php
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== false) {
 			echo "<link rel='stylesheet' media='screen' type='text/css' href='css/styleOpera.css'>";
@@ -65,6 +66,11 @@ if(isset($_SESSION['userID'])) {
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+	<!--[if lt IE 9]>
+  		<script type="text/javascript" src="js/lightview/js/excanvas/excanvas.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="js/lightview/js/spinners/spinners.min.js"></script>
+	<script type="text/javascript" src="js/lightview/js/lightview/lightview.js"></script>
     <?php
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== false) {
 			echo "<script type='text/javascript' src='js/indexOpera.js'></script>";
@@ -95,11 +101,54 @@ if(isset($_SESSION['userID'])) {
             <a href="index.php"><img src="img/system/logo.png" id="logo" /></a>
 			<div id="personalButtons">
 				<?php
-					if(empty($_SESSION['userID'])) {
-						echo "<a href='personal/login.php'><img src='img/system/login.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon(\"loginIMG\", \"loginRed.png\", 0)' onmouseout='changeIcon(\"loginIMG\", \"login.png\", 0)' /></a>";
+					if(isset($_SESSION['userID'])) {
+						echo "
+							<div class='headerIcon'>
+								<a href='scripts/personal/logout.php'><img src='img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon(\"exitIMG\", \"exitRed.png\", 0)' onmouseout='changeIcon(\"exitIMG\", \"exit.png\", 0)' /></a>
+							</div>
+							<div class='headerIcon'>
+								<a href='personal/personal.php?section=1'><img src='img/system/personal.png' title='Личный кабинет' id='personalIMG' onmouseover='changeIcon(\"personalIMG\", \"personalRed.png\", 0)' onmouseout='changeIcon(\"personalIMG\", \"personal.png\", 0)' /></a>
+							</div>
+						";
+						if($_SESSION['userID'] == 1) {
+							echo "
+								<div class='headerIcon'>
+									<a href='personal/orders.php'><img src='img/system/basketFull.png' title='Заявки' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)' /></a>
+								</div>
+							";
+						} else {
+							$basketQuantityResult = $mysqli->query("SELECT COUNT(id) FROM basket WHERE user_id = '".$_SESSION['userID']."'");
+							$basketQuantity = $basketQuantityResult->fetch_array(MYSQLI_NUM);
+
+							if($basketQuantity[0] > 0) {
+								echo "
+									<div class='headerIcon' id='basketIcon'>
+										<a href='personal/basket.php' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
+									</div>
+								";
+							} else {
+								echo "
+									<div class='headerIcon' id='basketIcon'>
+										<a href='personal/basket.php'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)' /></a>
+									</div>
+								";
+							}
+						}
 					} else {
-						echo "<a href='scripts/personal/logout.php'><img src='img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon(\"exitIMG\", \"exitRed.png\", 0)' onmouseout='changeIcon(\"exitIMG\", \"exit.png\", 0)' /></a>";
+						echo "
+							<div class='headerIcon'>
+								<a href='personal/login.php'><img src='img/system/login.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon(\"loginIMG\", \"loginRed.png\", 0)' onmouseout='changeIcon(\"loginIMG\", \"login.png\", 0)' /></a>
+							</div>
+						";
 					}
+					echo "
+						<div id='searchBlock'>
+							<form method='post'>
+								<input type='text' id='searchFieldInput' name=searchField' value='Поиск...' />
+							</form>
+						</div>
+					";
+					echo "<div style='clear: both;'></div>";
 				?>
 			</div>
             <div id="menuLinks">
@@ -152,6 +201,7 @@ if(isset($_SESSION['userID'])) {
     <div id="menuShadow"></div>
 
     <div id="mainImg">
+		<div id="searchList"></div>
         <div class="mainImgContainer" id="mic1"><img src="img/system/main1.jpg" id="mainImg1" /></div>
         <div class="mainImgContainer" id="mic2"><img src="img/system/main2.jpg" id="mainImg2" /></div>
         <div class="mainImgContainer" id="mic3"><img src="img/system/main3.jpg" id="mainImg3" /></div>

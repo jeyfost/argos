@@ -7,7 +7,9 @@ if(!isset($_SESSION['userID'])) {
 }
 
 if($_SESSION['userID'] == 1) {
-
+	if($_REQUEST['section'] != 1 and $_REQUEST['section'] != 2) {
+		header("Location: personal.php?section=1");
+	}
 } else {
 	if($_REQUEST['section'] != 1 and $_REQUEST['section'] != 2 and $_REQUEST['section'] != 3) {
 		header("Location: personal.php?section=1");
@@ -180,7 +182,7 @@ if(isset($_SESSION['userID'])) {
     <div id="menuShadow"></div>
 
 	<div id="page">
-		<div id='searchList'></div>
+		<div id="searchList"></div>
 
 		<h1 style='margin-top: 80px;'><?php if($_SESSION['userID'] == 1) {echo "Управление сайтом";} else {echo "Личный кабинет";} ?></h1>
 		<div id='breadCrumbs'>
@@ -188,7 +190,13 @@ if(isset($_SESSION['userID'])) {
 			<?php
 				if($_SESSION['userID'] == 1) {
 					switch($_REQUEST['section']) {
-
+						case 1:
+							echo "<a href='personal.php?section=1'><span class='breadCrumbsText'>Установка курсов валют</span></a>";
+							break;
+						case 2:
+							echo "<a href='personal.php?section=2'><span class='breadCrumbsText'>Управление пользователями</span></a>";
+							break;
+						default: break;
 					}
 				} else {
 					switch($_REQUEST['section']) {
@@ -209,8 +217,39 @@ if(isset($_SESSION['userID'])) {
 
 		<?php
 			if($_SESSION['userID'] == 1) {
-				switch($_REQUEST['section']) {
+				echo "
+					<div id='personalMenu'>
+						<a href='personal.php?section=1'><div "; if($_REQUEST['section'] == 1) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb1' onmouseover='buttonChange(\"pb1\", 1)' onmouseout='buttonChange(\"pb1\", 0)'";} echo ">Курсы валют</div></a>
+						<div style='width: 100%; height: 5px;'></div>
+						<a href='personal.php?section=2'><div "; if($_REQUEST['section'] == 2) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb2' onmouseover='buttonChange(\"pb2\", 1)' onmouseout='buttonChange(\"pb2\", 0)'";} echo ">Управление пользователями</div></a>
+					</div>
+					<div id='personalContent'>
+						<div id='goodResponseFiled'></div>
+				";
 
+				switch($_REQUEST['section']) {
+					case 1:
+						echo "<form method='post' name='currencyForm'>";
+
+						$currencyResult = $mysqli->query("SELECT * FROM currency");
+						while($currency = $currencyResult->fetch_assoc()) {
+							echo "
+								<label for='currencyInput".$currency['id']."'>1 ".$currency['currency_name'].":</label>
+								<br />
+								<input type='number' min='0.00001' step='0.00001' id='currencyInput".$currency['id']."' value='".$currency['rate']."' />
+								<br /><br />
+							";
+						}
+
+						echo "
+									<input type='button' value='Установить' id='personalSubmit' onmouseover='buttonChange(\"personalSubmit\", 1)' onmouseout='buttonChange(\"personalSubmit\", 0)' onclick='setRates()' />
+								</form>
+							</div>
+						";
+						break;
+					case 2:
+						break;
+					default: break;
 				}
 			} else {
 				echo "
