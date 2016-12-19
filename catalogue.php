@@ -413,11 +413,17 @@ if(isset($_SESSION['userID'])) {
 				$currency = $currencyResult->fetch_assoc();
 
 				$price = $catalogue['price'] * $currency['rate'];
+				if(isset($_SESSION['userID'])) {
+					$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
+					$discount = $discountResult->fetch_array(MYSQLI_NUM);
+
+					$price = $price - $price * ($discount[0] / 100);
+				}
+
 				$price = round($price, 2, PHP_ROUND_HALF_UP);
 
 				$roubles = floor($price);
 				$kopeck = ($price - $roubles) * 100;
-
 
 				echo "
 					<div class='catalogueItem'>
@@ -443,11 +449,11 @@ if(isset($_SESSION['userID'])) {
 					}
 				}
 				echo "
-									<br />
-									<b>Артикул: </b>".$catalogue['code']."
-									<br />
-									<div id='goodPrice".$catalogue['id']."'>
-										<span"; if($_SESSION['userID'] == 1) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['short_name'].": </b>"; if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>
+					<br />
+					<b>Артикул: </b>".$catalogue['code']."
+					<br />
+					<div id='goodPrice".$catalogue['id']."'>
+						<span"; if($_SESSION['userID'] == 1) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['short_name'].": </b>"; if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>
 				";
 
 				if($catalogue['sketch'] != '') {
@@ -455,11 +461,11 @@ if(isset($_SESSION['userID'])) {
 				}
 
 				echo "
-									</div>
 								</div>
 							</div>
-							<div style='clear: both;'></div>
 						</div>
+						<div style='clear: both;'></div>
+					</div>
 				";
 
 				if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {

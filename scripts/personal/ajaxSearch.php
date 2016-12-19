@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 include("../connect.php");
 
 $query = $mysqli->real_escape_string($_POST['query']);
@@ -16,7 +17,16 @@ if($searchResult->num_rows == 0) {
 		$rateResult = $mysqli->query("SELECT rate FROM currency WHERE id = '".$search['currency']."'");
 		$rate = $rateResult->fetch_array(MYSQLI_NUM);
 
-		$price = round(($search['price'] * $rate[0]), 2, PHP_ROUND_HALF_UP);
+		$price = $search['price'] * $rate[0];
+
+		if(isset($_SESSION['userID'])) {
+			$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
+			$discount = $discountResult->fetch_array(MYSQLI_NUM);
+
+			$price = $price - $price * ($discount[0] / 100);
+		}
+
+		$price = round(($price), 2, PHP_ROUND_HALF_UP);
 		$roubles = floor($price);
 		$kopeck = ($price - $roubles) * 100;
 

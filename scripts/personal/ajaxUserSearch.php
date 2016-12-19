@@ -22,6 +22,7 @@ if($userResult->num_rows == 0) {
 								<td nowrap>Имя</td>
 								<td nowrap>Организация</td>
 								<td nowrap>Должность</td>
+								<td nowrap>Скидка</td>
 								<td nowrap>Дата регистрации</td>
 								<td nowrap>Последний визит</td>
 								<td nowrap>Просмотрено страниц</td>
@@ -33,6 +34,7 @@ if($userResult->num_rows == 0) {
 								<td>".$user['name']."</td>
 								<td>".$user['company']."</td>
 								<td>".$user['position']."</td>
+								<td style='text-align: center;'>".$user['discount']."%</td>
 								<td>".$user['registration_date']."</td>
 								<td>".$user['last_login']."</td>
 								<td style='text-align: center;'>".$user['logins_count']."</td>

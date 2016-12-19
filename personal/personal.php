@@ -322,9 +322,10 @@ if(isset($_SESSION['userID'])) {
 										<td id='td4' onclick='sortBy(\"name\")' title='Сортировать по имени' nowrap>Имя"; if($_SESSION['sort'] == "name") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
 										<td id='td5' onclick='sortBy(\"company\")' title='Сортировать по названию организации' nowrap>Организация"; if($_SESSION['sort'] == "company") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
 										<td id='td6' onclick='sortBy(\"position\")' title='Сортировать по должности' nowrap>Должность"; if($_SESSION['sort'] == "position") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
-										<td id='td7' onclick='sortBy(\"registration_date\")' title='Сортировать по дате регистрации' nowrap>Дата регистрации"; if($_SESSION['sort'] == "registration_date") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
-										<td id='td8' onclick='sortBy(\"last_login\")' title='Сортировать по дате последнего визита' nowrap>Последний визит"; if($_SESSION['sort'] == "last_login") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
-										<td id='td9' onclick='sortBy(\"logins_count\")' title='Сортировать по количеству просмотренных страниц' nowrap>Просмотрено страниц"; if($_SESSION['sort'] == "logins_count") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td id='td7' onclick='sortBy(\"discount\")' title='Сортировать по личной скидке' nowrap>Скидка"; if($_SESSION['sort'] == "discount") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td id='td8' onclick='sortBy(\"registration_date\")' title='Сортировать по дате регистрации' nowrap>Дата регистрации"; if($_SESSION['sort'] == "registration_date") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td id='td9' onclick='sortBy(\"last_login\")' title='Сортировать по дате последнего визита' nowrap>Последний визит"; if($_SESSION['sort'] == "last_login") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td id='td10' onclick='sortBy(\"logins_count\")' title='Сортировать по количеству просмотренных страниц' nowrap>Просмотрено страниц"; if($_SESSION['sort'] == "logins_count") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
 										<td style='cursor: default;'>Редактирование</td>
 									</tr>
 							";
@@ -340,6 +341,7 @@ if(isset($_SESSION['userID'])) {
 										<td>".$users['name']."</td>
 										<td>".$users['company']."</td>
 										<td>".$users['position']."</td>
+										<td style='text-align: center;'>".$users['discount']."%</td>
 										<td>".$users['registration_date']."</td>
 										<td>".$users['last_login']."</td>
 										<td style='text-align: center;'>".$users['logins_count']."</td>
@@ -465,7 +467,7 @@ if(isset($_SESSION['userID'])) {
 
 							echo "</div><div style='clear: both;'></div>";
 						} else {
-
+							//редактирование данных пользователя
 						}
 						break;
 					default: break;
@@ -505,6 +507,10 @@ if(isset($_SESSION['userID'])) {
 								<label for='personalPhoneInput'>Номер телефона:</label>
 								<br />
 								<input type='text' id='personalPhoneInput' name='personalPhone' value='".$personal['phone']."' />
+								<br /><br />
+								<label>Ваша личная скидка на все товары:</label>
+								<br />
+								<input type='text' value='".$personal['discount']."%' readonly style='background-color: #ddd; border: none;'>
 								<br /><br />
 								<input type='button' value='Редактиовать' id='personalSubmit' onmouseover='buttonChange(\"personalSubmit\", 1)' onmouseout='buttonChange(\"personalSubmit\", 0)' onclick='editUserInfo()' />
 							</form>
