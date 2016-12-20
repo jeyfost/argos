@@ -35,24 +35,31 @@ if($_SESSION['userID'] == 1) {
 			if(empty($_REQUEST['p'])) {
 				header("Location: personal.php?section=2&p=1");
 			} else {
-				$quantityResult = $mysqli->query("SELECT COUNT(id) FROM users WHERE id <> '1' AND activated = '1'");
-				$quantity = $quantityResult->fetch_array(MYSQLI_NUM);
+				if(empty($_REQUEST['user'])) {
+					$quantityResult = $mysqli->query("SELECT COUNT(id) FROM users WHERE id <> '1' AND activated = '1'");
+					$quantity = $quantityResult->fetch_array(MYSQLI_NUM);
 
-				if($quantity[0] > 10) {
-					if($quantity[0] % 10 != 0) {
-						$numbers = intval(($quantity[0] / 10) + 1);
+					if($quantity[0] > 10) {
+						if($quantity[0] % 10 != 0) {
+							$numbers = intval(($quantity[0] / 10) + 1);
+						} else {
+							$numbers = intval($quantity[0] / 10);
+						}
 					} else {
-						$numbers = intval($quantity[0] / 10);
+						$numbers = 1;
+					}
+
+					$page = $mysqli->real_escape_string($_REQUEST['p']);
+					$start = $page * 10 - 10;
+
+					if($page > $numbers or $page <= 0) {
+						header("Location: personal.php?section=2&p=1");
 					}
 				} else {
-					$numbers = 1;
-				}
-
-				$page = $mysqli->real_escape_string($_REQUEST['p']);
-				$start = $page * 10 - 10;
-
-				if($page > $numbers or $page <= 0) {
-					header("Location: personal.php?section=2&p=1");
+					$userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$mysqli->real_escape_string($_REQUEST['user'])."'");
+					if($userResult->num_rows == 0) {
+						header("Location: personal.php?section=2&p=1");
+					}
 				}
 			}
 		}
@@ -236,6 +243,9 @@ if(isset($_SESSION['userID'])) {
 							break;
 						case 2:
 							echo "<a href='personal.php?section=2&p=1'><span class='breadCrumbsText'>Управление пользователями</span></a>";
+							if(!empty($_REQUEST['user'])) {
+								echo " > <a href='personal.php?section=2&user=".$_REQUEST['user']."'><span class='breadCrumbsText'>Редактирование данных пользователя</span></a>";
+							}
 							break;
 						default: break;
 					}
@@ -467,7 +477,47 @@ if(isset($_SESSION['userID'])) {
 
 							echo "</div><div style='clear: both;'></div>";
 						} else {
-							//редактирование данных пользователя
+							$userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$mysqli->real_escape_string($_REQUEST['user'])."'");
+							$user = $userResult->fetch_assoc();
+
+							echo "
+								<form method='post'>
+									<label for='userLoginInput'>Логин:</label>
+									<br />
+									<input type='text' id='userLoginInput' value='".$user['login']."' />
+									<br /><br />
+									<label for='userPasswordInput'>Пароль:</label>
+									<br />
+									<input type='password' id='userPasswordInput' value='' />
+									<br /><br />
+									<label for='userEmailInput'>Email:</label>
+									<br />
+									<input type='text' id='userEmailInput' value='".$user['email']."' />
+									<br /><br />
+									<label for='userCompanyInput'>Название компании:</label>
+									<br />
+									<input type='text' id='userCompanyInput' value='".$user['company']."' />
+									<br /><br />
+									<label for='userNameInput'>Контактное лицо:</label>
+									<br />
+									<input type='text' id='userNameInput' value='".$user['name']."' />
+									<br /><br />
+									<label for='userPositionInput'>Должность:</label>
+									<br />
+									<input type='text' id='userPositionInput' value='".$user['position']."' />
+									<br /><br />
+									<label for='userPhoneInput'>Номер телефона:</label>
+									<br />
+									<input type='text' id='userPhoneInput' value='".$user['phone']."' />
+									<br /><br />
+									<label for='userDiscountInput'>Скидка в %:</label>
+									<br />
+									<input type='number' id='userDiscountInput' min='0.01' max='99.99' step='0.01' value='".$user['discount']."' />
+									<br /><br />
+									<div id='responseFiled'></div>
+									<input type='button' value='Редактировать' id='personalSubmit' onmouseover='buttonChange(\"personalSubmit\", 1)' onmouseout='buttonChange(\"personalSubmit\", 0)' onclick='adminEditUser(\"".$_REQUEST['user']."\")' />
+								</form>
+							";
 						}
 						break;
 					default: break;
@@ -512,7 +562,7 @@ if(isset($_SESSION['userID'])) {
 								<br />
 								<input type='text' value='".$personal['discount']."%' readonly style='background-color: #ddd; border: none;'>
 								<br /><br />
-								<input type='button' value='Редактиовать' id='personalSubmit' onmouseover='buttonChange(\"personalSubmit\", 1)' onmouseout='buttonChange(\"personalSubmit\", 0)' onclick='editUserInfo()' />
+								<input type='button' value='Редактировать' id='personalSubmit' onmouseover='buttonChange(\"personalSubmit\", 1)' onmouseout='buttonChange(\"personalSubmit\", 0)' onclick='editUserInfo()' />
 							</form>
 						";
 						break;
@@ -536,7 +586,7 @@ if(isset($_SESSION['userID'])) {
 								<br />
 								<input type='text' id='personalEmailInput' value='".$personal['email']."' />
 								<br /><br />
-								<input type='button' value='Редактиовать' id='personalSubmit' onmouseover='buttonChange(\"personalSubmit\", 1)' onmouseout='buttonChange(\"personalSubmit\", 0)' onclick='editUserEmail()' />
+								<input type='button' value='Редактировать' id='personalSubmit' onmouseover='buttonChange(\"personalSubmit\", 1)' onmouseout='buttonChange(\"personalSubmit\", 0)' onclick='editUserEmail()' />
 							</form>
 						";
 						break;

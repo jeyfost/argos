@@ -39,6 +39,199 @@ $(window).on('load', function() {
 	});
 });
 
+function adminEditUser(id) {
+	var login = $('#userLoginInput').val();
+	var email = $('#userEmailInput').val();
+	var password = $('#userPasswordInput').val();
+	var company = $('#userCompanyInput').val();
+	var name = $('#userNameInput').val();
+	var position = $('#userPositionInput').val();
+	var phone = $('#userPhoneInput').val();
+	var discount = $('#userDiscountInput').val();
+	var response_field = $('#responseFiled');
+
+	if(login != '' && email != '' && name != '' && phone != '' && discount != '') {
+		if(discount > 0 && discount < 100) {
+			$.ajax({
+				type: "POST",
+				data: {
+					"id": id,
+					"login": login,
+					"email": email,
+					"password": password,
+					"company": company,
+					"name": name,
+					"position": position,
+					"phone": phone,
+					"discount": discount
+				},
+				url: "../scripts/personal/ajaxAdminEditUser.php",
+				success: function(response) {
+					switch(response) {
+						case "email":
+							if(response_field.css('opacity') == 1) {
+								response_field.css('opacity', '0');
+								setTimeout(function() {
+									response_field.css('color', '#df4e47');
+									response_field.html('Вы ввели email неверного формата.<br /><br />');
+									response_field.css('opacity', '1');
+								}, 300);
+							} else {
+								response_field.css('color', '#df4e47');
+								response_field.html('Вы ввели email неверного формата.<br /><br />');
+								response_field.css('opacity', '1');
+							}
+							break;
+						case "emailDuplicate":
+							if(response_field.css('opacity') == 1) {
+								response_field.css('opacity', '0');
+								setTimeout(function() {
+									response_field.css('color', '#df4e47');
+									response_field.html('Введённый вами email уже существует.<br /><br />');
+									response_field.css('opacity', '1');
+								}, 300);
+							} else {
+								response_field.css('color', '#df4e47');
+								response_field.html('Введённый вами email уже существует.<br /><br />');
+								response_field.css('opacity', '1');
+							}
+							break;
+						case "emailFailed":
+							if(response_field.css('opacity') == 1) {
+								response_field.css('opacity', '0');
+								setTimeout(function() {
+									response_field.css('color', '#df4e47');
+									response_field.html('При изменении email-адреса произошла ошибка. Попробуйте снова.<br /><br />');
+									response_field.css('opacity', '1');
+								}, 300);
+							} else {
+								response_field.css('color', '#df4e47');
+								response_field.html('При изменении email-адреса произошла ошибка. Попробуйте снова.<br /><br />');
+								response_field.css('opacity', '1');
+							}
+							break;
+						case "ok":
+							if(response_field.css('opacity') == 1) {
+								response_field.css('opacity', '0');
+								setTimeout(function() {
+									response_field.css('color', '#53acff');
+									response_field.html('Изменения были успешно сохранены.<br /><br />');
+									response_field.css('opacity', '1');
+								}, 300);
+							} else {
+								response_field.css('color', '#53acff');
+								response_field.html('Изменения были успешно сохранены.<br /><br />');
+								response_field.css('opacity', '1');
+							}
+							break;
+						case "no":
+							if(response_field.css('opacity') == 1) {
+								response_field.css('opacity', '0');
+								setTimeout(function() {
+									response_field.css('color', '#df4e47');
+									response_field.html('Не было зафиксировано ни одного изменения.<br /><br />');
+									response_field.css('opacity', '1');
+								}, 300);
+							} else {
+								response_field.css('color', '#df4e47');
+								response_field.html('Не было зафиксировано ни одного изменения.<br /><br />');
+								response_field.css('opacity', '1');
+							}
+							break;
+						case "loginFailed":
+							if(response_field.css('opacity') == 1) {
+								response_field.css('opacity', '0');
+								setTimeout(function() {
+									response_field.css('color', '#df4e47');
+									response_field.html('При изменении логина произошла ошибка. Попробуйте снова.<br /><br />');
+									response_field.css('opacity', '1');
+								}, 300);
+							} else {
+								response_field.css('color', '#df4e47');
+								response_field.html('При изменении логина произошла ошибка. Попробуйте снова.<br /><br />');
+								response_field.css('opacity', '1');
+							}
+							break;
+						case "loginDuplicate":
+							if(response_field.css('opacity') == 1) {
+								response_field.css('opacity', '0');
+								setTimeout(function() {
+									response_field.css('color', '#df4e47');
+									response_field.html('Введённый вами логин уже существует.<br /><br />');
+									response_field.css('opacity', '1');
+								}, 300);
+							} else {
+								response_field.css('color', '#df4e47');
+								response_field.html('Введённый вами логин уже существует.<br /><br />');
+								response_field.css('opacity', '1');
+							}
+							break;
+						case "passwordFailed":
+							if(response_field.css('opacity') == 1) {
+								response_field.css('opacity', '0');
+								setTimeout(function() {
+									response_field.css('color', '#df4e47');
+									response_field.html('При изменении пароля произошла ошибка. Попробуйте снова.<br /><br />');
+									response_field.css('opacity', '1');
+								}, 300);
+							} else {
+								response_field.css('color', '#df4e47');
+								response_field.html('При изменении пароля произошла ошибка. Попробуйте снова.<br /><br />');
+								response_field.css('opacity', '1');
+							}
+							break;
+						case "failed":
+							if(response_field.css('opacity') == 1) {
+								response_field.css('opacity', '0');
+								setTimeout(function() {
+									response_field.css('color', '#df4e47');
+									response_field.html('При редактировании основной информации произошла ошибка. Попробуйте снова.<br /><br />');
+									response_field.css('opacity', '1');
+								}, 300);
+							} else {
+								response_field.css('color', '#df4e47');
+								response_field.html('При редактировании основной информации произошла ошибка. Попробуйте снова.<br /><br />');
+								response_field.css('opacity', '1');
+							}
+							break;
+						default:
+							response_field.css('color', '#df4e47');
+							response_field.html(response + '<br /><br />');
+							response_field.css('opacity', '1');
+							break;
+					}
+				}
+			});
+		} else {
+			if(response_field.css('opacity') == 1) {
+				response_field.css('opacity', '0');
+				setTimeout(function() {
+					response_field.css('color', '#df4e47');
+					response_field.html('Размер скидки должен составлять от 0.01% до 99.99%.<br /><br />');
+					response_field.css('opacity', '1');
+				}, 300);
+			} else {
+				response_field.css('color', '#df4e47');
+				response_field.html('Размер скидки должен составлять от 0.01% до 99.99%.<br /><br />');
+				response_field.css('opacity', '1');
+			}
+		}
+	} else {
+		if(response_field.css('opacity') == 1) {
+			response_field.css('opacity', '0');
+			setTimeout(function() {
+				response_field.css('color', '#df4e47');
+				response_field.html('Необходимо заполнить поля "Логин", "Email", "Контактное лицо", "Номер телефона", "Скидка в %".<br /><br />');
+				response_field.css('opacity', '1');
+			}, 300);
+		} else {
+			response_field.css('color', '#df4e47');
+			response_field.html('Необходимо заполнить поля "Логин", "Email", "Контактное лицо", "Номер телефона", "Скидка в %".<br /><br />');
+			response_field.css('opacity', '1');
+		}
+	}
+}
+
 function editUserInfo() {
 	var company = $('#personalCompanyInput').val();
 	var name = $('#personalNameInput').val();
