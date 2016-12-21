@@ -3,6 +3,24 @@
 session_start();
 include("scripts/connect.php");
 
+if(empty($_REQUEST['type'])) {
+	header("Location: catalogue.php?type=fa&p=1");
+} else {
+	$typeResult = $mysqli->query("SELECT * FROM types WHERE catalogue_type = '".$mysqli->real_escape_string($_REQUEST['type'])."'");
+
+	if($typeResult->num_rows == 0) {
+		header("Location: catalogue.php?type=fa&p=1");
+	}
+}
+
+if(empty($_REQUEST['p'])) {
+	if(!empty($_REQUEST['type'])) {
+		header("Location: ".$_SERVER['REQUEST_URI']."&p=1");
+	} else {
+		header("Location: catalogue.php?type=fa&p=1");
+	}
+}
+
 if(isset($_SESSION['userID'])) {
 	if(isset($_COOKIE['argosfm_login']) and isset($_COOKIE['argosfm_password'])) {
 		setcookie("argosfm_login", "", 0, '/');
@@ -30,15 +48,6 @@ if(isset($_SESSION['userID'])) {
 	}
 }
 
-if(empty($_REQUEST['type'])) {
-	header("Location: catalogue.php?type=fa&p=1");
-} else {
-	$typeResult = $mysqli->query("SELECT * FROM types WHERE catalogue_type = '".$mysqli->real_escape_string($_REQUEST['type'])."'");
-
-	if($typeResult->num_rows == 0) {
-		header("Location: catalogue.php?type=fa&p=1");
-	}
-}
 
 if(!empty($_REQUEST['c'])) {
 	$cResult = $mysqli->query("SELECT * FROM categories_new WHERE id = '".$mysqli->real_escape_string($_REQUEST['c'])."'");
@@ -82,10 +91,6 @@ if(!empty($_REQUEST['s2'])) {
 			header("Location: catalogue.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&c=".$mysqli->real_escape_string($_REQUEST['c'])."&s=".$mysqli->real_escape_string($_REQUEST['s'])."&p=1");
 		}
 	}
-}
-
-if(empty($_REQUEST['p'])) {
-	header("Location: ".$_SERVER['REQUEST_URI']."&p=1");
 }
 
 if(!empty($_REQUEST['s2'])) {
@@ -224,7 +229,7 @@ if(isset($_SESSION['userID'])) {
 							} else {
 								echo "
 									<div class='headerIcon' id='basketIcon'>
-										<a href='personal/basket.php'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)' /></a>
+										<a href='personal/basket.php?section=1'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)' /></a>
 									</div>
 								";
 							}

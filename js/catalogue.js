@@ -23,6 +23,16 @@ function subcategoryStyle(action, id) {
 	}
 }
 
+function pageBlock(action, block, text) {
+	if(action == 1) {
+		document.getElementById(block).style.backgroundColor = "#df4e47";
+		document.getElementById(text).style.color = "#fff";
+	} else {
+		document.getElementById(block).style.backgroundColor = "#fff";
+		document.getElementById(text).style.color = "#df4e47";
+	}
+}
+
 function addToBasket(good_id, input, response_field) {
 	var quantity = parseInt(document.getElementById(input).value);
 
@@ -38,9 +48,9 @@ function addToBasket(good_id, input, response_field) {
 					url: 'scripts/catalogue/ajaxCheckBasket.php',
 					success: function(result) {
 						if (result == "a") {
-							$('#basketIcon').html("<a href='scripts/personal/basket.php' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: 1' id='basketIMG' /><div id='basketLabel'>1</div></a>");
+							$('#basketIcon').html("<a href='personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: 1' id='basketIMG' /><div id='basketLabel'>1</div></a>");
 						} else {
-							$('#basketLabel').html(result);
+							$('#basketIcon').html("<a href='personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: " + result + "' id='basketIMG' /><div id='basketLabel'>" + result + "</div></a>");
 						}
 					}
 				});

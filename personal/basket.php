@@ -10,6 +10,14 @@ if(!isset($_SESSION['userID'])) {
 	}
 }
 
+if(empty($_REQUEST['section'])) {
+	header("Location: basket.php?section=1");
+} else {
+	if($_REQUEST['section'] != 1 and $_REQUEST['section'] != 2) {
+		header("Location: basket.php?section=1");
+	}
+}
+
 include("../scripts/connect.php");
 
 if(isset($_SESSION['userID'])) {
@@ -59,6 +67,7 @@ if(isset($_SESSION['userID'])) {
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="../js/menu1.js"></script>
 	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/basket.js"></script>
 	<!--[if lt IE 9]>
   		<script type="text/javascript" src="../js/lightview/js/excanvas/excanvas.js"></script>
 	<![endif]-->
@@ -114,7 +123,7 @@ if(isset($_SESSION['userID'])) {
 						} else {
 							echo "
 								<div class='headerIcon' id='basketIcon'>
-									<a href='basket.php'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
+									<a href='basket.php?section=1'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
 								</div>
 							";
 						}
@@ -176,6 +185,160 @@ if(isset($_SESSION['userID'])) {
 
 	<div id="page">
 		<div id="searchList"></div>
+		<h1 style='margin-top: 80px;'><?php if($_SESSION['userID'] == 1) {echo "Заявки";} else {echo "Корзина";} ?></h1>
+		<div id='breadCrumbs'>
+			<a href='../index.php'><span class='breadCrumbsText'>Главная</span></a> > <?php if($_SESSION['userID'] == 1) {echo "<a href='basket.php?section=1'><span class='breadCrumbsText'>Оформление онлайн-заявок</span></a>";} else {echo "<a href='basket.php?section=1'><span class='breadCrumbsText'>Заказы</span></a> >";} ?>
+			<?php
+				switch($_REQUEST['section']) {
+					case 1:
+						echo "<a href='basket.php?section=1'><span class='breadCrumbsText'>Корзина</span></a>";
+						break;
+					case 2:
+						echo "<a href='basket.php?section=2&p=1'><span class='breadCrumbsText'>История заказов</span></a>";
+						break;
+					default: break;
+				}
+			?>
+		</div>
+
+		<?php
+			echo "
+				<div id='personalMenu'>
+					<a href='basket.php?section=1'><div "; if($_REQUEST['section'] == 1) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb1' onmouseover='buttonChange(\"pb1\", 1)' onmouseout='buttonChange(\"pb1\", 0)'";} echo ">Корзина</div></a>
+					<div style='width: 100%; height: 5px;'></div>
+					<a href='basket.php?section=2'><div "; if($_REQUEST['section'] == 2) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb2' onmouseover='buttonChange(\"pb2\", 1)' onmouseout='buttonChange(\"pb2\", 0)'";} echo ">История заказов</div></a>
+				</div>
+				<div id='personalContent'>
+					<div id='goodResponseFiled'></div>
+			";
+
+			$userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
+			$user = $userResult->fetch_assoc();
+
+			switch($_REQUEST['section']) {
+				case 1:
+					if($basketQuantity[0] == 0) {
+						echo "<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='../catalogue.php?type=fa&p=1' style='color: #df4e47;'>из каталога</a></b>.</span>";
+					} else {
+						echo "<span style='font-size: 15px;'>Всего групп товаров в коризне: <b id='basketQuantityText'>".$basketQuantity[0]."</b></span><br /><br />";
+						$total = 0;
+						$basketResult = $mysqli->query("SELECT * FROM basket WHERE user_id = '".$_SESSION['userID']."' ORDER BY id");
+						while($basket = $basketResult->fetch_assoc()) {
+							$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$basket['good_id']."'");
+							$good = $goodResult->fetch_assoc();
+							$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$good['unit']."'");
+							$unit = $unitResult->fetch_assoc();
+							$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$good['currency']."'");
+							$currency = $currencyResult->fetch_assoc();
+							$price = $good['price'] * $currency['rate'];
+							$total += $price * $basket['quantity'];
+							$price = $price - $price * ($user['discount'] / 100);
+							$price = round($price, 2, PHP_ROUND_HALF_UP);
+							$roubles = floor($price);
+							$kopeck = ($price - $roubles) * 100;
+
+							echo "
+								<div class='catalogueItem' id='ci".$good['id']."'>
+									<div class='itemDescription'>
+										<div class='catalogueIMG'>
+											<a href='../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='../img/catalogue/small/".$good['small']."' /></a>
+										</div>
+										<div class='catalogueInfo'>
+											<div class='catalogueName'>
+												<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
+												<div style='margin-left: 15px;'>".$good['name']."</div>
+												<div style='clear: both;'></div>
+											</div>
+											<div class='catalogueDescription'>
+							";
+							$strings = explode("<br />", $good['description']);
+							for($i = 0; $i < count($strings); $i++) {
+								$string = explode(':', $strings[$i]);
+								if(count($string) > 1) {
+									echo "<b>".$string[0].":</b>".$string[1]."<br />";
+								} else {
+									echo $string[0]."<br />";
+								}
+							}
+							echo "
+								<br />
+								<b>Артикул: </b>".$good['code']."
+								<br />
+								<div id='goodPrice".$good['id']."'>
+									<span><b>Стоимость за ".$unit['short_name'].": </b>"; if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>
+							";
+
+							if($good['sketch'] != '') {
+								echo "<br /><br /><a href='../img/catalogue/sketch/".$good['sketch']."' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
+							}
+
+							echo "
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class='itemPurchase'>
+										<img src='../img/system/delete.png' id='deleteIMG".$good['id']."' style='cursor: pointer; float: right;' title='Убрать товар из корзины' onmouseover='changeIcon(\"deleteIMG".$good['id']."\", \"deleteRed.png\", 1)' onmouseout='changeIcon(\"deleteIMG".$good['id']."\", \"delete.png\", 1)' onclick='removeGood(\"".$good['id']."\")' />
+										<br /><br />
+										<form method='post'>
+											<label for='quantityInput".$good['id']."'>Кол-во в ".$unit['in_name'].":</label>
+											<input type='number' id='quantityInput".$good['id']."' min='1' step='1' value='".$basket['quantity']."' class='itemQuantityInput' />
+										</form>
+										<br />
+										<div class='addingResult' id='addingResult".$good['id']."' onclick='hideBlock(\"addingResult".$good['id']."\")'></div>
+									</div>
+									<div style='clear: both;'></div>
+								</div>
+								<div style='width: 100%; height: 20px;' id='cis".$good['id']."'></div>
+								<div style='width: 100%; height: 1px; background-color: #d7d5d1; margin-top: 10px;' id='cil".$good['id']."'></div>
+								<div style='width: 100%; height: 20px;'></div>
+							";
+						}
+
+						$total = $total - $total * ($user['discount'] / 100);
+						$total = round($total, 2, PHP_ROUND_HALF_UP);
+						$roubles = floor($total);
+						$kopeck = ($total - $roubles) * 100;
+
+						if($roubles == 0) {
+							$total = $kopeck." коп.";
+						} else {
+							$total = $roubles." руб. ".$kopeck." коп.";
+						}
+
+						echo "
+							<br /><br />
+							<div style='float: right;'><b>Общая стоимость: </b><span id='totalPriceText'>".$total."</span></div>
+							<br /><br />
+							<div id='responseField'></div>
+							<form method='post'>
+								<input type='button' value='Оформить заказ' id='basketSubmit' onmouseover='buttonChange(\"basketSubmit\", 1)' onmouseout='buttonChange(\"basketSubmit\", 0)' onclick='sendOrder()' />
+								<input type='button' value='Очистить корзину' id='clearBasketButton' onmouseover='buttonChange(\"clearBasketButton\", 1)' onmouseout='buttonChange(\"clearBasketButton\", 0)' onclick='clearBasket()' />
+							</form>
+						";
+					}
+					break;
+				case 2:
+					echo "222222222";
+					break;
+				default: echo "111111111"; break;
+			}
+		?>
+
+		</div>
+	</div>
+
+	<div style="clear: both;"></div>
+	<div id="space"></div>
+
+    <div id="footerShadow"></div>
+    <div id="footer">
+		<div class="container">
+			<div class="copy">&copy; ЧТУП &laquo;Аргос-ФМ&raquo;<br />2008 - <?php echo date('Y'); ?></div>
+			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="../contacts.php?page=main">Контактная информация</a></div>
+			<div class="copy" style="float: right;">Разработка сайта<br /><a href="http://airlab.by/">airlab</a></div>
+		</div>
+		<div style="clear: both;"></div>
 	</div>
 
 </body>
