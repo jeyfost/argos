@@ -13,7 +13,7 @@ if(!isset($_SESSION['userID'])) {
 if(empty($_REQUEST['section'])) {
 	header("Location: basket.php?section=1");
 } else {
-	if($_REQUEST['section'] != 1 and $_REQUEST['section'] != 2) {
+	if($_REQUEST['section'] != 1 and $_REQUEST['section'] != 2 and $_REQUEST['section'] != 3) {
 		header("Location: basket.php?section=1");
 	}
 }
@@ -53,7 +53,7 @@ if(isset($_SESSION['userID'])) {
 
     <meta charset="utf-8">
 
-    <title><?php if($_SESSION['userID'] == 1) {echo "Активные заявки";} else {echo "Корзина";} ?></title>
+    <title><?php if($_REQUEST['section'] == 1) {echo "Корзина";} if($_REQUEST['section'] == 2) {echo "Активные заявки";} if($_REQUEST['section'] == 3) {echo "история заказов";} ?></title>
 
     <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../css/style.css'>
@@ -194,7 +194,10 @@ if(isset($_SESSION['userID'])) {
 						echo "<a href='basket.php?section=1'><span class='breadCrumbsText'>Корзина</span></a>";
 						break;
 					case 2:
-						echo "<a href='basket.php?section=2&p=1'><span class='breadCrumbsText'>История заказов</span></a>";
+						echo "<a href='basket.php?section=2'><span class='breadCrumbsText'>Активные заявки</span></a>";
+						break;
+					case 3:
+						echo "<a href='basket.php?section=3&p=1'><span class='breadCrumbsText'>История заказов</span></a>";
 						break;
 					default: break;
 				}
@@ -206,7 +209,9 @@ if(isset($_SESSION['userID'])) {
 				<div id='personalMenu'>
 					<a href='basket.php?section=1'><div "; if($_REQUEST['section'] == 1) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb1' onmouseover='buttonChange(\"pb1\", 1)' onmouseout='buttonChange(\"pb1\", 0)'";} echo ">Корзина</div></a>
 					<div style='width: 100%; height: 5px;'></div>
-					<a href='basket.php?section=2'><div "; if($_REQUEST['section'] == 2) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb2' onmouseover='buttonChange(\"pb2\", 1)' onmouseout='buttonChange(\"pb2\", 0)'";} echo ">История заказов</div></a>
+					<a href='basket.php?section=2'><div "; if($_REQUEST['section'] == 2) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb2' onmouseover='buttonChange(\"pb2\", 1)' onmouseout='buttonChange(\"pb2\", 0)'";} echo ">Активные заявки</div></a>
+					<div style='width: 100%; height: 5px;'></div>
+					<a href='basket.php?section=3&p=1'><div "; if($_REQUEST['section'] == 3) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb3' onmouseover='buttonChange(\"pb3\", 1)' onmouseout='buttonChange(\"pb3\", 0)'";} echo ">История заказов</div></a>
 				</div>
 				<div id='personalContent'>
 					<div id='goodResponseFiled'></div>
@@ -282,7 +287,7 @@ if(isset($_SESSION['userID'])) {
 										<br /><br />
 										<form method='post'>
 											<label for='quantityInput".$good['id']."'>Кол-во в ".$unit['in_name'].":</label>
-											<input type='number' id='quantityInput".$good['id']."' min='1' step='1' value='".$basket['quantity']."' class='itemQuantityInput' />
+											<input type='number' id='quantityInput".$good['id']."' min='1' step='1' value='".$basket['quantity']."' class='itemQuantityInput' onkeyup='changeQuantity(\"".$good['id']."\")' onchange='changeQuantity(\"".$good['id']."\")' />
 										</form>
 										<br />
 										<div class='addingResult' id='addingResult".$good['id']."' onclick='hideBlock(\"addingResult".$good['id']."\")'></div>
@@ -298,7 +303,7 @@ if(isset($_SESSION['userID'])) {
 						$total = $total - $total * ($user['discount'] / 100);
 						$total = round($total, 2, PHP_ROUND_HALF_UP);
 						$roubles = floor($total);
-						$kopeck = ($total - $roubles) * 100;
+						$kopeck = ceil(($total - $roubles) * 100);
 
 						if($roubles == 0) {
 							$total = $kopeck." коп.";
@@ -308,6 +313,8 @@ if(isset($_SESSION['userID'])) {
 
 						echo "
 							<br /><br />
+							<div style='float: right;'><b>Ваша личная скидка: </b><span>".$user['discount']."%</span></div>
+							<br />
 							<div style='float: right;'><b>Общая стоимость: </b><span id='totalPriceText'>".$total."</span></div>
 							<br /><br />
 							<div id='responseField'></div>
@@ -319,7 +326,9 @@ if(isset($_SESSION['userID'])) {
 					}
 					break;
 				case 2:
-					echo "222222222";
+					echo "
+
+					";
 					break;
 				default: echo "111111111"; break;
 			}

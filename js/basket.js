@@ -85,7 +85,7 @@ function sendOrder() {
 				$('#basketLabel').html();
 				$('#basketLabel').hide('300');
 				setTimeout(function() {
-					$('#personalContent').html("<span style='font-size: 15px;'><b>Ваш заказ был отправлен менеджерам. Отслеживать статус заказа можно на странице <a href='../personal/basket.php?section=2&p=1' style='color: #df4e47;'>\"История заказов\"</a></b>.<br /><br />Обращаем ваше внимание, что итоговая стоимость явлеятся приблизительной и может изменяться. Точную сумму вам назовут при подтверждении заказа.</span>");
+					$('#personalContent').html("<span style='font-size: 15px;'><b>Ваш заказ был отправлен менеджерам. Отслеживать статус заказа можно на странице <a href='../personal/basket.php?section=2' style='color: #df4e47;'>\"История заказов\"</a></b>.<br /><br />Обращаем ваше внимание, что итоговая стоимость явлеятся приблизительной и может изменяться. Точную сумму вам назовут при подтверждении заказа.</span>");
 					$('#personalContent').show('fast');
 				}, 300);
 			} else {
@@ -104,4 +104,19 @@ function sendOrder() {
 			}
 		}
 	});
+}
+
+function changeQuantity(id) {
+	var input = "quantityInput" + id;
+
+	if($('#' + input).val() != '') {
+		$.ajax({
+			type: "POST",
+			data: {"id": id, "quantity": $('#' + input).val()},
+			url: "../scripts/personal/ajaxChangeQuantity.php",
+			success: function(response) {
+				$('#totalPriceText').html(response);
+			}
+		});
+	}
 }
