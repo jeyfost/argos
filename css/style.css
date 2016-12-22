@@ -20,7 +20,7 @@ td {padding-left: 10px; padding-right: 10px;}
     .catalogueDescription a span, .goodStyleRed {color: #df4e47;}
 
     #menuLinks a:hover, .rightSideBlock ul li a:hover, .mainSmallText:hover {color: #df4e47;}
-    .catalogueDescription a span:hover, .sketchFont:hover, td a:hover, span b a:hover {text-decoration: underline;}
+    .catalogueDescription a span:hover, .sketchFont:hover, td a:hover, span b a:hover, .tdLink:hover {text-decoration: underline;}
     .searchLink .searchItem:hover {background-color: #f3f3f3;}
 
     #menuLinks {float: right; text-align: right; margin-top: 32px; line-height: 24px;}
@@ -88,6 +88,7 @@ td {padding-left: 10px; padding-right: 10px;}
     .sketchFont, td a {font-size: 16px; color: #df4e47; text-decoration: none;}
     .headTR {background-color: #ffeecb; height: 40px; text-align: center;}
     .headTR td {cursor: pointer;}
+    .tdLink {color: #df4e47; cursor: pointer;}
 }
 
 /* home index.php */

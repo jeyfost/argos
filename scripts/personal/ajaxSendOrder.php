@@ -17,7 +17,7 @@ while($basket = $basketResult->fetch_assoc()) {
 	$mysqli->query("INSERT INTO orders (order_id, user_id, good_id, quantity) VALUES (".$id.", ".$_SESSION['userID'].", ".$basket['good_id'].", ".$basket['quantity'].")");
 }
 
-if($mysqli->query("INSERT INTO orders_info (id, summ, send_date, proceed_date, status) VALUES ('".$id."', '0', '".date('d-m-Y H:i:s')."', '', '0')")) {
+if($mysqli->query("INSERT INTO orders_info (id, user_id, summ, send_date, proceed_date, status) VALUES ('".$id."', '".$_SESSION['userID']."', '0', '".date('d-m-Y H:i:s')."', '', '0')")) {
 	if($mysqli->query("DELETE FROM basket WHERE user_id = '".$_SESSION['userID']."'")) {
 		echo "a";
 	} else {

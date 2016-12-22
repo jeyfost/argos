@@ -185,7 +185,7 @@ if(isset($_SESSION['userID'])) {
 
 	<div id="page">
 		<div id="searchList"></div>
-		<h1 style='margin-top: 80px;'><?php if($_SESSION['userID'] == 1) {echo "Заявки";} else {echo "Корзина";} ?></h1>
+		<h1 style='margin-top: 80px;'><?php if($_REQUEST['section'] == 1) {echo "Корзина";} if($_REQUEST['section'] == 2) {echo "Активные заявки";} if($_REQUEST['section'] == 3) {echo "История заказов";} ?></h1>
 		<div id='breadCrumbs'>
 			<a href='../index.php'><span class='breadCrumbsText'>Главная</span></a> > <?php if($_SESSION['userID'] == 1) {echo "<a href='basket.php?section=1'><span class='breadCrumbsText'>Оформление онлайн-заявок</span></a>";} else {echo "<a href='basket.php?section=1'><span class='breadCrumbsText'>Заказы</span></a> >";} ?>
 			<?php
@@ -326,9 +326,44 @@ if(isset($_SESSION['userID'])) {
 					}
 					break;
 				case 2:
-					echo "
+					$ordersQuantityResult = $mysqli->query("SELECT COUNT(id) FROM orders_info WHERE user_id = '".$_SESSION['userID']."' AND status = '0'");
+					$ordersQuantity = $ordersQuantityResult->fetch_array(MYSQLI_NUM);
 
-					";
+					if($ordersQuantity[0] == 0) {
+						echo "<span style='font-size: 15px;'><b>На данный момент у вас нет активных заявок.</b></span>";
+					} else {
+						$j = 0;
+						$orderResult = $mysqli->query("SELECT * FROM orders_info WHERE user_id = '".$_SESSION['userID']."' AND status = '0'");
+						echo "
+							<p>Активные заявки — это заказы, которые ещё не обработаны менеджером. До момента принятия заказа вы вправе редактировать свои заказы. Для этого нажмите на соответствующий номер заказа, выделенный красным цветом.</p>
+							<table style='width: 100%; text-align: center;'>
+								<tr class='headTR'>
+									<td>№</td>
+									<td>Заказ</td>
+									<td>Дата оформления</td>
+									<td>Отмена заказа</td>
+								</tr>
+						";
+						while($order = $orderResult->fetch_assoc()) {
+							$j++;
+							echo "
+								<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
+									<td>".$j."</td>
+									<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
+									<td>".substr($order['send_date'], 0, 10)." в ".substr($order['send_date'], 11, 8)."</td>
+									<td><span class='tdLink' onclick='cancelOrder(\"".$order['id']."\")'>Отменить заказ</span></td>
+								</tr>
+							";
+						}
+						echo "
+							</table>
+							<br /><br />
+							<div id='responseField'></div>
+						";
+					}
+					break;
+				case 3:
+					echo "3333333";
 					break;
 				default: echo "111111111"; break;
 			}
