@@ -33,12 +33,12 @@ function selectClient() {
 					order_response.css('opacity', 0);
 					setTimeout(function() {
 						order_response.css('color', '#53acff');
-						order_response.html("По выбранному критерию заказов не осталось.<br /><br />");
+						order_response.html(order_response.html() + "По выбранному критерию заказов не осталось.<br /><br />");
 						order_response.css('opacity', 1);
 					}, 300);
 				} else {
 					order_response.css('color', '#53acff');
-					order_response.html("По выбранному критерию заказов не осталось.<br /><br />");
+					order_response.html(order_response.html() + "По выбранному критерию заказов не осталось.<br /><br />");
 					order_response.css('opacity', 1);
 				}
 
@@ -86,8 +86,9 @@ function acceptOrder(id) {
 		data: {"id": id},
 		url: "../scripts/personal/ajaxAcceptOrder.php",
 		success: function(response) {
+			var order_response = $('#orderResponse');
+
 			if(response == "a") {
-				var order_response = $('#orderResponse');
 				selectClient();
 				if(order_response.css('opacity') == 1) {
 					order_response.css('opacity', 0);
@@ -99,6 +100,59 @@ function acceptOrder(id) {
 				} else {
 					order_response.css('color', '#53acff');
 					order_response.html("Заказ был успешно принят.<br /><br />");
+					order_response.css('opacity', 1);
+				}
+			} else {
+				if(order_response.css('opacity') == 1) {
+					order_response.css('opacity', 0);
+					setTimeout(function() {
+						order_response.css('color', '#df4e47');
+						order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
+						order_response.css('opacity', 1);
+					}, 300);
+				} else {
+					order_response.css('color', '#df4e47');
+					order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
+					order_response.css('opacity', 1);
+				}
+			}
+		}
+	});
+}
+
+function cancelOrder(id) {
+	$.ajax({
+		type: "POST",
+		data: {"id": id},
+		url: "../scripts/personal/ajaxAdminCancelOrder.php",
+		success: function(response) {
+			var order_response = $('#orderResponse');
+
+			if(response == "a") {
+				selectClient();
+				if(order_response.css('opacity') == 1) {
+					order_response.css('opacity', 0);
+					setTimeout(function() {
+						order_response.css('color', '#53acff');
+						order_response.html("Заказ был успешно отменён.<br /><br />");
+						order_response.css('opacity', 1);
+					}, 300);
+				} else {
+					order_response.css('color', '#53acff');
+					order_response.html("Заказ был успешно отменён.<br /><br />");
+					order_response.css('opacity', 1);
+				}
+			} else {
+				if(order_response.css('opacity') == 1) {
+					order_response.css('opacity', 0);
+					setTimeout(function() {
+						order_response.css('color', '#df4e47');
+						order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
+						order_response.css('opacity', 1);
+					}, 300);
+				} else {
+					order_response.css('color', '#df4e47');
+					order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
 					order_response.css('opacity', 1);
 				}
 			}
