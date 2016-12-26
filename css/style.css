@@ -3,8 +3,9 @@ img, a {border: none; text-decoration: none;}
 label, a div table tr td {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px;}
 input {width: 300px; height: 30px; padding: 0 10px; font-style: italic;}
 h1 {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 50px;}
-table {border: none;}
+table {border: none;, transition: .3s;}
 td {padding-left: 10px; padding-right: 10px;}
+select {height: 40px; line-height: 40px;}
 
 #breadCrumbs a span:hover, .basicLink:hover, .copy a:hover, p a:hover {text-decoration: none;}
 
@@ -46,6 +47,7 @@ td {padding-left: 10px; padding-right: 10px;}
     #innerSearch {position: relative; float: left;}
     #innerSearchInput {width: 180px; height: 20px; line-height: 20px; color: #777;}
     #innerSearchList {position: absolute; top: 40px; left: 0; z-index: 5; background-color: #fff; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); padding: 10px; display: none; overflow: hidden;}
+    #ordersTable {transition: .3s;}
 
     .menuLink img {margin: auto auto 3px 3px;}
     .slash {font-size: 14px; margin-left: 5px;}
@@ -79,7 +81,7 @@ td {padding-left: 10px; padding-right: 10px;}
     .itemDescription {position: relative; float: left;}
     .itemPurchase {position: relative; float: right; width: 100px; text-align: center;}
     .itemPurchase form label {font-size: 14px;}
-    .addingResult, #goodResponseFiled, #responseField {transition: .3s; opacity: 0; font-size: 14px;}
+    .addingResult, #goodResponseFiled, #responseField, #orderResponse {transition: .3s; opacity: 0; font-size: 14px;}
     .searchItem {width: 100%;}
     .searchIMG {width: 100px; position: relative; float: left; margin-top: 5px; margin-left: 5px;}
     .searchInfo {width: 365px; padding-left: 10px; position: relative; float: left; margin-top: 5px; font-size: 15px;}
@@ -105,7 +107,7 @@ td {padding-left: 10px; padding-right: 10px;}
 #loginSubmit, #registrationSubmit, #recoverySubmit, #passwordSubmit, #personalSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer;}
 #registrationSubmit {width: 200px;}
 #recoverySubmit, #personalSubmit {width: 130px;}
-#basketSubmit, #clearBasketButton {width: 200px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: right;}
+#basketSubmit, #clearBasketButton, #acceptButton {width: 200px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: right;}
 #clearBasketButton {margin-right: 10px;}
 #registrationDescription {position: relative; float: left; padding-left: 40px;}
 #registrationContainer {width: 350px; position: relative; float: left;}

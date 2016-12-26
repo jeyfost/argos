@@ -24,6 +24,10 @@ if($mysqli->query("UPDATE orders SET quantity = '".$quantity."' WHERE good_id = 
 	$total = round($total, 2, PHP_ROUND_HALF_UP);
 	$roubles = floor($total);
 	$kopeck = ceil(($total - $roubles) * 100);
+	if($kopeck == 100) {
+		$kopeck = 0;
+		$roubles++;
+	}
 
 	if($roubles == 0) {
 		$total = $kopeck." коп.";

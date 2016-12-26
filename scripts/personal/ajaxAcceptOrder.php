@@ -1,12 +1,20 @@
 <?php
 
 session_start();
+
+if($_SESSION['userID'] != 1) {
+	header("Location: ../../index.php");
+}
+
 include("../connect.php");
 
-$id = $mysqli->real_escape_string($_POST['orderID']);
+$id = $mysqli->real_escape_string($_POST['id']);
 $total = 0;
-$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
-$discount = $discountResult->fetch_array(MYSQLI_NUM);
+
+$userResult = $mysqli->query("SELECT user_id FROM orders_info WHERE id = '".$id."'");
+$user = $userResult->fetch_array(MYSQLI_NUM);
+$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$user[0]."'");
+
 $orderResult = $mysqli->query("SELECT * FROM orders WHERE order_id = '".$id."'");
 while($order = $orderResult->fetch_assoc()) {
 	$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$order['good_id']."'");
@@ -18,17 +26,9 @@ while($order = $orderResult->fetch_assoc()) {
 
 $total = $total - $total * ($discount[0] / 100);
 $total = round($total, 2, PHP_ROUND_HALF_UP);
-$roubles = floor($total);
-$kopeck = ceil(($total - $roubles) * 100);
-if($kopeck == 100) {
-	$kopeck = 0;
-	$roubles++;
-}
 
-if($roubles == 0) {
-	$total = $kopeck." коп.";
+if($mysqli->query("UPDATE orders_info SET summ = '".$total."', proceed_date = '".date('d-m-Y H:i:s')."', status = '1' WHERE id = '".$id."'")) {
+	echo "a";
 } else {
-	$total = $roubles." руб. ".$kopeck." коп.";
+	echo "b";
 }
-
-echo $total;

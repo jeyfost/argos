@@ -429,6 +429,10 @@ if(isset($_SESSION['userID'])) {
 
 				$roubles = floor($price);
 				$kopeck = ($price - $roubles) * 100;
+				if($kopeck == 100) {
+					$kopeck = 0;
+					$roubles ++;
+				}
 
 				echo "
 					<div class='catalogueItem'>

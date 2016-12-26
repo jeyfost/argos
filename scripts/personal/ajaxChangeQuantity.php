@@ -23,6 +23,10 @@ if($mysqli->query("UPDATE basket SET quantity = '".$quantity."' WHERE user_id = 
 	$total = round($total, 2, PHP_ROUND_HALF_UP);
 	$roubles = floor($total);
 	$kopeck = ceil(($total - $roubles) * 100);
+	if($kopeck == 100) {
+		$kopeck = 0;
+		$roubles++;
+	}
 
 	if($roubles == 0) {
 		$total = $kopeck." коп.";

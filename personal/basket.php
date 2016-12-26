@@ -241,6 +241,10 @@ if(isset($_SESSION['userID'])) {
 							$price = round($price, 2, PHP_ROUND_HALF_UP);
 							$roubles = floor($price);
 							$kopeck = ($price - $roubles) * 100;
+							if($kopeck == 100) {
+								$kopeck = 0;
+								$roubles ++;
+							}
 
 							echo "
 								<div class='catalogueItem' id='ci".$good['id']."'>
@@ -304,6 +308,10 @@ if(isset($_SESSION['userID'])) {
 						$total = round($total, 2, PHP_ROUND_HALF_UP);
 						$roubles = floor($total);
 						$kopeck = ceil(($total - $roubles) * 100);
+						if($kopeck == 100) {
+							$kopeck = 0;
+							$roubles++;
+						}
 
 						if($roubles == 0) {
 							$total = $kopeck." коп.";

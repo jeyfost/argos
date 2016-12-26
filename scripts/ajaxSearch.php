@@ -29,6 +29,10 @@ if($searchResult->num_rows == 0) {
 		$price = round($price, 2, PHP_ROUND_HALF_UP);
 		$roubles = floor($price);
 		$kopeck = ($price - $roubles) * 100;
+		if($kopeck == 100) {
+			$kopeck = 0;
+			$roubles++;
+		}
 
 		if($roubles == 0) {
 			$price = $kopeck." коп.";

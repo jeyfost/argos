@@ -4,11 +4,16 @@ session_start();
 include("../connect.php");
 
 $id = $mysqli->real_escape_string($_POST['id']);
-$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
+$userIDResult = $mysqli->query("SELECT user_id FROM orders_info WHERE id = '".$id."'");
+$userID = $userIDResult->fetch_array(MYSQLI_NUM);
+$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$userID[0]."'");
 $discount = $discountResult->fetch_array(MYSQLI_NUM);
 $orderResult = $mysqli->query("SELECT * FROM orders WHERE order_id = '".$id."'");
 $total = 0;
 echo "<div style='width: 100%; background-color: #ffeecb; height: 40px; line-height: 40px; font-size: 16px; text-align: center;'>Детализация заказа №".$id."</div><br /><br />";
+if($discount[0] > 0) {
+	echo "<p>В детализации показаны цены на товары с учётом личной скидки клиента. Размер скидки составляет <b>".$discount[0]."%</b></p><br /><br />";
+}
 while($order = $orderResult->fetch_assoc()) {
 	$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$order['good_id']."'");
 	$good = $goodResult->fetch_assoc();
@@ -84,10 +89,6 @@ $total = $total - $total * ($discount[0] / 100);
 $total = round($total, 2, PHP_ROUND_HALF_UP);
 $roubles = floor($total);
 $kopeck = ceil(($total - $roubles) * 100);
-if($kopeck == 100) {
-	$kopeck = 0;
-	$roubles++;
-}
 
 if($roubles == 0) {
 	$total = $kopeck." коп.";
@@ -97,7 +98,9 @@ if($roubles == 0) {
 
 echo "
 	<br /><br />
-	<div style='float: right;'><b>Ваша личная скидка: </b><span>".$discount[0]."%</span></div>
+	<div style='float: right;'><b>Личная скидка клиента: </b><span>".$discount[0]."%</span></div>
 	<br />
 	<div style='float: right;'><b>Общая стоимость: </b><span id='totalPriceText'>".$total."</span></div>
+	<br /><br />
+	<input type='button' id='acceptButton' onclick='acceptOrder(\"".$id."\")' value='Принять заказ' onmouseover='buttonChange(\"acceptButton\", 1)' onmouseout='buttonChange(\"acceptButton\", 0)'>
 ";
