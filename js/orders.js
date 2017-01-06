@@ -19,11 +19,11 @@ function showOrderDetails(id) {
 	});
 }
 
-function selectClient() {
+function selectClient(file_name) {
 	$.ajax({
 		type: "POST",
 		data: {"client": $('#clientSelect').val()},
-		url: "../scripts/personal/ajaxSelectClient.php",
+		url: "../scripts/personal/" + file_name +  ".php",
 		success: function(response) {
 			var order_response = $('#orderResponse');
 			var table = $('#ordersTable');
@@ -75,6 +75,25 @@ function selectClient() {
 						response_field.html('');
 					}, 300);
 				}
+
+				var numbers = $('#pageNumbers');
+				$.ajax({
+					type: "POST",
+					data: {"client": $('#clientSelect').val()},
+					url: "../scripts/personal/ajaxCalculatePages.php",
+					success: function(result) {
+						if(numbers.css('opacity') == 1) {
+							numbers.css('opacity', 0);
+							setTimeout(function() {
+								numbers.html(result);
+								numbers.css('opacity', 1);
+							}, 300);
+						} else {
+							numbers.html(result);
+							numbers.css('opacity', 1);
+						}
+					}
+				});
 			}
 		}
 	});
@@ -156,6 +175,43 @@ function cancelOrder(id) {
 					order_response.css('opacity', 1);
 				}
 			}
+		}
+	});
+}
+
+function goToPage(page, user) {
+	var table = $('#ordersTable');
+
+	$.ajax({
+		type: "POST",
+		data: {"page": page, "userID": user},
+		url: "../scripts/personal/ajaxGoToPage.php",
+		success: function(response) {
+			table.css('opacity', 0);
+			setTimeout(function() {
+				table.html(response);
+				table.css('opacity', 1);
+			}, 300);
+
+			var numbers = $('#pageNumbers');
+
+			$.ajax({
+				type: "POST",
+				data: {"page": page, "userID": user},
+				url: "../scripts/personal/ajaxRebuildPageNumbers.php",
+				success: function(result) {
+					if(numbers.css('opacity') == 1) {
+						numbers.css('opacity', 0);
+						setTimeout(function() {
+							numbers.html(result);
+							numbers.css('opacity', 1);
+						}, 300);
+					} else {
+						numbers.html(result);
+						numbers.css('opacity', 1);
+					}
+				}
+			});
 		}
 	});
 }
