@@ -83,10 +83,11 @@ while($order = $orderResult->fetch_assoc()) {
 	";
 }
 
-$total = $total - $total * ($discount[0] / 100);
-$total = round($total, 2, PHP_ROUND_HALF_UP);
-$roubles = floor($total);
-$kopeck = ceil(($total - $roubles) * 100);
+$totalResult = $mysqli->query("SELECT summ FROM orders_info WHERE id = '".$id."'");
+$total = $totalResult->fetch_array(MYSQLI_NUM);
+
+$roubles = intval($total[0]);
+$kopeck = ($total[0] - $roubles) * 100;
 
 if($kopeck == 100) {
 	$kopeck = 0;
@@ -103,5 +104,5 @@ echo "
 	<br /><br />
 	<div style='float: right;'><b>Личная скидка клиента: </b><span>".$discount[0]."%</span></div>
 	<br />
-	<div style='float: right;'><b>Общая стоимость: </b><span id='totalPriceText'>".$total."</span></div>
+	<div style='float: right;'><b>Общая стоимость в момент заказа: </b><span id='totalPriceText'>".$total."</span></div>
 ";
