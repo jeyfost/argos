@@ -213,6 +213,27 @@ function showOrderDetails(id) {
 	});
 }
 
+function showOrderDetailsHistory(id) {
+	var response_field = $('#responseField');
+	$.ajax({
+		type: "POST",
+		data: {"id": id},
+		url: "../scripts/personal/ajaxOrderInfoHistory.php",
+		success: function(response) {
+			if(response_field.css('opacity') == 1) {
+				response_field.css('opacity', '0');
+				setTimeout(function() {
+					response_field.html(response + '<br /><br />');
+					response_field.css('opacity', '1');
+				}, 300);
+			} else {
+				response_field.html(response + '<br /><br />');
+				response_field.css('opacity', '1');
+			}
+		}
+	});
+}
+
 function cancelOrder(id) {
 	if(confirm("Вы действительно хотите отменить заказ?")) {
 		$.ajax({
