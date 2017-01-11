@@ -38,7 +38,23 @@ function showDropdownList(action, id, highlighted) {
                 $('#dropDownList').html("<div class='dropDownLink' id='partnersLinkCooperation' onmouseover='changeDropDownLink(\"1\", \"partnersLinkCooperation\", \"partnersLinkCooperationA\")' onmouseout='changeDropDownLink(\"0\", \"partnersLinkCooperation\", \"partnersLinkCooperationA\")'><a href='partners/cooperation.php' id='partnersLinkCooperationA'>Сотрудничество</a></div><div class='dropDownLink' id='partnersLinkClientNews' onmouseover='changeDropDownLink(\"1\", \"partnersLinkClientNews\", \"partnersLinkClientNewsA\")' onmouseout='changeDropDownLink(\"0\", \"partnersLinkClientNews\", \"partnersLinkClientNewsA\")'><a href='partners/news.php' id='partnersLinkClientNewsA'>Новости для клиентов</a></div><div style='clear: both;'></div>");
                 break;
             case "contactsLink":
-                $('#dropDownList').html("<div class='dropDownLink' id='contactsLinkStores' onmouseover='changeDropDownLink(\"1\", \"contactsLinkStores\", \"contactsLinkStoresA\")' onmouseout='changeDropDownLink(\"0\", \"contactsLinkStores\", \"contactsLinkStoresA\")'><a href='contacts/stores.php' id='contactsLinkStoresA'>Магазины</a></div><div class='dropDownLink' id='contactsLinkMain' onmouseover='changeDropDownLink(\"1\", \"contactsLinkMain\", \"contactsLinkMainA\")' onmouseout='changeDropDownLink(\"0\", \"contactsLinkMain\", \"contactsLinkMainA\")'><a href='contacts/main.php' id='contactsLinkMainA'>Головное предприятие</a></div><div class='dropDownLink'  id='contactsLinkMail' onmouseover='changeDropDownLink(\"1\", \"contactsLinkMail\", \"contactsLinkMailA\")' onmouseout='changeDropDownLink(\"0\", \"contactsLinkMail\", \"contactsLinkMailA\")'><a href='contacts/mail.php' id='contactsLinkMailA'>Обратная связь</a></div><div style='clear: both;'></div>");
+				if(highlighted == "contactsLinkStores") {
+					$('#dropDownList').html("<div class='dropDownLink' id='contactsLinkStores' style='background-color: #df4e47;'><a href='contacts/stores.php' id='contactsLinkStoresA' style='color: #fff;'>Магазины</a></div>")
+				} else {
+					$('#dropDownList').html("<div class='dropDownLink' id='contactsLinkStores' onmouseover='changeDropDownLink(\"1\", \"contactsLinkStores\", \"contactsLinkStoresA\")' onmouseout='changeDropDownLink(\"0\", \"contactsLinkStores\", \"contactsLinkStoresA\")'><a href='contacts/stores.php' id='contactsLinkStoresA'>Магазины</a></div>");
+				}
+
+				if(highlighted == "contactsLinkMain") {
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='contactsLinkMain' style='background-color: #df4e47;'><a href='contacts/main.php' id='contactsLinkMainA' style='color: #fff;'>Головное предприятие</a></div>");
+				} else {
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='contactsLinkMain' onmouseover='changeDropDownLink(\"1\", \"contactsLinkMain\", \"contactsLinkMainA\")' onmouseout='changeDropDownLink(\"0\", \"contactsLinkMain\", \"contactsLinkMainA\")'><a href='contacts/main.php' id='contactsLinkMainA'>Головное предприятие</a></div>");
+				}
+
+				if(highlighted == "contactsLinkMail") {
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink'  id='contactsLinkMail' style='background-color: #df4e47;'><a href='contacts/mail.php' id='contactsLinkMailA' style='color: #fff;'>Обратная связь</a></div><div style='clear: both;'></div>");
+				} else {
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink'  id='contactsLinkMail' onmouseover='changeDropDownLink(\"1\", \"contactsLinkMail\", \"contactsLinkMailA\")' onmouseout='changeDropDownLink(\"0\", \"contactsLinkMail\", \"contactsLinkMailA\")'><a href='contacts/mail.php' id='contactsLinkMailA'>Обратная связь</a></div><div style='clear: both;'></div>");
+				}
                 break;
             default:
                 break;

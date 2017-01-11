@@ -153,7 +153,7 @@ if(isset($_SESSION['userID'])) {
 						} else {
 							echo "
 								<div class='headerIcon' id='basketIcon'>
-									<a href='basket.php?section=1'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
+									<a href='basket.php?section=1'><img src='../img/system/basketFullRed.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' /></a>
 								</div>
 							";
 						}
@@ -173,7 +173,7 @@ if(isset($_SESSION['userID'])) {
 					<span class="slash"> /</span>
 				</div>
 				<div class="menuLink" id="aboutLink" onmouseover="showDropdownList('1', 'aboutLink')">
-					<a href="../about.php">О компании</a>
+					<a href="../about/info.php">О компании</a>
 					<img src="../img/system/downArrow.png" />
 					<span class="slash"> /</span>
 				</div>
@@ -182,7 +182,7 @@ if(isset($_SESSION['userID'])) {
 					<span class="slash"> /</span>
 				</div>
 				<div class="menuLink" id="storesLink" onmouseover="showDropdownList('1', 'storesLink')">
-					<a href="../stores.php">Где купить</a>
+					<a href="../stores/company.php">Где купить</a>
 					<img src="../img/system/downArrow.png" />
 					<span class="slash"> /</span>
 				</div>
@@ -191,12 +191,12 @@ if(isset($_SESSION['userID'])) {
 					<span class="slash"> /</span>
 				</div>
 				<div class="menuLink" id="partnersLink" onmouseover="showDropdownList('1', 'partnersLink')">
-					<a href="../partners.php">Партнерам</a>
+					<a href="../partners/cooperation.php">Партнерам</a>
 					<img src="../img/system/downArrow.png" />
 					<span class="slash"> /</span>
 				</div>
 				<div class="menuLink" id="contactsLink" onmouseover="showDropdownList('1', 'contactsLink')">
-					<a href="../contacts.php">Контакты</a>
+					<a href="../contacts/stores.php">Контакты</a>
 					<img src="../img/system/downArrow.png" />
 				</div>
 				<div style="clear: both;"></div>
