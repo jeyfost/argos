@@ -7,7 +7,7 @@ table {border: none;, transition: .3s;}
 td {padding-left: 10px; padding-right: 10px;}
 select {height: 40px; line-height: 40px;}
 
-#breadCrumbs a span:hover, .basicLink:hover, .copy a:hover, p a:hover {text-decoration: none;}
+#breadCrumbs a span:hover, .basicLink:hover, .copy a:hover, p a:hover, .searchLink:hover {text-decoration: none;}
 
 /* mobile */
 @media screen and (max-width: 960px) {
@@ -91,6 +91,7 @@ select {height: 40px; line-height: 40px;}
     .headTR {background-color: #ffeecb; height: 40px; text-align: center;}
     .headTR td {cursor: pointer;}
     .tdLink {color: #df4e47; cursor: pointer;}
+    .searchLink {color: #4c4c4c; text-decoration: underline;}
 }
 
 /* home index.php */
