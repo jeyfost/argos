@@ -3,6 +3,7 @@ img, a {border: none; text-decoration: none;}
 label, a div table tr td {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px;}
 input {width: 300px; height: 30px; padding: 0 10px; font-style: italic;}
 h1 {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 50px;}
+h2 {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 30px; margin-top: 0;}
 table {border: none;, transition: .3s;}
 td {padding-left: 10px; padding-right: 10px;}
 select {height: 40px; line-height: 40px;}
@@ -92,6 +93,9 @@ select {height: 40px; line-height: 40px;}
     .headTR td {cursor: pointer;}
     .tdLink {color: #df4e47; cursor: pointer;}
     .searchLink {color: #4c4c4c; text-decoration: underline;}
+    .mapContainer {width: 100%; padding: 10px; background-color: #e3e3e3;}
+    .map {position: relative; float: left;}
+    .mapDescription {position: relative; float: left; margin-left: 20px;}
 }
 
 /* home index.php */
