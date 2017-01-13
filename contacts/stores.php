@@ -76,44 +76,56 @@ if(isset($_SESSION['userID'])) {
         <div class="container" style="height: 100%;">
             <a href="../index.php"><img src="../img/system/logo.png" id="logo" /></a>
 			<div id="personalButtons">
-				<div class='headerIcon'>
-					<a href='../scripts/personal/logout.php'><img src='../img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon("exitIMG", "exitRed.png", 1)' onmouseout='changeIcon("exitIMG", "exit.png", 1)' /></a>
-				</div>
-				<div class='headerIcon'>
-					<a href='../personal/personal.php?section=1'><img src='../img/system/personal.png' title='Личный кабинет' id='personalIMG' onmouseover='changeIcon("personalIMG", "personalRed.png", 1)' onmouseout='changeIcon("personalIMG", "personal.png", 1)' /></a>
-				</div>
 				<?php
-					if($_SESSION['userID'] == 1) {
+					if(isset($_SESSION['userID'])) {
 						echo "
 							<div class='headerIcon'>
-								<a href='orders.php'><img src='../img/system/basketFullRed.png' title='Заявки' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' /></a>
+								<a href='../scripts/personal/logout.php'><img src='../img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon(\"exitIMG\", \"exitRed.png\", 1)' onmouseout='changeIcon(\"exitIMG\", \"exit.png\", 1)' /></a>
+							</div>
+							<div class='headerIcon'>
+								<a href='../personal/personal.php?section=1'><img src='../img/system/personal.png' title='Личный кабинет' id='personalIMG' onmouseover='changeIcon(\"personalIMG\", \"personalRed.png\", 1)' onmouseout='changeIcon(\"personalIMG\", \"personal.png\", 1)' /></a>
 							</div>
 						";
-					} else {
-						$basketQuantityResult = $mysqli->query("SELECT COUNT(id) FROM basket WHERE user_id = '".$_SESSION['userID']."'");
-						$basketQuantity = $basketQuantityResult->fetch_array(MYSQLI_NUM);
-
-						if($basketQuantity[0] > 0) {
+						if($_SESSION['userID'] == 1) {
 							echo "
-								<div class='headerIcon' id='basketIcon'>
-									<a href='basket.php' onmouseover='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)'><img src='../img/system/basketFullRed.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
-								</div>
-								";
-						} else {
-							echo "
-								<div class='headerIcon' id='basketIcon'>
-									<a href='basket.php?section=1'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
+								<div class='headerIcon'>
+									<a href='../personal/orders.php'><img src='../img/system/basketFull.png' title='Заявки' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
 								</div>
 							";
+						} else {
+							$basketQuantityResult = $mysqli->query("SELECT COUNT(id) FROM basket WHERE user_id = '".$_SESSION['userID']."'");
+							$basketQuantity = $basketQuantityResult->fetch_array(MYSQLI_NUM);
+
+							if($basketQuantity[0] > 0) {
+								echo "
+									<div class='headerIcon' id='basketIcon'>
+										<a href='../personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
+									</div>
+								";
+							} else {
+								echo "
+									<div class='headerIcon' id='basketIcon'>
+										<a href='../personal/basket.php'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
+									</div>
+								";
+							}
 						}
+					} else {
+						echo "
+							<div class='headerIcon'>
+								<a href='../personal/login.php'><img src='../img/system/login.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon(\"loginIMG\", \"loginRed.png\", 1)' onmouseout='changeIcon(\"loginIMG\", \"login.png\", 1)' /></a>
+							</div>
+						";
 					}
+					echo "
+						<div id='searchBlock'>
+							<form method='post'>
+								<input type='text' id='searchFieldInput' name=searchField' value='Поиск...' />
+							</form>
+						</div>
+					";
+					echo "<div style='clear: both;'></div>";
 				?>
-				<div id='searchBlock'>
-					<form method='post'>
-						<input type='text' id='searchFieldInput' name=searchField' value='Поиск...' />
-					</form>
-				</div>
-				<div style="clear: both;"></div>
 			</div>
 			<div id="menuLinks">
 				<div class="menuLink" id="catalogueLink" onmouseover="showDropdownList('1', 'catalogueLink')">

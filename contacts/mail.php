@@ -35,7 +35,7 @@ if(isset($_SESSION['userID'])) {
 <head>
  	<meta charset="utf-8">
 
-    <title>Головной офис</title>
+    <title>Обратная связь</title>
 
     <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../css/style.css'>
@@ -49,6 +49,7 @@ if(isset($_SESSION['userID'])) {
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="../js/menu1.js"></script>
 	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/mail.js"></script>
 	<!--[if lt IE 9]>
   		<script type="text/javascript" src="../js/lightview/js/excanvas/excanvas.js"></script>
 	<![endif]-->
@@ -156,7 +157,7 @@ if(isset($_SESSION['userID'])) {
 					<img src="../img/system/downArrow.png" />
 					<span class="slash"> /</span>
 				</div>
-				<div class="menuLink" id="contactsLink" onmouseover="showDropdownList('1', 'contactsLink', 'contactsLinkMain')">
+				<div class="menuLink" id="contactsLink" onmouseover="showDropdownList('1', 'contactsLink', 'contactsLinkMail')">
 					<a href="../contacts/stores.php" class="menuPoint" style="color: #df4e47;">Контакты</a>
 					<img src="../img/system/downArrow.png" />
 				</div>
@@ -176,45 +177,29 @@ if(isset($_SESSION['userID'])) {
 
 	<div id="page">
 		<div id="searchList"></div>
-		<h1 style='margin-top: 80px;'>Головной офис</h1>
+		<h1 style='margin-top: 80px;'>Обратная связь</h1>
 		<div id='breadCrumbs'>
-			<a href='../index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='stores.php'><span class='breadCrumbsText'>Контактная информация</span></a> > <a href='main.php'><span class='breadCrumbsText'>Головной офис</span></a>
+			<a href='../index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='stores.php'><span class='breadCrumbsText'>Контактная информация</span></a> > <a href='mail.php'><span class='breadCrumbsText'>Форма обратной связи</span></a>
 		</div>
-		<br /><br />
-		<div class="mapContainer">
-			<div class="map">
-				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=TRFDdk4LfiXmytO-3UCq_hXaFXJG-3Zd&amp;width=500&amp;height=440&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+		<p>При помощи формы обратной связи вы можете отправить нам письмо со своим вопросом, и в короткий срок мы на него ответим.</p>
+		<form method="post">
+			<input type="text" value="Ваше имя" id="nameInput" style="color: #9e9e9e; width: 450px;" />
+			<br />
+			<input type="text" value="Ваш email" id="emailInput" style="margin-top: 5px; color: #9e9e9e; width: 450px;" />
+			<br />
+			<input type="text" value="Тема сообщения" id="subjectInput" style="margin-top: 5px; color: #9e9e9e; width: 450px;" />
+			<br />
+			<textarea id="messageInput" onkeydown='textAreaHeight(this)'>Текст сообщения</textarea>
+			<br />
+			<div id="responseField"></div>
+			<br /><br />
+			<div id="mailButtons">
+				<div class="g-recaptcha" id="mailRecaptcha" data-sitekey="6Ld5MwATAAAAAN7L3GdbaS_dafMZdRicn-Jm8jVM"></div>
+				<input type="button" id="mailSubmit" value="Отправить" onclick="sendMail()" onmouseover="buttonChange('mailSubmit', 1)" onmouseout="buttonChange('mailSubmit', 0)" />
+				<div style="clear: both;"></div>
 			</div>
-			<div class="mapDescription">
-				<h2><span style="color: #df4e47;">Аргос-ФМ</span> Головной офис</h2>
-				<b>Адрес:</b>
-				<br />
-				<span>212040, Республика Беларусь, г. Могилёв, ул. Залуцкого, 21</span>
-				<br /><br />
-				<b>Телефон/факс (отдел маркетинга):</b>
-				<br />
-				<span>+375 (222) 707-707</span>
-				<br /><br />
-				<b>Телефон/факс (отдел сбыта):</b>
-				<br />
-				<span>+375 (222) xxx-xxx</span>
-				<br /><br />
-				<b>Телефон (директор):</b>
-				<br />
-				<span>+375 (222) 703-900</span>
-				<br /><br />
-				<b>Email:</b>
-				<br />
-				<a href="mailto:argos-fm@mail.ru" class="basicLink">argos-fm@mail.ru</a>
-				<br /><br />
-				<b>Время работы:</b>
-				<br />
-				<span>понедельник - пятница</span>
-				<br />
-				<span>8:00 - 17:00</span>
-			</div>
-			<div style="clear: both;"></div>
-		</div>
+		</form>
+
 	</div>
 
 	<div style="clear: both;"></div>
@@ -229,6 +214,7 @@ if(isset($_SESSION['userID'])) {
 		</div>
 		<div style="clear: both;"></div>
 	</div>
+	<script src='https://www.google.com/recaptcha/api.js?hl=ru'></script>
 </body>
 
 </html>
