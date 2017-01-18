@@ -7,3 +7,11 @@ function awardBlock(text, photo, action) {
 		document.getElementById(photo).style.opacity = "1";
 	}
 }
+
+function galleryPhoto(id, action) {
+	if(action == 1) {
+		document.getElementById(id).style.opacity = ".7";
+	} else {
+		document.getElementById(id).style.opacity = "1";
+	}
+}
