@@ -200,10 +200,10 @@ if(isset($_SESSION['userID'])) {
 				while($award = $awardResult->fetch_assoc()) {
 					echo "
 						<a href='../img/photos/awards/big/".$award['photo_big']."' class='lightview' data-lightview-title='".$award['name']."' data-lightview-group='awards'>
-							<div class='awardBlock' onmouseover='awardBlock(\"awardText".$award['id']."\", 1)' onmouseout='awardBlock(\"awardText".$award['id']."\", 0)'>
-								<img src='../img/photos/awards/small/".$award['photo_small']."' class='awardPhoto' />
+							<div class='awardBlock' onmouseover='awardBlock(\"awardText".$award['id']."\", \"awardPhoto".$award['id']."\", 1)' onmouseout='awardBlock(\"awardText".$award['id']."\", \"awardPhoto".$award['id']."\", 0)'>
+								<img src='../img/photos/awards/small/".$award['photo_small']."' class='awardPhoto' id='awardPhoto".$award['id']."' />
 								<br />
-								<span id='awardText".$award['id']."'>".$award['name']."</span>
+								<span id='awardText".$award['id']."' style='transition: .3s;'>".$award['name']."</span>
 							</div>
 						</a>
 					";
