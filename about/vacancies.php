@@ -209,27 +209,52 @@ if(isset($_SESSION['userID'])) {
 			<b>Форма подачи резюме:</b>
 			<br />
 			<span style="font-size: 14px; font-style: italic;">Все поля являются обязательными для заполнения. Также необходимо прикрепить файл с вашим резюме.</span>
+			<br />
+			<div id="responseField" style="opacity: 1;"></div>
 			<br /><br />
 			<div id="CVForm">
 				<form method="post" enctype="multipart/form-data" action="../scripts/about/sendCV.php" id="CV_Form">
 					<label for="inputLastName">Фамилия:</label>
 					<br />
-					<input type="text" id="inputLastName" name="lastName" />
+					<input type="text" id="inputLastName" name="lastName" <?php if(isset($_SESSION['lastName'])) {echo "value = ".$_SESSION['lastName'];} ?> />
 					<br /><br />
 					<label for="inputFirstName">Имя:</label>
 					<br />
-					<input type="text" id="inputFirstName" name="firstName" />
+					<input type="text" id="inputFirstName" name="firstName" <?php if(isset($_SESSION['firstName'])) {echo "value = ".$_SESSION['firstName'];} ?> />
 					<br /><br />
 					<label for="inputPatronymic">Отчество:</label>
 					<br />
-					<input type="text" id="inputPatronymic" name="patronymic" />
+					<input type="text" id="inputPatronymic" name="patronymic" <?php if(isset($_SESSION['patronymic'])) {echo "value = ".$_SESSION['patronymic'];} ?> />
 					<br /><br />
 					<label for="inputLastName">Дата рождения:</label>
 					<br />
 					<select id="daySelect" name="day" class="CVSelect" style="margin: 0;"></select>
 					<select id="monthSelect" name="month" class="CVSelect" onchange="changeDate()"></select>
 					<select id="yearSelect" name="year" class="CVSelect" onchange="changeDate()"></select>
+					<br /><br /><br />
+					<label for="inputCity">Город проживания:</label>
+					<br />
+					<input type="text" id="inputCity" name="city" <?php if(isset($_SESSION['city'])) {echo "value = ".$_SESSION['city'];} ?> />
 					<br /><br />
+					<label for="inputPhone">Контактный телефон (с кодом):</label>
+					<br />
+					<input type="text" id="inputPhone" name="phone" <?php if(isset($_SESSION['phone'])) {echo "value = ".$_SESSION['phone'];} ?> />
+					<br /><br />
+					<label for="inputEmail">Email:</label>
+					<br />
+					<input type="text" id="inputEmail" name="email" <?php if(isset($_SESSION['email'])) {echo "value = ".$_SESSION['email'];} ?> />
+					<br /><br />
+					<label for="inputText">Вакансии, которые вас интересуют:</label>
+					<br />
+					<textarea id="inputText" name="text" onkeydown='textAreaHeight(this)'><?php if(isset($_SESSION['text'])) {echo $_SESSION['text'];} ?></textarea>
+					<br /><br />
+					<label for="inputCV">Прикрепите резюме:</label>
+					<br />
+					<input type="file" id="inputCV" name="CV" />
+					<br />
+					<div class="g-recaptcha" id="mailRecaptcha" data-sitekey="6Ld5MwATAAAAAN7L3GdbaS_dafMZdRicn-Jm8jVM"></div>
+					<br />
+					<input type="submit" id="mailSubmit" value="Отправить" onmouseover="buttonChange('mailSubmit', 1)" onmouseout="buttonChange('mailSubmit', 0)" style="float: left; margin-top: 20px;" accept="doc, rtf, xls, text, ppt, jpg, jpeg, bmp, png, tiff" />
 				</form>
 			</div>
 		</div>
@@ -247,6 +272,7 @@ if(isset($_SESSION['userID'])) {
 		</div>
 		<div style="clear: both;"></div>
 	</div>
+	<script src='https://www.google.com/recaptcha/api.js?hl=ru'></script>
 
 </body>
 
