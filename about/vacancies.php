@@ -210,7 +210,32 @@ if(isset($_SESSION['userID'])) {
 			<br />
 			<span style="font-size: 14px; font-style: italic;">Все поля являются обязательными для заполнения. Также необходимо прикрепить файл с вашим резюме.</span>
 			<br />
-			<div id="responseField" style="opacity: 1;"></div>
+			<div id="responseField" style="opacity: 1;">
+				<?php
+					if(isset($_SESSION['error'])) {
+						switch($_SESSION['error']) {
+							case "failed":
+								echo "<br /><span style='color: #df4e47;'>При отправке резюме произошла ошибка. Повторите попытку.</span>";
+								break;
+							case "file":
+								echo "<br /><span style='color: #df4e47;'>Вы не прикрепили ваше резюме, либо файл имеет недопустимый формат.</span>";
+								break;
+							case "empty":
+								echo "<br /><span style='color: #df4e47;'>Заполните все поля.</span>";
+								break;
+							case "captcha":
+								echo "<br /><span style='color: #df4e47;'>Вы не прошли проверку на робота.</span>";
+								break;
+							case "success":
+								echo "<br /><span style='color: #53acff;'>Ваше резюме было успешно отправлено. Если оно нас заинтересует, мы с вами свяжемся.</span>";
+								break;
+							default: break;
+						}
+
+						unset($_SESSION['error']);
+					}
+				?>
+			</div>
 			<br /><br />
 			<div id="CVForm">
 				<form method="post" enctype="multipart/form-data" action="../scripts/about/sendCV.php" id="CV_Form">
@@ -250,12 +275,23 @@ if(isset($_SESSION['userID'])) {
 					<br /><br />
 					<label for="inputCV">Прикрепите резюме:</label>
 					<br />
-					<input type="file" id="inputCV" name="CV" />
+					<input type="file" id="inputCV" name="CV" accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,
+text/plain, application/pdf, image/*" />
 					<br />
 					<div class="g-recaptcha" id="mailRecaptcha" data-sitekey="6Ld5MwATAAAAAN7L3GdbaS_dafMZdRicn-Jm8jVM"></div>
 					<br />
-					<input type="submit" id="mailSubmit" value="Отправить" onmouseover="buttonChange('mailSubmit', 1)" onmouseout="buttonChange('mailSubmit', 0)" style="float: left; margin-top: 20px;" accept="doc, rtf, xls, text, ppt, jpg, jpeg, bmp, png, tiff" />
+					<input type="submit" id="mailSubmit" value="Отправить" onmouseover="buttonChange('mailSubmit', 1)" onmouseout="buttonChange('mailSubmit', 0)" style="float: left; margin-top: 20px;" />
 				</form>
+
+				<?php
+					unset($_SESSION['lastName']);
+					unset($_SESSION['firstName']);
+					unset($_SESSION['patronymic']);
+					unset($_SESSION['city']);
+					unset($_SESSION['phone']);
+					unset($_SESSION['email']);
+					unset($_SESSION['text']);
+				?>
 			</div>
 		</div>
 	</div>

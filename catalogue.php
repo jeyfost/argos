@@ -461,7 +461,7 @@ if(isset($_SESSION['userID'])) {
 					<b>Артикул: </b>".$catalogue['code']."
 					<br />
 					<div id='goodPrice".$catalogue['id']."'>
-						<span"; if($_SESSION['userID'] == 1) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['short_name'].": </b>"; if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>
+						<span"; if($_SESSION['userID'] == 1) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['short_name'].": </b>"; if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>
 				";
 
 				if($catalogue['sketch'] != '') {
