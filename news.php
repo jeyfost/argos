@@ -265,7 +265,54 @@ if(isset($_SESSION['userID'])) {
 					";
 				}
 			} else {
+				$newsResult = $mysqli->query("SELECT * FROM news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+				$news = $newsResult->fetch_assoc();
 
+				$month = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
+				$index = (int)substr($news['date'], 3, 2) - 1;
+				$j = 0;
+
+				$date = substr($news['date'], 0, 2)." ".$month[$index]." ".substr($news['date'], 6, 4);
+
+				echo "
+					<div id='personalMenu'>
+						<div id='newsSlider'>
+				";
+
+				$yearNewsResult = $mysqli->query("SELECT * FROM news WHERE year = '".$news['year']."'");
+				while($yearNews = $yearNewsResult->fetch_assoc()) {
+					$j++;
+					$i = (int)substr($yearNews['date'], 3, 2) - 1;
+					$d = substr($yearNews['date'], 0, 2)." ".$month[$i]." ".substr($yearNews['date'], 6, 4);
+
+					echo "
+						<a href='news.php?id=".$yearNews['id']."'>
+							<div class='newsPreview' id='newsPreview".$yearNews['id']."' "; if($j > 1) {echo "style='margin-left: 0;";} else {echo "style='margin: 0;";} if($yearNews['id'] == $_REQUEST['id']) {echo " background-color: #ededed;'";} else {echo "'";} echo ">
+								<img src='img/photos/news/".$yearNews['preview']."' />
+								<br /><br />
+								<div style='text-align: left;'>
+									<span style='color: #df4e47; font-style: italic; font-size: 14px;'>".$d."</span>
+									<p style='color: #4c4c4c; margin-top: 0;'>".$yearNews['header']."</p>
+									<br />
+									<div style='text-align: right;'><img src='img/system/arrow.png' /></div>
+								</div>
+							</div>
+						</a>
+					";
+				}
+
+				echo "
+						</div>
+					</div>
+
+					<div id='personalContent'>
+						<span style='color: #df4e47; font-style: italic; font-size: 14px;'>".$date."</span>
+						<br /><br />
+						<h2>".$news['header']."</h2>
+						<p>".$news['text']."</p>
+						<a href='news.php'><span style='color: #df4e47; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>Больше новостей</span></a>
+					</div>
+				";
 			}
 		?>
 	</div>
