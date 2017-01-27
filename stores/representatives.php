@@ -35,7 +35,7 @@ if(isset($_SESSION['userID'])) {
 <head>
  	<meta charset="utf-8">
 
-    <title>Фирменная сеть</title>
+    <title>Партнёрская сеть</title>
 
     <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../css/style.css'>
@@ -142,7 +142,7 @@ if(isset($_SESSION['userID'])) {
 					<a href="../news.php">Новости</a>
 					<span class="slash"> /</span>
 				</div>
-				<div class="menuLink" id="storesLink" onmouseover="showDropdownList('1', 'storesLink', 'storesLinkCompany')">
+				<div class="menuLink" id="storesLink" onmouseover="showDropdownList('1', 'storesLink', 'storesLinkRepresentatives')">
 					<a href="../stores/company.php" style="color: #df4e47;">Где купить</a>
 					<img src="../img/system/downArrow.png" />
 					<span class="slash"> /</span>
@@ -176,15 +176,15 @@ if(isset($_SESSION['userID'])) {
 
 	<div id="page">
 		<div id="searchList"></div>
-		<h1 style='margin-top: 80px;'>Фирменная сеть магазинов</h1>
+		<h1 style='margin-top: 80px;'>Партнёрская сеть</h1>
 		<div id='breadCrumbs'>
-			<a href='../index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='company.php'><span class='breadCrumbsText'>Где купить</span></a> > <a href='company.php'><span class='breadCrumbsText'>Фирменная сеть</span></a>
+			<a href='../index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='company.php'><span class='breadCrumbsText'>Где купить</span></a> > <a href='representatives.php'><span class='breadCrumbsText'>Партнёрская сеть</span></a>
 		</div>
 
 		<div id="personalMenu">
-			<a href='company.php'><div class='personalMenuLinkActive'>Фирменная сеть</div></a>
+			<a href='company.php'><div class='personalMenuLink' id='pbl1' onmouseover='buttonChange("pbl1", 1)' onmouseout='buttonChange("pbl1", 0)'>Фирменная сеть</div></a>
 			<div style='width: 100%; height: 5px;'></div>
-			<a href='representatives.php'><div class='personalMenuLink' id='pbl2' onmouseover='buttonChange("pbl2", 1)' onmouseout='buttonChange("pbl2", 0)'>Партнёрская сеть</div></a>
+			<a href='representatives.php'><div class='personalMenuLinkActive'>Партнёрская сеть</div></a>
 		</div>
 
 		<div id="personalContent">
