@@ -3,22 +3,23 @@
 session_start();
 
 include ("scripts/connect.php");
+include ("scripts/actions.php");
 
 if(!empty($_REQUEST['year'])) {
-	$newsCountResult = $mysqli->query("SELECT COUNT(id) FROM news WHERE year = '".$mysqli->real_escape_string($_REQUEST['year'])."'");
-	$newsCount = $newsCountResult->fetch_array(MYSQLI_NUM);
+	$actionsCountResult = $mysqli->query("SELECT COUNT(id) FROM actions WHERE year = '".$mysqli->real_escape_string($_REQUEST['year'])."'");
+	$actionsCount = $actionsCountResult->fetch_array(MYSQLI_NUM);
 
-	if($newsCount[0] == 0) {
-		header("Location: news.php");
+	if($actionsCount[0] == 0) {
+		header("Location: actions.php");
 	}
 }
 
 if(!empty($_REQUEST['id'])) {
-	$newsCountResult = $mysqli->query("SELECT COUNT(id) FROM news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
-	$newsCount = $newsCountResult->fetch_array(MYSQLI_NUM);
+	$actionsCountResult = $mysqli->query("SELECT COUNT(id) FROM actions WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+	$actionsCount = $actionsCountResult->fetch_array(MYSQLI_NUM);
 
-	if($newsCount[0] == 0) {
-		header("Location: news.php");
+	if($actionsCount[0] == 0) {
+		header("Location: actions.php");
 	}
 }
 
@@ -69,7 +70,7 @@ if(isset($_SESSION['userID'])) {
     <meta name='keywords' content='мебельная фурнитура, комплектующие для мебели, Аргос-ФМ, комплектующие для мебели Могилев, Могилев, кромочные материалы, кромка, кромка ПВХ, ручки мебельные, мебельная фурнитура Могилев, кромка ПВХ Могилев, лента кромочная, лента кромочная Могилев, ручки мебельные Могилев, кромка Могилев'>
     <meta name='description' content='Комплексные поставки всех видов мебельной фурнитуры импортного и отечественного производства. Республика Беларусь, г. Могилёв.'>
 
-    <title>Новости</title>
+    <title>Акции</title>
 
     <link rel='shortcut icon' href='img/icons/favicon.ico' type='image/x-icon'>
 	<link rel='icon' href='img/icons/favicon.ico' type='image/x-icon'>
@@ -181,7 +182,7 @@ if(isset($_SESSION['userID'])) {
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLinkNotDD">
-                    <a href="news.php" style="color: #df4e47;">Новости</a>
+                    <a href="news.php">Новости</a>
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="storesLink" onmouseover="showDropdownList('1', 'storesLink')">
@@ -190,7 +191,7 @@ if(isset($_SESSION['userID'])) {
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLinkNotDD">
-                    <a href="actions.php">Акции</a>
+                    <a href="actions.php" style="color: #df4e47;">Акции</a>
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="partnersLink" onmouseover="showDropdownList('1', 'partnersLink')">
@@ -219,17 +220,17 @@ if(isset($_SESSION['userID'])) {
     <div id="menuShadow"></div>
 
 	<div id="page">
-		<h1 style='margin-top: 80px;'>Новости</h1>
+		<h1 style='margin-top: 80px;'>Акции</h1>
 		<div id='breadCrumbs'>
-			<a href='index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='news.php'><span class='breadCrumbsText'>Новости</span></a>
+			<a href='index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='actions.php'><span class='breadCrumbsText'>Акции</span></a>
 		</div>
 
 		<div style="width: 100%; text-align: right;">
 			<span style='color: #4c4c4c; font-style: italic; font-size: 16px;'>Архив: </span>
 			<?php
-				$yearResult = $mysqli->query("SELECT DISTINCT year FROM news ORDER BY id");
+				$yearResult = $mysqli->query("SELECT DISTINCT year FROM actions ORDER BY id");
 				while($year = $yearResult->fetch_array(MYSQLI_NUM)) {
-					echo "<a href='news.php?year=".$year[0]."'><span style='color: #4c4c4c; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>".$year[0]."</span></a> ";
+					echo "<a href='actions.php?year=".$year[0]."'><span style='color: #4c4c4c; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>".$year[0]."</span></a> ";
 				}
 			?>
 		</div>
@@ -237,32 +238,187 @@ if(isset($_SESSION['userID'])) {
 		<br />
 		<?php
 			if(empty($_REQUEST['id'])) {
-				if(empty($_REQUEST['year'])) {
-					$newsResult = $mysqli->query("SELECT * FROM news ORDER BY id DESC");
-				} else {
-					$newsResult = $mysqli->query("SELECT * FROM news WHERE year = '".$_REQUEST['year']."' ORDER BY id DESC");
-				}
+				if(empty($_REQUEST['year']) or $_REQUEST['year'] == date("Y")) {
+					$actionsResult = $mysqli->query("SELECT * FROM actions ORDER BY id DESC");
 
-				while($news = $newsResult->fetch_assoc()) {
-					$month = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
-					$index = (int)substr($news['date'], 3, 2) - 1;
+					echo "<h2>Действующие акции</h2>";
+					$count = 0;
 
-					$date = substr($news['date'], 0, 2)." ".$month[$index]." ".substr($news['date'], 6, 4);
+					while($actions = $actionsResult->fetch_assoc()) {
+						$dx = (int)date('d');
+						$mx = (int)date('m');
+						$yx = (int)date('Y');
+
+						$d1 = (int)substr($actions['from_date'], 0, 2);
+						$m1 = (int)substr($actions['from_date'], 3, 2);
+						$y1 = (int)substr($actions['from_date'], 6, 4);
+
+						$d2 = (int)substr($actions['to_date'], 0, 2);
+						$m2 = (int)substr($actions['to_date'], 3, 2);
+						$y2 = (int)substr($actions['to_date'], 6, 4);
+
+						if($y1 < $yx and $yx < $y2) {
+							echoAction($actions);
+							$count++;
+						}
+
+						if($y1 < $yx and $yx == $y2) {
+							if($mx < $m2) {
+								echoAction($actions);
+								$count++;
+							}
+
+							if($mx == $m2 and $dx <= $d2) {
+								echoAction($actions);
+								$count++;
+							}
+						}
+
+						if($y1 == $yx) {
+							if($m1 < $mx) {
+								if($yx < $y2) {
+									echoAction($actions);
+									$count++;
+								}
+
+								if($yx == $y2) {
+									if($mx < $m2) {
+										echoAction($actions);
+										$count++;
+									}
+
+									if($mx == $m2 and $dx <= $d2) {
+										echoAction($actions);
+										$count++;
+									}
+								}
+							}
+
+							if($m1 == $mx and $d1 <= $dx) {
+								if($yx < $y2) {
+									echoAction($actions);
+									$count++;
+								}
+
+								if($yx == $y2) {
+									if($mx < $m2) {
+										echoAction($actions);
+										$count++;
+									}
+
+									if($mx == $m2 and $dx <= $d2) {
+										echoAction($actions);
+										$count++;
+									}
+								}
+							}
+						}
+					}
+
+					if($count == 0) {
+						echo "<p>На данный момент действующих акций нет.</p>";
+					}
 
 					echo "
-						<a href='news.php?id=".$news['id']."'>
-							<div class='newsPreview' id='newsPreview".$news['id']."'>
-								<img src='img/photos/news/".$news['preview']."' />
-								<br /><br />
-								<div style='text-align: left;'>
-									<span style='color: #df4e47; font-style: italic; font-size: 14px;'>".$date."</span>
-									<p style='color: #4c4c4c; margin-top: 0;'>".$news['header']."</p>
-									<br />
-									<div style='text-align: right;'><img src='img/system/arrow.png' /></div>
-								</div>
-							</div>
-						</a>
+						<br /><br />
+						<div style='width: 100%; height: 1px; background-color: #c9c9c9; margin-top: 5px;'></div>
+						<br /><br />
+						<h2>Запланированные акции</h2>
 					";
+
+					$count = 0;
+					$actionsResult = $mysqli->query("SELECT * FROM actions ORDER BY id DESC");
+					while($actions = $actionsResult->fetch_assoc()) {
+						$dx = (int)date('d');
+						$mx = (int)date('m');
+						$yx = (int)date('Y');
+
+						$d1 = (int)substr($actions['from_date'], 0, 2);
+						$m1 = (int)substr($actions['from_date'], 3, 2);
+						$y1 = (int)substr($actions['from_date'], 6, 4);
+
+						$d2 = (int)substr($actions['to_date'], 0, 2);
+						$m2 = (int)substr($actions['to_date'], 3, 2);
+						$y2 = (int)substr($actions['to_date'], 6, 4);
+
+						if($y1 > $yx) {
+							echoAction($actions);
+							$count++;
+						}
+
+						if($y1 == $yx) {
+							if($m1 > $mx) {
+								echoAction($actions);
+								$count++;
+							}
+
+							if($m1 == $mx and $d1 > $dx) {
+								echoAction($actions);
+								$count++;
+							}
+						}
+					}
+
+					if($count == 0) {
+						echo "<p>На данный момент запланированных акций нет.</p>";
+					}
+
+					echo "
+						<br /><br />
+						<div style='width: 100%; height: 1px; background-color: #c9c9c9; margin-top: 5px;'></div>
+						<br /><br />
+						<h2>Завершённые акции</h2>
+					";
+
+					$count = 0;
+					$actionsResult = $mysqli->query("SELECT * FROM actions ORDER BY id DESC");
+					while($actions = $actionsResult->fetch_assoc()) {
+						$dx = (int)date('d');
+						$mx = (int)date('m');
+						$yx = (int)date('Y');
+
+						$d1 = (int)substr($actions['from_date'], 0, 2);
+						$m1 = (int)substr($actions['from_date'], 3, 2);
+						$y1 = (int)substr($actions['from_date'], 6, 4);
+
+						$d2 = (int)substr($actions['to_date'], 0, 2);
+						$m2 = (int)substr($actions['to_date'], 3, 2);
+						$y2 = (int)substr($actions['to_date'], 6, 4);
+
+						if($yx > $y2) {
+							echoAction($actions);
+							$count++;
+						}
+
+						if($yx == $y2) {
+							if($mx > $m2) {
+								echoAction($actions);
+								$count++;
+							}
+
+							if($mx == $m2 and $dx > $d2) {
+								echoAction($actions);
+								$count++;
+							}
+						}
+					}
+
+					if($count == 0) {
+						echo "<p>Завершённых акций ещё нет.</p>";
+					}
+				} else {
+					echo "<h2>Завершённые акции</h2>";
+
+					$count = 0;
+					$actionsResult = $mysqli->query("SELECT * FROM actions WHERE year = '".$_REQUEST['year']."' ORDER BY id DESC");
+					while($actions = $actionsResult->fetch_assoc())	{
+						echoAction($actions);
+						$count++;
+					}
+
+					if($count == 0) {
+						echo "<p>Акций в ".$_REQUEST['year']."-м году не было.</p>";
+					}
 				}
 			} else {
 				$newsResult = $mysqli->query("SELECT * FROM news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
