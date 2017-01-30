@@ -13,7 +13,7 @@ function echoAction($actions) {
 				<img src='img/photos/actions/".$actions['preview']."' />
 				<br /><br />
 				<div style='text-align: left;'>
-					<span style='color: #df4e47; font-style: italic; font-size: 14px;'>".$from_date." — ".$to_date."</span>
+					<span style='color: #df4e47; font-style: italic; font-size: 14px;'>"; if($actions['from_date'] != $actions['to_date']) { echo $from_date." — ".$to_date;} else {echo $from_date;} echo "</span>
 					<p style='color: #4c4c4c; margin-top: 0;'>".$actions['header']."</p>
 					<br />
 					<div style='text-align: right;'><img src='img/system/arrow.png' /></div>

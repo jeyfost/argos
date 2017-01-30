@@ -84,7 +84,7 @@ if(isset($_SESSION['userID'])) {
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
-	<script type="text/javascript" src="js/news.js"></script>
+	<script type="text/javascript" src="js/actions.js"></script>
 	<!--[if lt IE 9]>
   		<script type="text/javascript" src="js/lightview/js/excanvas/excanvas.js"></script>
 	<![endif]-->
@@ -421,34 +421,144 @@ if(isset($_SESSION['userID'])) {
 					}
 				}
 			} else {
-				$newsResult = $mysqli->query("SELECT * FROM news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
-				$news = $newsResult->fetch_assoc();
+				$actionResult = $mysqli->query("SELECT * FROM actions WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+				$action = $actionResult->fetch_assoc();
 
 				$month = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
-				$index = (int)substr($news['date'], 3, 2) - 1;
 				$j = 0;
+				$type = "";
 
-				$date = substr($news['date'], 0, 2)." ".$month[$index]." ".substr($news['date'], 6, 4);
+				if($action['from_date'] != $actions['to_date']) {
+					$index1 = (int)substr($action['from_date'], 3, 2) - 1;
+					$index2 = (int)substr($action['to_date'], 3, 2) - 1;
+					$from_date = substr($action['from_date'], 0, 2)." ".$month[$index1]." ".substr($action['from_date'], 6, 4);
+					$to_date = substr($action['to_date'], 0, 2)." ".$month[$index2]." ".substr($action['to_date'], 6, 4);
+					$date = $from_date." — ".$to_date;
+				} else {
+					$index = (int)substr($action['from_date'], 3, 2) - 1;
+					$date = substr($action['from_date'], 0, 2)." ".$month[$index]." ".substr($action['from_date'], 6, 4);
+				}
+
+				$dx = (int)date('d');
+				$mx = (int)date('m');
+				$yx = (int)date('Y');
+
+				$d1 = (int)substr($actions['from_date'], 0, 2);
+				$m1 = (int)substr($actions['from_date'], 3, 2);
+				$y1 = (int)substr($actions['from_date'], 6, 4);
+
+				$d2 = (int)substr($actions['to_date'], 0, 2);
+				$m2 = (int)substr($actions['to_date'], 3, 2);
+				$y2 = (int)substr($actions['to_date'], 6, 4);
+
+				if($y1 < $yx and $yx < $y2) {
+					$type = "now";
+				}
+
+				if($y1 < $yx and $yx == $y2) {
+					if($mx < $m2) {
+						$type = "now";
+					}
+
+					if($mx == $m2 and $dx <= $d2) {
+						$type = "now";
+					}
+				}
+
+				if($y1 == $yx) {
+					if($m1 < $mx) {
+						if($yx < $y2) {
+							$type = "now";
+						}
+
+						if($yx == $y2) {
+							if($mx < $m2) {
+								$type = "now";
+							}
+
+							if($mx == $m2 and $dx <= $d2) {
+								$type = "now";
+							}
+						}
+					}
+
+					if($m1 == $mx and $d1 <= $dx) {
+						if($yx < $y2) {
+							$type = "now";
+						}
+
+						if($yx == $y2) {
+								if($mx < $m2) {
+									$type = "now";;
+								}
+
+							if($mx == $m2 and $dx <= $d2) {
+								$type = "now";
+							}
+						}
+					}
+				}
+
+
+				if($type == "") {
+					if($y1 > $yx) {
+						$type = "future";
+					}
+
+					if($y1 == $yx) {
+						if($m1 > $mx) {
+							$type = "future";
+						}
+
+						if($m1 == $mx and $d1 > $dx) {
+							$type = "future";
+						}
+					}
+
+					if($yx > $y2) {
+						$type = "future";
+					}
+				}
+
+				if($type == "") {
+					if($yx == $y2) {
+						if($mx > $m2) {
+							$type = "past";
+						}
+
+						if($mx == $m2 and $dx > $d2) {
+							$type = "past";
+						}
+					}
+				}
 
 				echo "
 					<div id='personalMenu'>
 						<div id='newsSlider'>
 				";
 
-				$yearNewsResult = $mysqli->query("SELECT * FROM news WHERE year = '".$news['year']."'");
-				while($yearNews = $yearNewsResult->fetch_assoc()) {
+				$actionsResult = $mysqli->query("SELECT * FROM actions ORDER BY id DESC LIMIT 10");
+				while($actions = $actionsResult->fetch_assoc()) {
 					$j++;
-					$i = (int)substr($yearNews['date'], 3, 2) - 1;
-					$d = substr($yearNews['date'], 0, 2)." ".$month[$i]." ".substr($yearNews['date'], 6, 4);
+					if($actions['from_date'] != $actions['to_date']) {
+						$i1 = (int)substr($actions['from_date'], 3, 2) - 1;
+						$i2 = (int)substr($actions['to_date'], 3, 2) - 1;
+						$fd = substr($actions['from_date'], 0, 2)." ".$month[$i1]." ".substr($actions['from_date'], 6, 4);
+						$td = substr($actions['to_date'], 0, 2)." ".$month[$i2]." ".substr($actions['to_date'], 6, 4);
+						$d = $fd." — ".$td;
+					} else {
+						$i = (int)substr($actions['from_date'], 3, 2) - 1;
+						$d = substr($actions['from_date'], 0, 2)." ".$month[$i]." ".substr($actions['from_date'], 6, 4);
+					}
 
 					echo "
-						<a href='news.php?id=".$yearNews['id']."'>
-							<div class='newsPreview' id='newsPreview".$yearNews['id']."' "; if($j > 1) {echo "style='margin-left: 0;";} else {echo "style='margin: 0;";} if($yearNews['id'] == $_REQUEST['id']) {echo " background-color: #ededed;'";} else {echo "'";} echo ">
-								<img src='img/photos/news/".$yearNews['preview']."' />
+						<a href='news.php?id=".$actions['id']."'>
+							<div class='newsPreview' id='newsPreview".$actions['id']."' "; if($j > 1) {echo "style='margin-left: 0;";} else {echo "style='margin: 0;";} if($actions['id'] == $_REQUEST['id']) {echo " background-color: #ededed;'";} else {echo "'";} echo ">
+								<img src='img/photos/actions/".$actions['preview']."' />
 								<br /><br />
 								<div style='text-align: left;'>
 									<span style='color: #df4e47; font-style: italic; font-size: 14px;'>".$d."</span>
-									<p style='color: #4c4c4c; margin-top: 0;'>".$yearNews['header']."</p>
+									<p style='color: #4c4c4c; margin-top: 0;'>".$actions['header']."</p>
 									<br />
 									<div style='text-align: right;'><img src='img/system/arrow.png' /></div>
 								</div>
@@ -462,11 +572,137 @@ if(isset($_SESSION['userID'])) {
 					</div>
 
 					<div id='personalContent'>
-						<span style='color: #df4e47; font-style: italic; font-size: 14px;'>".$date."</span>
+						<h2>".$action['header']."</h2>
+						<p>".$action['text']."</p>
+						<span style='font-style: italic; font-size: 14px;'>
+				";
+
+				switch($type) {
+					case "now":
+						echo "Срок проведения акции: ";
+						break;
+					case "future":
+						echo "Акция будет проводиться: ";
+						break;
+					case "past":
+						echo "Акция проводилась: ";
+						break;
+					default:
+						echo "Срок проведения акции: ";
+						break;
+				}
+
+				echo "
+						<span style='color: #df4e47;'>".$date."</span></span>
+				";
+
+				$goodsCountResult = $mysqli->query("SELECT COUNT(id) FROM action_goods WHERE action_id = '".$_REQUEST['id']."'");
+				$goodsCount = $goodsCountResult->fetch_array(MYSQLI_NUM);
+
+				if($goodsCount[0] > 0) {
+					echo "<br /><br /><br /><h2>Акционные товары</h2>";
+
+					$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE action_id = '".$_REQUEST['id']."'");
+					while($actionGood = $actionGoodResult->fetch_assoc()) {
+						$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$actionGood['good_id']."'");
+						$good = $goodResult->fetch_assoc();
+
+						$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$good['unit']."'");
+						$unit = $unitResult->fetch_assoc();
+
+						$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$good['currency']."'");
+						$currency = $currencyResult->fetch_assoc();
+
+						$price = $actionGood['price'] * $currency['rate'];
+						$price = round($price, 2, PHP_ROUND_HALF_UP);
+						$roubles = floor($price);
+						$kopeck = ($price - $roubles) * 100;
+						if($kopeck == 100) {
+							$kopeck = 0;
+							$roubles ++;
+						}
+
+						echo "
+							<div class='catalogueItem'>
+								<div class='itemDescription'>
+									<div class='catalogueIMG'>
+										<a href='img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='img/catalogue/small/".$good['small']."' /></a>
+									</div>
+									<div class='catalogueInfo'>
+										<div class='catalogueName'>
+											<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
+											<div style='margin-left: 15px;'>".$good['name']."</div>
+											<div style='clear: both;'></div>
+										</div>
+										<div class='catalogueDescription'>
+						";
+						$strings = explode("<br />", $good['description']);
+						for($i = 0; $i < count($strings); $i++) {
+							$string = explode(':', $strings[$i]);
+							if(count($string) > 1) {
+								echo "<b>".$string[0].":</b>".$string[1]."<br />";
+							} else {
+								echo $string[0]."<br />";
+							}
+						}
+						echo "
+							<br />
+							<b>Артикул: </b>".$good['code']."
+							<br />
+							<div id='goodPrice".$good['id']."'>
+								<span><b>Стоимость за ".$unit['short_name'].": </b><span style='color: #df4e47; font-weight: bold;'>"; if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span></span>
+						";
+
+						if($good['sketch'] != '') {
+							echo "<br /><br /><a href='img/catalogue/sketch/".$good['sketch']."' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
+						}
+
+						echo "
+										</div>
+									</div>
+								</div>
+								<div style='clear: both;'></div>
+							</div>
+						";
+
+						if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
+							echo "
+								<div class='itemPurchase'>
+									<img src='img/system/toBasket.png' id='toBasketIMG".$good['id']."' class='toBasketIMG' onmouseover='changeIcon(\"toBasketIMG".$good['id']."\", \"toBasketRed.png\", 0)' onmouseout='changeIcon(\"toBasketIMG".$good['id']."\", \"toBasket.png\", 0)' title='Добавить в корзину' onclick='addToBasket(\"".$good['id']."\", \"quantityInput".$good['id']."\", \"addingResult".$good['id']."\")' />
+									<form method='post'>
+										<label for='quantityInput".$good['id']."'>Кол-во в ".$unit['in_name'].":</label>
+										<input type='number' id='quantityInput".$good['id']."' min='1' step='1' value='1' class='itemQuantityInput' />
+									</form>
+									<br />
+									<div class='addingResult' id='addingResult".$good['id']."' onclick='hideBlock(\"addingResult".$good['id']."\")'></div>
+								</div>
+
+							";
+						}
+
+						echo "
+							<div style='clear: both;'></div>
+							<div style='width: 100%; height: 20px;'></div>
+							<div style='width: 100%; height: 1px; background-color: #d7d5d1; margin-top: 10px;'></div>
+							<div style='width: 100%; height: 20px;'></div>
+						";
+					}
+
+					if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
+						$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
+						$discount = $discountResult->fetch_array(MYSQLI_NUM);
+
+						if($discount[0] > 0) {
+							echo "<b>Обратите внимание, ваша личная скидка, равная <span style='color: #df4e47;'>".$discount[0]."%</span>, при покупке акционных товаров <span style='color: #df4e47;'>не учитывается</span>.</b>";
+						}
+					} else {
+						echo "Чтобы получить возможность купить акционные в онлайн-режиме, необходимо <a href='personal/login.php'><span style='color: #df4e47; text-decoration: underline;'>войти на сайт</span></a>, либо <a href='personal/register.php'><span style='color: #df4e47; text-decoration: underline;'>зарегистрироваться</span></a>, если у вас ещё нет своей учётной записи.";
+					}
+				}
+
+				echo "
 						<br /><br />
-						<h2>".$news['header']."</h2>
-						<p>".$news['text']."</p>
-						<a href='news.php'><span style='color: #df4e47; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>Больше новостей</span></a>
+						<a href='actions.php'><span style='color: #df4e47; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>Больше акций</span></a>
 					</div>
 				";
 			}
