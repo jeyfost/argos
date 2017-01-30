@@ -513,7 +513,6 @@ if(isset($_SESSION['userID'])) {
 							<tr class='headTR'>
 								<td>№</td>
 								<td>Заказ</td>
-								<td>Клиент</td>
 								<td>Дата оформления</td>
 								<td>Дата принятия</td>
 							</tr>
@@ -528,7 +527,6 @@ if(isset($_SESSION['userID'])) {
 							<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 								<td>".($page * 10 - 10 + $j)."</td>
 								<td><span class='tdLink' onclick='showOrderDetailsHistory(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
-								<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
 								<td>".substr($order['send_date'], 0, 10)." в ".substr($order['send_date'], 11, 8)."</td>
 								<td>".substr($order['proceed_date'], 0, 10)." в ".substr($order['proceed_date'], 11, 8)."</td>
 							</tr>
