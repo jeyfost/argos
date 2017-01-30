@@ -163,6 +163,7 @@ if(isset($_SESSION['userID'])) {
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript" src="js/catalogue.js"></script>
 	<!--[if lt IE 9]>
   		<script type="text/javascript" src="js/lightview/js/excanvas/excanvas.js"></script>
@@ -413,15 +414,99 @@ if(isset($_SESSION['userID'])) {
 				$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$catalogue['unit']."'");
 				$unit = $unitResult->fetch_assoc();
 
-				$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$catalogue['currency']."'");
-				$currency = $currencyResult->fetch_assoc();
+				$active = 0;
 
-				$price = $catalogue['price'] * $currency['rate'];
-				if(isset($_SESSION['userID'])) {
-					$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
-					$discount = $discountResult->fetch_array(MYSQLI_NUM);
+				$actionIDResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$catalogue['id']."'");
+				if($actionIDResult->num_rows > 0) {
+					while($actionID = $actionIDResult->fetch_assoc()) {
+						$actionResult = $mysqli->query("SELECT * FROM actions WHERE id = '".$actionID['action_id']."'");
+						$action = $actionResult->fetch_assoc();
 
-					$price = $price - $price * ($discount[0] / 100);
+						$dx = (int)date('d');
+						$mx = (int)date('m');
+						$yx = (int)date('Y');
+
+						$d1 = (int)substr($action['from_date'], 0, 2);
+						$m1 = (int)substr($action['from_date'], 3, 2);
+						$y1 = (int)substr($action['from_date'], 6, 4);
+
+						$d2 = (int)substr($action['to_date'], 0, 2);
+						$m2 = (int)substr($action['to_date'], 3, 2);
+						$y2 = (int)substr($action['to_date'], 6, 4);
+
+						if($y1 < $yx and $yx < $y2) {
+							$active++;
+						}
+
+						if($y1 < $yx and $yx == $y2) {
+							if($mx < $m2) {
+								$active++;
+							}
+
+							if($mx == $m2 and $dx <= $d2) {
+								$active++;
+							}
+						}
+
+						if($y1 == $yx) {
+							if($m1 < $mx) {
+								if($yx < $y2) {
+									$active++;
+								}
+
+								if($yx == $y2) {
+									if($mx < $m2) {
+										$active++;
+									}
+
+									if($mx == $m2 and $dx <= $d2) {
+										$active++;
+									}
+								}
+							}
+
+							if($m1 == $mx and $d1 <= $dx) {
+								if($yx < $y2) {
+									$active++;
+								}
+
+								if($yx == $y2) {
+									if($mx < $m2) {
+										$active++;
+									}
+
+									if($mx == $m2 and $dx <= $d2) {
+										$active++;
+									}
+								}
+							}
+						}
+
+						if($active > 0) {
+							$aID = $actionID['action_id'];
+						}
+					}
+				}
+
+				if($active == 0) {
+					$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$catalogue['currency']."'");
+					$currency = $currencyResult->fetch_assoc();
+
+					$price = $catalogue['price'] * $currency['rate'];
+
+					if(isset($_SESSION['userID'])) {
+						$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
+						$discount = $discountResult->fetch_array(MYSQLI_NUM);
+
+						$price = $price - $price * ($discount[0] / 100);
+					}
+				} else {
+					$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$catalogue['id']."' AND action_id = '".$aID."'");
+					$actionGood = $actionGoodResult->fetch_assoc();
+
+					$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$actionGood['currency']."'");
+					$currency = $currencyResult->fetch_assoc();
+					$price = $actionGood['price'] * $currency['rate'];
 				}
 
 				$price = round($price, 2, PHP_ROUND_HALF_UP);
@@ -438,6 +523,13 @@ if(isset($_SESSION['userID'])) {
 						<div class='itemDescription'>
 							<div class='catalogueIMG'>
 								<a href='img/catalogue/big/".$catalogue['picture']."' class='lightview' data-lightview-title='".$catalogue['name']."' data-lightview-caption='".nl2br(strip_tags($catalogue['description']))."'><img src='img/catalogue/small/".$catalogue['small']."' /></a>
+				";
+
+				if($active > 0) {
+					echo "<img src='img/system/action.png' class='actionIMG' />";
+				}
+
+				echo "
 							</div>
 							<div class='catalogueInfo'>
 								<div class='catalogueName'>
@@ -461,7 +553,7 @@ if(isset($_SESSION['userID'])) {
 					<b>Артикул: </b>".$catalogue['code']."
 					<br />
 					<div id='goodPrice".$catalogue['id']."'>
-						<span"; if($_SESSION['userID'] == 1) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['short_name'].": </b>"; if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>
+						<span"; if($_SESSION['userID'] == 1 and $active == 0) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['short_name'].": </b>"; if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>"; if($active > 0) {echo "</span>";} echo "
 				";
 
 				if($catalogue['sketch'] != '') {

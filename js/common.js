@@ -1,3 +1,15 @@
+$(window).on("load", function() {
+	if($('div').is('.catalogueIMG')) {
+		$('.catalogueIMG').mouseover(function() {
+			$(this).children('.actionIMG').css("opacity", "1");
+		});
+
+		$('.catalogueIMG').mouseout(function() {
+			$(this).children('.actionIMG').css("opacity", ".6");
+		});
+	}
+});
+
 function buttonChange(id, action) {
 	if(action == 1) {
 		document.getElementById(id).style.color = "#fff";

@@ -256,18 +256,109 @@ if(isset($_SESSION['userID'])) {
 						echo "<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='../catalogue.php?type=fa&p=1' style='color: #df4e47;'>из каталога</a></b>.</span>";
 					} else {
 						echo "<span style='font-size: 15px;'>Всего групп товаров в коризне: <b id='basketQuantityText'>".$basketQuantity[0]."</b></span><br /><br />";
-						$total = 0;
+						$totalNormal = 0;
+						$totalAction = 0;
+						$aID = 0;
+						$actionGoodsQuantity = 0;
+
 						$basketResult = $mysqli->query("SELECT * FROM basket WHERE user_id = '".$_SESSION['userID']."' ORDER BY id");
 						while($basket = $basketResult->fetch_assoc()) {
+							$active = 0;
+
+							$actionIDResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$basket['good_id']."'");
+							if($actionIDResult->num_rows > 0) {
+								while($actionID = $actionIDResult->fetch_assoc()) {
+									$actionResult = $mysqli->query("SELECT * FROM actions WHERE id = '".$actionID['action_id']."'");
+									$action = $actionResult->fetch_assoc();
+
+									$dx = (int)date('d');
+									$mx = (int)date('m');
+									$yx = (int)date('Y');
+
+									$d1 = (int)substr($action['from_date'], 0, 2);
+									$m1 = (int)substr($action['from_date'], 3, 2);
+									$y1 = (int)substr($action['from_date'], 6, 4);
+
+									$d2 = (int)substr($action['to_date'], 0, 2);
+									$m2 = (int)substr($action['to_date'], 3, 2);
+									$y2 = (int)substr($action['to_date'], 6, 4);
+
+									if($y1 < $yx and $yx < $y2) {
+										$active++;
+									}
+
+									if($y1 < $yx and $yx == $y2) {
+										if($mx < $m2) {
+											$active++;
+										}
+
+										if($mx == $m2 and $dx <= $d2) {
+											$active++;
+										}
+									}
+
+									if($y1 == $yx) {
+										if($m1 < $mx) {
+											if($yx < $y2) {
+												$active++;
+											}
+
+											if($yx == $y2) {
+												if($mx < $m2) {
+													$active++;
+												}
+
+												if($mx == $m2 and $dx <= $d2) {
+													$active++;
+												}
+											}
+										}
+
+										if($m1 == $mx and $d1 <= $dx) {
+											if($yx < $y2) {
+												$active++;
+											}
+
+											if($yx == $y2) {
+												if($mx < $m2) {
+													$active++;
+												}
+
+												if($mx == $m2 and $dx <= $d2) {
+													$active++;
+												}
+											}
+										}
+									}
+
+									if($active > 0) {
+										$aID = $actionID['action_id'];
+										$actionGoodsQuantity++;
+									}
+								}
+							}
+
 							$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$basket['good_id']."'");
 							$good = $goodResult->fetch_assoc();
 							$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$good['unit']."'");
 							$unit = $unitResult->fetch_assoc();
-							$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$good['currency']."'");
-							$currency = $currencyResult->fetch_assoc();
-							$price = $good['price'] * $currency['rate'];
-							$total += $price * $basket['quantity'];
-							$price = $price - $price * ($user['discount'] / 100);
+
+							if($active == 0) {
+								$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$good['currency']."'");
+								$currency = $currencyResult->fetch_assoc();
+								$price = $good['price'] * $currency['rate'];
+								$totalNormal += $price * $basket['quantity'];
+								$price = $price - $price * ($user['discount'] / 100);
+							} else {
+								$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$basket['good_id']."' AND action_id = '".$aID."'");
+								$actionGood = $actionGoodResult->fetch_assoc();
+
+								$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$actionGood['currency']."'");
+								$currency = $currencyResult->fetch_assoc();
+								$price = $actionGood['price'] * $currency['rate'];
+								$totalAction += $price * $basket['quantity'];
+							}
+
 							$price = round($price, 2, PHP_ROUND_HALF_UP);
 							$roubles = floor($price);
 							$kopeck = ($price - $roubles) * 100;
@@ -281,6 +372,13 @@ if(isset($_SESSION['userID'])) {
 									<div class='itemDescription'>
 										<div class='catalogueIMG'>
 											<a href='../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='../img/catalogue/small/".$good['small']."' /></a>
+							";
+
+							if($active > 0) {
+								echo "<img src='../img/system/action.png' class='actionIMG' />";
+							}
+
+							echo "
 										</div>
 										<div class='catalogueInfo'>
 											<div class='catalogueName'>
@@ -304,7 +402,7 @@ if(isset($_SESSION['userID'])) {
 								<b>Артикул: </b>".$good['code']."
 								<br />
 								<div id='goodPrice".$good['id']."'>
-									<span><b>Стоимость за ".$unit['short_name'].": </b>"; if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>
+									<span><b>Стоимость за ".$unit['short_name'].": </b>"; if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";} echo "
 							";
 
 							if($good['sketch'] != '') {
@@ -334,7 +432,7 @@ if(isset($_SESSION['userID'])) {
 							";
 						}
 
-						$total = $total - $total * ($user['discount'] / 100);
+						$total = $totalAction + $totalNormal - $totalNormal * ($user['discount'] / 100);
 						$total = round($total, 2, PHP_ROUND_HALF_UP);
 						$roubles = floor($total);
 						$kopeck = ceil(($total - $roubles) * 100);
@@ -353,6 +451,13 @@ if(isset($_SESSION['userID'])) {
 							<br /><br />
 							<div style='float: right;'><b>Ваша личная скидка: </b><span>".$user['discount']."%</span></div>
 							<br />
+						";
+
+						if($actionGoodsQuantity > 0) {
+							echo "<span style='float: right; font-size: 14px; color: #df4e47;'>Ваша личная скидка не действует на акционные товары.</span><br /><br />";
+						}
+
+						echo "
 							<div style='float: right;'><b>Общая стоимость: </b><span id='totalPriceText'>".$total."</span></div>
 							<br /><br />
 							<div id='responseField'></div>
@@ -547,7 +652,7 @@ if(isset($_SESSION['userID'])) {
 					}
 					echo "<br /><br /><div id='responseField'></div>";
 					break;
-				default: echo "111111111"; break;
+				default: break;
 			}
 		?>
 
