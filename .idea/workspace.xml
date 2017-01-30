@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue.php" afterPath="$PROJECT_DIR$/catalogue.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/common.js" afterPath="$PROJECT_DIR$/js/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/personal/basket.php" afterPath="$PROJECT_DIR$/personal/basket.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/personal/ajaxChangeQuantity.php" afterPath="$PROJECT_DIR$/scripts/personal/ajaxChangeQuantity.php" />
     </list>
     <ignored path="argos.iws" />
@@ -162,23 +158,23 @@
       <file leaf-file-name="ajaxChangeQuantity.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxChangeQuantity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61851335">
-              <caret line="146" column="29" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.713885">
+              <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
               <folding>
-                <marker date="1485775429205" expanded="true" signature="185:295" placeholder="UPDATE baske... " />
-                <marker date="1485775429205" expanded="true" signature="349:412" placeholder="SELECT disco... users" />
-                <marker date="1485775429205" expanded="true" signature="504:566" placeholder="SELECT * FRO... basket" />
-                <marker date="1485775429205" expanded="true" signature="651:714" placeholder="SELECT * FRO... catalogue_new" />
-                <marker date="1485775429205" expanded="true" signature="792:852" placeholder="SELECT rate currency" />
-                <marker date="1485775429205" expanded="true" signature="1352:1462" placeholder="UPDATE baske... " />
-                <marker date="1485775429205" expanded="true" signature="1503:1566" placeholder="SELECT disco... users" />
-                <marker date="1485775429205" expanded="true" signature="1698:1760" placeholder="SELECT * FRO... basket" />
-                <marker date="1485775429205" expanded="true" signature="1877:1944" placeholder="SELECT * FRO... action_goods" />
-                <marker date="1485775429205" expanded="true" signature="2077:2138" placeholder="SELECT * FRO... actions" />
-                <marker date="1485775429205" expanded="true" signature="3379:3442" placeholder="SELECT * FRO... catalogue_new" />
-                <marker date="1485775429205" expanded="true" signature="3540:3597" placeholder="SELECT * FRO... currency" />
-                <marker date="1485775429205" expanded="true" signature="3795:3889" placeholder="SELECT * FRO... action_goods" />
-                <marker date="1485775429205" expanded="true" signature="3982:4045" placeholder="SELECT * FRO... currency" />
+                <marker date="1485776181997" expanded="true" signature="185:295" placeholder="UPDATE baske... " />
+                <marker date="1485776181997" expanded="true" signature="349:412" placeholder="SELECT disco... users" />
+                <marker date="1485776181997" expanded="true" signature="504:566" placeholder="SELECT * FRO... basket" />
+                <marker date="1485776181997" expanded="true" signature="651:714" placeholder="SELECT * FRO... catalogue_new" />
+                <marker date="1485776181997" expanded="true" signature="792:852" placeholder="SELECT rate currency" />
+                <marker date="1485776181997" expanded="true" signature="1352:1462" placeholder="UPDATE baske... " />
+                <marker date="1485776181997" expanded="true" signature="1503:1566" placeholder="SELECT disco... users" />
+                <marker date="1485776181997" expanded="true" signature="1698:1760" placeholder="SELECT * FRO... basket" />
+                <marker date="1485776181997" expanded="true" signature="1877:1944" placeholder="SELECT * FRO... action_goods" />
+                <marker date="1485776181997" expanded="true" signature="2077:2138" placeholder="SELECT * FRO... actions" />
+                <marker date="1485776181997" expanded="true" signature="3379:3442" placeholder="SELECT * FRO... catalogue_new" />
+                <marker date="1485776181997" expanded="true" signature="3540:3597" placeholder="SELECT * FRO... currency" />
+                <marker date="1485776181997" expanded="true" signature="3795:3889" placeholder="SELECT * FRO... action_goods" />
+                <marker date="1485776181997" expanded="true" signature="3982:4045" placeholder="SELECT * FRO... currency" />
               </folding>
             </state>
           </provider>
@@ -666,12 +662,6 @@
       <option name="number" value="Default" />
       <updated>1471436673828</updated>
     </task>
-    <task id="LOCAL-00015" summary="Исправлена проверка сессии в страницах персонального раздела">
-      <created>1481011982508</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1481011982508</updated>
-    </task>
     <task id="LOCAL-00016" summary="Реализовано добавление товара в корзину">
       <created>1481047183606</created>
       <option name="number" value="00016" />
@@ -960,7 +950,13 @@
       <option name="project" value="LOCAL" />
       <updated>1485760608372</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Изменён подсчёт стоимости товаров в каталоге, корзине и при редактировании пользователем количества товара в корзине">
+      <created>1485775850623</created>
+      <option name="number" value="00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1485775850623</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1000,7 +996,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Реализована отмена зказов" />
     <MESSAGE value="Реализована перестройка таблицы заказов для администратора" />
     <MESSAGE value="Исправлена детализация заказа в истории заказов" />
     <MESSAGE value="Исправлено отображение финальной суммы заказа в истории заказов" />
@@ -1025,7 +1020,8 @@
     <MESSAGE value="Добавлена страница партнёрской сети" />
     <MESSAGE value="Добавлена общая страница акций" />
     <MESSAGE value="Добавлена страница акции" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена страница акции" />
+    <MESSAGE value="Изменён подсчёт стоимости товаров в каталоге, корзине и при редактировании пользователем количества товара в корзине" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменён подсчёт стоимости товаров в каталоге, корзине и при редактировании пользователем количества товара в корзине" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1867,23 +1863,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxChangeQuantity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61851335">
-          <caret line="146" column="29" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.713885">
+          <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
           <folding>
-            <marker date="1485775429205" expanded="true" signature="185:295" placeholder="UPDATE baske... " />
-            <marker date="1485775429205" expanded="true" signature="349:412" placeholder="SELECT disco... users" />
-            <marker date="1485775429205" expanded="true" signature="504:566" placeholder="SELECT * FRO... basket" />
-            <marker date="1485775429205" expanded="true" signature="651:714" placeholder="SELECT * FRO... catalogue_new" />
-            <marker date="1485775429205" expanded="true" signature="792:852" placeholder="SELECT rate currency" />
-            <marker date="1485775429205" expanded="true" signature="1352:1462" placeholder="UPDATE baske... " />
-            <marker date="1485775429205" expanded="true" signature="1503:1566" placeholder="SELECT disco... users" />
-            <marker date="1485775429205" expanded="true" signature="1698:1760" placeholder="SELECT * FRO... basket" />
-            <marker date="1485775429205" expanded="true" signature="1877:1944" placeholder="SELECT * FRO... action_goods" />
-            <marker date="1485775429205" expanded="true" signature="2077:2138" placeholder="SELECT * FRO... actions" />
-            <marker date="1485775429205" expanded="true" signature="3379:3442" placeholder="SELECT * FRO... catalogue_new" />
-            <marker date="1485775429205" expanded="true" signature="3540:3597" placeholder="SELECT * FRO... currency" />
-            <marker date="1485775429205" expanded="true" signature="3795:3889" placeholder="SELECT * FRO... action_goods" />
-            <marker date="1485775429205" expanded="true" signature="3982:4045" placeholder="SELECT * FRO... currency" />
+            <marker date="1485776181997" expanded="true" signature="185:295" placeholder="UPDATE baske... " />
+            <marker date="1485776181997" expanded="true" signature="349:412" placeholder="SELECT disco... users" />
+            <marker date="1485776181997" expanded="true" signature="504:566" placeholder="SELECT * FRO... basket" />
+            <marker date="1485776181997" expanded="true" signature="651:714" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1485776181997" expanded="true" signature="792:852" placeholder="SELECT rate currency" />
+            <marker date="1485776181997" expanded="true" signature="1352:1462" placeholder="UPDATE baske... " />
+            <marker date="1485776181997" expanded="true" signature="1503:1566" placeholder="SELECT disco... users" />
+            <marker date="1485776181997" expanded="true" signature="1698:1760" placeholder="SELECT * FRO... basket" />
+            <marker date="1485776181997" expanded="true" signature="1877:1944" placeholder="SELECT * FRO... action_goods" />
+            <marker date="1485776181997" expanded="true" signature="2077:2138" placeholder="SELECT * FRO... actions" />
+            <marker date="1485776181997" expanded="true" signature="3379:3442" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1485776181997" expanded="true" signature="3540:3597" placeholder="SELECT * FRO... currency" />
+            <marker date="1485776181997" expanded="true" signature="3795:3889" placeholder="SELECT * FRO... action_goods" />
+            <marker date="1485776181997" expanded="true" signature="3982:4045" placeholder="SELECT * FRO... currency" />
           </folding>
         </state>
       </provider>

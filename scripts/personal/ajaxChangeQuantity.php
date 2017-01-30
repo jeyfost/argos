@@ -151,6 +151,8 @@ if($mysqli->query("UPDATE basket SET quantity = '".$quantity."' WHERE user_id = 
 		$roubles++;
 	}
 
+	$kopeck = round($kopeck);
+
 	if($roubles == 0) {
 		$total = $kopeck." коп.";
 	} else {
