@@ -10,6 +10,14 @@ $(window).on("load", function() {
 	}
 });
 
+function actionIcon(id, action) {
+	if(action == 1) {
+		document.getElementById(id).style.opacity = "1";
+	} else {
+		document.getElementById(id).style.opacity = ".6";
+	}
+}
+
 function buttonChange(id, action) {
 	if(action == 1) {
 		document.getElementById(id).style.color = "#fff";

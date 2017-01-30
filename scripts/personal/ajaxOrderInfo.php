@@ -4,9 +4,10 @@ session_start();
 include("../connect.php");
 
 $id = $mysqli->real_escape_string($_POST['id']);
-$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
 
+$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
 $discount = $discountResult->fetch_array(MYSQLI_NUM);
+
 $orderResult = $mysqli->query("SELECT * FROM orders WHERE order_id = '".$id."'");
 
 $totalNormal = 0;
@@ -128,12 +129,12 @@ while($order = $orderResult->fetch_assoc()) {
 	echo "
 		<div class='catalogueItem' id='ci".$good['id']."'>
 			<div class='itemDescription'>
-				<div class='catalogueIMG'>
+				<div class='catalogueIMG' onmouseover='actionIcon(\"actionIcon".$good['id']."\", 1)' onmouseout='actionIcon(\"actionIcon".$good['id']."\", 0)'>
 					<a href='../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='../img/catalogue/small/".$good['small']."' /></a>
 	";
 
 	if($active > 0) {
-		echo "<img src='../img/system/action.png' class='actionIMG' />";
+		echo "<img src='../img/system/action.png' class='actionIMG' id='actionIcon".$good['id']."' />";
 	}
 
 	echo "
