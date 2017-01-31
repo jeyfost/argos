@@ -443,93 +443,28 @@ if(isset($_SESSION['userID'])) {
 				$mx = (int)date('m');
 				$yx = (int)date('Y');
 
-				$d1 = (int)substr($actions['from_date'], 0, 2);
-				$m1 = (int)substr($actions['from_date'], 3, 2);
-				$y1 = (int)substr($actions['from_date'], 6, 4);
+				$d1 = (int)substr($action['from_date'], 0, 2);
+				$m1 = (int)substr($action['from_date'], 3, 2);
+				$y1 = (int)substr($action['from_date'], 6, 4);
 
-				$d2 = (int)substr($actions['to_date'], 0, 2);
-				$m2 = (int)substr($actions['to_date'], 3, 2);
-				$y2 = (int)substr($actions['to_date'], 6, 4);
+				$d2 = (int)substr($action['to_date'], 0, 2);
+				$m2 = (int)substr($action['to_date'], 3, 2);
+				$y2 = (int)substr($action['to_date'], 6, 4);
 
-				if($y1 < $yx and $yx < $y2) {
+				$dateX = $yx."-".$mx."-".$dx;
+				$date1 = $y1."-".$m1."-".$d1;
+				$date2 = $y2."-".$m2."-".$d2;
+
+				if($date1 < $dateX and $dateX < $date2) {
 					$type = "now";
 				}
 
-				if($y1 < $yx and $yx == $y2) {
-					if($mx < $m2) {
-						$type = "now";
-					}
-
-					if($mx == $m2 and $dx <= $d2) {
-						$type = "now";
-					}
+				if($date1 > $dateX) {
+					$type = "future";
 				}
 
-				if($y1 == $yx) {
-					if($m1 < $mx) {
-						if($yx < $y2) {
-							$type = "now";
-						}
-
-						if($yx == $y2) {
-							if($mx < $m2) {
-								$type = "now";
-							}
-
-							if($mx == $m2 and $dx <= $d2) {
-								$type = "now";
-							}
-						}
-					}
-
-					if($m1 == $mx and $d1 <= $dx) {
-						if($yx < $y2) {
-							$type = "now";
-						}
-
-						if($yx == $y2) {
-								if($mx < $m2) {
-									$type = "now";;
-								}
-
-							if($mx == $m2 and $dx <= $d2) {
-								$type = "now";
-							}
-						}
-					}
-				}
-
-
-				if($type == "") {
-					if($y1 > $yx) {
-						$type = "future";
-					}
-
-					if($y1 == $yx) {
-						if($m1 > $mx) {
-							$type = "future";
-						}
-
-						if($m1 == $mx and $d1 > $dx) {
-							$type = "future";
-						}
-					}
-
-					if($yx > $y2) {
-						$type = "future";
-					}
-				}
-
-				if($type == "") {
-					if($yx == $y2) {
-						if($mx > $m2) {
-							$type = "past";
-						}
-
-						if($mx == $m2 and $dx > $d2) {
-							$type = "past";
-						}
-					}
+				if($dateX > $date2) {
+					$type = "past";
 				}
 
 				echo "
@@ -552,7 +487,7 @@ if(isset($_SESSION['userID'])) {
 					}
 
 					echo "
-						<a href='news.php?id=".$actions['id']."'>
+						<a href='actions.php?id=".$actions['id']."'>
 							<div class='newsPreview' id='newsPreview".$actions['id']."' "; if($j > 1) {echo "style='margin-left: 0;";} else {echo "style='margin: 0;";} if($actions['id'] == $_REQUEST['id']) {echo " background-color: #ededed;'";} else {echo "'";} echo ">
 								<img src='img/photos/actions/".$actions['preview']."' />
 								<br /><br />
