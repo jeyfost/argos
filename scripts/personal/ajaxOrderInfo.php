@@ -100,22 +100,17 @@ while($order = $orderResult->fetch_assoc()) {
 	$currency = $currencyResult->fetch_array(MYSQLI_NUM);
 
 	if($aID == 0) {
-		$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$good['currency']."'");
-		$currency = $currencyResult->fetch_assoc();
-		$price = $good['price'] * $currency['rate'];
+		$price = $good['price'] * $currency[0];
 		$totalNormal += $price * $order['quantity'];
-		$price = $price - $price * ($discount[0] / 100);
+		$price = $price * (1 - $discount[0] / 100);
 	} else {
 		$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$order['good_id']."' AND action_id = '".$aID."'");
 		$actionGood = $actionGoodResult->fetch_assoc();
 
-		$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$actionGood['currency']."'");
-		$currency = $currencyResult->fetch_assoc();
-		$price = $actionGood['price'] * $currency['rate'];
+		$price = $actionGood['price'] * $currency[0];
 		$totalAction += $price * $order['quantity'];
 	}
 
-	$price = ceil($price * 100) / 100;
 	$roubles = floor($price);
 	$kopeck = round(($price - $roubles) * 100);
 	if($kopeck == 100) {
@@ -191,8 +186,7 @@ while($order = $orderResult->fetch_assoc()) {
 	";
 }
 
-$total = $totalAction + $totalNormal - $totalNormal * ($discount[0] / 100);
-$total = round($total, 2, PHP_ROUND_HALF_UP);
+$total = $totalAction + $totalNormal * (1 - $discount[0] / 100);
 $roubles = floor($total);
 $kopeck = round(($total - $roubles) * 100);
 

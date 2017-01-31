@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue.php" afterPath="$PROJECT_DIR$/catalogue.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/personal/basket.php" afterPath="$PROJECT_DIR$/personal/basket.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/personal/ajaxCalculateTotalPrice.php" afterPath="$PROJECT_DIR$/scripts/personal/ajaxCalculateTotalPrice.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/personal/ajaxChangeQuantity.php" afterPath="$PROJECT_DIR$/scripts/personal/ajaxChangeQuantity.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/personal/ajaxChangeQuantityDetailed.php" afterPath="$PROJECT_DIR$/scripts/personal/ajaxChangeQuantityDetailed.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,10 +75,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajaxCalculateTotalPrice.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ajaxOrderInfo.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.19074334">
+              <caret line="109" column="51" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
+              <folding>
+                <marker date="1485844861370" expanded="true" signature="136:199" placeholder="SELECT disco... users" />
+                <marker date="1485844861370" expanded="true" signature="289:336" placeholder="SELECT * FRO... orders" />
+                <marker date="1485844861370" expanded="true" signature="422:531" placeholder="..." />
+                <marker date="1485844861370" expanded="true" signature="689:755" placeholder="SELECT * FRO... action_goods" />
+                <marker date="1485844861370" expanded="true" signature="885:946" placeholder="SELECT * FRO... actions" />
+                <marker date="1485844861370" expanded="true" signature="2160:2222" placeholder="SELECT * FRO... catalogue_new" />
+                <marker date="1485844861370" expanded="true" signature="2299:2359" placeholder="SELECT rate currency" />
+                <marker date="1485844861370" expanded="true" signature="2619:2712" placeholder="SELECT * FRO... action_goods" />
+                <marker date="1485844861370" expanded="true" signature="3025:3075" placeholder="SELECT * FRO... units" />
+                <marker date="1485844861370" expanded="true" signature="3779:4095" placeholder="..." />
+                <marker date="1485844861370" expanded="true" signature="3812:4054" placeholder="..." />
+                <marker date="1485844861370" expanded="true" signature="3832:3917" placeholder="..." />
+                <marker date="1485844861370" expanded="true" signature="3944:3979" placeholder="..." />
+                <marker date="1485844861370" expanded="true" signature="4023:4035" placeholder="..." />
+                <marker date="1485844861370" expanded="true" signature="4461:4516" placeholder="..." />
+                <marker date="1485844861370" expanded="true" signature="4556:4590" placeholder="..." />
+                <marker date="1485844861370" expanded="true" signature="4962:5867" placeholder="..." />
+                <marker date="1485844861370" expanded="false" signature="5040:5070" placeholder="..." />
+                <marker date="1485844861370" expanded="true" signature="5358:5725" placeholder="..." />
+                <marker date="1485844861370" expanded="false" signature="5884:5896" placeholder="..." />
+                <marker date="1485844861370" expanded="false" signature="5928:5954" placeholder="..." />
+                <marker date="1485844861370" expanded="false" signature="6001:6071" placeholder="..." />
+                <marker date="1485844861370" expanded="false" signature="6118:6144" placeholder="..." />
+                <marker date="1485844861370" expanded="false" signature="6485:6498" placeholder="..." />
+                <marker date="1485844861370" expanded="true" signature="6627:6673" placeholder="..." />
+                <marker date="1485844861370" expanded="false" signature="6772:6785" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxCalculateTotalPrice.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxCalculateTotalPrice.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.713885">
+            <state vertical-scroll-proportion="-19.576923">
               <caret line="112" column="15" selection-start-line="112" selection-start-column="15" selection-end-line="112" selection-end-column="15" />
               <folding>
                 <marker date="1485844164731" expanded="true" signature="121:183" placeholder="SELECT * FRO... basket" />
@@ -339,7 +371,6 @@
         <option value="$PROJECT_DIR$/actions.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/js/common.js" />
-        <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderInfoHistory.php" />
         <option value="$PROJECT_DIR$/js/basket.js" />
         <option value="$PROJECT_DIR$/js/orders.js" />
@@ -349,6 +380,7 @@
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxChangeQuantityDetailed.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxCalculateTotalPrice.php" />
+        <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php" />
       </list>
     </option>
   </component>
@@ -565,12 +597,6 @@
       <created>1471436673828</created>
       <option name="number" value="Default" />
       <updated>1471436673828</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Исправлены &quot;хлебные крошки&quot; в каталоге">
-      <created>1481207269462</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1481207269462</updated>
     </task>
     <task id="LOCAL-00021" summary="Доработан поиск">
       <created>1481213762296</created>
@@ -860,7 +886,13 @@
       <option name="project" value="LOCAL" />
       <updated>1485784858362</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Исправоен пересчёт стоимости товаров в корзине при удалении товара">
+      <created>1485844279014</created>
+      <option name="number" value="00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1485844279015</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -869,6 +901,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.249375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -876,7 +909,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -900,7 +932,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="В поиск добавлена позиция товара" />
     <MESSAGE value="Переделаны пункты меню" />
     <MESSAGE value="Исправлены сылки в меню, создана загатовка страницы контактной информации" />
     <MESSAGE value="Доработана страница контактов &quot;Магазины&quot;" />
@@ -925,7 +956,8 @@
     <MESSAGE value="Изменено отображение акционных товаров в детализации непринятых заказов у пользователя и изменён подсчёт общей стоимости при редактировании количества товаров в группе." />
     <MESSAGE value="Изменено отображение стомости акционных товаров в истории заказов пользователя" />
     <MESSAGE value="Изменено отображение стомости акционных товаров для администратора в  непринятых заказах" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменено отображение стомости акционных товаров для администратора в  непринятых заказах" />
+    <MESSAGE value="Исправоен пересчёт стоимости товаров в корзине при удалении товара" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправоен пересчёт стоимости товаров в корзине при удалении товара" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1483,13 +1515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09537167">
-          <caret line="137" column="5" selection-start-line="135" selection-start-column="4" selection-end-line="137" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1792,21 +1817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/basket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="162" column="1" selection-start-line="162" selection-start-column="1" selection-end-line="162" selection-end-column="1" />
-          <folding>
-            <marker date="1485784831808" expanded="true" signature="808:824" placeholder="..." />
-            <marker date="1485784831808" expanded="true" signature="954:969" placeholder="..." />
-            <marker date="1485784831808" expanded="true" signature="3166:3182" placeholder="..." />
-            <marker date="1485784831808" expanded="true" signature="3312:3327" placeholder="..." />
-            <marker date="1485784831808" expanded="true" signature="4309:4325" placeholder="..." />
-            <marker date="1485784831808" expanded="true" signature="4460:4475" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxChangeQuantityDetailed.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.038462">
@@ -1829,7 +1839,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxCalculateTotalPrice.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.713885">
+        <state vertical-scroll-proportion="-19.576923">
           <caret line="112" column="15" selection-start-line="112" selection-start-column="15" selection-end-line="112" selection-end-column="15" />
           <folding>
             <marker date="1485844164731" expanded="true" signature="121:183" placeholder="SELECT * FRO... basket" />
@@ -1839,6 +1849,56 @@
             <marker date="1485844164731" expanded="true" signature="1901:1961" placeholder="SELECT rate currency" />
             <marker date="1485844164731" expanded="true" signature="2176:2270" placeholder="SELECT * FRO... action_goods" />
             <marker date="1485844164731" expanded="true" signature="2461:2524" placeholder="SELECT disco... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/basket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="162" column="1" selection-start-line="162" selection-start-column="1" selection-end-line="162" selection-end-column="1" />
+          <folding>
+            <marker date="1485784831808" expanded="true" signature="808:824" placeholder="..." />
+            <marker date="1485784831808" expanded="true" signature="954:969" placeholder="..." />
+            <marker date="1485784831808" expanded="true" signature="3166:3182" placeholder="..." />
+            <marker date="1485784831808" expanded="true" signature="3312:3327" placeholder="..." />
+            <marker date="1485784831808" expanded="true" signature="4309:4325" placeholder="..." />
+            <marker date="1485784831808" expanded="true" signature="4460:4475" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19074334">
+          <caret line="109" column="51" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
+          <folding>
+            <marker date="1485844861370" expanded="true" signature="136:199" placeholder="SELECT disco... users" />
+            <marker date="1485844861370" expanded="true" signature="289:336" placeholder="SELECT * FRO... orders" />
+            <marker date="1485844861370" expanded="true" signature="422:531" placeholder="..." />
+            <marker date="1485844861370" expanded="true" signature="689:755" placeholder="SELECT * FRO... action_goods" />
+            <marker date="1485844861370" expanded="true" signature="885:946" placeholder="SELECT * FRO... actions" />
+            <marker date="1485844861370" expanded="true" signature="2160:2222" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1485844861370" expanded="true" signature="2299:2359" placeholder="SELECT rate currency" />
+            <marker date="1485844861370" expanded="true" signature="2619:2712" placeholder="SELECT * FRO... action_goods" />
+            <marker date="1485844861370" expanded="true" signature="3025:3075" placeholder="SELECT * FRO... units" />
+            <marker date="1485844861370" expanded="true" signature="3779:4095" placeholder="..." />
+            <marker date="1485844861370" expanded="true" signature="3812:4054" placeholder="..." />
+            <marker date="1485844861370" expanded="true" signature="3832:3917" placeholder="..." />
+            <marker date="1485844861370" expanded="true" signature="3944:3979" placeholder="..." />
+            <marker date="1485844861370" expanded="true" signature="4023:4035" placeholder="..." />
+            <marker date="1485844861370" expanded="true" signature="4461:4516" placeholder="..." />
+            <marker date="1485844861370" expanded="true" signature="4556:4590" placeholder="..." />
+            <marker date="1485844861370" expanded="true" signature="4962:5867" placeholder="..." />
+            <marker date="1485844861370" expanded="false" signature="5040:5070" placeholder="..." />
+            <marker date="1485844861370" expanded="true" signature="5358:5725" placeholder="..." />
+            <marker date="1485844861370" expanded="false" signature="5884:5896" placeholder="..." />
+            <marker date="1485844861370" expanded="false" signature="5928:5954" placeholder="..." />
+            <marker date="1485844861370" expanded="false" signature="6001:6071" placeholder="..." />
+            <marker date="1485844861370" expanded="false" signature="6118:6144" placeholder="..." />
+            <marker date="1485844861370" expanded="false" signature="6485:6498" placeholder="..." />
+            <marker date="1485844861370" expanded="true" signature="6627:6673" placeholder="..." />
+            <marker date="1485844861370" expanded="false" signature="6772:6785" placeholder="..." />
           </folding>
         </state>
       </provider>
