@@ -251,3 +251,54 @@ function changeQuantityDetailed(id, order_id) {
 		});
 	}
 }
+
+function removeGoodFromOrder(good_id, order_id) {
+	$.ajax({
+		type: "POST",
+		data: {"orderID": order_id},
+		url: "../scripts/personal/ajaxCountGoods.php",
+		success: function(quantity) {
+			if(quantity > 1) {
+				var message = "Вы действительно хотите удалить эту группу товаров из заказа?";
+			} else {
+				var message = "Вы действительно хотите удалить эту группу товаров из заказа? Учтите, что заказ будет отменён, поскольку вы удаляете последний товар в заказе.";
+			}
+
+			if(confirm(message)) {
+				$.ajax({
+					type: "POST",
+					data: {"goodID": good_id, "orderID": order_id},
+					url: "../scripts/personal/ajaxRemoveGoodFromOrder.php",
+					success: function(response) {
+						if(response == "a") {
+							$.ajax({
+								type: "POST",
+								data: {"orderID": order_id},
+								url: "../scripts/personal/ajaxCalculateOrderPrice.php",
+								success: function(result) {
+									$('#ci' + good_id).hide('fast');
+									$('#cis' + good_id).hide('fast');
+									$('#cil' + good_id).hide('fast');
+									$('#totalPriceText').html(result);
+								}
+							});
+						}
+
+						if(response == "b") {
+							$('#responseField').hide('fast');
+
+							$.ajax({
+								type: "POST",
+								data: {"orderID": order_id},
+								url: "../scripts/personal/ajaxRebuildOrdersTableAdmin.php",
+								success: function(r) {
+									$('#personalContent').html(r);
+								}
+							});
+						}
+					}
+				});
+			}
+		}
+	});
+}

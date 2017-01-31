@@ -8,7 +8,10 @@ $id = $mysqli->real_escape_string($_POST['orderID']);
 $totalNormal = 0;
 $totalAction = 0;
 
-$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
+$userIDResult = $mysqli->query("SELECT user_id FROM orders_info WHERE id = '".$id."'");
+$userID = $userIDResult->fetch_array(MYSQLI_NUM);
+
+$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$userID[0]."'");
 $discount = $discountResult->fetch_array(MYSQLI_NUM);
 
 $orderResult = $mysqli->query("SELECT * FROM orders WHERE order_id = '".$id."'");
@@ -106,7 +109,7 @@ while($order = $orderResult->fetch_assoc()) {
 	}
 }
 
-$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
+$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$userID[0]."'");
 $discount = $discountResult->fetch_array(MYSQLI_NUM);
 
 $total = $totalAction + $totalNormal * (1 - $discount[0] / 100);
