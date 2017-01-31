@@ -80,9 +80,9 @@ function showDropdownList(action, id, highlighted) {
 				}
 
 				if(highlighted == "partnersLinkClientNews") {
-					$('#dropDownList').html($('#dropDownList').html() + $('#dropDownList').html("<div class='dropDownLink' style='background-color: #df4e47;'><a href='../partners/news.php' id='partnersLinkClientNewsA' style='color: #fff;'>Новости для клиентов</a></div><div style='clear: both;'></div>"));
+					$('#dropDownList').html($('#dropDownList').html() +"<div class='dropDownLink' style='background-color: #df4e47;'><a href='../partners/news.php' id='partnersLinkClientNewsA' style='color: #fff;'>Новости для клиентов</a></div><div style='clear: both;'></div>");
 				} else {
-					$('#dropDownList').html($('#dropDownList').html() + $('#dropDownList').html("<div class='dropDownLink' id='partnersLinkClientNews' onmouseover='changeDropDownLink(\"1\", \"partnersLinkClientNews\", \"partnersLinkClientNewsA\")' onmouseout='changeDropDownLink(\"0\", \"partnersLinkClientNews\", \"partnersLinkClientNewsA\")'><a href='../partners/news.php' id='partnersLinkClientNewsA'>Новости для клиентов</a></div><div style='clear: both;'></div>"));
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='partnersLinkClientNews' onmouseover='changeDropDownLink(\"1\", \"partnersLinkClientNews\", \"partnersLinkClientNewsA\")' onmouseout='changeDropDownLink(\"0\", \"partnersLinkClientNews\", \"partnersLinkClientNewsA\")'><a href='../partners/news.php' id='partnersLinkClientNewsA'>Новости для клиентов</a></div><div style='clear: both;'></div>");
 				}
                 break;
             case "contactsLink":

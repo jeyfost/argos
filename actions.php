@@ -84,6 +84,7 @@ if(isset($_SESSION['userID'])) {
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript" src="js/actions.js"></script>
 	<!--[if lt IE 9]>
   		<script type="text/javascript" src="js/lightview/js/excanvas/excanvas.js"></script>
@@ -549,9 +550,8 @@ if(isset($_SESSION['userID'])) {
 						$currency = $currencyResult->fetch_assoc();
 
 						$price = $actionGood['price'] * $currency['rate'];
-						$price = round($price, 2, PHP_ROUND_HALF_UP);
 						$roubles = floor($price);
-						$kopeck = ($price - $roubles) * 100;
+						$kopeck = round(($price - $roubles) * 100);
 						if($kopeck == 100) {
 							$kopeck = 0;
 							$roubles ++;
@@ -562,6 +562,7 @@ if(isset($_SESSION['userID'])) {
 								<div class='itemDescription'>
 									<div class='catalogueIMG'>
 										<a href='img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='img/catalogue/small/".$good['small']."' /></a>
+										<img src='img/system/action.png' class='actionIMG' />
 									</div>
 									<div class='catalogueInfo'>
 										<div class='catalogueName'>

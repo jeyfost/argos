@@ -83,6 +83,7 @@ if(isset($_SESSION['userID'])) {
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript" src="js/news.js"></script>
 	<!--[if lt IE 9]>
   		<script type="text/javascript" src="js/lightview/js/excanvas/excanvas.js"></script>
