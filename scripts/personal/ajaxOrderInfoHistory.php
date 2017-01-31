@@ -8,89 +8,32 @@ $id = $mysqli->real_escape_string($_POST['id']);
 $discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
 $discount = $discountResult->fetch_array(MYSQLI_NUM);
 
-$orderResult = $mysqli->query("SELECT * FROM orders WHERE order_id = '".$id."'");
+$orderDateResult = $mysqli->query("SELECT send_date FROM orders_info WHERE id = '".$id."'");
+$orderDate = $orderDateResult->fetch_array(MYSQLI_NUM);
 
-$totalNormal = 0;
-$totalAction = 0;
+$dateX = substr($orderDate[0], 0, 10);
+$dateX = substr($dateX, 6, 4)."-".substr($dateX, 3, 2)."-".substr($dateX, 0, 2);
+$aID = 0;
 $actionGoodsQuantity = 0;
 
 echo "<div style='width: 100%; background-color: #ffeecb; height: 40px; line-height: 40px; font-size: 16px; text-align: center;'>Детализация заказа №".$id."</div><br /><br />";
+
+$actionResult = $mysqli->query("SELECT * FROM actions");
+while($action = $actionResult->fetch_assoc()) {
+	$date1 = $action['from_date'];
+	$date2 = $action['to_date'];
+
+	$date1 = substr($date1, 6, 4)."-".substr($date1, 3, 2)."-".substr($date1, 0, 2);
+	$date2 = substr($date2, 6, 4)."-".substr($date2, 3, 2)."-".substr($date2, 0, 2);
+
+	if($date1 <= $dateX and $dateX <= $date2) {
+		$aID = $action['id'];
+	}
+}
+
+$orderResult = $mysqli->query("SELECT * FROM orders WHERE order_id = '".$id."'");
 while($order = $orderResult->fetch_assoc()) {
 	$active = 0;
-	$aID = 0;
-
-	$actionIDResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$order['good_id']."'");
-	if($actionIDResult->num_rows > 0) {
-		while($actionID = $actionIDResult->fetch_assoc()) {
-			$actionResult = $mysqli->query("SELECT * FROM actions WHERE id = '".$actionID['action_id']."'");
-			$action = $actionResult->fetch_assoc();
-
-			$dx = (int)date('d');
-			$mx = (int)date('m');
-			$yx = (int)date('Y');
-
-			$d1 = (int)substr($action['from_date'], 0, 2);
-			$m1 = (int)substr($action['from_date'], 3, 2);
-			$y1 = (int)substr($action['from_date'], 6, 4);
-
-			$d2 = (int)substr($action['to_date'], 0, 2);
-			$m2 = (int)substr($action['to_date'], 3, 2);
-			$y2 = (int)substr($action['to_date'], 6, 4);
-
-			if($y1 < $yx and $yx < $y2) {
-				$active++;
-			}
-
-			if($y1 < $yx and $yx == $y2) {
-				if($mx < $m2) {
-					$active++;
-				}
-
-				if($mx == $m2 and $dx <= $d2) {
-					$active++;
-				}
-			}
-
-			if($y1 == $yx) {
-				if($m1 < $mx) {
-					if($yx < $y2) {
-						$active++;
-					}
-
-					if($yx == $y2) {
-						if($mx < $m2) {
-							$active++;
-						}
-
-						if($mx == $m2 and $dx <= $d2) {
-							$active++;
-						}
-					}
-				}
-
-				if($m1 == $mx and $d1 <= $dx) {
-					if($yx < $y2) {
-						$active++;
-					}
-
-					if($yx == $y2) {
-						if($mx < $m2) {
-							$active++;
-						}
-
-						if($mx == $m2 and $dx <= $d2) {
-							$active++;
-						}
-					}
-				}
-			}
-
-			if($active > 0) {
-				$aID = $actionID['action_id'];
-				$actionGoodsQuantity++;
-			}
-		}
-	}
 
 	$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$order['good_id']."'");
 	$good = $goodResult->fetch_assoc();
@@ -100,14 +43,19 @@ while($order = $orderResult->fetch_assoc()) {
 
 	if($aID == 0) {
 		$price = $good['price'] * $currency[0];
-		$totalNormal += $price * $order['quantity'];
 		$price = $price * (1 - $discount[0] / 100);
 	} else {
-		$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$order['good_id']."' AND action_id = '".$aID."'");
-		$actionGood = $actionGoodResult->fetch_assoc();
+		$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$good['id']."' AND action_id = '".$aID."'");
+		if($actionGoodResult->num_rows > 0) {
+			$actionGood = $actionGoodResult->fetch_assoc();
 
-		$price = $actionGood['price'] * $currency[0];
-		$totalAction += $price * $order['quantity'];
+			$active = 1;
+			$actionGoodsQuantity++;
+			$price = $actionGood['price'] * $currency[0];
+		} else {
+			$price = $good['price'] * $currency[0];
+			$price = $price * (1 - $discount[0] / 100);
+		}
 	}
 
 	$roubles = floor($price);
@@ -128,7 +76,7 @@ while($order = $orderResult->fetch_assoc()) {
 	";
 
 	if($active > 0) {
-		echo "<img src='../img/system/action.png' class='actionIMG' id='actionIcon".$good['id']."' />";
+		echo "<img src='../img/system/action_past.png' class='actionIMG' id='actionIcon".$good['id']."' />";
 	}
 
 	echo "
@@ -181,9 +129,11 @@ while($order = $orderResult->fetch_assoc()) {
 	";
 }
 
-$total = $totalAction + $totalNormal * (1 - $discount[0] / 100);
-$roubles = floor($total);
-$kopeck = round(($total - $roubles) * 100);
+$totalResult = $mysqli->query("SELECT summ FROM orders_info WHERE id = '".$id."'");
+$total = $totalResult->fetch_array(MYSQLI_NUM);
+
+$roubles = floor($total[0]);
+$kopeck = round($total[0] - $roubles) * 100;
 
 if($kopeck == 100) {
 	$kopeck = 0;
