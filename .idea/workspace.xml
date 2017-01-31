@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/personal/ajaxRebuildHistoryTable.php" />
+    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="Добавлено перестроение таблицы заказов при отмене">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/personal/ajaxRebuildTableCancel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/orders.js" afterPath="$PROJECT_DIR$/js/orders.js" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,17 +30,40 @@
         <entry file="file://$PROJECT_DIR$/js/orders.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="155" column="54" selection-start-line="155" selection-start-column="54" selection-end-line="155" selection-end-column="54" />
+              <caret line="207" column="68" selection-start-line="207" selection-start-column="68" selection-end-line="207" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajaxRebuildHistoryTable.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ajaxRebuildTableCancel.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxRebuildTableCancel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47685835">
+              <caret line="37" column="92" selection-start-line="37" selection-start-column="92" selection-end-line="37" selection-end-column="92" />
+              <folding>
+                <marker date="1485854830982" expanded="true" signature="92:144" placeholder="SELECT COUNT... orders_info" />
+                <marker date="1485854830982" expanded="true" signature="265:281" placeholder="..." />
+                <marker date="1485854830982" expanded="true" signature="574:765" placeholder="..." />
+                <marker date="1485854830982" expanded="true" signature="705:765" placeholder="..." />
+                <marker date="1485854830982" expanded="true" signature="805:864" placeholder="SELECT DISTI... orders_info" />
+                <marker date="1485854830982" expanded="true" signature="966:1019" placeholder="SELECT * FRO... users" />
+                <marker date="1485854830982" expanded="true" signature="1315:1341" placeholder="..." />
+                <marker date="1485854830982" expanded="true" signature="1404:1440" placeholder="..." />
+                <marker date="1485854830982" expanded="true" signature="1458:1629" placeholder="..." />
+                <marker date="1485854830982" expanded="true" signature="1481:1627" placeholder="..." />
+                <marker date="1485854830982" expanded="true" signature="1666:1710" placeholder="SELECT * FRO... orders_info" />
+                <marker date="1485854830982" expanded="true" signature="1794:1852" placeholder="SELECT * FRO... users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxRebuildHistoryTable.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxRebuildHistoryTable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5946704">
-              <caret line="37" column="98" selection-start-line="37" selection-start-column="98" selection-end-line="37" selection-end-column="98" />
+            <state vertical-scroll-proportion="-0.61538464">
+              <caret line="14" column="188" selection-start-line="14" selection-start-column="188" selection-end-line="14" selection-end-column="188" />
               <folding>
                 <marker date="1485854581075" expanded="true" signature="92:144" placeholder="SELECT COUNT... orders_info" />
                 <marker date="1485854581075" expanded="true" signature="265:281" placeholder="..." />
@@ -274,7 +298,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/personal/cancel.php" />
         <option value="$PROJECT_DIR$/personal/confirm.php" />
         <option value="$PROJECT_DIR$/personal/login.php" />
         <option value="$PROJECT_DIR$/personal/newPassword.php" />
@@ -321,10 +344,11 @@
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderInfoHistory.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" />
-        <option value="$PROJECT_DIR$/js/orders.js" />
         <option value="$PROJECT_DIR$/personal/orders.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxRebuildHistoryTable.php" />
+        <option value="$PROJECT_DIR$/js/orders.js" />
+        <option value="$PROJECT_DIR$/scripts/personal/ajaxRebuildTableCancel.php" />
       </list>
     </option>
   </component>
@@ -541,12 +565,6 @@
       <created>1471436673828</created>
       <option name="number" value="Default" />
       <updated>1471436673828</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Исправлен поиск и шапка на всех страницах">
-      <created>1481787413950</created>
-      <option name="number" value="00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1481787413950</updated>
     </task>
     <task id="LOCAL-00030" summary="Добавлена возможность установки курсов валют">
       <created>1481874916537</created>
@@ -836,7 +854,13 @@
       <option name="project" value="LOCAL" />
       <updated>1485854067904</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Добавлено перестроение таблицы заказов при принтяии заказа">
+      <created>1485854630773</created>
+      <option name="number" value="00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1485854630773</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -876,7 +900,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Доработана страница наград" />
     <MESSAGE value="Добавлена страница галлереи" />
     <MESSAGE value="В форме подачи вакансий реализована автоперестройка списков даты" />
     <MESSAGE value="Добавлена страница вакансий" />
@@ -901,7 +924,8 @@
     <MESSAGE value="Реализована детализации обработанного заказа у администратора" />
     <MESSAGE value="Исправлено отображение стоимости заказа в истории заказов пользователя" />
     <MESSAGE value="Исправлена система принятия заказа" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлена система принятия заказа" />
+    <MESSAGE value="Добавлено перестроение таблицы заказов при принтяии заказа" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлено перестроение таблицы заказов при принтяии заказа" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -917,13 +941,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/contacts/ajaxValidateEmail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11921459">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/personal/logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1805,14 +1822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/orders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="155" column="54" selection-start-line="155" selection-start-column="54" selection-end-line="155" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/personal/orders.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.6538463">
@@ -1870,10 +1879,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/orders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="207" column="68" selection-start-line="207" selection-start-column="68" selection-end-line="207" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxRebuildHistoryTable.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5946704">
-          <caret line="37" column="98" selection-start-line="37" selection-start-column="98" selection-end-line="37" selection-end-column="98" />
+        <state vertical-scroll-proportion="-0.61538464">
+          <caret line="14" column="188" selection-start-line="14" selection-start-column="188" selection-end-line="14" selection-end-column="188" />
           <folding>
             <marker date="1485854581075" expanded="true" signature="92:144" placeholder="SELECT COUNT... orders_info" />
             <marker date="1485854581075" expanded="true" signature="265:281" placeholder="..." />
@@ -1887,6 +1904,27 @@
             <marker date="1485854581075" expanded="true" signature="1480:1626" placeholder="..." />
             <marker date="1485854581075" expanded="true" signature="1665:1709" placeholder="SELECT * FRO... orders_info" />
             <marker date="1485854581075" expanded="true" signature="1793:1851" placeholder="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxRebuildTableCancel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47685835">
+          <caret line="37" column="92" selection-start-line="37" selection-start-column="92" selection-end-line="37" selection-end-column="92" />
+          <folding>
+            <marker date="1485854830982" expanded="true" signature="92:144" placeholder="SELECT COUNT... orders_info" />
+            <marker date="1485854830982" expanded="true" signature="265:281" placeholder="..." />
+            <marker date="1485854830982" expanded="true" signature="574:765" placeholder="..." />
+            <marker date="1485854830982" expanded="true" signature="705:765" placeholder="..." />
+            <marker date="1485854830982" expanded="true" signature="805:864" placeholder="SELECT DISTI... orders_info" />
+            <marker date="1485854830982" expanded="true" signature="966:1019" placeholder="SELECT * FRO... users" />
+            <marker date="1485854830982" expanded="true" signature="1315:1341" placeholder="..." />
+            <marker date="1485854830982" expanded="true" signature="1404:1440" placeholder="..." />
+            <marker date="1485854830982" expanded="true" signature="1458:1629" placeholder="..." />
+            <marker date="1485854830982" expanded="true" signature="1481:1627" placeholder="..." />
+            <marker date="1485854830982" expanded="true" signature="1666:1710" placeholder="SELECT * FRO... orders_info" />
+            <marker date="1485854830982" expanded="true" signature="1794:1852" placeholder="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>

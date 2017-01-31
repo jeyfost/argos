@@ -202,6 +202,14 @@ function cancelOrder(id) {
 					order_response.html("Заказ был успешно отменён.<br /><br />");
 					order_response.css('opacity', 1);
 				}
+
+				$.ajax({
+					type: 'POST',
+					url: "../scripts/personal/ajaxRebuildTableCancel.php",
+					success: function(r) {
+						$('#personalContent').html(r);
+					}
+				});
 			} else {
 				if(order_response.css('opacity') == 1) {
 					order_response.css('opacity', 0);
