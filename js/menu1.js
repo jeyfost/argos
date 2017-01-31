@@ -73,7 +73,17 @@ function showDropdownList(action, id, highlighted) {
 				}
                 break;
             case "partnersLink":
-                $('#dropDownList').html("<div class='dropDownLink' id='partnersLinkCooperation' onmouseover='changeDropDownLink(\"1\", \"partnersLinkCooperation\", \"partnersLinkCooperationA\")' onmouseout='changeDropDownLink(\"0\", \"partnersLinkCooperation\", \"partnersLinkCooperationA\")'><a href='../partners/cooperation.php' id='partnersLinkCooperationA'>Сотрудничество</a></div><div class='dropDownLink' id='partnersLinkClientNews' onmouseover='changeDropDownLink(\"1\", \"partnersLinkClientNews\", \"partnersLinkClientNewsA\")' onmouseout='changeDropDownLink(\"0\", \"partnersLinkClientNews\", \"partnersLinkClientNewsA\")'><a href='../partners/news.php' id='partnersLinkClientNewsA'>Новости для клиентов</a></div><div style='clear: both;'></div>");
+				if(highlighted == "partnersLinkCooperation") {
+					$('#dropDownList').html("<div class='dropDownLink' style='background-color: #df4e47;'><a href='../partners/cooperation.php' id='partnersLinkCooperationA' style='color: #fff;'>Сотрудничество</a></div>");
+				} else {
+					$('#dropDownList').html("<div class='dropDownLink' id='partnersLinkCooperation' onmouseover='changeDropDownLink(\"1\", \"partnersLinkCooperation\", \"partnersLinkCooperationA\")' onmouseout='changeDropDownLink(\"0\", \"partnersLinkCooperation\", \"partnersLinkCooperationA\")'><a href='../partners/cooperation.php' id='partnersLinkCooperationA'>Сотрудничество</a></div>");
+				}
+
+				if(highlighted == "partnersLinkClientNews") {
+					$('#dropDownList').html($('#dropDownList').html() + $('#dropDownList').html("<div class='dropDownLink' style='background-color: #df4e47;'><a href='../partners/news.php' id='partnersLinkClientNewsA' style='color: #fff;'>Новости для клиентов</a></div><div style='clear: both;'></div>"));
+				} else {
+					$('#dropDownList').html($('#dropDownList').html() + $('#dropDownList').html("<div class='dropDownLink' id='partnersLinkClientNews' onmouseover='changeDropDownLink(\"1\", \"partnersLinkClientNews\", \"partnersLinkClientNewsA\")' onmouseout='changeDropDownLink(\"0\", \"partnersLinkClientNews\", \"partnersLinkClientNewsA\")'><a href='../partners/news.php' id='partnersLinkClientNewsA'>Новости для клиентов</a></div><div style='clear: both;'></div>"));
+				}
                 break;
             case "contactsLink":
                 if(highlighted == "contactsLinkStores") {
