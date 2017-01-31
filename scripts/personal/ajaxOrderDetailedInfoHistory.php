@@ -4,34 +4,89 @@ session_start();
 include("../connect.php");
 
 $id = $mysqli->real_escape_string($_POST['id']);
+
 $userIDResult = $mysqli->query("SELECT user_id FROM orders_info WHERE id = '".$id."'");
 $userID = $userIDResult->fetch_array(MYSQLI_NUM);
+
 $discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$userID[0]."'");
 $discount = $discountResult->fetch_array(MYSQLI_NUM);
-$orderResult = $mysqli->query("SELECT * FROM orders WHERE order_id = '".$id."'");
-$total = 0;
+
 echo "<div style='width: 100%; background-color: #ffeecb; height: 40px; line-height: 40px; font-size: 16px; text-align: center;'>Детализация заказа №".$id."</div><br /><br />";
+
 if($discount[0] > 0) {
-	echo "<p>В детализации показаны цены на товары с учётом личной скидки клиента. Размер скидки составляет <b>".$discount[0]."%</b></p><br /><br />";
+	echo "<p>В детализации показаны цены на товары с учётом личной скидки клиента. Размер скидки составляет <b>".$discount[0]."%.</b><span style='color: #df4e47;'> На акционные товары скидка не распространяется.</span></p><br /><br />";
 }
+
+$orderDateResult = $mysqli->query("SELECT send_date FROM orders_info WHERE id = '".$id."'");
+$orderDate = $orderDateResult->fetch_array(MYSQLI_NUM);
+
+$dateX = substr($orderDate[0], 0, 10);
+$dateX = substr($dateX, 6, 4)."-".substr($dateX, 3, 2)."-".substr($dateX, 0, 2);
+$aID = 0;
+$actionGoodsQuantity = 0;
+
+$actionResult = $mysqli->query("SELECT * FROM actions");
+while($action = $actionResult->fetch_assoc()) {
+	$date1 = $action['from_date'];
+	$date2 = $action['to_date'];
+
+	$date1 = substr($date1, 6, 4)."-".substr($date1, 3, 2)."-".substr($date1, 0, 2);
+	$date2 = substr($date2, 6, 4)."-".substr($date2, 3, 2)."-".substr($date2, 0, 2);
+
+	if($date1 <= $dateX and $dateX <= $date2) {
+		$aID = $action['id'];
+	}
+}
+
+$orderResult = $mysqli->query("SELECT * FROM orders WHERE order_id = '".$id."'");
 while($order = $orderResult->fetch_assoc()) {
+	$active = 0;
+
 	$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$order['good_id']."'");
 	$good = $goodResult->fetch_assoc();
+
 	$currencyResult = $mysqli->query("SELECT rate FROM currency WHERE id = '".$good['currency']."'");
 	$currency = $currencyResult->fetch_array(MYSQLI_NUM);
+
 	$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$good['unit']."'");
 	$unit = $unitResult->fetch_assoc();
-	$price = $good['price'] * $currency[0];
-	$total += $price * $order['quantity'];
-	$price = $price - $price * ($discount[0] / 100);
-	$price = round($price, 2, PHP_ROUND_HALF_UP);
+
+	if($aID == 0) {
+		$price = $good['price'] * $currency[0];
+		$price = $price * (1 - $discount[0] / 100);
+	} else {
+		$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$good['id']."' AND action_id = '".$aID."'");
+		if($actionGoodResult->num_rows > 0) {
+			$actionGood = $actionGoodResult->fetch_assoc();
+
+			$active = 1;
+			$actionGoodsQuantity++;
+			$price = $actionGood['price'] * $currency[0];
+		} else {
+			$price = $good['price'] * $currency[0];
+			$price = $price * (1 - $discount[0] / 100);
+		}
+	}
+
 	$roubles = floor($price);
-	$kopeck = ceil(($price - $roubles) * 100);
+	$kopeck = round(($price - $roubles) * 100);
+	if($kopeck == 100) {
+		$kopeck = 0;
+		$roubles ++;
+	}
+
 	echo "
 		<div class='catalogueItem' id='ci".$good['id']."'>
 			<div class='itemDescription'>
-				<div class='catalogueIMG'>
+				<div class='catalogueIMG' onmouseover='actionIcon(\"actionIcon".$good['id']."\", 1)' onmouseout='actionIcon(\"actionIcon".$good['id']."\", 0)'>
 					<a href='../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='../img/catalogue/small/".$good['small']."' /></a>
+	";
+
+	if($active > 0) {
+		echo "<img src='../img/system/action_past.png' class='actionIMG' id='actionIcon".$good['id']."' />";
+	}
+
+	echo "
 				</div>
 				<div class='catalogueInfo'>
 					<div class='catalogueName'>
@@ -55,8 +110,7 @@ while($order = $orderResult->fetch_assoc()) {
 		<b>Артикул: </b>".$good['code']."
 		<br />
 		<div id='goodPrice".$good['id']."'>
-			<span><b>Стоимость за ".$unit['short_name'].": </b>"; if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>
-	";
+			<span><b>Стоимость за ".$unit['short_name'].": </b>"; if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";}
 
 	if($good['sketch'] != '') {
 		echo "<br /><br /><a href='../img/catalogue/sketch/".$good['sketch']."' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
@@ -86,8 +140,8 @@ while($order = $orderResult->fetch_assoc()) {
 $totalResult = $mysqli->query("SELECT summ FROM orders_info WHERE id = '".$id."'");
 $total = $totalResult->fetch_array(MYSQLI_NUM);
 
-$roubles = intval($total[0]);
-$kopeck = ($total[0] - $roubles) * 100;
+$roubles = floor($total[0]);
+$kopeck = round($total[0] - $roubles) * 100;
 
 if($kopeck == 100) {
 	$kopeck = 0;
@@ -104,5 +158,12 @@ echo "
 	<br /><br />
 	<div style='float: right;'><b>Личная скидка клиента: </b><span>".$discount[0]."%</span></div>
 	<br />
+";
+
+if($actionGoodsQuantity > 0) {
+	echo "<span style='float: right; font-size: 14px; color: #df4e47;'>Ваша личная скидка не действует на акционные товары.</span><br /><br />";
+}
+
+echo "
 	<div style='float: right;'><b>Общая стоимость в момент заказа: </b><span id='totalPriceText'>".$total."</span></div>
 ";
