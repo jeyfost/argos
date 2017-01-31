@@ -127,8 +127,14 @@ function acceptOrder(id) {
 		url: "../scripts/personal/ajaxAcceptOrder.php",
 		success: function(response) {
 			var order_response = $('#orderResponse');
+			var response_filed = $('#responseField');
 
 			if(response == "a") {
+				response_filed.css("opacity", 0);
+				setTimeout(function() {
+					response_filed.html("");
+				}, 300);
+
 				selectClient();
 				if(order_response.css('opacity') == 1) {
 					order_response.css('opacity', 0);
@@ -142,6 +148,14 @@ function acceptOrder(id) {
 					order_response.html("Заказ был успешно принят.<br /><br />");
 					order_response.css('opacity', 1);
 				}
+
+				$.ajax({
+					type: 'POST',
+					url: "../scripts/personal/ajaxRebuildHistoryTable.php",
+					success: function(r) {
+						$('#personalContent').html(r);
+					}
+				});
 			} else {
 				if(order_response.css('opacity') == 1) {
 					order_response.css('opacity', 0);
@@ -167,8 +181,14 @@ function cancelOrder(id) {
 		url: "../scripts/personal/ajaxAdminCancelOrder.php",
 		success: function(response) {
 			var order_response = $('#orderResponse');
+			var response_field = $('#responseField');
 
 			if(response == "a") {
+				response_field.css("opacity", "0");
+				setTimeout(function() {
+					response_field.html("");
+				}, 300);
+
 				selectClient();
 				if(order_response.css('opacity') == 1) {
 					order_response.css('opacity', 0);

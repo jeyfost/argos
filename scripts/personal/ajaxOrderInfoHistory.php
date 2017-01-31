@@ -157,5 +157,5 @@ if($actionGoodsQuantity > 0) {
 }
 
 echo "
-	<div style='float: right;'><b>Общая стоимость на момент заказа: </b><span id='totalPriceText'>".$total."</span></div>
+	<div style='float: right;'><b>Общая стоимость на момент принятия заказа: </b><span id='totalPriceText'>".$total."</span></div>
 ";

@@ -140,8 +140,9 @@ while($order = $orderResult->fetch_assoc()) {
 $totalResult = $mysqli->query("SELECT summ FROM orders_info WHERE id = '".$id."'");
 $total = $totalResult->fetch_array(MYSQLI_NUM);
 
-$roubles = floor($total[0]);
-$kopeck = round($total[0] - $roubles) * 100;
+$total = explode('.', $total[0]);
+$roubles = $total[0];
+$kopeck = (int)$total[1];
 
 if($kopeck == 100) {
 	$kopeck = 0;
@@ -165,5 +166,5 @@ if($actionGoodsQuantity > 0) {
 }
 
 echo "
-	<div style='float: right;'><b>Общая стоимость в момент заказа: </b><span id='totalPriceText'>".$total."</span></div>
+	<div style='float: right;'><b>Общая стоимость в момент принятия заказа: </b><span id='totalPriceText'>".$total."</span></div>
 ";
