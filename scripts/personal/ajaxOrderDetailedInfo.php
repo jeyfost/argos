@@ -117,9 +117,9 @@ while($order = $orderResult->fetch_assoc()) {
 		$totalAction += $price * $order['quantity'];
 	}
 
-	$price = ceil($price * 100) / 100;
 	$roubles = floor($price);
 	$kopeck = round(($price - $roubles) * 100);
+
 	if($kopeck == 100) {
 		$kopeck = 0;
 		$roubles ++;
@@ -192,8 +192,7 @@ while($order = $orderResult->fetch_assoc()) {
 	";
 }
 
-$total = $totalAction + $totalNormal - $totalNormal * ($discount[0] / 100);
-$total = round($total, 2, PHP_ROUND_HALF_UP);
+$total = $totalAction + $totalNormal * (1 - $discount[0] / 100);
 $roubles = floor($total);
 $kopeck = round(($total - $roubles) * 100);
 

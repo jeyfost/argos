@@ -340,28 +340,27 @@ if(isset($_SESSION['userID'])) {
 
 							$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$basket['good_id']."'");
 							$good = $goodResult->fetch_assoc();
+
 							$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$good['unit']."'");
 							$unit = $unitResult->fetch_assoc();
 
+							$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$good['currency']."'");
+							$currency = $currencyResult->fetch_assoc();
+
 							if($active == 0) {
-								$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$good['currency']."'");
-								$currency = $currencyResult->fetch_assoc();
 								$price = $good['price'] * $currency['rate'];
 								$totalNormal += $price * $basket['quantity'];
-								$price = $price - $price * ($user['discount'] / 100);
+								$price = $price * (1 - $user['discount'] / 100);
 							} else {
 								$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$basket['good_id']."' AND action_id = '".$aID."'");
 								$actionGood = $actionGoodResult->fetch_assoc();
 
-								$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$actionGood['currency']."'");
-								$currency = $currencyResult->fetch_assoc();
 								$price = $actionGood['price'] * $currency['rate'];
 								$totalAction += $price * $basket['quantity'];
 							}
 
-							$price = round($price, 2, PHP_ROUND_HALF_UP);
 							$roubles = floor($price);
-							$kopeck = ($price - $roubles) * 100;
+							$kopeck = round(($price - $roubles) * 100);
 							if($kopeck == 100) {
 								$kopeck = 0;
 								$roubles ++;
@@ -432,10 +431,9 @@ if(isset($_SESSION['userID'])) {
 							";
 						}
 
-						$total = $totalAction + $totalNormal - $totalNormal * ($user['discount'] / 100);
-						$total = round($total, 2, PHP_ROUND_HALF_UP);
+						$total = $totalAction + $totalNormal * (1 - $user['discount'] / 100);
 						$roubles = floor($total);
-						$kopeck = ceil(($total - $roubles) * 100);
+						$kopeck = round(($total - $roubles) * 100);
 						if($kopeck == 100) {
 							$kopeck = 0;
 							$roubles++;

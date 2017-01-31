@@ -93,32 +93,29 @@ if($mysqli->query("UPDATE basket SET quantity = '".$quantity."' WHERE user_id = 
 		$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$basket['good_id']."'");
 		$good = $goodResult->fetch_assoc();
 
-		if($aID == 0) {
-			$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$good['currency']."'");
+		$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$good['currency']."'");
 			$currency = $currencyResult->fetch_assoc();
+
+		if($aID == 0) {
 			$price = $good['price'] * $currency['rate'];
 			$totalNormal += $price * $basket['quantity'];
 		} else {
 			$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$basket['good_id']."' AND action_id = '".$aID."'");
 			$actionGood = $actionGoodResult->fetch_assoc();
 
-			$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$actionGood['currency']."'");
-			$currency = $currencyResult->fetch_assoc();
 			$price = $actionGood['price'] * $currency['rate'];
 			$totalAction += $price * $basket['quantity'];
 		}
 	}
 
-	$total = $totalAction + $totalNormal - $totalNormal * ($discount[0] / 100);
-	$total = ceil($total * 100) / 100;
+	$total = $totalAction + $totalNormal * (1 - $discount[0] / 100);
 	$roubles = floor($total);
-	$kopeck = ($total - $roubles) * 100;
+	$kopeck = round(($total - $roubles) * 100);
+
 	if($kopeck == 100) {
 		$kopeck = 0;
 		$roubles++;
 	}
-
-	$kopeck = round($kopeck);
 
 	if($roubles == 0) {
 		$total = $kopeck." коп.";

@@ -488,31 +488,27 @@ if(isset($_SESSION['userID'])) {
 					}
 				}
 
-				if($active == 0) {
-					$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$catalogue['currency']."'");
-					$currency = $currencyResult->fetch_assoc();
+				$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$catalogue['currency']."'");
+				$currency = $currencyResult->fetch_assoc();
 
+				if($active == 0) {
 					$price = $catalogue['price'] * $currency['rate'];
 
 					if(isset($_SESSION['userID'])) {
 						$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
 						$discount = $discountResult->fetch_array(MYSQLI_NUM);
 
-						$price = $price - $price * ($discount[0] / 100);
+						$price = $price * (1 - $discount[0] / 100);
 					}
 				} else {
 					$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$catalogue['id']."' AND action_id = '".$aID."'");
 					$actionGood = $actionGoodResult->fetch_assoc();
 
-					$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$actionGood['currency']."'");
-					$currency = $currencyResult->fetch_assoc();
 					$price = $actionGood['price'] * $currency['rate'];
 				}
 
-				$price = round($price, 2, PHP_ROUND_HALF_UP);
-
 				$roubles = floor($price);
-				$kopeck = ($price - $roubles) * 100;
+				$kopeck = round(($price - $roubles) * 100);
 				if($kopeck == 100) {
 					$kopeck = 0;
 					$roubles ++;

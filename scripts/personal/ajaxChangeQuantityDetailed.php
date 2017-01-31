@@ -8,7 +8,10 @@ $id = $mysqli->real_escape_string($_POST['id']);
 $orderID = $mysqli->real_escape_string($_POST['orderID']);
 
 if($mysqli->query("UPDATE orders SET quantity = '".$quantity."' WHERE good_id = '".$id."' AND order_id = '".$orderID."'")) {
-	$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
+	$userIDResult = $mysqli->query("SELECT user_id FROM orders WHERE order_id = '".$orderID."'");
+	$userID = $userIDResult->fetch_array(MYSQLI_NUM);
+
+	$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$userID[0]."'");
 	$discount = $discountResult->fetch_array(MYSQLI_NUM);
 
 	$totalNormal = 0;
@@ -109,16 +112,14 @@ if($mysqli->query("UPDATE orders SET quantity = '".$quantity."' WHERE good_id = 
 		}
 	}
 
-	$total = $totalAction + $totalNormal - $totalNormal * ($discount[0] / 100);
-	$total = ceil($total * 100) / 100;
+	$total = $totalAction + $totalNormal * (1 - $discount[0] / 100);
 	$roubles = floor($total);
-	$kopeck = ($total - $roubles) * 100;
+	$kopeck = round(($total - $roubles) * 100);
+
 	if($kopeck == 100) {
 		$kopeck = 0;
 		$roubles++;
 	}
-
-	$kopeck = round($kopeck);
 
 	if($roubles == 0) {
 		$total = $kopeck." коп.";
