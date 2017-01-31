@@ -109,6 +109,7 @@ while($order = $orderResult->fetch_assoc()) {
 	if($aID == 0) {
 		$price = $good['price'] * $currency[0];
 		$totalNormal += $price * $order['quantity'];
+		$price = $price * (1 - $discount[0] / 100);
 	} else {
 		$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$order['good_id']."' AND action_id = '".$aID."'");
 		$actionGood = $actionGoodResult->fetch_assoc();
