@@ -177,6 +177,21 @@ function changeQuantity(id) {
 	}
 }
 
+function changeQuantityDetailed(id, order_id) {
+	var input = "quantityInput" + id;
+
+	if($('#' + input).val() != '') {
+		$.ajax({
+			type: "POST",
+			data: {"id": id, "quantity": $('#' + input).val(), "orderID": order_id},
+			url: "../scripts/personal/ajaxChangeQuantityDetailed.php",
+			success: function(response) {
+				$('#totalPriceText').html(response);
+			}
+		});
+	}
+}
+
 function showOrderDetails(id) {
 	var response_field = $('#responseField');
 	$.ajax({
