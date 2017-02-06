@@ -181,25 +181,35 @@ if(isset($_SESSION['userID'])) {
 		<div id='breadCrumbs'>
 			<a href='../index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='stores.php'><span class='breadCrumbsText'>Контактная информация</span></a> > <a href='mail.php'><span class='breadCrumbsText'>Форма обратной связи</span></a>
 		</div>
-		<p>При помощи формы обратной связи вы можете отправить нам письмо со своим вопросом, и в короткий срок мы на него ответим.</p>
-		<form method="post">
-			<input type="text" value="Ваше имя" id="nameInput" style="color: #9e9e9e; width: 450px;" />
-			<br />
-			<input type="text" value="Ваш email" id="emailInput" style="margin-top: 5px; color: #9e9e9e; width: 450px;" />
-			<br />
-			<input type="text" value="Тема сообщения" id="subjectInput" style="margin-top: 5px; color: #9e9e9e; width: 450px;" />
-			<br />
-			<textarea id="messageInput" onkeydown='textAreaHeight(this)'>Текст сообщения</textarea>
-			<br />
-			<div id="responseField"></div>
-			<br /><br />
-			<div id="mailButtons">
-				<div class="g-recaptcha" id="mailRecaptcha" data-sitekey="6Ld5MwATAAAAAN7L3GdbaS_dafMZdRicn-Jm8jVM"></div>
-				<input type="button" id="mailSubmit" value="Отправить" onclick="sendMail()" onmouseover="buttonChange('mailSubmit', 1)" onmouseout="buttonChange('mailSubmit', 0)" />
-				<div style="clear: both;"></div>
-			</div>
-		</form>
 
+		<div id="personalMenu">
+			<a href='stores.php'><div class='personalMenuLink' id='pbl1' onmouseover='buttonChange("pbl1", 1)' onmouseout='buttonChange("pbl1", 0)'>Магазины</div></a>
+			<div style='width: 100%; height: 5px;'></div>
+			<a href='main.php'><div class='personalMenuLink' id='pbl2' onmouseover='buttonChange("pbl2", 1)' onmouseout='buttonChange("pbl2", 0)'>Головное предприятие</div></a>
+			<div style='width: 100%; height: 5px;'></div>
+			<a href='mail.php'><div class='personalMenuLinkActive'>Обратная связь</div></a>
+		</div>
+
+		<div id="personalContent">
+			<p>При помощи формы обратной связи вы можете отправить нам письмо со своим вопросом, и в короткий срок мы на него ответим.</p>
+			<form method="post">
+				<input type="text" value="Ваше имя" id="nameInput" style="color: #9e9e9e; width: 450px;" />
+				<br />
+				<input type="text" value="Ваш email" id="emailInput" style="margin-top: 5px; color: #9e9e9e; width: 450px;" />
+				<br />
+				<input type="text" value="Тема сообщения" id="subjectInput" style="margin-top: 5px; color: #9e9e9e; width: 450px;" />
+				<br />
+				<textarea id="messageInput" onkeydown='textAreaHeight(this)'>Текст сообщения</textarea>
+				<br />
+				<div id="responseField"></div>
+				<br /><br />
+				<div id="mailButtons">
+					<div class="g-recaptcha" id="mailRecaptcha" data-sitekey="6Ld5MwATAAAAAN7L3GdbaS_dafMZdRicn-Jm8jVM"></div>
+					<input type="button" id="mailSubmit" value="Отправить" onclick="sendMail()" onmouseover="buttonChange('mailSubmit', 1)" onmouseout="buttonChange('mailSubmit', 0)" />
+					<div style="clear: both;"></div>
+				</div>
+			</form>
+		</div>
 	</div>
 
 	<div style="clear: both;"></div>

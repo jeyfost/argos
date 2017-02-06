@@ -180,40 +180,49 @@ if(isset($_SESSION['userID'])) {
 		<div id='breadCrumbs'>
 			<a href='../index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='stores.php'><span class='breadCrumbsText'>Контактная информация</span></a> > <a href='main.php'><span class='breadCrumbsText'>Головной офис</span></a>
 		</div>
-		<br /><br />
-		<div class="mapContainer">
-			<div class="map">
-				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=TRFDdk4LfiXmytO-3UCq_hXaFXJG-3Zd&amp;width=500&amp;height=440&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+		<div id="personalMenu">
+			<a href='stores.php'><div class='personalMenuLink' id='pbl1' onmouseover='buttonChange("pbl1", 1)' onmouseout='buttonChange("pbl1", 0)'>Магазины</div></a>
+			<div style='width: 100%; height: 5px;'></div>
+			<a href='main.php'><div class='personalMenuLinkActive'>Головное предприятие</div></a>
+			<div style='width: 100%; height: 5px;'></div>
+			<a href='mail.php'><div class='personalMenuLink' id='pbl3' onmouseover='buttonChange("pbl3", 1)' onmouseout='buttonChange("pbl3", 0)'>Обратная связь</div></a>
+		</div>
+
+		<div id="personalContent">
+			<div class="mapContainer">
+				<div class="map">
+					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=TRFDdk4LfiXmytO-3UCq_hXaFXJG-3Zd&amp;width=500&amp;height=440&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+				</div>
+				<div class="mapDescription">
+					<h2><span style="color: #df4e47;">Аргос-ФМ</span> Головной офис</h2>
+					<b>Адрес:</b>
+					<br />
+					<span>212040, Республика Беларусь, г. Могилёв, ул. Залуцкого, 21</span>
+					<br /><br />
+					<b>Телефон/факс (отдел маркетинга):</b>
+					<br />
+					<span>+375 (222) 707-707</span>
+					<br /><br />
+					<b>Телефон/факс (отдел сбыта):</b>
+					<br />
+					<span>+375 (222) xxx-xxx</span>
+					<br /><br />
+					<b>Телефон (директор):</b>
+					<br />
+					<span>+375 (222) 703-900</span>
+					<br /><br />
+					<b>Email:</b>
+					<br />
+					<a href="mailto:argos-fm@mail.ru" class="basicLink">argos-fm@mail.ru</a>
+					<br /><br />
+					<b>Время работы:</b>
+					<br />
+					<span>понедельник - пятница</span>
+					<br />
+					<span>8:00 - 17:00</span>
+				</div>
+				<div style="clear: both;"></div>
 			</div>
-			<div class="mapDescription">
-				<h2><span style="color: #df4e47;">Аргос-ФМ</span> Головной офис</h2>
-				<b>Адрес:</b>
-				<br />
-				<span>212040, Республика Беларусь, г. Могилёв, ул. Залуцкого, 21</span>
-				<br /><br />
-				<b>Телефон/факс (отдел маркетинга):</b>
-				<br />
-				<span>+375 (222) 707-707</span>
-				<br /><br />
-				<b>Телефон/факс (отдел сбыта):</b>
-				<br />
-				<span>+375 (222) xxx-xxx</span>
-				<br /><br />
-				<b>Телефон (директор):</b>
-				<br />
-				<span>+375 (222) 703-900</span>
-				<br /><br />
-				<b>Email:</b>
-				<br />
-				<a href="mailto:argos-fm@mail.ru" class="basicLink">argos-fm@mail.ru</a>
-				<br /><br />
-				<b>Время работы:</b>
-				<br />
-				<span>понедельник - пятница</span>
-				<br />
-				<span>8:00 - 17:00</span>
-			</div>
-			<div style="clear: both;"></div>
 		</div>
 	</div>
 

@@ -66,6 +66,7 @@ if(isset($_SESSION['userID'])) {
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="../js/menu1.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
 	<script type="text/javascript" src="../js/news.js"></script>
 	<!--[if lt IE 9]>
   		<script type="text/javascript" src="../js/lightview/js/excanvas/excanvas.js"></script>
