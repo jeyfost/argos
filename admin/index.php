@@ -55,6 +55,12 @@ if($_SESSION['userID'] == 1) {
 			<div style="width: 100%; text-align: center;">
 				<span>Вход в панель администрирования</span>
 				<br /><br />
+				<?php
+					if(isset($_SESSION['loginError'])) {
+						echo "<span style='color: #df4e47; font-size: 14px;'>Введённые вами логин или пароль не верны.</span><br /><br />";
+						unset($_SESSION['loginError']);
+					}
+				?>
 			</div>
 			<label for="loginInput">Логин:</label>
 			<br />
