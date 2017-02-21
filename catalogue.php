@@ -535,11 +535,23 @@ if(isset($_SESSION['userID'])) {
 								</div>
 								<div class='catalogueDescription'>
 				";
-				$strings = explode("<br />", $catalogue['description']);
+				$description = str_replace("\n", "<br />", $catalogue['description']);
+				$strings = explode("<br />", $description);
 				for($i = 0; $i < count($strings); $i++) {
 					$string = explode(':', $strings[$i]);
 					if(count($string) > 1) {
-						echo "<b>".$string[0].":</b>".$string[1]."<br />";
+						for($j = 0; $j < count($string); $j++) {
+							if($j == 0) {
+								echo "<b>".$string[$j].":</b>";
+							} else {
+								if($j == (count($string) - 1)) {
+									echo $string[$j];
+								} else {
+									echo $string[$j].":";
+								}
+							}
+						}
+						echo "<br />";
 					} else {
 						echo $string[0]."<br />";
 					}
@@ -549,7 +561,7 @@ if(isset($_SESSION['userID'])) {
 					<b>Артикул: </b>".$catalogue['code']."
 					<br />
 					<div id='goodPrice".$catalogue['id']."'>
-						<span"; if($_SESSION['userID'] == 1 and $active == 0) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['short_name'].": </b>"; if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>"; if($active > 0) {echo "</span>";} echo "
+						<span"; if($_SESSION['userID'] == 1 and $active == 0) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['for_name'].": </b>"; if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>"; if($active > 0) {echo "</span>";} echo "
 				";
 
 				if($catalogue['sketch'] != '') {

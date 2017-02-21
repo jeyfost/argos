@@ -63,7 +63,7 @@ if(isset($_SESSION['userID'])) {
 			<a href="../"><img src="../../img/system/logo.png" /></a>
 		</div>
 		<div class="line"></div>
-		<a href="/">
+		<a href="index.php">
 			<div class="menuPointActive">
 				<div class="menuIMG"><img src="../../img/system/admin/goods.png" /></div>
 				<div class="menuText">Товары</div>
@@ -103,9 +103,9 @@ if(isset($_SESSION['userID'])) {
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="albums/">
+		<a href="../albums/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../img/system/admin/album.png" /></div>
+				<div class="menuIMG"><img src="../../img/system/admin/album.png" /></div>
 				<div class="menuText">Альбомы</div>
 			</div>
 		</a>
@@ -164,14 +164,14 @@ if(isset($_SESSION['userID'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/product.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="/"><span class="breadCrumbsText">Товары</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/product.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Товары</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
 			<h2>&darr; Для продолжения работы выберите функцию</h2>
 			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" style="margin-left: 0;" /></a>
 			<a href="edit.php"><input type="button" class="button" id="editButton" value="Редактирование" onmouseover="buttonChange('editButton', 1)" onmouseout="buttonChange('editButton', 0)" /></a>
 			<a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
-			<a href="correction.php"><input type="button" class="button" id="correctionButton" value="Выгрузка 1С" onmouseover="buttonChange('correctionButton', 1)" onmouseout="buttonChange('correctionButton', 0)" /></a>
+			<a href="update.php"><input type="button" class="button" id="correctionButton" value="Выгрузка 1С" onmouseover="buttonChange('correctionButton', 1)" onmouseout="buttonChange('correctionButton', 0)" /></a>
 			<div style="clear: both;"></div>
 		</div>
 		<div style="clear: both;"></div>

@@ -1,6 +1,4 @@
 $(window).on("load", function() {
-	$('#admContent').width(parseInt($(window).width() - 340));
-
 	if($('div').is('.catalogueIMG')) {
 		$('.catalogueIMG').mouseover(function() {
 			$(this).children('.actionIMG').css("opacity", "1");

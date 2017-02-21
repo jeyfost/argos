@@ -3,7 +3,8 @@ $(window).on("load", function() {
 		$('#menu').height($(window).height());
 	}
 
-	$('#content').width(parseInt($(window).width() - $('#menu').width() - 20))
+	$('#content').width(parseInt($(window).width() - $('#menu').width() - 20));
+	$('#admContent').width(parseInt($(window).width() - 340));
 });
 
 function changeIcon(id, img, depth) {
