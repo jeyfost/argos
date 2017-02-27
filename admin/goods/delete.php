@@ -18,7 +18,7 @@ if(!empty($_REQUEST['type'])) {
 	if($_REQUEST['type'] == "fa" or $_REQUEST['type'] == "em" or $_REQUEST['type'] == "ca" or $_REQUEST['type'] == "dg") {
 		$t = $mysqli->real_escape_string($_REQUEST['type']);
 	} else {
-		header("Location: edit.php");
+		header("Location: delete.php");
 	}
 }
 
@@ -29,7 +29,7 @@ if(!empty($_REQUEST['category'])) {
 	if($cCheck[0] > 0) {
 		$c = $mysqli->real_escape_string($_REQUEST['category']);
 	} else {
-		header("Location: edit.php?type=".$t);
+		header("Location: delete.php?type=".$t);
 	}
 }
 
@@ -40,7 +40,7 @@ if(!empty($_REQUEST['subcategory'])) {
 	if($sCheck[0] > 0) {
 		$s = $mysqli->real_escape_string($_REQUEST['subcategory']);
 	} else {
-		header("Location: edit.php?type=".$t."&category=".$c);
+		header("Location: delete.php?type=".$t."&category=".$c);
 	}
 }
 
@@ -51,7 +51,7 @@ if(!empty($_REQUEST['subcategory2'])) {
 	if($s2Check[0] > 0) {
 		$s2 = $mysqli->real_escape_string($_REQUEST['subcategory2']);
 	} else {
-		header("Location: edit.php?type=".$t."&category=".$c."&subcategory=".$s);
+		header("Location: delete.php?type=".$t."&category=".$c."&subcategory=".$s);
 	}
 }
 
@@ -62,7 +62,7 @@ if(!empty($_REQUEST['subcategory2'])) {
 	if($s2Check[0] > 0) {
 		$s2 = $mysqli->real_escape_string($_REQUEST['subcategory2']);
 	} else {
-		header("Location: edit.php?type=".$t."&category=".$c."&subcategory=".$s2);
+		header("Location: delete.php?type=".$t."&category=".$c."&subcategory=".$s2);
 	}
 }
 
@@ -74,7 +74,7 @@ if(!empty($_REQUEST['id'])) {
 		if($goodCheck[0] > 0) {
 			$id = $mysqli->real_escape_string($_REQUEST['id']);
 		} else {
-			header("Location: edit.php?type=".$t."&category=".$c."&subcategory=".$s."&subcategory2=".$s2);
+			header("Location: delete.php?type=".$t."&category=".$c."&subcategory=".$s."&subcategory2=".$s2);
 		}
 	} else {
 		if(!empty($_REQUEST['subcategory'])) {
@@ -84,7 +84,7 @@ if(!empty($_REQUEST['id'])) {
 			if($goodCheck[0] > 0) {
 				$id = $mysqli->real_escape_string($_REQUEST['id']);
 			} else {
-				header("Location: edit.php?type=".$t."&category=".$c."&subcategory=".$s);
+				header("Location: delete.php?type=".$t."&category=".$c."&subcategory=".$s);
 			}
 		} else {
 			if(!empty($_REQUEST['category'])) {
@@ -94,7 +94,7 @@ if(!empty($_REQUEST['id'])) {
 				if($goodCheck[0] > 0) {
 					$id = $mysqli->real_escape_string($_REQUEST['id']);
 				} else {
-					header("Location: edit.php?type=".$t."&category=".$c);
+					header("Location: delete.php?type=".$t."&category=".$c);
 				}
 			}
 		}
@@ -111,7 +111,7 @@ if(!empty($_REQUEST['id'])) {
 
     <meta charset="utf-8">
 
-    <title>Редактирование товаров</title>
+    <title>Удаление товаров</title>
 
     <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
@@ -125,7 +125,7 @@ if(!empty($_REQUEST['id'])) {
 	<script type="text/javascript" src="../../js/lightview/js/lightview/lightview.js"></script>
 	<script type="text/javascript" src="../../js/common.js"></script>
 	<script type="text/javascript" src="../../js/admin/admin.js"></script>
-	<script type="text/javascript" src="../../js/admin/goods/edit.js"></script>
+	<script type="text/javascript" src="../../js/admin/goods/delete.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -261,15 +261,15 @@ if(!empty($_REQUEST['id'])) {
 			<br />
 			<h2>Редактирование товаров</h2>
 			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" style="margin-left: 0;" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
-			<a href="edit.php"><input type="button" class="buttonActive" id="editButton" value="Редактирование" /></a>
-			<a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
+			<a href="edit.php"><input type="button" class="button" id="editButton" value="Редактирование" onmouseover="buttonChange('editButton', 1)" onmouseout="buttonChange('editButton', 0)" /></a>
+			<a href="delete.php"><input type="button" class="buttonActive" id="deleteButton" value="Удаление" /></a>
 			<a href="update.php"><input type="button" class="button" id="correctionButton" value="Выгрузка 1С" onmouseover="buttonChange('correctionButton', 1)" onmouseout="buttonChange('correctionButton', 0)" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
-			<form id="editForm" method="post" enctype="multipart/form-data">
+			<form id="deleteForm" method="post" enctype="multipart/form-data">
 				<label for="typeSelect">Выберите тип товаров:</label>
 				<br />
-				<select id="typeSelect" name="goodType" onchange="window.location = 'edit.php?type=' + this.options[this.selectedIndex].value">
+				<select id="typeSelect" name="goodType" onchange="window.location = 'delete.php?type=' + this.options[this.selectedIndex].value">
 					<option value="">- Выберите тип товаров -</option>
 					<option value="fa" <?php if($_REQUEST['type'] == "fa") {echo " selected";} ?>>Мебельная фурнитура</option>
 					<option value="em" <?php if($_REQUEST['type'] == "em") {echo " selected";} ?>>Кромочные материалы</option>
@@ -350,10 +350,6 @@ if(!empty($_REQUEST['id'])) {
 												echo "</select>";
 
 												if(!empty($_REQUEST['id'])) {
-													$currencyResult = $mysqli->query("SELECT * FROM currency ORDER BY currency_name");
-													$unitResult = $mysqli->query("SELECT * FROM units ORDER BY full_name");
-													$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$id."'");
-
 													showForm($currencyResult, $unitResult, $goodResult);
 												}
 											}
@@ -382,10 +378,6 @@ if(!empty($_REQUEST['id'])) {
 											echo "</select>";
 
 											if(!empty($_REQUEST['id'])) {
-												$currencyResult = $mysqli->query("SELECT * FROM currency ORDER BY currency_name");
-												$unitResult = $mysqli->query("SELECT * FROM units ORDER BY full_name");
-												$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$id."'");
-
 												showForm($currencyResult, $unitResult, $goodResult);
 											}
 										} else {
@@ -414,10 +406,6 @@ if(!empty($_REQUEST['id'])) {
 									echo "</select>";
 
 									if(!empty($_REQUEST['id'])) {
-										$currencyResult = $mysqli->query("SELECT * FROM currency ORDER BY currency_name");
-										$unitResult = $mysqli->query("SELECT * FROM units ORDER BY full_name");
-										$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$id."'");
-
 										showForm($currencyResult, $unitResult, $goodResult);
 									}
 								} else {
@@ -463,7 +451,7 @@ if(!empty($_REQUEST['id'])) {
 
 						while($good = $goodResult->fetch_assoc()) {
 							$i++;
-							$link = "edit.php?type=".$good['type']."&category=".$good['category'];
+							$link = "delete.php?type=".$good['type']."&category=".$good['category'];
 
 							if(!empty($good['subcategory']) and $good['subcategory'] != 0) {
 								$link .= "&subcategory=".$good['subcategory'];
@@ -499,70 +487,14 @@ if(!empty($_REQUEST['id'])) {
 	<div style="clear: both;"></div>
 
 	<?php
-		function showForm($currencyResult, $unitResult, $goodResult) {
-			$good = $goodResult->fetch_assoc();
-
+		function showForm() {
 			echo "
-				<br /><br />
-				<label for='goodNameInput'>Название товара:</label>
-				<br />
-				<input type='text' id='goodNameInput' name='goodName' value='".$good['name']."' />
-				<br /><br />
-				<label for='goodPhotoInput'>Фотография товара (как минимум 100*100 пикселей)</label>
-				<br />
-				<a href='../../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><span class='link' style='font-size: 14px;'>(нажмите для просмотра фотографии)</span></a>
-				<br />
-				<input type='file' id='goodPhotoInput' class='file' name='goodPhoto' />
-				<br /><br />
-				<label for='goodBlueprintInput'>Чертёж (если есть):</label>
-			";
-
-			if(!empty($good['sketch'])) {
-				echo "
-					<br />
-					<a href='../../img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-title='".$good['name']."' data-lightview-caption='Чертёж'><span class='link' style='font-size: 14px;'>(нажмите для просмотра чертежа)</span></a>
-				";
-			}
-
-			echo "
-				<br />
-				<input type='file' id='goodBlueprintInput' class='file' name='goodBlueprint' />
-				<br /><br />
-				<label for='goodCodeInput'>Артикул (<span class='redLink' onclick='setCode()'>установить первый незанятый</span>):</label>
-				<br />
-				<input type='number' min='1' step='1' id='goodCodeInput' name='goodCode' onblur='checkCode()' value='".$good['code']."' />
-				<br /><br />
-				<label for='currencySelect'>Выберите валюту прихода:</label>
-				<br />
-				<select id='currencySelect' name='goodCurrency'>
-		";
-			while($currency = $currencyResult->fetch_assoc()) {
-				echo "<option value='".$currency['id']."'"; if($good['currency'] == $currency['id']) {echo " selected";} echo ">".$currency['currency_name']."</option>";
-			}
-		echo "
-				</select>
-				<br /><br />
-				<label for='goodPriceInput'>Розничная стоимость (в валюте прихода):</label>
-				<br />
-				<input type='number' min='0.0001' step='0.0001' id='goodPriceInput' name='goodPrice' value='".$good['price']."' />
-				<br /><br />
-				<label for='unitSelect'>Единицы измерения:</label>
-				<br />
-				<select id='unitSelect' name='goodUnit'>
-		";
-			while($unit = $unitResult->fetch_assoc()) {
-				echo "<option value='".$unit['id']."'"; if($good['unit'] == $unit['id']) {echo " selected";} echo ">".$unit['full_name']."</option>";
-			}
-		echo "
-				</select>
-				<br /><br />
-				<label for='goodDescriptionInput'>Описание:</label>
-				<br />
-				<textarea id='goodDescriptionInput' name='goodDescription' onkeydown='textAreaHeight(this)' onfocus='textAreaHeight(this)'>".str_replace("<br />", "", $good['description'])."</textarea>
 				<br />
 				<div id='responseField'></div>
 				<br />
-				<input type='button' id='editGoodButton' class='button' value='Редактировать' onmouseover='buttonChange(\"editGoodButton\", 1)' onmouseout='buttonChange(\"editGoodButton\", 0)' style='margin: 0;' onclick='editGood()'>
+				<label for='deleteGoodButton'>Для удаления товара нажмите на кнопку <b>\"Удалить\"</b></label>
+				<br /><br />
+				<input type='button' id='deleteGoodButton' class='button' value='Удалить' onmouseover='buttonChange(\"deleteGoodButton\", 1)' onmouseout='buttonChange(\"deleteGoodButton\", 0)' style='margin: 0;' onclick='deleteGood()'>
 			<div style='clear: both;'></div>
 		";
 		}
