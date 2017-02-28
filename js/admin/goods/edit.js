@@ -127,8 +127,8 @@ function editGood() {
 						responseField.css('opacity', 1);
 					}
 				},
-				error: function( xhr, textStatus ) {
-					alert( [ xhr.status, textStatus ] );
+				error: function(xhr, textStatus) {
+					alert([xhr.status, textStatus]);
 				}
 			});
 		} else {

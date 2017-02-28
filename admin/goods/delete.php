@@ -256,7 +256,7 @@ if(!empty($_REQUEST['id'])) {
 				$goodNameResult = $mysqli->query("SELECT name FROM catalogue_new WHERE id = '".$id."'");
 				$goodName = $goodNameResult->fetch_array(MYSQLI_NUM);
 			?>
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/product.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Товары</span></a> > <a href="edit.php"><span class="breadCrumbsText">Редактирование товаров</span></a><?php if(!empty($_REQUEST['id'])) {echo " > <a href='".$_SERVER['REQUEST_URI']."'><span class='breadCrumbsText'>".$goodName[0]."</span></a>";} ?></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/product.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Товары</span></a> > <a href="edit.php"><span class="breadCrumbsText">Удаление товаров</span></a><?php if(!empty($_REQUEST['id'])) {echo " > <a href='".$_SERVER['REQUEST_URI']."'><span class='breadCrumbsText'>".$goodName[0]."</span></a>";} ?></div></div>
 			<div style="clear: both;"></div>
 			<br />
 			<h2>Редактирование товаров</h2>
