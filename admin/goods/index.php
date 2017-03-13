@@ -63,7 +63,7 @@ if(isset($_SESSION['userID'])) {
 			<a href="../"><img src="../../img/system/logo.png" /></a>
 		</div>
 		<div class="line"></div>
-		<a href="index.php">
+		<a href="../goods/">
 			<div class="menuPointActive">
 				<div class="menuIMG"><img src="../../img/system/admin/goods.png" /></div>
 				<div class="menuText">Товары</div>

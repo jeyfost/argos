@@ -151,7 +151,7 @@ if(!empty($_REQUEST['id'])) {
 			<a href="../"><img src="../../img/system/logo.png" /></a>
 		</div>
 		<div class="line"></div>
-		<a href="index.php">
+		<a href="../goods/">
 			<div class="menuPointActive">
 				<div class="menuIMG"><img src="../../img/system/admin/goods.png" /></div>
 				<div class="menuText">Товары</div>
@@ -292,7 +292,7 @@ if(!empty($_REQUEST['id'])) {
 						echo "</select>";
 
 						if(!empty($_REQUEST['category'])) {
-							$subcategoryCheckResult = $mysqli->query("SELECT COUNT(id) FROM subcategories_new WHERE category = '".$c."'");
+							$subcategoryCheckResult = $mysqli->query("SELECT COUNT(id) FROM subcategories_new WHERE category = '".$c."' ORDER BY name");
 							$subcategoryCheck = $subcategoryCheckResult->fetch_array(MYSQLI_NUM);
 
 							if($subcategoryCheck[0] > 0) {
@@ -303,7 +303,7 @@ if(!empty($_REQUEST['id'])) {
 									<select id='subcategorySelect' name='goodSubcategory' onchange='selectSubcategory(\"".$_REQUEST['type']."\", \"".$_REQUEST['category']."\", this.options[this.selectedIndex].value)'>
 										<option value=''>- Выберите подраздел -</option>
 								";
-								$subcategoryResult = $mysqli->query("SELECT * FROM subcategories_new WHERE category = '".$c."'");
+								$subcategoryResult = $mysqli->query("SELECT * FROM subcategories_new WHERE category = '".$c."' ORDER BY name");
 								while($subcategory = $subcategoryResult->fetch_assoc()) {
 									echo "<option value='".$subcategory['id']."'"; if($s == $subcategory['id']) {echo " selected";} echo ">".$subcategory['name']."</option>";
 								}
@@ -322,7 +322,7 @@ if(!empty($_REQUEST['id'])) {
 												<option value=''>- Выберите подраздел 2-го уровня -</option>
 										";
 
-										$subcategory2Result = $mysqli->query("SELECT * FROM subcategories2 WHERE subcategory = '".$s."'");
+										$subcategory2Result = $mysqli->query("SELECT * FROM subcategories2 WHERE subcategory = '".$s."' ORDER BY name");
 										while($subcategory2 = $subcategory2Result->fetch_assoc()) {
 											echo "<option value='".$subcategory2['id']."'"; if($s2 == $subcategory2['id']) {echo " selected";} echo ">".$subcategory2['name']."</option>";
 										}

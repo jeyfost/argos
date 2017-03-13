@@ -63,7 +63,7 @@ if(isset($_SESSION['userID'])) {
 			<a href="../"><img src="../../img/system/logo.png" /></a>
 		</div>
 		<div class="line"></div>
-		<a href="index.php">
+		<a href="../goods/">
 			<div class="menuPoint">
 				<div class="menuIMG"><img src="../../img/system/admin/goods.png" /></div>
 				<div class="menuText">Товары</div>
@@ -164,7 +164,7 @@ if(isset($_SESSION['userID'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/product.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Разделы</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/sections.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Разделы</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
 			<h2>&darr; Для продолжения работы выберите функцию</h2>

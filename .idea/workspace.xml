@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="Реализовано обновление информации по товарам из 1С">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sections/index.php" />
+    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="Реализовано добавление новых ра">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sections/add.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/admin/sections/add.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/sections/ajaxAddSection.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/sections/ajaxAddSubsection.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/sections/ajaxCheckCategory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/sections/ajaxCheckSubcategory.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/goods/add.php" afterPath="$PROJECT_DIR$/admin/goods/add.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/goods/delete.php" afterPath="$PROJECT_DIR$/admin/goods/delete.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/goods/edit.php" afterPath="$PROJECT_DIR$/admin/goods/edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/goods/index.php" afterPath="$PROJECT_DIR$/admin/goods/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/goods/update.php" afterPath="$PROJECT_DIR$/admin/goods/update.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/sections/index.php" afterPath="$PROJECT_DIR$/admin/sections/index.php" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,7 +56,21 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="catalogue_new" />
+        <option name="myItemId" value="subcategories2" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - argos@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="categories_new" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -66,33 +91,138 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/sections/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.5094066">
-              <caret line="171" column="190" selection-start-line="171" selection-start-column="190" selection-end-line="171" selection-end-column="190" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
               <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#8;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#10;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#12;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#14;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#16;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#18;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#20;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#22;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#b#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1489340680398" expanded="true" signature="205:265" placeholder="SELECT login... users" />
+                <marker date="1489386345581" expanded="true" signature="205:265" placeholder="SELECT login... users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/sections/add.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.28654125">
+              <caret line="276" column="39" selection-start-line="276" selection-start-column="39" selection-end-line="276" selection-end-column="39" />
+              <folding>
+                <marker date="1489405832936" expanded="true" signature="205:265" placeholder="SELECT login... users" />
+                <marker date="1489405832936" expanded="true" signature="700:824" placeholder="SELECT COUNT... categories_new" />
+                <marker date="1489405832936" expanded="true" signature="1089:1231" placeholder="SELECT COUNT... subcategories_new" />
+                <marker date="1489405832936" expanded="true" signature="2621:2844" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="9685:9695" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="10311:10374" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="10419:10469" placeholder="SELECT * FRO... categories_new" />
+                <marker date="1489405832936" expanded="true" signature="10419:10483" placeholder="SELECT * FRO... categories_new" />
+                <marker date="1489405832936" expanded="true" signature="10844:10909" placeholder="SELECT COUNT... subcategories_new" />
+                <marker date="1489405832936" expanded="true" signature="10844:10923" placeholder="SELECT COUNT... subcategories_new" />
+                <marker date="1489405832936" expanded="true" signature="11660:11732" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="11783:11840" placeholder="SELECT * FRO... subcategories_new" />
+                <marker date="1489405832936" expanded="true" signature="11783:11854" placeholder="SELECT * FRO... subcategories_new" />
+                <marker date="1489405832936" expanded="true" signature="12577:12642" placeholder="SELECT COUNT... catalogue_new" />
+                <marker date="1489405832936" expanded="true" signature="12686:12757" placeholder="SELECT * FRO... subcategories_new" />
+                <marker date="1489405832936" expanded="true" signature="12866:12931" placeholder="SELECT COUNT... catalogue_new" />
+                <marker date="1489405832936" expanded="true" signature="12976:13047" placeholder="SELECT * FRO... subcategories_new" />
+                <marker date="1489405832936" expanded="true" signature="13114:13172" placeholder="SELECT COUNT... catalogue_new" />
+                <marker date="1489405832936" expanded="true" signature="13217:13281" placeholder="SELECT * FRO... catalogue_new" />
+                <marker date="1489405832936" expanded="true" signature="13489:13505" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="13603:13622" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="13623:14000" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="13636:13717" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="13636:13718" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="13636:13993" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="13658:13703" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="13817:13862" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="13920:13965" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="14114:14182" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="14114:14411" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="14136:14162" placeholder="..." />
+                <marker date="1489405832936" expanded="true" signature="14963:14973" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/admin/sections/add.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxCheckSubcategory.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/sections/ajaxCheckSubcategory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.730769">
+              <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+              <folding>
+                <marker date="1489405765532" expanded="true" signature="402:470" placeholder="SELECT COUNT... subcategories2" />
+                <marker date="1489405765532" expanded="true" signature="588:659" placeholder="SELECT COUNT... subcategories_new" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxCheckCategory.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/sections/ajaxCheckCategory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.038462">
+              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+              <folding>
+                <marker date="1489405642467" expanded="true" signature="226:262" placeholder="SELECT COUNT... categories_new" />
+                <marker date="1489405642467" expanded="true" signature="226:277" placeholder="SELECT COUNT... categories_new" />
+                <marker date="1489405642467" expanded="true" signature="226:294" placeholder="SELECT COUNT... categories_new" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxAddSection.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/sections/ajaxAddSection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.192307">
+              <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+              <folding>
+                <marker date="1489403267373" expanded="true" signature="1038:1109" placeholder="INSERT INTO categories_new... " />
+                <marker date="1489403267373" expanded="true" signature="1038:1126" placeholder="INSERT INTO categories_new... " />
+                <marker date="1489403267373" expanded="true" signature="1038:1146" placeholder="INSERT INTO categories_new... " />
+                <marker date="1489403267373" expanded="true" signature="1038:1169" placeholder="INSERT INTO categories_new... " />
+                <marker date="1489403267373" expanded="true" signature="1038:1188" placeholder="INSERT INTO categories_new... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxAddSubsection.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/sections/ajaxAddSubsection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="5" />
+              <folding>
+                <marker date="1489404739696" expanded="true" signature="382:438" placeholder="INSERT INTO subcategories2... " />
+                <marker date="1489404739696" expanded="true" signature="382:480" placeholder="INSERT INTO subcategories2... " />
+                <marker date="1489404739696" expanded="true" signature="557:619" placeholder="INSERT INTO subcategories_new... " />
+                <marker date="1489404739696" expanded="true" signature="557:675" placeholder="INSERT INTO subcategories_new... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxAddGood.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="60" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="60" />
+              <folding>
+                <marker date="1487933150906" expanded="true" signature="3380:3444" placeholder="SELECT COUNT... catalogue_new" />
+                <marker date="1487933150906" expanded="true" signature="4899:5321" placeholder="INSERT INTO catalogue_new... " />
+                <marker date="1487933150906" expanded="true" signature="5685:6087" placeholder="INSERT INTO catalogue_new... " />
               </folding>
             </state>
           </provider>
@@ -114,12 +244,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" />
-        <option value="$PROJECT_DIR$/scripts/personal/ajaxRebuildOrdersTableAdmin.php" />
-        <option value="$PROJECT_DIR$/scripts/personal/ajaxCalculateOrderPrice.php" />
-        <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php" />
-        <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderInfoHistory.php" />
-        <option value="$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" />
         <option value="$PROJECT_DIR$/personal/orders.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxRebuildHistoryTable.php" />
@@ -147,24 +271,30 @@
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxSetCode.php" />
         <option value="$PROJECT_DIR$/scripts/admin/preview.php" />
         <option value="$PROJECT_DIR$/catalogue.php" />
-        <option value="$PROJECT_DIR$/admin/goods/index.php" />
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxSelectCategories.php" />
-        <option value="$PROJECT_DIR$/admin/goods/add.php" />
         <option value="$PROJECT_DIR$/js/admin/goods/add.js" />
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php" />
-        <option value="$PROJECT_DIR$/admin/goods/edit.php" />
         <option value="$PROJECT_DIR$/css/admin.css" />
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxDeleteGood.php" />
         <option value="$PROJECT_DIR$/js/admin/goods/delete.js" />
-        <option value="$PROJECT_DIR$/admin/goods/delete.php" />
         <option value="$PROJECT_DIR$/js/admin/goods/edit.js" />
         <option value="$PROJECT_DIR$/c.php" />
-        <option value="$PROJECT_DIR$/admin/goods/update.php" />
         <option value="$PROJECT_DIR$/js/admin/goods/update.js" />
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxUpdate.php" />
         <option value="$PROJECT_DIR$/admin/sections/index.php" />
+        <option value="$PROJECT_DIR$/admin/goods/index.php" />
+        <option value="$PROJECT_DIR$/admin/goods/update.php" />
+        <option value="$PROJECT_DIR$/scripts/admin/sections/ajaxAddSection.php" />
+        <option value="$PROJECT_DIR$/scripts/admin/sections/ajaxAddSubsection.php" />
+        <option value="$PROJECT_DIR$/scripts/admin/sections/ajaxCheckCategory.php" />
+        <option value="$PROJECT_DIR$/scripts/admin/sections/ajaxCheckSubcategory.php" />
+        <option value="$PROJECT_DIR$/js/admin/sections/add.js" />
+        <option value="$PROJECT_DIR$/admin/sections/add.php" />
+        <option value="$PROJECT_DIR$/admin/goods/add.php" />
+        <option value="$PROJECT_DIR$/admin/goods/delete.php" />
+        <option value="$PROJECT_DIR$/admin/goods/edit.php" />
       </list>
     </option>
   </component>
@@ -208,194 +338,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
+      <pane id="Scratches">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goods" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goods" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sections" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goods" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -492,12 +440,216 @@
         </subPane>
         <subPane subId="Tests" />
       </pane>
-      <pane id="Scratches">
+      <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sections" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="goods" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sections" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sections" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="goods" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -510,7 +662,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/WebServers/home/test1.ru/www/argos/scripts/personal/ajaxChangeQuantity.php" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/WebServers/home/test1.ru/www/argos/scripts/admin/sections/ajaxCheckCategory.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -561,12 +713,6 @@
       <created>1471436673828</created>
       <option name="number" value="Default" />
       <updated>1471436673828</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Переделаны пункты меню">
-      <created>1484133251493</created>
-      <option name="number" value="00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1484133251493</updated>
     </task>
     <task id="LOCAL-00045" summary="Исправлены сылки в меню, создана загатовка страницы контактной информации">
       <created>1484142942622</created>
@@ -856,7 +1002,13 @@
       <option name="project" value="LOCAL" />
       <updated>1488292599055</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Создана стартовая страница разделов в панели администрирования">
+      <created>1489340748562</created>
+      <option name="number" value="00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1489340748564</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TodoView">
@@ -872,7 +1024,7 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16966581" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17544988" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11311054" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -905,7 +1057,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Изменено отображение стомости акционных товаров для администратора в  непринятых заказах" />
     <MESSAGE value="Исправоен пересчёт стоимости товаров в корзине при удалении товара" />
     <MESSAGE value="Исправлено отображение стоимости товаров в необработанных заявках пользователя" />
     <MESSAGE value="Исправлен пересчет стоимости непринятого заказа у пользователя при удалении группы товаров" />
@@ -930,7 +1081,8 @@
     <MESSAGE value="Реализовано редактирование товаров" />
     <MESSAGE value="Реализовано удаление товаров" />
     <MESSAGE value="Реализовано обновление информации по товарам из 1С" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализовано обновление информации по товарам из 1С" />
+    <MESSAGE value="Создана стартовая страница разделов в панели администрирования" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создана стартовая страница разделов в панели администрирования" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -946,83 +1098,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/basket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="12.965517">
-          <caret line="85" column="55" selection-start-line="85" selection-start-column="55" selection-end-line="85" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxRebuildHistoryTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.61538464">
-          <caret line="14" column="188" selection-start-line="14" selection-start-column="188" selection-end-line="14" selection-end-column="188" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23702665">
-          <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="201" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxRebuildTableCancel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49509117">
-          <caret line="37" column="92" selection-start-line="37" selection-start-column="92" selection-end-line="37" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/menu1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3342354">
-          <caret line="84" column="443" selection-start-line="84" selection-start-column="443" selection-end-line="84" selection-end-column="443" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stores/company.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/actions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.5">
-          <caret line="84" column="71" selection-start-line="83" selection-start-column="0" selection-end-line="84" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/news.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="313" column="181" selection-start-line="309" selection-start-column="24" selection-end-line="313" selection-end-column="181" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/news.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/partners/news.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="77.80769">
-          <caret line="86" column="11" selection-start-line="86" selection-start-column="11" selection-end-line="86" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contacts/stores.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.730769">
-          <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contacts/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8461537">
@@ -1258,20 +1333,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/goods/add.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.75419">
-          <caret line="116" column="21" selection-start-line="97" selection-start-column="20" selection-end-line="116" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/goods/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxDeleteGood.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46811596">
@@ -1286,32 +1347,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.6855073">
-          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/goods/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="25.76923">
-          <caret line="478" column="12" selection-start-line="478" selection-start-column="12" selection-end-line="478" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/admin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.384615">
           <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/goods/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0384614">
-          <caret line="534" column="67" selection-start-line="534" selection-start-column="67" selection-end-line="534" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -1348,25 +1388,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/goods/update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-82.80769">
-          <caret line="184" column="57" selection-start-line="184" selection-start-column="57" selection-end-line="184" selection-end-column="57" />
-          <folding>
-            <marker date="1488289170806" expanded="true" signature="205:265" placeholder="SELECT login... users" />
-            <marker date="1488289170806" expanded="true" signature="5627:5678" placeholder="SELECT name catalogue_new" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxUpdate.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.7134588">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <marker date="1488292576865" expanded="true" signature="834:894" placeholder="SELECT COUNT... catalogue_new" />
-            <marker date="1488292576865" expanded="true" signature="1029:1127" placeholder="UPDATE catal... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1381,39 +1406,372 @@
     <entry file="file://$PROJECT_DIR$/admin/goods/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07380608">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+          <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/goods/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5701881">
+          <caret line="66" column="26" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/af88d52d/94240a3f-16e7-4f25-9dd4-09c8df13e291/argos.action_goods">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="60" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="60" />
           <folding>
-            <marker date="1487667594198" expanded="true" signature="205:265" placeholder="SELECT login... users" />
+            <marker date="1487933150906" expanded="true" signature="3380:3444" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1487933150906" expanded="true" signature="4899:5321" placeholder="INSERT INTO catalogue_new... " />
+            <marker date="1487933150906" expanded="true" signature="5685:6087" placeholder="INSERT INTO catalogue_new... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/goods/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/af88d52d/94240a3f-16e7-4f25-9dd4-09c8df13e291/argos.subcategories2">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/sections/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.5094066">
-          <caret line="171" column="190" selection-start-line="171" selection-start-column="190" selection-end-line="171" selection-end-column="190" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
           <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#8;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#10;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#12;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#14;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#16;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#18;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#20;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#22;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#b#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1489340680398" expanded="true" signature="205:265" placeholder="SELECT login... users" />
+            <marker date="1489386345581" expanded="true" signature="205:265" placeholder="SELECT login... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/HTML5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5467225">
+          <caret line="2147" column="0" selection-start-line="2147" selection-start-column="0" selection-end-line="2147" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/af88d52d/94240a3f-16e7-4f25-9dd4-09c8df13e291/argos.subcategories_new">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/af88d52d/94240a3f-16e7-4f25-9dd4-09c8df13e291/argos.categories_new">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/sections/ajaxAddSubsection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <marker date="1489404739696" expanded="true" signature="382:438" placeholder="INSERT INTO subcategories2... " />
+            <marker date="1489404739696" expanded="true" signature="382:480" placeholder="INSERT INTO subcategories2... " />
+            <marker date="1489404739696" expanded="true" signature="557:619" placeholder="INSERT INTO subcategories_new... " />
+            <marker date="1489404739696" expanded="true" signature="557:675" placeholder="INSERT INTO subcategories_new... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/sections/ajaxAddSection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.192307">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+          <folding>
+            <marker date="1489403267373" expanded="true" signature="1038:1109" placeholder="INSERT INTO categories_new... " />
+            <marker date="1489403267373" expanded="true" signature="1038:1126" placeholder="INSERT INTO categories_new... " />
+            <marker date="1489403267373" expanded="true" signature="1038:1146" placeholder="INSERT INTO categories_new... " />
+            <marker date="1489403267373" expanded="true" signature="1038:1169" placeholder="INSERT INTO categories_new... " />
+            <marker date="1489403267373" expanded="true" signature="1038:1188" placeholder="INSERT INTO categories_new... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/sections/ajaxCheckCategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.038462">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <marker date="1489405642467" expanded="true" signature="226:262" placeholder="SELECT COUNT... categories_new" />
+            <marker date="1489405642467" expanded="true" signature="226:277" placeholder="SELECT COUNT... categories_new" />
+            <marker date="1489405642467" expanded="true" signature="226:294" placeholder="SELECT COUNT... categories_new" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/sections/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/sections/ajaxCheckSubcategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.730769">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <folding>
+            <marker date="1489405765532" expanded="true" signature="402:470" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489405765532" expanded="true" signature="588:659" placeholder="SELECT COUNT... subcategories_new" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/goods/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.1447178">
+          <caret line="274" column="149" selection-start-line="274" selection-start-column="149" selection-end-line="274" selection-end-column="149" />
+          <folding>
+            <marker date="1489406077583" expanded="true" signature="205:265" placeholder="SELECT login... users" />
+            <marker date="1489406077583" expanded="true" signature="700:824" placeholder="SELECT COUNT... categories_new" />
+            <marker date="1489406077583" expanded="true" signature="1089:1223" placeholder="SELECT COUNT... subcategories_new" />
+            <marker date="1489406077583" expanded="true" signature="1509:1644" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489406077583" expanded="true" signature="9431:9492" placeholder="..." />
+            <marker date="1489406077583" expanded="true" signature="9536:9586" placeholder="SELECT * FRO... categories_new" />
+            <marker date="1489406077583" expanded="true" signature="9536:9600" placeholder="SELECT * FRO... categories_new" />
+            <marker date="1489406077583" expanded="true" signature="9924:9989" placeholder="SELECT COUNT... subcategories_new" />
+            <marker date="1489406077583" expanded="true" signature="9924:10003" placeholder="SELECT COUNT... subcategories_new" />
+            <marker date="1489406077583" expanded="true" signature="10433:10501" placeholder="..." />
+            <marker date="1489406077583" expanded="true" signature="10550:10607" placeholder="SELECT * FRO... subcategories_new" />
+            <marker date="1489406077583" expanded="true" signature="10550:10621" placeholder="SELECT * FRO... subcategories_new" />
+            <marker date="1489406077583" expanded="true" signature="10975:11040" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489406077583" expanded="true" signature="10975:11054" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489406077583" expanded="true" signature="11553:11637" placeholder="..." />
+            <marker date="1489406077583" expanded="true" signature="11690:11747" placeholder="SELECT * FRO... subcategories2" />
+            <marker date="1489406077583" expanded="true" signature="11690:11761" placeholder="SELECT * FRO... subcategories2" />
+            <marker date="1489406077583" expanded="true" signature="12126:12171" placeholder="SELECT * FRO... currency" />
+            <marker date="1489406077583" expanded="true" signature="12216:12254" placeholder="SELECT * FRO... units" />
+            <marker date="1489406077583" expanded="true" signature="12384:12429" placeholder="SELECT * FRO... currency" />
+            <marker date="1489406077583" expanded="true" signature="12473:12511" placeholder="SELECT * FRO... units" />
+            <marker date="1489406077583" expanded="true" signature="12645:12690" placeholder="SELECT * FRO... currency" />
+            <marker date="1489406077583" expanded="true" signature="12732:12770" placeholder="SELECT * FRO... units" />
+            <marker date="1489406077583" expanded="true" signature="13106:13172" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077583" expanded="true" signature="13213:13285" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077583" expanded="true" signature="13394:13458" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077583" expanded="true" signature="13500:13570" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077583" expanded="true" signature="13634:13695" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077583" expanded="true" signature="13737:13804" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077583" expanded="false" signature="14002:14018" placeholder="..." />
+            <marker date="1489406077583" expanded="false" signature="14109:14128" placeholder="..." />
+            <marker date="1489406077583" expanded="true" signature="14129:14489" placeholder="..." />
+            <marker date="1489406077583" expanded="true" signature="14142:14482" placeholder="..." />
+            <marker date="1489406077583" expanded="false" signature="14164:14209" placeholder="..." />
+            <marker date="1489406077583" expanded="false" signature="14238:14297" placeholder="..." />
+            <marker date="1489406077583" expanded="false" signature="14329:14374" placeholder="..." />
+            <marker date="1489406077583" expanded="false" signature="14410:14455" placeholder="..." />
+            <marker date="1489406077583" expanded="true" signature="14596:15052" placeholder="..." />
+            <marker date="1489406077583" expanded="false" signature="14618:14644" placeholder="..." />
+            <marker date="1489406077583" expanded="false" signature="14678:14715" placeholder="..." />
+            <marker date="1489406077583" expanded="false" signature="17413:17423" placeholder="..." />
+            <marker date="1489406077583" expanded="false" signature="17461:17473" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/goods/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1157743">
+          <caret line="352" column="61" selection-start-line="352" selection-start-column="61" selection-end-line="352" selection-end-column="61" />
+          <folding>
+            <marker date="1489406077598" expanded="true" signature="205:265" placeholder="SELECT login... users" />
+            <marker date="1489406077598" expanded="true" signature="703:827" placeholder="SELECT COUNT... categories_new" />
+            <marker date="1489406077598" expanded="true" signature="1095:1229" placeholder="SELECT COUNT... subcategories_new" />
+            <marker date="1489406077598" expanded="true" signature="1518:1653" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489406077598" expanded="true" signature="1966:2101" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489406077598" expanded="true" signature="2449:2575" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="2923:3047" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="3380:3501" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="8987:9038" placeholder="SELECT name catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="11600:11661" placeholder="..." />
+            <marker date="1489406077598" expanded="true" signature="11705:11755" placeholder="SELECT * FRO... categories_new" />
+            <marker date="1489406077598" expanded="true" signature="11705:11769" placeholder="SELECT * FRO... categories_new" />
+            <marker date="1489406077598" expanded="true" signature="12093:12158" placeholder="SELECT COUNT... subcategories_new" />
+            <marker date="1489406077598" expanded="true" signature="12093:12172" placeholder="SELECT COUNT... subcategories_new" />
+            <marker date="1489406077598" expanded="true" signature="12602:12670" placeholder="..." />
+            <marker date="1489406077598" expanded="true" signature="12719:12776" placeholder="SELECT * FRO... subcategories_new" />
+            <marker date="1489406077598" expanded="true" signature="12719:12790" placeholder="SELECT * FRO... subcategories_new" />
+            <marker date="1489406077598" expanded="true" signature="13144:13209" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489406077598" expanded="true" signature="13144:13223" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489406077598" expanded="true" signature="13722:13806" placeholder="..." />
+            <marker date="1489406077598" expanded="true" signature="13859:13916" placeholder="SELECT * FRO... subcategories2" />
+            <marker date="1489406077598" expanded="true" signature="13859:13930" placeholder="SELECT * FRO... subcategories2" />
+            <marker date="1489406077598" expanded="true" signature="14297:14363" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="14297:14377" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="14852:14924" placeholder="..." />
+            <marker date="1489406077598" expanded="true" signature="14972:15044" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="15578:15642" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="16110:16180" placeholder="..." />
+            <marker date="1489406077598" expanded="true" signature="16227:16297" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="16815:16876" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="17330:17396" placeholder="..." />
+            <marker date="1489406077598" expanded="true" signature="17441:17508" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="18208:18274" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="18315:18387" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="18496:18560" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="18602:18672" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="18736:18797" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077598" expanded="true" signature="18839:18906" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077598" expanded="false" signature="19104:19120" placeholder="..." />
+            <marker date="1489406077598" expanded="false" signature="19211:19230" placeholder="..." />
+            <marker date="1489406077598" expanded="true" signature="19231:19591" placeholder="..." />
+            <marker date="1489406077598" expanded="true" signature="19244:19584" placeholder="..." />
+            <marker date="1489406077598" expanded="false" signature="19266:19311" placeholder="..." />
+            <marker date="1489406077598" expanded="false" signature="19340:19399" placeholder="..." />
+            <marker date="1489406077598" expanded="false" signature="19431:19476" placeholder="..." />
+            <marker date="1489406077598" expanded="false" signature="19512:19557" placeholder="..." />
+            <marker date="1489406077598" expanded="true" signature="20118:20136" placeholder="..." />
+            <marker date="1489406077598" expanded="false" signature="21482:21492" placeholder="..." />
+            <marker date="1489406077598" expanded="false" signature="21533:21545" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/goods/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7467438">
+          <caret line="324" column="149" selection-start-line="324" selection-start-column="149" selection-end-line="324" selection-end-column="149" />
+          <folding>
+            <marker date="1489406077567" expanded="true" signature="205:265" placeholder="SELECT login... users" />
+            <marker date="1489406077567" expanded="true" signature="701:825" placeholder="SELECT COUNT... categories_new" />
+            <marker date="1489406077567" expanded="true" signature="1091:1225" placeholder="SELECT COUNT... subcategories_new" />
+            <marker date="1489406077567" expanded="true" signature="1512:1647" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489406077567" expanded="true" signature="1958:2093" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489406077567" expanded="true" signature="2439:2565" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="2911:3035" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="3366:3487" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="8975:9026" placeholder="SELECT name catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="11594:11655" placeholder="..." />
+            <marker date="1489406077567" expanded="true" signature="11699:11749" placeholder="SELECT * FRO... categories_new" />
+            <marker date="1489406077567" expanded="true" signature="12073:12138" placeholder="SELECT COUNT... subcategories_new" />
+            <marker date="1489406077567" expanded="true" signature="12073:12152" placeholder="SELECT COUNT... subcategories_new" />
+            <marker date="1489406077567" expanded="true" signature="12582:12650" placeholder="..." />
+            <marker date="1489406077567" expanded="true" signature="12699:12756" placeholder="SELECT * FRO... subcategories_new" />
+            <marker date="1489406077567" expanded="true" signature="12699:12770" placeholder="SELECT * FRO... subcategories_new" />
+            <marker date="1489406077567" expanded="true" signature="13124:13189" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489406077567" expanded="true" signature="13688:13772" placeholder="..." />
+            <marker date="1489406077567" expanded="true" signature="13825:13882" placeholder="SELECT * FRO... subcategories2" />
+            <marker date="1489406077567" expanded="true" signature="13825:13896" placeholder="SELECT * FRO... subcategories2" />
+            <marker date="1489406077567" expanded="true" signature="14263:14329" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="14804:14876" placeholder="..." />
+            <marker date="1489406077567" expanded="true" signature="14924:14996" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="15328:15373" placeholder="SELECT * FRO... currency" />
+            <marker date="1489406077567" expanded="true" signature="15420:15458" placeholder="SELECT * FRO... units" />
+            <marker date="1489406077567" expanded="true" signature="15505:15553" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="15848:15912" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="16380:16450" placeholder="..." />
+            <marker date="1489406077567" expanded="true" signature="16497:16567" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="16893:16938" placeholder="SELECT * FRO... currency" />
+            <marker date="1489406077567" expanded="true" signature="16984:17022" placeholder="SELECT * FRO... units" />
+            <marker date="1489406077567" expanded="true" signature="17068:17116" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="17400:17461" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="17915:17981" placeholder="..." />
+            <marker date="1489406077567" expanded="true" signature="18026:18093" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="18407:18452" placeholder="SELECT * FRO... currency" />
+            <marker date="1489406077567" expanded="true" signature="18496:18534" placeholder="SELECT * FRO... units" />
+            <marker date="1489406077567" expanded="true" signature="18578:18626" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="19102:19168" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="19209:19281" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="19390:19454" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="19496:19566" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="19630:19691" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489406077567" expanded="true" signature="19733:19800" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489406077567" expanded="false" signature="19998:20014" placeholder="..." />
+            <marker date="1489406077567" expanded="false" signature="20105:20124" placeholder="..." />
+            <marker date="1489406077567" expanded="true" signature="20125:20485" placeholder="..." />
+            <marker date="1489406077567" expanded="true" signature="20138:20478" placeholder="..." />
+            <marker date="1489406077567" expanded="false" signature="20160:20205" placeholder="..." />
+            <marker date="1489406077567" expanded="false" signature="20234:20293" placeholder="..." />
+            <marker date="1489406077567" expanded="false" signature="20325:20370" placeholder="..." />
+            <marker date="1489406077567" expanded="false" signature="20406:20451" placeholder="..." />
+            <marker date="1489406077567" expanded="true" signature="21010:21028" placeholder="..." />
+            <marker date="1489406077567" expanded="false" signature="22595:22611" placeholder="..." />
+            <marker date="1489406077567" expanded="false" signature="23069:23085" placeholder="..." />
+            <marker date="1489406077567" expanded="false" signature="25014:25024" placeholder="..." />
+            <marker date="1489406077567" expanded="false" signature="25063:25075" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/sections/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28654125">
+          <caret line="276" column="39" selection-start-line="276" selection-start-column="39" selection-end-line="276" selection-end-column="39" />
+          <folding>
+            <marker date="1489405832936" expanded="true" signature="205:265" placeholder="SELECT login... users" />
+            <marker date="1489405832936" expanded="true" signature="700:824" placeholder="SELECT COUNT... categories_new" />
+            <marker date="1489405832936" expanded="true" signature="1089:1231" placeholder="SELECT COUNT... subcategories_new" />
+            <marker date="1489405832936" expanded="true" signature="2621:2844" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="9685:9695" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="10311:10374" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="10419:10469" placeholder="SELECT * FRO... categories_new" />
+            <marker date="1489405832936" expanded="true" signature="10419:10483" placeholder="SELECT * FRO... categories_new" />
+            <marker date="1489405832936" expanded="true" signature="10844:10909" placeholder="SELECT COUNT... subcategories_new" />
+            <marker date="1489405832936" expanded="true" signature="10844:10923" placeholder="SELECT COUNT... subcategories_new" />
+            <marker date="1489405832936" expanded="true" signature="11660:11732" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="11783:11840" placeholder="SELECT * FRO... subcategories_new" />
+            <marker date="1489405832936" expanded="true" signature="11783:11854" placeholder="SELECT * FRO... subcategories_new" />
+            <marker date="1489405832936" expanded="true" signature="12577:12642" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489405832936" expanded="true" signature="12686:12757" placeholder="SELECT * FRO... subcategories_new" />
+            <marker date="1489405832936" expanded="true" signature="12866:12931" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489405832936" expanded="true" signature="12976:13047" placeholder="SELECT * FRO... subcategories_new" />
+            <marker date="1489405832936" expanded="true" signature="13114:13172" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489405832936" expanded="true" signature="13217:13281" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489405832936" expanded="true" signature="13489:13505" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="13603:13622" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="13623:14000" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="13636:13717" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="13636:13718" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="13636:13993" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="13658:13703" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="13817:13862" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="13920:13965" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="14114:14182" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="14114:14411" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="14136:14162" placeholder="..." />
+            <marker date="1489405832936" expanded="true" signature="14963:14973" placeholder="..." />
           </folding>
         </state>
       </provider>
