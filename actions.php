@@ -504,6 +504,7 @@ if(isset($_SESSION['userID'])) {
 				}
 
 				echo "
+							<div style='width: 100%; height: 70px;'></div>
 						</div>
 					</div>
 

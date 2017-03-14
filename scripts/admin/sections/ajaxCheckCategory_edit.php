@@ -12,10 +12,17 @@ $goodCategory = $mysqli->real_escape_string($_POST['goodCategory']);
 $categoryCheckResult = $mysqli->query("SELECT COUNT(id) FROM categories_new WHERE name = '".$sectionName."' AND id <> '".$goodCategory."'");
 $categoryCheck = $categoryCheckResult->fetch_array(MYSQLI_NUM);
 
-if($categoryCheck[0] == 0) {
-	echo "ok";
+$currentNameResult = $mysqli->query("SELECT name FROM categories_new WHERE id = '".$goodCategory."'");
+$currentName = $currentNameResult->fetch_array(MYSQLI_NUM);
+
+if($currentName[0] != $sectionName) {
+	if($categoryCheck[0] == 0) {
+		echo "ok";
+	} else {
+		echo "false";
+	}
 } else {
-	echo "false";
+	echo "no";
 }
 
 $req = ob_get_contents();

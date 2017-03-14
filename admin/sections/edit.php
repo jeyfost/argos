@@ -1,0 +1,478 @@
+<?php
+
+session_start();
+include("../../scripts/connect.php");
+
+if(isset($_SESSION['userID'])) {
+	if($_SESSION['userID'] != 1) {
+		header("Location: ../../");
+	} else {
+		$userLoginResult = $mysqli->query("SELECT login from users WHERE id = '".$_SESSION['userID']."'");
+		$userLogin = $userLoginResult->fetch_array(MYSQLI_NUM);
+	}
+} else {
+	header("Location: ../index.php");
+}
+
+if(!empty($_REQUEST['type'])) {
+	if($_REQUEST['type'] == "fa" or $_REQUEST['type'] == "em" or $_REQUEST['type'] == "ca" or $_REQUEST['type'] == "dg") {
+		$t = $mysqli->real_escape_string($_REQUEST['type']);
+	} else {
+		header("Location: edit.php");
+	}
+}
+
+if(!empty($_REQUEST['category'])) {
+	$cCheckResult = $mysqli->query("SELECT COUNT(id) FROM categories_new WHERE type = '".$t."' AND id = '".$mysqli->real_escape_string($_REQUEST['category'])."'");
+	$cCheck = $cCheckResult->fetch_array(MYSQLI_NUM);
+
+	if($cCheck[0] > 0) {
+		$c = $mysqli->real_escape_string($_REQUEST['category']);
+	} else {
+		header("Location: edit.php?type=".$t);
+	}
+}
+
+if(!empty($_REQUEST['subcategory'])) {
+	$sCheckResult = $mysqli->query("SELECT COUNT(id) FROM subcategories_new WHERE category = '" . $c . "' AND id = '" . $mysqli->real_escape_string($_REQUEST['subcategory']) . "'");
+	$sCheck = $sCheckResult->fetch_array(MYSQLI_NUM);
+
+	if ($sCheck[0] > 0) {
+		$s = $mysqli->real_escape_string($_REQUEST['subcategory']);
+	} else {
+		header("Location: edit.php?type=" . $t . "&category=" . $c);
+	}
+}
+
+if(!empty($_REQUEST['subcategory2'])) {
+	$s2CheckResult = $mysqli->query("SELECT COUNT(id) FROM subcategories2 WHERE subcategory = '" . $s . "' AND id = '" . $mysqli->real_escape_string($_REQUEST['subcategory2']) . "'");
+	$s2Check = $s2CheckResult->fetch_array(MYSQLI_NUM);
+
+	if ($s2Check[0] > 0) {
+		$s2 = $mysqli->real_escape_string($_REQUEST['subcategory2']);
+	} else {
+		header("Location: edit.php?type=" . $t . "&category=" . $c);
+	}
+}
+
+if(!empty($_REQUEST['edit'])) {
+	if($_REQUEST['edit'] != "true") {
+		$link = explode("&edit=", $_SERVER['REQUEST_URI']);
+		header("Location: ".$link[0]);
+	}
+}
+
+?>
+
+<!doctype html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Редактирование разделов</title>
+
+    <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
+    <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
+	<link rel="stylesheet" type="text/css" href="../../js/lightview/css/lightview/lightview.css" />
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<!--[if lt IE 9]>
+  		<script type="text/javascript" src="../../js/lightview/js/excanvas/excanvas.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="../../js/lightview/js/spinners/spinners.min.js"></script>
+	<script type="text/javascript" src="../../js/lightview/js/lightview/lightview.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/admin/admin.js"></script>
+	<script type="text/javascript" src="../../js/admin/sections/edit.js"></script>
+
+	<style>
+		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
+		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('../../img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
+	</style>
+
+	<script type="text/javascript">
+        $(window).on('load', function () {
+            var $preloader = $('#page-preloader'), $spinner = $preloader.find('.spinner');
+            $spinner.delay(500).fadeOut();
+            $preloader.delay(850).fadeOut('slow');
+        });
+    </script>
+
+</head>
+
+<body style="background-color: #e4e4e4;">
+
+	<div id="page-preloader"><span class="spinner"></span></div>
+
+	<div id="menu">
+		<div id="logo">
+			<a href="../"><img src="../../img/system/logo.png" /></a>
+		</div>
+		<div class="line"></div>
+		<a href="../goods/">
+			<div class="menuPoint">
+				<div class="menuIMG"><img src="../../img/system/admin/goods.png" /></div>
+				<div class="menuText">Товары</div>
+			</div>
+		</a>
+		<div style="clear: both;"></div>
+		<div class="line"></div>
+		<a href="../sections/">
+			<div class="menuPointActive">
+				<div class="menuIMG"><img src="../../img/system/admin/sections.png" /></div>
+				<div class="menuText">Разделы</div>
+			</div>
+		</a>
+		<div style="clear: both;"></div>
+		<div class="line"></div>
+		<a href="../news/">
+			<div class="menuPoint">
+				<div class="menuIMG"><img src="../../img/system/admin/news.png" /></div>
+				<div class="menuText">Новости</div>
+			</div>
+		</a>
+		<div style="clear: both;"></div>
+		<div class="line"></div>
+		<a href="../actions/">
+			<div class="menuPoint">
+				<div class="menuIMG"><img src="../../img/system/admin/sale.png" /></div>
+				<div class="menuText">Акции</div>
+			</div>
+		</a>
+		<div style="clear: both;"></div>
+		<div class="line"></div>
+		<a href="../photo/">
+			<div class="menuPoint">
+				<div class="menuIMG"><img src="../../img/system/admin/photo.png" /></div>
+				<div class="menuText">Фотогалерея</div>
+			</div>
+		</a>
+		<div style="clear: both;"></div>
+		<div class="line"></div>
+		<a href="../albums/">
+			<div class="menuPoint">
+				<div class="menuIMG"><img src="../../img/system/admin/album.png" /></div>
+				<div class="menuText">Альбомы</div>
+			</div>
+		</a>
+		<div style="clear: both;"></div>
+		<div class="line"></div>
+		<a href="../achievements/">
+			<div class="menuPoint">
+				<div class="menuIMG"><img src="../../img/system/admin/achievement.png" /></div>
+				<div class="menuText">Достижения</div>
+			</div>
+		</a>
+		<div style="clear: both;"></div>
+		<div class="line"></div>
+		<a href="../vacancies/">
+			<div class="menuPoint">
+				<div class="menuIMG"><img src="../../img/system/admin/person.png" /></div>
+				<div class="menuText">Вакансии</div>
+			</div>
+		</a>
+		<div style="clear: both;"></div>
+		<div class="line"></div>
+		<a href="../clients/">
+			<div class="menuPoint">
+				<div class="menuIMG"><img src="../../img/system/admin/clients.png" /></div>
+				<div class="menuText">Клиентская база</div>
+			</div>
+		</a>
+		<div style="clear: both;"></div>
+		<div class="line"></div>
+		<a href="../email/">
+			<div class="menuPoint">
+				<div class="menuIMG"><img src="../../img/system/admin/mail.png" /></div>
+				<div class="menuText">Email-рассылки</div>
+			</div>
+		</a>
+		<div style="clear: both;"></div>
+		<div class="line"></div>
+		<a href="../../">
+			<div class="menuPoint">
+				<div class="menuIMG"><img src="../../img/system/admin/home.png" /></div>
+				<div class="menuText">Вернуться на сайт</div>
+			</div>
+		</a>
+		<div style="clear: both;"></div>
+		<div class="line"></div>
+	</div>
+
+	<div id="content">
+		<div id="top">
+			<div id="topText">
+				<span style="font-size: 18px; font-weight: bold;">Панель администрирования</span>
+				<br />
+				<span style="font-size: 14px;">Вы вошли как пользователь <b style="color: #df4e47;"><?php echo $userLogin[0]; ?></b></span>
+			</div>
+			<a href="../"><img src="../../img/system/exit.png" id="exitIMG" title="Выйти из панели администрирования" onmouseover="changeIcon('exitIMG', 'exitRed.png', 2)" onmouseout="changeIcon('exitIMG', 'exit.png', 2)" /></a>
+		</div>
+		<br />
+		<div id="admContent">
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/sections.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Товары</span></a> > <a href="edit.php"><span class="breadCrumbsText">Редактирование разделов</span></a></div></div>
+			<div style="clear: both;"></div>
+			<br />
+			<h2>Редактирование разделов</h2>
+			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" style="margin-left: 0;" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
+			<a href="edit.php"><input type="button" class="buttonActive" id="editButton" value="Редактирование" /></a>
+			<a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
+			<div style="clear: both;"></div>
+			<br /><br />
+			<form id="addForm" method="post" enctype="multipart/form-data">
+				<label for="typeSelect">Выберите тип товаров:</label>
+				<br />
+				<select id="typeSelect" name="goodType" onchange="window.location = 'edit.php?type=' + this.options[this.selectedIndex].value">
+					<option value="">- Выберите тип товаров -</option>
+					<option value="fa" <?php if($_REQUEST['type'] == "fa") {echo " selected";} ?>>Мебельная фурнитура</option>
+					<option value="em" <?php if($_REQUEST['type'] == "em") {echo " selected";} ?>>Кромочные материалы</option>
+					<option value="ca" <?php if($_REQUEST['type'] == "ca") {echo " selected";} ?>>Шторная фурнитура</option>
+					<option value="dg" <?php if($_REQUEST['type'] == "dg") {echo " selected";} ?>>Сопутствующие товары</option>
+				</select>
+				<?php
+					if(!empty($_REQUEST['type'])) {
+						echo "
+							<br /><br />
+							<label for='categorySelect'>Выберите раздел:</label>
+							<br />
+							<select id='categorySelect' name='goodCategory' onchange='selectCategory(\"".$_REQUEST['type']."\", this.options[this.selectedIndex].value)'>
+								<option value=''>- Выберите раздел -</option>
+						";
+						$categoryResult = $mysqli->query("SELECT * FROM categories_new WHERE type = '".$t."' ORDER BY name");
+						while ($category = $categoryResult->fetch_assoc()) {
+							echo "<option value='".$category['id']."'"; if($c == $category['id']) {echo " selected";} echo ">".$category['name']."</option>";
+						}
+						echo "</select>";
+
+						if(!empty($_REQUEST['category'])) {
+							$subcategoriesCheckResult = $mysqli->query("SELECT COUNT(id) FROM subcategories_new WHERE category = '".$c."'");
+							$subcategoriesCheck = $subcategoriesCheckResult->fetch_array(MYSQLI_NUM);
+
+							if(empty($_REQUEST['edit']) or !empty($_REQUEST['subcategory'])) {
+								if(empty($_REQUEST['subcategory'])) {
+									echo "
+										<br /><br />
+										<a href='".$_SERVER['REQUEST_URI']."&edit=true'><span class='redLink'>Редактировать раздел</span></a>
+										<br /><br />
+									";
+								} else {
+									echo "<br /><br />";
+								}
+
+								if($subcategoriesCheck[0] > 0) {
+									echo "
+										<label for='subcategorySelect'>Выберите подраздел:</label>
+										<br />
+										<select id='subcategorySelect' name='goodSubcategory' onchange='selectSubcategory(\"".$_REQUEST['type']."\", \"".$_REQUEST['category']."\", this.options[this.selectedIndex].value)'>
+											<option value=''>- Выберите подраздел -</option>
+									";
+
+									$subcategoryResult = $mysqli->query("SELECT * FROM subcategories_new WHERE category = '".$c."' ORDER BY name");
+									while($subcategory = $subcategoryResult->fetch_assoc()) {
+										echo "<option value='".$subcategory['id']."'"; if($s == $subcategory['id']) {echo " selected";} echo ">".$subcategory['name']."</option>";
+									}
+
+									echo "</select>";
+
+									if(!empty($_REQUEST['subcategory'])) {
+										$subcategory2CheckResult = $mysqli->query("SELECT COUNT(id) FROM subcategories2 WHERE subcategory = '".$s."'");
+										$subcategory2Check = $subcategory2CheckResult->fetch_array(MYSQLI_NUM);
+
+										if(empty($_REQUEST['edit']) or !empty($_REQUEST['subcategory2'])) {
+											if($subcategory2Check[0] > 0) {
+												if(empty($_REQUEST['subcategory2'])) {
+													echo "
+														<br /><br />
+														<a href='".$_SERVER['REQUEST_URI']."&edit=true'><span class='redLink'>Редактировать подраздел</span></a>
+														<br /><br />
+													";
+												} else {
+													echo "<br /><br />";
+												}
+
+												echo "
+													<label for='subcategory2Select'>Выберите подраздел 2-го уровня:</label>
+													<br />
+													<select id='subcategory2Select' name='goodSubcategory2' onchange='selectSubcategory2(\"".$_REQUEST['type']."\", \"".$_REQUEST['category']."\", \"".$_REQUEST['subcategory']."\", this.options[this.selectedIndex].value)'>
+														<option value=''>- Выберите подраздел 2-го уровня -</option>
+												";
+
+												$subcategory2Result = $mysqli->query("SELECT * FROM subcategories2 WHERE subcategory = '".$s."' ORDER BY name");
+												while($subcategory2 = $subcategory2Result->fetch_assoc()) {
+													echo "<option value='".$subcategory2['id']."'"; if($s2 == $subcategory2['id']) {echo " selected";} echo ">".$subcategory2['name']."</option>";
+												}
+
+												echo "</select>";
+
+												if(!empty($_REQUEST['subcategory2'])) {
+													$subcategory2Result = $mysqli->query("SELECT * FROM subcategories2 WHERE id = '".$s2."'");
+													$subcategory2 = $subcategory2Result->fetch_assoc();
+
+													subcategoryForm($subcategory2);
+												}
+
+											} else {
+												$subcategoryResult = $mysqli->query("SELECT * FROM subcategories_new WHERE id = '".$s."'");
+												$subcategory = $subcategoryResult->fetch_assoc();
+
+											subcategoryForm($subcategory);
+											}
+										} else {
+											$subcategoryResult = $mysqli->query("SELECT * FROM subcategories_new WHERE id = '".$s."'");
+											$subcategory = $subcategoryResult->fetch_assoc();
+
+											subcategoryForm($subcategory);
+										}
+									}
+								} else {
+									$categoryResult = $mysqli->query("SELECT * FROM categories_new WHERE id = '".$c."'");
+									$category = $categoryResult->fetch_assoc();
+
+									categoryForm($category);
+								}
+							} else {
+								$categoryResult = $mysqli->query("SELECT * FROM categories_new WHERE id = '".$c."'");
+								$category = $categoryResult->fetch_assoc();
+
+								categoryForm($category);
+							}
+						}
+					}
+				?>
+			</form>
+			<div id="goodsTable" <?php if(empty($_REQUEST['type']) or !empty($_REQUEST['subcategory2'])) {echo " style='display: none;'";} ?>>
+				<?php
+					if(empty($_REQUEST['subcategory2'])) {
+						$href = "edit.php";
+						if(!empty($_REQUEST['type'])) {
+							$href .= "?type=".$t."&category=";
+							if(!empty($_REQUEST['subcategory'])) {
+								$href .= "&category=".$c."&subcategory=".$s."&subcategory2=";
+								$sectionsCountResult = $mysqli->query("SELECT COUNT(id) FROM subcategories2 WHERE subcategory = '".$s."'");
+								$sectionResult = $mysqli->query("SELECT * FROM subcategories2 WHERE subcategory = '".$s."' ORDER BY name");
+							} else {
+								if(!empty($_REQUEST['category'])) {
+									$href .= "&category=".$c."&subcategory=";
+									$sectionsCountResult = $mysqli->query("SELECT COUNT(id) FROM subcategories_new WHERE category = '".$c."'");
+									$sectionResult = $mysqli->query("SELECT * FROM subcategories_new WHERE category = '".$c."' ORDER BY name");
+								} else {
+									$sectionsCountResult = $mysqli->query("SELECT COUNT(id) FROM categories_new WHERE type = '".$t."'");
+									$sectionResult = $mysqli->query("SELECT * FROM categories_new WHERE type = '".$t."' ORDER BY name");
+								}
+							}
+
+							$sectionsCount = $sectionsCountResult->fetch_array(MYSQLI_NUM);
+
+							echo "
+								<span>Подразделы, представленные в выбранном разделе:</span>
+								<br />
+								<span style='font-size: 14px;'><b>Всего подразделов: </b>".$sectionsCount[0]."</span>
+								<br /><br />
+								<table style='text-align: center;'>
+									<tr>
+										<td style='font-weight: bold; background-color: #ededed;'>№</td>
+							";
+
+							if(!empty($_REQUEST['type']) and empty($_REQUEST['category'])) {
+								echo "<td style='font-weight: bold; background-color: #ededed;'>Иконка</td>";
+							}
+
+							echo "
+										<td style='font-weight: bold; background-color: #ededed;'>Название</td>
+									</tr>
+							";
+
+							$i = 0;
+
+							while($section = $sectionResult->fetch_assoc()) {
+								$i++;
+								echo "
+									<tr>
+										<td style='background-color: #ededed;'>".$i."</td>
+								";
+
+								if(!empty($_REQUEST['type']) and empty($_REQUEST['category'])) {
+									echo "<td><img src='../../img/icons/".$section['picture']."'></td>";
+								}
+
+								echo "
+										<td><a href='".$href.$section['id']."&edit=true'><span class='redLink'>".$section['name']."</span></a></td>
+									</tr>
+								";
+							}
+
+							echo "
+								</table>
+							";
+						}
+					}
+				?>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+		<div style="clear: both;"></div>
+		<div style="width: 100%; height: 40px;"></div>
+	</div>
+
+	<div style="clear: both;"></div>
+
+	<?php
+		function categoryForm($section) {
+			echo "
+				<br /><br />
+				<label for='blackImgInput'>Выберите чёрную иконку (21x21):</label>
+				<br />
+				<a href='../../img/icons/".$section['picture']."' class='lightview'><span class='link' style='font-size: 14px;'>(Нажмите для просмотра текущей иконки)</span></a>
+				<br />
+				<input type='file' class='file' name='blackImg' id='blackImgInput' />
+				<br /><br />
+				<label for='redImgInput'>Выберите красную иконку (21x21)</label>
+				<br />
+				<a href='../../img/icons/".$section['picture_red']."' class='lightview'><span class='link' style='font-size: 14px;'>(Нажмите для просмотра текущей иконки)</span></a>
+				<br />
+				<input type='file' class='file' name='redImg' id='redImgInput' />
+				<br /><br />
+				<label for='sectionNameInput'>Название раздела:</label>
+				<br />
+				<input type='text' id='sectionNameInput' name='name' value='".$section['name']."' />
+				<br />
+				<div id='responseField'></div>
+				<br />
+				<input type='button' id='categoryEditButton' class='button' onmouseover='buttonChange(\"categoryEditButton\", 1)' onmouseout='buttonChange(\"categoryEditButton\", 0)' onclick='editCategory()' value='Редактировать' style='margin: 0;' />
+			";
+
+			$link = explode("&edit=", $_SERVER['REQUEST_URI']);
+
+			echo "
+				<br /><br /><br /><br />
+				<a href='".$link[0]."'><span class='redLink'>Вернуться к выбору разделов</span></a>
+			";
+		}
+
+		function subcategoryForm($section) {
+			echo "
+				<br /><br />
+				<label for='sectionNameInput'>Название подраздела:</label>
+				<br />
+				<input type='text' id='sectionNameInput' name='name' value='".$section['name']."' />
+				<br />
+				<div id='responseField'></div>
+				<br />
+				<input type='button' id='categoryEditButton' class='button' onmouseover='buttonChange(\"categoryEditButton\", 1)' onmouseout='buttonChange(\"categoryEditButton\", 0)' onclick='editSubcategory()' value='Редактировать' style='margin: 0;' />
+			";
+
+			$link = explode("&edit=", $_SERVER['REQUEST_URI']);
+
+			echo "
+				<br /><br /><br /><br />
+				<a href='".$link[0]."'><span class='redLink'>Вернуться к выбору разделов</span></a>
+			";
+		}
+	?>
+
+</body>
+
+</html>

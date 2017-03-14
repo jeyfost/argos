@@ -50,11 +50,11 @@ function addSection() {
 									switch(response) {
 										case "ok":
 											s = 1;
-											status = "Товар был успешно добавлен.";
+											status = "Раздел был успешно добавлен.";
 											break;
 										case "error":
 											s = 0;
-											status = "При добавлении товара произошла ошибка.";
+											status = "При добавлении Раздела произошла ошибка.";
 											break;
 										case "blackImg":
 											s = 0;
@@ -193,11 +193,11 @@ function addSubsection() {
 							switch(response) {
 								case "ok":
 									s = 1;
-									status = "Товар был успешно добавлен.";
+									status = "Подраздел был успешно добавлен.";
 									break;
 								case "error":
 									s = 0;
-									status = "При добавлении товара произошла ошибка.";
+									status = "При добавлении подраздела произошла ошибка.";
 									break;
 								default:
 									status = response;
@@ -247,12 +247,12 @@ function addSubsection() {
 			responseField.css('opacity', 0);
 			setTimeout(function() {
 				responseField.css('color', '#df4e47');
-				responseField.html("<br />Введите название раздела.<br />");
+				responseField.html("<br />Введите название подраздела.<br />");
 				responseField.css('opacity', 1);
 			}, 300);
 		} else {
 			responseField.css('color', '#df4e47');
-			responseField.html("<br />Введите название раздела.<br />");
+			responseField.html("<br />Введите название подраздела.<br />");
 			responseField.css('opacity', 1);
 		}
 	}

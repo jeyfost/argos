@@ -8,13 +8,14 @@ ob_start();
 $goodType = $mysqli->real_escape_string($_POST['goodType']);
 $goodCategory = $mysqli->real_escape_string($_POST['goodCategory']);
 $goodSubcategory = $mysqli->real_escape_string($_POST['goodSubcategory']);
+$goodSubcategory2 = $mysqli->real_escape_string($_POST['goodSubcategory2']);
 $sectionName = $mysqli->real_escape_string($_POST['name']);
 
 if(!empty($goodSubcategory)) {
-	$categoryCheckResult = $mysqli->query("SELECT COUNT(id) FROM subcategories2 WHERE name = '".$sectionName."'");
+	$categoryCheckResult = $mysqli->query("SELECT COUNT(id) FROM subcategories2 WHERE name = '".$sectionName."' AND id <> '".$goodSubcategory2."'");
 	$categoryCheck = $categoryCheckResult->fetch_array(MYSQLI_NUM);
 } else {
-	$categoryCheckResult = $mysqli->query("SELECT COUNT(id) FROM subcategories_new WHERE name = '".$sectionName."'");
+	$categoryCheckResult = $mysqli->query("SELECT COUNT(id) FROM subcategories_new WHERE name = '".$sectionName."' AND id <> '".$goodSubcategory."'");
 	$categoryCheck = $categoryCheckResult->fetch_array(MYSQLI_NUM);
 }
 
