@@ -18,7 +18,7 @@ if(!empty($_REQUEST['type'])) {
 	if($_REQUEST['type'] == "fa" or $_REQUEST['type'] == "em" or $_REQUEST['type'] == "ca" or $_REQUEST['type'] == "dg") {
 		$t = $mysqli->real_escape_string($_REQUEST['type']);
 	} else {
-		header("Location: edit.php");
+		header("Location: delete.php");
 	}
 }
 
@@ -29,7 +29,7 @@ if(!empty($_REQUEST['category'])) {
 	if($cCheck[0] > 0) {
 		$c = $mysqli->real_escape_string($_REQUEST['category']);
 	} else {
-		header("Location: edit.php?type=".$t);
+		header("Location: delete.php?type=".$t);
 	}
 }
 
@@ -40,7 +40,7 @@ if(!empty($_REQUEST['subcategory'])) {
 	if ($sCheck[0] > 0) {
 		$s = $mysqli->real_escape_string($_REQUEST['subcategory']);
 	} else {
-		header("Location: edit.php?type=" . $t . "&category=" . $c);
+		header("Location: delete.php?type=" . $t . "&category=" . $c);
 	}
 }
 
@@ -51,13 +51,13 @@ if(!empty($_REQUEST['subcategory2'])) {
 	if ($s2Check[0] > 0) {
 		$s2 = $mysqli->real_escape_string($_REQUEST['subcategory2']);
 	} else {
-		header("Location: edit.php?type=" . $t . "&category=" . $c);
+		header("Location: delete.php?type=" . $t . "&category=" . $c);
 	}
 }
 
-if(!empty($_REQUEST['edit'])) {
-	if($_REQUEST['edit'] != "true") {
-		$link = explode("&edit=", $_SERVER['REQUEST_URI']);
+if(!empty($_REQUEST['delete'])) {
+	if($_REQUEST['delete'] != "true") {
+		$link = explode("&delete=", $_SERVER['REQUEST_URI']);
 		header("Location: ".$link[0]);
 	}
 }
@@ -72,7 +72,7 @@ if(!empty($_REQUEST['edit'])) {
 
     <meta charset="utf-8">
 
-    <title>Редактирование разделов</title>
+    <title>Удаление разделов</title>
 
     <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
@@ -86,7 +86,7 @@ if(!empty($_REQUEST['edit'])) {
 	<script type="text/javascript" src="../../js/lightview/js/lightview/lightview.js"></script>
 	<script type="text/javascript" src="../../js/common.js"></script>
 	<script type="text/javascript" src="../../js/admin/admin.js"></script>
-	<script type="text/javascript" src="../../js/admin/sections/edit.js"></script>
+	<script type="text/javascript" src="../../js/admin/sections/delete.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -213,19 +213,19 @@ if(!empty($_REQUEST['edit'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/sections.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Товары</span></a> > <a href="edit.php"><span class="breadCrumbsText">Редактирование разделов</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/sections.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Товары</span></a> > <a href="delete.php"><span class="breadCrumbsText">Удаление разделов</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
-			<h2>Редактирование разделов</h2>
+			<h2>Удаление разделов</h2>
 			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" style="margin-left: 0;" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
-			<a href="edit.php"><input type="button" class="buttonActive" id="editButton" value="Редактирование" /></a>
-			<a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
+			<a href="edit.php"><input type="button" class="button" id="editButton" value="Редактирование" onmouseover="buttonChange('editButton', 1)" onmouseout="buttonChange('editButton', 0)" /></a>
+			<a href="delete.php"><input type="button" class="buttonActive" id="deleteButton" value="Удаление" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
-			<form id="editForm" method="post" enctype="multipart/form-data">
+			<form id="deleteForm" method="post" enctype="multipart/form-data">
 				<label for="typeSelect">Выберите тип товаров:</label>
 				<br />
-				<select id="typeSelect" name="goodType" onchange="window.location = 'edit.php?type=' + this.options[this.selectedIndex].value">
+				<select id="typeSelect" name="goodType" onchange="window.location = 'delete.php?type=' + this.options[this.selectedIndex].value">
 					<option value="">- Выберите тип товаров -</option>
 					<option value="fa" <?php if($_REQUEST['type'] == "fa") {echo " selected";} ?>>Мебельная фурнитура</option>
 					<option value="em" <?php if($_REQUEST['type'] == "em") {echo " selected";} ?>>Кромочные материалы</option>
@@ -251,11 +251,11 @@ if(!empty($_REQUEST['edit'])) {
 							$subcategoriesCheckResult = $mysqli->query("SELECT COUNT(id) FROM subcategories_new WHERE category = '".$c."'");
 							$subcategoriesCheck = $subcategoriesCheckResult->fetch_array(MYSQLI_NUM);
 
-							if(empty($_REQUEST['edit']) or !empty($_REQUEST['subcategory'])) {
+							if(empty($_REQUEST['delete']) or !empty($_REQUEST['subcategory'])) {
 								if(empty($_REQUEST['subcategory'])) {
 									echo "
 										<br /><br />
-										<a href='".$_SERVER['REQUEST_URI']."&edit=true'><span class='redLink'>Редактировать раздел</span></a>
+										<a href='".$_SERVER['REQUEST_URI']."&delete=true'><span class='redLink'>Перейти к удалению раздела</span></a>
 										<br /><br />
 									";
 								} else {
@@ -281,12 +281,12 @@ if(!empty($_REQUEST['edit'])) {
 										$subcategory2CheckResult = $mysqli->query("SELECT COUNT(id) FROM subcategories2 WHERE subcategory = '".$s."'");
 										$subcategory2Check = $subcategory2CheckResult->fetch_array(MYSQLI_NUM);
 
-										if(empty($_REQUEST['edit']) or !empty($_REQUEST['subcategory2'])) {
+										if(empty($_REQUEST['delete']) or !empty($_REQUEST['subcategory2'])) {
 											if($subcategory2Check[0] > 0) {
 												if(empty($_REQUEST['subcategory2'])) {
 													echo "
 														<br /><br />
-														<a href='".$_SERVER['REQUEST_URI']."&edit=true'><span class='redLink'>Редактировать подраздел</span></a>
+														<a href='".$_SERVER['REQUEST_URI']."&delete=true'><span class='redLink'>Перейти к удалению подраздела</span></a>
 														<br /><br />
 													";
 												} else {
@@ -308,36 +308,55 @@ if(!empty($_REQUEST['edit'])) {
 												echo "</select>";
 
 												if(!empty($_REQUEST['subcategory2'])) {
-													$subcategory2Result = $mysqli->query("SELECT * FROM subcategories2 WHERE id = '".$s2."'");
-													$subcategory2 = $subcategory2Result->fetch_assoc();
+													$goodsCheckResult = $mysqli->query("SELECT COUNT(id) FROM catalogue_new WHERE subcategory2 = '".$s2."'");
+													$goodsCheck = $goodsCheckResult->fetch_array(MYSQLI_NUM);
 
-													subcategoryForm($subcategory2);
+													if($goodsCheck[0] > 0) {
+														subcategoryForm(1);
+													} else {
+														subcategoryForm(0);
+													}
 												}
-
 											} else {
-												$subcategoryResult = $mysqli->query("SELECT * FROM subcategories_new WHERE id = '".$s."'");
-												$subcategory = $subcategoryResult->fetch_assoc();
+												$goodsCheckResult = $mysqli->query("SELECT COUNT(id) FROM catalogue_new WHERE subcategory = '".$s."'");
+												$goodsCheck = $goodsCheckResult->fetch_array(MYSQLI_NUM);
 
-											subcategoryForm($subcategory);
+												if($goodsCheck[0] > 0) {
+													subcategoryForm(1);
+												} else {
+													subcategoryForm(0);
+												}
 											}
 										} else {
-											$subcategoryResult = $mysqli->query("SELECT * FROM subcategories_new WHERE id = '".$s."'");
-											$subcategory = $subcategoryResult->fetch_assoc();
+											$goodsCheckResult = $mysqli->query("SELECT COUNT(id) FROM catalogue_new WHERE subcategory = '".$s."'");
+											$goodsCheck = $goodsCheckResult->fetch_array(MYSQLI_NUM);
 
-											subcategoryForm($subcategory);
+											if($goodsCheck[0] > 0) {
+												subcategoryForm(1);
+											} else {
+												subcategoryForm(0);
+											}
 										}
 									}
 								} else {
-									$categoryResult = $mysqli->query("SELECT * FROM categories_new WHERE id = '".$c."'");
-									$category = $categoryResult->fetch_assoc();
+									$goodsCheckResult = $mysqli->query("SELECT COUNT(id) FROM catalogue_new WHERE category = '".$c."'");
+									$goodsCheck = $goodsCheckResult->fetch_array(MYSQLI_NUM);
 
-									categoryForm($category);
+									if($goodsCheck[0] > 0) {
+										subcategoryForm(1);
+									} else {
+										subcategoryForm(0);
+									}
 								}
 							} else {
-								$categoryResult = $mysqli->query("SELECT * FROM categories_new WHERE id = '".$c."'");
-								$category = $categoryResult->fetch_assoc();
+								$goodsCheckResult = $mysqli->query("SELECT COUNT(id) FROM catalogue_new WHERE category = '".$c."'");
+								$goodsCheck = $goodsCheckResult->fetch_array(MYSQLI_NUM);
 
-								categoryForm($category);
+								if($goodsCheck[0] > 0) {
+									categoryForm(1);
+								} else {
+									categoryForm(0);
+								}
 							}
 						}
 					}
@@ -346,7 +365,7 @@ if(!empty($_REQUEST['edit'])) {
 			<div id="goodsTable" <?php if(empty($_REQUEST['type']) or !empty($_REQUEST['subcategory2'])) {echo " style='display: none;'";} ?>>
 				<?php
 					if(empty($_REQUEST['subcategory2'])) {
-						$href = "edit.php";
+						$href = "delete.php";
 						if(!empty($_REQUEST['type'])) {
 							$href .= "?type=".$t."&category=";
 							if(!empty($_REQUEST['subcategory'])) {
@@ -399,7 +418,7 @@ if(!empty($_REQUEST['edit'])) {
 								}
 
 								echo "
-										<td><a href='".$href.$section['id']."&edit=true'><span class='redLink'>".$section['name']."</span></a></td>
+										<td><a href='".$href.$section['id']."&delete=true'><span class='redLink'>".$section['name']."</span></a></td>
 									</tr>
 								";
 							}
@@ -420,31 +439,28 @@ if(!empty($_REQUEST['edit'])) {
 	<div style="clear: both;"></div>
 
 	<?php
-		function categoryForm($section) {
+		function categoryForm($flag) {
 			echo "
 				<br /><br />
-				<label for='blackImgInput'>Выберите чёрную иконку (21x21):</label>
-				<br />
-				<a href='../../img/icons/".$section['picture']."' class='lightview'><span class='link' style='font-size: 14px;'>(Нажмите для просмотра текущей иконки)</span></a>
-				<br />
-				<input type='file' class='file' name='blackImg' id='blackImgInput' />
-				<br /><br />
-				<label for='redImgInput'>Выберите красную иконку (21x21)</label>
-				<br />
-				<a href='../../img/icons/".$section['picture_red']."' class='lightview'><span class='link' style='font-size: 14px;'>(Нажмите для просмотра текущей иконки)</span></a>
-				<br />
-				<input type='file' class='file' name='redImg' id='redImgInput' />
-				<br /><br />
-				<label for='sectionNameInput'>Название раздела:</label>
-				<br />
-				<input type='text' id='sectionNameInput' name='name' value='".$section['name']."' />
+				<span style='font-size: 14px; font-weight: bold;'>При удалении раздела будут удалены все входящие в него подразделы!</span>
+			";
+
+			if($flag == 1) {
+				echo "
+					<br />
+					<label for='deleteGoodsCheckbox' style='color: #df4e47;'> Удалить вместе с товарами?</label>
+					<input type='checkbox' id='deleteGoodsCheckbox' name='deleteGoods' style='width: 20px; height: 20px; position: relative; float: left;' />
+				";
+			}
+
+			echo "
 				<br />
 				<div id='responseField'></div>
 				<br />
-				<input type='button' id='categoryEditButton' class='button' onmouseover='buttonChange(\"categoryEditButton\", 1)' onmouseout='buttonChange(\"categoryEditButton\", 0)' onclick='editCategory()' value='Редактировать' style='margin: 0;' />
+				<input type='button' id='categoryDeleteButton' class='button' onmouseover='buttonChange(\"categoryDeleteButton\", 1)' onmouseout='buttonChange(\"categoryDeleteButton\", 0)' onclick='deleteCategory()' value='Удалить' style='margin: 0;' />
 			";
 
-			$link = explode("&edit=", $_SERVER['REQUEST_URI']);
+			$link = explode("&delete=", $_SERVER['REQUEST_URI']);
 
 			echo "
 				<br /><br /><br /><br />
@@ -452,19 +468,28 @@ if(!empty($_REQUEST['edit'])) {
 			";
 		}
 
-		function subcategoryForm($section) {
+		function subcategoryForm($flag) {
 			echo "
 				<br /><br />
-				<label for='sectionNameInput'>Название подраздела:</label>
-				<br />
-				<input type='text' id='sectionNameInput' name='name' value='".$section['name']."' />
+				<span style='font-size: 14px; font-weight: bold;'>При удалении раздела будут удалены все входящие в него подразделы!</span>
+			";
+
+			if($flag == 1) {
+				echo "
+					<br />
+					<label for='deleteGoodsCheckbox' style='color: #df4e47;'> Удалить вместе с товарами?</label>
+					<input type='checkbox' id='deleteGoodsCheckbox' name='deleteGoods' style='width: 20px; height: 20px; position: relative; float: left;' />
+				";
+			}
+
+			echo "
 				<br />
 				<div id='responseField'></div>
 				<br />
-				<input type='button' id='categoryEditButton' class='button' onmouseover='buttonChange(\"categoryEditButton\", 1)' onmouseout='buttonChange(\"categoryEditButton\", 0)' onclick='editSubcategory()' value='Редактировать' style='margin: 0;' />
+				<input type='button' id='categoryDeleteButton' class='button' onmouseover='buttonChange(\"categoryDeleteButton\", 1)' onmouseout='buttonChange(\"categoryDeleteButton\", 0)' onclick='deleteSubcategory()' value='Удалить' style='margin: 0;' />
 			";
 
-			$link = explode("&edit=", $_SERVER['REQUEST_URI']);
+			$link = explode("&delete=", $_SERVER['REQUEST_URI']);
 
 			echo "
 				<br /><br /><br /><br />

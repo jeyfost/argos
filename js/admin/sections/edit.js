@@ -13,7 +13,7 @@ function selectSubcategory2(type, category, subcategory, subcategory2) {
 function editCategory() {
 	var responseField = $("#responseField");
 	var sectionName = $("#sectionNameInput").val();
-	var formData = new FormData($('#addForm').get(0));
+	var formData = new FormData($('#editForm').get(0));
 
 	if(sectionName != '') {
 		$.ajax({
@@ -124,7 +124,7 @@ function editCategory() {
 function editSubcategory() {
 	var responseField = $("#responseField");
 	var sectionName = $("#sectionNameInput").val();
-	var formData = new FormData($('#addForm').get(0));
+	var formData = new FormData($('#editForm').get(0));
 
 	if(sectionName != '') {
 		$.ajax({
