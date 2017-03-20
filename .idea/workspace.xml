@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sections/delete.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/admin/sections/delete.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/sections/ajaxDeleteCategory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/sections/ajaxDeleteSubcategory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/news/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/sections/edit.php" afterPath="$PROJECT_DIR$/admin/sections/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue.php" afterPath="$PROJECT_DIR$/catalogue.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/admin/sections/edit.js" afterPath="$PROJECT_DIR$/js/admin/sections/edit.js" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,6 +35,34 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - argos@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="news" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - argos@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="clients_news" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -49,134 +70,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/sections/delete.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-232.11539">
-              <caret line="355" column="36" selection-start-line="355" selection-start-column="36" selection-end-line="355" selection-end-column="36" />
-              <folding>
-                <marker date="1489743431401" expanded="true" signature="205:265" placeholder="SELECT login... users" />
-                <marker date="1489743431401" expanded="true" signature="703:827" placeholder="SELECT COUNT... categories_new" />
-                <marker date="1489743431401" expanded="true" signature="1095:1237" placeholder="SELECT COUNT... subcategories_new" />
-                <marker date="1489743431401" expanded="true" signature="1533:1676" placeholder="SELECT COUNT... subcategories2" />
-                <marker date="1489743431401" expanded="true" signature="9406:9467" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="9511:9575" placeholder="SELECT * FRO... categories_new" />
-                <marker date="1489743431401" expanded="true" signature="9901:9966" placeholder="SELECT COUNT... subcategories_new" />
-                <marker date="1489743431401" expanded="true" signature="10759:10829" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="10880:10951" placeholder="SELECT * FRO... subcategories_new" />
-                <marker date="1489743431401" expanded="true" signature="11312:11377" placeholder="SELECT COUNT... subcategories2" />
-                <marker date="1489743431401" expanded="true" signature="12279:12367" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="12422:12493" placeholder="SELECT * FRO... subcategories2" />
-                <marker date="1489743431401" expanded="true" signature="12872:12928" placeholder="SELECT COUNT... catalogue_new" />
-                <marker date="1489743431401" expanded="true" signature="12872:12938" placeholder="SELECT COUNT... catalogue_new" />
-                <marker date="1489743431401" expanded="true" signature="13239:13303" placeholder="SELECT COUNT... catalogue_new" />
-                <marker date="1489743431401" expanded="true" signature="13595:13659" placeholder="SELECT COUNT... catalogue_new" />
-                <marker date="1489743431401" expanded="true" signature="13951:14012" placeholder="SELECT COUNT... catalogue_new" />
-                <marker date="1489743431401" expanded="true" signature="14277:14338" placeholder="SELECT COUNT... catalogue_new" />
-                <marker date="1489743431401" expanded="true" signature="15022:15087" placeholder="SELECT COUNT... subcategories2" />
-                <marker date="1489743431401" expanded="true" signature="15132:15203" placeholder="SELECT * FRO... subcategories2" />
-                <marker date="1489743431401" expanded="true" signature="15366:15431" placeholder="SELECT COUNT... subcategories_new" />
-                <marker date="1489743431401" expanded="true" signature="15477:15548" placeholder="SELECT * FRO... subcategories_new" />
-                <marker date="1489743431401" expanded="true" signature="15617:15675" placeholder="SELECT COUNT... categories_new" />
-                <marker date="1489743431401" expanded="true" signature="15721:15785" placeholder="SELECT * FRO... categories_new" />
-                <marker date="1489743431401" expanded="false" signature="16000:16016" placeholder="..." />
-                <marker date="1489743431401" expanded="false" signature="16116:16135" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="16136:16233" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="16150:16233" placeholder="..." />
-                <marker date="1489743431401" expanded="false" signature="16173:16218" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="16335:16380" placeholder="..." />
-                <marker date="1489743431401" expanded="false" signature="16441:16486" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="16642:16712" placeholder="..." />
-                <marker date="1489743431401" expanded="false" signature="16665:16691" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="17380:17415" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="17586:17601" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="17718:17777" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="18089:18099" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="18387:18403" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="18387:18422" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="18593:18608" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="18725:18784" placeholder="..." />
-                <marker date="1489743431401" expanded="true" signature="19099:19109" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="edit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/admin/sections/edit.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="195" column="29" selection-start-line="159" selection-start-column="28" selection-end-line="195" selection-end-column="29" />
+              <caret line="184" column="37" selection-start-line="184" selection-start-column="37" selection-end-line="184" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="delete.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/admin/sections/delete.js">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/news/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="112" column="141" selection-start-line="112" selection-start-column="141" selection-end-line="112" selection-end-column="141" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxAddGood.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-114.42308">
-              <caret line="175" column="31" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.5811594">
+              <caret line="164" column="14" selection-start-line="164" selection-start-column="14" selection-end-line="164" selection-end-column="14" />
               <folding>
-                <marker date="1490000444410" expanded="true" signature="3380:3444" placeholder="SELECT COUNT... catalogue_new" />
-                <marker date="1490000444410" expanded="true" signature="4899:5321" placeholder="INSERT INTO catalogue_new... " />
-                <marker date="1490000444410" expanded="true" signature="5685:6087" placeholder="INSERT INTO catalogue_new... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxDeleteCategory.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/admin/sections/ajaxDeleteCategory.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.5086956">
-              <caret line="181" column="20" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="20" />
-              <folding>
-                <marker date="1489997992374" expanded="true" signature="233:292" placeholder="SELECT * FRO... categories_new" />
-                <marker date="1489997992374" expanded="true" signature="385:461" placeholder="SELECT COUNT... subcategories_new" />
-                <marker date="1489997992374" expanded="true" signature="800:850" placeholder="SELECT * FRO... subcategories_new" />
-                <marker date="1489997992374" expanded="true" signature="800:868" placeholder="SELECT * FRO... subcategories_new" />
-                <marker date="1489997992374" expanded="true" signature="980:1034" placeholder="SELECT COUNT... subcategories2" />
-                <marker date="1489997992374" expanded="true" signature="980:1038" placeholder="SELECT COUNT... subcategories2" />
-                <marker date="1489997992374" expanded="true" signature="980:1061" placeholder="SELECT COUNT... subcategories2" />
-                <marker date="1489997992374" expanded="true" signature="1318:1364" placeholder="SELECT * FRO... subcategories2" />
-                <marker date="1489997992374" expanded="true" signature="1318:1391" placeholder="SELECT * FRO... subcategories2" />
-                <marker date="1489997992374" expanded="true" signature="1482:1521" placeholder="DELETE FROM " />
-                <marker date="1489997992374" expanded="true" signature="1482:1545" placeholder="DELETE FROM " />
-                <marker date="1489997992374" expanded="true" signature="1606:1671" placeholder="DELETE FROM " />
-                <marker date="1489997992374" expanded="true" signature="1733:1798" placeholder="DELETE FROM " />
-                <marker date="1489997992374" expanded="true" signature="1856:1895" placeholder="DELETE FROM " />
-                <marker date="1489997992374" expanded="true" signature="1856:1913" placeholder="DELETE FROM " />
-                <marker date="1489997992374" expanded="true" signature="2378:2435" placeholder="DELETE FROM " />
-                <marker date="1489997992374" expanded="true" signature="2656:2706" placeholder="SELECT COUNT... catalogue_new" />
-                <marker date="1489997992374" expanded="true" signature="2656:2710" placeholder="SELECT COUNT... catalogue_new" />
-                <marker date="1489997992374" expanded="true" signature="2656:2728" placeholder="SELECT COUNT... catalogue_new" />
-                <marker date="1489997992374" expanded="true" signature="2889:2953" placeholder="SELECT * FRO... catalogue_new" />
-                <marker date="1489997992374" expanded="true" signature="3025:3063" placeholder="DELETE FROM " />
-                <marker date="1489997992374" expanded="true" signature="3025:3079" placeholder="DELETE FROM " />
-                <marker date="1489997992374" expanded="true" signature="3773:3823" placeholder="SELECT * FRO... subcategories_new" />
-                <marker date="1489997992374" expanded="true" signature="3773:3841" placeholder="SELECT * FRO... subcategories_new" />
-                <marker date="1489997992374" expanded="true" signature="3954:4012" placeholder="SELECT COUNT... subcategories2" />
-                <marker date="1489997992374" expanded="true" signature="3954:4035" placeholder="SELECT COUNT... subcategories2" />
-                <marker date="1489997992374" expanded="true" signature="4238:4284" placeholder="SELECT * FRO... subcategories2" />
-                <marker date="1489997992374" expanded="true" signature="4238:4288" placeholder="SELECT * FRO... subcategories2" />
-                <marker date="1489997992374" expanded="true" signature="4238:4311" placeholder="SELECT * FRO... subcategories2" />
-                <marker date="1489997992374" expanded="true" signature="4403:4442" placeholder="DELETE FROM " />
-                <marker date="1489997992374" expanded="true" signature="4403:4466" placeholder="DELETE FROM " />
-                <marker date="1489997992374" expanded="true" signature="4531:4596" placeholder="DELETE FROM " />
-                <marker date="1489997992374" expanded="true" signature="4649:4688" placeholder="DELETE FROM " />
-                <marker date="1489997992374" expanded="true" signature="4649:4706" placeholder="DELETE FROM " />
-                <marker date="1489997992374" expanded="true" signature="5222:5279" placeholder="DELETE FROM " />
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#8;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#10;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#12;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#14;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#16;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#18;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#20;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#22;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#b#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1490001605388" expanded="true" signature="205:265" placeholder="SELECT login... users" />
               </folding>
             </state>
           </provider>
@@ -198,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/partners/news.php" />
         <option value="$PROJECT_DIR$/contacts/stores.php" />
         <option value="$PROJECT_DIR$/contacts/main.php" />
         <option value="$PROJECT_DIR$/contacts/mail.php" />
@@ -249,6 +178,7 @@
         <option value="$PROJECT_DIR$/scripts/admin/sections/ajaxDeleteCategory.php" />
         <option value="$PROJECT_DIR$/js/admin/sections/delete.js" />
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php" />
+        <option value="$PROJECT_DIR$/admin/news/index.php" />
       </list>
     </option>
   </component>
@@ -574,12 +504,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -587,12 +535,13 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/WebServers/home/test1.ru/www/argos/scripts/admin/sections/ajaxCheckCategory.php" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programs\OpenServer\domains\argos.local\admin" />
+      <recent name="C:\WebServers\home\test1.ru\www\argos\scripts\personal" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\WebServers\home\test1.ru\www\argos\scripts\personal" />
       <recent name="C:\WebServers\home\test1.ru\www\argos\js" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\WebServers\home\test1.ru\www\argos\scripts\personal" />
     </key>
   </component>
   <component name="RunManager">
@@ -635,12 +584,6 @@
       <created>1471436673828</created>
       <option name="number" value="Default" />
       <updated>1471436673828</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Добавлена страница обратной связи">
-      <created>1484317474754</created>
-      <option name="number" value="00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1484317474754</updated>
     </task>
     <task id="LOCAL-00049" summary="Добавлена страница общей информации">
       <created>1484731356166</created>
@@ -930,7 +873,13 @@
       <option name="project" value="LOCAL" />
       <updated>1489493098076</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="Реализовано удаление разделов">
+      <created>1490000893934</created>
+      <option name="number" value="00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1490000893935</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TodoView">
@@ -948,6 +897,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19601542" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11568123" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -955,7 +905,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -979,7 +928,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправлен пересчет стоимости непринятого заказа у пользователя при удалении группы товаров" />
     <MESSAGE value="Исправлено отображение стоимости в истории заказаов пользователя" />
     <MESSAGE value="Исправлено отображение стоимости в необработанных заявках у администратора" />
     <MESSAGE value="Исправлен пересчёт  стоимости необработанного заказа у администратора при удалении группы товаров" />
@@ -1004,7 +952,8 @@
     <MESSAGE value="Создана стартовая страница разделов в панели администрирования" />
     <MESSAGE value="Реализовано добавление новых разделов" />
     <MESSAGE value="Реализовано редактирование разделов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализовано редактирование разделов" />
+    <MESSAGE value="Реализовано удаление разделов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализовано удаление разделов" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1020,14 +969,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/admin/sections/delete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/admin/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.046008117">
@@ -1189,13 +1130,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/sections/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/HTML5.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5467225">
@@ -1315,14 +1249,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/sections/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="195" column="29" selection-start-line="159" selection-start-column="28" selection-end-line="195" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/catalogue.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31114328">
@@ -1330,9 +1256,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/sections/ajaxDeleteSubcategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04920405">
+          <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/59ce082/94240a3f-16e7-4f25-9dd4-09c8df13e291/argos.catalogue_new">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/59ce082/94240a3f-16e7-4f25-9dd4-09c8df13e291/argos.vacancies">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-114.42308">
+          <caret line="175" column="31" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
+          <folding>
+            <marker date="1490000444410" expanded="true" signature="3380:3444" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1490000444410" expanded="true" signature="4899:5321" placeholder="INSERT INTO catalogue_new... " />
+            <marker date="1490000444410" expanded="true" signature="5685:6087" placeholder="INSERT INTO catalogue_new... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/sections/ajaxDeleteCategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-118.34615">
+          <caret line="181" column="20" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="20" />
+          <folding>
+            <marker date="1489997992374" expanded="true" signature="233:292" placeholder="SELECT * FRO... categories_new" />
+            <marker date="1489997992374" expanded="true" signature="385:461" placeholder="SELECT COUNT... subcategories_new" />
+            <marker date="1489997992374" expanded="true" signature="800:850" placeholder="SELECT * FRO... subcategories_new" />
+            <marker date="1489997992374" expanded="true" signature="800:868" placeholder="SELECT * FRO... subcategories_new" />
+            <marker date="1489997992374" expanded="true" signature="980:1034" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489997992374" expanded="true" signature="980:1038" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489997992374" expanded="true" signature="980:1061" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489997992374" expanded="true" signature="1318:1364" placeholder="SELECT * FRO... subcategories2" />
+            <marker date="1489997992374" expanded="true" signature="1318:1391" placeholder="SELECT * FRO... subcategories2" />
+            <marker date="1489997992374" expanded="true" signature="1482:1521" placeholder="DELETE FROM " />
+            <marker date="1489997992374" expanded="true" signature="1482:1545" placeholder="DELETE FROM " />
+            <marker date="1489997992374" expanded="true" signature="1606:1671" placeholder="DELETE FROM " />
+            <marker date="1489997992374" expanded="true" signature="1733:1798" placeholder="DELETE FROM " />
+            <marker date="1489997992374" expanded="true" signature="1856:1895" placeholder="DELETE FROM " />
+            <marker date="1489997992374" expanded="true" signature="1856:1913" placeholder="DELETE FROM " />
+            <marker date="1489997992374" expanded="true" signature="2378:2435" placeholder="DELETE FROM " />
+            <marker date="1489997992374" expanded="true" signature="2656:2706" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489997992374" expanded="true" signature="2656:2710" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489997992374" expanded="true" signature="2656:2728" placeholder="SELECT COUNT... catalogue_new" />
+            <marker date="1489997992374" expanded="true" signature="2889:2953" placeholder="SELECT * FRO... catalogue_new" />
+            <marker date="1489997992374" expanded="true" signature="3025:3063" placeholder="DELETE FROM " />
+            <marker date="1489997992374" expanded="true" signature="3025:3079" placeholder="DELETE FROM " />
+            <marker date="1489997992374" expanded="true" signature="3773:3823" placeholder="SELECT * FRO... subcategories_new" />
+            <marker date="1489997992374" expanded="true" signature="3773:3841" placeholder="SELECT * FRO... subcategories_new" />
+            <marker date="1489997992374" expanded="true" signature="3954:4012" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489997992374" expanded="true" signature="3954:4035" placeholder="SELECT COUNT... subcategories2" />
+            <marker date="1489997992374" expanded="true" signature="4238:4284" placeholder="SELECT * FRO... subcategories2" />
+            <marker date="1489997992374" expanded="true" signature="4238:4288" placeholder="SELECT * FRO... subcategories2" />
+            <marker date="1489997992374" expanded="true" signature="4238:4311" placeholder="SELECT * FRO... subcategories2" />
+            <marker date="1489997992374" expanded="true" signature="4403:4442" placeholder="DELETE FROM " />
+            <marker date="1489997992374" expanded="true" signature="4403:4466" placeholder="DELETE FROM " />
+            <marker date="1489997992374" expanded="true" signature="4531:4596" placeholder="DELETE FROM " />
+            <marker date="1489997992374" expanded="true" signature="4649:4688" placeholder="DELETE FROM " />
+            <marker date="1489997992374" expanded="true" signature="4649:4706" placeholder="DELETE FROM " />
+            <marker date="1489997992374" expanded="true" signature="5222:5279" placeholder="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/sections/delete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.523743">
+          <caret line="112" column="141" selection-start-line="112" selection-start-column="141" selection-end-line="112" selection-end-column="141" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/sections/delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-232.11539">
+        <state vertical-scroll-proportion="0.32028985">
           <caret line="355" column="36" selection-start-line="355" selection-start-column="36" selection-end-line="355" selection-end-column="36" />
           <folding>
             <marker date="1489743431401" expanded="true" signature="205:265" placeholder="SELECT login... users" />
@@ -1381,98 +1403,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/sections/ajaxDeleteSubcategory.php">
+    <entry file="file://$PROJECT_DIR$/admin/sections/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04920405">
-          <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/59ce082/94240a3f-16e7-4f25-9dd4-09c8df13e291/argos.catalogue_new">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/sections/delete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="112" column="141" selection-start-line="112" selection-start-column="141" selection-end-line="112" selection-end-column="141" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/59ce082/94240a3f-16e7-4f25-9dd4-09c8df13e291/argos.vacancies">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-114.42308">
-          <caret line="175" column="31" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.09855072">
+          <caret line="68" column="29" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
           <folding>
-            <marker date="1490000444410" expanded="true" signature="3380:3444" placeholder="SELECT COUNT... catalogue_new" />
-            <marker date="1490000444410" expanded="true" signature="4899:5321" placeholder="INSERT INTO catalogue_new... " />
-            <marker date="1490000444410" expanded="true" signature="5685:6087" placeholder="INSERT INTO catalogue_new... " />
+            <marker date="1489386345581" expanded="true" signature="205:265" placeholder="SELECT login... users" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/sections/ajaxDeleteCategory.php">
+    <entry file="file://$PROJECT_DIR$/js/admin/sections/edit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.5086956">
-          <caret line="181" column="20" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="184" column="37" selection-start-line="184" selection-start-column="37" selection-end-line="184" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/news/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5811594">
+          <caret line="164" column="14" selection-start-line="164" selection-start-column="14" selection-end-line="164" selection-end-column="14" />
           <folding>
-            <marker date="1489997992374" expanded="true" signature="233:292" placeholder="SELECT * FRO... categories_new" />
-            <marker date="1489997992374" expanded="true" signature="385:461" placeholder="SELECT COUNT... subcategories_new" />
-            <marker date="1489997992374" expanded="true" signature="800:850" placeholder="SELECT * FRO... subcategories_new" />
-            <marker date="1489997992374" expanded="true" signature="800:868" placeholder="SELECT * FRO... subcategories_new" />
-            <marker date="1489997992374" expanded="true" signature="980:1034" placeholder="SELECT COUNT... subcategories2" />
-            <marker date="1489997992374" expanded="true" signature="980:1038" placeholder="SELECT COUNT... subcategories2" />
-            <marker date="1489997992374" expanded="true" signature="980:1061" placeholder="SELECT COUNT... subcategories2" />
-            <marker date="1489997992374" expanded="true" signature="1318:1364" placeholder="SELECT * FRO... subcategories2" />
-            <marker date="1489997992374" expanded="true" signature="1318:1391" placeholder="SELECT * FRO... subcategories2" />
-            <marker date="1489997992374" expanded="true" signature="1482:1521" placeholder="DELETE FROM " />
-            <marker date="1489997992374" expanded="true" signature="1482:1545" placeholder="DELETE FROM " />
-            <marker date="1489997992374" expanded="true" signature="1606:1671" placeholder="DELETE FROM " />
-            <marker date="1489997992374" expanded="true" signature="1733:1798" placeholder="DELETE FROM " />
-            <marker date="1489997992374" expanded="true" signature="1856:1895" placeholder="DELETE FROM " />
-            <marker date="1489997992374" expanded="true" signature="1856:1913" placeholder="DELETE FROM " />
-            <marker date="1489997992374" expanded="true" signature="2378:2435" placeholder="DELETE FROM " />
-            <marker date="1489997992374" expanded="true" signature="2656:2706" placeholder="SELECT COUNT... catalogue_new" />
-            <marker date="1489997992374" expanded="true" signature="2656:2710" placeholder="SELECT COUNT... catalogue_new" />
-            <marker date="1489997992374" expanded="true" signature="2656:2728" placeholder="SELECT COUNT... catalogue_new" />
-            <marker date="1489997992374" expanded="true" signature="2889:2953" placeholder="SELECT * FRO... catalogue_new" />
-            <marker date="1489997992374" expanded="true" signature="3025:3063" placeholder="DELETE FROM " />
-            <marker date="1489997992374" expanded="true" signature="3025:3079" placeholder="DELETE FROM " />
-            <marker date="1489997992374" expanded="true" signature="3773:3823" placeholder="SELECT * FRO... subcategories_new" />
-            <marker date="1489997992374" expanded="true" signature="3773:3841" placeholder="SELECT * FRO... subcategories_new" />
-            <marker date="1489997992374" expanded="true" signature="3954:4012" placeholder="SELECT COUNT... subcategories2" />
-            <marker date="1489997992374" expanded="true" signature="3954:4035" placeholder="SELECT COUNT... subcategories2" />
-            <marker date="1489997992374" expanded="true" signature="4238:4284" placeholder="SELECT * FRO... subcategories2" />
-            <marker date="1489997992374" expanded="true" signature="4238:4288" placeholder="SELECT * FRO... subcategories2" />
-            <marker date="1489997992374" expanded="true" signature="4238:4311" placeholder="SELECT * FRO... subcategories2" />
-            <marker date="1489997992374" expanded="true" signature="4403:4442" placeholder="DELETE FROM " />
-            <marker date="1489997992374" expanded="true" signature="4403:4466" placeholder="DELETE FROM " />
-            <marker date="1489997992374" expanded="true" signature="4531:4596" placeholder="DELETE FROM " />
-            <marker date="1489997992374" expanded="true" signature="4649:4688" placeholder="DELETE FROM " />
-            <marker date="1489997992374" expanded="true" signature="4649:4706" placeholder="DELETE FROM " />
-            <marker date="1489997992374" expanded="true" signature="5222:5279" placeholder="DELETE FROM " />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#8;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#10;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#12;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#14;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#16;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#18;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#20;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#22;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1490001605388" expanded="true" signature="205:265" placeholder="SELECT login... users" />
           </folding>
         </state>
       </provider>
