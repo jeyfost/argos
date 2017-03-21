@@ -449,7 +449,7 @@ if(!empty($_REQUEST['delete'])) {
 				echo "
 					<br />
 					<label for='deleteGoodsCheckbox' style='color: #df4e47;'> Удалить вместе с товарами?</label>
-					<input type='checkbox' id='deleteGoodsCheckbox' name='deleteGoods' style='width: 20px; height: 20px; position: relative; float: left;' />
+					<input type='checkbox' class='checkbox' id='deleteGoodsCheckbox' name='deleteGoods' />
 				";
 			}
 
@@ -478,7 +478,7 @@ if(!empty($_REQUEST['delete'])) {
 				echo "
 					<br />
 					<label for='deleteGoodsCheckbox' style='color: #df4e47;'> Удалить вместе с товарами?</label>
-					<input type='checkbox' id='deleteGoodsCheckbox' name='deleteGoods' style='width: 20px; height: 20px; position: relative; float: left;' />
+					<input type='checkbox' class='checkbox' id='deleteGoodsCheckbox' name='deleteGoods' />
 				";
 			}
 

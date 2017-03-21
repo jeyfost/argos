@@ -4,7 +4,7 @@ session_start();
 include("../scripts/connect.php");
 
 if(!empty($_REQUEST['year'])) {
-	$newsCountResult = $mysqli->query("SELECT COUNT(id) FROM clients_news WHERE year = '".$mysqli->real_escape_string($_REQUEST['year'])."'");
+	$newsCountResult = $mysqli->query("SELECT COUNT(id) FROM news WHERE client = '1' AND year = '".$mysqli->real_escape_string($_REQUEST['year'])."'");
 	$newsCount = $newsCountResult->fetch_array(MYSQLI_NUM);
 
 	if($newsCount[0] == 0) {
@@ -13,7 +13,7 @@ if(!empty($_REQUEST['year'])) {
 }
 
 if(!empty($_REQUEST['id'])) {
-	$newsCountResult = $mysqli->query("SELECT COUNT(id) FROM clients_news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+	$newsCountResult = $mysqli->query("SELECT COUNT(id) FROM news WHERE client = '1' AND id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
 	$newsCount = $newsCountResult->fetch_array(MYSQLI_NUM);
 
 	if($newsCount[0] == 0) {
@@ -208,7 +208,7 @@ if(isset($_SESSION['userID'])) {
 				if(!empty($_REQUEST['id'])) {
 					echo "<br /><br />";
 
-					$newsResult = $mysqli->query("SELECT * FROM clients_news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+					$newsResult = $mysqli->query("SELECT * FROM news WHERE client = '1' AND id = '".$mysqli->real_escape_string($_REQUEST['id'])."' ORDER BY id DESC");
 					$news = $newsResult->fetch_assoc();
 
 					$month = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
@@ -217,7 +217,7 @@ if(isset($_SESSION['userID'])) {
 
 					$date = substr($news['date'], 0, 2)." ".$month[$index]." ".substr($news['date'], 6, 4);
 
-					$yearNewsResult = $mysqli->query("SELECT * FROM clients_news WHERE year = '".$news['year']."'");
+					$yearNewsResult = $mysqli->query("SELECT * FROM news WHERE client = '1' AND year = '".$news['year']."' ORDER BY id DESC");
 					while($yearNews = $yearNewsResult->fetch_assoc()) {
 						$j++;
 						$i = (int)substr($yearNews['date'], 3, 2) - 1;
@@ -237,7 +237,7 @@ if(isset($_SESSION['userID'])) {
 							echo "'";
 						}
 						echo ">
-									<img src='../img/photos/clients_news/" . $yearNews['preview'] . "' />
+									<img src='../img/photos/news/" . $yearNews['preview'] . "' />
 									<br /><br />
 									<div style='text-align: left;'>
 										<span style='color: #df4e47; font-style: italic; font-size: 14px;'>" . $d . "</span>
@@ -257,7 +257,7 @@ if(isset($_SESSION['userID'])) {
 			<div style="width: 100%; text-align: right;">
 				<span style='color: #4c4c4c; font-style: italic; font-size: 16px;'>Архив: </span>
 				<?php
-					$yearResult = $mysqli->query("SELECT DISTINCT year FROM clients_news ORDER BY id");
+					$yearResult = $mysqli->query("SELECT DISTINCT year FROM news WHERE client = '1' ORDER BY id");
 					while($year = $yearResult->fetch_array(MYSQLI_NUM)) {
 						echo "<a href='news.php?year=".$year[0]."'><span style='font-style: italic; font-size: 14px; "; if($_REQUEST['year'] != $year[0]) {echo "color: #4c4c4c; text-decoration: underline;";} else {echo "color: #df4e47; text-decoration: none;";} echo "' class='yearFont' onmouseover='changeFont(\"yearFont".$year[0]."\", 1)' onmouseout='changeFont(\"yearFont".$year[0]."\", 0)'>".$year[0]."</span></a> ";
 					}
@@ -269,9 +269,9 @@ if(isset($_SESSION['userID'])) {
 			<?php
 			if(empty($_REQUEST['id'])) {
 				if(empty($_REQUEST['year'])) {
-					$newsResult = $mysqli->query("SELECT * FROM clients_news ORDER BY id DESC");
+					$newsResult = $mysqli->query("SELECT * FROM news WHERE client = '1' ORDER BY id DESC");
 				} else {
-					$newsResult = $mysqli->query("SELECT * FROM clients_news WHERE year = '".$_REQUEST['year']."' ORDER BY id DESC");
+					$newsResult = $mysqli->query("SELECT * FROM news WHERE client = '1' AND year = '".$_REQUEST['year']."' ORDER BY id DESC");
 				}
 
 				while($news = $newsResult->fetch_assoc()) {
@@ -283,7 +283,7 @@ if(isset($_SESSION['userID'])) {
 					echo "
 						<a href='news.php?id=".$news['id']."'>
 							<div class='newsPreview' id='newsPreview".$news['id']."'>
-								<img src='../img/photos/clients_news/".$news['preview']."' />
+								<img src='../img/photos/news/".$news['preview']."' />
 								<br /><br />
 								<div style='text-align: left;'>
 									<span style='color: #df4e47; font-style: italic; font-size: 14px;'>".$date."</span>

@@ -54,7 +54,7 @@ function addSection() {
 											break;
 										case "error":
 											s = 0;
-											status = "При добавлении Раздела произошла ошибка.";
+											status = "При добавлении раздела произошла ошибка.";
 											break;
 										case "blackImg":
 											s = 0;

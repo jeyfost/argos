@@ -280,7 +280,7 @@ if(isset($_SESSION['userID'])) {
 						<div id='newsSlider'>
 				";
 
-				$yearNewsResult = $mysqli->query("SELECT * FROM news WHERE year = '".$news['year']."'");
+				$yearNewsResult = $mysqli->query("SELECT * FROM news WHERE year = '".$news['year']."' ORDER BY id DESC");
 				while($yearNews = $yearNewsResult->fetch_assoc()) {
 					$j++;
 					$i = (int)substr($yearNews['date'], 3, 2) - 1;
