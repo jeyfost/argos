@@ -53,7 +53,7 @@ if(!empty($_REQUEST['id'])) {
 
     <meta charset="utf-8">
 
-    <title>Редактирование новостей</title>
+    <title>Удаление новостей</title>
 
     <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
@@ -68,7 +68,7 @@ if(!empty($_REQUEST['id'])) {
 	<script type="text/javascript" src="../../js/ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="../../js/common.js"></script>
 	<script type="text/javascript" src="../../js/admin/admin.js"></script>
-	<script type="text/javascript" src="../../js/admin/news/edit.js"></script>
+	<script type="text/javascript" src="../../js/admin/news/delete.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -195,19 +195,19 @@ if(!empty($_REQUEST['id'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/rss.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Новости</span></a> > <a href="edit.php"><span class="breadCrumbsText">Редактирование новостей</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/rss.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Новости</span></a> > <a href="delete.php"><span class="breadCrumbsText">Удаление новостей</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
-			<h2>Редактирование новостей</h2>
+			<h2>Удаление новостей</h2>
 			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" style="margin-left: 0;" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
-			<a href="edit.php"><input type="button" class="buttonActive" id="editButton" value="Редактирование" /></a>
-			<a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
+			<a href="edit.php"><input type="button" class="button" id="editButton" value="Редактирование" onmouseover="buttonChange('editButton', 1)" onmouseout="buttonChange('editButton', 0)" /></a>
+			<a href="delete.php"><input type="button" class="buttonActive" id="deleteButton" value="Удаление" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
 			<form id="editForm" method="post" enctype="multipart/form-data">
 				<label for="newsTypeSelect">Выберите тип новости:</label>
 				<br />
-				<select id="newsTypeSelect" name="newsType" onchange="window.location = 'edit.php?type=' + this.options[this.selectedIndex].value">
+				<select id="newsTypeSelect" name="newsType" onchange="window.location = 'delete.php?type=' + this.options[this.selectedIndex].value">
 					<option value="">- Выберите тип новости -</option>
 					<option value="2" <?php if($_REQUEST['type'] == 2) {echo " selected";} ?>>Общая</option>
 					<option value="1" <?php if($_REQUEST['type'] == 1) {echo " selected";} ?>>Для клиентов</option>
@@ -257,34 +257,18 @@ if(!empty($_REQUEST['id'])) {
 
 								echo "
 									<br /><br />
-									<label for='headerInput'>Заголовок новости:</label>
-									<br />
-									<input type='text' id='headerInput' name='header' value='".$news['header']."' />
-									<br /><br />
-									<label for='previewInput'>Превью новости (минимум 200x130 пикселей):</label>
-									<br />
-									<a href='../../img/photos/news/".$news['preview']."' class='lightview'><span class='redLink'>нажмите для простора текущей превью</span></a>
-									<br /><br />
-									<input type='file' class='file' id='previewInput' name='previewPhoto' />
-									<br /><br />
-									<input type='checkbox' id='clientNewsCheckbox' name='clientNews' class='checkbox' value='checked'"; if($news['client'] == 1) {echo " checked='checked'";} echo " />
-									<label for='clientNewsCheckbox'> Новость для клиентов (<a class='tooltips' href='#' style='border-bottom: 1px dashed #df4e47; color: #df4e47; cursor: help;'>что это за опция?<span>Новости для клиентов — это новости, которые будут интересны только клиентам, например, новые приходы, цены, прайсы и т.д.</span></a>)</label>
-									<div style='clear: both;'></div>
-									<br />
-									<label for='textInput'>Текст новости:</label>
-									<br />
-									<textarea id='textInput' name='text'>".$news['text']."</textarea>
+									<label>Удалить новость?</label>
 									<br />
 									<div id='responseField'></div>
 									<br />
-									<input type='button' class='button' style='margin: 0;' id='editNewsButton' onmouseover='buttonChange(\"editNewsButton\", 1)' onmouseout='buttonChange(\"editNewsButton\", 0)' onclick='editNews()' value='Редактировать' />
+									<input type='button' class='button' style='margin: 0;' id='deleteNewsButton' onmouseover='buttonChange(\"deleteNewsButton\", 1)' onmouseout='buttonChange(\"deleteNewsButton\", 0)' onclick='deleteNews()' value='Удалить' />
 								";
 							}
 						}
 					}
 				?>
 			</form>
-			<div id="goodsTable" <?php if(empty($_REQUEST['type']) or !empty($_REQUEST['id'])) {echo " style='display: none;'";} ?>>
+			<div id="goodsTable" <?php if(empty($_REQUEST['type'])) {echo " style='display: none;'";} ?>>
 				<?php
 					$id = $mysqli->real_escape_string($_REQUEST['id']);
 
@@ -315,7 +299,7 @@ if(!empty($_REQUEST['id'])) {
 
 						while($news = $newsResult->fetch_assoc()) {
 							$i++;
-							$link = "edit.php?type=".$news['client']."&year=".$news['year']."&id=".$news['id'];
+							$link = "delete.php?type=".$news['client']."&year=".$news['year']."&id=".$news['id'];
 
 							echo "
 								<tr>
