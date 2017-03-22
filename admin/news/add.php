@@ -185,7 +185,7 @@ if(isset($_SESSION['userID'])) {
 				<input type="file" class="file" id="previewInput" name="previewPhoto" />
 				<br /><br />
 				<input type="checkbox" id="clientNewsCheckbox" name="clientNews" class="checkbox" value="checked" />
-				<label for="clientNewsCheckbox"> Новость для клиентов (<a class="tooltips" href="#" style="border-bottom: 1px dashed #df4e47; color: #df4e47;">что это за опция?<span>Новости для клиентов — это новости, которые будут интересны только клиентам, например, новые приходы, цены, прайсы и т.д.</span></a>)</label>
+				<label for="clientNewsCheckbox"> Новость для клиентов (<a class="tooltips" href="#" style="border-bottom: 1px dashed #df4e47; color: #df4e47; cursor: help;">что это за опция?<span>Новости для клиентов — это новости, которые будут интересны только клиентам, например, новые приходы, цены, прайсы и т.д.</span></a>)</label>
 				<div style="clear: both;"></div>
 				<br />
 				<label for="textInput">Текст новости:</label>

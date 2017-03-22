@@ -9,22 +9,22 @@
 include("../../connect.php");
 include("../../simpleImage.php");
 
-$req = false;
-ob_start();
-
-$header = $mysqli->real_escape_string($_POST['header']);
-
 function randomName($tmp_name)
 {
 	$name = md5(md5($tmp_name.date('d-m-Y H-i-s')));
 	return $name;
 }
 
+$req = false;
+ob_start();
+
+$header = $mysqli->real_escape_string($_POST['header']);
+
 if(!empty($_FILES['previewPhoto']['tmp_name']) and $_FILES['previewPhoto']['error'] == 0 and substr($_FILES['previewPhoto']['type'], 0, 5) == "image") {
 	if($_POST['clientNews'] == "checked") {
 		$client = 1;
 	} else {
-		$client = 0;
+		$client = 2;
 	}
 
 	$previewName = randomName($_FILES['previewPhoto']['tmp_name']);
