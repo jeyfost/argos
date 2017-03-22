@@ -257,9 +257,9 @@ if(isset($_SESSION['userID'])) {
 			<div style="width: 100%; text-align: right;">
 				<span style='color: #4c4c4c; font-style: italic; font-size: 16px;'>Архив: </span>
 				<?php
-					$yearResult = $mysqli->query("SELECT DISTINCT year FROM news WHERE client = '1' ORDER BY id");
+					$yearResult = $mysqli->query("SELECT DISTINCT year FROM news WHERE client = '1' ORDER BY year DESC");
 					while($year = $yearResult->fetch_array(MYSQLI_NUM)) {
-						echo "<a href='news.php?year=".$year[0]."'><span style='font-style: italic; font-size: 14px; "; if($_REQUEST['year'] != $year[0]) {echo "color: #4c4c4c; text-decoration: underline;";} else {echo "color: #df4e47; text-decoration: none;";} echo "' class='yearFont' onmouseover='changeFont(\"yearFont".$year[0]."\", 1)' onmouseout='changeFont(\"yearFont".$year[0]."\", 0)'>".$year[0]."</span></a> ";
+						echo "<a href='news.php?year=".$year[0]."'><span id='yearFont".$year[0]."' "; if($_REQUEST['year'] != $year[0]) {echo "style='font-style: italic; font-size: 14px; color: #4c4c4c; text-decoration: underline;' onmouseover='changeFont(\"yearFont".$year[0]."\", 1)' onmouseout='changeFont(\"yearFont".$year[0]."\", 0)'";} else {echo "style='font-style: italic; font-size: 14px; color: #df4e47;'";} echo "'>".$year[0]."</span></a> ";
 					}
 				?>
 			</div>

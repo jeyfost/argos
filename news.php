@@ -228,9 +228,9 @@ if(isset($_SESSION['userID'])) {
 		<div style="width: 100%; text-align: right;">
 			<span style='color: #4c4c4c; font-style: italic; font-size: 16px;'>Архив: </span>
 			<?php
-				$yearResult = $mysqli->query("SELECT DISTINCT year FROM news ORDER BY id");
+				$yearResult = $mysqli->query("SELECT DISTINCT year FROM news ORDER BY year DESC");
 				while($year = $yearResult->fetch_array(MYSQLI_NUM)) {
-					echo "<a href='news.php?year=".$year[0]."'><span style='color: #4c4c4c; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>".$year[0]."</span></a> ";
+					echo "<a href='news.php?year=".$year[0]."'><span"; if($_REQUEST['year'] == $year[0]) {echo " style='color: #df4e47; font-style: italic; font-size: 14px;";} else {echo " style='color: #4c4c4c; font-style: italic; font-size: 14px; text-decoration: underline;'";} echo " class='yearFont'>".$year[0]."</span></a> ";
 				}
 			?>
 		</div>
