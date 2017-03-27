@@ -221,6 +221,7 @@ if(isset($_SESSION['userID'])) {
     <div id="menuShadow"></div>
 
 	<div id="page">
+		<div id="searchList"></div>
 		<h1 style='margin-top: 80px;'>Акции</h1>
 		<div id='breadCrumbs'>
 			<a href='index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='actions.php'><span class='breadCrumbsText'>Акции</span></a>
@@ -229,9 +230,9 @@ if(isset($_SESSION['userID'])) {
 		<div style="width: 100%; text-align: right;">
 			<span style='color: #4c4c4c; font-style: italic; font-size: 16px;'>Архив: </span>
 			<?php
-				$yearResult = $mysqli->query("SELECT DISTINCT year FROM actions ORDER BY id");
+				$yearResult = $mysqli->query("SELECT DISTINCT year FROM actions ORDER BY year DESC");
 				while($year = $yearResult->fetch_array(MYSQLI_NUM)) {
-					echo "<a href='actions.php?year=".$year[0]."'><span style='color: #4c4c4c; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>".$year[0]."</span></a> ";
+					echo "<a href='actions.php?year=".$year[0]."'><span"; if($_REQUEST['year'] == $year[0]) {echo " style='color: #df4e47; font-style: italic; font-size: 14px;";} else {echo " style='color: #4c4c4c; font-style: italic; font-size: 14px; text-decoration: underline;'";} echo " class='yearFont' id='yf".$year[0]."' onmouseover='fontChange(\"yf".$year[0]."\", 1)' onmouseout='fontChange(\"yf".$year[0]."\", 0)'>".$year[0]."</span></a> ";
 				}
 			?>
 		</div>
@@ -633,7 +634,9 @@ if(isset($_SESSION['userID'])) {
 							echo "<b>Обратите внимание, ваша личная скидка, равная <span style='color: #df4e47;'>".$discount[0]."%</span>, при покупке акционных товаров <span style='color: #df4e47;'>не учитывается</span>.</b>";
 						}
 					} else {
-						echo "Чтобы получить возможность купить акционные в онлайн-режиме, необходимо <a href='personal/login.php'><span style='color: #df4e47; text-decoration: underline;'>войти на сайт</span></a>, либо <a href='personal/register.php'><span style='color: #df4e47; text-decoration: underline;'>зарегистрироваться</span></a>, если у вас ещё нет своей учётной записи.";
+						if($_SESSION['userID'] != 1) {
+							echo "Чтобы получить возможность купить акционные в онлайн-режиме, необходимо <a href='personal/login.php'><span style='color: #df4e47; text-decoration: underline;'>войти на сайт</span></a>, либо <a href='personal/register.php'><span style='color: #df4e47; text-decoration: underline;'>зарегистрироваться</span></a>, если у вас ещё нет своей учётной записи.";
+						}
 					}
 				}
 

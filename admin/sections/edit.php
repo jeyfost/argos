@@ -213,7 +213,7 @@ if(!empty($_REQUEST['edit'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/sections.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Товары</span></a> > <a href="edit.php"><span class="breadCrumbsText">Редактирование разделов</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/sections.png" title="Разделы" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Товары</span></a> > <a href="edit.php"><span class="breadCrumbsText">Редактирование разделов</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
 			<h2>Редактирование разделов</h2>

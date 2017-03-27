@@ -220,6 +220,7 @@ if(isset($_SESSION['userID'])) {
     <div id="menuShadow"></div>
 
 	<div id="page">
+		<div id="searchList"></div>
 		<h1 style='margin-top: 80px;'>Новости</h1>
 		<div id='breadCrumbs'>
 			<a href='index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='news.php'><span class='breadCrumbsText'>Новости</span></a>

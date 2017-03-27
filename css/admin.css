@@ -15,7 +15,9 @@ a.tooltips span:after {content: ''; position: absolute; top: 100%; left: 50%; ma
 a:hover.tooltips span { visibility: visible; opacity: 0.7; bottom: 30px; left: 50%; margin-left: -456px; z-index: 999;}
 
 .menuPoint:hover {background-color: #dedede;}
-.breadCrumbsText:hover, .redLink:hover, .link:hover {text-decoration: none;}
+.breadCrumbsText:hover, .redLink:hover, .link:hover, .searchLink:hover {text-decoration: none;}
+.searchLink .searchItem:hover {background-color: #f3f3f3;}
+.sketchFont:hover {text-decoration: underline;}
 
 #loginBlock {position: relative; margin: 0 auto; padding: 20px; background-color: #fff; width: 320px; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4);}
 #loginSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer;}
@@ -32,6 +34,7 @@ a:hover.tooltips span { visibility: visible; opacity: 0.7; bottom: 30px; left: 5
 #responseField {transition: .3s; opacity: 0; font-size: 14px;}
 #addForm, #editForm, #deleteForm {position: relative; float: left;}
 #goodsTable {position: relative; float: left; margin-left: 40px; padding: 10px; border: 1px dashed #9e9e9e;}
+#searchList {position: absolute; top: 0; right: 0; width: 480px; z-index: 999; background-color: #fff; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); padding: 10px; display: none; overflow: hidden;}
 
 .menuPoint {width: 100%; min-height: 40px; margin-top: 10px;}
 .menuPointActive {width: 100%; min-height: 40px; margin-top: 10px; background-color: #dedede;}
@@ -40,7 +43,21 @@ a:hover.tooltips span { visibility: visible; opacity: 0.7; bottom: 30px; left: 5
 .line {width: 100%; height: 1px; background-color: #dedede; margin-top: 10px;}
 .button {height: 30px; max-width: 160px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: left; margin-left: 10px; padding: auto 5px;}
 .buttonActive {height: 30px; max-width: 160px; border: none; background-color: #df4e47; color: #fff; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: left; margin-left: 10px; padding: auto 5px;}
-.redLink {text-decoration: underline; color: #df4e47; cursor: pointer;}
+.redLink, .searchInfo a .noBorder {text-decoration: underline; color: #df4e47; cursor: pointer;}
 .file {border: none;}
 .link {color: #df4e47; text-decoration: underline;}
 .checkbox {width: 20px; height: 20px; position: relative; float: left;}
+.dateInput {position: relative; float: left; width: 150px;}
+.smallInput {width: 150px;}
+.actionGoodBlock {width: 100%; margin-top: 10px; padding: 5px; border: 1px dashed #aeaeae;}
+.searchFieldInput {width: 180px; height: 20px; line-height: 20px; color: #777;}
+.searchItem {width: 100%; cursor: pointer;}
+.searchIMG {width: 100px; position: relative; float: left; margin-top: 5px; margin-left: 5px;}
+.searchInfo {width: 365px; padding-left: 10px; position: relative; float: left; margin-top: 5px; font-size: 15px;}
+.searchLink {color: #4c4c4c; text-decoration: underline;}
+.sketchFont {font-size: 16px; color: #df4e47; text-decoration: none;}
+.goodBlock {width: 100%;}
+.goodImg {position: relative; float: left; width: 100px;}
+.goodInfo {position: relative; float: left; margin-left: 20px;}
+.goodName {margin-left: 10px; height: 30px; padding-left: 10px; padding-right: 10px; line-height: 30px;}
+.goodDescription {margin-left: 37px; margin-top: 10px; font-size: 15px;}

@@ -195,7 +195,7 @@ if(!empty($_REQUEST['id'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/rss.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Новости</span></a> > <a href="edit.php"><span class="breadCrumbsText">Редактирование новостей</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/rss.png" title="Новости" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Новости</span></a> > <a href="edit.php"><span class="breadCrumbsText">Редактирование новостей</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
 			<h2>Редактирование новостей</h2>

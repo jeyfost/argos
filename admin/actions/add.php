@@ -24,7 +24,7 @@ if(isset($_SESSION['userID'])) {
 
     <meta charset="utf-8">
 
-    <title>Панель администрирования</title>
+    <title>Добавление новостей</title>
 
     <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
@@ -36,14 +36,17 @@ if(isset($_SESSION['userID'])) {
 	<![endif]-->
 	<script type="text/javascript" src="../../js/lightview/js/spinners/spinners.min.js"></script>
 	<script type="text/javascript" src="../../js/lightview/js/lightview/lightview.js"></script>
+	<script type="text/javascript" src="../../js/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="../../js/notify.js"></script>
 	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/md5.js"></script>
 	<script type="text/javascript" src="../../js/admin/admin.js"></script>
+	<script type="text/javascript" src="../../js/admin/actions/add.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
 		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('../../img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
 	</style>
-
 	<script type="text/javascript">
         $(window).on('load', function () {
             var $preloader = $('#page-preloader'), $spinner = $preloader.find('.spinner');
@@ -72,7 +75,7 @@ if(isset($_SESSION['userID'])) {
 		<div style="clear: both;"></div>
 		<div class="line"></div>
 		<a href="../sections/">
-			<div class="menuPointActive">
+			<div class="menuPoint">
 				<div class="menuIMG"><img src="../../img/system/admin/sections.png" /></div>
 				<div class="menuText">Разделы</div>
 			</div>
@@ -88,7 +91,7 @@ if(isset($_SESSION['userID'])) {
 		<div style="clear: both;"></div>
 		<div class="line"></div>
 		<a href="../actions/">
-			<div class="menuPoint">
+			<div class="menuPointActive">
 				<div class="menuIMG"><img src="../../img/system/admin/sale.png" /></div>
 				<div class="menuText">Акции</div>
 			</div>
@@ -164,19 +167,67 @@ if(isset($_SESSION['userID'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/sections.png" title="Разделы" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Разделы</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/sale.png" title="Акции" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Акции</span></a> > <a href="add.php"><span class="breadCrumbsText">Добавление акций</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
-			<h2>&darr; Для продолжения работы выберите функцию</h2>
-			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" style="margin-left: 0;" /></a>
+			<h2>Добавление акций</h2>
+			<a href="add.php"><input type="button" class="buttonActive" id="addButton" value="Добавление" style="margin-left: 0;" /></a>
 			<a href="edit.php"><input type="button" class="button" id="editButton" value="Редактирование" onmouseover="buttonChange('editButton', 1)" onmouseout="buttonChange('editButton', 0)" /></a>
 			<a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
 			<div style="clear: both;"></div>
+			<br /><br />
+			<form id="addForm" method="post" enctype="multipart/form-data">
+				<label for="headerInput">Заголовок акции:</label>
+				<br />
+				<input type="text" id="headerInput" name="header" />
+				<br /><br />
+				<label for="previewInput">Превью акции (минимум 200x130 пикселей):</label>
+				<br />
+				<input type="file" class="file" id="previewInput" name="previewPhoto" />
+				<br /><br />
+				<label>Срок проведения акции (дни указываются включительно в формате <b>дд-мм-гггг</b>):</label>
+				<br /><br />
+				<div>
+					<div class="dateInput">
+						<label for="fromInput">Дата начала:</label>
+						<br />
+						<input type="text" id="fromInput" name="from" class="smallInput" value="<?= date('d-m-Y') ?>" />
+					</div>
+					<div class="dateInput" style="margin-left: 40px;">
+						<label for="toInput">Дата окончания:</label>
+						<br />
+						<?php $datetime = new DateTime('tomorrow'); ?>
+						<input type="text" id="toInput" name="to" class="smallInput" value="<?= $datetime->format('d-m-Y'); ?>" />
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+				<br /><br />
+				<label for="textInput">Описание акции:</label>
+				<br />
+				<textarea id="textInput" name="text"></textarea>
+				<br /><br />
+				<hr>
+				<h2 style="margin-top: 23px;">Акционные товары</h2>
+				<hr>
+				<br />
+				<div id="searchList"></div>
+				<div id="goodsBlock"></div>
+				<br />
+				<span class="redLink" style="text-decoration: none; border-bottom: 1px dashed #df4e47;" onclick="addGoodBlock()">+ Добавить ещё один товар</span>
+				<br /><br />
+				<input type='button' class='button' style='margin: 0;' id='addActionButton' onmouseover='buttonChange("addActionButton", 1)' onmouseout='buttonChange("addActionButton", 0)' onclick='addAction()' value='Добавить' />
+			</form>
+			<div style="clear: both;"></div>
 		</div>
 		<div style="clear: both;"></div>
+		<div style="width: 100%; height: 40px;"></div>
 	</div>
 
 	<div style="clear: both;"></div>
+
+	<script type="text/javascript">
+		CKEDITOR.replace("text");
+	</script>
 
 </body>
 

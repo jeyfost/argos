@@ -189,10 +189,6 @@ $(window).on('load', function() {
 			}
 		}
 	});
-
-	$('#searchList').on('scroll', function() {
-
-	});
 });
 
 function showSearchList() {

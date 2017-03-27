@@ -28,6 +28,16 @@ function buttonChange(id, action) {
 	}
 }
 
+function fontChange(id, action) {
+	if(action == 1) {
+		document.getElementById(id).style.color = "#df4e47";
+		document.getElementById(id).style.textDecoration = "none";
+	} else {
+		document.getElementById(id).style.color = "#4c4c4c";
+		document.getElementById(id).style.textDecoration = "underline";
+	}
+}
+
 function pageBlock(action, block, text) {
 	if(action == 1) {
 		document.getElementById(block).style.backgroundColor = "#df4e47";
