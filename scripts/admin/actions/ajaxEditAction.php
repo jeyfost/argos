@@ -96,6 +96,11 @@ if($from <= $to) {
 						}
 
 						$goodsCount = 0;
+						$currentGoods = array();
+						$currentGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE action_id = '".$_POST['action']."'");
+						while($currentGood = $currentGoodResult->fetch_assoc()) {
+							array_push($currentGoods, $currentGood['good_id']);
+						}
 
 						for($i = 0; $i < count($goods); $i++) {
 							$goodID = $goods[$i];
@@ -135,6 +140,26 @@ if($from <= $to) {
 									if($mysqli->query("UPDATE action_goods SET price = '".$prices[$i]."' WHERE good_id = '".$goodID."' AND action_id = '".$_POST['action']."'")) {
 										$goodsCount++;
 									}
+								}
+							}
+						}
+
+						$newGoods = array();
+						$newGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE action_id = '".$_POST['action']."'");
+						while($newGood = $newGoodResult->fetch_assoc()) {
+							array_push($newGoods, $newGood['good_id']);
+						}
+
+						for($i = 0; $i < count($currentGoods); $i++) {
+							$leaveGood = 0;
+
+							for($j = 0; $j < count($newGoods); $j++) {
+								if($currentGoods[$i] == $newGoods[$j]) {
+									$leaveGood++;
+								}
+
+								if($leaveGood == 0) {
+									$mysqli->query("DELETE FROM action_goods WHERE good_id = '".$currentGoods[$i]."' AND action_id = '".$_POST['action']."'");
 								}
 							}
 						}
