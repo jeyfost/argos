@@ -19,6 +19,14 @@ function searchFocus(id) {
 	}
 }
 
+function searchBlur(id) {
+	var search = document.getElementById(id).value;
+
+	if(search == '') {
+		document.getElementById(id).value = 'Поиск...';
+	}
+}
+
 function closeSearchList() {
 	$('#searchList').hide('300');
 }
@@ -84,7 +92,7 @@ function chooseGood(id, block) {
 function addGoodBlock() {
 	var base_html = $('#goodsBlock').html();
 	var random_id = md5(Math.random(0, 1000000) + md5(Date.now()));
-	var new_html = "<div class='actionGoodBlock' id='" + random_id + "' style='background-color: #f8f8f8;'><div style='float: right;'><img src='../../img/system/delete.png' style='cursor: pointer;' id='di" + random_id + "' onmouseover='changeDeleteIcon(\"di" + random_id + "\", 1)' onmouseout='changeDeleteIcon(\"di" + random_id + "\", 0)' title='Убрать этот блок' onclick='closeGoodBlock(\"" + random_id +"\")' /></div><div style='clear: both;'><br /><label for='search_" + random_id + "'></label><br /><input type='text' id='search_" + random_id + "' class='searchFieldInput' value='Поиск...' onfocus='searchFocus(\"search_" + random_id + "\")' onblur='searchBlur(\"search_" + random_id + "\")' onkeyup='searchGood(\"search_" + random_id +"\")' /><br /><div id='g_" + random_id + "' class='goodBlock'></div><div style='clear: both;'></div></div></div>";
+	var new_html = "<div class='actionGoodBlock' id='" + random_id + "' style='background-color: #f8f8f8;'><div style='float: right;'><img src='../../img/system/delete.png' style='cursor: pointer;' id='di" + random_id + "' onmouseover='changeDeleteIcon(\"di" + random_id + "\", 1)' onmouseout='changeDeleteIcon(\"di" + random_id + "\", 0)' title='Убрать этот блок' onclick='closeGoodBlock(\"" + random_id +"\")' /></div><div style='clear: both;'></div><br /><input type='text' id='search_" + random_id + "' class='searchFieldInput' value='Поиск...' onfocus='searchFocus(\"search_" + random_id + "\")' onblur='searchBlur(\"search_" + random_id + "\")' onkeyup='searchGood(\"search_" + random_id +"\")' /><br /><div id='g_" + random_id + "' class='goodBlock'></div><div style='clear: both;'></div></div></div>";
 
 	$('#goodsBlock').html(base_html + new_html);
 }
@@ -113,7 +121,7 @@ function addAction() {
 		formData.append("goodsPrice", goodsPrice);
 	}
 
-	formData.append("newsText", text);
+	formData.append("actionText", text);
 
 	if(header !== '') {
 		if(preview !== '') {

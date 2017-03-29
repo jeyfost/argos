@@ -86,7 +86,7 @@ if($from <= $to) {
 					$previewTmpName = $_FILES['previewPhoto']['tmp_name'];
 					$previewUpload = $previewUploadDir.$previewDBName;
 
-					if($mysqli->query("INSERT INTO actions (id, date, year, header, preview, text, from_date, to_date) VALUES('".$newActionID."', '".date('d-m-Y')."', '".date('Y')."', '".$header."', '".$previewDBName."', '".$_POST['newsText']."', '".$from_date."', '".$to_date."')")) {
+					if($mysqli->query("INSERT INTO actions (id, date, year, header, preview, text, from_date, to_date) VALUES('".$newActionID."', '".date('d-m-Y')."', '".date('Y')."', '".$header."', '".$previewDBName."', '".$_POST['actionText']."', '".$from_date."', '".$to_date."')")) {
 						$img = new SimpleImage($previewTmpName);
 						$img->resizeToWidth(200);
 						$img->save($previewUpload);
@@ -102,13 +102,8 @@ if($from <= $to) {
 								$actionResult = $mysqli->query("SELECT * FROM actions WHERE id = '".$goodAction['action_id']."'");
 								$action = $actionResult->fetch_assoc();
 
-								//если акция действующая
-								if(strtotime($action['from_date']) <= $today and strtotime($action['to_date']) >= $today) {
-									$forbidden = 1;
-								}
-
 								//если рамки проведения новой акции пересакаются с запланированными
-								if($from < strtotime($action['from_date']) and ($to >= strtotime($action['from_date']) and $to < strtotime($action['to_date']))) {
+								if($from < strtotime($action['from_date']) and $to >= strtotime($action['from_date']) and $to <= strtotime($action['to_date'])) {
 									$forbidden = 1;
 								}
 
@@ -116,7 +111,7 @@ if($from <= $to) {
 									$forbidden = 1;
 								}
 
-								if($from >= strtotime($action['from_date']) and ($to > strtotime($action['to_date']))) {
+								if($from >= strtotime($action['from_date']) and $from <= strtotime($action['to_date']) and ($to > strtotime($action['to_date']))) {
 									$forbidden = 1;
 								}
 							}
@@ -160,7 +155,7 @@ if($from <= $to) {
 				$previewTmpName = $_FILES['previewPhoto']['tmp_name'];
 				$previewUpload = $previewUploadDir . $previewDBName;
 
-				if ($mysqli->query("INSERT INTO actions (id, date, year, header, preview, text, from_date, to_date) VALUES('" . $newActionID . "', '" . date('d-m-Y') . "', '" . date('Y') . "', '" . $header . "', '" . $previewDBName . "', '" . $_POST['newsText'] . "', '" . $from_date . "', '" . $to_date . "')")) {
+				if ($mysqli->query("INSERT INTO actions (id, date, year, header, preview, text, from_date, to_date) VALUES('" . $newActionID . "', '" . date('d-m-Y') . "', '" . date('Y') . "', '" . $header . "', '" . $previewDBName . "', '" . $_POST['actionText'] . "', '" . $from_date . "', '" . $to_date . "')")) {
 					$img = new SimpleImage($previewTmpName);
 					$img->resizeToWidth(200);
 					$img->save($previewUpload);

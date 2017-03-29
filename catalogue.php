@@ -421,69 +421,13 @@ if(isset($_SESSION['userID'])) {
 					while($actionID = $actionIDResult->fetch_assoc()) {
 						$actionResult = $mysqli->query("SELECT * FROM actions WHERE id = '".$actionID['action_id']."'");
 						$action = $actionResult->fetch_assoc();
+						$from = strtotime($action['from_date']);
+						$to = strtotime($action['to_date']);
+						$today = strtotime(date('d-m-Y'));
 
-						$dx = (int)date('d');
-						$mx = (int)date('m');
-						$yx = (int)date('Y');
-
-						$d1 = (int)substr($action['from_date'], 0, 2);
-						$m1 = (int)substr($action['from_date'], 3, 2);
-						$y1 = (int)substr($action['from_date'], 6, 4);
-
-						$d2 = (int)substr($action['to_date'], 0, 2);
-						$m2 = (int)substr($action['to_date'], 3, 2);
-						$y2 = (int)substr($action['to_date'], 6, 4);
-
-						if($y1 < $yx and $yx < $y2) {
-							$active++;
-						}
-
-						if($y1 < $yx and $yx == $y2) {
-							if($mx < $m2) {
-								$active++;
-							}
-
-							if($mx == $m2 and $dx <= $d2) {
-								$active++;
-							}
-						}
-
-						if($y1 == $yx) {
-							if($m1 < $mx) {
-								if($yx < $y2) {
-									$active++;
-								}
-
-								if($yx == $y2) {
-									if($mx < $m2) {
-										$active++;
-									}
-
-									if($mx == $m2 and $dx <= $d2) {
-										$active++;
-									}
-								}
-							}
-
-							if($m1 == $mx and $d1 <= $dx) {
-								if($yx < $y2) {
-									$active++;
-								}
-
-								if($yx == $y2) {
-									if($mx < $m2) {
-										$active++;
-									}
-
-									if($mx == $m2 and $dx <= $d2) {
-										$active++;
-									}
-								}
-							}
-						}
-
-						if($active > 0) {
-							$aID = $actionID['action_id'];
+						if($today >= $from and $today <= $to) {
+							$active = 1;
+							$aID = $action['id'];
 						}
 					}
 				}
@@ -512,6 +456,10 @@ if(isset($_SESSION['userID'])) {
 				if($kopeck == 100) {
 					$kopeck = 0;
 					$roubles ++;
+				}
+
+				if($roubles ==0 and $kopeck == 0) {
+					$kopeck = 1;
 				}
 
 				echo "

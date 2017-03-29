@@ -559,6 +559,10 @@ if(isset($_SESSION['userID'])) {
 							$roubles ++;
 						}
 
+						if($roubles == 0 and $kopeck == 0) {
+							$kopeck = 1;
+						}
+
 						echo "
 							<div class='catalogueItem'>
 								<div class='itemDescription'>
