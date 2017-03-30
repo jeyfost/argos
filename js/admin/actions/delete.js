@@ -25,7 +25,7 @@ function deleteAction() {
 						$.notify("Во время удаления товаров из акции произошла ошибка.", "error");
 						break;
 					case "failedGoodsOk":
-						$.notify("Во время кции произошла ошибка. Товары из акции были удалены.", "error");
+						$.notify("Во время удаления акции произошла ошибка. Товары из акции были удалены.", "error");
 						break;
 					default:
 						$.notify(response, "warn");
