@@ -19,7 +19,16 @@ if(isset($_REQUEST['album'])) {
 	$albumCheck = $albumCheckResult->fetch_array(MYSQLI_NUM);
 
 	if($albumCheck[0] == 0) {
-		header("Location: add.php");
+		header("Location: delete.php");
+	}
+}
+
+if(isset($_REQUEST['id'])) {
+	$photoCheckResult = $mysqli->query("SELECT * FROM photos WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+	$photoCheck = $photoCheckResult->fetch_array(MYSQLI_NUM);
+
+	if($photoCheck[0] == 0) {
+		header("Location: delete.php?album=".$_REQUEST['album']);
 	}
 }
 
@@ -33,7 +42,7 @@ if(isset($_REQUEST['album'])) {
 
     <meta charset="utf-8">
 
-    <title>Добавление фотографий</title>
+    <title>Удаление фотографий</title>
 
     <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
@@ -49,7 +58,7 @@ if(isset($_REQUEST['album'])) {
 	<script type="text/javascript" src="../../js/common.js"></script>
 	<script type="text/javascript" src="../../js/md5.js"></script>
 	<script type="text/javascript" src="../../js/admin/admin.js"></script>
-	<script type="text/javascript" src="../../js/admin/photo/add.js"></script>
+	<script type="text/javascript" src="../../js/admin/photo/delete.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -175,18 +184,18 @@ if(isset($_REQUEST['album'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/photo.png" title="Фотогалерея" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Фотогалерея</span></a> > <a href="add.php"><span class="breadCrumbsText">Добавление фотографий</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/photo.png" title="Фотогалерея" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Фотогалерея</span></a> > <a href="delete.php"><span class="breadCrumbsText">Удаление фотографий</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
-			<h2>Добавление фотографий</h2>
-			<a href="add.php"><input type="button" class="buttonActive" id="addButton" value="Добавление" style="margin-left: 0;" /></a>
-			<a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
+			<h2>Удаление фотографий</h2>
+			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" style="margin-left: 0;" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
+			<a href="delete.php"><input type="button" class="buttonActive" id="deleteButton" value="Удаление" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
-			<form id="addForm" method="post" enctype="multipart/form-data">
+			<form id="deleteForm" method="post" enctype="multipart/form-data">
 				<label for="albumSelect">Выберите альбом:</label>
 				<br />
-				<select id="albumSelect" name="album" onchange="window.location = 'add.php?album=' + this.options[this.selectedIndex].value">
+				<select id="albumSelect" name="album" onchange="window.location = 'delete.php?album=' + this.options[this.selectedIndex].value">
 					<option value="">- Выберите альбом -</option>
 					<?php
 						$albumResult = $mysqli->query("SELECT * FROM albums ORDER BY name");
@@ -196,18 +205,57 @@ if(isset($_REQUEST['album'])) {
 					?>
 				</select>
 				<?php
-					if(isset($_REQUEST['album'])) {
+					if(isset($_REQUEST['id'])) {
 						echo "
 							<br /><br />
-							<label for='photoInput'>Фотографии:</label>
-							<br />
-							<input type='file' class='file' id='photoInput' name='photo[]' multiple='multiple' />
-							<br /><br />
-							<input type='button' class='button' style='margin: 0;' id='addPhotosButton' onmouseover='buttonChange(\"addPhotosButton\", 1)' onmouseout='buttonChange(\"addPhotosButton\", 0)' onclick='addPhotos()' value='Добавить' />
+							<input type='button' class='button' style='margin: 0;' id='deletePhotoButton' onmouseover='buttonChange(\"deletePhotoButton\", 1)' onmouseout='buttonChange(\"deletePhotoButton\", 0)' onclick='deletePhoto(\"".$mysqli->real_escape_string($_REQUEST['id'])."\")' value='Удаление' />
 						";
 					}
 				?>
 			</form>
+			<div id="goodsTable" <?php if(empty($_REQUEST['album'])) {echo " style='display: none;'";} ?>>
+				<?php
+					if(!empty($_REQUEST['album'])) {
+						$photosCountResult = $mysqli->query("SELECT COUNT(id) FROM photos WHERE album = '".$mysqli->real_escape_string($_REQUEST['album'])."'");
+						$photosCount = $photosCountResult->fetch_array(MYSQLI_NUM);
+
+						$photoResult = $mysqli->query("SELECT * FROM photos WHERE album = '".$mysqli->real_escape_string($_REQUEST['album'])."'");
+						$albumResult = $mysqli->query("SELECT name FROM albums WHERE id = '".$mysqli->real_escape_string($_REQUEST['album'])."'");
+						$album = $albumResult->fetch_array(MYSQLI_NUM);
+
+						echo "
+							<span>Выберите фотографию:</span>
+							<br />
+							<span style='font-size: 14px;'><b>Всего фотографий: </b>".$photosCount[0]."</span>
+							<br /><br />
+							<table style='text-align: center;'>
+								<tr>
+									<td style='font-weight: bold; background-color: #ededed;'>№</td>
+									<td style='font-weight: bold; background-color: #ededed; width: 100px;'>Фото</td>
+									<td style='font-weight: bold; background-color: #ededed;'>Удаление</td>
+								</tr>
+						";
+						$i = 0;
+
+						while($photo = $photoResult->fetch_assoc()) {
+							$i++;
+							$link = "delete.php?album=".$_REQUEST['album']."&id=".$photo['id'];
+
+							echo "
+								<tr>
+									<td style='background-color: "; if($_REQUEST['id'] == $photo['id']) {echo "#cbd7ff";} else {echo "#ededed";} echo ";'>".$i."</td>
+									<td style='background-color: #fff; width: 100px;'><a href='../../img/photos/gallery/big/".$photo['photo_big']."' class='lightview' data-lightview-title='".$album[0]."'><img src='../../img/photos/gallery/small/".$photo['photo_small']."' /></a></td>
+									<td"; if($_REQUEST['id'] == $photo['id']) {echo " style='background-color: #cbd7ff;'";} echo "><a href='".$link."'><span class='link'>Перейти к удалению</span></a></td>
+								</tr>
+							";
+						}
+
+						echo "
+							</table>
+						";
+					}
+				?>
+			</div>
 			<div style="clear: both;"></div>
 		</div>
 		<div style="clear: both;"></div>
