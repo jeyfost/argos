@@ -14,6 +14,15 @@ if(isset($_SESSION['userID'])) {
 	header("Location: ../index.php");
 }
 
+if(isset($_REQUEST['album'])) {
+	$albumCheckResult = $mysqli->query("SELECT * FROM albums WHERE id = '".$mysqli->real_escape_string($_REQUEST['album'])."'");
+	$albumCheck = $albumCheckResult->fetch_array(MYSQLI_NUM);
+
+	if($albumCheck[0] == 0) {
+		header("Location: add.php");
+	}
+}
+
 ?>
 
 <!doctype html>
@@ -24,7 +33,7 @@ if(isset($_SESSION['userID'])) {
 
     <meta charset="utf-8">
 
-    <title>Панель администрирования</title>
+    <title>Добавление фотографий</title>
 
     <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
@@ -36,14 +45,17 @@ if(isset($_SESSION['userID'])) {
 	<![endif]-->
 	<script type="text/javascript" src="../../js/lightview/js/spinners/spinners.min.js"></script>
 	<script type="text/javascript" src="../../js/lightview/js/lightview/lightview.js"></script>
+	<script type="text/javascript" src="../../js/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="../../js/notify.js"></script>
 	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/md5.js"></script>
 	<script type="text/javascript" src="../../js/admin/admin.js"></script>
+	<script type="text/javascript" src="../../js/admin/photo/add.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
 		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('../../img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
 	</style>
-
 	<script type="text/javascript">
         $(window).on('load', function () {
             var $preloader = $('#page-preloader'), $spinner = $preloader.find('.spinner');
@@ -164,18 +176,50 @@ if(isset($_SESSION['userID'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/photo.png" title="Фотогалерея" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Фотогалерея</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/photo.png" title="Фотогалерея" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Фотогалерея</span></a> > <a href="add.php"><span class="breadCrumbsText">Добавление фотографий</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
-			<h2>&darr; Для продолжения работы выберите функцию</h2>
-			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" style="margin-left: 0;" /></a>
+			<h2>Добавление фотографий</h2>
+			<a href="add.php"><input type="button" class="buttonActive" id="addButton" value="Добавление" style="margin-left: 0;" /></a>
 			<a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
+			<div style="clear: both;"></div>
+			<br /><br />
+			<form id="addForm" method="post" enctype="multipart/form-data">
+				<label for="albumSelect">Выберите альбом:</label>
+				<br />
+				<select id="albumSelect" name="album" onchange="window.location = 'add.php?album=' + this.options[this.selectedIndex].value">
+					<option value="">- Выберите альбом -</option>
+					<?php
+						$albumResult = $mysqli->query("SELECT * FROM albums ORDER BY name");
+						while($album = $albumResult->fetch_assoc()) {
+							echo "<option value='".$album['id']."'"; if($_REQUEST['album'] == $album['id']) {echo " selected";} echo ">".$album['name']."</option>";
+						}
+					?>
+				</select>
+				<?php
+					if(isset($_REQUEST['album'])) {
+						echo "
+							<br /><br />
+							<label for='photoInput'>Фотографии:</label>
+							<br />
+							<input type='file' class='file' id='photoInput' name='photo[]' multiple='multiple' />
+							<br /><br />
+							<input type='button' class='button' style='margin: 0;' id='addPhotosButton' onmouseover='buttonChange(\"addPhotosButton\", 1)' onmouseout='buttonChange(\"addPhotosButton\", 0)' onclick='addPhotos()' value='Добавить' />
+						";
+					}
+				?>
+			</form>
 			<div style="clear: both;"></div>
 		</div>
 		<div style="clear: both;"></div>
+		<div style="width: 100%; height: 40px;"></div>
 	</div>
 
 	<div style="clear: both;"></div>
+
+	<script type="text/javascript">
+		CKEDITOR.replace("text");
+	</script>
 
 </body>
 

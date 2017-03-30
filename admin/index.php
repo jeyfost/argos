@@ -64,7 +64,7 @@ if($_SESSION['userID'] == 1) {
 			</div>
 			<label for="loginInput">Логин:</label>
 			<br />
-			<input type="text" id="loginInput" name="login" />
+			<input type="text" id="loginInput" name="login" autofocus="autofocus" />
 			<br /><br />
 			<label for="passwordInput">Пароль:</label>
 			<br />
