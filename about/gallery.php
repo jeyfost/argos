@@ -196,23 +196,28 @@ if(isset($_SESSION['userID'])) {
 
 		<div id="personalContent">
 			<?php
-				$albumResult = $mysqli->query("SELECT * FROM albums");
+				$albumResult = $mysqli->query("SELECT * FROM albums ORDER BY name");
 				while($album = $albumResult->fetch_assoc()) {
-					echo "
-						<h2 class='albumName'>".$album['name']."</h2>
-						<br />
-						<div class='horizontalLine'></div>
-						<br />
-					";
-					$photoResult = $mysqli->query("SELECT * FROM photos WHERE album = '".$album['id']."'");
-					while($photo = $photoResult->fetch_assoc()) {
+					$photosCountResult = $mysqli->query("SELECT COUNT(id) FROM photos WHERE album = '".$album['id']."'");
+					$photosCount = $photosCountResult->fetch_array(MYSQLI_NUM);
+
+					if($photosCount[0] > 0) {
 						echo "
-							<div class='awardBlock'>
-								<a href='../img/photos/gallery/big/".$photo['photo_big']."' class='lightview' data-lightview-title='".$album['name']."' data-lightview-group='album".$album['id']."'><img src='../img/photos/gallery/small/".$photo['photo_small']."' class='galleryPhoto' id='galleryPhoto".$photo['id']."' onmouseover='galleryPhoto(\"galleryPhoto".$photo['id']."\", 1)' onmouseout='galleryPhoto(\"galleryPhoto".$photo['id']."\", 0)' /></a>
-							</div>
+							<h2 class='albumName'>".$album['name']."</h2>
+							<br />
+							<div class='horizontalLine'></div>
+							<br />
 						";
+						$photoResult = $mysqli->query("SELECT * FROM photos WHERE album = '".$album['id']."'");
+						while($photo = $photoResult->fetch_assoc()) {
+							echo "
+								<div class='awardBlock'>
+									<a href='../img/photos/gallery/big/".$photo['photo_big']."' class='lightview' data-lightview-title='".$album['name']."' data-lightview-group='album".$album['id']."'><img src='../img/photos/gallery/small/".$photo['photo_small']."' class='galleryPhoto' id='galleryPhoto".$photo['id']."' onmouseover='galleryPhoto(\"galleryPhoto".$photo['id']."\", 1)' onmouseout='galleryPhoto(\"galleryPhoto".$photo['id']."\", 0)' /></a>
+								</div>
+							";
+						}
+						echo "<br /><br /><br /><br />";
 					}
-					echo "<br /><br /><br /><br />";
 				}
 			?>
 		</div>
