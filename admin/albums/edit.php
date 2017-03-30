@@ -14,6 +14,14 @@ if(isset($_SESSION['userID'])) {
 	header("Location: ../index.php");
 }
 
+if(isset($_REQUEST['id'])) {
+	$albumCheckResult = $mysqli->query("SELECT * FROM albums WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+	$albumCheck = $albumCheckResult->fetch_array(MYSQLI_NUM);
+
+	if($albumCheck[0] == 0) {
+		header("Location: edit.php");
+	}
+}
 ?>
 
 <!doctype html>
@@ -24,7 +32,7 @@ if(isset($_SESSION['userID'])) {
 
     <meta charset="utf-8">
 
-    <title>Добавление альбомов</title>
+    <title>Редактирование альбомов</title>
 
     <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
@@ -40,7 +48,7 @@ if(isset($_SESSION['userID'])) {
 	<script type="text/javascript" src="../../js/common.js"></script>
 	<script type="text/javascript" src="../../js/md5.js"></script>
 	<script type="text/javascript" src="../../js/admin/admin.js"></script>
-	<script type="text/javascript" src="../../js/admin/albums/add.js"></script>
+	<script type="text/javascript" src="../../js/admin/albums/edit.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -166,21 +174,44 @@ if(isset($_SESSION['userID'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/album.png" title="Альбомы" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Альбомы</span></a> > <a href="add.php"><span class="breadCrumbsText">Добавление альбомов</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/album.png" title="Альбомы" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Альбомы</span></a> > <a href="edit.php"><span class="breadCrumbsText">Редактирование альбомов</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
-			<h2>Добавление альбомов</h2>
-			<a href="add.php"><input type="button" class="buttonActive" id="addButton" value="Добавление" style="margin-left: 0;" /></a>
-			<a href="edit.php"><input type="button" class="button" id="editButton" value="Редактирование" onmouseover="buttonChange('editButton', 1)" onmouseout="buttonChange('editButton', 0)" /></a>
+			<h2>Редактирование альбомов</h2>
+			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" style="margin-left: 0;" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
+			<a href="edit.php"><input type="button" class="buttonActive" id="editButton" value="Редактирование" /></a>
 			<a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
-			<form id="addForm" method="post">
-				<label for="nameInput">Введите название альбома:</label>
+			<form id="editForm" method="post">
+				<label for="albumSelect">Выберите альбом:</label>
 				<br />
-				<input type="text" id="nameInput" name="name" />
-				<br /><br />
-				<input type='button' class='button' style='margin: 0;' id='addAlbumButton' onmouseover='buttonChange("addAlbumButton", 1)' onmouseout='buttonChange("addAlbumButton", 0)' onclick='addAlbum()' value='Добавить' />
+				<select id="albumSelect" name="album" onchange="window.location = 'edit.php?id=' + this.options[this.selectedIndex].value">
+					<option value="">- Выберите альбом -</option>
+					<?php
+						$albumResult = $mysqli->query("SELECT * FROM albums ORDER BY name");
+						while($album = $albumResult->fetch_assoc()) {
+							echo "
+								<option value='".$album['id']."'"; if($_REQUEST['id'] == $album['id']) {echo " selected";} echo ">".$album['name']."</option>
+							";
+						}
+					?>
+				</select>
+				<?php
+					if(!empty($_REQUEST['id'])) {
+						$albumResult = $mysqli->query("SELECT * FROM albums WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+						$album = $albumResult->fetch_assoc();
+
+						echo "
+							<br /><br />
+							<label for='nameInput'>Введите название альбома:</label>
+							<br />
+							<input type='text' id='nameInput' name='name' value='".$album['name']."' />
+							<br /><br />
+							<input type='button' class='button' style='margin: 0;' id='editAlbumButton' onmouseover='buttonChange(\"editAlbumButton\", 1)' onmouseout='buttonChange(\"editAlbumButton\", 0)' onclick='editAlbum()' value='Редактировать' />
+						";
+					}
+				?>
 			</form>
 			<div style="clear: both;"></div>
 		</div>
