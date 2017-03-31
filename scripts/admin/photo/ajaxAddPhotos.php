@@ -20,7 +20,6 @@ ob_start();
 $error = 0;
 
 for($i = 0; $i < count($_FILES['photo']['name']); $i++) {
-	//TODO: где-то здесь ошибка
 	if(empty($_FILES['photo']['tmp_name'][$i]) or $_FILES['photo']['error'][$i] != 0 or substr($_FILES['photo']['type'][$i], 0, 5) != "image") {
 		$error++;
 	}

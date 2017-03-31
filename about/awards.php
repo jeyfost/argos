@@ -196,7 +196,7 @@ if(isset($_SESSION['userID'])) {
 
 		<div id="personalContent">
 			<?php
-				$awardResult = $mysqli->query("SELECT * FROM awards");
+				$awardResult = $mysqli->query("SELECT * FROM awards ORDER BY id DESC");
 				while($award = $awardResult->fetch_assoc()) {
 					echo "
 						<a href='../img/photos/awards/big/".$award['photo_big']."' class='lightview' data-lightview-title='".$award['name']."' data-lightview-group='awards'>
