@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/achievements/delete.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/admin/achievements/delete.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/achievements/ajaxDeleteAward.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/achievements/edit.php" afterPath="$PROJECT_DIR$/admin/achievements/edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about/vacancies.php" afterPath="$PROJECT_DIR$/about/vacancies.php" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,6 +52,24 @@
         <option name="myItemId" value="argos" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="vacancies" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - argos@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="argos" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
     </PATH>
     <PATH>
       <PATH_ELEMENT>
@@ -80,131 +95,7 @@
     <favorites_list name="argos" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="edit.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/admin/achievements/edit.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="11" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="35" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/achievements/delete.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="206" column="40" lean-forward="false" selection-start-line="206" selection-start-column="40" selection-end-line="206" selection-end-column="40" />
-              <folding>
-                <marker date="1491052280848" expanded="true" signature="205:265" ph="SELECT login... users" />
-                <marker date="1491052280848" expanded="true" signature="444:526" ph="SELECT * FRO... awards" />
-                <marker date="1491052280848" expanded="true" signature="7392:7426" ph="SELECT * FRO... awards" />
-                <marker date="1491052280848" expanded="true" signature="7735:7817" ph="SELECT * FRO... awards" />
-                <marker date="1491052280848" expanded="false" signature="8008:8018" ph="..." />
-                <marker date="1491052280848" expanded="true" signature="8302:8330" ph="SELECT COUNT... awards" />
-                <marker date="1491052280848" expanded="true" signature="8436:8470" ph="SELECT * FRO... awards" />
-                <marker date="1491052280848" expanded="true" signature="8556:8572" ph="..." />
-                <marker date="1491052280848" expanded="true" signature="8661:8680" ph="..." />
-                <marker date="1491052280848" expanded="true" signature="8681:8955" ph="..." />
-                <marker date="1491052280848" expanded="true" signature="8693:8949" ph="..." />
-                <marker date="1491052280848" expanded="true" signature="8714:8759" ph="..." />
-                <marker date="1491052280848" expanded="true" signature="8787:8846" ph="..." />
-                <marker date="1491052280848" expanded="true" signature="8877:8922" ph="..." />
-                <marker date="1491052280848" expanded="true" signature="9127:9145" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding>
-                <marker date="1490997737180" expanded="true" signature="1995:2027" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/photo/delete.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4369">
-              <caret line="257" column="18" lean-forward="false" selection-start-line="257" selection-start-column="18" selection-end-line="257" selection-end-column="18" />
-              <folding>
-                <marker date="1490871039920" expanded="true" signature="205:265" ph="SELECT login... users" />
-                <marker date="1490871039920" expanded="true" signature="446:531" ph="SELECT * FRO... albums" />
-                <marker date="1490871039920" expanded="true" signature="728:810" ph="SELECT * FRO... photos" />
-                <marker date="1490871039920" expanded="true" signature="2106:2329" ph="..." />
-                <marker date="1490871039920" expanded="true" signature="7529:7563" ph="SELECT * FRO... albums" />
-                <marker date="1490871039920" expanded="false" signature="7920:7930" ph="..." />
-                <marker date="1490871039920" expanded="true" signature="8379:8423" ph="SELECT COUNT... photos" />
-                <marker date="1490871039920" expanded="true" signature="8379:8475" ph="SELECT COUNT... photos" />
-                <marker date="1490871039920" expanded="true" signature="8583:8671" ph="SELECT * FRO... photos" />
-                <marker date="1490871039920" expanded="true" signature="8712:8748" ph="SELECT name albums" />
-                <marker date="1490871039920" expanded="true" signature="8712:8800" ph="SELECT name albums" />
-                <marker date="1490871039920" expanded="true" signature="8947:8963" ph="..." />
-                <marker date="1490871039920" expanded="true" signature="9058:9077" ph="..." />
-                <marker date="1490871039920" expanded="true" signature="9078:9358" ph="..." />
-                <marker date="1490871039920" expanded="true" signature="9091:9111" ph="..." />
-                <marker date="1490871039920" expanded="true" signature="9091:9351" ph="..." />
-                <marker date="1490871039920" expanded="true" signature="9113:9158" ph="..." />
-                <marker date="1490871039920" expanded="true" signature="9187:9246" ph="..." />
-                <marker date="1490871039920" expanded="true" signature="9278:9323" ph="..." />
-                <marker date="1490871039920" expanded="true" signature="9565:9583" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="delete.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/admin/achievements/delete.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxDeleteAward.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/admin/achievements/ajaxDeleteAward.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-              <folding>
-                <element signature="e#6#89#0#PHP" expanded="true" />
-                <marker date="1491052593617" expanded="true" signature="233:266" ph="SELECT * FRO... awards" />
-                <marker date="1491052593617" expanded="true" signature="233:274" ph="SELECT * FRO... awards" />
-                <marker date="1491052593617" expanded="true" signature="336:367" ph="DELETE FROM " />
-                <marker date="1491052593617" expanded="true" signature="336:375" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxEditAward.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/admin/achievements/ajaxEditAward.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="829">
-              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="67" selection-end-column="5" />
-              <folding>
-                <element signature="e#6#89#0#PHP" expanded="true" />
-                <marker date="1490958922580" expanded="true" signature="1252:1285" ph="SELECT * FRO... awards" />
-                <marker date="1490958922580" expanded="true" signature="1252:1293" ph="SELECT * FRO... awards" />
-                <marker date="1490958922580" expanded="true" signature="1359:1482" ph="UPDATE award... " />
-                <marker date="1490958922580" expanded="true" signature="1359:1490" ph="UPDATE award... " />
-                <marker date="1490958922580" expanded="true" signature="1376:1469" ph="INSERT INTO awards... " />
-                <marker date="1490958922580" expanded="true" signature="1906:1963" ph="UPDATE award... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -231,7 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts/admin/actions/ajaxSearch.php" />
         <option value="$PROJECT_DIR$/css/admin.css" />
         <option value="$PROJECT_DIR$/1.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
@@ -282,6 +172,7 @@
         <option value="$PROJECT_DIR$/admin/achievements/delete.php" />
         <option value="$PROJECT_DIR$/js/admin/achievements/delete.js" />
         <option value="$PROJECT_DIR$/scripts/admin/achievements/ajaxDeleteAward.php" />
+        <option value="$PROJECT_DIR$/about/vacancies.php" />
       </list>
     </option>
   </component>
@@ -656,6 +547,20 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="about" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches">
@@ -810,14 +715,7 @@
       <workItem from="1490951040215" duration="5560000" />
       <workItem from="1490997143457" duration="634000" />
       <workItem from="1490997849348" duration="1147000" />
-      <workItem from="1491052223065" duration="383000" />
-    </task>
-    <task id="LOCAL-00069" summary="Исправоен пересчёт стоимости товаров в корзине при удалении товара">
-      <created>1485844279014</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1485844279015</updated>
+      <workItem from="1491052223065" duration="3214000" />
     </task>
     <task id="LOCAL-00070" summary="Исправлено отображение стоимости товаров в необработанных заявках пользователя">
       <created>1485844930734</created>
@@ -1155,11 +1053,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490959013728</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="Реализовано удаление наград">
+      <created>1491052630217</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1491052630218</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95182000" />
+    <option name="totallyTimeSpent" value="98013000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1172,9 +1077,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22365038" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22365038" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.113753214" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1228,7 +1132,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Реализовано обновление информации по товарам из 1С" />
     <MESSAGE value="Создана стартовая страница разделов в панели администрирования" />
     <MESSAGE value="Реализовано добавление новых разделов" />
     <MESSAGE value="Реализовано редактирование разделов" />
@@ -1253,7 +1156,8 @@
     <MESSAGE value="Добавлена стартовая страница наград и достижений в панели администрирования" />
     <MESSAGE value="Реализовано добавление наград" />
     <MESSAGE value="Реализовано редактирование наград" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализовано редактирование наград" />
+    <MESSAGE value="Реализовано удаление наград" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализовано удаление наград" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1269,20 +1173,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/admin/actions/ajaxChooseGood.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="105" column="2" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="105" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/actions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="562" column="40" lean-forward="false" selection-start-line="562" selection-start-column="40" selection-end-line="562" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/catalogue.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1720,6 +1610,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about/vacancies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="205" column="130" lean-forward="false" selection-start-line="205" selection-start-column="130" selection-end-line="205" selection-end-column="130" />
+          <folding>
+            <marker date="1491069328744" expanded="true" signature="479:535" ph="SELECT * FRO... users" />
+            <marker date="1491069328744" expanded="true" signature="808:875" ph="SELECT login... users" />
+            <marker date="1491069328744" expanded="true" signature="989:1110" ph="UPDATE users... " />
+            <marker date="1491069328744" expanded="true" signature="3200:3467" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="3499:3779" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="3872:4134" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="4208:4278" ph="SELECT COUNT... basket" />
+            <marker date="1491069328744" expanded="true" signature="4455:4824" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="4916:5225" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="5312:5578" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="5635:5778" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="5663:5765" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="5811:5823" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="9094:9144" ph="SELECT COUNT... vacancies" />
+            <marker date="1491069328744" expanded="true" signature="9407:9443" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="9444:9569" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="9485:9500" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="9538:9569" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="9626:9703" ph="SELECT * FRO... vacancies" />
+            <marker date="1491069328744" expanded="true" signature="10751:10771" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="10751:10787" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="10826:10841" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="11387:11402" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="11538:11553" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="11700:11715" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="11817:11832" ph="..." />
+            <marker date="1491069328744" expanded="true" signature="11947:11962" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/59ce082/94240a3f-16e7-4f25-9dd4-09c8df13e291/argos.vacancies">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

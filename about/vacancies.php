@@ -196,13 +196,76 @@ if(isset($_SESSION['userID'])) {
 
 		<div id="personalContent">
 			<?php
-				$vacanciesResult = $mysqli->query("SELECT * FROM vacancies WHERE id = '1'");
-				$vacancies = $vacanciesResult->fetch_assoc();
+				$vacanciesCountResult = $mysqli->query("SELECT COUNT(id) FROM vacancies WHERE opened = '1'");
+				$vacanciesCount = $vacanciesCountResult->fetch_array(MYSQLI_NUM);
 
-				if($vacancies['text'] == "") {
+				if($vacanciesCount[0] == 0) {
 					echo "На данный момент открытых вакансий нет, но вы можете отправить нам своё резюме через форму ниже.";
 				} else {
-					echo $vacancies['text'];
+					echo "
+						<span style='font-style: italic; font-size: 14px;'>Общее количество вакансий: <span style='color: #df4e47;'>".$vacanciesCount[0]."</span></span>
+						<hr />
+						<br />
+					";
+
+					$i = 0;
+
+					$vacancyResult = $mysqli->query("SELECT * FROM vacancies WHERE opened = '1' ORDER BY TIME_TO_SEC(created) DESC");
+					while($vacancy = $vacancyResult->fetch_assoc()) {
+						$i++;
+
+						$date = (int)substr($vacancy['created'], 0, 2)." ";
+
+						switch(substr($vacancy['created'], 3, 2)) {
+							case "01":
+								$date .= "января";
+								break;
+							case "02":
+								$date .= "февраля";
+								break;
+							case "03":
+								$date .= "марта";
+								break;
+							case "04":
+								$date .= "апреля";
+								break;
+							case "05":
+								$date .= "мая";
+								break;
+							case "06":
+								$date .= "июня";
+								break;
+							case "07":
+								$date .= "июля";
+								break;
+							case "08":
+								$date .= "августа";
+								break;
+							case "09":
+								$date .= "сентября";
+								break;
+							case "10":
+								$date .= "октября";
+								break;
+							case "11":
+								$date .= "ноября";
+								break;
+							case "12":
+								$date .= "декабря";
+								break;
+						}
+
+						$date .= " ".substr($vacancy['created'], 6)." г.";
+
+						echo "
+							<h2>".$i.". ".$vacancy['position']."</h2>
+							<span style='font-style: italic; font-size: 14px;'>Дата открытия вакансии: <span style='color: #df4e47;'>".$date."</span></span>
+							<br /><br />
+							".$vacancy['text']."
+							<br /><br />
+							<hr />
+						";
+					}
 				}
 			?>
 			<br /><br />
