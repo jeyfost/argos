@@ -210,7 +210,7 @@ if(isset($_SESSION['userID'])) {
 
 					$i = 0;
 
-					$vacancyResult = $mysqli->query("SELECT * FROM vacancies WHERE opened = '1' ORDER BY TIME_TO_SEC(created) DESC");
+					$vacancyResult = $mysqli->query("SELECT * FROM vacancies WHERE opened = '1' ORDER BY id DESC");
 					while($vacancy = $vacancyResult->fetch_assoc()) {
 						$i++;
 
