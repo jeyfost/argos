@@ -19,7 +19,7 @@ if(!empty($_REQUEST['id'])) {
 	$photoCheck = $photoCheckResult->fetch_array(MYSQLI_NUM);
 
 	if($photoCheck[0] == 0) {
-		header("Location: edit.php");
+		header("Location: delete.php");
 	}
 }
 
@@ -33,7 +33,7 @@ if(!empty($_REQUEST['id'])) {
 
     <meta charset="utf-8">
 
-    <title>Редактирование наград</title>
+    <title>Удаление наград</title>
 
     <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
@@ -49,7 +49,7 @@ if(!empty($_REQUEST['id'])) {
 	<script type="text/javascript" src="../../js/common.js"></script>
 	<script type="text/javascript" src="../../js/md5.js"></script>
 	<script type="text/javascript" src="../../js/admin/admin.js"></script>
-	<script type="text/javascript" src="../../js/admin/achievements/edit.js"></script>
+	<script type="text/javascript" src="../../js/admin/achievements/delete.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -175,19 +175,19 @@ if(!empty($_REQUEST['id'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/award.png" title="Достижения и награды" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Достижения и награды</span></a> > <a href="edit.php"><span class="breadCrumbsText">Редактирование наград</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/award.png" title="Достижения и награды" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Достижения и награды</span></a> > <a href="delete.php"><span class="breadCrumbsText">Удаление наград</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
-			<h2>Редактирование наград</h2>
+			<h2>Удаление наград</h2>
 			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" style="margin-left: 0;" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
-			<a href="edit.php"><input type="button" class="buttonActive" id="editButton" value="Редактирование" /></a>
-			<a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
+			<a href="edit.php"><input type="button" class="button" id="editButton" value="Редактирование" onmouseover="buttonChange('editButton', 1)" onmouseout="buttonChange('editButton', 0)" /></a>
+			<a href="delete.php"><input type="button" class="buttonActive" id="deleteButton" value="Удаление" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
-			<form id="editForm" method="post" enctype="multipart/form-data">
+			<form id="deleteForm" method="post">
 				<label for="awardSelect">Выберите награду:</label>
 				<br />
-				<select id="awardSelect" name="award" onchange="window.location = 'edit.php?id=' + this.options[this.selectedIndex].value">
+				<select id="awardSelect" name="award" onchange="window.location = 'delete.php?id=' + this.options[this.selectedIndex].value">
 					<option value="">- Выберите награду -</option>
 					<?php
 						$awardResult = $mysqli->query("SELECT * FROM awards ORDER BY name");
@@ -203,24 +203,15 @@ if(!empty($_REQUEST['id'])) {
 
 						echo "
 							<br /><br />
-							<label for='nameInput'>Название награды:</label>
-							<br />
-							<input type='text' id='nameInput' name='name' value='".$award['name']."' />
+							<label>Удалить награду?</label>
 							<br /><br />
-							<label for='photoInput'>Фотография:</label>
-							<br />
-							<a href='../../img/photos/awards/big/".$award['photo_big']."' class='lightview' data-lightview-title='".$award['name']."'><span class='link' style='font-size: 14px;'>(нажмите для просмотра фотографии)</span></a>
-							<br />
-							<input type='file' class='file' id='photoInput' name='photo' />
-							<br /><br />
-							<input type='button' class='button' style='margin: 0;' id='editAwardButton' onmouseover='buttonChange(\"editAwardButton\", 1)' onmouseout='buttonChange(\"editAwardButton\", 0)' onclick='editAward()' value='Редактировать' />
+							<input type='button' class='button' style='margin: 0;' id='deleteAwardButton' onmouseover='buttonChange(\"deleteAwardButton\", 1)' onmouseout='buttonChange(\"deleteAwardButton\", 0)' onclick='deleteAward()' value='Удалить' />
 						";
 					}
 				?>
 			</form>
 			<div id="goodsTable">
 				<?php
-
 					$photosCountResult = $mysqli->query("SELECT COUNT(id) FROM awards");
 					$photosCount = $photosCountResult->fetch_array(MYSQLI_NUM);
 
@@ -243,7 +234,7 @@ if(!empty($_REQUEST['id'])) {
 
 					while($photo = $photoResult->fetch_assoc()) {
 						$i++;
-						$link = "edit.php?id=".$photo['id'];
+						$link = "delete.php?id=".$photo['id'];
 
 						echo "
 							<tr>
