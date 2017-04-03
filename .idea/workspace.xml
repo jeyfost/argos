@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/vacancies/edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/admin/vacancies/edit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/vacancies/ajaxEditVacancy.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/vacancies/delete.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/admin/vacancies/delete.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/vacancies/ajaxDeleteVacancy.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/vacancies/edit.php" afterPath="$PROJECT_DIR$/admin/vacancies/edit.php" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,11 +99,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="edit.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/vacancies/edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="205" column="28" lean-forward="false" selection-start-line="205" selection-start-column="28" selection-end-line="205" selection-end-column="28" />
+            <state relative-caret-position="306">
+              <caret line="17" column="143" lean-forward="false" selection-start-line="17" selection-start-column="143" selection-end-line="17" selection-end-column="143" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -122,17 +123,80 @@
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1491198806090" expanded="true" signature="205:265" ph="SELECT login... users" />
-                <marker date="1491198806090" expanded="true" signature="446:531" ph="SELECT * FRO... vacancies" />
-                <marker date="1491198806090" expanded="true" signature="7484:7544" ph="SELECT * FRO... vacancies" />
-                <marker date="1491198806090" expanded="true" signature="7869:7905" ph="SELECT * FRO... vacancy" />
-                <marker date="1491198806090" expanded="true" signature="7869:7954" ph="SELECT * FRO... vacancy" />
-                <marker date="1491198806090" expanded="true" signature="8432:8442" ph="..." />
-                <marker date="1491198806090" expanded="true" signature="8670:8682" ph="..." />
-                <marker date="1491198806090" expanded="true" signature="8714:8726" ph="..." />
-                <marker date="1491198806090" expanded="true" signature="8749:8775" ph="..." />
-                <marker date="1491198806090" expanded="true" signature="8806:8818" ph="..." />
-                <marker date="1491198806090" expanded="true" signature="8859:8898" ph="..." />
+                <marker date="1491201516147" expanded="true" signature="205:265" ph="SELECT login... users" />
+                <marker date="1491201516147" expanded="true" signature="446:531" ph="SELECT * FRO... vacancies" />
+                <marker date="1491201516147" expanded="true" signature="446:548" ph="SELECT * FRO... vacancies" />
+                <marker date="1491201516147" expanded="true" signature="7501:7561" ph="SELECT * FRO... vacancies" />
+                <marker date="1491201516147" expanded="true" signature="7886:7922" ph="SELECT * FRO... vacancy" />
+                <marker date="1491201516147" expanded="true" signature="7886:7971" ph="SELECT * FRO... vacancy" />
+                <marker date="1491201516147" expanded="true" signature="8449:8459" ph="..." />
+                <marker date="1491201516147" expanded="true" signature="8687:8699" ph="..." />
+                <marker date="1491201516147" expanded="true" signature="8731:8743" ph="..." />
+                <marker date="1491201516147" expanded="true" signature="8766:8792" ph="..." />
+                <marker date="1491201516147" expanded="true" signature="8823:8835" ph="..." />
+                <marker date="1491201516147" expanded="true" signature="8876:8915" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/vacancies/delete.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="127" lean-forward="true" selection-start-line="17" selection-start-column="127" selection-end-line="17" selection-end-column="144" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#8;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#10;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#12;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#14;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#16;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#18;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#20;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#22;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#b#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1491201516111" expanded="true" signature="205:265" ph="SELECT login... users" />
+                <marker date="1491201516111" expanded="true" signature="446:548" ph="SELECT * FRO... vacancies" />
+                <marker date="1491201516111" expanded="true" signature="7487:7547" ph="SELECT * FRO... vacancies" />
+                <marker date="1491201516111" expanded="true" signature="7872:7957" ph="SELECT * FRO... vacancies" />
+                <marker date="1491201516111" expanded="true" signature="8153:8163" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="delete.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/admin/vacancies/delete.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="30" lean-forward="false" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxDeleteVacancy.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/vacancies/ajaxDeleteVacancy.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+              <folding>
+                <element signature="e#6#88#0#PHP" expanded="true" />
+                <marker date="1491201402794" expanded="true" signature="222:268" ph="UPDATE vacan... " />
+                <marker date="1491201402794" expanded="true" signature="222:276" ph="UPDATE vacan... " />
               </folding>
             </state>
           </provider>
@@ -141,28 +205,18 @@
       <file leaf-file-name="edit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/admin/vacancies/edit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+            <state relative-caret-position="0">
+              <caret line="0" column="3" lean-forward="true" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/admin/news/edit.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxEditVacancy.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ajaxEditVacancy.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/admin/vacancies/ajaxEditVacancy.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="16" column="137" lean-forward="false" selection-start-line="16" selection-start-column="137" selection-end-line="16" selection-end-column="137" />
+            <state relative-caret-position="238">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="53" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
                 <marker date="1491200670498" expanded="true" signature="302:352" ph="SELECT COUNT... vacancies" />
@@ -225,9 +279,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/actions/edit.php" />
-        <option value="$PROJECT_DIR$/scripts/admin/actions/ajaxAddAction.php" />
-        <option value="$PROJECT_DIR$/actions.php" />
         <option value="$PROJECT_DIR$/catalogue.php" />
         <option value="$PROJECT_DIR$/scripts/admin/actions/ajaxEditAction.php" />
         <option value="$PROJECT_DIR$/admin/actions/delete.php" />
@@ -273,9 +324,12 @@
         <option value="$PROJECT_DIR$/js/admin/vacancies/add.js" />
         <option value="$PROJECT_DIR$/scripts/admin/vacancies/ajaxAddVacancy.php" />
         <option value="$PROJECT_DIR$/about/vacancies.php" />
-        <option value="$PROJECT_DIR$/admin/vacancies/edit.php" />
-        <option value="$PROJECT_DIR$/js/admin/vacancies/edit.js" />
         <option value="$PROJECT_DIR$/scripts/admin/vacancies/ajaxEditVacancy.php" />
+        <option value="$PROJECT_DIR$/js/admin/vacancies/edit.js" />
+        <option value="$PROJECT_DIR$/scripts/admin/vacancies/ajaxDeleteVacancy.php" />
+        <option value="$PROJECT_DIR$/js/admin/vacancies/delete.js" />
+        <option value="$PROJECT_DIR$/admin/vacancies/delete.php" />
+        <option value="$PROJECT_DIR$/admin/vacancies/edit.php" />
       </list>
     </option>
   </component>
@@ -408,28 +462,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="achievements" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos.local" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -506,28 +538,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="achievements" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos.local" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -561,24 +571,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="vacancies" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos.local" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="achievements" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -827,14 +819,7 @@
       <workItem from="1490997143457" duration="634000" />
       <workItem from="1490997849348" duration="1147000" />
       <workItem from="1491052223065" duration="5884000" />
-      <workItem from="1491197765435" duration="2559000" />
-    </task>
-    <task id="LOCAL-00073" summary="Исправлено отображение стоимости в необработанных заявках у администратора">
-      <created>1485846915312</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1485846915312</updated>
+      <workItem from="1491197765435" duration="3354000" />
     </task>
     <task id="LOCAL-00074" summary="Исправлен пересчёт  стоимости необработанного заказа у администратора при удалении группы товаров">
       <created>1485849573347</created>
@@ -1172,11 +1157,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491072482226</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="Реализовано редактирование вакансий">
+      <created>1491200741810</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1491200741811</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103242000" />
+    <option name="totallyTimeSpent" value="104037000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1245,7 +1237,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Реализовано удаление разделов" />
     <MESSAGE value="Добавлена стартовая страница новостей в панели администрирования" />
     <MESSAGE value="Реализовано добавление новостей" />
     <MESSAGE value="Реализовано редактирование новостей" />
@@ -1270,7 +1261,8 @@
     <MESSAGE value="Доработана страница вакансий" />
     <MESSAGE value="Добавлена стартовая страница вакансий в панели администрирования" />
     <MESSAGE value="Реализовано добавление вакансий" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализовано добавление вакансий" />
+    <MESSAGE value="Реализовано редактирование вакансий" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализовано редактирование вакансий" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1286,32 +1278,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="112" column="95" lean-forward="false" selection-start-line="112" selection-start-column="95" selection-end-line="112" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="35" column="6" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/59ce082/94240a3f-16e7-4f25-9dd4-09c8df13e291/argos.photos">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/photo/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1738,10 +1704,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/vacancies/edit.php">
+    <entry file="file://$PROJECT_DIR$/js/admin/news/edit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="205" column="28" lean-forward="false" selection-start-line="205" selection-start-column="28" selection-end-line="205" selection-end-column="28" />
+        <state relative-caret-position="272">
+          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/vacancies/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="3" lean-forward="true" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/vacancies/ajaxEditVacancy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="53" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+            <marker date="1491200670498" expanded="true" signature="302:352" ph="SELECT COUNT... vacancies" />
+            <marker date="1491200670498" expanded="true" signature="302:366" ph="SELECT COUNT... vacancies" />
+            <marker date="1491200670498" expanded="true" signature="302:393" ph="SELECT COUNT... vacancies" />
+            <marker date="1491200670498" expanded="true" signature="302:395" ph="SELECT COUNT... vacancies" />
+            <marker date="1491200670498" expanded="true" signature="302:403" ph="SELECT COUNT... vacancies" />
+            <marker date="1491200670498" expanded="true" signature="302:405" ph="SELECT COUNT... vacancies" />
+            <marker date="1491200670498" expanded="true" signature="518:538" ph="UPDATE vacan... " />
+            <marker date="1491200670498" expanded="true" signature="518:551" ph="UPDATE vacan... " />
+            <marker date="1491200670498" expanded="true" signature="518:564" ph="UPDATE vacan... " />
+            <marker date="1491200670498" expanded="true" signature="518:565" ph="UPDATE vacan... " />
+            <marker date="1491200670498" expanded="true" signature="518:575" ph="UPDATE vacan... " />
+            <marker date="1491200670498" expanded="true" signature="518:607" ph="UPDATE vacan... " />
+            <marker date="1491200670498" expanded="true" signature="518:615" ph="UPDATE vacan... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/vacancies/ajaxDeleteVacancy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+            <marker date="1491201402794" expanded="true" signature="222:268" ph="UPDATE vacan... " />
+            <marker date="1491201402794" expanded="true" signature="222:276" ph="UPDATE vacan... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/vacancies/delete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="30" lean-forward="false" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/vacancies/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="127" lean-forward="true" selection-start-line="17" selection-start-column="127" selection-end-line="17" selection-end-column="144" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1761,56 +1786,54 @@
             <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1491198806090" expanded="true" signature="205:265" ph="SELECT login... users" />
-            <marker date="1491198806090" expanded="true" signature="446:531" ph="SELECT * FRO... vacancies" />
-            <marker date="1491198806090" expanded="true" signature="7484:7544" ph="SELECT * FRO... vacancies" />
-            <marker date="1491198806090" expanded="true" signature="7869:7905" ph="SELECT * FRO... vacancy" />
-            <marker date="1491198806090" expanded="true" signature="7869:7954" ph="SELECT * FRO... vacancy" />
-            <marker date="1491198806090" expanded="true" signature="8432:8442" ph="..." />
-            <marker date="1491198806090" expanded="true" signature="8670:8682" ph="..." />
-            <marker date="1491198806090" expanded="true" signature="8714:8726" ph="..." />
-            <marker date="1491198806090" expanded="true" signature="8749:8775" ph="..." />
-            <marker date="1491198806090" expanded="true" signature="8806:8818" ph="..." />
-            <marker date="1491198806090" expanded="true" signature="8859:8898" ph="..." />
+            <element signature="n#style#0;n#div#3;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1491201516111" expanded="true" signature="205:265" ph="SELECT login... users" />
+            <marker date="1491201516111" expanded="true" signature="446:548" ph="SELECT * FRO... vacancies" />
+            <marker date="1491201516111" expanded="true" signature="7487:7547" ph="SELECT * FRO... vacancies" />
+            <marker date="1491201516111" expanded="true" signature="7872:7957" ph="SELECT * FRO... vacancies" />
+            <marker date="1491201516111" expanded="true" signature="8153:8163" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/news/edit.js">
+    <entry file="file://$PROJECT_DIR$/admin/vacancies/edit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/vacancies/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/vacancies/ajaxEditVacancy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="16" column="137" lean-forward="false" selection-start-line="16" selection-start-column="137" selection-end-line="16" selection-end-column="137" />
+          <caret line="17" column="143" lean-forward="false" selection-start-line="17" selection-start-column="143" selection-end-line="17" selection-end-column="143" />
           <folding>
-            <element signature="e#6#88#0#PHP" expanded="true" />
-            <marker date="1491200670498" expanded="true" signature="302:352" ph="SELECT COUNT... vacancies" />
-            <marker date="1491200670498" expanded="true" signature="302:366" ph="SELECT COUNT... vacancies" />
-            <marker date="1491200670498" expanded="true" signature="302:393" ph="SELECT COUNT... vacancies" />
-            <marker date="1491200670498" expanded="true" signature="302:395" ph="SELECT COUNT... vacancies" />
-            <marker date="1491200670498" expanded="true" signature="302:403" ph="SELECT COUNT... vacancies" />
-            <marker date="1491200670498" expanded="true" signature="302:405" ph="SELECT COUNT... vacancies" />
-            <marker date="1491200670498" expanded="true" signature="518:538" ph="UPDATE vacan... " />
-            <marker date="1491200670498" expanded="true" signature="518:551" ph="UPDATE vacan... " />
-            <marker date="1491200670498" expanded="true" signature="518:564" ph="UPDATE vacan... " />
-            <marker date="1491200670498" expanded="true" signature="518:565" ph="UPDATE vacan... " />
-            <marker date="1491200670498" expanded="true" signature="518:575" ph="UPDATE vacan... " />
-            <marker date="1491200670498" expanded="true" signature="518:607" ph="UPDATE vacan... " />
-            <marker date="1491200670498" expanded="true" signature="518:615" ph="UPDATE vacan... " />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#8;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#10;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#12;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#14;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#16;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#18;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#20;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#22;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1491201516147" expanded="true" signature="205:265" ph="SELECT login... users" />
+            <marker date="1491201516147" expanded="true" signature="446:531" ph="SELECT * FRO... vacancies" />
+            <marker date="1491201516147" expanded="true" signature="446:548" ph="SELECT * FRO... vacancies" />
+            <marker date="1491201516147" expanded="true" signature="7501:7561" ph="SELECT * FRO... vacancies" />
+            <marker date="1491201516147" expanded="true" signature="7886:7922" ph="SELECT * FRO... vacancy" />
+            <marker date="1491201516147" expanded="true" signature="7886:7971" ph="SELECT * FRO... vacancy" />
+            <marker date="1491201516147" expanded="true" signature="8449:8459" ph="..." />
+            <marker date="1491201516147" expanded="true" signature="8687:8699" ph="..." />
+            <marker date="1491201516147" expanded="true" signature="8731:8743" ph="..." />
+            <marker date="1491201516147" expanded="true" signature="8766:8792" ph="..." />
+            <marker date="1491201516147" expanded="true" signature="8823:8835" ph="..." />
+            <marker date="1491201516147" expanded="true" signature="8876:8915" ph="..." />
           </folding>
         </state>
       </provider>
