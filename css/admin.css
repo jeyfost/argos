@@ -18,6 +18,7 @@ a:hover.tooltips span { visibility: visible; opacity: 0.7; bottom: 30px; left: 5
 .breadCrumbsText:hover, .redLink:hover, .link:hover, .searchLink:hover {text-decoration: none;}
 .searchLink .searchItem:hover {background-color: #f3f3f3;}
 .sketchFont:hover {text-decoration: underline;}
+.districtButton:hover {color: #df4e47; background-color: #ddd;}
 
 #loginBlock {position: relative; margin: 0 auto; padding: 20px; background-color: #fff; width: 320px; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4);}
 #loginSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer;}
@@ -61,3 +62,9 @@ a:hover.tooltips span { visibility: visible; opacity: 0.7; bottom: 30px; left: 5
 .goodInfo {position: relative; float: left; margin-left: 20px;}
 .goodName {margin-left: 10px; height: 30px; padding-left: 10px; padding-right: 10px; line-height: 30px;}
 .goodDescription {margin-left: 37px; margin-top: 10px; font-size: 15px;}
+.radio {width: 16px; padding: 0; margin: 0; position: relative; float: left;}
+.radioLabel {margin: 5px auto auto 5px; position: relative; float: left;}
+.districtButton {position: relative; float: left; width: 120px; height: 40px; line-height: 40px; color: #fff; background-color: #df4e47; cursor: pointer; text-align: center; font-size: 14px;}
+.clientBlock {display: inline-block; border: 1px solid #ddd; padding: 5px; margin: 5px; text-align: center;}
+.clientCheckbox {position: relative; float: left; width: 30px; border-right: 1px solid #ddd;}
+.client {position: relative; float: left; padding-left: 5px; text-align: left;}
