@@ -164,12 +164,12 @@ if(isset($_SESSION['userID'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/client.png" title="Клиентская база" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Клиентская база</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/mail.png" title="Email рассылки" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Email-рассылки</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
 			<h2>&darr; Для продолжения работы выберите раздел</h2>
-			<a href="database.php"><input type="button" class="button" id="databaseButton" value="Клиентская база" onmouseover="buttonChange('databaseButton', 1)" onmouseout="buttonChange('databaseButton', 0)" style="margin-left: 0;" /></a>
-			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" onmouseover="buttonChange('historyButton', 1)" onmouseout="buttonChange('historyButton', 0)" /></a>
+			<a href="send.php"><input type="button" class="button" id="sendButton" value="Отправление" onmouseover="buttonChange('sendButton', 1)" onmouseout="buttonChange('sendButton', 0)" style="margin-left: 0;" /></a>
+			<a href="history.php"><input type="button" class="button" id="historyButton" value="История" onmouseover="buttonChange('historyButton', 1)" onmouseout="buttonChange('historyButton', 0)" /></a>
 			<div style="clear: both;"></div>
 		</div>
 		<div style="clear: both;"></div>
