@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/email/send.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/admin/email/send.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/email/ajaxCheckType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/email/ajaxSendDistrictEmail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/email/ajaxSendOneEmail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/email/ajaxSendSetEmail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/email/ajaxShowClientsGrid.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/email/ajaxShowDistrictButtons.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/email/ajaxShowDistrictForm.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/email/ajaxShowSetForm.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/admin/email/ajaxValidateEmail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/clients/add.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/clients/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/admin.css" afterPath="$PROJECT_DIR$/css/admin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/email/index.php" afterPath="$PROJECT_DIR$/admin/email/index.php" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,78 +80,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="send.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/email/send.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="880">
-              <caret line="200" column="13" lean-forward="false" selection-start-line="200" selection-start-column="13" selection-end-line="200" selection-end-column="13" />
-              <folding>
-                <marker date="1491290554193" expanded="true" signature="205:265" ph="SELECT login... users" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="send.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/admin/email/send.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-46">
-              <caret line="205" column="43" lean-forward="false" selection-start-line="205" selection-start-column="43" selection-end-line="205" selection-end-column="43" />
-              <folding>
-                <marker date="1491373739950" expanded="true" signature="1504:1514" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxSendSetEmail.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/admin/email/ajaxSendSetEmail.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/email/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="404">
-              <caret line="82" column="150" lean-forward="false" selection-start-line="82" selection-start-column="150" selection-end-line="82" selection-end-column="150" />
+              <caret line="171" column="98" lean-forward="false" selection-start-line="171" selection-start-column="98" selection-end-line="171" selection-end-column="98" />
               <folding>
-                <element signature="e#6#88#0#PHP" expanded="true" />
-                <marker date="1491373664793" expanded="true" signature="2040:2074" ph="SELECT * FRO... clients" />
-                <marker date="1491373664793" expanded="true" signature="2040:2090" ph="SELECT * FRO... clients" />
-                <marker date="1491373664793" expanded="true" signature="2821:3066" ph="INSERT INTO mail_result... " />
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#8;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#10;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#12;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#14;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#16;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#18;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#20;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#22;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#b#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#5901#5907#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1491379127223" expanded="true" signature="205:265" ph="SELECT login... users" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajaxSendDistrictEmail.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/admin/email/ajaxSendDistrictEmail.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/clients/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="80" column="39" lean-forward="false" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
+            <state relative-caret-position="476">
+              <caret line="171" column="191" lean-forward="true" selection-start-line="170" selection-start-column="12" selection-end-line="171" selection-end-column="191" />
               <folding>
-                <element signature="e#6#89#0#PHP" expanded="true" />
-                <marker date="1491374291606" expanded="true" signature="1934:1974" ph="SELECT * FRO... clients" />
-                <marker date="1491374291606" expanded="true" signature="1934:1988" ph="SELECT * FRO... clients" />
-                <marker date="1491374291606" expanded="true" signature="1934:2006" ph="SELECT * FRO... clients" />
-                <marker date="1491374291606" expanded="true" signature="1934:2012" ph="SELECT * FRO... clients" />
-                <marker date="1491374291606" expanded="true" signature="1934:2013" ph="SELECT * FRO... clients" />
-                <marker date="1491374291606" expanded="true" signature="1934:2023" ph="SELECT * FRO... clients" />
-                <marker date="1491374291606" expanded="true" signature="1934:2027" ph="SELECT * FRO... clients" />
-                <marker date="1491374291606" expanded="true" signature="2822:2923" ph="INSERT INTO mail_result... " />
-                <marker date="1491374291606" expanded="true" signature="2822:2952" ph="INSERT INTO mail_result... " />
-                <marker date="1491374291606" expanded="true" signature="2822:2975" ph="INSERT INTO mail_result... " />
-                <marker date="1491374291606" expanded="true" signature="2822:2986" ph="INSERT INTO mail_result... " />
-                <marker date="1491374291606" expanded="true" signature="2822:3013" ph="INSERT INTO mail_result... " />
-                <marker date="1491374291606" expanded="true" signature="2822:3031" ph="INSERT INTO mail_result... " />
-                <marker date="1491374291606" expanded="true" signature="2822:3056" ph="INSERT INTO mail_result... " />
-                <marker date="1491374291606" expanded="true" signature="2822:3075" ph="INSERT INTO mail_result... " />
-                <marker date="1491374291606" expanded="true" signature="2822:3091" ph="INSERT INTO mail_result... " />
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#8;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#10;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#12;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#14;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#16;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#18;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#20;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#22;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#b#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#5901#5907#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1491378806263" expanded="true" signature="205:265" ph="SELECT login... users" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/admin.css">
+      <file leaf-file-name="add.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/clients/add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="69" column="57" lean-forward="false" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -194,8 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/admin/albums/add.js" />
-        <option value="$PROJECT_DIR$/scripts/admin/albums/ajaxAddAlbum.php" />
         <option value="$PROJECT_DIR$/about/gallery.php" />
         <option value="$PROJECT_DIR$/admin/albums/add.php" />
         <option value="$PROJECT_DIR$/admin/albums/edit.php" />
@@ -230,7 +216,6 @@
         <option value="$PROJECT_DIR$/js/admin/vacancies/delete.js" />
         <option value="$PROJECT_DIR$/admin/vacancies/delete.php" />
         <option value="$PROJECT_DIR$/admin/vacancies/edit.php" />
-        <option value="$PROJECT_DIR$/admin/email/index.php" />
         <option value="$PROJECT_DIR$/js/admin/news/add.js" />
         <option value="$PROJECT_DIR$/scripts/admin/vacancies/ajaxDeleteVacancy.php" />
         <option value="$PROJECT_DIR$/scripts/admin/email/ajaxCheckType.php" />
@@ -245,6 +230,9 @@
         <option value="$PROJECT_DIR$/js/admin/email/send.js" />
         <option value="$PROJECT_DIR$/scripts/admin/email/ajaxSendSetEmail.php" />
         <option value="$PROJECT_DIR$/scripts/admin/email/ajaxSendDistrictEmail.php" />
+        <option value="$PROJECT_DIR$/admin/clients/index.php" />
+        <option value="$PROJECT_DIR$/admin/clients/add.php" />
+        <option value="$PROJECT_DIR$/admin/email/index.php" />
       </list>
     </option>
   </component>
@@ -607,43 +595,25 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vacancies" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos.local" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="news" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos.local" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="email" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clients" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -795,14 +765,7 @@
       <workItem from="1491197765435" duration="4089000" />
       <workItem from="1491203724953" duration="23797000" />
       <workItem from="1491283820545" duration="6691000" />
-      <workItem from="1491370247834" duration="4102000" />
-    </task>
-    <task id="LOCAL-00076" summary="Исправлено отображение стоимости заказа в истории заказов пользователя">
-      <created>1485852241860</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1485852241860</updated>
+      <workItem from="1491370247834" duration="6487000" />
     </task>
     <task id="LOCAL-00077" summary="Исправлена система принятия заказа">
       <created>1485854067904</created>
@@ -1140,11 +1103,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491205141683</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="Реализовано отправление email-рассылок">
+      <created>1491374396984</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1491374396984</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139362000" />
+    <option name="totallyTimeSpent" value="141747000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1213,7 +1183,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Реализовано редактирование новостей" />
     <MESSAGE value="Реализовано удаление новостей" />
     <MESSAGE value="Исправлены эффекты шрифтов на страницах новостей" />
     <MESSAGE value="Добавлена стартовая страница акций в панели администрирования" />
@@ -1238,7 +1207,8 @@
     <MESSAGE value="Реализовано редактирование вакансий" />
     <MESSAGE value="Реализовано закрытие вакансий" />
     <MESSAGE value="Добавлена стратовая страница email-рассылок" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена стратовая страница email-рассылок" />
+    <MESSAGE value="Реализовано отправление email-рассылок" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализовано отправление email-рассылок" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1264,27 +1234,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/admin/albums/delete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/albums/ajaxDeleteAlbum.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/albums/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2261">
-          <caret line="133" column="18" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="182" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/albums/delete.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3451">
@@ -1376,13 +1325,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="161" column="4" lean-forward="true" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/achievements/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="166" column="14" lean-forward="true" selection-start-line="166" selection-start-column="14" selection-end-line="166" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1522,17 +1464,6 @@
           <caret line="158" column="79" lean-forward="true" selection-start-line="158" selection-start-column="79" selection-end-line="158" selection-end-column="79" />
           <folding>
             <marker date="1491069882196" expanded="true" signature="205:265" ph="SELECT login... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/email/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="171" column="204" lean-forward="false" selection-start-line="171" selection-start-column="204" selection-end-line="171" selection-end-column="204" />
-          <folding>
-            <element signature="e#5897#5903#0#HTML" expanded="false" />
-            <marker date="1491205114413" expanded="true" signature="205:265" ph="SELECT login... users" />
           </folding>
         </state>
       </provider>
@@ -1682,7 +1613,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/admin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
+        <state relative-caret-position="1394">
           <caret line="69" column="57" lean-forward="false" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
           <folding />
         </state>
@@ -1787,8 +1718,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/admin/email/ajaxSendDistrictEmail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="80" column="39" lean-forward="false" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
+        <state relative-caret-position="506">
+          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
             <marker date="1491374291606" expanded="true" signature="1934:1974" ph="SELECT * FRO... clients" />
@@ -1807,6 +1738,92 @@
             <marker date="1491374291606" expanded="true" signature="2822:3056" ph="INSERT INTO mail_result... " />
             <marker date="1491374291606" expanded="true" signature="2822:3075" ph="INSERT INTO mail_result... " />
             <marker date="1491374291606" expanded="true" signature="2822:3091" ph="INSERT INTO mail_result... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/clients.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/achievements/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="171" column="38" lean-forward="true" selection-start-line="171" selection-start-column="38" selection-end-line="171" selection-end-column="38" />
+          <folding>
+            <marker date="1490957061082" expanded="true" signature="205:265" ph="SELECT login... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/clients/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/clients/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="171" column="191" lean-forward="true" selection-start-line="170" selection-start-column="12" selection-end-line="171" selection-end-column="191" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#8;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#10;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#12;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#14;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#16;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#18;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#20;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#22;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#5901#5907#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1491378806263" expanded="true" signature="205:265" ph="SELECT login... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/email/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="171" column="98" lean-forward="false" selection-start-line="171" selection-start-column="98" selection-end-line="171" selection-end-column="98" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#8;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#10;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#12;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#14;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#16;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#18;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#20;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#22;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#5901#5907#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1491379127223" expanded="true" signature="205:265" ph="SELECT login... users" />
           </folding>
         </state>
       </provider>
