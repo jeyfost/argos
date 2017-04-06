@@ -30,7 +30,19 @@ if($location != '') {
 	";
 
 	for($i = 0; $i < $buttonsCount; $i++) {
-		echo "<div class='districtButton' id='db".$i."'"; if($i != 0) {echo " style='margin-left: 5px;'";} echo " onclick='sendDistrictEmail(\"".$i."\")'><span>".($i * 10 + 1)." — ".($i * 10 + 10)."</span></div>";
+		if($clientsCount[0] < $i * 10 + 10) {
+			$j = $clientsCount[0];
+		} else {
+			$j = $i * 10 + 10;
+		}
+
+		if($j - ($i * 10 + 1) == 0) {
+			$to = $j;
+		} else {
+			$to = $to = ($i * 10 + 1)." — ".$j;;
+		}
+
+		echo "<div class='districtButton' id='db".$i."'"; if($i != 0) {echo " style='margin-left: 5px;'";} echo " onclick='sendDistrictEmail(\"".$i."\")'><span>".$to."</span></div>";
 	}
 
 	echo "<div style='clear: both;'></div>";

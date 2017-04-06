@@ -36,6 +36,7 @@ if(isset($_SESSION['userID'])) {
 	<![endif]-->
 	<script type="text/javascript" src="../../js/lightview/js/spinners/spinners.min.js"></script>
 	<script type="text/javascript" src="../../js/lightview/js/lightview/lightview.js"></script>
+	<script type="text/javascript" src="../../js/ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="../../js/notify.js"></script>
 	<script type="text/javascript" src="../../js/common.js"></script>
 	<script type="text/javascript" src="../../js/md5.js"></script>
@@ -166,24 +167,44 @@ if(isset($_SESSION['userID'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/award.png" title="Достижения и награды" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Клиентская база</span></a> > <a href="add.php"><span class="breadCrumbsText">Добавление записей</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/client.png" title="Клиентская база" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Клиентская база</span></a> > <a href="add.php"><span class="breadCrumbsText">Добавление записей</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
-			<h2>Добавление наград</h2>
+			<h2>Добавление записи в клиентскую базу</h2>
 			<a href="database.php"><input type="button" class="button" id="deleteButton" style="margin-left: 0;" value="База данных" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
 			<a href="add.php"><input type="button" class="buttonActive" id="addButton" value="Добавление" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
 			<form id="addForm" method="post" enctype="multipart/form-data">
-				<label for='nameInput'>Название награды:</label>
+				<label for='nameInput'>Имя человека / название организации:</label>
 				<br />
 				<input type='text' id='nameInput' name='name' />
 				<br /><br />
-				<label for='photoInput'>Фотография:</label>
+				<label for='emailInput'>Email:</label>
 				<br />
-				<input type='file' class='file' id='photoInput' name='photo' />
+				<input type='text' id='emailInput' name='email' />
 				<br /><br />
-				<input type='button' class='button' style='margin: 0;' id='addPhotosButton' onmouseover='buttonChange("addPhotosButton", 1)' onmouseout='buttonChange("addPhotosButton", 0)' onclick='addAward()' value='Добавить' />
+				<label for='districtSelect'>Выберите область / город:</label>
+				<br />
+				<select id="districtSelect" name="district">
+					<option value="">- Выберите область / город -</option>
+					<?php
+						$districtResult = $mysqli->query("SELECT * FROM locations ORDER BY id");
+						while($district = $districtResult->fetch_assoc()) {
+							echo "<option value='".$district['id']."'>".$district['name']."</option>";
+						}
+					?>
+				</select>
+				<br /><br />
+				<label for='phoneInput'>Номер телефона (опционально):</label>
+				<br />
+				<input type='text' id='phoneInput' name='phone' />
+				<br /><br />
+				<label for="textInput">Заметки (опционально):</label>
+				<br />
+				<textarea id="textInput" name="text"></textarea>
+				<br /><br />
+				<input type='button' class='button' style='margin: 0;' id='addClientButton' onmouseover='buttonChange("addClientButton", 1)' onmouseout='buttonChange("addClientButton", 0)' onclick='addClient()' value='Добавить' />
 			</form>
 			<div style="clear: both;"></div>
 		</div>
@@ -192,6 +213,10 @@ if(isset($_SESSION['userID'])) {
 	</div>
 
 	<div style="clear: both;"></div>
+
+	<script type="text/javascript">
+		CKEDITOR.replace("text");
+	</script>
 
 </body>
 
