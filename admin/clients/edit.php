@@ -14,6 +14,17 @@ if(isset($_SESSION['userID'])) {
 	header("Location: ../index.php");
 }
 
+if(empty($_REQUEST['id'])) {
+	header("Location: database.php?p=1");
+} else {
+	$clientCheckResult = $mysqli->query("SELECT COUNT(id) FROM clients WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+	$clientCheck = $clientCheckResult->fetch_array(MYSQLI_NUM);
+
+	if($clientCheck[0] == 0) {
+		header("Location: database.php?p=1");
+	}
+}
+
 ?>
 
 <!doctype html>
@@ -24,7 +35,7 @@ if(isset($_SESSION['userID'])) {
 
     <meta charset="utf-8">
 
-    <title>Добавление записи в клиентскую базу</title>
+    <title>Редактирование записи из клиентской базы</title>
 
     <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
@@ -41,7 +52,7 @@ if(isset($_SESSION['userID'])) {
 	<script type="text/javascript" src="../../js/common.js"></script>
 	<script type="text/javascript" src="../../js/md5.js"></script>
 	<script type="text/javascript" src="../../js/admin/admin.js"></script>
-	<script type="text/javascript" src="../../js/admin/clients/add.js"></script>
+	<script type="text/javascript" src="../../js/admin/clients/edit.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -167,44 +178,104 @@ if(isset($_SESSION['userID'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/client.png" title="Клиентская база" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Клиентская база</span></a> > <a href="add.php"><span class="breadCrumbsText">Добавление записей</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/client.png" title="Клиентская база" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Клиентская база</span></a> > <a href="edit.php"><span class="breadCrumbsText">Редактирование</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
-			<h2>Добавление записи в клиентскую базу</h2>
-			<a href="database.php"><input type="button" class="button" id="databaseButton" style="margin-left: 0;" value="База данных" onmouseover="buttonChange('databaseButton', 1)" onmouseout="buttonChange('databaseButton', 0)" /></a>
-			<a href="add.php"><input type="button" class="buttonActive" id="addButton" value="Добавление" /></a>
+			<h2>Редактирование записи из клиентской базы</h2>
+			<a href="database.php"><input type="button" class="buttonActive" id="databaseButton" style="margin-left: 0;" value="База данных" /></a>
+			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
-			<form id="addForm" method="post">
+			<form id="editForm" method="post">
+				<?php
+					$clientResult = $mysqli->query("SELECT * FROM clients WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+					$client = $clientResult->fetch_assoc();
+				?>
 				<label for='nameInput'>Имя человека / название организации:</label>
 				<br />
-				<input type='text' id='nameInput' name='name' />
+				<input type='text' id='nameInput' name='name' value='<?= $client['name'] ?>' />
 				<br /><br />
 				<label for='emailInput'>Email:</label>
 				<br />
-				<input type='text' id='emailInput' name='email' />
+				<input type='text' id='emailInput' name='email' value='<?= $client['email'] ?>' />
 				<br /><br />
 				<label for='districtSelect'>Выберите область / город:</label>
 				<br />
 				<select id="districtSelect" name="district">
-					<option value="">- Выберите область / город -</option>
 					<?php
 						$districtResult = $mysqli->query("SELECT * FROM locations ORDER BY id");
 						while($district = $districtResult->fetch_assoc()) {
-							echo "<option value='".$district['id']."'>".$district['name']."</option>";
+							echo "<option value='".$district['id']."'"; if($district['id'] == $client['location']) {echo " selected";} echo ">".$district['name']."</option>";
 						}
 					?>
 				</select>
 				<br /><br />
 				<label for='phoneInput'>Номер телефона (опционально):</label>
 				<br />
-				<input type='text' id='phoneInput' name='phone' />
+				<input type='text' id='phoneInput' name='phone' value='<?= $client['phone'] ?>' />
+				<br /><br />
+				<label for="inSendCheckbox">В рассылке?</label>
+				<input type="checkbox" class="checkbox" id="inSendCheckbox" name="inSend" <?php if($client['in_send'] == 1) {echo " checked";} ?>>
+				<?php
+					if($client['in_send'] == 0) {
+						$date = (int)substr($client['disactivation_date'], 8, 2)." ";
+
+						switch(substr($client['disactivation_date'], 5, 2)) {
+							case "01":
+								$date .= "января";
+								break;
+							case "02":
+								$date .= "февраля";
+								break;
+							case "03":
+								$date .= "марта";
+								break;
+							case "04":
+								$date .= "апреля";
+								break;
+							case "05":
+								$date .= "мая";
+								break;
+							case "06":
+								$date .= "июня";
+								break;
+							case "07":
+								$date .= "июля";
+								break;
+							case "08":
+								$date .= "агуста";
+								break;
+							case "09":
+								$date .= "сентября";
+								break;
+							case "10":
+								$date .= "октября";
+								break;
+							case "11":
+								$date .= "ноября";
+								break;
+							case "12":
+								$date .= "декабря";
+								break;
+							default: break;
+						}
+
+						$date .= " ".substr($client['disactivation_date'], 0, 4)." г. в ".substr($client['disactivation_date'], 11);
+
+						echo "
+							<br /><br />
+							<label for='disactivationInput'>Дата отписки:</label>
+							<br />
+							<input type='text' id='disactivationInput' style='color: #7e7e7e;' value='".$date."' readonly />
+						";
+					}
+				?>
 				<br /><br />
 				<label for="textInput">Заметки (опционально):</label>
 				<br />
-				<textarea id="textInput" name="text"></textarea>
+				<textarea id="textInput" name="text"><?= $client['notes'] ?></textarea>
 				<br /><br />
-				<input type='button' class='button' style='margin: 0;' id='addClientButton' onmouseover='buttonChange("addClientButton", 1)' onmouseout='buttonChange("addClientButton", 0)' onclick='addClient()' value='Добавить' />
+				<input type='button' class='button' style='margin: 0;' id='editClientButton' onmouseover='buttonChange("editClientButton", 1)' onmouseout='buttonChange("editClientButton", 0)' onclick='editClient("<?= $mysqli->real_escape_string($_REQUEST['id']) ?>")' value='Редактировать' />
 			</form>
 			<div style="clear: both;"></div>
 		</div>

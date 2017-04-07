@@ -45,10 +45,10 @@ if($nameCheck[0] == 0) {
 			} else {
 				if($phone == '') {
 					if($mysqli->query("INSERT INTO clients (email, name, location, hash, in_send, disactivation_date, notes) VALUES ('".$email."', '".$name."', '".$district."', '".$hash."', '1', '0000-00-00 00:00:00', '".$text."')")) {
-					echo "ok";
-				} else {
-					echo "failed";
-				}
+						echo "ok";
+					} else {
+						echo "failed";
+					}
 				} else {
 					echo "phone";
 				}

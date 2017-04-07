@@ -1,14 +1,23 @@
 /**
- * Created by jeyfost on 06.04.2017.
+ * Created by jeyfost on 07.04.2017.
  */
 
-function addClient() {
+function editClient(id) {
 	var name = $('#nameInput').val();
 	var email = $('#emailInput').val();
 	var text = document.getElementsByTagName("iframe")[0].contentDocument.getElementsByTagName("body")[0].innerHTML;
-	var formData = new FormData($('#addForm').get(0));
+	var formData = new FormData($('#editForm').get(0));
+	var checkbox;
+
+	if($('#inSendCheckbox').is(':checked')) {
+		checkbox = 1;
+	} else {
+		checkbox = 0;
+	}
 
 	formData.append("text", text);
+	formData.append("id", id);
+	formData.append("checkbox", checkbox);
 
 	if(name !== '') {
 		if(email !== '') {
@@ -24,14 +33,14 @@ function addClient() {
 							dataType: "json",
 							processData: false,
 							contentType: false,
-							url: "../../scripts/admin/clients/ajaxAddClient.php",
+							url: "../../scripts/admin/clients/ajaxEditClient.php",
 							success: function (response) {
 								switch(response) {
 									case "ok":
-										$.notify("Запись была успешно добавлена в клиентскую базу.", "success");
+										$.notify("Запись была успешно изменена.", "success");
 										break;
 									case "failed":
-										$.notify("При добавлении записи произошла ошибка.", "error");
+										$.notify("При редактировании записи произошла ошибка.", "error");
 										break;
 									case "name":
 										$.notify("Введённое имя / название организации уже присутствует в клиентской базе.", "error");
@@ -41,9 +50,6 @@ function addClient() {
 										break;
 									case "phone":
 										$.notify("Введённый номер телефона уже присутствует в клиентской базе.", "error");
-										break;
-									case "district":
-										$.notify("Выберите область / город.", "error");
 										break;
 									default:
 										$.notify(response, "warn");
@@ -61,11 +67,11 @@ function addClient() {
 				error: function(jqXHR, textStatus, errorThrown) {
 					$.notify(textStatus + "; " + errorThrown, "error");
 				}
-			})
+			});
 		} else {
-			$.notify("Введите email-адрес.", "error");
+			$.notify("Введите email-адрес", "error");
 		}
 	} else {
-		$.notify("Введите имя / название организации", "error");
+		$.notify("Введите имя / название организации.", "error");
 	}
 }
