@@ -5,6 +5,11 @@ $(window).on("load", function() {
 
 	$('#content').width(parseInt($(window).width() - $('#menu').width() - 20));
 	$('#admContent').width(parseInt($(window).width() - 340));
+
+	if($('table').width() > $('#admContent').width()) {
+		$('#admContent').width($('table').width());
+		$('#top').width($('table').width());
+	}
 });
 
 function changeIcon(id, img, depth) {

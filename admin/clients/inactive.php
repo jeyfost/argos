@@ -16,9 +16,9 @@ if(isset($_SESSION['userID'])) {
 
 if(empty($_REQUEST['p'])) {
 	if(empty($_REQUEST['district'])) {
-		header("Location: database.php?p=1");
+		header("Location: inactive.php?p=1");
 	} else {
-		header("Location: database.php?district=".$_REQUEST['district']."&p=1");
+		header("Location: inactive.php?district=".$_REQUEST['district']."&p=1");
 	}
 }
 
@@ -28,21 +28,21 @@ if(!empty($_REQUEST['district'])) {
 		$districtCheck = $districtCheckResult->fetch_array(MYSQLI_NUM);
 
 		if($districtCheck[0] == 0) {
-			header("Location: database.php?p=1");
+			header("Location: inactive.php?p=1");
 		}
 	}
 }
 
 if(!empty($_REQUEST['district'])) {
 	if($_REQUEST['district'] != "all") {
-		$clientsCountResult = $mysqli->query("SELECT COUNT(id) FROM clients WHERE location = '".$mysqli->real_escape_string($_REQUEST['district'])."'");
+		$clientsCountResult = $mysqli->query("SELECT COUNT(id) FROM clients WHERE location = '".$mysqli->real_escape_string($_REQUEST['district'])."' AND in_send = '0'");
 		$clientsCount = $clientsCountResult->fetch_array(MYSQLI_NUM);
 	} else {
-		$clientsCountResult = $mysqli->query("SELECT COUNT(id) FROM clients");
+		$clientsCountResult = $mysqli->query("SELECT COUNT(id) FROM clients WHERE in_send = '0'");
 		$clientsCount = $clientsCountResult->fetch_array(MYSQLI_NUM);
 	}
 } else {
-	$clientsCountResult = $mysqli->query("SELECT COUNT(id) FROM clients");
+	$clientsCountResult = $mysqli->query("SELECT COUNT(id) FROM clients WHERE in_send = '0'");
 	$clientsCount = $clientsCountResult->fetch_array(MYSQLI_NUM);
 }
 
@@ -58,7 +58,7 @@ if($clientsCount[0] > 10) {
 
 if(!empty($_REQUEST['p'])) {
 	if($_REQUEST['p'] < 1 or $_REQUEST['p'] > $numbers) {
-		$link = "database.php";
+		$link = "inactive.php";
 
 		if(!empty($_REQUEST['district'])) {
 			$link .= "?district=".$_REQUEST['district'];
@@ -86,7 +86,7 @@ $start = intval($page) * 10 - 10;
 
     <meta charset="utf-8">
 
-    <title>Клиентская база</title>
+    <title>Отписавшиеся от рассылки</title>
 
     <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
@@ -103,7 +103,7 @@ $start = intval($page) * 10 - 10;
 	<script type="text/javascript" src="../../js/common.js"></script>
 	<script type="text/javascript" src="../../js/md5.js"></script>
 	<script type="text/javascript" src="../../js/admin/admin.js"></script>
-	<script type="text/javascript" src="../../js/admin/clients/database.js"></script>
+	<script type="text/javascript" src="../../js/admin/clients/inactive.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -229,20 +229,20 @@ $start = intval($page) * 10 - 10;
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/client.png" title="Клиентская база" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Клиентская база</span></a> > <a href="database.php"><span class="breadCrumbsText">Работа с базой</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/client.png" title="Клиентская база" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Клиентская база</span></a> > <a href="inactive.php"><span class="breadCrumbsText">Отписавшиеся от рассылки</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
-			<h2>Клиентская база</h2>
-			<a href="database.php"><input type="button" class="buttonActive" id="databaseButton" style="margin-left: 0;" value="База данных" /></a>
+			<h2>Отписавшиеся от рассылки</h2>
+			<a href="database.php"><input type="button" class="button" id="databaseButton" style="margin-left: 0;" value="База данных" onmouseover="buttonChange('databaseButton', 1)" onmouseout="buttonChange('databaseButton', 0)" /></a>
 			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
-			<a href="inactive.php"><input type="button" class="button" id="inactiveButton" value="Кто отписался?" onmouseover="buttonChange('inactiveButton', 1)" onmouseout="buttonChange('inactiveButton', 0)" /></a>
+			<a href="inactive.php"><input type="button" class="buttonActive" id="inactiveButton" value="Кто отписался?" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
 			<div id="searchList" style="padding-right: 18px;"></div>
 			<form id="sortForm" method="post" enctype="multipart/form-data">
 				<label for='districtSelect'>Клиенты из области:</label>
 				<br />
-				<select id="districtSelect" name="district" onchange="window.location = 'database.php?district=' + this.options[this.selectedIndex].value">
+				<select id="districtSelect" name="district" onchange="window.location = 'inactive.php?district=' + this.options[this.selectedIndex].value">
 					<option value="all" selected>Все области</option>
 					<?php
 						$districtResult = $mysqli->query("SELECT * FROM locations ORDER BY id");
@@ -266,18 +266,19 @@ $start = intval($page) * 10 - 10;
 						<td>В рассылке</td>
 						<td>Заметки</td>
 						<td>Редактирование</td>
+						<td>Вернуть в рассылку</td>
 					</thead>
 					<tbody id="clientsTable">
 						<?php
 							if(!empty($_REQUEST['district'])) {
 								if($_REQUEST['district'] == "all") {
-									$clientResult = $mysqli->query("SELECT * FROM clients ORDER BY name LIMIT ".$start.", 10");
+									$clientResult = $mysqli->query("SELECT * FROM clients WHERE in_send = '0' ORDER BY name LIMIT ".$start.", 10");
 								} else {
 									$district = $mysqli->real_escape_string($_REQUEST['district']);
-									$clientResult = $mysqli->query("SELECT * FROM clients WHERE location = '".$district."' ORDER BY name LIMIT ".$start.", 10");
+									$clientResult = $mysqli->query("SELECT * FROM clients WHERE location = '".$district."' AND in_send = '0' ORDER BY name LIMIT ".$start.", 10");
 								}
 							} else {
-								$clientResult = $mysqli->query("SELECT * FROM clients ORDER BY name LIMIT ".$start.", 10");
+								$clientResult = $mysqli->query("SELECT * FROM clients WHERE in_send = '0' ORDER BY name LIMIT ".$start.", 10");
 							}
 
 							if(!empty($_REQUEST['p'])) {
@@ -307,6 +308,7 @@ $start = intval($page) * 10 - 10;
 										<td style='text-align: center;'>".$inSend."</td>
 										<td>".$client['notes-']."</td>
 										<td style='text-align: center;'><a href='edit.php?id=".$client['id']."'><span class='redLink' style='font-size: 14px;'>Редактировать</span></a></td>
+										<td style='text-align: center;'><span class='redLink' style='font-size: 14px; cursor: pointer;' onclick='returnClient(\"".$client['id']."\")'>Вернуть</span></td>
 									</tr>
 								";
 							}

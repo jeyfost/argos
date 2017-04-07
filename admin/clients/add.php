@@ -173,6 +173,7 @@ if(isset($_SESSION['userID'])) {
 			<h2>Добавление записи в клиентскую базу</h2>
 			<a href="database.php"><input type="button" class="button" id="databaseButton" style="margin-left: 0;" value="База данных" onmouseover="buttonChange('databaseButton', 1)" onmouseout="buttonChange('databaseButton', 0)" /></a>
 			<a href="add.php"><input type="button" class="buttonActive" id="addButton" value="Добавление" /></a>
+			<a href="inactive.php"><input type="button" class="button" id="inactiveButton" value="Кто отписался?" onmouseover="buttonChange('inactiveButton', 1)" onmouseout="buttonChange('inactiveButton', 0)" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
 			<form id="addForm" method="post">

@@ -184,6 +184,7 @@ if(empty($_REQUEST['id'])) {
 			<h2>Редактирование записи из клиентской базы</h2>
 			<a href="database.php"><input type="button" class="buttonActive" id="databaseButton" style="margin-left: 0;" value="База данных" /></a>
 			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
+			<a href="inactive.php"><input type="button" class="button" id="inactiveButton" value="Кто отписался?" onmouseover="buttonChange('inactiveButton', 1)" onmouseout="buttonChange('inactiveButton', 0)" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
 			<form id="editForm" method="post">
