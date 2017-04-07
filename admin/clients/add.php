@@ -171,7 +171,7 @@ if(isset($_SESSION['userID'])) {
 			<div style="clear: both;"></div>
 			<br />
 			<h2>Добавление записи в клиентскую базу</h2>
-			<a href="database.php"><input type="button" class="button" id="deleteButton" style="margin-left: 0;" value="База данных" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
+			<a href="database.php"><input type="button" class="button" id="databaseButton" style="margin-left: 0;" value="База данных" onmouseover="buttonChange('databaseButton', 1)" onmouseout="buttonChange('databaseButton', 0)" /></a>
 			<a href="add.php"><input type="button" class="buttonActive" id="addButton" value="Добавление" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />

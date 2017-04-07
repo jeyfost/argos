@@ -14,6 +14,15 @@ if(isset($_SESSION['userID'])) {
 	header("Location: ../index.php");
 }
 
+if(!empty($_REQUEST['id'])) {
+	$checkResult = $mysqli->query("SELECT COUNT(id) FROM mail_result WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+	$check = $checkResult->fetch_array(MYSQLI_NUM);
+
+	if($check[0] == 0) {
+		header("Location: history.php");
+	}
+}
+
 ?>
 
 <!doctype html>
