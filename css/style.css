@@ -10,19 +10,23 @@ select {height: 40px; line-height: 40px;}
 
 #breadCrumbs a span:hover, .basicLink:hover, .copy a:hover, p a:hover, .searchLink:hover {text-decoration: none;}
 
+.catalogueItemTextDecorated:hover {text-decoration: underline;}
+.catalogueDescription a span:hover, .sketchFont:hover, td a:hover, span b a:hover, .tdLink:hover {text-decoration: underline;}
+
 /* mobile */
 @media screen and (max-width: 960px) {
     #menuLinks, #mainImg2, #mainImg3, #mainImg4, #personalButtons {display: none;}
     #menuIcon {float: right; margin: -48px 25px auto auto; cursor: pointer;}
+    #catalogueMenu {position: relative; float: left; margin-top: 20px; margin-bottom: 20px; width: 100%; padding: 10px; border: 1px solid #d7d5d1;}
+    #pageNumbers {position: relative; margin: 0 auto 120px auto; text-align: center; font-size: 15px; transition: .3s;}
+
+    .itemPurchase {position: relative; float: right; width: 100px; text-align: center; margin-top: 10px;}
 }
 
 /* screen */
 @media screen and (min-width: 961px){
-    a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcategory2Container, a span {color: #4c4c4c;}
-    .catalogueDescription a span, .goodStyleRed {color: #df4e47;}
-
     #menuLinks a:hover, .rightSideBlock ul li a:hover, .mainSmallText:hover {color: #df4e47;}
-    .catalogueDescription a span:hover, .sketchFont:hover, td a:hover, span b a:hover, .tdLink:hover {text-decoration: underline;}
+
     .searchLink .searchItem:hover {background-color: #f3f3f3;}
     .newsPreview:hover {background-color: #ededed;}
     .yearFont:hover {text-decoration: none; color: #df4e47;}
@@ -38,7 +42,6 @@ select {height: 40px; line-height: 40px;}
     #personalButtons img {margin-top: 10px;}
     #catalogueMenu {position: relative; float: left; margin-top: 20px; width: 19%; padding: 10px; border: 1px solid #d7d5d1;}
     #catalogueContent, #personalContent {position: relative; float: right; margin-top: 20px; width: 78%;}
-    #pageNumbers {position: relative; margin: 0 auto; text-align: center; font-size: 15px; transition: .3s;}
     #searchBlock {position: relative; float: right; width: 200px; height: 30px;}
     #searchFieldInput {width: 180px; height: 20px; line-height: 20px; margin-top: 7px; margin-left: -10px; color: #777;}
     #changeGoodPriceInput {width: 60px; margin-left: 10px;}
@@ -56,6 +59,7 @@ select {height: 40px; line-height: 40px;}
     #mailButtons {width: 472px;}
     #CVForm {background-color: #f3f3f3; padding: 10px; border: 1px solid #dedede; display: inline-block;}
     #newsSlider {width: 220px;}
+    #pageNumbers {position: relative; margin: 0 auto; text-align: center; font-size: 15px; transition: .3s;}
 
     .menuLink img {margin: auto auto 3px 3px;}
     .slash {font-size: 14px; margin-left: 5px;}
@@ -71,31 +75,13 @@ select {height: 40px; line-height: 40px;}
     .rightSideBlock ul {padding-left: 20px; padding-right: 20px; list-style: none; transition: .2s;}
     .rightSideBlock ul li {margin: 10px auto auto auto;}
     .categoryContainer {width: 100%; font-size: 15px;}
-    .categoryNameContainer {position: absolute; left: 40px; margin-top: -24px;}
-    .subcategoryContainer {margin-left: 30px; font-size: 15px;}
-    .subcategory2Container {margin-left: 48px; font-size: 15px;}
-    .catalogueItem {width: 100%;}
-    .catalogueIMG {position: relative; float: left; width: 100px; height: 100px; transition: .3s;}
-    .catalogueInfo {position: relative; float: left;}
-    .catalogueName {margin-left: 10px; height: 30px; padding-left: 10px; padding-right: 10px; line-height: 30px;}
-    .catalogueDescription {margin-left: 37px; margin-top: 10px; font-size: 15px;}
-    .pageNumberBlockSide {position: relative; float: left; background-color: #ffffff; height: 30px; line-height: 30px; padding-left: 10px; padding-right: 10px; text-align: center;}
-    .pageNumberBlock {position: relative; float: left; background-color: #ffffff; width: 40px; height: 30px; line-height: 30px; text-align: center;}
-    .pageNumberBlockActive {position: relative; float: left; background-color: #df4e47; width: 40px; height: 30px; line-height: 30px; text-align: center;}
-    .goodStyleWhite {color: #fff;}
-    .headerIcon {position: relative; float: right; width: 20px; padding-left: 10px;}
-    .toBasketIMG {cursor: pointer;}
-    .itemQuantityInput {width: 65px; margin-top: 5px;}
-    .itemDescription {position: relative; float: left;}
     .itemPurchase {position: relative; float: right; width: 100px; text-align: center;}
-    .itemPurchase form label {font-size: 14px;}
-    .addingResult, #goodResponseFiled, #responseField, #orderResponse {transition: .3s; opacity: 0; font-size: 14px;}
+    .headerIcon {position: relative; float: right; width: 20px; padding-left: 10px;}
     .searchItem {width: 100%;}
     .searchIMG {width: 100px; position: relative; float: left; margin-top: 5px; margin-left: 5px;}
     .searchInfo {width: 365px; padding-left: 10px; position: relative; float: left; margin-top: 5px; font-size: 15px;}
     .personalMenuLink {width: 100%; height: 40px; line-height: 40px; text-align: center; color: #4c4c4c; background-color: #dedede;}
     .personalMenuLinkActive {width: 100%; height: 40px; line-height: 40px; text-align: center; color: #fff; background-color: #df4e47;}
-    .sketchFont, td a {font-size: 16px; color: #df4e47; text-decoration: none;}
     .headTR {background-color: #ffeecb; height: 40px; text-align: center;}
     .headTR td {cursor: pointer;}
     .tdLink {color: #df4e47; cursor: pointer;}
@@ -112,6 +98,9 @@ select {height: 40px; line-height: 40px;}
     .newsPreview {width: 200px; text-align: center; margin: 10px auto auto 10px; padding: 10px; display: inline-block; vertical-align: top; border: 1px solid #c9c9c9; transition: .3s; background-color: #fff;}
     .actionIMG {position: absolute; bottom: -30px; right: -30px; opacity: .6; transition: .3s;}
 }
+
+a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcategory2Container, a span {color: #4c4c4c;}
+.catalogueDescription a span, .goodStyleRed {color: #df4e47;}
 
 /* home index.php */
 
@@ -142,3 +131,21 @@ select {height: 40px; line-height: 40px;}
 .copy a, p a {color: #df4e47; text-decoration: underline;}
 .breadCrumbsText {text-decoration: underline;}
 .basicLink {color: #df4e47; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; text-decoration: underline;}
+.categoryNameContainer {position: absolute; left: 40px; margin-top: -24px;}
+.catalogueItem {width: 100%;}
+.catalogueIMG {position: relative; float: left; width: 100px; height: 100px; transition: .3s;}
+.catalogueInfo {position: relative; float: left;}
+.catalogueName {margin-left: 10px; height: 30px; padding-left: 10px; padding-right: 10px; line-height: 30px;}
+.catalogueDescription {margin-left: 37px; margin-top: 10px; font-size: 15px;}
+.toBasketIMG {cursor: pointer;}
+.itemQuantityInput {width: 65px; margin-top: 5px;}
+.itemDescription {position: relative; float: left;}
+.itemPurchase form label {font-size: 14px;}
+.addingResult, #goodResponseFiled, #responseField, #orderResponse {transition: .3s; opacity: 0; font-size: 14px;}
+.pageNumberBlockSide {position: relative; float: left; background-color: #ffffff; height: 30px; line-height: 30px; padding-left: 10px; padding-right: 10px; text-align: center;}
+.pageNumberBlock {position: relative; float: left; background-color: #ffffff; width: 40px; height: 30px; line-height: 30px; text-align: center;}
+.pageNumberBlockActive {position: relative; float: left; background-color: #df4e47; width: 40px; height: 30px; line-height: 30px; text-align: center;}
+.goodStyleWhite {color: #fff;}
+.subcategoryContainer {margin-left: 30px; font-size: 15px;}
+.subcategory2Container {margin-left: 48px; font-size: 15px;}
+.sketchFont, td a {font-size: 16px; color: #df4e47; text-decoration: none;}

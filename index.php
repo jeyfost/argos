@@ -4,6 +4,7 @@ session_start();
 
 include ("scripts/connect.php");
 require_once ("scripts/mobileDetect.php");
+
 $detect = new Mobile_Detect;
 
 if($detect->isMobile()) {
