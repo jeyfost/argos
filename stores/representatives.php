@@ -87,11 +87,22 @@ if(isset($_SESSION['userID'])) {
 							</div>
 						";
 						if($_SESSION['userID'] == 1) {
-							echo "
-								<div class='headerIcon'>
-									<a href='../personal/orders.php'><img src='../img/system/basketFull.png' title='Заявки' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
-								</div>
-							";
+							$basketQuantityResult = $mysqli->query("SELECT COUNT(id) FROM orders_info WHERE status = '0'");
+							$basketQuantity = $basketQuantityResult->fetch_array(MYSQLI_NUM);
+
+							if($basketQuantity[0] > 0) {
+								echo "
+									<div class='headerIcon' id='basketIcon'>
+										<a href='../personal/orders.php?section=1&p=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
+									</div>
+								";
+							} else {
+								echo "
+									<div class='headerIcon'>
+										<a href='../personal/orders.php'><img src='../img/system/basketFull.png' title='Заявки' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
+									</div>
+								";
+							}
 						} else {
 							$basketQuantityResult = $mysqli->query("SELECT COUNT(id) FROM basket WHERE user_id = '".$_SESSION['userID']."'");
 							$basketQuantity = $basketQuantityResult->fetch_array(MYSQLI_NUM);
@@ -105,7 +116,7 @@ if(isset($_SESSION['userID'])) {
 							} else {
 								echo "
 									<div class='headerIcon' id='basketIcon'>
-										<a href='../personal/basket.php'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
+										<a href='../personal/basket.php'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)' /></a>
 									</div>
 								";
 							}

@@ -135,7 +135,24 @@ if(isset($_SESSION['userID'])) {
 					<a href='../personal/personal.php?section=1'><img src='../img/system/personal.png' title='Личный кабинет' id='personalIMG' onmouseover='changeIcon("personalIMG", "personalRed.png", 1)' onmouseout='changeIcon("personalIMG", "personal.png", 1)' /></a>
 				</div>
 				<div class='headerIcon'>
-					<a href='orders.php'><img src='../img/system/basketFullRed.png' title='Заявки' id='basketIMG' onmouseover='changeIcon("basketIMG", "basketFull.png", 1)' onmouseout='changeIcon("basketIMG", "basketFullRed.png", 1)' /></a>
+					<?php
+						$basketQuantityResult = $mysqli->query("SELECT COUNT(id) FROM orders_info WHERE status = '0'");
+						$basketQuantity = $basketQuantityResult->fetch_array(MYSQLI_NUM);
+
+						if($basketQuantity[0] > 0) {
+							echo "
+								<div class='headerIcon' id='basketIcon'>
+									<a href='orders.php?section=1&p=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
+								</div>
+							";
+						} else {
+							echo "
+								<div class='headerIcon'>
+									<a href='orders.php'><img src='../img/system/basketFull.png' title='Заявки' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
+								</div>
+							";
+						}
+					?>
 				</div>
 				<div id='searchBlock'>
 					<form method='post'>
