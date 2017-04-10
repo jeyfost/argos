@@ -3,6 +3,12 @@
 session_start();
 
 include ("scripts/connect.php");
+require_once ("scripts/mobileDetect.php");
+$detect = new Mobile_Detect;
+
+if($detect->isMobile()) {
+	header("Location: catalogue.php?type=fa&p=1");
+}
 
 if(isset($_SESSION['userID'])) {
 	if(isset($_COOKIE['argosfm_login']) and isset($_COOKIE['argosfm_password'])) {
