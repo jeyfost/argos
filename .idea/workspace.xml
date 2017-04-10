@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contacts/mail.php" afterPath="$PROJECT_DIR$/contacts/mail.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
     </list>
     <ignored path="argos.iws" />
@@ -99,9 +100,35 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="30" column="128" lean-forward="false" selection-start-line="30" selection-start-column="128" selection-end-line="30" selection-end-column="128" />
+            <state relative-caret-position="527">
+              <caret line="29" column="257" lean-forward="false" selection-start-line="29" selection-start-column="257" selection-end-line="29" selection-end-column="257" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contacts/mail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="205" column="49" lean-forward="false" selection-start-line="205" selection-start-column="49" selection-end-line="205" selection-end-column="49" />
+              <folding>
+                <marker date="1491807836830" expanded="true" signature="479:535" ph="SELECT * FRO... users" />
+                <marker date="1491807836830" expanded="true" signature="808:875" ph="SELECT login... users" />
+                <marker date="1491807836830" expanded="true" signature="989:1110" ph="UPDATE users... " />
+                <marker date="1491807836830" expanded="true" signature="3205:3472" ph="..." />
+                <marker date="1491807836830" expanded="true" signature="3504:3784" ph="..." />
+                <marker date="1491807836830" expanded="true" signature="3879:3931" ph="SELECT COUNT... orders_info" />
+                <marker date="1491807836830" expanded="true" signature="4108:4481" ph="..." />
+                <marker date="1491807836830" expanded="true" signature="4557:4821" ph="..." />
+                <marker date="1491807836830" expanded="true" signature="4905:4975" ph="SELECT COUNT... basket" />
+                <marker date="1491807836830" expanded="true" signature="5152:5521" ph="..." />
+                <marker date="1491807836830" expanded="true" signature="5613:5922" ph="..." />
+                <marker date="1491807836830" expanded="true" signature="6009:6275" ph="..." />
+                <marker date="1491807836830" expanded="true" signature="6332:6475" ph="..." />
+                <marker date="1491807836830" expanded="true" signature="6360:6462" ph="..." />
+                <marker date="1491807836830" expanded="true" signature="6508:6520" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -177,6 +204,7 @@
       <find>menuLink</find>
       <find>sketch</find>
       <find>map</find>
+      <find>for</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -229,12 +257,12 @@
         <option value="$PROJECT_DIR$/stores/representatives.php" />
         <option value="$PROJECT_DIR$/partners/cooperation.php" />
         <option value="$PROJECT_DIR$/partners/news.php" />
-        <option value="$PROJECT_DIR$/contacts/mail.php" />
         <option value="$PROJECT_DIR$/contacts/main.php" />
         <option value="$PROJECT_DIR$/contacts/stores.php" />
         <option value="$PROJECT_DIR$/personal/orders.php" />
         <option value="$PROJECT_DIR$/personal/personal.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/contacts/mail.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
       </list>
     </option>
@@ -315,6 +343,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contacts" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -573,14 +615,7 @@
       <workItem from="1491456410970" duration="20914000" />
       <workItem from="1491543428991" duration="18940000" />
       <workItem from="1491719880100" duration="1910000" />
-      <workItem from="1491802507964" duration="4904000" />
-    </task>
-    <task id="LOCAL-00089" summary="Реализовано добавление новых товаров">
-      <created>1487683464804</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1487683464846</updated>
+      <workItem from="1491802507964" duration="5639000" />
     </task>
     <task id="LOCAL-00090" summary="Реализовано редактирование товаров">
       <created>1488201362167</created>
@@ -918,11 +953,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491806073555</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="Раздел &quot;Где купить&quot; адаптирован под мобильные устройства">
+      <created>1491807438891</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1491807438891</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198175000" />
+    <option name="totallyTimeSpent" value="198910000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1012,7 +1054,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Реализовано редактирование альбомов" />
     <MESSAGE value="Реализовано удаление альбомов" />
     <MESSAGE value="Добавлена стартовая страница наград и достижений в панели администрирования" />
     <MESSAGE value="Реализовано добавление наград" />
@@ -1037,7 +1078,8 @@
     <MESSAGE value="Каталог адаптирован под мобильные устройства" />
     <MESSAGE value="Раздел &quot;О компании&quot; адаптирован под мобильные устройства" />
     <MESSAGE value="Раздел &quot;Новости&quot; адаптирован под мобильные устройства" />
-    <option name="LAST_COMMIT_MESSAGE" value="Раздел &quot;Новости&quot; адаптирован под мобильные устройства" />
+    <MESSAGE value="Раздел &quot;Где купить&quot; адаптирован под мобильные устройства" />
+    <option name="LAST_COMMIT_MESSAGE" value="Раздел &quot;Где купить&quot; адаптирован под мобильные устройства" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1541,13 +1583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contacts/mail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="123" column="25" lean-forward="false" selection-start-line="123" selection-start-column="25" selection-end-line="123" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contacts/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="659">
@@ -1810,10 +1845,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/contacts/mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="205" column="49" lean-forward="false" selection-start-line="205" selection-start-column="49" selection-end-line="205" selection-end-column="49" />
+          <folding>
+            <marker date="1491807836830" expanded="true" signature="479:535" ph="SELECT * FRO... users" />
+            <marker date="1491807836830" expanded="true" signature="808:875" ph="SELECT login... users" />
+            <marker date="1491807836830" expanded="true" signature="989:1110" ph="UPDATE users... " />
+            <marker date="1491807836830" expanded="true" signature="3205:3472" ph="..." />
+            <marker date="1491807836830" expanded="true" signature="3504:3784" ph="..." />
+            <marker date="1491807836830" expanded="true" signature="3879:3931" ph="SELECT COUNT... orders_info" />
+            <marker date="1491807836830" expanded="true" signature="4108:4481" ph="..." />
+            <marker date="1491807836830" expanded="true" signature="4557:4821" ph="..." />
+            <marker date="1491807836830" expanded="true" signature="4905:4975" ph="SELECT COUNT... basket" />
+            <marker date="1491807836830" expanded="true" signature="5152:5521" ph="..." />
+            <marker date="1491807836830" expanded="true" signature="5613:5922" ph="..." />
+            <marker date="1491807836830" expanded="true" signature="6009:6275" ph="..." />
+            <marker date="1491807836830" expanded="true" signature="6332:6475" ph="..." />
+            <marker date="1491807836830" expanded="true" signature="6360:6462" ph="..." />
+            <marker date="1491807836830" expanded="true" signature="6508:6520" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="30" column="128" lean-forward="false" selection-start-line="30" selection-start-column="128" selection-end-line="30" selection-end-column="128" />
+        <state relative-caret-position="527">
+          <caret line="29" column="257" lean-forward="false" selection-start-line="29" selection-start-column="257" selection-end-line="29" selection-end-column="257" />
           <folding />
         </state>
       </provider>

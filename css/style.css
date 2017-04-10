@@ -23,7 +23,11 @@ select {height: 40px; line-height: 40px;}
     #personalMenu {position: relative; float: left; margin-top: 20px; margin-bottom: 20px; width: 100%; padding: 10px;}
     #personalContent {position: relative; float: right; margin-top: 20px; margin-bottom: 120px; width: 100%; text-align: center;}
     #CVForm textarea {width: 100%;}
+    #contactForm textarea {width: 468px; margin-top: 5px;}
+    #mailButtons {width: 450px; position: relative; margin: 0 auto;}
     #page {position: relative; margin: 60px auto 90px auto; width: 90%;}
+    #newsSlider {display: none;}
+    #mailSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: right; margin-top: -33px;}
 
     .itemPurchase {position: relative; float: right; width: 100px; text-align: center; margin-top: 10px;}
     .g-recaptcha {margin-top: 15px;}
@@ -67,6 +71,7 @@ select {height: 40px; line-height: 40px;}
     #newsSlider {width: 220px;}
     #pageNumbers {position: relative; margin: 0 auto; text-align: center; font-size: 15px; transition: .3s;}
     #page {position: relative; margin: 60px auto auto auto; width: 90%;}
+    #mailSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: right; margin-top: 45px;}
 
     .menuLink img {margin: auto auto 3px 3px;}
     .slash {font-size: 14px; margin-left: 5px;}
@@ -112,7 +117,6 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 #breadCrumbs, .breadCrumbsText {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 14px; margin-top: -30px;}
 #topSection {padding-bottom: 40px; width: 100%;}
 #loginSubmit, #registrationSubmit, #recoverySubmit, #passwordSubmit, #personalSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer;}
-#mailSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: right; margin-top: 45px;}
 #registrationSubmit {width: 200px;}
 #recoverySubmit, #personalSubmit {width: 130px;}
 #basketSubmit, #clearBasketButton, #acceptButton {width: 200px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: right;}

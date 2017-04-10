@@ -203,7 +203,7 @@ if(isset($_SESSION['userID'])) {
 
 		<div id="personalContent">
 			<p>При помощи формы обратной связи вы можете отправить нам письмо со своим вопросом, и в короткий срок мы на него ответим.</p>
-			<form method="post">
+			<form method="post"  id="contactForm">
 				<input type="text" value="Ваше имя" id="nameInput" style="color: #9e9e9e; width: 450px;" />
 				<br />
 				<input type="text" value="Ваш email" id="emailInput" style="margin-top: 5px; color: #9e9e9e; width: 450px;" />
