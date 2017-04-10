@@ -27,6 +27,8 @@ select {height: 40px; line-height: 40px;}
 
     .itemPurchase {position: relative; float: right; width: 100px; text-align: center; margin-top: 10px;}
     .g-recaptcha {margin-top: 15px;}
+    .map {margin-bottom: 10px;}
+    .mapContainer {width: 500px; padding: 10px; background-color: #ebebeb; text-align: left; position: relative; margin: 0 auto;}
 }
 
 /* screen */
@@ -89,10 +91,10 @@ select {height: 40px; line-height: 40px;}
     .headTR td {cursor: pointer;}
     .tdLink {color: #df4e47; cursor: pointer;}
     .searchLink {color: #4c4c4c; text-decoration: underline;}
-    .mapContainer {width: 100%; padding: 10px; background-color: #ebebeb;}
     .map, #mailRecaptcha {position: relative; float: left;}
     .mapDescription {position: relative; float: left; margin-left: 20px;}
     .CVSelect {position: relative; float: left; margin-left: 10px;}
+    .mapContainer {width: 100%; padding: 10px; background-color: #ebebeb;}
 }
 
 a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcategory2Container, a span {color: #4c4c4c;}
