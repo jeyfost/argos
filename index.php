@@ -172,7 +172,7 @@ if(isset($_SESSION['userID'])) {
             <div id="menuLinks">
                 <div class="menuLink" id="catalogueLink" onmouseover="showDropdownList('1', 'catalogueLink')">
                     <a href="catalogue.php?type=fa&p=1" class="menuPoint">Каталог</a>
-                    <img src="img/system/downArrow.png" />
+					<img src="img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="aboutLink" onmouseover="showDropdownList('1', 'aboutLink')">
@@ -204,9 +204,8 @@ if(isset($_SESSION['userID'])) {
                 </div>
                 <div style="clear: both;"></div>
             </div>
-        <div style="clear: both;"></div>
+        	<div style="clear: both;"></div>
         </div>
-        <div id="menuIcon"><img src="img/system/mobile/menuIcon.png" title="Меню" /></div>
         <div style="clear: both;"></div>
 
     </div>

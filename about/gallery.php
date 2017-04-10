@@ -176,6 +176,74 @@ if(isset($_SESSION['userID'])) {
 			</div>
 			<div style="clear: both;"></div>
         </div>
+		<div id="menuIcon" onclick="showHideMobileMenu()"><img src="/img/system/mobile/menuIcon.png" title="Меню" /></div>
+		<div id="mobileMenu">
+			<div class="mobileMenuItem" style="margin-top: 0;">
+				<a href="/catalogue.php?type=fa&p=1" class="mobileMenuPointBig">Каталог</a>
+				<div class="subMenu">
+					<a href="/catalogue.php?type=fa&p=1" class="mobileMenuPointSmall">- Мебельная фурнитура</a>
+					<br />
+					<a href="/catalogue.php?type=em&p=1" class="mobileMenuPointSmall">- Кромочные материалы</a>
+					<br />
+					<a href="/catalogue.php?type=ca&p=1" class="mobileMenuPointSmall">- Аксессуары для штор</a>
+					<br />
+					<a href="/catalogue.php?type=dg&p=1" class="mobileMenuPointSmall">- Сопутствующие товары</a>
+				</div>
+			</div>
+			<hr />
+			<div class="mobileMenuItem" style="margin-top: 0;">
+				<a href="/about/info.php" class="mobileMenuPointBig">О компании</a>
+				<div class="subMenu">
+					<a href="/about/info.php" class="mobileMenuPointSmall">- Общая информация</a>
+					<br />
+					<a href="/about/assortment.php" class="mobileMenuPointSmall">- Ассортимент</a>
+					<br />
+					<a href="/about/awards.php" class="mobileMenuPointSmall">- Достижения и награды</a>
+					<br />
+					<a href="/about/gallery.php" class="mobileMenuPointSmall">- Фотогалерея</a>
+					<br />
+					<a href="/about/vacancies.php" class="mobileMenuPointSmall">- Вакансии</a>
+				</div>
+			</div>
+			<hr />
+			<div class="mobileMenuItem" style="margin-top: 0;">
+				<a href="/news.php" class="mobileMenuPointBig">Новости</a>
+			</div>
+			<hr />
+			<div class="mobileMenuItem" style="margin-top: 0;">
+				<a href="/stores/company.php" class="mobileMenuPointBig">Где купить</a>
+				<div class="subMenu">
+					<a href="/stores/company.php" class="mobileMenuPointSmall">- Фирменная сеть</a>
+					<br />
+					<a href="/stores/representatives.php" class="mobileMenuPointSmall">- Партнёрская сеть</a>
+				</div>
+			</div>
+			<hr />
+			<div class="mobileMenuItem" style="margin-top: 0;">
+				<a href="/actions.php" class="mobileMenuPointBig">Акции</a>
+			</div>
+			<hr />
+			<div class="mobileMenuItem" style="margin-top: 0;">
+				<a href="/partners/cooperation.php" class="mobileMenuPointBig">Партнёрам</a>
+				<div class="subMenu">
+					<a href="/partners/cooperation.php" class="mobileMenuPointSmall">- Сотрудничество</a>
+					<br />
+					<a href="/partners/news.php" class="mobileMenuPointSmall">- Новости для клиентов</a>
+				</div>
+			</div>
+			<hr />
+			<div class="mobileMenuItem" style="margin-top: 0;">
+				<a href="/contacts/stores.php" class="mobileMenuPointBig">Контакты</a>
+				<div class="subMenu">
+					<a href="/contacts/stores.php" class="mobileMenuPointSmall">- Магазины</a>
+					<br />
+					<a href="/contacts/main.php" class="mobileMenuPointSmall">- Головное предприятие</a>
+					<br />
+					<a href="/contacts/mail.php" class="mobileMenuPointSmall">- Обратная связь</a>
+				</div>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
 
     </div>
     <div id="dropDownLine">
@@ -190,7 +258,7 @@ if(isset($_SESSION['userID'])) {
 		<div id="searchList"></div>
 		<h1 style='margin-top: 80px;'>Фотогалерея</h1>
 		<div id='breadCrumbs'>
-			<a href='../index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='info.php'><span class='breadCrumbsText'>О компании</span></a> > <a href='gallery.php'><span class='breadCrumbsText'>Фотогаллерея</span></a>
+			<a href='../index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='info.php'><span class='breadCrumbsText'>О компании</span></a> > <a href='gallery.php'><span class='breadCrumbsText'>Фотогалерея</span></a>
 		</div>
 
 		<div id="personalMenu">

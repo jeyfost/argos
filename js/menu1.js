@@ -48,9 +48,9 @@ function showDropdownList(action, id, highlighted) {
 				}
 
 				if(highlighted == "aboutLinkGallery") {
-					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' style='background-color: #df4e47;'><a href='../about/gallery.php' id='aboutLinkGalleryA' style='color: #fff;'>Фотогаллерея</a></div>");
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' style='background-color: #df4e47;'><a href='../about/gallery.php' id='aboutLinkGalleryA' style='color: #fff;'>Фотогалерея</a></div>");
 				} else {
-					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='aboutLinkGallery' onmouseover='changeDropDownLink(\"1\", \"aboutLinkGallery\", \"aboutLinkGalleryA\")' onmouseout='changeDropDownLink(\"0\", \"aboutLinkGallery\", \"aboutLinkGalleryA\")'><a href='../about/gallery.php' id='aboutLinkGalleryA'>Фотогаллерея</a></div>");
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='aboutLinkGallery' onmouseover='changeDropDownLink(\"1\", \"aboutLinkGallery\", \"aboutLinkGalleryA\")' onmouseout='changeDropDownLink(\"0\", \"aboutLinkGallery\", \"aboutLinkGalleryA\")'><a href='../about/gallery.php' id='aboutLinkGalleryA'>Фотогалерея</a></div>");
 				}
 
 				if(highlighted == "aboutLinkVacancies") {
@@ -254,5 +254,13 @@ function showSearchList() {
 				$('#searchList').show('fast');
 			}
 		});
+	}
+}
+
+function showHideMobileMenu() {
+	if($('#mobileMenu').is(':visible')) {
+		$('#mobileMenu').hide('300');
+	} else {
+		$('#mobileMenu').show('300');
 	}
 }

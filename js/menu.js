@@ -29,7 +29,7 @@ function showDropdownList(action, id, highlighted) {
 				$('#dropDownList').html($('#dropDownList').html() + "<div style='clear: both;'></div>");
                 break;
             case "aboutLink":
-                $('#dropDownList').html("<div class='dropDownLink' id='aboutLinkCommon' onmouseover='changeDropDownLink(\"1\", \"aboutLinkCommon\", \"aboutLinkCommonA\")' onmouseout='changeDropDownLink(\"0\", \"aboutLinkCommon\", \"aboutLinkCommonA\")'><a href='about/info.php' id='aboutLinkCommonA'>Общая информация</a></div><div class='dropDownLink' id='aboutLinkAssortment' onmouseover='changeDropDownLink(\"1\", \"aboutLinkAssortment\", \"aboutLinkAssortmentA\")' onmouseout='changeDropDownLink(\"0\", \"aboutLinkAssortment\", \"aboutLinkAssortmentA\")'><a href='about/assortment.php' id='aboutLinkAssortmentA'>Ассортимент</a></div><div class='dropDownLink' id='aboutLinkAwards' onmouseover='changeDropDownLink(\"1\", \"aboutLinkAwards\", \"aboutLinkAwardsA\")' onmouseout='changeDropDownLink(\"0\", \"aboutLinkAwards\", \"aboutLinkAwardsA\")'><a href='about/awards.php' id='aboutLinkAwardsA'>Достижения и награды</a></div><div class='dropDownLink' id='aboutLinkGallery' onmouseover='changeDropDownLink(\"1\", \"aboutLinkGallery\", \"aboutLinkGalleryA\")' onmouseout='changeDropDownLink(\"0\", \"aboutLinkGallery\", \"aboutLinkGalleryA\")'><a href='about/gallery.php' id='aboutLinkGalleryA'>Фотогаллерея</a></div><div class='dropDownLink' id='aboutLinkVacancies' onmouseover='changeDropDownLink(\"1\", \"aboutLinkVacancies\", \"aboutLinkVacanciesA\")' onmouseout='changeDropDownLink(\"0\", \"aboutLinkVacancies\", \"aboutLinkVacanciesA\")'><a href='about/vacancies.php' id='aboutLinkVacanciesA'>Вакансии</a></div><div style='clear: both;'></div>");
+                $('#dropDownList').html("<div class='dropDownLink' id='aboutLinkCommon' onmouseover='changeDropDownLink(\"1\", \"aboutLinkCommon\", \"aboutLinkCommonA\")' onmouseout='changeDropDownLink(\"0\", \"aboutLinkCommon\", \"aboutLinkCommonA\")'><a href='about/info.php' id='aboutLinkCommonA'>Общая информация</a></div><div class='dropDownLink' id='aboutLinkAssortment' onmouseover='changeDropDownLink(\"1\", \"aboutLinkAssortment\", \"aboutLinkAssortmentA\")' onmouseout='changeDropDownLink(\"0\", \"aboutLinkAssortment\", \"aboutLinkAssortmentA\")'><a href='about/assortment.php' id='aboutLinkAssortmentA'>Ассортимент</a></div><div class='dropDownLink' id='aboutLinkAwards' onmouseover='changeDropDownLink(\"1\", \"aboutLinkAwards\", \"aboutLinkAwardsA\")' onmouseout='changeDropDownLink(\"0\", \"aboutLinkAwards\", \"aboutLinkAwardsA\")'><a href='about/awards.php' id='aboutLinkAwardsA'>Достижения и награды</a></div><div class='dropDownLink' id='aboutLinkGallery' onmouseover='changeDropDownLink(\"1\", \"aboutLinkGallery\", \"aboutLinkGalleryA\")' onmouseout='changeDropDownLink(\"0\", \"aboutLinkGallery\", \"aboutLinkGalleryA\")'><a href='about/gallery.php' id='aboutLinkGalleryA'>Фотогалерея</a></div><div class='dropDownLink' id='aboutLinkVacancies' onmouseover='changeDropDownLink(\"1\", \"aboutLinkVacancies\", \"aboutLinkVacanciesA\")' onmouseout='changeDropDownLink(\"0\", \"aboutLinkVacancies\", \"aboutLinkVacanciesA\")'><a href='about/vacancies.php' id='aboutLinkVacanciesA'>Вакансии</a></div><div style='clear: both;'></div>");
                 break;
             case "storesLink":
                 $('#dropDownList').html("<div class='dropDownLink' id='storesLinkCompany' onmouseover='changeDropDownLink(\"1\", \"storesLinkCompany\", \"storesLinkCompanyA\")' onmouseout='changeDropDownLink(\"0\", \"storesLinkCompany\", \"storesLinkCompanyA\")'><a href='stores/company.php' id='storesLinkCompanyA'>Фирменная сеть</a></div><div class='dropDownLink' id='storesLinkRepresentatives' onmouseover='changeDropDownLink(\"1\", \"storesLinkRepresentatives\", \"storesLinkRepresentativesA\")' onmouseout='changeDropDownLink(\"0\", \"storesLinkRepresentatives\", \"storesLinkRepresentativesA\")'><a href='stores/representatives.php' id='storesLinkRepresentativesA'>Партнёрская сеть</a></div><div style='clear: both;'></div>");
@@ -202,5 +202,13 @@ function showSearchList() {
 				$('#searchList').show('fast');
 			}
 		});
+	}
+}
+
+function showHideMobileMenu() {
+	if($('#mobileMenu').is(':visible')) {
+		$('#mobileMenu').hide('300');
+	} else {
+		$('#mobileMenu').show('300');
 	}
 }
