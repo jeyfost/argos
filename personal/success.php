@@ -166,6 +166,50 @@
 					<a href="/contacts/mail.php" class="mobileMenuPointSmall">- Обратная связь</a>
 				</div>
 			</div>
+			<?php
+				if(!empty($_SESSION['userID'])) {
+					if($_SESSION['userID'] == 1) {
+						echo "
+							<hr />
+							<div class='mobileMenuItem' style='margin-top: 0;'>
+								<a href='/personal/orders.php?section=1&p=1' class='mobileMenuPointBig'>Заказы</a>
+							</div>
+						";
+					} else {
+						echo "
+							<hr />
+							<div class='mobileMenuItem' style='margin-top: 0;'>
+								<a href='/personal/basket.php?section=1' class='mobileMenuPointBig'>Корзина</a>
+							</div>
+						";
+					}
+				}
+
+				if(!empty($_SESSION['userID'])) {
+					if($_SESSION['userID'] == 1) {
+						echo "
+							<hr />
+							<div class='mobileMenuItem' style='margin-top: 0;'>
+								<a href='/personal/personal.php?section=1' class='mobileMenuPointBig'>Управление сайтом</a>
+							</div>
+						";
+					} else {
+						echo "
+							<hr />
+							<div class='mobileMenuItem' style='margin-top: 0;'>
+								<a href='/personal/personal.php?section=1' class='mobileMenuPointBig'>Личный кабинет</a>
+							</div>
+						";
+					}
+
+					echo "
+						<hr />
+						<div class='mobileMenuItem' style='margin-top: 0;'>
+							<a href='/scripts/personal/logout.php' class='mobileMenuPointBig'>Выйти из аккаунта</a>
+						</div>
+					";
+				}
+			?>
 		</div>
 		<div style="clear: both;"></div>
 

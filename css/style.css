@@ -31,7 +31,7 @@ select {height: 40px; line-height: 40px;}
     #mailSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: right; margin-top: -33px;}
     #responseField .catalogueItem {text-align: left;}
     #innerSearch {float: left; margin-bottom: 15px;}
-    #mobileMenu {position: fixed; width: 100%; background-color: #fff; z-index: 11; top: 60px; padding: 10px; text-align: left; left: 0; display: none;}
+    #mobileMenu {position: fixed; width: 100%; background-color: #fff; top: 60px; padding: 10px; text-align: left; left: 0; display: none; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); overflow-y: scroll; height: 300px;}
 
     .itemPurchase {position: relative; float: right; width: 100px; text-align: center; margin-top: 10px;}
     .g-recaptcha {margin-top: 15px;}
