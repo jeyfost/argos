@@ -220,64 +220,7 @@ if(isset($_SESSION['userID'])) {
 		<div style="clear: both;"></div>
 		<div style="width: 100%; height: 40px;"></div>
 	</div>
-
 	<div style="clear: both;"></div>
-
-	<?php
-		function showForm($currencyResult, $unitResult) {
-			echo "
-				<br /><br />
-				<label for='goodNameInput'>Название товара:</label>
-				<br />
-				<input type='text' id='goodNameInput' name='goodName' />
-				<br /><br />
-				<label for='goodPhotoInput'>Фотография товара (как минимум 100*100 пикселей)</label>
-				<br />
-				<input type='file' id='goodPhotoInput' class='file' name='goodPhoto' />
-				<br /><br />
-				<label for='goodBlueprintInput'>Чертёж (если есть):</label>
-				<br />
-				<input type='file' id='goodBlueprintInput' class='file' name='goodBlueprint' />
-				<br /><br />
-				<label for='goodCodeInput'>Артикул (<span class='redLink' onclick='setCode()'>установить первый незанятый</span>):</label>
-				<br />
-				<input type='number' min='1' step='1' id='goodCodeInput' name='goodCode' onblur='checkCode()' />
-				<br /><br />
-				<label for='currencySelect'>Выберите валюту прихода:</label>
-				<br />
-				<select id='currencySelect' name='goodCurrency'>
-		";
-			while($currency = $currencyResult->fetch_assoc()) {
-				echo "<option value='".$currency['id']."'>".$currency['currency_name']."</option>";
-			}
-		echo "
-				</select>
-				<br /><br />
-				<label for='goodPriceInput'>Розничная стоимость (в валюте прихода):</label>
-				<br />
-				<input type='number' min='0.0001' step='0.0001' id='goodPriceInput' name='goodPrice' />
-				<br /><br />
-				<label for='unitSelect'>Единицы измерения:</label>
-				<br />
-				<select id='unitSelect' name='goodUnit'>
-		";
-			while($unit = $unitResult->fetch_assoc()) {
-				echo "<option value='".$unit['id']."'>".$unit['full_name']."</option>";
-			}
-		echo "
-				</select>
-				<br /><br />
-				<label for='goodDescriptionInput'>Описание:</label>
-				<br />
-				<textarea id='goodDescriptionInput' name='goodDescription' onkeydown='textAreaHeight(this)' onfocus='textAreaHeight(this)'></textarea>
-				<br />
-				<div id='responseField'></div>
-				<br />
-				<input type='button' id='addGoodButton' class='button' value='Добавить' onmouseover='buttonChange(\"addGoodButton\", 1)' onmouseout='buttonChange(\"addGoodButton\", 0)' style='margin: 0;' onclick='addGood()'>
-			<div style='clear: both;'></div>
-		";
-		}
-	?>
 
 </body>
 
