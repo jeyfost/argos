@@ -24,7 +24,7 @@ if(isset($_SESSION['userID'])) {
 
     <meta charset="utf-8">
 
-    <title>Обновление наличия товаров</title>
+    <title>Список свободных артикулов</title>
 
     <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
@@ -38,7 +38,6 @@ if(isset($_SESSION['userID'])) {
 	<script type="text/javascript" src="../../js/lightview/js/lightview/lightview.js"></script>
 	<script type="text/javascript" src="../../js/common.js"></script>
 	<script type="text/javascript" src="../../js/admin/admin.js"></script>
-	<script type="text/javascript" src="../../js/admin/goods/update.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -165,37 +164,120 @@ if(isset($_SESSION['userID'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<?php
-				$goodNameResult = $mysqli->query("SELECT name FROM catalogue_new WHERE id = '".$id."'");
-				$goodName = $goodNameResult->fetch_array(MYSQLI_NUM);
-			?>
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/product.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Товары</span></a> > <a href="edit.php"><span class="breadCrumbsText">Обновление остатков</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/product.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Товары</span></a> > <a href="codes.php"><span class="breadCrumbsText">Список свободных артикулов</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
-			<h2>Обновление остатков</h2>
+			<h2>Список свободных артикулов</h2>
 			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" style="margin-left: 0;" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
 			<a href="edit.php"><input type="button" class="button" id="editButton" value="Редактирование" onmouseover="buttonChange('editButton', 1)" onmouseout="buttonChange('editButton', 0)" /></a>
 			<a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
-			<a href="update.php"><input type="button" class="buttonActive" id="correctionButton" value="Выгрузка 1С" /></a>
-			<a href="codes.php"><input type="button" class="button" id="codesButton" value="Артикулы" onmouseover="buttonChange('codesButton', 1)" onmouseout="buttonChange('codesButton', 0)" /></a>
+			<a href="update.php"><input type="button" class="button" id="correctionButton" value="Выгрузка 1С" onmouseover="buttonChange('correctionButton', 1)" onmouseout="buttonChange('correctionButton', 0)" /></a>
+			<a href="codes.php"><input type="button" class="buttonActive" id="codesButton" value="Артикулы" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
-			<form id="updateForm" method="post" enctype="multipart/form-data">
-				<label for="fileSelect">Выберите <b>CSV</b> файл, содержащий выгрузку 1С:</label>
-				<br />
-				<input type="file" class='file' name="csvFile" id="fileSelect" accept=".csv" />
-				<br />
-				<div id="responseField"></div>
-				<br />
-				<input type='button' id='makeUpdateButton' class='button' value='Обновить' onmouseover='buttonChange("makeUpdateButton", 1)' onmouseout='buttonChange("makeUpdateButton", 0)' style='margin: 0;' onclick='makeUpdate()'>
-				<div style="clear: both;"></div>
-			</form>
-		</div>
+			<?php
+				$code = [];
+				$freeCode = [];
+
+				$goodResult = $mysqli->query("SELECT * FROM catalogue_new ORDER BY code");
+				while($good = $goodResult->fetch_assoc()) {
+					array_push($code, $good['code']);
+				}
+
+				$j = 0;
+				$checkCode = (int)$code[0];
+
+				for($i = 1; $i < 10000; $i++) {
+					if($i < $checkCode or $i > $checkCode) {
+						array_push($freeCode, $i);
+					} else {
+						if($j < count($code) - 1) {
+							$j++;
+							$checkCode = (int)$code[$j];
+						}
+					}
+				}
+
+				for($i = 0; $i < count($freeCode); $i++) {
+					switch(strlen($freeCode[$i])) {
+						case 1:
+							$code = "000".$freeCode[$i];
+							break;
+						case 2:
+							$code = "00".$freeCode[$i];
+							break;
+						case 3:
+							$code = "0".$freeCode[$i];
+							break;
+						default:
+							$code = $freeCode[$i];
+							break;
+					}
+
+					echo "<div class='codeCell'"; if($i % 2 == 0) {echo " style='background-color: #d5d5d5;'";} echo ">".$code."</div>";
+				}
+			?>
 		<div style="clear: both;"></div>
 		<div style="width: 100%; height: 40px;"></div>
 	</div>
 
 	<div style="clear: both;"></div>
+
+	<?php
+		function showForm($currencyResult, $unitResult) {
+			echo "
+				<br /><br />
+				<label for='goodNameInput'>Название товара:</label>
+				<br />
+				<input type='text' id='goodNameInput' name='goodName' />
+				<br /><br />
+				<label for='goodPhotoInput'>Фотография товара (как минимум 100*100 пикселей)</label>
+				<br />
+				<input type='file' id='goodPhotoInput' class='file' name='goodPhoto' />
+				<br /><br />
+				<label for='goodBlueprintInput'>Чертёж (если есть):</label>
+				<br />
+				<input type='file' id='goodBlueprintInput' class='file' name='goodBlueprint' />
+				<br /><br />
+				<label for='goodCodeInput'>Артикул (<span class='redLink' onclick='setCode()'>установить первый незанятый</span>):</label>
+				<br />
+				<input type='number' min='1' step='1' id='goodCodeInput' name='goodCode' onblur='checkCode()' />
+				<br /><br />
+				<label for='currencySelect'>Выберите валюту прихода:</label>
+				<br />
+				<select id='currencySelect' name='goodCurrency'>
+		";
+			while($currency = $currencyResult->fetch_assoc()) {
+				echo "<option value='".$currency['id']."'>".$currency['currency_name']."</option>";
+			}
+		echo "
+				</select>
+				<br /><br />
+				<label for='goodPriceInput'>Розничная стоимость (в валюте прихода):</label>
+				<br />
+				<input type='number' min='0.0001' step='0.0001' id='goodPriceInput' name='goodPrice' />
+				<br /><br />
+				<label for='unitSelect'>Единицы измерения:</label>
+				<br />
+				<select id='unitSelect' name='goodUnit'>
+		";
+			while($unit = $unitResult->fetch_assoc()) {
+				echo "<option value='".$unit['id']."'>".$unit['full_name']."</option>";
+			}
+		echo "
+				</select>
+				<br /><br />
+				<label for='goodDescriptionInput'>Описание:</label>
+				<br />
+				<textarea id='goodDescriptionInput' name='goodDescription' onkeydown='textAreaHeight(this)' onfocus='textAreaHeight(this)'></textarea>
+				<br />
+				<div id='responseField'></div>
+				<br />
+				<input type='button' id='addGoodButton' class='button' value='Добавить' onmouseover='buttonChange(\"addGoodButton\", 1)' onmouseout='buttonChange(\"addGoodButton\", 0)' style='margin: 0;' onclick='addGood()'>
+			<div style='clear: both;'></div>
+		";
+		}
+	?>
 
 </body>
 
