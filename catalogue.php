@@ -630,7 +630,7 @@ if(isset($_SESSION['userID'])) {
 					<b>Артикул: </b>".$catalogue['code']."
 					<br />
 					<div id='goodPrice".$catalogue['id']."'>
-						<span"; if($_SESSION['userID'] == 1 and $active == 0) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['for_name'].": </b>"; if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>"; if($active > 0) {echo "</span>";} echo "
+						<span"; if($_SESSION['userID'] == 1 and $active == 0) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['for_name'].": </b>"; if($catalogue['price'] == 0 or $catalogue['price'] == null) {echo "по запросу";} else {if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>"; if($active > 0) {echo "</span>";}} echo "
 				";
 
 				if($catalogue['sketch'] != '') {
