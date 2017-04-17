@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - argos@localhost" uuid="94240a3f-16e7-4f25-9dd4-09c8df13e291">
+    <database-info product="MySQL" version="5.5.53-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="argos"/>
+      <table id="2" parent="1" name="action_goods"/>
+      <table id="3" parent="1" name="actions"/>
+      <table id="4" parent="1" name="albums"/>
+      <table id="5" parent="1" name="awards"/>
+      <table id="6" parent="1" name="basket"/>
+      <table id="7" parent="1" name="catalogue_new"/>
+      <table id="8" parent="1" name="categories_new"/>
+      <table id="9" parent="1" name="currency"/>
+      <table id="10" parent="1" name="email_old"/>
+      <table id="11" parent="1" name="login_old"/>
+      <table id="12" parent="1" name="news"/>
+      <table id="13" parent="1" name="orders"/>
+      <table id="14" parent="1" name="orders_info"/>
+      <table id="15" parent="1" name="password_old"/>
+      <table id="16" parent="1" name="photos"/>
+      <table id="17" parent="1" name="subcategories2"/>
+      <table id="18" parent="1" name="subcategories_new"/>
+      <table id="19" parent="1" name="types"/>
+      <table id="20" parent="1" name="units"/>
+      <table id="21" parent="1" name="users"/>
+      <table id="22" parent="1" name="vacancies"/>
+      <column id="23" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="24" parent="2" name="action_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="25" parent="2" name="good_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="26" parent="2" name="price">
+        <mandatory>1</mandatory>
+        <data-type>float unsigned</data-type>
+      </column>
+      <column id="27" parent="2" name="currency">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <key id="28" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="29" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="30" parent="3" name="date">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="31" parent="3" name="year">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="32" parent="3" name="header">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="33" parent="3" name="preview">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="34" parent="3" name="text">
+        <mandatory>1</mandatory>
+        <data-type>text</data-type>
+      </column>
+      <column id="35" parent="3" name="from_date">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="36" parent="3" name="to_date">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <key id="37" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="38" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="39" parent="4" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="40" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="41" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="42" parent="5" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="43" parent="5" name="photo_small">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="44" parent="5" name="photo_big">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="45" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="46" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="47" parent="6" name="good_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="48" parent="6" name="quantity">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="49" parent="6" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <key id="50" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="51" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="52" parent="7" name="type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(2)</data-type>
+      </column>
+      <column id="53" parent="7" name="category">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="54" parent="7" name="subcategory">
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="55" parent="7" name="subcategory2">
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="56" parent="7" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(128)</data-type>
+      </column>
+      <column id="57" parent="7" name="picture">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="58" parent="7" name="small">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="59" parent="7" name="sketch">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="60" parent="7" name="description">
+        <mandatory>1</mandatory>
+        <data-type>mediumtext</data-type>
+      </column>
+      <column id="61" parent="7" name="priority">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="62" parent="7" name="price">
+        <mandatory>1</mandatory>
+        <data-type>float(10,4) unsigned</data-type>
+      </column>
+      <column id="63" parent="7" name="code">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="64" parent="7" name="currency">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="65" parent="7" name="unit">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="66" parent="7" name="quantity">
+        <data-type>int(11) unsigned</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="67" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="68" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="69" parent="8" name="type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(2)</data-type>
+      </column>
+      <column id="70" parent="8" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="71" parent="8" name="picture">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="72" parent="8" name="picture_red">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="73" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="74" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="75" parent="9" name="code">
+        <mandatory>1</mandatory>
+        <data-type>varchar(3)</data-type>
+      </column>
+      <column id="76" parent="9" name="rate">
+        <mandatory>1</mandatory>
+        <data-type>float unsigned</data-type>
+      </column>
+      <column id="77" parent="9" name="currency_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="78" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="79" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="80" parent="10" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="81" parent="10" name="email_prev">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="82" parent="10" name="email_next">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="83" parent="10" name="change_date">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="84" parent="10" name="changed">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1) unsigned</data-type>
+      </column>
+      <key id="85" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="86" parent="11" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="87" parent="11" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="88" parent="11" name="login_prev">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="89" parent="11" name="login_next">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="90" parent="11" name="change_date">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="91" parent="11" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="92" parent="12" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="93" parent="12" name="header">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="94" parent="12" name="date">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="95" parent="12" name="year">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="96" parent="12" name="preview">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="97" parent="12" name="text">
+        <mandatory>1</mandatory>
+        <data-type>text</data-type>
+      </column>
+      <column id="98" parent="12" name="client">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1) unsigned</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="99" parent="12" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="100" parent="13" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="101" parent="13" name="order_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="102" parent="13" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="103" parent="13" name="good_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="104" parent="13" name="quantity">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <key id="105" parent="13" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="106" parent="14" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="107" parent="14" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="108" parent="14" name="summ">
+        <mandatory>1</mandatory>
+        <data-type>float unsigned</data-type>
+      </column>
+      <column id="109" parent="14" name="send_date">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="110" parent="14" name="proceed_date">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="111" parent="14" name="status">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1) unsigned</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="112" parent="14" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="113" parent="15" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="114" parent="15" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="115" parent="15" name="password_prev">
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="116" parent="15" name="change_date">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="117" parent="15" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="118" parent="16" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="119" parent="16" name="album">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="120" parent="16" name="photo_small">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="121" parent="16" name="photo_big">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="122" parent="16" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="123" parent="17" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="124" parent="17" name="subcategory">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="125" parent="17" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="126" parent="17" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="127" parent="18" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="128" parent="18" name="type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(2)</data-type>
+      </column>
+      <column id="129" parent="18" name="category">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="130" parent="18" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="131" parent="18" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="132" parent="19" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="133" parent="19" name="catalogue_type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(2)</data-type>
+      </column>
+      <column id="134" parent="19" name="type_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="135" parent="19" name="PRIMARY">
+        <columns>id
+catalogue_type</columns>
+        <primary>1</primary>
+      </key>
+      <column id="136" parent="20" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="137" parent="20" name="short_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="138" parent="20" name="in_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="139" parent="20" name="for_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="140" parent="20" name="name_1">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="141" parent="20" name="name_2">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="142" parent="20" name="name_5">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="143" parent="20" name="full_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="144" parent="20" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="145" parent="21" name="login">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="146" parent="21" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="147" parent="21" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="148" parent="21" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="149" parent="21" name="hash">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="150" parent="21" name="company">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="151" parent="21" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="152" parent="21" name="position">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="153" parent="21" name="phone">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="154" parent="21" name="activated">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1) unsigned</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="155" parent="21" name="registration_date">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="156" parent="21" name="last_login">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="157" parent="21" name="logins_count">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="158" parent="21" name="discount">
+        <mandatory>1</mandatory>
+        <data-type>float unsigned</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="159" parent="21" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="160" parent="22" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned</data-type>
+      </column>
+      <column id="161" parent="22" name="text">
+        <mandatory>1</mandatory>
+        <data-type>text</data-type>
+      </column>
+      <key id="162" parent="22" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
