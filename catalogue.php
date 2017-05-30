@@ -579,68 +579,76 @@ if(isset($_SESSION['userID'])) {
 					$roubles ++;
 				}
 
-				if($roubles ==0 and $kopeck == 0) {
+				if($roubles == 0 and $kopeck == 0) {
 					$kopeck = 1;
 				}
 
 				echo "
 					<div class='catalogueItem'>
 						<div class='itemDescription'>
-							<div class='catalogueIMG'>
-								<a href='img/catalogue/big/".$catalogue['picture']."' class='lightview' data-lightview-title='".$catalogue['name']."' data-lightview-caption='".nl2br(strip_tags($catalogue['description']))."'><img src='img/catalogue/small/".$catalogue['small']."' /></a>
-				";
+							<table style='border: none;'>
+								<tr>
+									<td style='width: 100px;'>
+										<div class='catalogueIMG'>
+											<a href='img/catalogue/big/".$catalogue['picture']."' class='lightview' data-lightview-title='".$catalogue['name']."' data-lightview-caption='".nl2br(strip_tags($catalogue['description']))."'><img src='img/catalogue/small/".$catalogue['small']."' /></a>
+							";
 
-				if($active > 0) {
-					echo "<img src='img/system/action.png' class='actionIMG' />";
-				}
-
-				echo "
-							</div>
-							<div class='catalogueInfo'>
-								<div class='catalogueName'>
-									<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
-									<div style='margin-left: 15px;'>".$catalogue['name']."</div>
-									<div style='clear: both;'></div>
-								</div>
-								<div class='catalogueDescription'>
-				";
-				$description = str_replace("\n", "<br />", $catalogue['description']);
-				$strings = explode("<br />", $description);
-				for($i = 0; $i < count($strings); $i++) {
-					$string = explode(':', $strings[$i]);
-					if(count($string) > 1) {
-						for($j = 0; $j < count($string); $j++) {
-							if($j == 0) {
-								echo "<b>".$string[$j].":</b>";
-							} else {
-								if($j == (count($string) - 1)) {
-									echo $string[$j];
-								} else {
-									echo $string[$j].":";
-								}
+							if($active > 0) {
+								echo "<img src='img/system/action.png' class='actionIMG' />";
 							}
-						}
-						echo "<br />";
-					} else {
-						echo $string[0]."<br />";
-					}
-				}
-				echo "
-					<br />
-					<b>Артикул: </b>".$catalogue['code']."
-					<br />
-					<div id='goodPrice".$catalogue['id']."'>
-						<span"; if($_SESSION['userID'] == 1 and $active == 0) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['for_name'].": </b>"; if($catalogue['price'] == 0 or $catalogue['price'] == null) {echo "по запросу";} else {if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>"; if($active > 0) {echo "</span>";}} echo "
-				";
 
-				if($catalogue['sketch'] != '') {
-					echo "<br /><br /><a href='img/catalogue/sketch/".$catalogue['sketch']."' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
-				}
+							echo "
+										</div>
+									</td>
+									<td>
+										<div class='catalogueInfo'>
+												<div class='catalogueName'>
+													<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
+													<div style='margin-left: 15px;'>".$catalogue['name']."</div>
+													<div style='clear: both;'></div>
+												</div>
+												<div class='catalogueDescription'>
+								";
+								$description = str_replace("\n", "<br />", $catalogue['description']);
+								$strings = explode("<br />", $description);
+								for($i = 0; $i < count($strings); $i++) {
+									$string = explode(':', $strings[$i]);
+									if(count($string) > 1) {
+										for($j = 0; $j < count($string); $j++) {
+											if($j == 0) {
+												echo "<b>".$string[$j].":</b>";
+											} else {
+												if($j == (count($string) - 1)) {
+													echo $string[$j];
+												} else {
+													echo $string[$j].":";
+												}
+											}
+										}
+										echo "<br />";
+									} else {
+										echo $string[0]."<br />";
+									}
+								}
+								echo "
+									<br />
+									<b>Артикул: </b>".$catalogue['code']."
+									<br />
+									<div id='goodPrice".$catalogue['id']."'>
+										<span"; if($_SESSION['userID'] == 1 and $active == 0) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['for_name'].": </b>"; if($catalogue['price'] == 0 or $catalogue['price'] == null) {echo "по запросу";} else {if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>"; if($active > 0) {echo "</span>";}} echo "
+								";
 
-				echo "
-								</div>
-							</div>
-						</div>
+								if($catalogue['sketch'] != '') {
+									echo "<br /><br /><a href='img/catalogue/sketch/".$catalogue['sketch']."' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
+								}
+
+								echo "
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</table>
 						<div style='clear: both;'></div>
 					</div>
 				";

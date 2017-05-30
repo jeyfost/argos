@@ -141,8 +141,8 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .basicLink {color: #df4e47; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; text-decoration: underline;}
 .categoryNameContainer {position: absolute; left: 40px; margin-top: -24px;}
 .catalogueItem {width: 100%;}
-.catalogueIMG {position: relative; float: left; width: 100px; height: 100px; transition: .3s;}
-.catalogueInfo {position: relative; float: left;}
+.catalogueIMG {width: 100px; height: 100px; transition: .3s; display: inline-block;}
+.catalogueInfo {display: inline-block;}
 .catalogueName {margin-left: 10px; height: 30px; padding-left: 10px; padding-right: 10px; line-height: 30px;}
 .catalogueDescription {margin-left: 37px; margin-top: 10px; font-size: 15px;}
 .toBasketIMG {cursor: pointer;}
