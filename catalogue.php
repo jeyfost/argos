@@ -2,6 +2,9 @@
 
 session_start();
 include("scripts/connect.php");
+require_once("scripts/mobileDetect.php");
+
+$detect = new Mobile_Detect;
 
 if(empty($_REQUEST['type'])) {
 	header("Location: catalogue.php?type=fa&p=1");
@@ -299,7 +302,7 @@ if(isset($_SESSION['userID'])) {
             </div>
         	<div style="clear: both;"></div>
         </div>
-        <div id="menuIcon" onclick="showHideMobileMenu()"><img src="img/system/mobile/menuIcon.png" title="Меню" /></div>
+        <div id="menuIcon" onclick="showHideMobileMenu()"><img src="img/system/mobile/menuIcon.png" title="Меню" <?php if($detect->isMobile()) {echo "style='display: block;'";} ?> /></div>
 		<div id="mobileMenu">
 			<div class="mobileMenuItem" style="margin-top: 0;">
 				<a href="catalogue.php?type=fa&p=1" class="mobileMenuPointBig">Каталог</a>
@@ -588,9 +591,9 @@ if(isset($_SESSION['userID'])) {
 						<div class='itemDescription'>
 							<table style='border: none;'>
 								<tr>
-									<td style='width: 100px;'>
+									<td style='width: 100px;' valign='top'>
 										<div class='catalogueIMG'>
-											<a href='img/catalogue/big/".$catalogue['picture']."' class='lightview' data-lightview-title='".$catalogue['name']."' data-lightview-caption='".nl2br(strip_tags($catalogue['description']))."'><img src='img/catalogue/small/".$catalogue['small']."' /></a>
+											<a href='img/catalogue/big/".$catalogue['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-options='skin: \"light\"' data-lightview-title='".$catalogue['name']."' data-lightview-caption='".nl2br(strip_tags($catalogue['description']))."'><img src='img/catalogue/small/".$catalogue['small']."' /></a>
 							";
 
 							if($active > 0) {
@@ -636,14 +639,14 @@ if(isset($_SESSION['userID'])) {
 									<br />
 									<div id='goodPrice".$catalogue['id']."'>
 										<span"; if($_SESSION['userID'] == 1 and $active == 0) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Стоимость за ".$unit['for_name'].": </b>"; if($catalogue['price'] == 0 or $catalogue['price'] == null) {echo "по запросу";} else {if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>"; if($active > 0) {echo "</span>";}} echo "
+									</div>
 								";
 
 								if($catalogue['sketch'] != '') {
-									echo "<br /><br /><a href='img/catalogue/sketch/".$catalogue['sketch']."' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
+									echo "<br /><a href='img/catalogue/sketch/".$catalogue['sketch']."' data-lightview-title='".$catalogue['name'].": Чертёж' data-lightview-options='skin: \"light\"' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
 								}
 
-								echo "
-												</div>
+								echo "		
 											</div>
 										</div>
 									</td>
@@ -803,7 +806,7 @@ if(isset($_SESSION['userID'])) {
     <div id="footer">
 		<div class="container">
 			<div class="copy">&copy; ЧТУП &laquo;Аргос-ФМ&raquo;<br />2008 - <?php echo date('Y'); ?></div>
-			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="contacts.php?page=main">Контактная информация</a></div>
+			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="contacts/main.php">Контактная информация</a></div>
 			<div class="copy" style="float: right;">Разработка сайта<br /><a href="https://airlab.by/">airlab</a></div>
 		</div>
 		<div style="clear: both;"></div>

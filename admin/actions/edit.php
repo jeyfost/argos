@@ -219,7 +219,7 @@ if(!empty($_REQUEST['id'])) {
 							<br />
 							<input type='file' class='file' id='previewInput' name='previewPhoto' />
 							<br />
-							<a href='../../img/photos/actions/".$action['preview']."' class='lightview'><span class='redLink'>нажмите для простора текущей превью</span></a>
+							<a href='../../img/photos/actions/".$action['preview']."' class='lightview' data-lightview-options='skin: \"light\"'><span class='redLink'>нажмите для простора текущей превью</span></a>
 							<br /><br />
 							<label>Срок проведения акции (дни указываются включительно в формате <b>дд-мм-гггг</b>):</label>
 							<br /><br />
@@ -311,7 +311,7 @@ if(!empty($_REQUEST['id'])) {
 								echo "
 									<br />
 									<div class='goodImg'>
-										<a href='../../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='../../img/catalogue/small/".$good['small']."' /></a>
+										<a href='../../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='../../img/catalogue/small/".$good['small']."' /></a>
 									</div>
 									<div class='goodInfo'>
 										<div class='goodName'>
@@ -355,7 +355,7 @@ if(!empty($_REQUEST['id'])) {
 								";
 
 								if($good['sketch'] != '') {
-									echo "<br /><br /><a href='../../img/catalogue/sketch/".$good['sketch']."' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
+									echo "<br /><br /><a href='../../img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-options='skin: \"light\"'><span class='sketchFont'>Чертёж</span></a>";
 								}
 
 								echo "

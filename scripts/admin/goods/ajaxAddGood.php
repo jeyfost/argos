@@ -173,7 +173,7 @@ if(!empty($_FILES['goodPhoto']['tmp_name']) and $_FILES['goodPhoto']['error'] ==
 
 					echo "ok";
 				} else {
-					echo "error";
+					echo $mysqli->error;
 				}
 			}
 		} else {

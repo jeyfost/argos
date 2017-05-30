@@ -322,7 +322,7 @@ if(isset($_SESSION['userID'])) {
 				$awardResult = $mysqli->query("SELECT * FROM awards ORDER BY id DESC");
 				while($award = $awardResult->fetch_assoc()) {
 					echo "
-						<a href='../img/photos/awards/big/".$award['photo_big']."' class='lightview' data-lightview-title='".$award['name']."' data-lightview-group='awards'>
+						<a href='../img/photos/awards/big/".$award['photo_big']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$award['name']."' data-lightview-group='awards'>
 							<div class='awardBlock' onmouseover='awardBlock(\"awardText".$award['id']."\", \"awardPhoto".$award['id']."\", 1)' onmouseout='awardBlock(\"awardText".$award['id']."\", \"awardPhoto".$award['id']."\", 0)'>
 								<img src='../img/photos/awards/small/".$award['photo_small']."' class='awardPhoto' id='awardPhoto".$award['id']."' />
 								<br />
@@ -342,7 +342,7 @@ if(isset($_SESSION['userID'])) {
     <div id="footer">
 		<div class="container">
 			<div class="copy">&copy; ЧТУП &laquo;Аргос-ФМ&raquo;<br />2008 - <?php echo date('Y'); ?></div>
-			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="../contacts.php?page=main">Контактная информация</a></div>
+			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="../contacts/main.php">Контактная информация</a></div>
 			<div class="copy" style="float: right;">Разработка сайта<br /><a href="https://airlab.by/">airlab</a></div>
 		</div>
 		<div style="clear: both;"></div>

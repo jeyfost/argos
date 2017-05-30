@@ -58,7 +58,7 @@ if($searchResult->num_rows == 0) {
 		echo "
 			<div class='searchItem'"; if($j % 2 == 0) {echo " style='background-color: #d9d9d9;'";} echo ">
 				<div class='searchIMG'>
-					<a href='../img/catalogue/big/".$search['picture']."' class='lightview' data-lightview-title='".$search['name']."' data-lightview-caption='".nl2br(strip_tags($search['description']))."'><img src='../img/catalogue/small/".$search['small']."' /></a>
+					<a href='../img/catalogue/big/".$search['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$search['name']."' data-lightview-caption='".nl2br(strip_tags($search['description']))."'><img src='../img/catalogue/small/".$search['small']."' /></a>
 				</div>
 				<div class='searchInfo'>
 					<span style='font-size: 18px; font-style: italic;'>".$search['name']."</span>

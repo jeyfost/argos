@@ -11,7 +11,7 @@ $(window).on("load", function() {
 });
 
 function actionIcon(id, action) {
-	if(action == 1) {
+	if(action === 1) {
 		document.getElementById(id).style.opacity = "1";
 	} else {
 		document.getElementById(id).style.opacity = ".6";
@@ -19,7 +19,7 @@ function actionIcon(id, action) {
 }
 
 function buttonChange(id, action) {
-	if(action == 1) {
+	if(action === 1) {
 		document.getElementById(id).style.color = "#fff";
 		document.getElementById(id).style.backgroundColor = "#df4e47";
 	} else {
@@ -29,7 +29,7 @@ function buttonChange(id, action) {
 }
 
 function fontChange(id, action) {
-	if(action == 1) {
+	if(action === 1) {
 		document.getElementById(id).style.color = "#df4e47";
 		document.getElementById(id).style.textDecoration = "none";
 	} else {
@@ -39,7 +39,7 @@ function fontChange(id, action) {
 }
 
 function pageBlock(action, block, text) {
-	if(action == 1) {
+	if(action === 1) {
 		document.getElementById(block).style.backgroundColor = "#df4e47";
 		document.getElementById(text).style.color = "#fff";
 	} else {

@@ -412,7 +412,7 @@ if(isset($_SESSION['userID'])) {
 							echo "
 								<label for='currencyInput".$currency['id']."'>1 ".$currency['currency_name'].":</label>
 								<br />
-								<input type='number' min='0.00001' step='0.00001' id='currencyInput".$currency['id']."' value='".$currency['rate']."' />
+								<input type='number' min='0.00001' step='0.00001' id='currencyInput".$currency['id']."' value='".$currency['rate']."' "; if($currency['code'] == "BYN") {echo "readonly";} echo " />
 								<br /><br />
 							";
 						}
@@ -745,7 +745,7 @@ if(isset($_SESSION['userID'])) {
     <div id="footer">
 		<div class="container">
 			<div class="copy">&copy; ЧТУП &laquo;Аргос-ФМ&raquo;<br />2008 - <?php echo date('Y'); ?></div>
-			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="../contacts.php?page=main">Контактная информация</a></div>
+			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="../contacts/main.php">Контактная информация</a></div>
 			<div class="copy" style="float: right;">Разработка сайта<br /><a href="https://airlab.by/">airlab</a></div>
 		</div>
 		<div style="clear: both;"></div>

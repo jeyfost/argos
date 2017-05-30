@@ -687,43 +687,51 @@ if(isset($_SESSION['userID'])) {
 						echo "
 							<div class='catalogueItem'>
 								<div class='itemDescription'>
-									<div class='catalogueIMG'>
-										<a href='img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='img/catalogue/small/".$good['small']."' /></a>
-										<img src='img/system/action.png' class='actionIMG' />
-									</div>
-									<div class='catalogueInfo'>
-										<div class='catalogueName'>
-											<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
-											<div style='margin-left: 15px;'>".$good['name']."</div>
-											<div style='clear: both;'></div>
-										</div>
-										<div class='catalogueDescription'>
-						";
-						$strings = explode("<br />", $good['description']);
-						for($i = 0; $i < count($strings); $i++) {
-							$string = explode(':', $strings[$i]);
-							if(count($string) > 1) {
-								echo "<b>".$string[0].":</b>".$string[1]."<br />";
-							} else {
-								echo $string[0]."<br />";
-							}
-						}
-						echo "
-							<br />
-							<b>Артикул: </b>".$good['code']."
-							<br />
-							<div id='goodPrice".$good['id']."'>
-								<span><b>Стоимость за ".$unit['short_name'].": </b><span style='color: #df4e47; font-weight: bold;'>"; if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span></span>
-						";
+								<table style='border: none;'>
+									<tr>
+										<td style='width: 100px;' valign='top'>
+											<div class='catalogueIMG'>
+												<a href='img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='img/catalogue/small/".$good['small']."' /></a>
+												<img src='img/system/action.png' class='actionIMG' />
+											</div>
+										</td>
+										<td>
+											<div class='catalogueInfo'>
+												<div class='catalogueName'>
+													<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
+													<div style='margin-left: 15px;'>".$good['name']."</div>
+													<div style='clear: both;'></div>
+												</div>
+												<div class='catalogueDescription'>
+								";
+								$strings = explode("<br />", $good['description']);
+								for($i = 0; $i < count($strings); $i++) {
+									$string = explode(':', $strings[$i]);
+									if(count($string) > 1) {
+										echo "<b>".$string[0].":</b>".$string[1]."<br />";
+									} else {
+										echo $string[0]."<br />";
+									}
+								}
+								echo "
+									<br />
+									<b>Артикул: </b>".$good['code']."
+									<br />
+									<div id='goodPrice".$good['id']."'>
+										<span><b>Стоимость за ".$unit['short_name'].": </b><span style='color: #df4e47; font-weight: bold;'>"; if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span></span>
+								";
 
-						if($good['sketch'] != '') {
-							echo "<br /><br /><a href='img/catalogue/sketch/".$good['sketch']."' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
-						}
+								if($good['sketch'] != '') {
+									echo "<br /><br /><a href='img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-options='skin: \"light\"'><span class='sketchFont'>Чертёж</span></a>";
+								}
 
-						echo "
+								echo "
+												</div>
+											</div>
 										</div>
-									</div>
-								</div>
+										</td>
+									</tr>
+								</table>
 								<div style='clear: both;'></div>
 							</div>
 						";
@@ -781,7 +789,7 @@ if(isset($_SESSION['userID'])) {
     <div id="footer">
 		<div class="container">
 			<div class="copy">&copy; ЧТУП &laquo;Аргос-ФМ&raquo;<br />2008 - <?php echo date('Y'); ?></div>
-			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="contacts.php?page=main">Контактная информация</a></div>
+			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="contacts/main.php">Контактная информация</a></div>
 			<div class="copy" style="float: right;">Разработка сайта<br /><a href="https://airlab.by/">airlab</a></div>
 		</div>
 		<div style="clear: both;"></div>

@@ -124,49 +124,57 @@ while($order = $orderResult->fetch_assoc()) {
 	echo "
 		<div class='catalogueItem' id='ci".$good['id']."'>
 			<div class='itemDescription'>
-				<div class='catalogueIMG' onmouseover='actionIcon(\"actionIcon".$good['id']."\", 1)' onmouseout='actionIcon(\"actionIcon".$good['id']."\", 0)'>
-					<a href='../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='../img/catalogue/small/".$good['small']."' /></a>
-	";
+				<table style='border: none;'>
+					<tr>
+						<td style='width: 100px;' valign='top'>
+							<div class='catalogueIMG' onmouseover='actionIcon(\"actionIcon".$good['id']."\", 1)' onmouseout='actionIcon(\"actionIcon".$good['id']."\", 0)'>
+								<a href='../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='../img/catalogue/small/".$good['small']."' /></a>
+				";
 
-	if($active > 0) {
-		echo "<img src='../img/system/action.png' class='actionIMG' id='actionIcon".$good['id']."' />";
-	}
+				if($active > 0) {
+					echo "<img src='../img/system/action.png' class='actionIMG' id='actionIcon".$good['id']."' />";
+				}
 
-	echo "
-				</div>
-				<div class='catalogueInfo'>
-					<div class='catalogueName'>
-						<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
-						<div style='margin-left: 15px; font-size: 17px;'>".$good['name']."</div>
-						<div style='clear: both;'></div>
-					</div>
-				<div class='catalogueDescription'>
-	";
-	$strings = explode("<br />", $good['description']);
-	for($i = 0; $i < count($strings); $i++) {
-		$string = explode(':', $strings[$i]);
-		if(count($string) > 1) {
-			echo "<b>".$string[0].":</b>".$string[1]."<br />";
-		} else {
-			echo $string[0]."<br />";
-		}
-	}
-	echo "
-		<br />
-		<b>Артикул: </b>".$good['code']."
-		<br />
-		<div id='goodPrice".$good['id']."'>
-			<span><b>Стоимость за ".$unit['short_name'].": </b>"; if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span'>";} echo "
-	";
+				echo "
+							</div>
+						</td>
+						<td>
+							<div class='catalogueInfo'>
+								<div class='catalogueName'>
+									<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
+									<div style='margin-left: 15px; font-size: 17px;'>".$good['name']."</div>
+									<div style='clear: both;'></div>
+								</div>
+							<div class='catalogueDescription'>
+				";
+				$strings = explode("<br />", $good['description']);
+				for($i = 0; $i < count($strings); $i++) {
+					$string = explode(':', $strings[$i]);
+					if(count($string) > 1) {
+						echo "<b>".$string[0].":</b>".$string[1]."<br />";
+					} else {
+						echo $string[0]."<br />";
+					}
+				}
+				echo "
+					<br />
+					<b>Артикул: </b>".$good['code']."
+					<br />
+					<div id='goodPrice".$good['id']."'>
+						<span><b>Стоимость за ".$unit['short_name'].": </b>"; if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span'>";} echo "
+				";
 
-	if($good['sketch'] != '') {
-		echo "<br /><br /><a href='../img/catalogue/sketch/".$good['sketch']."' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
-	}
+				if($good['sketch'] != '') {
+					echo "<br /><br /><a href='../img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-options='skin: \"light\"'><span class='sketchFont'>Чертёж</span></a>";
+				}
 
-	echo "
-					</div>
-				</div>
-			</div>
+				echo "
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
 		</div>
 		<div class='itemPurchase'>
 			<img src='../img/system/delete.png' id='deleteIMG".$good['id']."' style='cursor: pointer; float: right;' title='Убрать товар из заказа' onmouseover='changeIcon(\"deleteIMG".$good['id']."\", \"deleteRed.png\", 1)' onmouseout='changeIcon(\"deleteIMG".$good['id']."\", \"delete.png\", 1)' onclick='removeGoodFromOrder(\"".$good['id']."\", \"".$id."\")' />

@@ -335,7 +335,7 @@ if(isset($_SESSION['userID'])) {
 						while($photo = $photoResult->fetch_assoc()) {
 							echo "
 								<div class='awardBlock'>
-									<a href='../img/photos/gallery/big/".$photo['photo_big']."' class='lightview' data-lightview-title='".$album['name']."' data-lightview-group='album".$album['id']."'><img src='../img/photos/gallery/small/".$photo['photo_small']."' class='galleryPhoto' id='galleryPhoto".$photo['id']."' onmouseover='galleryPhoto(\"galleryPhoto".$photo['id']."\", 1)' onmouseout='galleryPhoto(\"galleryPhoto".$photo['id']."\", 0)' /></a>
+									<a href='../img/photos/gallery/big/".$photo['photo_big']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$album['name']."' data-lightview-group='album".$album['id']."'><img src='../img/photos/gallery/small/".$photo['photo_small']."' class='galleryPhoto' id='galleryPhoto".$photo['id']."' onmouseover='galleryPhoto(\"galleryPhoto".$photo['id']."\", 1)' onmouseout='galleryPhoto(\"galleryPhoto".$photo['id']."\", 0)' /></a>
 								</div>
 							";
 						}
@@ -353,7 +353,7 @@ if(isset($_SESSION['userID'])) {
     <div id="footer">
 		<div class="container">
 			<div class="copy">&copy; ЧТУП &laquo;Аргос-ФМ&raquo;<br />2008 - <?php echo date('Y'); ?></div>
-			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="../contacts.php?page=main">Контактная информация</a></div>
+			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="../contacts/main.php">Контактная информация</a></div>
 			<div class="copy" style="float: right;">Разработка сайта<br /><a href="https://airlab.by/">airlab</a></div>
 		</div>
 		<div style="clear: both;"></div>

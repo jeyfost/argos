@@ -286,7 +286,7 @@ if(!empty($_REQUEST['id'])) {
 							<select id='categorySelect' name='goodCategory' onchange='selectCategory(\"".$_REQUEST['type']."\", this.options[this.selectedIndex].value)'>
 								<option value=''>- Выберите раздел -</option>
 						";
-						$categoryResult = $mysqli->query("SELECT * FROM categories_new WHERE type = '".$t."'");
+						$categoryResult = $mysqli->query("SELECT * FROM categories_new WHERE type = '".$t."' ORDER BY name");
 						while ($category = $categoryResult->fetch_assoc()) {
 							echo "<option value='".$category['id']."'"; if($c == $category['id']) {echo " selected";} echo ">".$category['name']."</option>";
 						}
@@ -478,7 +478,7 @@ if(!empty($_REQUEST['id'])) {
 							echo "
 								<tr>
 									<td style='background-color: "; if($id == $good['id']) {echo "#cbd7ff";} else {echo "#ededed";} echo ";'>".$i."</td>
-									<td style='background-color: #fff; width: 100px;'><a href='../../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='../../img/catalogue/small/".$good['small']."' /></a></td>
+									<td style='background-color: #fff; width: 100px;'><a href='../../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='../../img/catalogue/small/".$good['small']."' /></a></td>
 									<td"; if($id == $good['id']) {echo " style='background-color: #cbd7ff;'";} echo "><a href='".$link."'><span class='link'>".$good['name']."</span></a></td>
 									<td"; if($id == $good['id']) {echo " style='background-color: #cbd7ff;'";} echo ">".$good['code']."</td>
 								</tr>
@@ -511,7 +511,7 @@ if(!empty($_REQUEST['id'])) {
 				<br /><br />
 				<label for='goodPhotoInput'>Фотография товара (как минимум 100*100 пикселей)</label>
 				<br />
-				<a href='../../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><span class='link' style='font-size: 14px;'>(нажмите для просмотра фотографии)</span></a>
+				<a href='../../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><span class='link' style='font-size: 14px;'>(нажмите для просмотра фотографии)</span></a>
 				<br />
 				<input type='file' id='goodPhotoInput' class='file' name='goodPhoto' />
 				<br /><br />
@@ -521,7 +521,7 @@ if(!empty($_REQUEST['id'])) {
 			if(!empty($good['sketch'])) {
 				echo "
 					<br />
-					<a href='../../img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-title='".$good['name']."' data-lightview-caption='Чертёж'><span class='link' style='font-size: 14px;'>(нажмите для просмотра чертежа)</span></a>
+					<a href='../../img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='Чертёж'><span class='link' style='font-size: 14px;'>(нажмите для просмотра чертежа)</span></a>
 				";
 			}
 

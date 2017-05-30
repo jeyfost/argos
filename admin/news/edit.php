@@ -263,7 +263,7 @@ if(!empty($_REQUEST['id'])) {
 									<br /><br />
 									<label for='previewInput'>Превью новости (минимум 200x130 пикселей):</label>
 									<br />
-									<a href='../../img/photos/news/".$news['preview']."' class='lightview'><span class='redLink'>нажмите для простора текущей превью</span></a>
+									<a href='../../img/photos/news/".$news['preview']."' class='lightview' data-lightview-options='skin: \"light\"'><span class='redLink'>нажмите для простора текущей превью</span></a>
 									<br /><br />
 									<input type='file' class='file' id='previewInput' name='previewPhoto' />
 									<br /><br />
@@ -320,7 +320,7 @@ if(!empty($_REQUEST['id'])) {
 							echo "
 								<tr>
 									<td style='background-color: "; if($id == $news['id']) {echo "#cbd7ff";} else {echo "#ededed";} echo ";'>".$i."</td>
-									<td style='background-color: #fff; width: 100px;'><a href='../../img/photos/news/".$news['preview']."' class='lightview' data-lightview-title='".$news['header']."'><img src='../../img/photos/news/".$news['preview']."' style='width: 100px;' /></a></td>
+									<td style='background-color: #fff; width: 100px;'><a href='../../img/photos/news/".$news['preview']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$news['header']."'><img src='../../img/photos/news/".$news['preview']."' style='width: 100px;' /></a></td>
 									<td"; if($id == $news['id']) {echo " style='background-color: #cbd7ff;'";} echo "><a href='".$link."'><span class='link'>".$news['header']."</span></a></td>
 								</tr>
 							";

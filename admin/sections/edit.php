@@ -425,13 +425,13 @@ if(!empty($_REQUEST['edit'])) {
 				<br /><br />
 				<label for='blackImgInput'>Выберите чёрную иконку (21x21):</label>
 				<br />
-				<a href='../../img/icons/".$section['picture']."' class='lightview'><span class='link' style='font-size: 14px;'>(Нажмите для просмотра текущей иконки)</span></a>
+				<a href='../../img/icons/".$section['picture']."' class='lightview' data-lightview-options='skin: \"light\"'><span class='link' style='font-size: 14px;'>(Нажмите для просмотра текущей иконки)</span></a>
 				<br />
 				<input type='file' class='file' name='blackImg' id='blackImgInput' />
 				<br /><br />
 				<label for='redImgInput'>Выберите красную иконку (21x21)</label>
 				<br />
-				<a href='../../img/icons/".$section['picture_red']."' class='lightview'><span class='link' style='font-size: 14px;'>(Нажмите для просмотра текущей иконки)</span></a>
+				<a href='../../img/icons/".$section['picture_red']."' class='lightview' data-lightview-options='skin: \"light\"'><span class='link' style='font-size: 14px;'>(Нажмите для просмотра текущей иконки)</span></a>
 				<br />
 				<input type='file' class='file' name='redImg' id='redImgInput' />
 				<br /><br />

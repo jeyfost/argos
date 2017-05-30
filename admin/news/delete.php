@@ -304,7 +304,7 @@ if(!empty($_REQUEST['id'])) {
 							echo "
 								<tr>
 									<td style='background-color: "; if($id == $news['id']) {echo "#cbd7ff";} else {echo "#ededed";} echo ";'>".$i."</td>
-									<td style='background-color: #fff; width: 100px;'><a href='../../img/photos/news/".$news['preview']."' class='lightview' data-lightview-title='".$news['header']."'><img src='../../img/photos/news/".$news['preview']."' style='width: 100px;' /></a></td>
+									<td style='background-color: #fff; width: 100px;'><a href='../../img/photos/news/".$news['preview']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$news['header']."'><img src='../../img/photos/news/".$news['preview']."' style='width: 100px;' /></a></td>
 									<td"; if($id == $news['id']) {echo " style='background-color: #cbd7ff;'";} echo "><a href='".$link."'><span class='link'>".$news['header']."</span></a></td>
 								</tr>
 							";

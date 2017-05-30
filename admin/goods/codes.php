@@ -13,7 +13,6 @@ if(isset($_SESSION['userID'])) {
 } else {
 	header("Location: ../index.php");
 }
-
 ?>
 
 <!doctype html>
@@ -176,47 +175,69 @@ if(isset($_SESSION['userID'])) {
 			<div style="clear: both;"></div>
 			<br /><br />
 			<?php
-				$code = [];
-				$freeCode = [];
+				$codes = array();
+				$free = array();
 
-				$goodResult = $mysqli->query("SELECT * FROM catalogue_new ORDER BY code");
-				while($good = $goodResult->fetch_assoc()) {
-					array_push($code, $good['code']);
+				$codeResult = $mysqli->query("SELECT code FROM catalogue_new ORDER BY code");
+
+				while($code = $codeResult->fetch_array(MYSQLI_NUM))
+				{
+					if($code[0] != 0)
+					{
+						array_push($codes, (int)$code[0]);
+					}
 				}
 
-				$j = 0;
-				$checkCode = (int)$code[0];
+				for($i = 1; $i <= 9999; $i++)
+				{
+					$count = 0;
 
-				for($i = 1; $i < 10000; $i++) {
-					if($i < $checkCode or $i > $checkCode) {
-						array_push($freeCode, $i);
-					} else {
-						if($j < count($code) - 1) {
-							$j++;
-							$checkCode = (int)$code[$j];
+					for($j = 0; $j < count($codes); $j++)
+					{
+						if($i == $codes[$j])
+						{
+							$count++;
 						}
 					}
+
+					if($count == 0)
+					{
+						array_push($free, $i);
+					}
 				}
 
-				for($i = 0; $i < count($freeCode); $i++) {
-					switch(strlen($freeCode[$i])) {
+				$index = 0;
+
+				for($i = 0; $i < count($free); $i++)
+				{
+					if($index % 2 == 0) {
+						echo "<div style='position: relative; float: left; padding: 5px; margin: 5px; background-color: #ffffff;'>";
+					} else {
+						echo "<div style='position: relative; float: left; padding: 5px; margin: 5px; background-color: #dddddd;'>";
+					}
+
+					switch ($free[$i]) {
 						case 1:
-							$code = "000".$freeCode[$i];
+							$freeCode = "000".$free[$i];
 							break;
 						case 2:
-							$code = "00".$freeCode[$i];
+							$freeCode = "00".$free[$i];
 							break;
 						case 3:
-							$code = "0".$freeCode[$i];
+							$freeCode = "0".$free[$i];
 							break;
 						default:
-							$code = $freeCode[$i];
+							$freeCode = $free[$i];
 							break;
 					}
 
-					echo "<div class='codeCell'"; if($i % 2 == 0) {echo " style='background-color: #d5d5d5;'";} echo ">".$code."</div>";
+					echo $freeCode."</div>";
+
+					$index++;
 				}
+
 			?>
+
 		<div style="clear: both;"></div>
 		<div style="width: 100%; height: 40px;"></div>
 	</div>

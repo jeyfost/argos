@@ -239,7 +239,7 @@ if(!empty($_REQUEST['id'])) {
 						echo "
 							<tr>
 								<td style='background-color: "; if($_REQUEST['id'] == $photo['id']) {echo "#cbd7ff";} else {echo "#ededed";} echo ";'>".$i."</td>
-								<td style='background-color: #fff; width: 100px;'><a href='../../img/photos/awards/big/".$photo['photo_big']."' class='lightview' data-lightview-title='".$photo['name']."'><img src='../../img/photos/awards/small/".$photo['photo_small']."' /></a></td>
+								<td style='background-color: #fff; width: 100px;'><a href='../../img/photos/awards/big/".$photo['photo_big']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$photo['name']."'><img src='../../img/photos/awards/small/".$photo['photo_small']."' /></a></td>
 								<td"; if($_REQUEST['id'] == $photo['id']) {echo " style='background-color: #cbd7ff;'";} echo "><a href='".$link."'><span class='link'>".$photo['name']."</span></a></td>
 							</tr>
 						";

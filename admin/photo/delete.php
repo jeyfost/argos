@@ -244,7 +244,7 @@ if(isset($_REQUEST['id'])) {
 							echo "
 								<tr>
 									<td style='background-color: "; if($_REQUEST['id'] == $photo['id']) {echo "#cbd7ff";} else {echo "#ededed";} echo ";'>".$i."</td>
-									<td style='background-color: #fff; width: 100px;'><a href='../../img/photos/gallery/big/".$photo['photo_big']."' class='lightview' data-lightview-title='".$album[0]."'><img src='../../img/photos/gallery/small/".$photo['photo_small']."' /></a></td>
+									<td style='background-color: #fff; width: 100px;'><a href='../../img/photos/gallery/big/".$photo['photo_big']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$album[0]."'><img src='../../img/photos/gallery/small/".$photo['photo_small']."' /></a></td>
 									<td"; if($_REQUEST['id'] == $photo['id']) {echo " style='background-color: #cbd7ff;'";} echo "><a href='".$link."'><span class='link'>Перейти к удалению</span></a></td>
 								</tr>
 							";

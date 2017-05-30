@@ -94,7 +94,7 @@ select {height: 40px; line-height: 40px;}
     .rightSideBlock {background-color: #fff; z-index: 2; position: absolute; top: 10px; right: 5%; transition: .2s; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4);}
     .rightSideBlock ul {padding-left: 20px; padding-right: 20px; list-style: none; transition: .2s;}
     .rightSideBlock ul li {margin: 10px auto auto auto;}
-    .categoryContainer {width: 100%; font-size: 15px;}
+    .categoryContainer {width: 100%; font-size: 15px; display: inline-block;}
     .itemPurchase {position: relative; float: right; width: 100px; text-align: center;}
     .headerIcon {position: relative; float: right; width: 20px; padding-left: 10px;}
     .searchItem {width: 100%;}
@@ -157,7 +157,7 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .subcategoryContainer {margin-left: 30px; font-size: 15px;}
 .subcategory2Container {margin-left: 48px; font-size: 15px;}
 .sketchFont, td a {font-size: 16px; color: #df4e47; text-decoration: none;}
-.actionIMG {position: absolute; bottom: -30px; right: -30px; opacity: .6; transition: .3s;}
+.actionIMG {position: absolute; top: 70px; left: 70px; opacity: .6; transition: .3s;}
 .personalMenuLink {width: 100%; height: 40px; line-height: 40px; text-align: center; color: #4c4c4c; background-color: #dedede;}
 .personalMenuLinkActive {width: 100%; height: 40px; line-height: 40px; text-align: center; color: #fff; background-color: #df4e47;}
 .awardBlock {width: 100px; text-align: center; cursor: pointer; margin: 10px auto auto 10px; display: inline-block; vertical-align: top;}
