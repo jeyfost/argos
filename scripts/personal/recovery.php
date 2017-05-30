@@ -24,7 +24,7 @@ function sendMail($address, $hash) {
 	$to = $address;
 
 	$subject = "Восстановление пароля на сайте Аргос-ФМ";
-	$message = "Здравствуйте!<br /><br />От вашего имени поступил запрос на изменение пароля на сайте <a href='http://argos-fm.by/'>argos-fm.by</a>.<br /><br />Для изменения пароля перейдите по следующей ссылке: <a href='http://argos-fm.by/scripts/personal/recovery.php?hash=".$hash."'>изменить ваш пароль</a>.<br /><br />Если вы не отправляли запрос на изменение пароля, то удалите это письмо.";
+	$message = "Здравствуйте!<br /><br />От вашего имени поступил запрос на изменение пароля на сайте <a href='https://argos-fm.by/'>argos-fm.by</a>.<br /><br />Для изменения пароля перейдите по следующей ссылке: <a href='https://argos-fm.by/scripts/personal/recovery.php?hash=".$hash."'>изменить ваш пароль</a>.<br /><br />Если вы не отправляли запрос на изменение пароля, то удалите это письмо.";
 
 	$headers = "Content-type: text/html; charset=utf-8 \r\n";
 	$headers .= "From: Администрация сайта Аргос-ФМ <no-reply@argos-fm.by>\r\n";

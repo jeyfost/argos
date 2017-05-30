@@ -32,7 +32,7 @@ if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			if($mysqli->query("UPDATE users SET email = '".$email."' WHERE id = '".$id."'")) {
 				if($mysqli->query("INSERT INTO email_old (user_id, email_prev, email_next, change_date, changed) VALUES ('".$id."', '".$user['email']."', '".$email."', '".date('d-m-Y H:i:s')."', '1')")) {
 					$subject = "Ваш email-адрес был изменён";
-					$message = "Здравствуйте!<br /><br />Ваш email-адрес на сайте <a href='http://argos-fm.by/'>argos-fm.by</a> был изменён на <b>".$email."</b>. С этого момента для авторизации используйте этот email или ваш логин.<br /><br />Размер вашей скидки и другая личная информация затронута не была.<br /><br />С наилучшими пожеланиями, команда Аргос-ФМ";
+					$message = "Здравствуйте!<br /><br />Ваш email-адрес на сайте <a href='https://argos-fm.by/'>argos-fm.by</a> был изменён на <b>".$email."</b>. С этого момента для авторизации используйте этот email или ваш логин.<br /><br />Размер вашей скидки и другая личная информация затронута не была.<br /><br />С наилучшими пожеланиями, команда Аргос-ФМ";
 					$headers = "Content-type: text/html; charset=utf-8 \r\n";
 		$headers .= "From: Администрация сайта Аргос-ФМ <no-reply@argos-fm.by>\r\n";
 					mail($email, $subject, $message, $headers);
@@ -60,7 +60,7 @@ if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			if($mysqli->query("UPDATE users SET login = '".$login."' WHERE id = '".$id."'")) {
 				if($mysqli->query("INSERT INTO login_old (user_id, login_prev, login_next, change_date) VALUES ('".$id."', '".$user['login']."', '".$login."', '".date('d-m-Y H:i:s')."')")) {
 					$subject = "Ваш логин был изменён";
-					$message = "Здравствуйте!<br /><br />Ваш логин на сайте <a href='http://argos-fm.by/'>argos-fm.by</a> был изменён на <b>".$login."</b>. С этого момента для авторизации используйте этот логин или ваш email-адрес.<br /><br />Размер вашей скидки и другая личная информация затронута не была.<br /><br />С наилучшими пожеланиями, команда Аргос-ФМ";
+					$message = "Здравствуйте!<br /><br />Ваш логин на сайте <a href='https://argos-fm.by/'>argos-fm.by</a> был изменён на <b>".$login."</b>. С этого момента для авторизации используйте этот логин или ваш email-адрес.<br /><br />Размер вашей скидки и другая личная информация затронута не была.<br /><br />С наилучшими пожеланиями, команда Аргос-ФМ";
 					$headers = "Content-type: text/html; charset=utf-8 \r\n";
 		$headers .= "From: Администрация сайта Аргос-ФМ <no-reply@argos-fm.by>\r\n";
 					mail($email, $subject, $message, $headers);
@@ -87,7 +87,7 @@ if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			if($mysqli->query("UPDATE users SET password = '".$passwordNew."' WHERE id = '".$id."'")) {
 				if($mysqli->query("INSERT INTO password_old (user_id, password_prev, change_date) VALUES ('".$id."', '".$user['password']."', '".date('d-m-Y H:i:s')."')")) {
 					$subject = "Ваш пароль был изменён";
-					$message = "Здравствуйте!<br /><br />Ваш пароль на сайте <a href='http://argos-fm.by/'>argos-fm.by</a> был изменён на <b>".$password."</b>. С этого момента для авторизации используйте новый пароль.<br /><br />С наилучшими пожеланиями, команда Аргос-ФМ";
+					$message = "Здравствуйте!<br /><br />Ваш пароль на сайте <a href='https://argos-fm.by/'>argos-fm.by</a> был изменён на <b>".$password."</b>. С этого момента для авторизации используйте новый пароль.<br /><br />С наилучшими пожеланиями, команда Аргос-ФМ";
 					$headers = "Content-type: text/html; charset=utf-8 \r\n";
 			$headers .= "From: Администрация сайта Аргос-ФМ <no-reply@argos-fm.by>\r\n";
 					mail($email, $subject, $message, $headers);

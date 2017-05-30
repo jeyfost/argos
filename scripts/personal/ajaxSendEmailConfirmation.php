@@ -35,7 +35,7 @@ function sendMail($address, $code, $id) {
 	$headers .= "From: Администрация сайта Аргос-ФМ <no-reply@argos-fm.by>\r\n";
 
 	$subject = "Изменение адреса на сайте Аргос-ФМ";
-	$message = "Здравствуйте!<br /><br />Адрес вашей электронной почты был указан при редактировании личных данных на сайте <a href='http://argos-fm.by/'>argos-fm.by</a>. Для завершения процедуры смены email-адреса перейдите, пожалуйста, по <a href='http://argos-fm.by/scripts/personal/email.php?hash=".$code."&id=".$id."'>этой ссылке</a><br /><br />Если вы не регистрировались на сайте, а кто-то по ошибке или намеренно указал адрес вашей почты, перейдите по ссылке, чтобы <a href='http://argos-fm.by/scripts/personal/emailCancel.php?hash=".$code."&id=".$id."'>аннулировать изменения</a>";
+	$message = "Здравствуйте!<br /><br />Адрес вашей электронной почты был указан при редактировании личных данных на сайте <a href='https://argos-fm.by/'>argos-fm.by</a>. Для завершения процедуры смены email-адреса перейдите, пожалуйста, по <a href='https://argos-fm.by/scripts/personal/email.php?hash=".$code."&id=".$id."'>этой ссылке</a><br /><br />Если вы не регистрировались на сайте, а кто-то по ошибке или намеренно указал адрес вашей почты, перейдите по ссылке, чтобы <a href='https://argos-fm.by/scripts/personal/emailCancel.php?hash=".$code."&id=".$id."'>аннулировать изменения</a>";
 
 	mail($to, $subject, $message, $headers);
 }

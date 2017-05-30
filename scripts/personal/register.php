@@ -168,7 +168,7 @@ function sendMail($address, $code) {
 	$headers .= "From: Администрация сайта Аргос-ФМ <no-reply@argos-fm.by>\r\n";
 
 	$subject = "Регистрация на сайте Аргос-ФМ";
-	$message = "Здравствуйте!<br /><br />Адрес вашей электронной почты был указан при регистрации на сайте <a href='http://argos-fm.by/'>argos-fm.by</a>. Для завершения регистрации перейдите, пожалуйста, по <a href='argos-fm.by/scripts/personal/confirm.php?hash='".$code."'>этой ссылке</a><br /><br />Если вы не регистрировались на сайте, а кто-то по ошибке или намеренно указал адрес вашей почты, перейдите по ссылке, чтобы <a href='argos-fm.by/scripts/personal/cancel.php?hash=".$code."'>аннулировать регистрацию</a>";
+	$message = "Здравствуйте!<br /><br />Адрес вашей электронной почты был указан при регистрации на сайте <a href='https://argos-fm.by/'>argos-fm.by</a>. Для завершения регистрации перейдите, пожалуйста, по <a href='argos-fm.by/scripts/personal/confirm.php?hash='".$code."'>этой ссылке</a><br /><br />Если вы не регистрировались на сайте, а кто-то по ошибке или намеренно указал адрес вашей почты, перейдите по ссылке, чтобы <a href='argos-fm.by/scripts/personal/cancel.php?hash=".$code."'>аннулировать регистрацию</a>";
 
 	mail($to, $subject, $message, $headers);
 }
