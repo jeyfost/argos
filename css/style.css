@@ -142,12 +142,12 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .categoryNameContainer {position: absolute; left: 40px; margin-top: -24px;}
 .catalogueItem {width: 100%;}
 .catalogueIMG {width: 100px; height: 100px; transition: .3s; display: inline-block;}
-.catalogueInfo {display: inline-block;}
+.catalogueInfo {display: inline-block; width: 100%;}
 .catalogueName {margin-left: 10px; height: 30px; padding-left: 10px; padding-right: 10px; line-height: 30px;}
 .catalogueDescription {margin-left: 37px; margin-top: 10px; font-size: 15px;}
 .toBasketIMG {cursor: pointer;}
 .itemQuantityInput {width: 65px; margin-top: 5px;}
-.itemDescription {position: relative; float: left;}
+.itemDescription {position: relative; float: left; width: 100%;}
 .itemPurchase form label {font-size: 14px;}
 .addingResult, #goodResponseFiled, #responseField, #orderResponse {transition: .3s; opacity: 0; font-size: 14px;}
 .pageNumberBlockSide {position: relative; float: left; background-color: #ffffff; height: 30px; line-height: 30px; padding-left: 10px; padding-right: 10px; text-align: center;}

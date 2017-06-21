@@ -589,7 +589,7 @@ if(isset($_SESSION['userID'])) {
 				echo "
 					<div class='catalogueItem'>
 						<div class='itemDescription'>
-							<table style='border: none;'>
+							<table style='border: none; width: 100%;'>
 								<tr>
 									<td style='width: 100px;' valign='top'>
 										<div class='catalogueIMG'>
@@ -611,8 +611,13 @@ if(isset($_SESSION['userID'])) {
 													<div style='clear: both;'></div>
 												</div>
 												<div class='catalogueDescription'>
-								";
-								$description = str_replace("\n", "<br />", $catalogue['description']);
+													<table style='width: 100%;'>
+														<tbody>
+															<tr>
+																<td>
+							";
+
+							$description = str_replace("\n", "<br />", $catalogue['description']);
 								$strings = explode("<br />", $description);
 								for($i = 0; $i < count($strings); $i++) {
 									$string = explode(':', $strings[$i]);
@@ -646,7 +651,31 @@ if(isset($_SESSION['userID'])) {
 									echo "<br /><a href='img/catalogue/sketch/".$catalogue['sketch']."' data-lightview-title='".$catalogue['name'].": Чертёж' data-lightview-options='skin: \"light\"' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
 								}
 
-								echo "		
+							echo "
+																</td>
+																<td style='width: 65px;'>
+							";
+
+							if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
+								echo "
+									<div class='itemPurchase'>
+										<img src='img/system/toBasket.png' id='toBasketIMG".$catalogue['id']."' class='toBasketIMG' onmouseover='changeIcon(\"toBasketIMG".$catalogue['id']."\", \"toBasketRed.png\", 0)' onmouseout='changeIcon(\"toBasketIMG".$catalogue['id']."\", \"toBasket.png\", 0)' title='Добавить в корзину' onclick='addToBasket(\"".$catalogue['id']."\", \"quantityInput".$catalogue['id']."\", \"addingResult".$catalogue['id']."\")' />
+										<form method='post'>
+											<label for='quantityInput".$catalogue['id']."'>Кол-во в ".$unit['in_name'].":</label>
+											<input type='number' id='quantityInput".$catalogue['id']."' min='1' step='1' value='1' class='itemQuantityInput' />
+										</form>
+										<br />
+										<div class='addingResult' id='addingResult".$catalogue['id']."' onclick='hideBlock(\"addingResult".$catalogue['id']."\")'></div>
+									</div>
+			
+								";
+							}
+
+							echo "
+																</td>
+															</tr>	
+														</tbody>
+													</table>	
 											</div>
 										</div>
 									</td>
@@ -655,21 +684,6 @@ if(isset($_SESSION['userID'])) {
 						<div style='clear: both;'></div>
 					</div>
 				";
-
-				if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
-					echo "
-						<div class='itemPurchase'>
-							<img src='img/system/toBasket.png' id='toBasketIMG".$catalogue['id']."' class='toBasketIMG' onmouseover='changeIcon(\"toBasketIMG".$catalogue['id']."\", \"toBasketRed.png\", 0)' onmouseout='changeIcon(\"toBasketIMG".$catalogue['id']."\", \"toBasket.png\", 0)' title='Добавить в корзину' onclick='addToBasket(\"".$catalogue['id']."\", \"quantityInput".$catalogue['id']."\", \"addingResult".$catalogue['id']."\")' />
-							<form method='post'>
-								<label for='quantityInput".$catalogue['id']."'>Кол-во в ".$unit['in_name'].":</label>
-								<input type='number' id='quantityInput".$catalogue['id']."' min='1' step='1' value='1' class='itemQuantityInput' />
-							</form>
-							<br />
-							<div class='addingResult' id='addingResult".$catalogue['id']."' onclick='hideBlock(\"addingResult".$catalogue['id']."\")'></div>
-						</div>
-
-					";
-				}
 
 				echo "
 						<div style='clear: both;'></div>
