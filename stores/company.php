@@ -116,7 +116,7 @@ if(isset($_SESSION['userID'])) {
 							} else {
 								echo "
 									<div class='headerIcon' id='basketIcon'>
-										<a href='../personal/basket.php'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)' /></a>
+										<a href='../personal/basket.php'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
 									</div>
 								";
 							}
@@ -313,10 +313,33 @@ if(isset($_SESSION['userID'])) {
 		<div id="personalContent">
 			<div class="mapContainer">
 				<div class="map">
-					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=om0QHqcbbq7ki3IzQujwQF5MaychC7ZG&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=TRFDdk4LfiXmytO-3UCq_hXaFXJG-3Zd&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
 				</div>
 				<div class="mapDescription">
 					<h2>1. Магазин мебельной фурнитуры</h2>
+					<b>Адрес:</b>
+					<br />
+					<span>212040, Республика Беларусь, г. Могилёв, ул. Залуцкого, 21</span>
+					<br /><br />
+					<b>Телефон:</b>
+					<br />
+					<span>+375 (222) 747-800</span>
+					<br /><br />
+					<b>Время работы:</b>
+					<br />
+					<span>понедельник - пятница</span>
+					<br />
+					<span>8:00 - 17:00</span>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<br /><br />
+			<div class="mapContainer">
+				<div class="map">
+					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=om0QHqcbbq7ki3IzQujwQF5MaychC7ZG&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+				</div>
+				<div class="mapDescription">
+					<h2>2. Магазин мебельной фурнитуры</h2>
 					<b>Адрес:</b>
 					<br />
 					<span>212011, Республика Беларусь, г. Могилёв, ул. Калужская, 13</span>
@@ -330,29 +353,6 @@ if(isset($_SESSION['userID'])) {
 					<span>понедельник - пятница</span>
 					<br />
 					<span>9:00 - 18:00</span>
-				</div>
-				<div style="clear: both;"></div>
-			</div>
-			<br /><br />
-			<div class="mapContainer">
-				<div class="map">
-					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=TRFDdk4LfiXmytO-3UCq_hXaFXJG-3Zd&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
-				</div>
-				<div class="mapDescription">
-					<h2>2. Магазин мебельной фурнитуры</h2>
-					<b>Адрес:</b>
-					<br />
-					<span>212040, Республика Беларусь, г. Могилёв, ул. Залуцкого, 21</span>
-					<br /><br />
-					<b>Телефон:</b>
-					<br />
-					<span>+375 (29) xxx-xx-xx</span>
-					<br /><br />
-					<b>Время работы:</b>
-					<br />
-					<span>понедельник - пятница</span>
-					<br />
-					<span>8:00 - 17:00</span>
 				</div>
 				<div style="clear: both;"></div>
 			</div>
