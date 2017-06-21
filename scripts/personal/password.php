@@ -6,6 +6,12 @@ include("../connect.php");
 
 if(!empty($_POST['recoveryPassword'])) {
 	$password = md5(md5($mysqli->real_escape_string($_POST['recoveryPassword'])));
+
+	$userResult = $mysqli->query("SELECT * FROM users WHERE hash = '".$_SESSION['hash']."'");
+	$user = $userResult->fetch_assoc();
+
+	$mysqli->query("INSERT INTO password_old (user_id, password_prev, change_date) VALUES ('".$user['id']."', '".$user['password']."', '".date('d-m-Y H:i:s')."')");
+
 	if($mysqli->query("UPDATE users SET password = '".$password."' WHERE hash = '".$_SESSION['hash']."'")) {
 		$emailResult = $mysqli->query("SELECT email FROM users WHERE hash = '".$_SESSION['hash']."'");
 		$email = $emailResult->fetch_array(MYSQLI_NUM);
@@ -13,6 +19,7 @@ if(!empty($_POST['recoveryPassword'])) {
 		sendMail($email[0], $mysqli->real_escape_string($_POST['recoveryPassword']));
 
 		$_SESSION['recoveryPassword'] = "ok";
+		unset($_SESSION['hash']);
 		header("Location: ../../personal/newPassword.php");
 	} else {
 		$_SESSION['recoveryPassword'] = "failed";

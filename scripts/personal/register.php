@@ -181,7 +181,7 @@ function sendMail($address, $code) {
 				</div>
 				<br />
 				<div style='padding: 20px; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); background-color: #fff; width: 600px; text-align: left;'>
-					<p>Здравствуйте!<br /><br />Адрес вашей электронной почты был указан при регистрации на сайте <a href='https://argos-fm.by/'>argos-fm.by</a>. Для завершения регистрации перейдите, пожалуйста, по <a href='https://argos-fm.by/scripts/personal/confirm.php?hash=".$code."'>этой ссылке</a><br /><br />Если вы не регистрировались на сайте, а кто-то по ошибке или намеренно указал адрес вашей почты, перейдите по ссылке, чтобы <a href='https://argos-fm.by/scripts/personal/cancel.php?hash=".$code."'>аннулировать регистрацию</a></p>
+					<p>Здравствуйте!<br /><br />Адрес вашей электронной почты был указан при регистрации на сайте <a href='https://argos-fm.by/'>argos-fm.by</a>. Для завершения регистрации перейдите, пожалуйста, по <a href='https://argos-fm.by/personal/confirm.php?hash=".$code."'>этой ссылке</a><br /><br />Если вы не регистрировались на сайте, а кто-то по ошибке или намеренно указал адрес вашей почты, перейдите по ссылке, чтобы <a href='https://argos-fm.by/scripts/personal/cancel.php?hash=".$code."'>аннулировать регистрацию</a></p>
 					<br /><hr /><br />
 					<p style='font-size: 12px;'>Это автоматическая рассылка. Отвечать на неё не нужно.</p>
 					<div style='width: 100%; height: 10px;'></div>

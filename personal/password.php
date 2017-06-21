@@ -6,6 +6,10 @@
 		header("Location: ../index.php");
 	}
 
+	if(empty($_REQUEST['hash']) and !isset($_SESSION['recovery'])) {
+		header("Location: ../index.php");
+	}
+
 	if(!empty($_REQUEST['hash'])) {
 		$hash = $mysqli->real_escape_string($_REQUEST['hash']);
 		$userResult = $mysqli->query("SELECT * FROM users WHERE hash = '".$hash."'");
@@ -14,8 +18,6 @@
 		if($userResult->num_rows == 0) {
 			header("Location: ../index.php");
 		}
-	} else {
-		header("Location: ../index.php");
 	}
 
 ?>
@@ -256,13 +258,24 @@
 			?>
 		</div>
 
-		<form id="passwordForm" method="post" action="../scripts/personal/password.php">
-			<label for="recoveryPasswordInput">Новый пароль:</label>
-			<br />
-			<input type="password" id="recoveryPasswordInput" name="recoveryPassword" />
-			<br /><br />
-			<input type="submit" value="Сменить" id="passwordSubmit" onmouseover="buttonChange('passwordSubmit', 1)" onmouseout="buttonChange('passwordSubmit', 0)" />
-		</form>
+		<?php
+			if(!empty($_REQUEST['hash'])) {
+				echo "
+					<form id='passwordForm' method='post' action='../scripts/personal/password.php'>
+						<label for='recoveryPasswordInput'>Новый пароль:</label>
+						<br />
+						<input type='password' id='recoveryPasswordInput' name='recoveryPassword' />
+						<br /><br />
+						<input type='submit' value='Сменить' id='passwordSubmit' onmouseover='buttonChange(\"passwordSubmit\", 1)' onmouseout='buttonChange(\"passwordSubmit\", 0)' />
+					</form>
+				";
+			} elseif(isset($_SESSION['recovery'])) {
+				echo "Письмо с дальнейшими инструкциями было высло на ваш электронный адрес, указанный при регистрации.";
+
+				unset($_SESSION['recovery']);
+			}
+		?>
+
 
 		<div style="margin-top: 40px; width: 100%;">
 			<a href="login.php" class="basicLink">Я помню пароль!</a>
