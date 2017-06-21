@@ -31,13 +31,38 @@ if(!empty($_POST['recoveryPassword'])) {
 }
 
 function sendMail($address, $password) {
-	$to = $address;
-
+	$from = "Администрация сайта Аргос-ФМ <no-reply@argos-fm.by>";
+	$reply = "no-reply@argos-fm.by";
 	$subject = "Смена пароля на сайте Аргос-ФМ";
-	$message = "Здравствуйте!<br /><br />Ваш пароль был успешно изменён. Ваш новый пароль: <b>".$password."</b>";
 
-	$headers = "Content-type: text/html; charset=utf-8 \r\n";
-	$headers .= "From: Администрация сайта Аргос-ФМ <no-reply@argos-fm.by>\r\n";
+	$hash = md5(rand(0, 1000000).date('Y-m-d H:i:s'));
 
-	mail($to, $subject, $message, $headers);
+	$headers = "From: ".$from."\nReply-To: ".$reply."\nMIME-Version: 1.0";
+	$headers .= "\nContent-Type: multipart/mixed; boundary = \"PHP-mixed-".$hash."\"\n\n";
+
+	$text = "
+		<div style='width: 100%; height: 100%; background-color: #fafafa; padding-top: 5px; padding-bottom: 20px;'>
+			<center>
+				<div style='width: 600px; text-align: left;'>
+					<a href='https://argos-fm.by/' target='_blank'><img src='https://argos-fm.by/pictures/system/logo.png' /></a>
+				</div>
+				<br />
+				<div style='padding: 20px; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); background-color: #fff; width: 600px; text-align: left;'>
+					<p>Ваш пароль был успешно изменён. Ваш новый пароль: <b>".$password."</b></p>
+					<br /><hr /><br />
+					<p style='font-size: 12px;'>Это автоматическая рассылка. Отвечать на неё не нужно.</p>
+					<div style='width: 100%; height: 10px;'></div>
+				</div>
+				<br /><br />
+			</center>
+		</div>
+	";
+
+	$message = "--PHP-mixed-".$hash."\n";
+	$message .= "Content-Type: text/html; charset=\"utf-8\"\n";
+	$message .= "Content-Transfer-Encoding: 8bit\n\n";
+	$message .= $text."\n";
+	$message .= "--PHP-mixed-".$hash."\n";
+
+	mail($address, $subject, $message, $headers);
 }
