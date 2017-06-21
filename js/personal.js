@@ -361,6 +361,20 @@ function editUserEmail() {
 							response_field.css('opacity', '1');
 						}
 						break;
+					case "e":
+						if(response_field.css('opacity') == 1) {
+							response_field.css('opacity', '0');
+							setTimeout(function() {
+								response_field.css('color', '#df4e47');
+								response_field.html('Вы ввели email, который уже используется другим пользователем.<br /><br />');
+								response_field.css('opacity', '1');
+							}, 300);
+						} else {
+							response_field.css('color', '#df4e47');
+							response_field.html('Вы ввели email, который уже используется другим пользователем.<br /><br />');
+							response_field.css('opacity', '1');
+						}
+						break;
 					default: break;
 				}
 			}
