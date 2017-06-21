@@ -653,7 +653,7 @@ if(isset($_SESSION['userID'])) {
 
 							echo "
 																</td>
-																<td style='width: 65px;'>
+																<td style='width: 65px; vertical-align: top;'>
 							";
 
 							if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
