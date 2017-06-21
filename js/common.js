@@ -69,3 +69,20 @@ function textAreaHeight(textarea) {
         textarea._timer = false;
     }, 1);
 }
+
+function sendRegistrationEmailAgain(email, hash) {
+	$.ajax({
+		type: "POST",
+		data: {"email": email, "hash": hash},
+		url: "../scripts/personal/ajaxSendRegistrationEmail.php",
+		beforeSend: function() {
+			$.notify("Письмо отправляется...", "info");
+		},
+		success: function(response) {
+			$.notify("Письмо отправлено.", "success");
+		},
+		error: function(jqXHR, textStatus, errorThrown) {
+			$.notify(textStatus + "; " + errorThrown, "error");
+		}
+	});
+}

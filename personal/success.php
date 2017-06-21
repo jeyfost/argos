@@ -10,6 +10,7 @@
 	} else {
 		unset($_SESSION['registration']);
 	}
+
 ?>
 
 <!doctype html>
@@ -28,6 +29,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/menu1.js"></script>
+	<script type="text/javascript" src="../js/notify.js"></script>
 	<script type="text/javascript" src="../js/common.js"></script>
 
 	<style>
@@ -233,6 +235,7 @@
 
 		<p>Поздравляем! Регистрация прошла успешно.<br />Однако, чтобы получить доступ к полному функционалу, вам необходимо подтвердить, что введённый вами адрес электронной почты действительно принадлежит вам. Для этого вам необходимо перейти по ссылке из полученного от нас письма.</p>
 		<p>Спасибо за терпение!</p>
+		<p>Не пришло письмо? <span class="basicLink" style="cursor: pointer;" onclick="sendRegistrationEmailAgain('<?= $_SESSION['registrationEmail'] ?>', '<?= $_SESSION['hash'] ?>')">Нажмите, чтобы выслать его повторно.</span></p>
 
 	<div id="footerShadow"></div>
     <div id="footer">
@@ -243,6 +246,11 @@
 		</div>
 		<div style="clear: both;"></div>
 	</div>
+
+	<?php
+		unset($_SESSION['registrationEmail']);
+		unset($_SESSION['hash']);
+	?>
 
 </body>
 

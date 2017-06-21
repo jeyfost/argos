@@ -193,7 +193,7 @@ if(!empty($_REQUEST['id'])) {
 						$historyResult = $mysqli->query("SELECT * FROM mail_result ORDER BY date DESC");
 
 						echo "
-							<span>Выберите рассылку:</span>
+							<span>Выберите рассылку для детализации:</span>
 							<br />
 							<span style='font-size: 14px;'><b>Всего рассылок отправлено: </b>".$historyCount[0]."</span>
 							<br /><br />
