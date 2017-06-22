@@ -481,7 +481,7 @@ if(isset($_SESSION['userID'])) {
 							echo "
 								<div class='catalogueItem' id='ci".$good['id']."'>
 									<div class='itemDescription'>
-									<table style='border: none;'>
+									<table style='border: none; width: 100%;'>
 										<tr>
 											<td style='width: 100px;' valign='top'>
 												<div class='catalogueIMG'>
@@ -530,18 +530,20 @@ if(isset($_SESSION['userID'])) {
 												</div>
 											</div>
 										</td>
+										<td style='width: 65px; vertical-align: top;'>
+											<div class='itemPurchase'>
+												<img src='../img/system/delete.png' id='deleteIMG".$good['id']."' style='cursor: pointer; float: right;' title='Убрать товар из корзины' onmouseover='changeIcon(\"deleteIMG".$good['id']."\", \"deleteRed.png\", 1)' onmouseout='changeIcon(\"deleteIMG".$good['id']."\", \"delete.png\", 1)' onclick='removeGood(\"".$good['id']."\")' />
+												<br /><br />
+												<form method='post'>
+													<label for='quantityInput".$good['id']."'>Кол-во в ".$unit['in_name'].":</label>
+													<input type='number' id='quantityInput".$good['id']."' min='1' step='1' value='".$basket['quantity']."' class='itemQuantityInput' onkeyup='changeQuantity(\"".$good['id']."\")' onchange='changeQuantity(\"".$good['id']."\")' />
+												</form>
+												<br />
+												<div class='addingResult' id='addingResult".$good['id']."' onclick='hideBlock(\"addingResult".$good['id']."\")'></div>
+											</div>
+										</td>
 										</tr>
 										</table>
-									</div>
-									<div class='itemPurchase'>
-										<img src='../img/system/delete.png' id='deleteIMG".$good['id']."' style='cursor: pointer; float: right;' title='Убрать товар из корзины' onmouseover='changeIcon(\"deleteIMG".$good['id']."\", \"deleteRed.png\", 1)' onmouseout='changeIcon(\"deleteIMG".$good['id']."\", \"delete.png\", 1)' onclick='removeGood(\"".$good['id']."\")' />
-										<br /><br />
-										<form method='post'>
-											<label for='quantityInput".$good['id']."'>Кол-во в ".$unit['in_name'].":</label>
-											<input type='number' id='quantityInput".$good['id']."' min='1' step='1' value='".$basket['quantity']."' class='itemQuantityInput' onkeyup='changeQuantity(\"".$good['id']."\")' onchange='changeQuantity(\"".$good['id']."\")' />
-										</form>
-										<br />
-										<div class='addingResult' id='addingResult".$good['id']."' onclick='hideBlock(\"addingResult".$good['id']."\")'></div>
 									</div>
 									<div style='clear: both;'></div>
 								</div>
