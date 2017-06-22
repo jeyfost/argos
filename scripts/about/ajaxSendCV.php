@@ -33,10 +33,10 @@ if(!empty($_FILES['CV']['tmp_name']) and $_FILES['CV']['error'] == 0) {
 
 			$hash = md5(date('r', time()));
 
-			$to = "foster_andrew@tut.by";
+			$to = "argos-fm@mail.ru";
 			$from = "Сайт Аргос-ФМ <no-reply@argos-fm.by>";
 			$reply = "no-reply@argos-fm.by";
-			$subject = "Резюме с сайта";
+			$subject = "Резюме с сайта Аргос-ФМ";
 
 			$hash = md5(rand(0, 1000000).date('Y-m-d H:i:s'));
 

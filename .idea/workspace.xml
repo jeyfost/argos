@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/about/ajaxSendCV.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/about/sendCV.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about/vacancies.php" afterPath="$PROJECT_DIR$/about/vacancies.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/about.js" afterPath="$PROJECT_DIR$/js/about.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/about/ajaxSendCV.php" afterPath="$PROJECT_DIR$/scripts/about/ajaxSendCV.php" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -258,19 +255,19 @@
       <file leaf-file-name="ajaxSendCV.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/about/ajaxSendCV.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="83" column="89" lean-forward="false" selection-start-line="83" selection-start-column="89" selection-end-line="83" selection-end-column="89" />
+            <state relative-caret-position="438">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="true" />
-                <marker date="1498121040148" expanded="true" signature="1764:1857" ph="..." />
-                <marker date="1498121040148" expanded="true" signature="1858:2926" ph="..." />
-                <marker date="1498121040148" expanded="true" signature="1872:2915" ph="..." />
-                <marker date="1498121040148" expanded="true" signature="1892:1923" ph="..." />
-                <marker date="1498121040148" expanded="true" signature="1924:2054" ph="..." />
-                <marker date="1498121040148" expanded="true" signature="2087:2205" ph="..." />
-                <marker date="1498121040148" expanded="true" signature="2206:2881" ph="..." />
-                <marker date="1498121040148" expanded="true" signature="2739:2755" ph="..." />
-                <marker date="1498121040148" expanded="true" signature="2835:2861" ph="..." />
+                <marker date="1498121646818" expanded="true" signature="1769:1862" ph="..." />
+                <marker date="1498121646818" expanded="true" signature="1863:2931" ph="..." />
+                <marker date="1498121646818" expanded="true" signature="1877:2920" ph="..." />
+                <marker date="1498121646818" expanded="true" signature="1897:1928" ph="..." />
+                <marker date="1498121646818" expanded="true" signature="1929:2059" ph="..." />
+                <marker date="1498121646818" expanded="true" signature="2092:2210" ph="..." />
+                <marker date="1498121646818" expanded="true" signature="2211:2886" ph="..." />
+                <marker date="1498121646818" expanded="true" signature="2744:2760" ph="..." />
+                <marker date="1498121646818" expanded="true" signature="2840:2866" ph="..." />
               </folding>
             </state>
           </provider>
@@ -883,14 +880,7 @@
       <workItem from="1497968375431" duration="75000" />
       <workItem from="1498023411412" duration="27098000" />
       <workItem from="1498111218266" duration="1258000" />
-      <workItem from="1498115151295" duration="5616000" />
-    </task>
-    <task id="LOCAL-00114" summary="Реализовано удаление альбомов">
-      <created>1490885121621</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1490885121621</updated>
+      <workItem from="1498115151295" duration="6172000" />
     </task>
     <task id="LOCAL-00115" summary="Добавлена стартовая страница наград и достижений в панели администрирования">
       <created>1490889276821</created>
@@ -1228,11 +1218,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498118015942</updated>
     </task>
-    <option name="localTasksCounter" value="163" />
+    <task id="LOCAL-00163" summary="Отправка письма с резюме переведена на ajax">
+      <created>1498121106422</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1498121106422</updated>
+    </task>
+    <option name="localTasksCounter" value="164" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277548000" />
+    <option name="totallyTimeSpent" value="278104000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1303,7 +1300,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Раздел &quot;Где купить&quot; адаптирован под мобильные устройства" />
     <MESSAGE value="Раздел &quot;Контакты&quot; адаптирован под мобильные устройства" />
     <MESSAGE value="Раздел &quot;Корзина&quot; адаптирован под мобильные устройства" />
     <MESSAGE value="Раздел заказов адаптирован под мобильные устройства" />
@@ -1328,7 +1324,8 @@
     <MESSAGE value="Правки вёрстки в каталоге" />
     <MESSAGE value="Выравнивание иконки корзины в каталоге по верхнему краю" />
     <MESSAGE value="Исправлена отправка письма с резюме" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлена отправка письма с резюме" />
+    <MESSAGE value="Отправка письма с резюме переведена на ajax" />
+    <option name="LAST_COMMIT_MESSAGE" value="Отправка письма с резюме переведена на ajax" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2136,19 +2133,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/about/ajaxSendCV.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="83" column="89" lean-forward="false" selection-start-line="83" selection-start-column="89" selection-end-line="83" selection-end-column="89" />
+        <state relative-caret-position="438">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
-            <marker date="1498121040148" expanded="true" signature="1764:1857" ph="..." />
-            <marker date="1498121040148" expanded="true" signature="1858:2926" ph="..." />
-            <marker date="1498121040148" expanded="true" signature="1872:2915" ph="..." />
-            <marker date="1498121040148" expanded="true" signature="1892:1923" ph="..." />
-            <marker date="1498121040148" expanded="true" signature="1924:2054" ph="..." />
-            <marker date="1498121040148" expanded="true" signature="2087:2205" ph="..." />
-            <marker date="1498121040148" expanded="true" signature="2206:2881" ph="..." />
-            <marker date="1498121040148" expanded="true" signature="2739:2755" ph="..." />
-            <marker date="1498121040148" expanded="true" signature="2835:2861" ph="..." />
+            <marker date="1498121646818" expanded="true" signature="1769:1862" ph="..." />
+            <marker date="1498121646818" expanded="true" signature="1863:2931" ph="..." />
+            <marker date="1498121646818" expanded="true" signature="1877:2920" ph="..." />
+            <marker date="1498121646818" expanded="true" signature="1897:1928" ph="..." />
+            <marker date="1498121646818" expanded="true" signature="1929:2059" ph="..." />
+            <marker date="1498121646818" expanded="true" signature="2092:2210" ph="..." />
+            <marker date="1498121646818" expanded="true" signature="2211:2886" ph="..." />
+            <marker date="1498121646818" expanded="true" signature="2744:2760" ph="..." />
+            <marker date="1498121646818" expanded="true" signature="2840:2866" ph="..." />
           </folding>
         </state>
       </provider>
