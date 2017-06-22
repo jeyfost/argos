@@ -50,6 +50,7 @@ if(isset($_SESSION['userID'])) {
     <script type="text/javascript" src="../js/menu1.js"></script>
 	<script type="text/javascript" src="../js/common.js"></script>
 	<script type="text/javascript" src="../js/about.js"></script>
+	<script type="text/javascript" src="../js/notify.js"></script>
 	<!--[if lt IE 9]>
   		<script type="text/javascript" src="../js/lightview/js/excanvas/excanvas.js"></script>
 	<![endif]-->
@@ -395,36 +396,9 @@ if(isset($_SESSION['userID'])) {
 			<b>Форма подачи резюме:</b>
 			<br />
 			<span style="font-size: 14px; font-style: italic;">Все поля являются обязательными для заполнения. Также необходимо прикрепить файл с вашим резюме.</span>
-			<br />
-			<div id="responseField" style="opacity: 1;">
-				<?php
-					if(isset($_SESSION['error'])) {
-						switch($_SESSION['error']) {
-							case "failed":
-								echo "<br /><span style='color: #df4e47;'>При отправке резюме произошла ошибка. Повторите попытку.</span>";
-								break;
-							case "file":
-								echo "<br /><span style='color: #df4e47;'>Вы не прикрепили ваше резюме, либо файл имеет недопустимый формат.</span>";
-								break;
-							case "empty":
-								echo "<br /><span style='color: #df4e47;'>Заполните все поля.</span>";
-								break;
-							case "captcha":
-								echo "<br /><span style='color: #df4e47;'>Вы не прошли проверку на робота.</span>";
-								break;
-							case "success":
-								echo "<br /><span style='color: #53acff;'>Ваше резюме было успешно отправлено. Если оно нас заинтересует, мы с вами свяжемся.</span>";
-								break;
-							default: break;
-						}
-
-						unset($_SESSION['error']);
-					}
-				?>
-			</div>
 			<br /><br />
 			<div id="CVForm">
-				<form method="post" enctype="multipart/form-data" action="../scripts/about/sendCV.php" id="CV_Form">
+				<form method="post" enctype="multipart/form-data" id="CV_Form">
 					<label for="inputLastName">Фамилия:</label>
 					<br />
 					<input type="text" id="inputLastName" name="lastName" <?php if(isset($_SESSION['lastName'])) {echo "value = ".$_SESSION['lastName'];} ?> />
@@ -466,7 +440,7 @@ text/plain, application/pdf, image/*" />
 					<br />
 					<div class="g-recaptcha" id="mailRecaptcha" data-sitekey="6Ld5MwATAAAAAN7L3GdbaS_dafMZdRicn-Jm8jVM"></div>
 					<br />
-					<input type="submit" id="mailSubmit" value="Отправить" onmouseover="buttonChange('mailSubmit', 1)" onmouseout="buttonChange('mailSubmit', 0)" style="float: left; margin-top: 20px;" />
+					<input type="button" id="mailSubmit" value="Отправить" onmouseover="buttonChange('mailSubmit', 1)" onmouseout="buttonChange('mailSubmit', 0)" onclick="sendCV()" style="float: left; margin-top: 20px;" />
 				</form>
 
 				<?php

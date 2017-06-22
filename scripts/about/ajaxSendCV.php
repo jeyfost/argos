@@ -1,20 +1,27 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: jeyfost
+ * Date: 22.06.2017
+ * Time: 10:27
+ */
 
-session_start();
 include("../connect.php");
 
-if(!empty($_POST['lastName']) and !empty($_POST['firstName']) and !empty($_POST['patronymic']) and !empty($_POST['city']) and !empty($_POST['phone']) and !empty($_POST['email']) and !empty($_POST['text'])) {
-	if(!empty($_FILES['CV']['tmp_name']) and $_FILES['CV']['error'] == 0) {
-		$captcha = "";
+$req = false;
+ob_start();
 
-		if(isset($_POST["g-recaptcha-response"])) {
-			$captcha = $_POST["g-recaptcha-response"];
-		}
+if(!empty($_FILES['CV']['tmp_name']) and $_FILES['CV']['error'] == 0) {
+	$captcha = "";
 
-		$secret = "6Ld5MwATAAAAANoU2JPNZUfzMGWXg3-S-DxXTOuN";
-		$response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$captcha."&remoteip=".$_SERVER["REMOTE_ADDR"]), true);
+	if(isset($_POST["g-recaptcha-response"])) {
+		$captcha = $_POST["g-recaptcha-response"];
+	}
 
-		if ($response["success"] != false) {
+	$secret = "6Ld5MwATAAAAANoU2JPNZUfzMGWXg3-S-DxXTOuN";
+	$response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$captcha."&remoteip=".$_SERVER["REMOTE_ADDR"]), true);
+
+	if ($response["success"] != false) {
 			$lastName = $mysqli->real_escape_string($_POST['lastName']);
 			$fistName = $mysqli->real_escape_string($_POST['firstName']);
 			$patronymic = $mysqli->real_escape_string($_POST['patronymic']);
@@ -54,7 +61,7 @@ if(!empty($_POST['lastName']) and !empty($_POST['firstName']) and !empty($_POST[
 							<br />
 							<b>Отчество: </b>".$patronymic."
 							<br />
-							<b>Дата рождения: </b>".$_POST['day']." ".$_POST['month']." ".$_POST['year']." г.
+							<b>Дата рождения: </b>".$_POST['day']." ".$month[$_POST['month']]." ".$_POST['year']." г.
 							<br />
 							<b>Город проживания: </b>".$city."
 							<br />
@@ -74,55 +81,28 @@ if(!empty($_POST['lastName']) and !empty($_POST['firstName']) and !empty($_POST[
 
 			$message .= "--PHP-mixed-".$hash."\n";
 
+			$attachment = chunk_split(base64_encode(file_get_contents($_FILES['CV']['tmp_name'])));
+
+			$message .= "Content-Type: application/octet-stream; name=".$_FILES['CV']['name']."\n";
+			$message .= "Content-Transfer-Encoding: base64\n";
+			$message .= "Content-Disposition: attachment\n\n";
+			$message .= $attachment."\n";
+			$message .= "--PHP-mixed-".$hash."\n";
+
 			if(@mail($to, $subject, $message, $headers)) {
-				$_SESSION['error'] = "success";
-
-				header("Location: ../../about/vacancies.php");
+				echo "ok";
 			} else {
-				$_SESSION['error'] = "failed";
-				$_SESSION['lastName'] = $_POST['lastName'];
-				$_SESSION['firstName'] = $_POST['firstName'];
-				$_SESSION['patronymic'] = $_POST['patronymic'];
-				$_SESSION['city'] = $_POST['city'];
-				$_SESSION['phone'] = $_POST['phone'];
-				$_SESSION['email'] = $_POST['email'];
-				$_SESSION['text'] = $_POST['text'];
-
-				header("Location: ../../about/vacancies.php");
+				echo "failed";
 			}
-		} else {
-			$_SESSION['error'] = "captcha";
-			$_SESSION['lastName'] = $_POST['lastName'];
-			$_SESSION['firstName'] = $_POST['firstName'];
-			$_SESSION['patronymic'] = $_POST['patronymic'];
-			$_SESSION['city'] = $_POST['city'];
-			$_SESSION['phone'] = $_POST['phone'];
-			$_SESSION['email'] = $_POST['email'];
-			$_SESSION['text'] = $_POST['text'];
-
-		header("Location: ../../about/vacancies.php");
-		}
 	} else {
-		$_SESSION['error'] = "file";
-		$_SESSION['lastName'] = $_POST['lastName'];
-		$_SESSION['firstName'] = $_POST['firstName'];
-		$_SESSION['patronymic'] = $_POST['patronymic'];
-		$_SESSION['city'] = $_POST['city'];
-		$_SESSION['phone'] = $_POST['phone'];
-		$_SESSION['email'] = $_POST['email'];
-		$_SESSION['text'] = $_POST['text'];
-
-		header("Location: ../../about/vacancies.php");
+		echo "captcha";
 	}
 } else {
-	$_SESSION['error'] = "empty";
-	$_SESSION['lastName'] = $_POST['lastName'];
-	$_SESSION['firstName'] = $_POST['firstName'];
-	$_SESSION['patronymic'] = $_POST['patronymic'];
-	$_SESSION['city'] = $_POST['city'];
-	$_SESSION['phone'] = $_POST['phone'];
-	$_SESSION['email'] = $_POST['email'];
-	$_SESSION['text'] = $_POST['text'];
-
-	header("Location: ../../about/vacancies.php");
+	echo "file";
 }
+
+$req = ob_get_contents();
+ob_end_clean();
+echo json_encode($req);
+
+exit;
