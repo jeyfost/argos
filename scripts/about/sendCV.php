@@ -26,21 +26,52 @@ if(!empty($_POST['lastName']) and !empty($_POST['firstName']) and !empty($_POST[
 
 			$hash = md5(date('r', time()));
 
-			$to = "argos-fm@mail.ru";
+			$to = "foster_andrew@tut.by";
+			$from = "Сайт Аргос-ФМ <no-reply@argos-fm.by>";
 			$reply = "no-reply@argos-fm.by";
-			$subject = "Резюме с сайта Аргос-ФМ";
+			$subject = "Резюме с сайта";
 
-			$headers = "Content-type=text/html; charset: utf-8 \r\n";
-			$headers .= "From: Сайт Аргос-ФМ <no-reply@argos-fm.by>\r\n";
+			$hash = md5(rand(0, 1000000).date('Y-m-d H:i:s'));
+
+			$headers = "From: ".$from."\nReply-To: ".$reply."\nMIME-Version: 1.0";
+			$headers .= "\nContent-Type: multipart/mixed; boundary = \"PHP-mixed-".$hash."\"\n\n";
+
 			$message = "--PHP-mixed-".$hash."\n";
-			$message .= "<b>Фамилия: </b>".$lastName."<br /><br /><b>Имя: </b>".$fistName."<br /><br /><b>Отчество: </b>".$patronymic."<br /><br /><b>Дата рождения: </b>".$_POST['day']." ".$_POST['month']." ".$_POST['year']." г.<br /><br /><b>Город проживания: </b>".$city."<br /><br /><b>Контактный телефон: </b>".$phone."<br /><br /><b>Email: </b>".$email."<br /><br /><b>Интересующие вакансии или другой текст: </b>".$text;
-			$message .= "--PHP-mixed-".$hash."\n";
+			$message .= "Content-Type: text/html; charset=\"utf-8\"\n";
+			$message .= "Content-Transfer-Encoding: 8bit\n\n";
 
-			$attachment = chunk_split(base64_encode(file_get_contents($_FILES['CV']['tmp_name'])));
-			$message .= "Content-Type: application/octet-stream; name=".$_FILES['CV']['name']."\n";
-			$message .= "Content-Transfer-Encoding: base64\n";
-			$message .= "Content-Disposition: attachment\n\n";
-			$message .= $attachment."\n";
+			$message .= "
+				<div style='width: 100%; height: 100%; background-color: #fafafa; padding-top: 5px; padding-bottom: 20px;'>
+					<center>
+						<div style='width: 600px; text-align: left;'>
+							<a href='https://argos-fm.by/' target='_blank'><img src='https://argos-fm.by/pictures/system/logo.png' /></a>
+						</div>
+						<br />
+						<div style='padding: 20px; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); background-color: #fff; width: 600px; text-align: left;'>
+							<b>Фамилия: </b>".$lastName."
+							<br />
+							<b>Имя: </b>".$fistName."
+							<br />
+							<b>Отчество: </b>".$patronymic."
+							<br />
+							<b>Дата рождения: </b>".$_POST['day']." ".$_POST['month']." ".$_POST['year']." г.
+							<br />
+							<b>Город проживания: </b>".$city."
+							<br />
+							<b>Контактный телефон: </b>".$phone."
+							<br />
+							<b>Email: </b>".$email."
+							<br />
+							<b>Интересующие вакансии или другой текст: </b>".$text."
+							<br /><hr /><br />
+							<p style='font-size: 12px;'>Это автоматическая рассылка. Отвечать на неё не нужно.</p>
+							<div style='width: 100%; height: 10px;'></div>
+						</div>
+						<br /><br />
+					</center>
+				</div>
+			";
+
 			$message .= "--PHP-mixed-".$hash."\n";
 
 			if(@mail($to, $subject, $message, $headers)) {
