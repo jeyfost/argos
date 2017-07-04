@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/catalogue/big/e918f1471cc90d08f1479aba55109d52.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/catalogue/small/e918f1471cc90d08f1479aba55109d52.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/system/logo_400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/system/main5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/system/main2.jpg" afterPath="$PROJECT_DIR$/img/system/main2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/system/main3.jpg" afterPath="$PROJECT_DIR$/img/system/main3.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="argos.iws" />
@@ -313,8 +311,8 @@
       <file leaf-file-name="admin.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/admin/admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+            <state relative-caret-position="515">
+              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -680,6 +678,38 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="system" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -1012,14 +1042,7 @@
       <workItem from="1498143746170" duration="1163000" />
       <workItem from="1498402398154" duration="577000" />
       <workItem from="1498462606365" duration="3253000" />
-      <workItem from="1499163576313" duration="1441000" />
-    </task>
-    <task id="LOCAL-00119" summary="Доработана страница вакансий">
-      <created>1491069361789</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1491069361789</updated>
+      <workItem from="1499163576313" duration="2177000" />
     </task>
     <task id="LOCAL-00120" summary="Добавлена стартовая страница вакансий в панели администрирования">
       <created>1491069980928</created>
@@ -1357,11 +1380,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499164927040</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="Добавлены недостающие фотографии">
+      <created>1499165048945</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1499165048945</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="287251000" />
+    <option name="totallyTimeSpent" value="287987000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1374,10 +1404,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13753213" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12982005" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1432,7 +1461,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправлен дизайн формы обратной связи" />
     <MESSAGE value="Доработано меню для мобильной версии" />
     <MESSAGE value="Добавлена страница свободных артикулов" />
     <MESSAGE value="Убрана ненужная функция со страницы свободных артикулов" />
@@ -1457,7 +1485,8 @@
     <MESSAGE value="Правки вёрстки в разделе заказов у администратора и пользователей" />
     <MESSAGE value="Добавлен раздел с ручным инструментом" />
     <MESSAGE value="hotfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="hotfix" />
+    <MESSAGE value="Добавлены недостающие фотографии" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены недостающие фотографии" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2159,8 +2188,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/admin/admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+        <state relative-caret-position="515">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
