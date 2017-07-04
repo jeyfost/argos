@@ -452,7 +452,7 @@ if(!empty($_REQUEST['id'])) {
 							<br />
 							<span style='font-size: 14px;'><b>Всего товаров: </b>".$goodsCount[0]."</span>
 							<br /><br />
-							<table style='text-align: center;'>
+							<table id='goodsList' style='text-align: center;'>
 								<tr>
 									<td style='font-weight: bold; background-color: #ededed;'>№</td>
 									<td style='font-weight: bold; background-color: #ededed; width: 100px;'>Фото</td>

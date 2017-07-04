@@ -55,7 +55,7 @@ function editGood() {
 	var goodDescription = $('#goodDescriptionInput').val();
 	var formData = new FormData($('#editForm').get(0));
 
-	if(goodName != '' && goodCode != '' && goodCurrency != '' && goodUnit != '' && goodDescription != '') {
+	if(goodName !== '' && goodCode !== '' && goodCurrency !== '' && goodUnit !== '' && goodDescription !== '') {
 		if(parseInt(goodPrice) > 0) {
 			$.ajax({
 				type: "POST",
@@ -65,7 +65,7 @@ function editGood() {
 				contentType: false,
 				processData: false,
 				beforeSend: function() {
-					if(responseField.css('opacity') == 1) {
+					if(responseField.css('opacity') === 1) {
 						responseField.css('opacity', 0);
 						setTimeout(function() {
 							responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
@@ -106,10 +106,10 @@ function editGood() {
 							break;
 					}
 
-					if(responseField.css('opacity') == 1) {
+					if(responseField.css('opacity') === 1) {
 						responseField.css('opacity', 0);
 						setTimeout(function() {
-							if(s == 1) {
+							if(s === 1) {
 								responseField.css('color', '#53acff');
 							} else {
 								responseField.css('color', '#df4e47');
@@ -118,7 +118,7 @@ function editGood() {
 							responseField.css('opacity', 1);
 						}, 300);
 					} else {
-						if(s == 1) {
+						if(s === 1) {
 							responseField.css('color', '#53acff');
 						} else {
 							responseField.css('color', '#df4e47');
@@ -132,7 +132,7 @@ function editGood() {
 				}
 			});
 		} else {
-			if(responseField.css('opacity') == 1) {
+			if(responseField.css('opacity') === 1) {
 				responseField.css('opacity', 0);
 				setTimeout(function() {
 					responseField.css('color', '#df4e47');
@@ -146,7 +146,7 @@ function editGood() {
 			}
 		}
 	} else {
-		if(responseField.css('opacity') == 1) {
+		if(responseField.css('opacity') === 1) {
 			responseField.css('opacity', 0);
 			setTimeout(function() {
 				responseField.css('color', '#df4e47');

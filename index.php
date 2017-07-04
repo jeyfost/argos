@@ -223,6 +223,7 @@ if(isset($_SESSION['userID'])) {
         <div class="mainImgContainer" id="mic2"><img src="img/system/main2.jpg" id="mainImg2" /></div>
         <div class="mainImgContainer" id="mic3"><img src="img/system/main3.jpg" id="mainImg3" /></div>
         <div class="mainImgContainer" id="mic4"><img src="img/system/main4.jpg" id="mainImg4" /></div>
+		<div class="mainImgContainer" id="mic5"><img src="img/system/main5.jpg" id="mainImg5" /></div>
 
         <div id="leftSideBlock">
             <span id="mainText1" class="mainBigText" onclick="scrollFirst()">Мебельная фурнитура</span>
@@ -231,7 +232,9 @@ if(isset($_SESSION['userID'])) {
             <br /><br />
             <span id='mainText3' class="mainSmallText" onclick="scrollThird()">Аксессуары для штор</span>
             <br /><br />
-            <span id='mainText4' class="mainSmallText" onclick="scrollFourth()">Сопутствующие товары</span>
+            <span id='mainText4' class="mainSmallText" onclick="scrollFourth()">Ручной инструмент</span>
+			<br /><br />
+            <span id='mainText5' class="mainSmallText" onclick="scrollFifth()">Сопутствующие товары</span>
         </div>
         <div id="rightSideBlock" class="rightSideBlock">
             <div class="rightSideBlockHeader">Разделы</div>

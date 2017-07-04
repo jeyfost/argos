@@ -30,6 +30,11 @@ $(window).on("load", function() {
 			}
 		}
 	}
+	/*
+	if($('#goodsList').offset().right > $('#admContent').offsetLeft().right) {
+		alert(1);
+	}
+	*/
 });
 
 function changeIcon(id, img, depth) {
