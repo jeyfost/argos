@@ -121,7 +121,7 @@ function scrollUp() {
 		$.ajax({
 			type: 'POST',
 			url: 'scripts/index/ajaxLoadCategories.php',
-			data: {"type": "hi"},
+			data: {"type": "ht"},
 			beforeSend: function () {
 				$('#rightSideBlockCategories').css('opacity', '0');
 			},
@@ -210,7 +210,7 @@ function scrollDown() {
 		$.ajax({
 			type: 'POST',
 			url: 'scripts/index/ajaxLoadCategories.php',
-			data: {"type": "hi"},
+			data: {"type": "ht"},
 			beforeSend: function () {
 				$('#rightSideBlockCategories').css('opacity', '0');
 			},
@@ -382,7 +382,7 @@ function scrollFourth() {
 		$.ajax({
 			type: 'POST',
 			url: 'scripts/index/ajaxLoadCategories.php',
-			data: {"type": "hi"},
+			data: {"type": "ht"},
 			beforeSend: function () {
 				$('#rightSideBlockCategories').css('opacity', '0');
 			},

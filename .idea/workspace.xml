@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/system/main4.jpg" afterPath="$PROJECT_DIR$/img/system/main4.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/goods/edit.php" afterPath="$PROJECT_DIR$/admin/goods/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/admin/admin.js" afterPath="$PROJECT_DIR$/js/admin/admin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/admin/goods/edit.js" afterPath="$PROJECT_DIR$/js/admin/goods/edit.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php" afterPath="$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -326,7 +320,7 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-123">
+            <state relative-caret-position="591">
               <caret line="238" column="56" lean-forward="true" selection-start-line="238" selection-start-column="56" selection-end-line="238" selection-end-column="56" />
               <folding>
                 <marker date="1499164618027" expanded="true" signature="628:684" ph="SELECT * FRO... users" />
@@ -356,8 +350,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="415" column="16" lean-forward="true" selection-start-line="415" selection-start-column="16" selection-end-line="415" selection-end-column="16" />
+            <state relative-caret-position="258">
+              <caret line="331" column="18" lean-forward="false" selection-start-line="331" selection-start-column="18" selection-end-line="331" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -385,7 +379,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>func</find>
       <find>functio</find>
       <find>function</find>
       <find>function sen</find>
@@ -415,6 +408,7 @@
       <find>goods</find>
       <find>goodsTabl</find>
       <find>editGood</find>
+      <find>hi</find>
     </findStrings>
     <replaceStrings>
       <replace>proceed</replace>
@@ -491,8 +485,8 @@
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php" />
         <option value="$PROJECT_DIR$/js/admin/goods/edit.js" />
         <option value="$PROJECT_DIR$/admin/goods/edit.php" />
-        <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/js/index.js" />
       </list>
     </option>
   </component>
@@ -1055,14 +1049,7 @@
       <workItem from="1498143746170" duration="1163000" />
       <workItem from="1498402398154" duration="577000" />
       <workItem from="1498462606365" duration="3253000" />
-      <workItem from="1499163576313" duration="1127000" />
-    </task>
-    <task id="LOCAL-00117" summary="Реализовано редактирование наград">
-      <created>1490959013728</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1490959013728</updated>
+      <workItem from="1499163576313" duration="1326000" />
     </task>
     <task id="LOCAL-00118" summary="Реализовано удаление наград">
       <created>1491052630217</created>
@@ -1400,11 +1387,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498123877258</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="Добавлен раздел с ручным инструментом">
+      <created>1499164748321</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1499164748321</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286937000" />
+    <option name="totallyTimeSpent" value="287136000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1475,7 +1469,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Раздел управления сайтом адаптирован под мобильные устройства" />
     <MESSAGE value="Меню адаптировано под мобильные устройства" />
     <MESSAGE value="Исправлен дизайн формы обратной связи" />
     <MESSAGE value="Доработано меню для мобильной версии" />
@@ -1500,7 +1493,8 @@
     <MESSAGE value="Правки в разделе резюме" />
     <MESSAGE value="Правки макета в разделе заказов у администратора и пользователей" />
     <MESSAGE value="Правки вёрстки в разделе заказов у администратора и пользователей" />
-    <option name="LAST_COMMIT_MESSAGE" value="Правки вёрстки в разделе заказов у администратора и пользователей" />
+    <MESSAGE value="Добавлен раздел с ручным инструментом" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен раздел с ручным инструментом" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2174,15 +2168,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="415" column="16" lean-forward="true" selection-start-line="415" selection-start-column="16" selection-end-line="415" selection-end-column="16" />
+        <state relative-caret-position="258">
+          <caret line="331" column="18" lean-forward="false" selection-start-line="331" selection-start-column="18" selection-end-line="331" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
+        <state relative-caret-position="591">
           <caret line="238" column="56" lean-forward="true" selection-start-line="238" selection-start-column="56" selection-end-line="238" selection-end-column="56" />
           <folding>
             <marker date="1499164618027" expanded="true" signature="628:684" ph="SELECT * FRO... users" />
