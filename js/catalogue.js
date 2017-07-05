@@ -149,14 +149,14 @@ function saveGoodPrice(good_id, block, currency, unit, rate) {
 
 				document.getElementById(block).innerHTML = "<span style='cursor: pointer;' onclick='changePrice(\"" + good_id + "\", \"" + block + "\", \"" + $('#changeGoodPriceInput').val() + "\", \"" + currency + "\", \"" + unit + "\", \"" + rate + "\")' title='Изменить стоимость товара'><b>Стоимость за " + unit + ": </b>" + price + "</span>";
 			} else {
-				if($('#goodResponseFiled').css('opacity') == '0') {
-					$('#goodResponseFiled').css('color', '#df4e47');
-					$('#goodResponseFiled').val("Введите положительное значение");
+				if($('#goodResponseField').css('opacity') == '0') {
+					$('#goodResponseField').css('color', '#df4e47');
+					$('#goodResponseField').val("Введите положительное значение");
 				} else {
-					$('#goodResponseFiled').css('opacity', '0');
+					$('#goodResponseField').css('opacity', '0');
 					setTimeout(function() {
-						$('#goodResponseFiled').val("Введите положительное значение");
-						$('#goodResponseFiled').css('opacity', '1');
+						$('#goodResponseField').val("Введите положительное значение");
+						$('#goodResponseField').css('opacity', '1');
 					}, 300);
 				}
 			}

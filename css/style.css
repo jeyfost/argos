@@ -121,9 +121,10 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 #centralBlock {position: relative; margin: 80px auto 0 auto; width: 70%; z-index: 1;}
 #breadCrumbs, .breadCrumbsText {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 14px; margin-top: -30px;}
 #topSection {padding-bottom: 40px; width: 100%;}
-#loginSubmit, #registrationSubmit, #recoverySubmit, #passwordSubmit, #personalSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer;}
+#loginSubmit, #registrationSubmit, #recoverySubmit, #passwordSubmit, #personalSubmit, #personalBankSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer;}
 #registrationSubmit {width: 200px;}
-#recoverySubmit, #personalSubmit {width: 130px;}
+#recoverySubmit {width: 130px;}
+#personalBankSubmit, #personalSubmit {width: auto;}
 #basketSubmit, #clearBasketButton, #acceptButton {width: 200px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: right;}
 #clearBasketButton {margin-right: 10px;}
 #registrationDescription {position: relative; float: left; padding-left: 40px;}
@@ -149,7 +150,7 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .itemQuantityInput {width: 65px; margin-top: 5px;}
 .itemDescription {position: relative; float: left; width: 100%;}
 .itemPurchase form label {font-size: 14px;}
-.addingResult, #goodResponseFiled, #responseField, #orderResponse {transition: .3s; opacity: 0; font-size: 14px;}
+.addingResult, #goodResponseField, #responseField, #orderResponse {transition: .3s; opacity: 0; font-size: 14px;}
 .pageNumberBlockSide {position: relative; float: left; background-color: #ffffff; height: 30px; line-height: 30px; padding-left: 10px; padding-right: 10px; text-align: center;}
 .pageNumberBlock {position: relative; float: left; background-color: #ffffff; width: 40px; height: 30px; line-height: 30px; text-align: center;}
 .pageNumberBlockActive {position: relative; float: left; background-color: #df4e47; width: 40px; height: 30px; line-height: 30px; text-align: center;}

@@ -356,7 +356,7 @@ if(isset($_SESSION['userID'])) {
 					<a href='basket.php?section=3&p=1'><div "; if($_REQUEST['section'] == 3) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pbb3' onmouseover='buttonChange(\"pbb3\", 1)' onmouseout='buttonChange(\"pbb3\", 0)'";} echo ">История заказов</div></a>
 				</div>
 				<div id='personalContent'>
-					<div id='goodResponseFiled'></div>
+					<div id='goodResponseField'></div>
 			";
 
 			$userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");

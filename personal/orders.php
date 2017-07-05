@@ -346,7 +346,7 @@ if(isset($_SESSION['userID'])) {
 					<a href='orders.php?section=2&p=1'><div "; if($_REQUEST['section'] == 2) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pbl2' onmouseover='buttonChange(\"pbl2\", 1)' onmouseout='buttonChange(\"pbl2\", 0)'";} echo ">История заказов</div></a>
 				</div>
 				<div id='personalContent'>
-					<div id='goodResponseFiled'></div>
+					<div id='goodResponseField'></div>
 			";
 
 			switch($_REQUEST['section']) {

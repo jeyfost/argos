@@ -102,6 +102,7 @@ if(isset($_SESSION['userID'])) {
     <title><?php if($_SESSION['userID'] == 1) {echo "Управление сайтом";} else {echo "Личный кабинет";} ?></title>
 
     <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel='stylesheet' media='screen' type='text/css' href='../css/style.css'>
 	<link rel="stylesheet" type="text/css" href="../js/lightview/css/lightview/lightview.css" />
     <?php
@@ -111,6 +112,7 @@ if(isset($_SESSION['userID'])) {
 	?>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="../js/menu1.js"></script>
 	<script type="text/javascript" src="../js/common.js"></script>
 	<script type="text/javascript" src="../js/personal.js"></script>
@@ -400,7 +402,7 @@ if(isset($_SESSION['userID'])) {
 						<a href='../admin'><div class='personalMenuLink' id='p3' onmouseover='buttonChange(\"p3\", 1)' onmouseout='buttonChange(\"p3\", 0)'>Панель администрирования</div></a>
 					</div>
 					<div id='personalContent'>
-						<div id='goodResponseFiled'></div>
+						<div id='goodResponseField'></div>
 				";
 
 				switch($_REQUEST['section']) {
@@ -418,7 +420,9 @@ if(isset($_SESSION['userID'])) {
 						}
 
 						echo "
-									<input type='button' value='Установить' id='personalSubmit' onmouseover='buttonChange(\"personalSubmit\", 1)' onmouseout='buttonChange(\"personalSubmit\", 0)' onclick='setRates()' />
+									<input type='button' value='Установить свои курсы' id='personalSubmit' onmouseover='buttonChange(\"personalSubmit\", 1)' onmouseout='buttonChange(\"personalSubmit\", 0)' onclick='setRates()' />
+									<br /><br />
+									<input type='button' value='Установить курсы нацбанка' id='personalBankSubmit' onmouseover='buttonChange(\"personalBankSubmit\", 1)' onmouseout='buttonChange(\"personalBankSubmit\", 0)' onclick='setOfficialRates()' />
 								</form>
 							</div>
 						";
@@ -655,7 +659,7 @@ if(isset($_SESSION['userID'])) {
 						<a href='personal.php?section=3'><div "; if($_REQUEST['section'] == 3) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='pb3' onmouseover='buttonChange(\"pb3\", 1)' onmouseout='buttonChange(\"pb3\", 0)'";} echo ">Изменить пароль</div></a>
 					</div>
 					<div id='personalContent'>
-						<div id='goodResponseFiled'></div>
+						<div id='goodResponseField'></div>
 				";
 
 				$personalResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
