@@ -35,9 +35,9 @@ if(!empty($_FILES['attachment']['tmp_name'][0])) {
 
 if($filesErrors == 0) {
 	$location = $mysqli->real_escape_string($_POST['district']);
-	$from = "ЧТУП Аргос-ФМ <argos-fm@mail.ru>";
+	$from = "ЧТУП Аргос-ФМ <".CONTACT_EMAIL.">";
 	$subject = $mysqli->real_escape_string($_POST['subject']);
-	$reply = "argos-fm@mail.ru";
+	$reply = CONTACT_EMAIL;
 	$text = $_POST['text'];
 	$p = $mysqli->real_escape_string($_POST['parameter']);
 

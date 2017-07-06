@@ -336,7 +336,7 @@ if(isset($_SESSION['userID'])) {
 					<br /><br />
 					<b>Email:</b>
 					<br />
-					<a href="mailto:argos-fm@mail.ru" class="basicLink">argos-fm@mail.ru</a>
+					<a href="mailto:<?= CONTACT_EMAIL ?>" class="basicLink"><?= CONTACT_EMAIL ?></a>
 					<br /><br />
 					<b>Время работы:</b>
 					<br />

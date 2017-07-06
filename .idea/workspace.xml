@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/const.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/mail.js" afterPath="$PROJECT_DIR$/js/mail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/personal.js" afterPath="$PROJECT_DIR$/js/personal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contacts/main.php" afterPath="$PROJECT_DIR$/contacts/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/about/ajaxSendCV.php" afterPath="$PROJECT_DIR$/scripts/about/ajaxSendCV.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/admin/email/ajaxSendOneEmail.php" afterPath="$PROJECT_DIR$/scripts/admin/email/ajaxSendOneEmail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/admin/email/ajaxSendSetEmail.php" afterPath="$PROJECT_DIR$/scripts/admin/email/ajaxSendSetEmail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/connect.php" afterPath="$PROJECT_DIR$/scripts/connect.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php" afterPath="$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php" />
     </list>
     <ignored path="argos.iws" />
@@ -63,26 +66,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/admin.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="108" lean-forward="false" selection-start-line="36" selection-start-column="108" selection-end-line="36" selection-end-column="108" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2533">
-              <caret line="149" column="50" lean-forward="false" selection-start-line="149" selection-start-column="50" selection-end-line="149" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="personal.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/personal/personal.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -257,37 +240,17 @@
       <file leaf-file-name="ajaxSendMail.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            <state relative-caret-position="272">
+              <caret line="16" column="90" lean-forward="true" selection-start-line="16" selection-start-column="90" selection-end-line="16" selection-end-column="90" />
               <folding>
-                <marker date="1499336626496" expanded="true" signature="786:879" ph="..." />
-                <marker date="1499336626496" expanded="true" signature="880:1429" ph="..." />
-                <marker date="1499336626496" expanded="true" signature="894:1418" ph="..." />
-                <marker date="1499336626496" expanded="false" signature="914:945" ph="..." />
-                <marker date="1499336626496" expanded="true" signature="946:1076" ph="..." />
-                <marker date="1499336626496" expanded="true" signature="1109:1227" ph="..." />
-                <marker date="1499336626496" expanded="true" signature="1228:1384" ph="..." />
-                <marker date="1499336626496" expanded="true" signature="1338:1364" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxSendCV.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/about/ajaxSendCV.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="63" column="62" lean-forward="true" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
-              <folding>
-                <marker date="1499336626514" expanded="false" signature="1733:1826" ph="..." />
-                <marker date="1499336626514" expanded="true" signature="1827:2895" ph="..." />
-                <marker date="1499336626514" expanded="true" signature="1841:2884" ph="..." />
-                <marker date="1499336626514" expanded="false" signature="1861:1892" ph="..." />
-                <marker date="1499336626514" expanded="true" signature="1893:2023" ph="..." />
-                <marker date="1499336626514" expanded="false" signature="2056:2174" ph="..." />
-                <marker date="1499336626514" expanded="true" signature="2175:2850" ph="..." />
-                <marker date="1499336626514" expanded="false" signature="2708:2724" ph="..." />
-                <marker date="1499336626514" expanded="false" signature="2804:2830" ph="..." />
+                <marker date="1499337167479" expanded="true" signature="777:870" ph="..." />
+                <marker date="1499337167479" expanded="true" signature="871:1420" ph="..." />
+                <marker date="1499337167479" expanded="true" signature="885:1409" ph="..." />
+                <marker date="1499337167479" expanded="false" signature="905:936" ph="..." />
+                <marker date="1499337167479" expanded="true" signature="937:1067" ph="..." />
+                <marker date="1499337167479" expanded="true" signature="1100:1218" ph="..." />
+                <marker date="1499337167479" expanded="true" signature="1219:1375" ph="..." />
+                <marker date="1499337167479" expanded="true" signature="1329:1355" ph="..." />
               </folding>
             </state>
           </provider>
@@ -335,23 +298,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>function send</find>
-      <find>function sendE</find>
-      <find>function sendEm</find>
-      <find>function sendEma</find>
-      <find>function sendEmai</find>
-      <find>function sendEmail</find>
-      <find>function sendEmail(</find>
-      <find>ma</find>
-      <find>mail</find>
-      <find>mail(</find>
-      <find>editUserPass</find>
-      <find>editUSerEma</find>
-      <find>editUserInf</find>
-      <find>changeIc</find>
-      <find>basketF</find>
-      <find>catalogueInf</find>
-      <find>itemDesc</find>
       <find>catalogueDesc</find>
       <find>respo</find>
       <find>x</find>
@@ -365,6 +311,23 @@
       <find>personalS</find>
       <find>goodR</find>
       <find>goodResponseFiled</find>
+      <find>fo</find>
+      <find>fos</find>
+      <find>foster</find>
+      <find>foster_</find>
+      <find>foster_a</find>
+      <find>foster_an</find>
+      <find>foster_and</find>
+      <find>foster_andre</find>
+      <find>foster_andrew</find>
+      <find>a</find>
+      <find>ar</find>
+      <find>arg</find>
+      <find>argo</find>
+      <find>argos</find>
+      <find>argos-</find>
+      <find>argos-fm</find>
+      <find>argos-fm@</find>
     </findStrings>
     <replaceStrings>
       <replace>proceed</replace>
@@ -393,10 +356,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts/admin/email/ajaxSendDistrictEmail.php" />
-        <option value="$PROJECT_DIR$/news.php" />
-        <option value="$PROJECT_DIR$/actions.php" />
-        <option value="$PROJECT_DIR$/admin/goods/codes.php" />
         <option value="$PROJECT_DIR$/js/admin/goods/add.js" />
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php" />
         <option value="$PROJECT_DIR$/admin/email/history.php" />
@@ -418,7 +377,6 @@
         <option value="$PROJECT_DIR$/partners/cooperation.php" />
         <option value="$PROJECT_DIR$/partners/news.php" />
         <option value="$PROJECT_DIR$/contacts/stores.php" />
-        <option value="$PROJECT_DIR$/contacts/main.php" />
         <option value="$PROJECT_DIR$/contacts/mail.php" />
         <option value="$PROJECT_DIR$/catalogue.php" />
         <option value="$PROJECT_DIR$/scripts/about/sendCV.php" />
@@ -442,8 +400,13 @@
         <option value="$PROJECT_DIR$/scripts/personal/ajaxSetOfficialRates.php" />
         <option value="$PROJECT_DIR$/js/personal.js" />
         <option value="$PROJECT_DIR$/js/mail.js" />
-        <option value="$PROJECT_DIR$/scripts/about/ajaxSendCV.php" />
+        <option value="$PROJECT_DIR$/scripts/connect.php" />
+        <option value="$PROJECT_DIR$/scripts/const.php" />
         <option value="$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php" />
+        <option value="$PROJECT_DIR$/scripts/about/ajaxSendCV.php" />
+        <option value="$PROJECT_DIR$/contacts/main.php" />
+        <option value="$PROJECT_DIR$/scripts/admin/email/ajaxSendOneEmail.php" />
+        <option value="$PROJECT_DIR$/scripts/admin/email/ajaxSendSetEmail.php" />
       </list>
     </option>
   </component>
@@ -523,42 +486,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos.local" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="contacts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="argos.local" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="about" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -842,14 +769,7 @@
       <workItem from="1499163576313" duration="2793000" />
       <workItem from="1499183832973" duration="2067000" />
       <workItem from="1499244648306" duration="10211000" />
-      <workItem from="1499331255609" duration="1528000" />
-    </task>
-    <task id="LOCAL-00123" summary="Реализовано закрытие вакансий">
-      <created>1491201535158</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1491201535158</updated>
+      <workItem from="1499331255609" duration="1980000" />
     </task>
     <task id="LOCAL-00124" summary="Добавлена стратовая страница email-рассылок">
       <created>1491205141683</created>
@@ -1187,11 +1107,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499254306473</updated>
     </task>
-    <option name="localTasksCounter" value="172" />
+    <task id="LOCAL-00172" summary="Исправлена обратная связь + мелкие правки">
+      <created>1499336745319</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1499336745320</updated>
+    </task>
+    <option name="localTasksCounter" value="173" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="302409000" />
+    <option name="totallyTimeSpent" value="302861000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1206,16 +1133,17 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13753213" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.249375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31942633" sideWeight="0.4975" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31942633" sideWeight="0.5025" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12982005" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285528" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13753213" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.249375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12982005" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285528" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1225,7 +1153,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285528" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1262,7 +1189,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправлено отображение стоимости в каталоге" />
     <MESSAGE value="Добавлена страница отписки от рассылки" />
     <MESSAGE value="Переход на https" />
     <MESSAGE value="Правки структуры в каталоге" />
@@ -1287,7 +1213,8 @@
     <MESSAGE value="Замена фотографий разделов" />
     <MESSAGE value="Добавлена псевдопрокрутка главной страницы по нажатию стрелок на клавиатуре" />
     <MESSAGE value="Добавлена установка официальных курсов валют по API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена установка официальных курсов валют по API" />
+    <MESSAGE value="Исправлена обратная связь + мелкие правки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлена обратная связь + мелкие правки" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1318,34 +1245,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/personal/email.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/menu1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3502">
-          <caret line="206" column="36" lean-forward="false" selection-start-line="206" selection-start-column="36" selection-end-line="206" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/about/info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="118" column="313" lean-forward="false" selection-start-line="118" selection-start-column="313" selection-end-line="118" selection-end-column="313" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/about/gallery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="119" column="313" lean-forward="false" selection-start-line="119" selection-start-column="313" selection-end-line="119" selection-end-column="313" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/about/assortment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1378,13 +1277,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="461">
           <caret line="347" column="25" lean-forward="false" selection-start-line="347" selection-start-column="25" selection-end-line="347" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contacts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="118" column="313" lean-forward="false" selection-start-line="118" selection-start-column="313" selection-end-line="118" selection-end-column="313" />
         </state>
       </provider>
     </entry>
@@ -1931,24 +1823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/about/ajaxSendCV.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="63" column="62" lean-forward="true" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
-          <folding>
-            <marker date="1499336626514" expanded="false" signature="1733:1826" ph="..." />
-            <marker date="1499336626514" expanded="true" signature="1827:2895" ph="..." />
-            <marker date="1499336626514" expanded="true" signature="1841:2884" ph="..." />
-            <marker date="1499336626514" expanded="false" signature="1861:1892" ph="..." />
-            <marker date="1499336626514" expanded="true" signature="1893:2023" ph="..." />
-            <marker date="1499336626514" expanded="false" signature="2056:2174" ph="..." />
-            <marker date="1499336626514" expanded="true" signature="2175:2850" ph="..." />
-            <marker date="1499336626514" expanded="false" signature="2708:2724" ph="..." />
-            <marker date="1499336626514" expanded="false" signature="2804:2830" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/mail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
@@ -1965,19 +1839,109 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/connect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/about/ajaxSendCV.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="17" column="50" lean-forward="true" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+          <folding>
+            <element signature="e#6#89#0#PHP" expanded="true" />
+            <marker date="1499337167559" expanded="false" signature="1728:1821" ph="..." />
+            <marker date="1499337167559" expanded="true" signature="1822:2890" ph="..." />
+            <marker date="1499337167559" expanded="true" signature="1836:2879" ph="..." />
+            <marker date="1499337167559" expanded="false" signature="1856:1887" ph="..." />
+            <marker date="1499337167559" expanded="true" signature="1888:2018" ph="..." />
+            <marker date="1499337167559" expanded="false" signature="2051:2169" ph="..." />
+            <marker date="1499337167559" expanded="true" signature="2170:2845" ph="..." />
+            <marker date="1499337167559" expanded="false" signature="2703:2719" ph="..." />
+            <marker date="1499337167559" expanded="false" signature="2799:2825" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contacts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="340" column="40" lean-forward="true" selection-start-line="340" selection-start-column="40" selection-end-line="340" selection-end-column="40" />
+          <folding>
+            <marker date="1499337167492" expanded="true" signature="479:535" ph="SELECT * FRO... users" />
+            <marker date="1499337167492" expanded="true" signature="808:875" ph="SELECT login... users" />
+            <marker date="1499337167492" expanded="true" signature="989:1110" ph="UPDATE users... " />
+            <marker date="1499337167492" expanded="true" signature="3142:3409" ph="..." />
+            <marker date="1499337167492" expanded="true" signature="3441:3721" ph="..." />
+            <marker date="1499337167492" expanded="true" signature="3816:3868" ph="SELECT COUNT... orders_info" />
+            <marker date="1499337167492" expanded="true" signature="4045:4418" ph="..." />
+            <marker date="1499337167492" expanded="true" signature="4494:4758" ph="..." />
+            <marker date="1499337167492" expanded="true" signature="4842:4912" ph="SELECT COUNT... basket" />
+            <marker date="1499337167492" expanded="true" signature="5089:5458" ph="..." />
+            <marker date="1499337167492" expanded="true" signature="5550:5859" ph="..." />
+            <marker date="1499337167492" expanded="true" signature="5946:6212" ph="..." />
+            <marker date="1499337167492" expanded="true" signature="6269:6412" ph="..." />
+            <marker date="1499337167492" expanded="true" signature="6297:6399" ph="..." />
+            <marker date="1499337167492" expanded="true" signature="6445:6457" ph="..." />
+            <marker date="1499337167492" expanded="false" signature="11150:11164" ph="..." />
+            <marker date="1499337167492" expanded="true" signature="11165:11270" ph="..." />
+            <marker date="1499337167492" expanded="false" signature="11364:11378" ph="..." />
+            <marker date="1499337167492" expanded="true" signature="11379:11481" ph="..." />
+            <marker date="1499337167492" expanded="false" signature="11649:11663" ph="..." />
+            <marker date="1499337167492" expanded="true" signature="11664:11778" ph="..." />
+            <marker date="1499337167492" expanded="false" signature="11872:11886" ph="..." />
+            <marker date="1499337167492" expanded="true" signature="11887:11998" ph="..." />
+            <marker date="1499337167492" expanded="false" signature="12083:12097" ph="..." />
+            <marker date="1499337167492" expanded="true" signature="12098:12206" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/email/ajaxSendOneEmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="37" column="54" lean-forward="false" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+          <folding>
+            <marker date="1499337167565" expanded="true" signature="2170:2383" ph="INSERT INTO mail_result... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/const.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/email/ajaxSendSetEmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <marker date="1499337167525" expanded="true" signature="2036:2086" ph="SELECT * FRO... clients" />
+            <marker date="1499337167525" expanded="true" signature="2826:3071" ph="INSERT INTO mail_result... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        <state relative-caret-position="272">
+          <caret line="16" column="90" lean-forward="true" selection-start-line="16" selection-start-column="90" selection-end-line="16" selection-end-column="90" />
           <folding>
-            <marker date="1499336626496" expanded="true" signature="786:879" ph="..." />
-            <marker date="1499336626496" expanded="true" signature="880:1429" ph="..." />
-            <marker date="1499336626496" expanded="true" signature="894:1418" ph="..." />
-            <marker date="1499336626496" expanded="false" signature="914:945" ph="..." />
-            <marker date="1499336626496" expanded="true" signature="946:1076" ph="..." />
-            <marker date="1499336626496" expanded="true" signature="1109:1227" ph="..." />
-            <marker date="1499336626496" expanded="true" signature="1228:1384" ph="..." />
-            <marker date="1499336626496" expanded="true" signature="1338:1364" ph="..." />
+            <marker date="1499337167479" expanded="true" signature="777:870" ph="..." />
+            <marker date="1499337167479" expanded="true" signature="871:1420" ph="..." />
+            <marker date="1499337167479" expanded="true" signature="885:1409" ph="..." />
+            <marker date="1499337167479" expanded="false" signature="905:936" ph="..." />
+            <marker date="1499337167479" expanded="true" signature="937:1067" ph="..." />
+            <marker date="1499337167479" expanded="true" signature="1100:1218" ph="..." />
+            <marker date="1499337167479" expanded="true" signature="1219:1375" ph="..." />
+            <marker date="1499337167479" expanded="true" signature="1329:1355" ph="..." />
           </folding>
         </state>
       </provider>

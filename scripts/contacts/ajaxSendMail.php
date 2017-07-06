@@ -7,7 +7,7 @@ $email = $mysqli->real_escape_string($_POST['email']);
 $subject = $mysqli->real_escape_string($_POST['subject']) . " | Сообщение с сайта Аргос-ФМ";
 $text = $mysqli->real_escape_string($_POST['message']);
 
-$to = "foster_andrew@tut.by";
+$to = CONTACT_EMAIL;
 $from = $name . "<" . $email . ">";
 $reply = $email;
 
