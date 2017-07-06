@@ -1,6 +1,7 @@
 <?php
 
 include("../connect.php");
+include("../helpers.php");
 
 $id = $mysqli->real_escape_string($_POST['client']);
 $j = 0;
@@ -33,7 +34,7 @@ if($orderCount[0] > 0) {
 				<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 					<td>".$j."</td>
 					<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
-					<td>".substr($order['send_date'], 0, 10)." в ".substr($order['send_date'], 11, 8)."</td>
+					<td>".dateFormattedDayToYear($order['send_date'])."</td>
 					<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
 					<td><span class='tdLink' onclick='acceptOrder(\"".$order['id']."\")'>Принять заказ</span></td>
 					<td><span class='tdLink' onclick='cancelOrder(\"".$order['id']."\")'>Отменить заказ</span></td>
@@ -61,7 +62,7 @@ if($orderCount[0] > 0) {
 					<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 						<td>".$j."</td>
 						<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
-						<td>".substr($order['send_date'], 0, 10)." в ".substr($order['send_date'], 11, 8)."</td>
+						<td>".dateFormattedDayToYear($order['send_date'])."</td>
 						<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
 						<td><span class='tdLink' onclick='acceptOrder(\"".$order['id']."\")'>Принять заказ</span></td>
 						<td><span class='tdLink' onclick='cancelOrder(\"".$order['id']."\")'>Отменить заказ</span></td>

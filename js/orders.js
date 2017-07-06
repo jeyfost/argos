@@ -5,7 +5,7 @@ function showOrderDetails(id) {
 		data: {"id": id},
 		url: "../scripts/personal/ajaxOrderDetailedInfo.php",
 		success: function(response) {
-			if(response_field.css('opacity') == 1) {
+			if(response_field.css('opacity') === 1) {
 				response_field.css('opacity', '0');
 				setTimeout(function() {
 					response_field.html(response + '<br /><br />');
@@ -26,7 +26,7 @@ function showOrderDetailsHistory(id) {
 		data: {"id": id},
 		url: "../scripts/personal/ajaxOrderDetailedInfoHistory.php",
 		success: function(response) {
-			if(response_field.css('opacity') == 1) {
+			if(response_field.css('opacity') === 1) {
 				response_field.css('opacity', '0');
 				setTimeout(function() {
 					response_field.html(response + '<br /><br />');
@@ -49,8 +49,8 @@ function selectClient(file_name) {
 			var order_response = $('#orderResponse');
 			var table = $('#ordersTable');
 
-			if(response == "b") {
-				if(order_response.css('opacity') == 1) {
+			if(response === "b") {
+				if(order_response.css('opacity') === 1) {
 					order_response.css('opacity', 0);
 					setTimeout(function() {
 						order_response.css('color', '#53acff');
@@ -63,7 +63,7 @@ function selectClient(file_name) {
 					order_response.css('opacity', 1);
 				}
 
-				if(table.css('opacity') == 1) {
+				if(table.css('opacity') === 1) {
 					table.css('opacity', 0);
 					setTimeout(function() {
 						table.html("");
@@ -72,14 +72,14 @@ function selectClient(file_name) {
 			} else {
 				var response_field = $('#responseField');
 
-				if(order_response.css('opacity') == 1) {
+				if(order_response.css('opacity') === 1) {
 					order_response.css('opacity', 0);
 					setTimeout(function() {
 						order_response.html("");
 					}, 300);
 				}
 
-				if(table.css('opacity') == 1) {
+				if(table.css('opacity') === 1) {
 					table.css('opacity', 0);
 					setTimeout(function() {
 						table.html(response);
@@ -90,7 +90,7 @@ function selectClient(file_name) {
 					table.css('opacity', 1);
 				}
 
-				if(response_field.css('opacity') == 1) {
+				if(response_field.css('opacity') === 1) {
 					response_field.css('opacity', 0);
 					setTimeout(function() {
 						response_field.html('');
@@ -103,7 +103,7 @@ function selectClient(file_name) {
 					data: {"client": $('#clientSelect').val()},
 					url: "../scripts/personal/ajaxCalculatePages.php",
 					success: function(result) {
-						if(numbers.css('opacity') == 1) {
+						if(numbers.css('opacity') === 1) {
 							numbers.css('opacity', 0);
 							setTimeout(function() {
 								numbers.html(result);
@@ -129,14 +129,14 @@ function acceptOrder(id) {
 			var order_response = $('#orderResponse');
 			var response_filed = $('#responseField');
 
-			if(response == "a") {
+			if(response === "a") {
 				response_filed.css("opacity", 0);
 				setTimeout(function() {
 					response_filed.html("");
 				}, 300);
 
 				selectClient();
-				if(order_response.css('opacity') == 1) {
+				if(order_response.css('opacity') === 1) {
 					order_response.css('opacity', 0);
 					setTimeout(function() {
 						order_response.css('color', '#53acff');
@@ -157,7 +157,7 @@ function acceptOrder(id) {
 					}
 				});
 			} else {
-				if(order_response.css('opacity') == 1) {
+				if(order_response.css('opacity') === 1) {
 					order_response.css('opacity', 0);
 					setTimeout(function() {
 						order_response.css('color', '#df4e47');
@@ -183,7 +183,7 @@ function cancelOrder(id) {
 			var order_response = $('#orderResponse');
 			var response_field = $('#responseField');
 
-			if(response == "a") {
+			if(response === "a") {
 				response_field.css("opacity", "0");
 				setTimeout(function() {
 					response_field.html("");
@@ -211,7 +211,7 @@ function cancelOrder(id) {
 					}
 				});
 			} else {
-				if(order_response.css('opacity') == 1) {
+				if(order_response.css('opacity') === 1) {
 					order_response.css('opacity', 0);
 					setTimeout(function() {
 						order_response.css('color', '#df4e47');
@@ -249,7 +249,7 @@ function goToPage(page, user) {
 				data: {"page": page, "userID": user},
 				url: "../scripts/personal/ajaxRebuildPageNumbers.php",
 				success: function(result) {
-					if(numbers.css('opacity') == 1) {
+					if(numbers.css('opacity') === 1) {
 						numbers.css('opacity', 0);
 						setTimeout(function() {
 							numbers.html(result);
@@ -268,7 +268,7 @@ function goToPage(page, user) {
 function changeQuantityDetailed(id, order_id) {
 	var input = "quantityInput" + id;
 
-	if($('#' + input).val() != '') {
+	if($('#' + input).val() !== '') {
 		$.ajax({
 			type: "POST",
 			data: {"id": id, "quantity": $('#' + input).val(), "orderID": order_id},
@@ -298,7 +298,7 @@ function removeGoodFromOrder(good_id, order_id) {
 					data: {"goodID": good_id, "orderID": order_id},
 					url: "../scripts/personal/ajaxRemoveGoodFromOrder.php",
 					success: function(response) {
-						if(response == "a") {
+						if(response === "a") {
 							$.ajax({
 								type: "POST",
 								data: {"orderID": order_id},
@@ -312,7 +312,7 @@ function removeGoodFromOrder(good_id, order_id) {
 							});
 						}
 
-						if(response == "b") {
+						if(response === "b") {
 							$('#responseField').hide('fast');
 
 							$.ajax({
@@ -329,4 +329,57 @@ function removeGoodFromOrder(good_id, order_id) {
 			}
 		}
 	});
+}
+
+function showCommentField(id) {
+	var form = "<form method='post' id='orderCommentForm'><div id='temporaryCommentContainer'></div><textarea id='commentInput' onkeydown='textAreaHeight(this)' placeholder='Текст комментария...'></textarea><br /><br /><input type='button' value='Оставить комментарий' id='commentSubmit' onclick='addComment(\"" + id + "\")' onmouseover='buttonChange(\"commentSubmit\", 1)' onmouseout='buttonChange(\"commentSubmit\", 0)' /></form>";
+	$('#orderCommentsField').html($('#orderCommentsField').html() + form);
+	$('#addComment').html('');
+}
+
+function addComment(id) {
+	var text = $('#commentInput').val();
+
+	if(text !== '' && text !== "Текст комментария...") {
+		$.ajax({
+			type: "POST",
+			data: {"order_id": id, "text": text},
+			url: "../scripts/personal/ajaxAddComment.php",
+			success: function (response) {
+				switch (response) {
+					case "ok":
+						$.ajax({
+							type: "POST",
+							data: {"order_id": id},
+							url: "../scripts/personal/ajaxLastComment.php",
+							success: function (comment) {
+								$.notify("Комментарий успешно добавлен.", "success");
+
+								$('#addComment').html('');
+								$('#commentInput').val('');
+								$('#temporaryCommentContainer').html(comment + "<br />");
+							},
+							error: function(jqXHR, textStatus, errorThrown) {
+								$.notify(textStatus + "; " + errorThrown, "error");
+							}
+						});
+						break;
+					case "failed":
+						$.notify("Произошла ошибка. Попробуйте снова.", "error");
+						break;
+					case "id":
+						$.notify("Такого заказа не существует.", "error");
+						break;
+					default:
+						$.notify(response, "warn");
+						break;
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				$.notify(textStatus + "; " + errorThrown, "error");
+			}
+		});
+	} else {
+		$.notify("Введите текст комментария", "error");
+	}
 }

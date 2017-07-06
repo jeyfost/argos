@@ -2,6 +2,7 @@
 
 session_start();
 include("../connect.php");
+include("../helpers.php");
 
 $id = $mysqli->real_escape_string($_POST['id']);
 
@@ -179,3 +180,44 @@ if($actionGoodsQuantity > 0) {
 echo "
 	<div style='float: right;'><b>Общая стоимость в момент принятия заказа: </b><span id='totalPriceText'>".$total."</span></div>
 ";
+
+$commentsCountResult = $mysqli->query("SELECT COUNT(id) FROM orders_comments WHERE order_id = '".$id."'");
+$commentsCount = $commentsCountResult->fetch_array(MYSQLI_NUM);
+
+if($commentsCount[0] == 0) {
+	echo "
+		<div id='addComment'><span class='tdLink' onclick='showCommentField(\"".$id."\")'>Добавить комментарий к заказу</span></div>
+		<div id='orderCommentsField'></div>
+	";
+} else {
+	$commentsResult = $mysqli->query("SELECT * FROM orders_comments WHERE order_id = '".$id."' ORDER BY date");
+
+	echo "
+		<div id='orderCommentsField'>
+			<h3>Комментарии к заказу</h3>
+			<hr /><br />
+	";
+
+	$number = 0;
+
+	while($comment = $commentsResult->fetch_assoc()) {
+		$number++;
+
+		$authorResult = $mysqli->query("SELECT name FROM users WHERE id = '".$comment['user_id']."'");
+		$author = $authorResult->fetch_array(MYSQLI_NUM);
+
+		echo "
+			<div class='orderComment'>
+				<div style='border-bottom: 1px dotted #999; padding: 5px;'><b>Комментарий №".$number."</b> от <b>".dateFormatted($comment['date'])."</b>. Автор: <b>"; if($comment['user_id'] == 1) {echo "<span style='color: #df4e47;'>".$author[0]."</span>";} else {echo $author[0];} echo "</b></div>
+				<div class='commentSection'><br />".$comment['text']."</div>
+			</div>
+		";
+	}
+
+	echo "
+		<br />
+		<div id='addComment'><span class='tdLink' onclick='showCommentField(\"".$id."\")'>Добавить комментарий к заказу</span></div>
+	";
+
+	echo "</div>";
+}

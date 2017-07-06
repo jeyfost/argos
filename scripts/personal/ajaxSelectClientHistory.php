@@ -1,6 +1,7 @@
 <?php
 
 include("../connect.php");
+include("../helpers.php");
 
 $id = $mysqli->real_escape_string($_POST['client']);
 $j = 0;
@@ -33,8 +34,8 @@ if($orderCount[0] > 0) {
 					<td>".$j."</td>
 						<td><span class='tdLink' onclick='showOrderDetailsHistory(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
 						<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
-						<td>".substr($order['send_date'], 0, 10)." в ".substr($order['send_date'], 11, 8)."</td>
-						<td>".substr($order['proceed_date'], 0, 10)." в ".substr($order['proceed_date'], 11, 8)."</td>
+						<td>".dateFormattedDayToYear($order['send_date'])."</td>
+						<td>".dateFormattedDayToYear($order['proceed_date'])."</td>
 				</tr>
 			";
 		}
@@ -59,8 +60,8 @@ if($orderCount[0] > 0) {
 						<td>".$j."</td>
 						<td><span class='tdLink' onclick='showOrderDetailsHistory(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
 						<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
-						<td>".substr($order['send_date'], 0, 10)." в ".substr($order['send_date'], 11, 8)."</td>
-						<td>".substr($order['proceed_date'], 0, 10)." в ".substr($order['proceed_date'], 11, 8)."</td>
+						<td>".dateFormattedDayToYear($order['send_date'])."</td>
+						<td>".dateFormattedDayToYear($order['proceed_date'])."</td>
 					</tr>
 				";
 			}

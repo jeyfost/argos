@@ -19,6 +19,7 @@ if(empty($_REQUEST['section'])) {
 }
 
 include("../scripts/connect.php");
+include("../scripts/helpers.php");
 
 if(empty($_REQUEST['p'])) {
 	header("Location: orders.php?section=".$_REQUEST['section']."&p=1");
@@ -99,6 +100,7 @@ if(isset($_SESSION['userID'])) {
     <script type="text/javascript" src="../js/menu1.js"></script>
 	<script type="text/javascript" src="../js/common.js"></script>
 	<script type="text/javascript" src="../js/orders.js"></script>
+	<script type="text/javascript" src="../js/notify.js"></script>
 	<!--[if lt IE 9]>
   		<script type="text/javascript" src="../js/lightview/js/excanvas/excanvas.js"></script>
 	<![endif]-->
@@ -396,7 +398,7 @@ if(isset($_SESSION['userID'])) {
 								<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 									<td>".$j."</td>
 									<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
-									<td>".substr($order['send_date'], 0, 10)." в ".substr($order['send_date'], 11, 8)."</td>
+									<td>".dateFormattedDayToYear($order['send_date'])."</td>
 									<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
 									<td><span class='tdLink' onclick='acceptOrder(\"".$order['id']."\")'>Принять заказ</span></td>
 									<td><span class='tdLink' onclick='cancelOrder(\"".$order['id']."\")'>Отменить заказ</span></td>
@@ -452,8 +454,8 @@ if(isset($_SESSION['userID'])) {
 								<td>".($page * 10 - 10 + $j)."</td>
 								<td><span class='tdLink' onclick='showOrderDetailsHistory(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
 								<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
-								<td>".substr($order['send_date'], 0, 10)." в ".substr($order['send_date'], 11, 8)."</td>
-								<td>".substr($order['proceed_date'], 0, 10)." в ".substr($order['proceed_date'], 11, 8)."</td>
+								<td>".dateFormattedDayToYear($order['send_date'])."</td>
+								<td>".dateFormattedDayToYear($order['proceed_date'])."</td>
 							</tr>
 						";
 					}

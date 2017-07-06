@@ -19,6 +19,7 @@ if(empty($_REQUEST['section'])) {
 }
 
 include("../scripts/connect.php");
+include("../scripts/helpers.php");
 
 if($_REQUEST['section'] == 3) {
 	if(empty($_REQUEST['p'])) {
@@ -98,6 +99,7 @@ if(isset($_SESSION['userID'])) {
     <script type="text/javascript" src="../js/menu1.js"></script>
 	<script type="text/javascript" src="../js/common.js"></script>
 	<script type="text/javascript" src="../js/basket.js"></script>
+	<script type="text/javascript" src="../js/notify.js"></script>
 	<!--[if lt IE 9]>
   		<script type="text/javascript" src="../js/lightview/js/excanvas/excanvas.js"></script>
 	<![endif]-->
@@ -613,7 +615,7 @@ if(isset($_SESSION['userID'])) {
 								<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 									<td>".$j."</td>
 									<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
-									<td>".substr($order['send_date'], 0, 10)." в ".substr($order['send_date'], 11, 8)."</td>
+									<td>".dateFormattedDayToYear($order['send_date'])."</td>
 									<td><span class='tdLink' onclick='cancelOrder(\"".$order['id']."\")'>Отменить заказ</span></td>
 								</tr>
 							";
@@ -647,8 +649,8 @@ if(isset($_SESSION['userID'])) {
 							<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 								<td>".($page * 10 - 10 + $j)."</td>
 								<td><span class='tdLink' onclick='showOrderDetailsHistory(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
-								<td>".substr($order['send_date'], 0, 10)." в ".substr($order['send_date'], 11, 8)."</td>
-								<td>".substr($order['proceed_date'], 0, 10)." в ".substr($order['proceed_date'], 11, 8)."</td>
+								<td>".dateFormattedDayToYear($order['send_date'])."</td>
+								<td>".dateFormattedDayToYear($order['proceed_date'])."</td>
 							</tr>
 						";
 					}

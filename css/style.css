@@ -121,17 +121,17 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 #centralBlock {position: relative; margin: 80px auto 0 auto; width: 70%; z-index: 1;}
 #breadCrumbs, .breadCrumbsText {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 14px; margin-top: -30px;}
 #topSection {padding-bottom: 40px; width: 100%;}
-#loginSubmit, #registrationSubmit, #recoverySubmit, #passwordSubmit, #personalSubmit, #personalBankSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer;}
+#loginSubmit, #registrationSubmit, #recoverySubmit, #passwordSubmit, #personalSubmit, #personalBankSubmit, #commentSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer;}
 #registrationSubmit {width: 200px;}
 #recoverySubmit {width: 130px;}
-#personalBankSubmit, #personalSubmit {width: auto;}
+#personalBankSubmit, #personalSubmit, #commentSubmit {width: auto;}
 #basketSubmit, #clearBasketButton, #acceptButton {width: 200px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: right;}
 #clearBasketButton {margin-right: 10px;}
 #registrationDescription {position: relative; float: left; padding-left: 40px;}
 #registrationContainer {width: 350px; position: relative; float: left;}
 #registrationStatus {color: #df4e47;}
 #CVForm {background-color: #f3f3f3; padding: 10px; border: 1px solid #dedede; display: inline-block;}
-#messageInput {resize: none; transition: .3s; word-wrap: break-word; width: 452px; height: 25px; padding: 10px; font-style: italic; margin-top: 5px; color: #9e9e9e;}
+#messageInput, #commentInput {resize: none; transition: .3s; word-wrap: break-word; width: 452px; height: 25px; padding: 10px; font-style: italic; margin-top: 5px; color: #9e9e9e;}
 
 .container {width: 90%; margin: 0 auto; z-index: 11;}
 .mainImgContainer {width: 100%; height: 100%; overflow: hidden; transition: .3s; margin: 0; padding: 0;}
@@ -170,3 +170,5 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .headTR {background-color: #ffeecb; height: 40px; text-align: center;}
 .headTR td {cursor: pointer;}
 .tdLink {color: #df4e47; cursor: pointer;}
+.orderComment {width: 100%; padding: 5px; margin-top: 10px; background-color: #eee; border: 1px dashed #999;}
+.commentSection {width: 100%; padding: 5px;}
