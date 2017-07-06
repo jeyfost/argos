@@ -6,4 +6,4 @@
  * Time: 12:28
  */
 
-const CONTACT_EMAIL = "argos-fm@tut.by";
+define("CONTACT_EMAIL", "argos-fm@mail.ru");
