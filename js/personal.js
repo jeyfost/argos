@@ -593,7 +593,7 @@ function setOfficialRates() {
 	var response_field = $('#goodResponseField');
 
 	$.ajax({
-		type: "POST",
+		type: "GET",
 		url: "../scripts/personal/ajaxSetOfficialRates.php",
 		beforeSend: function () {
 			response_field.html("<img src='../img/system/spinner.gif' /><br /><br />");
@@ -602,19 +602,6 @@ function setOfficialRates() {
 		success: function (response) {
 			switch (response) {
 				case "ok":
-					if (response_field.css('opacity') === 1) {
-						response_field.css('opacity', '0');
-						setTimeout(function () {
-							response_field.css('color', '#53acff');
-							response_field.html('Курсы были успешно установлены.<br /><br />');
-							response_field.css('opacity', '1');
-						}, 300);
-					} else {
-						response_field.css('color', '#53acff');
-						response_field.html('Курсы были успешно установлены.<br /><br />');
-						response_field.css('opacity', '1');
-					}
-
 					$.ajax({
 						type: "POST",
 						data: {"code": "USD"},
@@ -641,6 +628,19 @@ function setOfficialRates() {
 							$('#currencyInput3').val(rate);
 						}
 					});
+
+					if (response_field.css('opacity') === 1) {
+						response_field.css('opacity', '0');
+						setTimeout(function () {
+							response_field.css('color', '#53acff');
+							response_field.html('Курсы были успешно установлены.<br /><br />');
+							response_field.css('opacity', '1');
+						}, 300);
+					} else {
+						response_field.css('color', '#53acff');
+						response_field.html('Курсы были успешно установлены.<br /><br />');
+						response_field.css('opacity', '1');
+					}
 					break;
 				case "partly":
 					if (response_field.css('opacity') === 1) {

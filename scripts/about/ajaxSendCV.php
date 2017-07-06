@@ -31,8 +31,6 @@ if(!empty($_FILES['CV']['tmp_name']) and $_FILES['CV']['error'] == 0) {
 			$text = $mysqli->real_escape_string($_POST['text']);
 			$month = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
 
-			$hash = md5(date('r', time()));
-
 			$to = "argos-fm@mail.ru";
 			$from = "Сайт Аргос-ФМ <no-reply@argos-fm.by>";
 			$reply = "no-reply@argos-fm.by";
