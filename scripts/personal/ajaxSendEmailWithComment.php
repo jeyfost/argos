@@ -46,7 +46,7 @@ function sendMailToAdmin($adminEmail, $user, $order, $comment) {
 
 	$from = $name."<".$user['email'].">";
 
-	$reply = "<no-reply@argos-fm.by>";
+	$reply = $user['email'];
 	$subject = "Комментарий к заказу №".$order['id'];
 
 	$hash = md5(rand(0, 1000000).date('Y-m-d H:i:s'));
