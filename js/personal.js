@@ -593,85 +593,126 @@ function setOfficialRates() {
 	var response_field = $('#goodResponseField');
 
 	$.ajax({
-		type: "GET",
-		url: "../scripts/personal/ajaxSetOfficialRates.php",
+		type: "POST",
+		url: "../scripts/personal/ajaxCheckRates.php",
 		beforeSend: function () {
-			response_field.html("<img src='../img/system/spinner.gif' /><br /><br />");
-			response_field.css("opacity", "1");
+			if (response_field.css('opacity') === 1) {
+				response_field.css('opacity', '0');
+				setTimeout(function () {
+					response_field.html("<img src='../img/system/spinner.gif' /><br /><br />");
+					response_field.css("opacity", "1");
+				}, 300);
+			} else {
+				response_field.html("<img src='../img/system/spinner.gif' /><br /><br />");
+				response_field.css("opacity", "1");
+			}
 		},
-		success: function (response) {
-			switch (response) {
-				case "ok":
-					$.ajax({
-						type: "POST",
-						data: {"code": "USD"},
-						url: "../scripts/personal/ajaxGetRate.php",
-						success: function (rate) {
-							$('#currencyInput1').val(rate);
+		success: function (result) {
+			if (result === "not actial") {
+				$.ajax({
+					type: "GET",
+					url: "../scripts/personal/ajaxSetOfficialRates.php",
+					beforeSend: function () {
+						if (response_field.css('opacity') === 1) {
+							response_field.css('opacity', '0');
+							setTimeout(function () {
+								response_field.html("<img src='../img/system/spinner.gif' /><br /><br />");
+								response_field.css("opacity", "1");
+							}, 300);
+						} else {
+							response_field.html("<img src='../img/system/spinner.gif' /><br /><br />");
+							response_field.css("opacity", "1");
 						}
-					});
+					},
+					success: function (response) {
+						switch (response) {
+							case "ok":
+								$.ajax({
+									type: "POST",
+									data: {"code": "USD"},
+									url: "../scripts/personal/ajaxGetRate.php",
+									success: function (rate) {
+										$('#currencyInput1').val(rate);
+									}
+								});
 
-					$.ajax({
-						type: "POST",
-						data: {"code": "RUB"},
-						url: "../scripts/personal/ajaxGetRate.php",
-						success: function (rate) {
-							$('#currencyInput2').val(rate);
+								$.ajax({
+									type: "POST",
+									data: {"code": "RUB"},
+									url: "../scripts/personal/ajaxGetRate.php",
+									success: function (rate) {
+										$('#currencyInput2').val(rate);
+									}
+								});
+
+								$.ajax({
+									type: "POST",
+									data: {"code": "EUR"},
+									url: "../scripts/personal/ajaxGetRate.php",
+									success: function (rate) {
+										$('#currencyInput3').val(rate);
+									}
+								});
+
+								if (response_field.css('opacity') === 1) {
+									response_field.css('opacity', '0');
+									setTimeout(function () {
+										response_field.css('color', '#53acff');
+										response_field.html('Курсы были успешно установлены.<br /><br />');
+										response_field.css('opacity', '1');
+									}, 300);
+								} else {
+									response_field.css('color', '#53acff');
+									response_field.html('Курсы были успешно установлены.<br /><br />');
+									response_field.css('opacity', '1');
+								}
+								break;
+							case "partly":
+								if (response_field.css('opacity') === 1) {
+									response_field.css('opacity', '0');
+									setTimeout(function () {
+										response_field.css('color', '#df4e47');
+										response_field.html('Не все курсы были успешно обновлены.<br /><br />');
+										response_field.css('opacity', '1');
+									}, 300);
+								} else {
+									response_field.css('color', '#df4e47');
+									response_field.html('Не все курсы были успешно обновлены.<br /><br />');
+									response_field.css('opacity', '1');
+								}
+								break;
+							case "failed":
+								if (response_field.css('opacity') === 1) {
+									response_field.css('opacity', '0');
+									setTimeout(function () {
+										response_field.css('color', '#df4e47');
+										response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
+										response_field.css('opacity', '1');
+									}, 300);
+								} else {
+									response_field.css('color', '#df4e47');
+									response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
+									response_field.css('opacity', '1');
+								}
+								break;
+							default:
+								break;
 						}
-					});
-
-					$.ajax({
-						type: "POST",
-						data: {"code": "EUR"},
-						url: "../scripts/personal/ajaxGetRate.php",
-						success: function (rate) {
-							$('#currencyInput3').val(rate);
-						}
-					});
-
-					if (response_field.css('opacity') === 1) {
-						response_field.css('opacity', '0');
-						setTimeout(function () {
-							response_field.css('color', '#53acff');
-							response_field.html('Курсы были успешно установлены.<br /><br />');
-							response_field.css('opacity', '1');
-						}, 300);
-					} else {
+					}
+				});
+			} else {
+				if (response_field.css('opacity') === 1) {
+					response_field.css('opacity', '0');
+					setTimeout(function () {
 						response_field.css('color', '#53acff');
-						response_field.html('Курсы были успешно установлены.<br /><br />');
+						response_field.html('Обновление не требуется. Актуальные курсы уже установлены.<br /><br />');
 						response_field.css('opacity', '1');
-					}
-					break;
-				case "partly":
-					if (response_field.css('opacity') === 1) {
-						response_field.css('opacity', '0');
-						setTimeout(function () {
-							response_field.css('color', '#df4e47');
-							response_field.html('Не все курсы были успешно обновлены.<br /><br />');
-							response_field.css('opacity', '1');
-						}, 300);
-					} else {
-						response_field.css('color', '#df4e47');
-						response_field.html('Не все курсы были успешно обновлены.<br /><br />');
-						response_field.css('opacity', '1');
-					}
-					break;
-				case "failed":
-					if (response_field.css('opacity') === 1) {
-						response_field.css('opacity', '0');
-						setTimeout(function () {
-							response_field.css('color', '#df4e47');
-							response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
-							response_field.css('opacity', '1');
-						}, 300);
-					} else {
-						response_field.css('color', '#df4e47');
-						response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
-						response_field.css('opacity', '1');
-					}
-					break;
-				default:
-					break;
+					}, 300);
+				} else {
+					response_field.css('color', '#53acff');
+					response_field.html('Обновление не требуется. Актуальные курсы уже установлены.<br /><br />');
+					response_field.css('opacity', '1');
+				}
 			}
 		}
 	});
