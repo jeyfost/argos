@@ -269,11 +269,18 @@ function addComment(id) {
 							data: {"order_id": id},
 							url: "../scripts/personal/ajaxLastComment.php",
 							success: function (comment) {
-								$.notify("Комментарий успешно добавлен.", "success");
+								$.ajax({
+									type: "POST",
+									data: {"order_id": id, "text": text},
+									url: "../scripts/personal/ajaxSendEmailWithComment.php",
+									success: function() {
+										$.notify("Комментарий успешно добавлен.", "success");
 
-								$('#addComment').html('');
-								$('#commentInput').val('');
-								$('#temporaryCommentContainer').html(comment + "<br />");
+										$('#addComment').html('');
+										$('#commentInput').val('');
+										$('#temporaryCommentContainer').html(comment + "<br />");
+									}
+								});
 							},
 							error: function(jqXHR, textStatus, errorThrown) {
 								$.notify(textStatus + "; " + errorThrown, "error");
