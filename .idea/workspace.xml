@@ -4,7 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/js/common.js" line="32" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="hotfix">
+    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="argos.iws" />
@@ -90,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxAdminCancelOrder.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+              <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
               <folding>
                 <marker date="1499702245021" expanded="true" signature="205:290" ph="SELECT * FRO... users" />
                 <marker date="1499702245021" expanded="true" signature="237:275" ph="SELECT user_... orders_info" />
@@ -791,14 +791,7 @@
       <workItem from="1499431927562" duration="78000" />
       <workItem from="1499432088085" duration="58000" />
       <workItem from="1499676943611" duration="8712000" />
-      <workItem from="1499687316736" duration="4957000" />
-    </task>
-    <task id="LOCAL-00132" summary="Реализована возможность просмотра отписавшихся от рассылки клиентов">
-      <created>1491558206236</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1491558206236</updated>
+      <workItem from="1499687316736" duration="5014000" />
     </task>
     <task id="LOCAL-00133" summary="Исправлено отображение количество новых заказов на всех страницах для администратора">
       <created>1491802956650</created>
@@ -1136,11 +1129,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499702281664</updated>
     </task>
-    <option name="localTasksCounter" value="181" />
+    <task id="LOCAL-00181" summary="hotfix">
+      <created>1499702304569</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1499702304569</updated>
+    </task>
+    <option name="localTasksCounter" value="182" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337004000" />
+    <option name="totallyTimeSpent" value="337061000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2042,7 +2042,7 @@
     <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxAdminCancelOrder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+          <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
           <folding>
             <marker date="1499702245021" expanded="true" signature="205:290" ph="SELECT * FRO... users" />
             <marker date="1499702245021" expanded="true" signature="237:275" ph="SELECT user_... orders_info" />
