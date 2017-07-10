@@ -182,7 +182,7 @@ function cancelOrder(id) {
 		success: function(response) {
 			var order_response = $('#orderResponse');
 			var response_field = $('#responseField');
-
+			$.notify(response, "warn");
 			if(response === "a") {
 				response_field.css("opacity", "0");
 				setTimeout(function() {
@@ -190,7 +190,7 @@ function cancelOrder(id) {
 				}, 300);
 
 				selectClient();
-				if(order_response.css('opacity') == 1) {
+				if(order_response.css('opacity') === 1) {
 					order_response.css('opacity', 0);
 					setTimeout(function() {
 						order_response.css('color', '#53acff');
