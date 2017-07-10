@@ -16,13 +16,6 @@ $user = $userResult->fetch_assoc();
 $adminResult = $mysqli->query("SELECT * FROM users WHERE id = '1'");
 $admin = $adminResult->fetch_assoc();
 
-if(sendMail($user['email'], $id, $admin)) {
-	echo "a";
-} else {
-	echo "b";
-}
-
-/*
 if($mysqli->query("DELETE FROM orders_info WHERE id = '".$id."'")) {
 	if($mysqli->query("DELETE FROM orders WHERE order_id = '".$id."'")) {
 		sendMail($user['email'], $id, $admin);
@@ -34,7 +27,7 @@ if($mysqli->query("DELETE FROM orders_info WHERE id = '".$id."'")) {
 } else {
 	echo "b";
 }
-*/
+
 function sendMail($email, $id, $admin) {
 	$from = "ЧТУП Аргос-ФМ <no-reply@argos-fm.by>";
 	$reply = "no-reply@argos-fm.by";
