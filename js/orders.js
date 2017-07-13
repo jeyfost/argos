@@ -175,57 +175,59 @@ function acceptOrder(id) {
 }
 
 function cancelOrder(id) {
-	$.ajax({
-		type: "POST",
-		data: {"id": id},
-		url: "../scripts/personal/ajaxAdminCancelOrder.php",
-		success: function(response) {
-			var order_response = $('#orderResponse');
-			var response_field = $('#responseField');
-			$.notify(response, "warn");
-			if(response === "a") {
-				response_field.css("opacity", "0");
-				setTimeout(function() {
-					response_field.html("");
-				}, 300);
-
-				selectClient();
-				if(order_response.css('opacity') === 1) {
-					order_response.css('opacity', 0);
+	if(confirm("Вы уверены, что хотите отменить заказ? Удаление будет безвозвратным.")) {
+		$.ajax({
+			type: "POST",
+			data: {"id": id},
+			url: "../scripts/personal/ajaxAdminCancelOrder.php",
+			success: function(response) {
+				var order_response = $('#orderResponse');
+				var response_field = $('#responseField');
+				$.notify(response, "warn");
+				if(response === "a") {
+					response_field.css("opacity", "0");
 					setTimeout(function() {
+						response_field.html("");
+					}, 300);
+
+					selectClient();
+					if(order_response.css('opacity') === 1) {
+						order_response.css('opacity', 0);
+						setTimeout(function() {
+							order_response.css('color', '#53acff');
+							order_response.html("Заказ был успешно отменён.<br /><br />");
+							order_response.css('opacity', 1);
+						}, 300);
+					} else {
 						order_response.css('color', '#53acff');
 						order_response.html("Заказ был успешно отменён.<br /><br />");
 						order_response.css('opacity', 1);
-					}, 300);
-				} else {
-					order_response.css('color', '#53acff');
-					order_response.html("Заказ был успешно отменён.<br /><br />");
-					order_response.css('opacity', 1);
-				}
-
-				$.ajax({
-					type: 'POST',
-					url: "../scripts/personal/ajaxRebuildTableCancel.php",
-					success: function(r) {
-						$('#personalContent').html(r);
 					}
-				});
-			} else {
-				if(order_response.css('opacity') === 1) {
-					order_response.css('opacity', 0);
-					setTimeout(function() {
+
+					$.ajax({
+						type: 'POST',
+						url: "../scripts/personal/ajaxRebuildTableCancel.php",
+						success: function(r) {
+							$('#personalContent').html(r);
+						}
+					});
+				} else {
+					if(order_response.css('opacity') === 1) {
+						order_response.css('opacity', 0);
+						setTimeout(function() {
+							order_response.css('color', '#df4e47');
+							order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
+							order_response.css('opacity', 1);
+						}, 300);
+					} else {
 						order_response.css('color', '#df4e47');
 						order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
 						order_response.css('opacity', 1);
-					}, 300);
-				} else {
-					order_response.css('color', '#df4e47');
-					order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
-					order_response.css('opacity', 1);
+					}
 				}
 			}
-		}
-	});
+		});
+	}
 }
 
 function goToPage(page, user) {
