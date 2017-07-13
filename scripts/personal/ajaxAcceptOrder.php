@@ -13,8 +13,8 @@ $id = $mysqli->real_escape_string($_POST['id']);
 $userResult = $mysqli->query("SELECT user_id FROM orders_info WHERE id = '".$id."'");
 $user = $userResult->fetch_array(MYSQLI_NUM);
 
-$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$user[0]."'");
-$discount = $discountResult->fetch_array(MYSQLI_NUM);
+$customerResult = $mysqli->query("SELECT * FROM users WHERE id = '".$user[0]."'");
+$customer = $customerResult->fetch_assoc();
 
 $totalNormal = 0;
 $totalAction = 0;
@@ -115,7 +115,7 @@ while($order = $orderResult->fetch_assoc()) {
 	}
 }
 
-$total = $totalAction + $totalNormal * (1 - $discount[0] / 100);
+$total = $totalAction + $totalNormal * (1 - $customer['discount'] / 100);
 $roubles = floor($total);
 $kopeck = round(($total - $roubles) * 100);
 
@@ -131,7 +131,49 @@ if($kopeck < 10) {
 $total = $roubles.".".$kopeck;
 
 if($mysqli->query("UPDATE orders_info SET summ = '".$total."', proceed_date = '".date('d-m-Y H:i:s')."', status = '1' WHERE id = '".$id."'")) {
+	sendMail($customer['email'], $id);
+
 	echo "a";
 } else {
 	echo "b";
+}
+
+function sendMail($email, $id) {
+	$from = "ЧТУП Аргос-ФМ <no-reply@argos-fm.by>";
+	$reply = "no-reply@argos-fm.by";
+	$subject = "Заказ №".$id." был принят";
+
+	$hash = md5(rand(0, 1000000).date('Y-m-d H:i:s'));
+
+	$headers = "From: ".$from."\nReply-To: ".$reply."\nMIME-Version: 1.0";
+	$headers .= "\nContent-Type: multipart/mixed; boundary = \"PHP-mixed-".$hash."\"\n\n";
+
+	$text = "
+		<div style='width: 100%; height: 100%; background-color: #fafafa; padding-top: 5px; padding-bottom: 20px;'>
+			<center>
+				<div style='width: 600px; text-align: left;'>
+					<a href='https://argos-fm.by/' target='_blank'><img src='https://argos-fm.by/pictures/system/logo.png' /></a>
+				</div>
+				<br />
+				<div style='padding: 20px; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); background-color: #fff; width: 600px; text-align: left;'>
+					<p>Ваш заказ №".$id." был принят к сборке. Забрать его вы сможете по адресу: г. Могилёв, ул. Залуцкого, д. 21.</p>
+					<p>Время работы можно узнать в <a href='https://argos-fm.by/new/contacts/stores.php' style='color: #df4e47;'>разделе с контактной информацией</a>.</p>
+					<br /><hr /><br />
+					<p style='font-size: 12px;'>Это автоматическая рассылка. Отвечать на неё не нужно.</p>
+					<div style='width: 100%; height: 10px;'></div>
+				</div>
+				<br /><br />
+			</center>
+		</div>
+	";
+
+	$message = "--PHP-mixed-".$hash."\n";
+	$message .= "Content-Type: text/html; charset=\"utf-8\"\n";
+	$message .= "Content-Transfer-Encoding: 8bit\n\n";
+	$message .= $text."\n";
+	$message .= "--PHP-mixed-".$hash."\n";
+
+	mail($email, $subject, $message, $headers);
+
+	return true;
 }
