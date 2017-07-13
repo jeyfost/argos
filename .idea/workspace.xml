@@ -4,9 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/js/common.js" line="32" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="Реализовано отправление email-уведомление при принятии заказа">
+    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="Настройки lightview установлены">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php" afterPath="$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/lightview/js/lightview/lightview.js" afterPath="$PROJECT_DIR$/js/lightview/js/lightview/lightview.js" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,8 +63,8 @@
       <file leaf-file-name="basket.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/basket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4794">
-              <caret line="282" column="35" lean-forward="false" selection-start-line="282" selection-start-column="35" selection-end-line="282" selection-end-column="35" />
+            <state relative-caret-position="292">
+              <caret line="238" column="16" lean-forward="true" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
               <folding>
                 <marker date="1499685881907" expanded="true" signature="814:830" ph="..." />
                 <marker date="1499685881907" expanded="true" signature="960:975" ph="..." />
@@ -77,11 +77,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="lightview.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/lightview/js/lightview/lightview.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="143" column="70" lean-forward="true" selection-start-line="143" selection-start-column="70" selection-end-line="143" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="orders.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/orders.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="184" column="39" lean-forward="false" selection-start-line="184" selection-start-column="39" selection-end-line="184" selection-end-column="39" />
+            <state relative-caret-position="481">
+              <caret line="240" column="36" lean-forward="true" selection-start-line="240" selection-start-column="36" selection-end-line="240" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -119,7 +129,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajaxAcceptOrder.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ajaxAcceptOrder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2125">
@@ -186,13 +196,13 @@
       <find>showOrder</find>
       <find>addCo</find>
       <find>addC</find>
-      <find>cance</find>
       <find>s</find>
       <find>setOf</find>
       <find>setOff</find>
       <find>setOffi</find>
       <find>setOffic</find>
       <find>discount</find>
+      <find>cance</find>
     </findStrings>
     <replaceStrings>
       <replace>proceed</replace>
@@ -260,18 +270,18 @@
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderInfoHistory.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" />
         <option value="$PROJECT_DIR$/catalogue.php" />
-        <option value="$PROJECT_DIR$/js/lightview/js/lightview/lightview.js" />
         <option value="$PROJECT_DIR$/scripts/test.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxCheckRates.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxAddComment.php" />
         <option value="$PROJECT_DIR$/js/basket.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxSendEmailWithComment.php" />
-        <option value="$PROJECT_DIR$/js/orders.js" />
         <option value="$PROJECT_DIR$/personal/orders.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxAdminCancelOrder.php" />
         <option value="$PROJECT_DIR$/js/personal.js" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php" />
+        <option value="$PROJECT_DIR$/js/orders.js" />
+        <option value="$PROJECT_DIR$/js/lightview/js/lightview/lightview.js" />
       </list>
     </option>
   </component>
@@ -437,6 +447,86 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lightview" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lightview" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lightview" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="argos.local" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lightview" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -630,21 +720,7 @@
       <workItem from="1499676943611" duration="8712000" />
       <workItem from="1499687316736" duration="5119000" />
       <workItem from="1499947515813" duration="746000" />
-      <workItem from="1499948356753" duration="3230000" />
-    </task>
-    <task id="LOCAL-00135" summary="Каталог адаптирован под мобильные устройства">
-      <created>1491804619532</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1491804619532</updated>
-    </task>
-    <task id="LOCAL-00136" summary="Раздел &quot;О компании&quot; адаптирован под мобильные устройства">
-      <created>1491805534910</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1491805534910</updated>
+      <workItem from="1499948356753" duration="4069000" />
     </task>
     <task id="LOCAL-00137" summary="Раздел &quot;Новости&quot; адаптирован под мобильные устройства">
       <created>1491806073555</created>
@@ -975,11 +1051,25 @@
       <option name="project" value="LOCAL" />
       <updated>1499948796667</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="Реализовано отправление email-уведомления при принятии заказа">
+      <created>1499952124492</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1499952124492</updated>
+    </task>
+    <task id="LOCAL-00185" summary="Добавлено контрольное подтверждение удаления заказа">
+      <created>1499952574415</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1499952574415</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341142000" />
+    <option name="totallyTimeSpent" value="341981000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1058,8 +1148,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Доработки в системе смены email-адреса" />
-    <MESSAGE value="Правки в меню" />
     <MESSAGE value="Правки в меню и контактах" />
     <MESSAGE value="Правки вёрстки в каталоге" />
     <MESSAGE value="Выравнивание иконки корзины в каталоге по верхнему краю" />
@@ -1083,7 +1171,9 @@
     <MESSAGE value="Реализовано уведомление пользователя по email об отмене заказа" />
     <MESSAGE value="hotfix" />
     <MESSAGE value="Исправлена проверка официальных курсов валют" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлена проверка официальных курсов валют" />
+    <MESSAGE value="Реализовано отправление email-уведомления при принятии заказа" />
+    <MESSAGE value="Добавлено контрольное подтверждение удаления заказа" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлено контрольное подтверждение удаления заказа" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1347,13 +1437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/lightview/js/lightview/lightview.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="122" column="34" lean-forward="true" selection-start-line="122" selection-start-column="34" selection-end-line="122" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/test.php" />
     <entry file="file://$PROJECT_DIR$/personal/personal.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1529,21 +1612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/basket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4794">
-          <caret line="282" column="35" lean-forward="false" selection-start-line="282" selection-start-column="35" selection-end-line="282" selection-end-column="35" />
-          <folding>
-            <marker date="1499685881907" expanded="true" signature="814:830" ph="..." />
-            <marker date="1499685881907" expanded="true" signature="960:975" ph="..." />
-            <marker date="1499685881907" expanded="true" signature="3188:3204" ph="..." />
-            <marker date="1499685881907" expanded="true" signature="3334:3349" ph="..." />
-            <marker date="1499685881907" expanded="true" signature="4338:4354" ph="..." />
-            <marker date="1499685881907" expanded="true" signature="4489:4504" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3638">
@@ -1683,14 +1751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/orders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="184" column="39" lean-forward="false" selection-start-line="184" selection-start-column="39" selection-end-line="184" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSendEmailWithComment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1787,6 +1847,37 @@
             <marker date="1499952020258" expanded="true" signature="4428:4444" ph="..." />
             <marker date="1499952020258" expanded="true" signature="4522:4548" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/orders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="240" column="36" lean-forward="true" selection-start-line="240" selection-start-column="36" selection-end-line="240" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/basket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="238" column="16" lean-forward="true" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
+          <folding>
+            <marker date="1499685881907" expanded="true" signature="814:830" ph="..." />
+            <marker date="1499685881907" expanded="true" signature="960:975" ph="..." />
+            <marker date="1499685881907" expanded="true" signature="3188:3204" ph="..." />
+            <marker date="1499685881907" expanded="true" signature="3334:3349" ph="..." />
+            <marker date="1499685881907" expanded="true" signature="4338:4354" ph="..." />
+            <marker date="1499685881907" expanded="true" signature="4489:4504" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lightview/js/lightview/lightview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="143" column="70" lean-forward="true" selection-start-line="143" selection-start-column="70" selection-end-line="143" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>
