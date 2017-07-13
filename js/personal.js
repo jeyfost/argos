@@ -608,7 +608,7 @@ function setOfficialRates() {
 			}
 		},
 		success: function (result) {
-			if (result === "not actial") {
+			if (result === "not actual") {
 				$.ajax({
 					type: "GET",
 					url: "../scripts/personal/ajaxSetOfficialRates.php",
