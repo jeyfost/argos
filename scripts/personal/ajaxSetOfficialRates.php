@@ -15,7 +15,7 @@ $success = 0;
 
 $currencyResult = $mysqli->query("SELECT * FROM currency WHERE code <> 'BYN'");
 while ($currency = $currencyResult->fetch_assoc()) {
-	$nb = json_decode(file_get_contents("http://www.nbrb.by/API/ExRates/Rates/" . $currency['code'] . "?ParamMode=2"));
+	$nb = json_decode(file_get_contents("https://nbrb.by/API/ExRates/Rates/" . $currency['code'] . "?ParamMode=2"));
 
 	$rate = $nb->Cur_OfficialRate / $nb->Cur_Scale;
 

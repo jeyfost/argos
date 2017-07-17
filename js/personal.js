@@ -610,7 +610,7 @@ function setOfficialRates() {
 		success: function (result) {
 			if (result === "not actual") {
 				$.ajax({
-					type: "GET",
+					type: "POST",
 					url: "../scripts/personal/ajaxSetOfficialRates.php",
 					beforeSend: function () {
 						if (response_field.css('opacity') === 1) {
