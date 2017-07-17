@@ -15,6 +15,13 @@ function showOrderDetails(id) {
 				response_field.html(response + '<br /><br />');
 				response_field.css('opacity', '1');
 			}
+
+			$('html, body').animate({
+				scrollTop: parseInt($('#responseField').offset().top - 80) + "px"
+			}, {
+				duration: 200,
+				easing: "swing"
+			});
 		}
 	});
 }
@@ -36,6 +43,13 @@ function showOrderDetailsHistory(id) {
 				response_field.html(response + '<br /><br />');
 				response_field.css('opacity', '1');
 			}
+
+			$('html, body').animate({
+				scrollTop: parseInt($('#responseField').offset().top - 80) + "px"
+			}, {
+				duration: 200,
+				easing: "swing"
+			});
 		}
 	});
 }
