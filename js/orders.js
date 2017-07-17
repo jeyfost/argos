@@ -156,6 +156,20 @@ function acceptOrder(id) {
 						$('#personalContent').html(r);
 					}
 				});
+
+				$.ajax({
+					type: "POST",
+					url: "../scripts/personal/ajaxAdminOrdersQuantity.php",
+					success: function (quantity) {
+						if(quantity > 0) {
+							$('#basketLabel').html(quantity);
+						} else {
+							$('#basketIMG').css('display', 'none');
+							$('#basketLabel').css('display', 'none');
+							$('#basketLabel').html('');
+						}
+					}
+				});
 			} else {
 				if(order_response.css('opacity') === 1) {
 					order_response.css('opacity', 0);
@@ -183,7 +197,7 @@ function cancelOrder(id) {
 			success: function(response) {
 				var order_response = $('#orderResponse');
 				var response_field = $('#responseField');
-				$.notify(response, "warn");
+
 				if(response === "a") {
 					response_field.css("opacity", "0");
 					setTimeout(function() {
@@ -209,6 +223,20 @@ function cancelOrder(id) {
 						url: "../scripts/personal/ajaxRebuildTableCancel.php",
 						success: function(r) {
 							$('#personalContent').html(r);
+						}
+					});
+
+					$.ajax({
+						type: "POST",
+						url: "../scripts/personal/ajaxAdminOrdersQuantity.php",
+						success: function (quantity) {
+							if(quantity > 0) {
+								$('#basketLabel').html(quantity);
+							} else {
+								$('#basketIMG').css('display', 'none');
+								$('#basketLabel').css('display', 'none');
+								$('#basketLabel').html('');
+							}
 						}
 					});
 				} else {
