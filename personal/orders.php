@@ -90,6 +90,7 @@ if(isset($_SESSION['userID'])) {
     <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../css/style.css'>
 	<link rel="stylesheet" type="text/css" href="../js/lightview/css/lightview/lightview.css" />
+	<link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.min.css">
     <?php
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== false) {
 			echo "<link rel='stylesheet' media='screen' type='text/css' href='../css/styleOpera.css'>";
@@ -382,12 +383,13 @@ if(isset($_SESSION['userID'])) {
 							<div id='orderResponse'></div>
 							<table style='min-width: 100%; text-align: center;' id='ordersTable'>
 								<tr class='headTR'>
-									<td>№</td>
-									<td>Заказ</td>
-									<td>Дата оформления</td>
-									<td>Клиент</td>
-									<td>Принять заказ</td>
-									<td>Отмена заказа</td>
+									<td style='cursor: default;'>№</td>
+									<td style='cursor: default;'>Заказ</td>
+									<td style='cursor: default;'><i class='fa fa-folder-open-o' aria-hidden='true'></i></td>
+									<td style='cursor: default;'>Дата оформления</td>
+									<td style='cursor: default;'>Клиент</td>
+									<td style='cursor: default;'>Принять заказ</td>
+									<td style='cursor: default;'>Отмена заказа</td>
 								</tr>
 						";
 						while($order = $orderResult->fetch_assoc()) {
@@ -397,7 +399,8 @@ if(isset($_SESSION['userID'])) {
 							echo "
 								<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 									<td>".$j."</td>
-									<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span> </td>
+									<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
+									<td><a href='order.php?id=".$order['id']."' target='_blank' class='font-awesome-link'><i class='fa fa-folder-open-o' aria-hidden='true'></i></a></td>
 									<td>".dateFormattedDayToYear($order['send_date'])."</td>
 									<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
 									<td><span class='tdLink' onclick='acceptOrder(\"".$order['id']."\")'>Принять заказ</span></td>
@@ -435,11 +438,12 @@ if(isset($_SESSION['userID'])) {
 						<div id='orderResponse'></div>
 						<table style='min-width: 100%; text-align: center;' id='ordersTable'>
 							<tr class='headTR'>
-								<td>№</td>
-								<td>Заказ</td>
-								<td>Клиент</td>
-								<td>Дата оформления</td>
-								<td>Дата принятия</td>
+								<td style='cursor: default;'>№</td>
+								<td style='cursor: default;'>Заказ</td>
+								<td style='cursor: default;'><i class='fa fa-folder-open-o' aria-hidden='true'></i></td>
+								<td style='cursor: default;'>Клиент</td>
+								<td style='cursor: default;'>Дата оформления</td>
+								<td style='cursor: default;'>Дата принятия</td>
 							</tr>
 					";
 
@@ -453,6 +457,7 @@ if(isset($_SESSION['userID'])) {
 							<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 								<td>".($page * 10 - 10 + $j)."</td>
 								<td><span class='tdLink' onclick='showOrderDetailsHistory(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
+								<td><a href='order.php?id=".$order['id']."' target='_blank' class='font-awesome-link' title='Открыть детализацию заказа в новом окне'><i class='fa fa-folder-open-o' aria-hidden='true'></i></a></td>
 								<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
 								<td>".dateFormattedDayToYear($order['send_date'])."</td>
 								<td>".dateFormattedDayToYear($order['proceed_date'])."</td>

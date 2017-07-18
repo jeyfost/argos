@@ -451,7 +451,7 @@ if(isset($_SESSION['userID'])) {
 								<div id='innerSearchList'></div>
 								<div style='overflow: hidden;'></div>
 								<br /><br />
-								<table>
+								<table style='text-align: center;'>
 									<tr class='headTR'>
 										<td id='td1' onclick='sortBy(\"id\")' title='Сортировать по id' nowrap>ID"; if($_SESSION['sort'] == "id") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
 										<td id='td2' onclick='sortBy(\"login\")' title='Сортировать по логину' nowrap>Логин"; if($_SESSION['sort'] == "login") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
