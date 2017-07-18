@@ -128,7 +128,7 @@ if(isset($_SESSION['userID'])) {
 		<div style="clear: both;"></div>
 		<div class="line"></div>
 		<a href="../clients/">
-			<div class="menuPointActive">
+			<div class="menuPoint">
 				<div class="menuIMG"><img src="../../img/system/admin/clients.png" /></div>
 				<div class="menuText">Клиентская база</div>
 			</div>
@@ -136,7 +136,7 @@ if(isset($_SESSION['userID'])) {
 		<div style="clear: both;"></div>
 		<div class="line"></div>
 		<a href="../email/">
-			<div class="menuPoint">
+			<div class="menuPointActive">
 				<div class="menuIMG"><img src="../../img/system/admin/mail.png" /></div>
 				<div class="menuText">Email-рассылки</div>
 			</div>
@@ -169,7 +169,7 @@ if(isset($_SESSION['userID'])) {
 			<br />
 			<h2>&darr; Для продолжения работы выберите раздел</h2>
 			<a href="send.php"><input type="button" class="button" id="sendButton" value="Отправление" onmouseover="buttonChange('sendButton', 1)" onmouseout="buttonChange('sendButton', 0)" style="margin-left: 0;" /></a>
-			<a href="history.php"><input type="button" class="button" id="historyButton" value="История" onmouseover="buttonChange('historyButton', 1)" onmouseout="buttonChange('historyButton', 0)" /></a>
+			<a href="history.php"><input type="button" class="button" id="historyButton" value="История" onmouseover="buttonChange('historyButton', 1)" onmouseout="buttonChange('historyButton', 0)" /></a>z
 			<div style="clear: both;"></div>
 		</div>
 		<div style="clear: both;"></div>
