@@ -701,7 +701,6 @@ function setOfficialRates() {
 					}
 				});
 			} else {
-				/*
 				if (response_field.css('opacity') === 1) {
 					response_field.css('opacity', '0');
 					setTimeout(function () {
@@ -714,8 +713,6 @@ function setOfficialRates() {
 					response_field.html('Обновление не требуется. Актуальные курсы уже установлены.<br /><br />');
 					response_field.css('opacity', '1');
 				}
-				*/
-				response_field.html(result);
 			}
 		}
 	});
