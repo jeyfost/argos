@@ -169,12 +169,12 @@ function sendMail($email, $id, $goods, $summ) {
 		<div style='width: 100%; height: 100%; background-color: #fafafa; padding-top: 5px; padding-bottom: 20px;'>
 			<center>
 				<div style='width: 600px; text-align: left;'>
-					<a href='https://argos-fm.by/' target='_blank'><img src='https://argos-fm.by/pictures/system/logo.png' /></a>
+					<a href='https://argos-fm.by/' target='_blank'><img src='https://argos-fm.by/img/system/logo.png' /></a>
 				</div>
 				<br />
 				<div style='padding: 20px; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); background-color: #fff; width: 600px; text-align: left;'>
 					<p>Ваш заказ №".$id." был принят к сборке. Забрать его вы сможете по адресу: г. Могилёв, ул. Залуцкого, д. 21.</p>
-					<p>Время работы можно узнать в <a href='https://argos-fm.by/new/contacts/stores.php' style='color: #df4e47;'>разделе с контактной информацией</a>.</p>
+					<p>Время работы можно узнать в <a href='https://argos-fm.by/contacts/stores.php' style='color: #df4e47;'>разделе с контактной информацией</a>.</p>
 					<br /><br /> 
 					<center>
 						<b>Детализация заказа</b>
@@ -193,7 +193,7 @@ function sendMail($email, $id, $goods, $summ) {
 	foreach ($goods as $good) {
 		$text .= "
 			<tr>
-				<td style='width: 100px; border: 1px solid #bdbec0; border-collapse: collapse;'><img src='https://argos-fm.by/new/img/catalogue/small/".$good['good']['small']."' /></td>
+				<td style='width: 100px; border: 1px solid #bdbec0; border-collapse: collapse;'><img src='https://argos-fm.by/img/catalogue/small/".$good['good']['small']."' /></td>
 				<td style='border: 1px solid #bdbec0; border-collapse: collapse;'><b>".$good['good']['name']."</b></td>
 				<td style='border: 1px solid #bdbec0; border-collapse: collapse;'>".$good['order']['quantity']." ".$good['unit']['short_name']."</td>
 			</tr>
@@ -206,6 +206,7 @@ function sendMail($email, $id, $goods, $summ) {
 					</center>
 					<br /><br />
 					<div style='text-align: center;'><b>Итоговая стоимость заказа: </b>".$summ." руб.</div>
+					<p>Полную детализацию заказа можно посмотреть на <a href='https://argos-fm.by/personal/order.php?id=".$id."' target='_blank' style='color: #df4e47;'>этой странице</a>, предварительно авторизовавшись на сайте.</p>
 					<br /><hr /><br />
 					<p style='font-size: 12px;'>Это автоматическая рассылка. Отвечать на неё не нужно.</p>
 					<div style='width: 100%; height: 10px;'></div>

@@ -62,7 +62,7 @@ function sendMail($email, $id, $admin, $goods, $summ) {
 		<div style='width: 100%; height: 100%; background-color: #fafafa; padding-top: 5px; padding-bottom: 20px; color: #4c4c4c;'>
 			<center>
 				<div style='width: 600px; text-align: left;'>
-					<a href='https://argos-fm.by/' target='_blank'><img src='https://argos-fm.by/pictures/system/logo.png' /></a>
+					<a href='https://argos-fm.by/' target='_blank'><img src='https://argos-fm.by/img/system/logo.png' /></a>
 				</div>
 				<br />
 				<div style='padding: 20px; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); background-color: #fff; width: 600px; text-align: left;'>
@@ -85,7 +85,7 @@ function sendMail($email, $id, $admin, $goods, $summ) {
 	foreach ($goods as $good) {
 		$text .= "
 			<tr>
-				<td style='width: 100px; border: 1px solid #bdbec0; border-collapse: collapse;'><img src='https://argos-fm.by/new/img/catalogue/small/".$good['good']['small']."' /></td>
+				<td style='width: 100px; border: 1px solid #bdbec0; border-collapse: collapse;'><img src='https://argos-fm.by/img/catalogue/small/".$good['good']['small']."' /></td>
 				<td style='border: 1px solid #bdbec0; border-collapse: collapse;'><b>".$good['good']['name']."</b></td>
 				<td style='border: 1px solid #bdbec0; border-collapse: collapse;'>".$good['order']['quantity']." ".$good['unit']['short_name']."</td>
 			</tr>
