@@ -37,6 +37,8 @@ while($orderItem = $orderItemResult->fetch_assoc()) {
 }
 
 if($mysqli->query("DELETE FROM orders_info WHERE id = '".$id."'")) {
+	$mysqli->query("DELETE FROM orders_comments WHERE order_id = '".$id."'");
+
 	if($mysqli->query("DELETE FROM orders WHERE order_id = '".$id."'")) {
 		sendMail($user['email'], $id, $admin, $goods, $orderSumm[0]);
 

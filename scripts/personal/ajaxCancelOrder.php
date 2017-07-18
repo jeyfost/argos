@@ -10,6 +10,8 @@ include("../connect.php");
 
 $id = $mysqli->real_escape_string($_POST['id']);
 if($mysqli->query("DELETE FROM orders_info WHERE id = '".$id."'")) {
+	$mysqli->query("DELETE FROM orders_comments WHERE order_id = '".$id."'");
+
 	if($mysqli->query("DELETE FROM orders WHERE order_id = '".$id."'")) {
 		$ordersQuantityResult = $mysqli->query("SELECT COUNT(id) FROM orders_info WHERE user_id = '".$_SESSION['userID']."' AND status = '0'");
 		$ordersQuantity = $ordersQuantityResult->fetch_array(MYSQLI_NUM);
