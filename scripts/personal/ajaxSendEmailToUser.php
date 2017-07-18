@@ -67,7 +67,7 @@ if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 
 			if (mail($to, $subject, $message, $headers)) {
 				if ($mysqli->query("INSERT INTO mail_result (subject, text, send_to, date, count, send, files_count, filenames) VALUES ('" . $subject . "', '" . $text . "', '" . $to . "', '" . date('Y-m-d H:i:s') . "', '1', '1', '" . $filesCount . "', '" . $fileNames . "')")) {
-					echo "$from -> $to -> $reply -> $subject -> $text";
+					echo "ok";
 				} else {
 					echo "result";
 				}
