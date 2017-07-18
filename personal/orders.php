@@ -145,7 +145,7 @@ if(isset($_SESSION['userID'])) {
 						if($basketQuantity[0] > 0) {
 							echo "
 								<div class='headerIcon' id='basketIcon'>
-									<a href='orders.php?section=1&p=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
+									<a href='orders.php?section=1&p=1'><img src='../img/system/basketFullRed.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
 								</div>
 							";
 						} else {
