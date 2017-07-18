@@ -397,7 +397,7 @@ if(isset($_SESSION['userID'])) {
 							echo "
 								<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 									<td>".$j."</td>
-									<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
+									<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span> </td>
 									<td>".dateFormattedDayToYear($order['send_date'])."</td>
 									<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
 									<td><span class='tdLink' onclick='acceptOrder(\"".$order['id']."\")'>Принять заказ</span></td>
