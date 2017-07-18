@@ -130,15 +130,32 @@ if($kopeck < 10) {
 
 $total = $roubles.".".$kopeck;
 
+$goods = array();
+$i = 0;
+
+$orderItemResult = $mysqli->query("SELECT * FROM orders WHERE order_id = '".$id."'");
+while($orderItem = $orderItemResult->fetch_assoc()) {
+	$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$orderItem['good_id']."'");
+	$good = $goodResult->fetch_assoc();
+
+	$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$good['id']."'");
+	$unit = $unitResult->fetch_assoc();
+
+	$goods[$i]['good'] = $good;
+	$goods[$i]['order'] = $orderItem;
+	$goods[$i]['unit'] = $unit;
+	$i++;
+}
+
 if($mysqli->query("UPDATE orders_info SET summ = '".$total."', proceed_date = '".date('d-m-Y H:i:s')."', status = '1' WHERE id = '".$id."'")) {
-	sendMail($customer['email'], $id);
+	sendMail($customer['email'], $id, $goods, $total);
 
 	echo "a";
 } else {
 	echo "b";
 }
 
-function sendMail($email, $id) {
+function sendMail($email, $id, $goods, $summ) {
 	$from = "ЧТУП Аргос-ФМ <no-reply@argos-fm.by>";
 	$reply = "no-reply@argos-fm.by";
 	$subject = "Заказ №".$id." был принят";
@@ -158,6 +175,37 @@ function sendMail($email, $id) {
 				<div style='padding: 20px; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); background-color: #fff; width: 600px; text-align: left;'>
 					<p>Ваш заказ №".$id." был принят к сборке. Забрать его вы сможете по адресу: г. Могилёв, ул. Залуцкого, д. 21.</p>
 					<p>Время работы можно узнать в <a href='https://argos-fm.by/new/contacts/stores.php' style='color: #df4e47;'>разделе с контактной информацией</a>.</p>
+					<br /><br /> 
+					<center>
+						<b>Детализация заказа</b>
+						<br /><br />
+						<table style='border-collapse: collapse; text-align: center; vertical-align: middle;'>
+							<thead>
+								<tr style='background-color: #dcddde; text-align: center; font-weight: bold;'>
+									<td style='padding: 10px; border: 1px solid #bdbec0;'>Фото</td>
+									<td style='padding: 10px; border: 1px solid #bdbec0;'>Наименование</td>
+									<td style='padding: 10px; border: 1px solid #bdbec0;'>Количество</td>
+								</tr>
+							</thead>
+							<tbody>
+	";
+
+	foreach ($goods as $good) {
+		$text .= "
+			<tr>
+				<td style='width: 100px; border: 1px solid #bdbec0; border-collapse: collapse;'><img src='https://argos-fm.by/new/img/catalogue/small/".$good['good']['small']."' /></td>
+				<td style='border: 1px solid #bdbec0; border-collapse: collapse;'><b>".$good['good']['name']."</b></td>
+				<td style='border: 1px solid #bdbec0; border-collapse: collapse;'>".$good['order']['quantity']." ".$good['unit']['short_name']."</td>
+			</tr>
+		";
+	}
+
+	$text .= "
+							</tbody>
+						</table>
+					</center>
+					<br /><br />
+					<div style='text-align: center;'><b>Итоговая стоимость заказа: </b>".$summ." руб.</div>
 					<br /><hr /><br />
 					<p style='font-size: 12px;'>Это автоматическая рассылка. Отвечать на неё не нужно.</p>
 					<div style='width: 100%; height: 10px;'></div>
