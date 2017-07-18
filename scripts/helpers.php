@@ -61,3 +61,18 @@ function dateFormattedDayToYear($date) {
 	$date = (int)substr($date, 0, 2)." ".getMonth((int)substr($date, 3, 2))." ".substr($date, 6, 4)." г. в ".substr($date, 11);
 	return $date;
 }
+
+function file_get_contents_curl($url)
+{
+	$ch = curl_init();
+
+	curl_setopt($ch, CURLOPT_HEADER, 0);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_URL, $url);
+
+	$data = curl_exec($ch);
+
+	curl_close($ch);
+
+	return $data;
+}
