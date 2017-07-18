@@ -1,26 +1,32 @@
 function showDropdownList(action, id, highlighted) {
-    if(action == '1') {
+    if(action === '1') {
         switch(id) {
             case "catalogueLink":
-                if(highlighted == "catalogueLinkFA") {
+                if(highlighted === "catalogueLinkFA") {
                     $('#dropDownList').html("<div class='dropDownLink' id='catalogueLinkFA' style='background-color: #df4e47;'><a href='catalogue.php?type=fa&p=1' id='catalogueLinkFAA' style='color: #fff'>Мебельная фурнитура</a></div>");
                 } else {
 					$('#dropDownList').html("<div class='dropDownLink' id='catalogueLinkFA' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkFA\", \"catalogueLinkFAA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkFA\", \"catalogueLinkFAA\")'><a href='catalogue.php?type=fa&p=1' id='catalogueLinkFAA'>Мебельная фурнитура</a></div>");
 				}
 
-				if(highlighted == "catalogueLinkEM") {
+				if(highlighted === "catalogueLinkEM") {
 					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkEM' style='background-color: #df4e47;'><a href='catalogue.php?type=em&p=1' id='catalogueLinkEMA' style='color: #fff'>Кромочные материалы</a></div>");
 				} else {
 					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkEM' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkEM\", \"catalogueLinkEMA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkEM\", \"catalogueLinkEMA\")'><a href='catalogue.php?type=em&p=1' id='catalogueLinkEMA'>Кромочные материалы</a></div>");
 				}
 
-				if(highlighted == "catalogueLinkCA") {
+				if(highlighted === "catalogueLinkCA") {
 					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkCA' style='background-color: #df4e47;'><a href='catalogue.php?type=ca&p=1' id='catalogueLinkCAA' style='color: #fff'>Аксессуары для штор</a></div>");
 				} else {
 					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkCA' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkCA\", \"catalogueLinkCAA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkCA\", \"catalogueLinkCAA\")'><a href='catalogue.php?type=ca&p=1' id='catalogueLinkCAA'>Аксессуары для штор</a></div>");
 				}
 
-				if(highlighted == "catalogueLinkDG") {
+				if(highlighted === "catalogueLinkHT") {
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkHT' style='background-color: #df4e47;'><a href='catalogue.php?type=ht&p=1' id='catalogueLinkHTA' style='color: #fff'>Ручной инструмент</a></div>");
+				} else {
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkHT' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkHT\", \"catalogueLinkHTA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkHT\", \"catalogueLinkHTA\")'><a href='catalogue.php?type=ht&p=1' id='catalogueLinkHTA'>Ручной инструмент</a></div>");
+				}
+
+				if(highlighted === "catalogueLinkDG") {
 					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkDG' style='background-color: #df4e47;'><a href='catalogue.php?type=dg&p=1' id='catalogueLinkDGA' style='color: #fff'>Сопутствующие товары</a></div>");
 				} else {
 					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkDG' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkDG\", \"catalogueLinkDGA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkDG\", \"catalogueLinkDGA\")'><a href='catalogue.php?type=dg&p=1' id='catalogueLinkDGA'>Сопутствующие товары</a></div>");
@@ -38,19 +44,19 @@ function showDropdownList(action, id, highlighted) {
                 $('#dropDownList').html("<div class='dropDownLink' id='partnersLinkCooperation' onmouseover='changeDropDownLink(\"1\", \"partnersLinkCooperation\", \"partnersLinkCooperationA\")' onmouseout='changeDropDownLink(\"0\", \"partnersLinkCooperation\", \"partnersLinkCooperationA\")'><a href='partners/cooperation.php' id='partnersLinkCooperationA'>Сотрудничество</a></div><div class='dropDownLink' id='partnersLinkClientNews' onmouseover='changeDropDownLink(\"1\", \"partnersLinkClientNews\", \"partnersLinkClientNewsA\")' onmouseout='changeDropDownLink(\"0\", \"partnersLinkClientNews\", \"partnersLinkClientNewsA\")'><a href='partners/news.php' id='partnersLinkClientNewsA'>Новости для клиентов</a></div><div style='clear: both;'></div>");
                 break;
             case "contactsLink":
-				if(highlighted == "contactsLinkStores") {
+				if(highlighted === "contactsLinkStores") {
 					$('#dropDownList').html("<div class='dropDownLink' id='contactsLinkStores' style='background-color: #df4e47;'><a href='contacts/stores.php' id='contactsLinkStoresA' style='color: #fff;'>Магазины</a></div>")
 				} else {
 					$('#dropDownList').html("<div class='dropDownLink' id='contactsLinkStores' onmouseover='changeDropDownLink(\"1\", \"contactsLinkStores\", \"contactsLinkStoresA\")' onmouseout='changeDropDownLink(\"0\", \"contactsLinkStores\", \"contactsLinkStoresA\")'><a href='contacts/stores.php' id='contactsLinkStoresA'>Магазины</a></div>");
 				}
 
-				if(highlighted == "contactsLinkMain") {
+				if(highlighted === "contactsLinkMain") {
 					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='contactsLinkMain' style='background-color: #df4e47;'><a href='contacts/main.php' id='contactsLinkMainA' style='color: #fff;'>Головное предприятие</a></div>");
 				} else {
 					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='contactsLinkMain' onmouseover='changeDropDownLink(\"1\", \"contactsLinkMain\", \"contactsLinkMainA\")' onmouseout='changeDropDownLink(\"0\", \"contactsLinkMain\", \"contactsLinkMainA\")'><a href='contacts/main.php' id='contactsLinkMainA'>Головное предприятие</a></div>");
 				}
 
-				if(highlighted == "contactsLinkMail") {
+				if(highlighted === "contactsLinkMail") {
 					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink'  id='contactsLinkMail' style='background-color: #df4e47;'><a href='contacts/mail.php' id='contactsLinkMailA' style='color: #fff;'>Обратная связь</a></div><div style='clear: both;'></div>");
 				} else {
 					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink'  id='contactsLinkMail' onmouseover='changeDropDownLink(\"1\", \"contactsLinkMail\", \"contactsLinkMailA\")' onmouseout='changeDropDownLink(\"0\", \"contactsLinkMail\", \"contactsLinkMailA\")'><a href='contacts/mail.php' id='contactsLinkMailA'>Обратная связь</a></div><div style='clear: both;'></div>");
@@ -117,12 +123,12 @@ $(document).ready(function() {
 });
 
 function changeDropDownLink(action, id, text) {
-    if(action == '1') {
+    if(action === '1') {
         document.getElementById(id).style.backgroundColor = "#df4e47";
         document.getElementById(text).style.color = "#fff";
     }
 
-    if(action == '0') {
+    if(action === '0') {
         document.getElementById(id).style.backgroundColor = "#fff";
         document.getElementById(text).style.color = "#4c4c4c";
     }
@@ -146,7 +152,7 @@ $(document).mouseup(function (e) {
     }
 
 	var sl = $("#searchList");
-	if(document.getElementById('searchFieldInput') != document.activeElement) {
+	if(document.getElementById('searchFieldInput') !== document.activeElement) {
 		if (sl.has(e.target).length === 0){
 			sl.hide('fast');
 		}
@@ -165,7 +171,7 @@ function changeIcon(id, img, depth) {
 
 $(window).on('load', function() {
 	$('#searchFieldInput').on('focus', function() {
-		if($('#searchFieldInput').val() == "Поиск...") {
+		if($('#searchFieldInput').val() === "Поиск...") {
 			$('#searchFieldInput').val('');
 			document.getElementById('searchFieldInput').style.color = "#4c4c4c";
 		} else {
@@ -174,17 +180,17 @@ $(window).on('load', function() {
 	});
 
 	$('#searchFieldInput').on('blur', function() {
-		if($('#searchFieldInput').val() == '') {
+		if($('#searchFieldInput').val() === '') {
 			$('#searchFieldInput').val("Поиск...");
 			$('#searchFieldInput').css('color', '#777;');
 		}
 	});
 
 	$('#searchFieldInput').on('keyup', function() {
-		if($('#searchFieldInput').val() != '') {
+		if($('#searchFieldInput').val() !== '') {
 			showSearchList();
 		} else {
-			if($('#searchList').css('display') != "none") {
+			if($('#searchList').css('display') !== "none") {
 				$('#searchList').hide("fast");
 			}
 		}
@@ -192,7 +198,7 @@ $(window).on('load', function() {
 });
 
 function showSearchList() {
-	if($('#searchFieldInput').val() != "Поиск..." && $('#searchFieldInput').val() != "") {
+	if($('#searchFieldInput').val() !== "Поиск..." && $('#searchFieldInput').val() !== "") {
 		$.ajax({
 			type: 'POST',
 			data: {"query": $('#searchFieldInput').val()},

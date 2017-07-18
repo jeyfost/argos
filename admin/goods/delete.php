@@ -15,7 +15,10 @@ if(isset($_SESSION['userID'])) {
 }
 
 if(!empty($_REQUEST['type'])) {
-	if($_REQUEST['type'] == "fa" or $_REQUEST['type'] == "em" or $_REQUEST['type'] == "ca" or $_REQUEST['type'] == "dg") {
+	$typeCheckResult = $mysqli->query("SELECT COUNT(id) FROM types WHERE catalogue_type = '".$mysqli->real_escape_string($_REQUEST['type'])."'");
+	$typeCheck = $typeCheckResult->fetch_array(MYSQLI_NUM);
+
+	if($typeCheck[0] > 0) {
 		$t = $mysqli->real_escape_string($_REQUEST['type']);
 	} else {
 		header("Location: delete.php");
@@ -272,10 +275,12 @@ if(!empty($_REQUEST['id'])) {
 				<br />
 				<select id="typeSelect" name="goodType" onchange="window.location = 'delete.php?type=' + this.options[this.selectedIndex].value">
 					<option value="">- Выберите тип товаров -</option>
-					<option value="fa" <?php if($_REQUEST['type'] == "fa") {echo " selected";} ?>>Мебельная фурнитура</option>
-					<option value="em" <?php if($_REQUEST['type'] == "em") {echo " selected";} ?>>Кромочные материалы</option>
-					<option value="ca" <?php if($_REQUEST['type'] == "ca") {echo " selected";} ?>>Шторная фурнитура</option>
-					<option value="dg" <?php if($_REQUEST['type'] == "dg") {echo " selected";} ?>>Сопутствующие товары</option>
+					<?php
+						$typeResult = $mysqli->query("SELECT * FROM types ORDER BY id");
+						while($type = $typeResult->fetch_assoc()) {
+							echo "<option value='".$type['catalogue_type']."'"; if($_REQUEST['type'] == $type['catalogue_type']) {echo " selected";} echo ">".$type['type_name']."</option>";
+						}
+					?>
 				</select>
 				<?php
 					if(!empty($_REQUEST['type'])) {
