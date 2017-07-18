@@ -89,6 +89,7 @@ if(isset($_SESSION['userID'])) {
     <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../css/style.css'>
 	<link rel="stylesheet" type="text/css" href="../js/lightview/css/lightview/lightview.css" />
+	<link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.min.css">
     <?php
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== false) {
 			echo "<link rel='stylesheet' media='screen' type='text/css' href='../css/styleOpera.css'>";
@@ -605,6 +606,7 @@ if(isset($_SESSION['userID'])) {
 								<tr class='headTR'>
 									<td>№</td>
 									<td>Заказ</td>
+									<td style='cursor: default;'><i class='fa fa-folder-open-o' aria-hidden='true'></i></td>
 									<td>Дата оформления</td>
 									<td>Отмена заказа</td>
 								</tr>
@@ -615,6 +617,7 @@ if(isset($_SESSION['userID'])) {
 								<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 									<td>".$j."</td>
 									<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
+									<td><a href='order.php?id=".$order['id']."' target='_blank' class='font-awesome-link' title='Открыть детализацию закаа в новом окне'><i class='fa fa-folder-open-o' aria-hidden='true'></i></a></td>
 									<td>".dateFormattedDayToYear($order['send_date'])."</td>
 									<td><span class='tdLink' onclick='cancelOrder(\"".$order['id']."\")'>Отменить заказ</span></td>
 								</tr>
@@ -635,6 +638,7 @@ if(isset($_SESSION['userID'])) {
 							<tr class='headTR'>
 								<td>№</td>
 								<td>Заказ</td>
+								<td style='cursor: default;'><i class='fa fa-folder-open-o' aria-hidden='true'></i></td>
 								<td>Дата оформления</td>
 								<td>Дата принятия</td>
 							</tr>
@@ -649,6 +653,7 @@ if(isset($_SESSION['userID'])) {
 							<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 								<td>".($page * 10 - 10 + $j)."</td>
 								<td><span class='tdLink' onclick='showOrderDetailsHistory(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
+								<td><a href='order.php?id=".$order['id']."' target='_blank' class='font-awesome-link' title='Открыть детализацию заказа в новом окне'><i class='fa fa-folder-open-o' aria-hidden='true'></i></a></td>
 								<td>".dateFormattedDayToYear($order['send_date'])."</td>
 								<td>".dateFormattedDayToYear($order['proceed_date'])."</td>
 							</tr>
