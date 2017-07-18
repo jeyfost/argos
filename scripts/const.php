@@ -6,4 +6,4 @@
  * Time: 12:28
  */
 
-define("CONTACT_EMAIL", "argos-fm@mail.ru");
+define("CONTACT_EMAIL", "mail@argos-fm.by");

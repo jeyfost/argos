@@ -474,7 +474,7 @@ if(isset($_SESSION['userID'])) {
 									<tr"; if($count % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 										<td style='text-align: center;'>".$users['id']."</td>
 										<td>".$users['login']."</td>
-										<td>".$users['email']."</td>
+										<td style='text-align: center;'><a href='email.php?id=".$users['id']."' class='basicLink' style='font-size: 17px;' title='Отправить email'>".$users['email']."</a></td>
 										<td>".$users['name']."</td>
 										<td>".$users['company']."</td>
 										<td>".$users['position']."</td>
@@ -620,6 +620,8 @@ if(isset($_SESSION['userID'])) {
 									<label for='userEmailInput'>Email:</label>
 									<br />
 									<input type='text' id='userEmailInput' value='".$user['email']."' />
+									<br />
+									<a class='basicLink' href='email.php?id=".$user['id']."'>Отправить email этому клиенту</a>
 									<br /><br />
 									<label for='userCompanyInput'>Название компании:</label>
 									<br />
