@@ -393,6 +393,13 @@ function showCommentField(id) {
 	var form = "<form method='post' id='orderCommentForm'><div id='temporaryCommentContainer'></div><textarea id='commentInput' onkeydown='textAreaHeight(this)' placeholder='Текст комментария...'></textarea><br /><br /><input type='button' value='Оставить комментарий' id='commentSubmit' onclick='addComment(\"" + id + "\")' onmouseover='buttonChange(\"commentSubmit\", 1)' onmouseout='buttonChange(\"commentSubmit\", 0)' /></form>";
 	$('#orderCommentsField').html($('#orderCommentsField').html() + form);
 	$('#addComment').html('');
+
+	$('html, body').animate({
+		scrollTop: parseInt($('#commentInput').offset().top - 80) + "px"
+	}, {
+		duration: 200,
+		easing: "swing"
+	});
 }
 
 function addComment(id) {
