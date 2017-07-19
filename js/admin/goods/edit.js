@@ -18,6 +18,9 @@ function setCode() {
 	$.ajax({
 		type: "POST",
 		url: "../../scripts/admin/goods/ajaxSetCode.php",
+		beforeSend: function () {
+			$("#goodCodeInput").val("Идёт поиск кода...");
+		},
 		success: function(response) {
 			$("#goodCodeInput").val(response);
 		}

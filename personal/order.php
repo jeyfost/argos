@@ -72,7 +72,7 @@ if(isset($_SESSION['userID'])) {
 
     <meta charset="utf-8">
 
-    <title><?php if($_REQUEST['section'] == 1) {echo "Активные заявки";} if($_REQUEST['section'] == 2) {echo "История заказов";} ?></title>
+    <title>Детализация заказа №<?= $order['id'] ?></title>
 
     <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../css/style.css'>
