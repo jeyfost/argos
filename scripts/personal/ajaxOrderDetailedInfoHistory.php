@@ -97,7 +97,7 @@ while($order = $orderResult->fetch_assoc()) {
 							<div class='catalogueInfo'>
 								<div class='catalogueName'>
 									<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
-									<div style='margin-left: 15px; font-size: 17px;'>".$good['name']."</div>
+									<div style='margin-left: 15px; font-size: 17px;'><a href='../catalogue/item.php?id=".$good['id']."' class='catalogueNameLink'>".$good['name']."</a></div>
 									<div style='clear: both;'></div>
 								</div>
 							<div class='catalogueDescription'>
