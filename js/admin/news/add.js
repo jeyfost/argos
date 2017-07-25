@@ -7,9 +7,9 @@ function addNews() {
 
 	formData.append("newsText", text);
 
-	if(header != '') {
-		if(preview != '') {
-			if(text != '' && text != '<p><br></p>') {
+	if(header !== '') {
+		if(preview !== '') {
+			if(text !== '' && text !== '<p><br></p>') {
 				$.ajax({
 					type: 'POST',
 					data: formData,
@@ -18,7 +18,7 @@ function addNews() {
 					contentType: false,
 					url: '../../scripts/admin/news/ajaxAddNews.php',
 					beforeSend: function() {
-						if(responseField.css('opacity') == 1) {
+						if(responseField.css('opacity') === 1) {
 							responseField.css('opacity', 0);
 							setTimeout(function() {
 								responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
@@ -53,10 +53,10 @@ function addNews() {
 								break;
 						}
 
-						if(responseField.css('opacity') == 1) {
+						if(responseField.css('opacity') === 1) {
 							responseField.css('opacity', 0);
 							setTimeout(function() {
-								if(s == 1) {
+								if(s === 1) {
 									responseField.css('color', '#53acff');
 								} else {
 									responseField.css('color', '#df4e47');
@@ -65,7 +65,7 @@ function addNews() {
 								responseField.css('opacity', 1);
 							}, 300);
 						} else {
-							if(s == 1) {
+							if(s === 1) {
 								responseField.css('color', '#53acff');
 							} else {
 								responseField.css('color', '#df4e47');
@@ -79,7 +79,7 @@ function addNews() {
 					}
 				});
 			} else {
-				if(responseField.css('opacity') == 1) {
+				if(responseField.css('opacity') === 1) {
 					responseField.css('opacity', 0);
 					setTimeout(function() {
 						responseField.css('color', '#df4e47');
@@ -93,7 +93,7 @@ function addNews() {
 				}
 			}
 		} else {
-			if(responseField.css('opacity') == 1) {
+			if(responseField.css('opacity') === 1) {
 				responseField.css('opacity', 0);
 				setTimeout(function() {
 					responseField.css('color', '#df4e47');
@@ -107,7 +107,7 @@ function addNews() {
 			}
 		}
 	} else {
-		if(responseField.css('opacity') == 1) {
+		if(responseField.css('opacity') === 1) {
 			responseField.css('opacity', 0);
 			setTimeout(function() {
 				responseField.css('color', '#df4e47');

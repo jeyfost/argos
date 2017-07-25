@@ -130,9 +130,13 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 #clearBasketButton {margin-right: 10px;}
 #registrationDescription {position: relative; float: left; padding-left: 40px;}
 #registrationContainer {width: 350px; position: relative; float: left;}
-#registrationStatus {color: #df4e47;}
+#registrationStatus, #catalogueContent td a span {color: #df4e47;}
 #CVForm {background-color: #f3f3f3; padding: 10px; border: 1px solid #dedede; display: inline-block;}
 #messageInput, #commentInput {resize: none; transition: .3s; word-wrap: break-word; width: 452px; height: 25px; padding: 10px; font-style: italic; margin-top: 5px; color: #9e9e9e;}
+#itemPhotoContainer {width: 400px; padding: 10px; border: 1px solid #d7d5d1; float: left; text-align: center;}
+#itemPhoto {max-width: 400px;}
+#itemPhotoDescription {padding-left: 30px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; vertical-align: top;}
+#recomendedGoodsBlock {width: 100%;}
 
 .container {width: 90%; margin: 0 auto; z-index: 11;}
 .mainImgContainer {width: 100%; height: 100%; overflow: hidden; transition: .3s; margin: 0; padding: 0;}
@@ -176,3 +180,6 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .button {height: 30px; max-width: 160px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: left; padding: auto 5px;}
 .file {border: none; padding: 0;}
 .font-awesome-link {color: #4c4c4c;}
+.previewPhoto {display: inline-block; vertical-align: middle; transition: .3s;}
+.recomendedGoodContainer {width: 100px; padding: 10px; display: inline-block; text-align: center; transition: .3s; border: 1px solid #fff;}
+.recomendedGoodPhotoContainer, .recomendedGoodNameContainer {width: 100px; float: left;}

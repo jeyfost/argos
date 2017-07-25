@@ -29,7 +29,6 @@ function checkCode() {
 	}
 }
 
-
 function addGood() {
 	var responseField = $("#responseField");
 	var goodName = $('#goodNameInput').val();

@@ -1,17 +1,14 @@
-$(window).on('load', function() {
-	if($('div').is('#pbPrev') && $('div').is('#pbNext')) {
-		var blockWidth = parseInt($('#pbNext').offset().left + $('#pbNext').width() - $('#pbPrev').offset().left + 40);
-		$('#pageNumbers').width(blockWidth);
-	}
-});
+/**
+ * Created by jeyfost on 21.07.2017.
+ */
 
 function categoryStyle(action, img, text, imgBlack, imgRed) {
 	if(action === 1) {
 		document.getElementById(text).style.color = "#df4e47";
-		document.getElementById(img).src = "img/icons/" + imgRed;
+		document.getElementById(img).src = "../img/icons/" + imgRed;
 	} else {
 		document.getElementById(text).style.color = "#4f4f4f";
-		document.getElementById(img).src = "img/icons/" + imgBlack;
+		document.getElementById(img).src = "../img/icons/" + imgBlack;
 	}
 }
 
@@ -23,14 +20,45 @@ function subcategoryStyle(action, id) {
 	}
 }
 
-function pageBlock(action, block, text) {
+function changeItemPhoto(id, action) {
 	if(action === 1) {
-		document.getElementById(block).style.backgroundColor = "#df4e47";
-		document.getElementById(text).style.color = "#fff";
+		document.getElementById(id).style.opacity = ".7";
 	} else {
-		document.getElementById(block).style.backgroundColor = "#fff";
-		document.getElementById(text).style.color = "#df4e47";
+		document.getElementById(id).style.opacity = "1";
 	}
+}
+
+function changePrice(good_id, block, price, currency, unit, rate) {
+	document.getElementById(block).innerHTML = "<form id='changeGoodPriceForm' method='post'><b>Стоимость за " + unit + " в " + currency + ": </b><input type='number' value='" + price + "' min='0.0001' step='0.0001' id='changeGoodPriceInput' onblur='saveGoodPrice(\"" + good_id + "\", \"" + block + "\", \"" + currency + "\", \"" + unit + "\", \"" + rate + "\")' autofocus /></form><div style='clear: both;'><br /><br /><div id='goodResponseField'></div></div>";
+}
+
+function saveGoodPrice(good_id, block, currency, unit, rate) {
+	$.ajax({
+		type: 'POST',
+		data: {"goodID": good_id, "price": $('#changeGoodPriceInput').val()},
+		url: "../scripts/catalogue/ajaxSaveGoodPrice.php",
+		success: function(response) {
+			if(response === "a") {
+				var price = $('#changeGoodPriceInput').val();
+				price = parseFloat(price * rate);
+				var roubles = Math.floor(price);
+				var kopeck = parseInt(parseFloat(parseFloat(price - roubles).toFixed(2)) * 100);
+
+				if(roubles > 0) {
+					price = roubles + " руб. " + kopeck + " коп.";
+				} else {
+					price = kopeck + " коп.";
+				}
+
+				document.getElementById(block).innerHTML = "<span style='cursor: pointer;' onclick='changePrice(\"" + good_id + "\", \"" + block + "\", \"" + $('#changeGoodPriceInput').val() + "\", \"" + currency + "\", \"" + unit + "\", \"" + rate + "\")' title='Изменить стоимость товара'><b>Стоимость за " + unit + ": </b>" + price + "</span>";
+			} else {
+				$.notify("Введите положительное значение", "error");
+			}
+		},
+		error: function(jqXHR, textStatus, errorThrown) {
+			$.notify(textStatus + "; " + errorThrown);
+		}
+	});
 }
 
 function addToBasket(good_id, input, response_field) {
@@ -40,17 +68,17 @@ function addToBasket(good_id, input, response_field) {
 		$.ajax({
 			type: 'POST',
 			data: {"goodID": good_id, "quantity": quantity},
-			url: "scripts/catalogue/ajaxAddToBasket.php",
+			url: "../scripts/catalogue/ajaxAddToBasket.php",
 			success: function(response) {
 				$.ajax({
 					type: 'POST',
 					data: {"goodID": good_id},
-					url: 'scripts/catalogue/ajaxCheckBasket.php',
+					url: '../scripts/catalogue/ajaxCheckBasket.php',
 					success: function(result) {
 						if (result === "a") {
-							$('#basketIcon').html("<a href='personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: 1' id='basketIMG' /><div id='basketLabel'>1</div></a>");
+							$('#basketIcon').html("<a href='../personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: 1' id='basketIMG' /><div id='basketLabel'>1</div></a>");
 						} else {
-							$('#basketIcon').html("<a href='personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: " + result + "' id='basketIMG' /><div id='basketLabel'>" + result + "</div></a>");
+							$('#basketIcon').html("<a href='../personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: " + result + "' id='basketIMG' /><div id='basketLabel'>" + result + "</div></a>");
 						}
 					}
 				});
@@ -118,48 +146,21 @@ function addToBasket(good_id, input, response_field) {
 	}
 }
 
-function hideBlock(id) {
-	document.getElementById(id).style.opacity = "0";
-	setTimeout(function(){
-		document.getElementById(id).innerHTML = "";
-	}, 300);
+function changeFontColor(id, action) {
+	if(action === 1) {
+		document.getElementById(id).style.color = '#df4e47';
+	} else {
+		document.getElementById(id).style.color = '#4c4c4c';
+
+	}
 }
 
-function changePrice(good_id, block, price, currency, unit, rate) {
-	document.getElementById(block).innerHTML = "<form id='changeGoodPriceForm' method='post'><b>Стоимость за " + unit + " в " + currency + ": </b><input type='number' value='" + price + "' min='0.0001' step='0.0001' id='changeGoodPriceInput' onblur='saveGoodPrice(\"" + good_id + "\", \"" + block + "\", \"" + currency + "\", \"" + unit + "\", \"" + rate + "\")' autofocus /></form><div style='clear: both;'><br /><br /><div id='goodResponseField'></div></div>";
-}
-
-function saveGoodPrice(good_id, block, currency, unit, rate) {
-	$.ajax({
-		type: 'POST',
-		data: {"goodID": good_id, "price": $('#changeGoodPriceInput').val()},
-		url: "scripts/catalogue/ajaxSaveGoodPrice.php",
-		success: function(response) {
-			if(response === "a") {
-				var price = $('#changeGoodPriceInput').val();
-				price = parseFloat(price * rate);
-				var roubles = Math.floor(price);
-				var kopeck = parseInt(parseFloat(parseFloat(price - roubles).toFixed(2)) * 100);
-
-				if(roubles > 0) {
-					price = roubles + " руб. " + kopeck + " коп.";
-				} else {
-					price = kopeck + " коп.";
-				}
-
-				document.getElementById(block).innerHTML = "<span style='cursor: pointer;' onclick='changePrice(\"" + good_id + "\", \"" + block + "\", \"" + $('#changeGoodPriceInput').val() + "\", \"" + currency + "\", \"" + unit + "\", \"" + rate + "\")' title='Изменить стоимость товара'><b>Стоимость за " + unit + ": </b>" + price + "</span>";
-			} else {
-				if($('#goodResponseField').css('opacity') === '0') {
-					$('#goodResponseField').css('color', '#df4e47');
-					$('#goodResponseField').val("Введите положительное значение");
-				} else {
-					$('#goodResponseField').css('opacity', '0');
-					setTimeout(function() {
-						$('#goodResponseField').val("Введите положительное значение");
-						$('#goodResponseField').css('opacity', '1');
-					}, 300);
-				}
-			}
-		}
-	});
+function markContainer(container, img, action) {
+	if(action === 1) {
+		document.getElementById(container).style.border = "1px solid #d7d5d1";
+		document.getElementById(img).style.opacity = ".7";
+	} else {
+		document.getElementById(container).style.border = "1px solid #fff";
+		document.getElementById(img).style.opacity = "1";
+	}
 }
