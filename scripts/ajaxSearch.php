@@ -61,7 +61,7 @@ if($searchResult->num_rows == 0) {
 					<a href='img/catalogue/big/".$search['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$search['name']."' data-lightview-caption='".nl2br(strip_tags($search['description']))."'><img src='img/catalogue/small/".$search['small']."' /></a>
 				</div>
 				<div class='searchInfo'>
-					<span style='font-size: 18px; font-style: italic;'>".$search['name']."</span>
+					<span style='font-size: 18px; font-style: italic;'><a href='catalogue/item.php?id=".$search['id']."' class='catalogueNameLink'>".$search['name']."</a></span>
 					<br />
 					<span style='font-size: 14px; font-style: italic;'><a href='catalogue.php?type=".$search['type']."&p=1' class='searchLink'>".$type[0]."</a> > <a href='catalogue.php?type=".$search['type']."&c=".$search['category']."&p=1' class='searchLink'>".$category[0]."</a>"; if(!empty($search['subcategory'])) {echo " > <a href='catalogue.php?type=".$search['type']."&c=".$search['category']."&s=".$search['subcategory']."&p=1' class='searchLink'>".$subcategory[0]."</a>";} if(!empty($search['subcategory2'])) {echo " > <a href='catalogue.php?type=".$search['type']."&c=".$search['category']."&s=".$search['subcategory']."&s2=".$search['subcategory2']."&p=1' class='searchLink'>".$subcategory2[0]."</a>";} echo "</span>
 					<br /><br />
