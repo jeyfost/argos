@@ -13,7 +13,7 @@ select {height: 40px; line-height: 40px;}
 .catalogueItemTextDecorated:hover {text-decoration: underline;}
 .catalogueDescription a span:hover, .sketchFont:hover, td a:hover, span b a:hover, .tdLink:hover {text-decoration: underline;}
 .newsPreview:hover {background-color: #ededed;}
-.font-awesome-link:hover {color: #df4e47;}
+.font-awesome-link:hover, .catalogueNameLink:hover {color: #df4e47;}
 
 /* mobile */
 @media screen and (max-width: 960px) {
@@ -183,3 +183,4 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .previewPhoto {display: inline-block; vertical-align: middle; transition: .3s;}
 .recomendedGoodContainer {width: 100px; padding: 10px; display: inline-block; text-align: center; transition: .3s; border: 1px solid #fff;}
 .recomendedGoodPhotoContainer, .recomendedGoodNameContainer {width: 100px; float: left;}
+.catalogueNameLink {color: #4c4c4c;}
