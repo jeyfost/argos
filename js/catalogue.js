@@ -8,10 +8,10 @@ $(window).on('load', function() {
 function categoryStyle(action, img, text, imgBlack, imgRed) {
 	if(action === 1) {
 		document.getElementById(text).style.color = "#df4e47";
-		document.getElementById(img).src = "img/icons/" + imgRed;
+		document.getElementById(img).src = "../img/icons/" + imgRed;
 	} else {
 		document.getElementById(text).style.color = "#4f4f4f";
-		document.getElementById(img).src = "img/icons/" + imgBlack;
+		document.getElementById(img).src = "../img/icons/" + imgBlack;
 	}
 }
 
