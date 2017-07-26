@@ -127,6 +127,42 @@ function randomName($tmp_name)
 	return $name;
 }
 
+/* функция для обработки дополнительных фотографий */
+
+function resize($image, $w_o = false, $h_o = false)
+{
+	if (($w_o < 0) || ($h_o < 0)) {
+		echo "Некорректные входные параметры";
+		return false;
+	}
+
+	list($w_i, $h_i, $type) = getimagesize($image);
+
+	$types = array("", "gif", "jpeg", "png");
+	$ext = $types[$type]; // Зная "числовой" тип изображения, узнаём название типа
+
+	if ($ext) {
+		$func = 'imagecreatefrom' . $ext; // Получаем название функции, соответствующую типу, для создания изображения
+		$img_i = $func($image); // Создаём дескриптор для работы с исходным изображением
+	} else {
+		echo 'Некорректное изображение'; // Выводим ошибку, если формат изображения недопустимый
+
+		return false;
+	}
+
+	/* Если указать только 1 параметр, то второй подстроится пропорционально */
+	if (!$h_o) $h_o = $w_o / ($w_i / $h_i);
+	if (!$w_o) $w_o = $h_o / ($h_i / $w_i);
+
+	$img_o = imagecreatetruecolor($w_o, $h_o); // Создаём дескриптор для выходного изображения
+
+	imagecopyresampled($img_o, $img_i, 0, 0, 0, 0, $w_o, $h_o, $w_i, $h_i); // Переносим изображение из исходного в выходное, масштабируя его
+
+	$func = 'image' . $ext; // Получаем функция для сохранения результата
+
+	return $func($img_o, $image); // Сохраняем изображение в тот же файл, что и исходное, возвращая результат этой операции
+}
+
 $codeCheckResult = $mysqli->query("SELECT COUNT(id) FROM catalogue_new WHERE code = '".$goodCode."' AND id <> '".$goodID."'");
 $codeCheck = $codeCheckResult->fetch_array(MYSQLI_NUM);
 
@@ -198,25 +234,27 @@ if($codeCheck[0] == 0) {
 				$a++;
 
 				if(!empty($_FILES['goodAdditionalPhotos']['tmp_name'][$i]) and $_FILES['goodAdditionalPhotos']['error'][$i] == 0 and substr($_FILES['goodAdditionalPhotos']['type'][$i], 0, 5) == "image") {
-					$bigPhotoName = randomName($_FILES['goodPhoto']['tmp_name'][$i]);
+					$bigPhotoName = randomName($_FILES['goodAdditionalPhotos']['tmp_name'][$i]);
 					$bigPhotoDBName = $bigPhotoName.".".substr($_FILES['goodAdditionalPhotos']['name'][$i], count($_FILES['goodAdditionalPhotos']['name'][$i]) - 4, 4);
 					$bigPhotoUploadDir = "../../../img/catalogue/photos/big/";
 					$bigPhotoTmpName = $_FILES['goodAdditionalPhotos']['tmp_name'][$i];
 					$bigPhotoUpload = $bigPhotoUploadDir.$bigPhotoDBName;
 
-					$smallPhotoName = randomName($_FILES['goodPhoto']['tmp_name'][$i]);
+					$smallPhotoName = randomName($_FILES['goodAdditionalPhotos']['tmp_name'][$i]);
 					$smallPhotoDBName = $smallPhotoName.".".substr($_FILES['goodAdditionalPhotos']['name'][$i], count($_FILES['goodAdditionalPhotos']['name'][$i]) - 4, 4);
 					$smallPhotoUploadDir = "../../../img/catalogue/photos/small/";
 					$smallPhotoTmpName = $_FILES['goodAdditionalPhotos']['tmp_name'][$i];
 					$smallPhotoUpload = $smallPhotoUploadDir.$smallPhotoDBName;
 
 					if($mysqli->query("INSERT INTO goods_photos (good_id, small, big) VALUES ('".$goodID."', '".$smallPhotoDBName."', '".$bigPhotoDBName."')")) {
-						image_resize($smallPhotoTmpName, $smallPhotoUpload, 100);
+						copy($bigPhotoTmpName, $bigPhotoUpload);
+
+						resize($smallPhotoTmpName, 100);
 						move_uploaded_file($smallPhotoTmpName, $smallPhotoUpload);
-						move_uploaded_file($bigPhotoTmpName, $bigPhotoUpload);
 
 						$aOK++;
 					}
+
 				}
 			}
 		}

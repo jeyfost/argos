@@ -552,7 +552,7 @@ if(!empty($_REQUEST['id'])) {
 				echo "
 					<div class='goodPhotoContainer'>
 						<a href='../../img/catalogue/photos/big/".$photo['big']."' class='lightview' data-lightview-group='good'><img src='../../img/catalogue/photos/small/".$photo['small']."' class='goodPhoto' /></a>
-						<i class='fa fa-trash font-awesome-link' aria-hidden='true' onclick='deletePhoto(\"".$photo['id']."\", \"".$good['id']."\")'></i>
+						<i class='fa fa-trash font-awesome-link' aria-hidden='true' onclick='deletePhoto(\"".$photo['id']."\")'></i>
 					</div>
 				";
 			}

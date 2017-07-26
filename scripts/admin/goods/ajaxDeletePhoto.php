@@ -9,9 +9,8 @@
 include("../../connect.php");
 
 $photoID = $mysqli->real_escape_string($_POST['photo_id']);
-$goodID = $mysqli->real_escape_string($_POST['good_id']);
 
-$photoCheckResult = $mysqli->query("SELECT COUNT(id) FROM goods_photos WHERE id = '".$photoID."' AND good_id = '".$goodID."'");
+$photoCheckResult = $mysqli->query("SELECT COUNT(id) FROM goods_photos WHERE id = '".$photoID."'");
 $photoCheck = $photoCheckResult->fetch_array(MYSQLI_NUM);
 
 if($photoCheck[0] > 0) {
@@ -26,6 +25,4 @@ if($photoCheck[0] > 0) {
 	} else {
 		echo "failed";
 	}
-} else {
-	echo "id";
 }

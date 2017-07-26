@@ -124,8 +124,9 @@ function editGood() {
 
 							setTimeout(function () {
 								$('#goodPhotosContainer').html(code);
-								$('#goodPhotosContainer').css("opacity", 1);
-							}, 300)
+							}, 300);
+
+							$('#goodPhotosContainer').css("opacity", 1);
 						},
 						error: function(xhr, textStatus) {
 							$.notify(textStatus + "; " + errorThrown, "error");
@@ -187,11 +188,11 @@ function editGood() {
 	}
 }
 
-function deletePhoto(photo_id, good_id) {
+function deletePhoto(photo_id) {
 	if(confirm("Вы действительно хотите удаить эту фотографию?")) {
 		$.ajax({
 			type: "POST",
-			data: {"photo_id": photo_id, "good_id": good_id},
+			data: {"photo_id": photo_id},
 			url: "../../scripts/admin/goods/ajaxDeletePhoto.php",
 			success: function (response) {
 				switch (response) {
@@ -200,9 +201,6 @@ function deletePhoto(photo_id, good_id) {
 						break;
 					case "failed":
 						$.notify("При удалении фотографии произошла ошибка.", "error");
-						break;
-					case "id":
-						$.notify("Эта фотография не относится к выбранному товару.", "error");
 						break;
 					default:
 						$.notify(response, "warn");
