@@ -2,7 +2,7 @@
  * Created by jeyfost on 21.07.2017.
  */
 
-function categoryStyle(action, img, text, imgBlack, imgRed) {
+function categoryItemStyle(action, img, text, imgBlack, imgRed) {
 	if(action === 1) {
 		document.getElementById(text).style.color = "#df4e47";
 		document.getElementById(img).src = "../img/icons/" + imgRed;
