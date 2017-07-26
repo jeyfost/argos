@@ -7,12 +7,12 @@ require_once("scripts/mobileDetect.php");
 $detect = new Mobile_Detect;
 
 if(empty($_REQUEST['type'])) {
-	header("Location: catalogue.php?type=fa&p=1");
+	header("Location: catalogue/index.php?type=fa&p=1");
 } else {
 	$typeResult = $mysqli->query("SELECT * FROM types WHERE catalogue_type = '".$mysqli->real_escape_string($_REQUEST['type'])."'");
 
 	if($typeResult->num_rows == 0) {
-		header("Location: catalogue.php?type=fa&p=1");
+		header("Location: catalogue/index.php?type=fa&p=1");
 	}
 }
 
@@ -20,50 +20,50 @@ if(empty($_REQUEST['p'])) {
 	if(!empty($_REQUEST['type'])) {
 		header("Location: ".$_SERVER['REQUEST_URI']."&p=1");
 	} else {
-		header("Location: catalogue.php?type=fa&p=1");
+		header("Location: catalogue/index.php?type=fa&p=1");
 	}
 }
 
 if(!empty($_REQUEST['c'])) {
 	$cResult = $mysqli->query("SELECT * FROM categories_new WHERE id = '".$mysqli->real_escape_string($_REQUEST['c'])."'");
 	if($cResult->num_rows == 0) {
-		header("Location: catalogue.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&p=1");
+		header("Location: catalogue/index.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&p=1");
 	} else {
 		$c = $cResult->fetch_assoc();
 		if($c['type'] != $mysqli->real_escape_string($_REQUEST['type'])) {
-			header("Location: catalogue.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&p=1");
+			header("Location: catalogue/index.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&p=1");
 		}
 	}
 }
 
 if(!empty($_REQUEST['s']) and empty($_REQUEST['c'])) {
-	header("Location: catalogue.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&p=1");
+	header("Location: catalogue/index.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&p=1");
 }
 
 if(!empty($_REQUEST['s'])) {
 	$sResult = $mysqli->query("SELECT * FROM subcategories_new WHERE id = '".$mysqli->real_escape_string($_REQUEST['s'])."'");
 	if($sResult->num_rows == 0) {
-		header("Location: catalogue.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&c=".$mysqli->real_escape_string($_REQUEST['c'])."&p=1");
+		header("Location: catalogue/index.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&c=".$mysqli->real_escape_string($_REQUEST['c'])."&p=1");
 	} else {
 		$s = $sResult->fetch_assoc();
 		if($s['category'] != $mysqli->real_escape_string($_REQUEST['c'])) {
-			header("Location: catalogue.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&c=".$mysqli->real_escape_string($_REQUEST['c'])."&p=1");
+			header("Location: catalogue/index.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&c=".$mysqli->real_escape_string($_REQUEST['c'])."&p=1");
 		}
 	}
 }
 
 if(!empty($_REQUEST['s2']) and empty($_REQUEST['s'])) {
-	header("Location: catalogue.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&c=".$mysqli->real_escape_string($_REQUEST['c'])."&s=".$mysqli->real_escape_string($_REQUEST['s'])."&p=1");
+	header("Location: catalogue/index.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&c=".$mysqli->real_escape_string($_REQUEST['c'])."&s=".$mysqli->real_escape_string($_REQUEST['s'])."&p=1");
 }
 
 if(!empty($_REQUEST['s2'])) {
 	$s2Result = $mysqli->query("SELECT * FROM subcategories2 WHERE id = '".$mysqli->real_escape_string($_REQUEST['s2'])."'");
 	if($s2Result->num_rows == 0) {
-		header("Location: catalogue.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&c=".$mysqli->real_escape_string($_REQUEST['c'])."&s=".$mysqli->real_escape_string($_REQUEST['s'])."&p=1");
+		header("Location: catalogue/index.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&c=".$mysqli->real_escape_string($_REQUEST['c'])."&s=".$mysqli->real_escape_string($_REQUEST['s'])."&p=1");
 	} else {
 		$s2 = $s2Result->fetch_assoc();
 		if($s2['subcategory'] != $mysqli->real_escape_string($_REQUEST['s'])) {
-			header("Location: catalogue.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&c=".$mysqli->real_escape_string($_REQUEST['c'])."&s=".$mysqli->real_escape_string($_REQUEST['s'])."&p=1");
+			header("Location: catalogue/index.php?type=".$mysqli->real_escape_string($_REQUEST['type'])."&c=".$mysqli->real_escape_string($_REQUEST['c'])."&s=".$mysqli->real_escape_string($_REQUEST['s'])."&p=1");
 		}
 	}
 }
@@ -267,7 +267,7 @@ if(isset($_SESSION['userID'])) {
 			</div>
             <div id="menuLinks">
                 <div class="menuLink" id="catalogueLink" <?php echo "onmouseover='showDropdownList(\"1\", \"catalogueLink\", \"catalogueLink".strtoupper($mysqli->real_escape_string($_REQUEST['type']))."\")'"; ?>>
-                    <a href="catalogue.php?type=fa&p=1" class="menuPoint" style="color: #df4e47;">Каталог</a>
+                    <a href="catalogue/index.php?type=fa&p=1" class="menuPoint" style="color: #df4e47;">Каталог</a>
                     <img src="img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
@@ -305,15 +305,15 @@ if(isset($_SESSION['userID'])) {
         <div id="menuIcon" onclick="showHideMobileMenu()"><img src="img/system/mobile/menuIcon.png" title="Меню" <?php if($detect->isMobile()) {echo "style='display: block;'";} ?> /></div>
 		<div id="mobileMenu">
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="catalogue.php?type=fa&p=1" class="mobileMenuPointBig">Каталог</a>
+				<a href="catalogue/index.php?type=fa&p=1" class="mobileMenuPointBig">Каталог</a>
 				<div class="subMenu">
-					<a href="catalogue.php?type=fa&p=1" class="mobileMenuPointSmall">- Мебельная фурнитура</a>
+					<a href="catalogue/index.php?type=fa&p=1" class="mobileMenuPointSmall">- Мебельная фурнитура</a>
 					<br />
-					<a href="catalogue.php?type=em&p=1" class="mobileMenuPointSmall">- Кромочные материалы</a>
+					<a href="catalogue/index.php?type=em&p=1" class="mobileMenuPointSmall">- Кромочные материалы</a>
 					<br />
-					<a href="catalogue.php?type=ca&p=1" class="mobileMenuPointSmall">- Аксессуары для штор</a>
+					<a href="catalogue/index.php?type=ca&p=1" class="mobileMenuPointSmall">- Аксессуары для штор</a>
 					<br />
-					<a href="catalogue.php?type=dg&p=1" class="mobileMenuPointSmall">- Сопутствующие товары</a>
+					<a href="catalogue/index.php?type=dg&p=1" class="mobileMenuPointSmall">- Сопутствующие товары</a>
 				</div>
 			</div>
 			<hr />
@@ -431,28 +431,28 @@ if(isset($_SESSION['userID'])) {
 			echo "
 				<h1 style='margin-top: 80px;'>".$type['type_name']."</h1>
 				<div id='breadCrumbs'>
-				<a href='index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='catalogue.php?type=fa&p=1'><span class='breadCrumbsText'>Каталог</span></a> > <a href='catalogue.php?type=".$type['catalogue_type']."&p=1'><span class='breadCrumbsText'>".$type['type_name']."</span></a>
+				<a href='index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='catalogue/index.php?type=fa&p=1'><span class='breadCrumbsText'>Каталог</span></a> > <a href='catalogue/index.php?type=".$type['catalogue_type']."&p=1'><span class='breadCrumbsText'>".$type['type_name']."</span></a>
 			";
 
 			if(!empty($_REQUEST['c'])) {
 				$categoryResult = $mysqli->query("SELECT * FROM categories_new WHERE id = '" . $mysqli->real_escape_string($_REQUEST['c']) . "'");
 				$category = $categoryResult->fetch_assoc();
 
-				echo " > <a href='catalogue.php?type=" . $type['catalogue_type'] . "&c=" . $category['id'] . "&p=1'><span class='breadCrumbsText'>" . $category['name'] . "</span></a>";
+				echo " > <a href='catalogue/index.php?type=" . $type['catalogue_type'] . "&c=" . $category['id'] . "&p=1'><span class='breadCrumbsText'>" . $category['name'] . "</span></a>";
 			}
 
 			if(!empty($_REQUEST['s'])) {
 				$subcategoryResult = $mysqli->query("SELECT * FROM subcategories_new WHERE id = '".$mysqli->real_escape_string($_REQUEST['s'])."'");
 				$subcategory = $subcategoryResult->fetch_assoc();
 
-				echo " > <a href='catalogue.php?type=".$type['catalogue_type']."&c=".$category['id']."&s=".$subcategory['id']."&p=1'><span class='breadCrumbsText'>".$subcategory['name']."</span></a>";
+				echo " > <a href='catalogue/index.php?type=".$type['catalogue_type']."&c=".$category['id']."&s=".$subcategory['id']."&p=1'><span class='breadCrumbsText'>".$subcategory['name']."</span></a>";
 			}
 
 			if(!empty($_REQUEST['s2'])) {
 				$subcategory2Result = $mysqli->query("SELECT * FROM subcategories2 WHERE id = '".$mysqli->real_escape_string($_REQUEST['s2'])."'");
 				$subcategory2 = $subcategory2Result->fetch_assoc();
 
-				echo " > <a href='catalogue.php?type=".$type['catalogue_type']."&c=".$category['id']."&s=".$subcategory['id']."&s2=".$subcategory2['id']."&p=1'><span class='breadCrumbsText'>".$subcategory2['name']."</span></a>";
+				echo " > <a href='catalogue/index.php?type=".$type['catalogue_type']."&c=".$category['id']."&s=".$subcategory['id']."&s2=".$subcategory2['id']."&p=1'><span class='breadCrumbsText'>".$subcategory2['name']."</span></a>";
 			}
 
 			echo "
@@ -462,7 +462,7 @@ if(isset($_SESSION['userID'])) {
 		<div id="catalogueMenu">
 			<?php
 				echo "
-					<center><a href='catalogue.php?type=".$type['catalogue_type']."&p=1'><span style='color: #df4e47;'>".$type['type_name']."</span></a></center>
+					<center><a href='catalogue/index.php?type=".$type['catalogue_type']."&p=1'><span style='color: #df4e47;'>".$type['type_name']."</span></a></center>
 					<div style='width: 100%; height: 1px; background-color: #d7d5d1; margin-top: 10px;'></div>
 					<div style='margin-top: 10px; width: 100%;'></div>
 				";
@@ -470,7 +470,7 @@ if(isset($_SESSION['userID'])) {
 				$categoryResult = $mysqli->query("SELECT * FROM categories_new WHERE type = '".$type['catalogue_type']."' ORDER BY name");
 				while($category = $categoryResult->fetch_assoc()) {
 					echo "
-						<a href='catalogue.php?type=".$type['catalogue_type']."&c=".$category['id']."&p=1'><div class='categoryContainer'"; if($_REQUEST['c'] != $category['id']) {echo " onmouseover='categoryStyle(1, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")' onmouseout='categoryStyle(0, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")'";} echo "><img src='img/icons/"; if($_REQUEST['c'] == $category['id']) {echo $category['picture_red'];} else {echo $category['picture'];} echo "' id='categoryIMG".$category['id']."' /><div class='categoryNameContainer'><span id='categoryText".$category['id']."'"; if($_REQUEST['c'] == $category['id']) {echo " style='color: #df4e47;'";} echo ">".$category['name']."</span></div></div></a>
+						<a href='catalogue/index.php?type=".$type['catalogue_type']."&c=".$category['id']."&p=1'><div class='categoryContainer'"; if($_REQUEST['c'] != $category['id']) {echo " onmouseover='categoryStyle(1, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")' onmouseout='categoryStyle(0, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")'";} echo "><img src='img/icons/"; if($_REQUEST['c'] == $category['id']) {echo $category['picture_red'];} else {echo $category['picture'];} echo "' id='categoryIMG".$category['id']."' /><div class='categoryNameContainer'><span id='categoryText".$category['id']."'"; if($_REQUEST['c'] == $category['id']) {echo " style='color: #df4e47;'";} echo ">".$category['name']."</span></div></div></a>
 					";
 
 					if(!empty($_REQUEST['c']) and $category['id'] == $_REQUEST['c']) {
@@ -480,7 +480,7 @@ if(isset($_SESSION['userID'])) {
 						if($subcategoriesCount[0] > 0) {
 							$subcategoryResult = $mysqli->query("SELECT * FROM subcategories_new WHERE category = '".$mysqli->real_escape_string($_REQUEST['c'])."' ORDER BY name");
 							while($subcategory = $subcategoryResult->fetch_assoc()) {
-								echo "<a href='catalogue.php?type=".$type['catalogue_type']."&c=".$category['id']."&s=".$subcategory['id']."&p=1'"; if($_REQUEST['s'] != $subcategory['id']) {echo " onmouseover='subcategoryStyle(1, \"subcategoryText".$subcategory['id']."\")' onmouseout='subcategoryStyle(0, \"subcategoryText".$subcategory['id']."\")'";} echo "><div class='subcategoryContainer'><span id='subcategoryText".$subcategory['id']."'"; if($_REQUEST['s'] == $subcategory['id']) {echo " style='color: #df4e47;'";} echo ">— ".$subcategory['name']."</span></div></a>";
+								echo "<a href='catalogue/index.php?type=".$type['catalogue_type']."&c=".$category['id']."&s=".$subcategory['id']."&p=1'"; if($_REQUEST['s'] != $subcategory['id']) {echo " onmouseover='subcategoryStyle(1, \"subcategoryText".$subcategory['id']."\")' onmouseout='subcategoryStyle(0, \"subcategoryText".$subcategory['id']."\")'";} echo "><div class='subcategoryContainer'><span id='subcategoryText".$subcategory['id']."'"; if($_REQUEST['s'] == $subcategory['id']) {echo " style='color: #df4e47;'";} echo ">— ".$subcategory['name']."</span></div></a>";
 
 								if(!empty($_REQUEST['s']) and $subcategory['id'] == $_REQUEST['s']) {
 									$subcategories2CountResult = $mysqli->query("SELECT COUNT(id) FROM subcategories2 WHERE subcategory = '".$subcategory['id']."'");
@@ -489,7 +489,7 @@ if(isset($_SESSION['userID'])) {
 									if($subcategories2Count[0] > 0) {
 										$subcategory2Result = $mysqli->query("SELECT * FROM subcategories2 WHERE subcategory = '".$subcategory['id']."' ORDER BY name");
 										while($subcategory2 = $subcategory2Result->fetch_assoc()) {
-											echo "<a href='catalogue.php?type=".$type['catalogue_type']."&c=".$category['id']."&s=".$subcategory['id']."&s2=".$subcategory2['id']."&p=1'"; if($_REQUEST['s2'] != $subcategory2['id']) {echo " onmouseover='subcategoryStyle(1, \"subcategory2Text".$subcategory2['id']."\")' onmouseout='subcategoryStyle(0, \"subcategory2Text".$subcategory2['id']."\")'";} echo "><div class='subcategory2Container'><span id='subcategory2Text".$subcategory2['id']."'"; if($_REQUEST['s2'] == $subcategory2['id']) {echo " style='color: #df4e47;'";} echo ">— ".$subcategory2['name']."</span></div></a>";
+											echo "<a href='catalogue/index.php?type=".$type['catalogue_type']."&c=".$category['id']."&s=".$subcategory['id']."&s2=".$subcategory2['id']."&p=1'"; if($_REQUEST['s2'] != $subcategory2['id']) {echo " onmouseover='subcategoryStyle(1, \"subcategory2Text".$subcategory2['id']."\")' onmouseout='subcategoryStyle(0, \"subcategory2Text".$subcategory2['id']."\")'";} echo "><div class='subcategory2Container'><span id='subcategory2Text".$subcategory2['id']."'"; if($_REQUEST['s2'] == $subcategory2['id']) {echo " style='color: #df4e47;'";} echo ">— ".$subcategory2['name']."</span></div></a>";
 										}
 										echo "<div style='width: 100%; height: 5px;'></div>";
 									}
@@ -506,7 +506,7 @@ if(isset($_SESSION['userID'])) {
 						<div style='margin-top: 10px; width: 100%;'></div>
 						<div style='width: 100%; height: 1px; background-color: #d7d5d1; margin-top: 10px;'></div>
 						<div style='margin-top: 10px; width: 100%;'></div>
-						<a href='catalogue.php?type=".$types['catalogue_type']."&p=1' onmouseover='subcategoryStyle(1, \"type".$types['id']."\")' onmouseout='subcategoryStyle(0, \"type".$types['id']."\")'><span id='type".$types['id']."'>".$types['type_name']."</span></a>
+						<a href='catalogue/index.php?type=".$types['catalogue_type']."&p=1' onmouseover='subcategoryStyle(1, \"type".$types['id']."\")' onmouseout='subcategoryStyle(0, \"type".$types['id']."\")'><span id='type".$types['id']."'>".$types['type_name']."</span></a>
 					";
 				}
 			?>

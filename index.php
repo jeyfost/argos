@@ -8,7 +8,7 @@ require_once ("scripts/mobileDetect.php");
 $detect = new Mobile_Detect;
 
 if($detect->isMobile()) {
-	header("Location: catalogue.php?type=fa&p=1");
+	header("Location: catalogue/index.php?type=fa&p=1");
 }
 
 if(isset($_SESSION['userID'])) {
@@ -171,7 +171,7 @@ if(isset($_SESSION['userID'])) {
 			</div>
             <div id="menuLinks">
                 <div class="menuLink" id="catalogueLink" onmouseover="showDropdownList('1', 'catalogueLink')">
-                    <a href="catalogue.php?type=fa&p=1" class="menuPoint">Каталог</a>
+                    <a href="catalogue/index.php?type=fa&p=1" class="menuPoint">Каталог</a>
 					<img src="img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
@@ -249,15 +249,15 @@ if(isset($_SESSION['userID'])) {
                 if($categoriesCount[0] > 10) {
                     $categoriesResult = $mysqli->query("SELECT * FROM categories_new WHERE type = 'fa' ORDER BY name LIMIT 10");
                     while($categories = $categoriesResult->fetch_assoc()) {
-                        echo "<li><a href='catalogue.php?type=".$categories['type']."&c=".$categories['id']."&p=1'>".$categories['name']."</a></li>";
+                        echo "<li><a href='catalogue/index.php?type=".$categories['type']."&c=".$categories['id']."&p=1'>".$categories['name']."</a></li>";
                     }
 
-                    echo "<li><a href='catalogue.php?type=".$categories['type']."&p=1'>+ Другие разделы</a></li>";
+                    echo "<li><a href='catalogue/index.php?type=".$categories['type']."&p=1'>+ Другие разделы</a></li>";
                 } else {
 					$categoriesResult = $mysqli->query("SELECT * FROM categories_new WHERE type = 'fa' ORDER BY name");
 
                     while($categories = $categoriesResult->fetch_assoc()) {
-                        echo "<li><a href='catalogue.php?type=".$categories['type']."&c=".$categories['id']."&p=1'>".$categories['name']."</a></li>";
+                        echo "<li><a href='catalogue/index.php?type=".$categories['type']."&c=".$categories['id']."&p=1'>".$categories['name']."</a></li>";
                     }
                 }
             ?>

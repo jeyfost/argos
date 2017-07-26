@@ -25,7 +25,7 @@ function removeGood(id) {
 							$('#basketLabel').hide('fast');
 							$('#personalContent').hide('300');
 							setTimeout(function () {
-								$('#personalContent').html("<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='../catalogue.php?type=fa&p=1' style='color: #df4e47;'>из каталога</a></b>.</span>");
+								$('#personalContent').html("<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='../catalogue/index.php?type=fa&p=1' style='color: #df4e47;'>из каталога</a></b>.</span>");
 								$('#personalContent').show('fast');
 							}, 300);
 						}
@@ -107,7 +107,7 @@ function clearBasket() {
 					$('#basketLabel').html();
 					$('#basketLabel').hide('300');
 					setTimeout(function () {
-						$('#personalContent').html("<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='../catalogue.php?type=fa&p=1' style='color: #df4e47;'>из каталога</a></b>.</span>");
+						$('#personalContent').html("<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='../catalogue/index.php?type=fa&p=1' style='color: #df4e47;'>из каталога</a></b>.</span>");
 						$('#personalContent').show('fast');
 					}, 300);
 				} else {

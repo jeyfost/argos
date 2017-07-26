@@ -3,33 +3,33 @@ function showDropdownList(action, id, highlighted) {
         switch(id) {
             case "catalogueLink":
                 if(highlighted === "catalogueLinkFA") {
-                    $('#dropDownList').html("<div class='dropDownLink' style='background-color: #df4e47;'><a href='../catalogue.php?type=fa&p=1' id='catalogueLinkFAA' style='color: #fff'>Мебельная фурнитура</a></div>");
+                    $('#dropDownList').html("<div class='dropDownLink' style='background-color: #df4e47;'><a href='../catalogue/index.php?type=fa&p=1' id='catalogueLinkFAA' style='color: #fff'>Мебельная фурнитура</a></div>");
                 } else {
-					$('#dropDownList').html("<div class='dropDownLink' id='catalogueLinkFA' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkFA\", \"catalogueLinkFAA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkFA\", \"catalogueLinkFAA\")'><a href='../catalogue.php?type=fa&p=1' id='catalogueLinkFAA'>Мебельная фурнитура</a></div>");
+					$('#dropDownList').html("<div class='dropDownLink' id='catalogueLinkFA' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkFA\", \"catalogueLinkFAA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkFA\", \"catalogueLinkFAA\")'><a href='../catalogue/index.php?type=fa&p=1' id='catalogueLinkFAA'>Мебельная фурнитура</a></div>");
 				}
 
 				if(highlighted === "catalogueLinkEM") {
-					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' style='background-color: #df4e47;'><a href='../catalogue.php?type=em&p=1' id='catalogueLinkEMA' style='color: #fff'>Кромочные материалы</a></div>");
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' style='background-color: #df4e47;'><a href='../catalogue/index.php?type=em&p=1' id='catalogueLinkEMA' style='color: #fff'>Кромочные материалы</a></div>");
 				} else {
-					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkEM' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkEM\", \"catalogueLinkEMA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkEM\", \"catalogueLinkEMA\")'><a href='../catalogue.php?type=em&p=1' id='catalogueLinkEMA'>Кромочные материалы</a></div>");
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkEM' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkEM\", \"catalogueLinkEMA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkEM\", \"catalogueLinkEMA\")'><a href='../catalogue/index.php?type=em&p=1' id='catalogueLinkEMA'>Кромочные материалы</a></div>");
 				}
 
 				if(highlighted === "catalogueLinkCA") {
-					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' style='background-color: #df4e47;'><a href='../catalogue.php?type=ca&p=1' id='catalogueLinkCAA' style='color: #fff'>Аксессуары для штор</a></div>");
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' style='background-color: #df4e47;'><a href='../catalogue/index.php?type=ca&p=1' id='catalogueLinkCAA' style='color: #fff'>Аксессуары для штор</a></div>");
 				} else {
-					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkCA' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkCA\", \"catalogueLinkCAA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkCA\", \"catalogueLinkCAA\")'><a href='../catalogue.php?type=ca&p=1' id='catalogueLinkCAA'>Аксессуары для штор</a></div>");
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkCA' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkCA\", \"catalogueLinkCAA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkCA\", \"catalogueLinkCAA\")'><a href='../catalogue/index.php?type=ca&p=1' id='catalogueLinkCAA'>Аксессуары для штор</a></div>");
 				}
 
 				if(highlighted === "catalogueLinkHT") {
-					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' style='background-color: #df4e47;'><a href='../catalogue.php?type=ht&p=1' id='catalogueLinkHTA' style='color: #fff'>Ручной инструмент</a></div>");
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' style='background-color: #df4e47;'><a href='../catalogue/index.php?type=ht&p=1' id='catalogueLinkHTA' style='color: #fff'>Ручной инструмент</a></div>");
 				} else {
-					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkHT' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkHT\", \"catalogueLinkHTA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkHT\", \"catalogueLinkHTA\")'><a href='../catalogue.php?type=ht&p=1' id='catalogueLinkHTA'>Ручной инструмент</a></div>");
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkHT' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkHT\", \"catalogueLinkHTA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkHT\", \"catalogueLinkHTA\")'><a href='../catalogue/index.php?type=ht&p=1' id='catalogueLinkHTA'>Ручной инструмент</a></div>");
 				}
 
 				if(highlighted === "catalogueLinkDG") {
-					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' style='background-color: #df4e47;'><a href='../catalogue.php?type=dg&p=1' id='catalogueLinkDGA' style='color: #fff'>Сопутствующие товары</a></div>");
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' style='background-color: #df4e47;'><a href='../catalogue/index.php?type=dg&p=1' id='catalogueLinkDGA' style='color: #fff'>Сопутствующие товары</a></div>");
 				} else {
-					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkDG' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkDG\", \"catalogueLinkDGA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkDG\", \"catalogueLinkDGA\")'><a href='../catalogue.php?type=dg&p=1' id='catalogueLinkDGA'>Сопутствующие товары</a></div>");
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkDG' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkDG\", \"catalogueLinkDGA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkDG\", \"catalogueLinkDGA\")'><a href='../catalogue/index.php?type=dg&p=1' id='catalogueLinkDGA'>Сопутствующие товары</a></div>");
 				}
 
 				$('#dropDownList').html($('#dropDownList').html() + "<div style='clear: both;'></div>");

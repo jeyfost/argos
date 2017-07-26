@@ -171,7 +171,7 @@ if(isset($_SESSION['userID'])) {
 			</div>
 			<div id="menuLinks">
 				<div class="menuLink" id="catalogueLink" onmouseover="showDropdownList('1', 'catalogueLink')">
-					<a href="../catalogue.php?type=fa&p=1" class="menuPoint">Каталог</a>
+					<a href="../catalogue/index.php?type=fa&p=1" class="menuPoint">Каталог</a>
 					<img src="../img/system/downArrow.png" />
 					<span class="slash"> /</span>
 				</div>
@@ -209,15 +209,15 @@ if(isset($_SESSION['userID'])) {
 		<div id="menuIcon" onclick="showHideMobileMenu()"><img src="/img/system/mobile/menuIcon.png" title="Меню" /></div>
 		<div id="mobileMenu">
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="/catalogue.php?type=fa&p=1" class="mobileMenuPointBig">Каталог</a>
+				<a href="/catalogue/index.php?type=fa&p=1" class="mobileMenuPointBig">Каталог</a>
 				<div class="subMenu">
-					<a href="/catalogue.php?type=fa&p=1" class="mobileMenuPointSmall">- Мебельная фурнитура</a>
+					<a href="/catalogue/index.php?type=fa&p=1" class="mobileMenuPointSmall">- Мебельная фурнитура</a>
 					<br />
-					<a href="/catalogue.php?type=em&p=1" class="mobileMenuPointSmall">- Кромочные материалы</a>
+					<a href="/catalogue/index.php?type=em&p=1" class="mobileMenuPointSmall">- Кромочные материалы</a>
 					<br />
-					<a href="/catalogue.php?type=ca&p=1" class="mobileMenuPointSmall">- Аксессуары для штор</a>
+					<a href="/catalogue/index.php?type=ca&p=1" class="mobileMenuPointSmall">- Аксессуары для штор</a>
 					<br />
-					<a href="/catalogue.php?type=dg&p=1" class="mobileMenuPointSmall">- Сопутствующие товары</a>
+					<a href="/catalogue/index.php?type=dg&p=1" class="mobileMenuPointSmall">- Сопутствующие товары</a>
 				</div>
 			</div>
 			<hr />
@@ -368,7 +368,7 @@ if(isset($_SESSION['userID'])) {
 			switch($_REQUEST['section']) {
 				case 1:
 					if($basketQuantity[0] == 0) {
-						echo "<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='../catalogue.php?type=fa&p=1' style='color: #df4e47;'>из каталога</a></b>.</span>";
+						echo "<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='../catalogue/index.php?type=fa&p=1' style='color: #df4e47;'>из каталога</a></b>.</span>";
 					} else {
 						echo "<span style='font-size: 15px;'>Всего групп товаров в коризне: <b id='basketQuantityText'>".$basketQuantity[0]."</b></span><br /><br />";
 						$totalNormal = 0;

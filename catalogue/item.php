@@ -237,13 +237,13 @@ if(!empty($good['subcategory2'])) {
 			<div class="mobileMenuItem" style="margin-top: 0;">
 				<a href="index.php?type=fa&p=1" class="mobileMenuPointBig">Каталог</a>
 				<div class="subMenu">
-					<a href="../catalogue.php?type=fa&p=1" class="mobileMenuPointSmall">- Мебельная фурнитура</a>
+					<a href="../catalogue/index.php?type=fa&p=1" class="mobileMenuPointSmall">- Мебельная фурнитура</a>
 					<br />
-					<a href="../catalogue.php?type=em&p=1" class="mobileMenuPointSmall">- Кромочные материалы</a>
+					<a href="../catalogue/index.php?type=em&p=1" class="mobileMenuPointSmall">- Кромочные материалы</a>
 					<br />
-					<a href="../catalogue.php?type=ca&p=1" class="mobileMenuPointSmall">- Аксессуары для штор</a>
+					<a href="../catalogue/index.php?type=ca&p=1" class="mobileMenuPointSmall">- Аксессуары для штор</a>
 					<br />
-					<a href="../catalogue.php?type=dg&p=1" class="mobileMenuPointSmall">- Сопутствующие товары</a>
+					<a href="../catalogue/index.php?type=dg&p=1" class="mobileMenuPointSmall">- Сопутствующие товары</a>
 				</div>
 			</div>
 			<hr />
