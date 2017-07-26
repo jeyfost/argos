@@ -227,6 +227,8 @@ if(isset($_SESSION['userID'])) {
 					<br />
 					<a href="/about/gallery.php" class="mobileMenuPointSmall">- Фотогалерея</a>
 					<br />
+					<a href="/catalogue/index.php?type=ht&p=1" class="mobileMenuPointSmall">- Ручной инструмент</a>
+					<br />
 					<a href="/about/vacancies.php" class="mobileMenuPointSmall">- Вакансии</a>
 				</div>
 			</div>
