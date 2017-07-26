@@ -235,3 +235,11 @@ function deletePhoto(photo_id) {
 		});
 	}
 }
+
+function fadePhoto(id, action) {
+	if(action === 1) {
+		document.getElementById(id).style.opacity = ".7";
+	} else {
+		document.getElementById(id).style.opacity = "1";
+	}
+}

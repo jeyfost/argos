@@ -550,8 +550,8 @@ if(!empty($_REQUEST['id'])) {
 
 			foreach ($photos as $photo) {
 				echo "
-					<div class='goodPhotoContainer'>
-						<a href='../../img/catalogue/photos/big/".$photo['big']."' class='lightview' data-lightview-group='good'><img src='../../img/catalogue/photos/small/".$photo['small']."' class='goodPhoto' /></a>
+					<div class='goodPhotoContainer' onmouseover='fadePhoto(\"goodPhoto".$photo['id']."\", 1)' onmouseout='fadePhoto(\"goodPhoto".$photo['id']."\", 0)'>
+						<a href='../../img/catalogue/photos/big/".$photo['big']."' class='lightview' data-lightview-group='good'><img src='../../img/catalogue/photos/small/".$photo['small']."' class='goodPhoto' id='goodPhoto".$photo['id']."' /></a>
 						<i class='fa fa-trash font-awesome-link' aria-hidden='true' onclick='deletePhoto(\"".$photo['id']."\")'></i>
 					</div>
 				";
