@@ -138,6 +138,8 @@ if($codeCheck[0] == 0) {
 	$bpOK = 0;
 	$p = 0;
 	$pOK = 0;
+	$a = 0;
+	$aOK = 0;
 
 	if($mysqli->query("UPDATE catalogue_new SET name = '".$goodName."', description = '".$goodDescription."', price = '".$goodPrice."', code = '".$goodCode."', currency = '".$goodCurrency."', unit = '".$goodUnit."' WHERE id = '".$goodID."'")) {
 		if(!empty($_FILES['goodBlueprint']['tmp_name'])) {
@@ -191,46 +193,78 @@ if($codeCheck[0] == 0) {
 			}
 		}
 
-		if($p == 0 and $bp == 0) {
-			echo "ok";
-		}
+		if(count($_FILES['goodAdditionalPhotos']['name']) > 0) {
+			for($i = 0; $i < count($_FILES['goodAdditionalPhotos']['name']); $i++) {
+				$a++;
 
-		if($p == 1 and $bp == 1) {
-			if($pOK == 0 and $bpOK == 0) {
-				echo "photos";
-			}
+				if(!empty($_FILES['goodAdditionalPhotos']['tmp_name'][$i]) and $_FILES['goodAdditionalPhotos']['error'][$i] == 0 and substr($_FILES['goodAdditionalPhotos']['type'][$i], 0, 5) == "image") {
+					$bigPhotoName = randomName($_FILES['goodPhoto']['tmp_name'][$i]);
+					$bigPhotoDBName = $bigPhotoName.".".substr($_FILES['goodAdditionalPhotos']['name'][$i], count($_FILES['goodAdditionalPhotos']['name'][$i]) - 4, 4);
+					$bigPhotoUploadDir = "../../../img/catalogue/photos/big/";
+					$bigPhotoTmpName = $_FILES['goodAdditionalPhotos']['tmp_name'][$i];
+					$bigPhotoUpload = $bigPhotoUploadDir.$bigPhotoDBName;
 
-			if($pOK == 0 and $bpOK == 1) {
-				echo "photo";
-			}
+					$smallPhotoName = randomName($_FILES['goodPhoto']['tmp_name'][$i]);
+					$smallPhotoDBName = $smallPhotoName.".".substr($_FILES['goodAdditionalPhotos']['name'][$i], count($_FILES['goodAdditionalPhotos']['name'][$i]) - 4, 4);
+					$smallPhotoUploadDir = "../../../img/catalogue/photos/small/";
+					$smallPhotoTmpName = $_FILES['goodAdditionalPhotos']['tmp_name'][$i];
+					$smallPhotoUpload = $smallPhotoUploadDir.$smallPhotoDBName;
 
-			if ($pOK == 1 and $bpOK == 0) {
-				echo "blueprint";
-			}
+					if($mysqli->query("INSERT INTO goods_photos (good_id, small, big) VALUES ('".$goodID."', '".$smallPhotoDBName."', '".$bigPhotoDBName."')")) {
+						image_resize($smallPhotoTmpName, $smallPhotoUpload, 100);
+						move_uploaded_file($smallPhotoTmpName, $smallPhotoUpload);
+						move_uploaded_file($bigPhotoTmpName, $bigPhotoUpload);
 
-			if($pOK == 1 and $bpOK == 1) {
-				echo "ok";
-			}
-		}
-
-		if($p == 0) {
-			if($bp == 1 and $bpOK == 1) {
-				echo "ok";
-			}
-
-			if($bp == 1 and $bpOK == 0) {
-				echo "blueprint";
+						$aOK++;
+					}
+				}
 			}
 		}
 
-		if($bp == 0) {
-			if($p == 1 and $pOK == 1) {
+		if($a == $aOK) {
+			if($p == 0 and $bp == 0) {
 				echo "ok";
 			}
 
-			if($p == 1 and $pOK == 0) {
-				echo "photo";
+			if($p == 1 and $bp == 1) {
+				if($pOK == 0 and $bpOK == 0) {
+					echo "photos";
+				}
+
+				if($pOK == 0 and $bpOK == 1) {
+					echo "photo";
+				}
+
+				if ($pOK == 1 and $bpOK == 0) {
+					echo "blueprint";
+				}
+
+				if($pOK == 1 and $bpOK == 1) {
+					echo "ok";
+				}
 			}
+
+			if($p == 0) {
+				if($bp == 1 and $bpOK == 1) {
+					echo "ok";
+				}
+
+				if($bp == 1 and $bpOK == 0) {
+					echo "blueprint";
+				}
+			}
+
+			if($bp == 0) {
+				if($p == 1 and $pOK == 1) {
+					echo "ok";
+				}
+
+				if($p == 1 and $pOK == 0) {
+					echo "photo";
+				}
+			}
+		} else {
+			echo "additionalPhotos";
 		}
 	} else {
 		echo "failed";

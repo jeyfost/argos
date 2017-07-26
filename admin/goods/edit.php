@@ -119,6 +119,7 @@ if(!empty($_REQUEST['id'])) {
     <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
 	<link rel="stylesheet" type="text/css" href="../../js/lightview/css/lightview/lightview.css" />
+	<link rel="stylesheet" href="../../css/font-awesome-4.7.0/css/font-awesome.min.css">
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<!--[if lt IE 9]>
@@ -127,6 +128,7 @@ if(!empty($_REQUEST['id'])) {
 	<script type="text/javascript" src="../../js/lightview/js/spinners/spinners.min.js"></script>
 	<script type="text/javascript" src="../../js/lightview/js/lightview/lightview.js"></script>
 	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/notify.js"></script>
 	<script type="text/javascript" src="../../js/admin/admin.js"></script>
 	<script type="text/javascript" src="../../js/admin/goods/edit.js"></script>
 
@@ -360,7 +362,14 @@ if(!empty($_REQUEST['id'])) {
 													$unitResult = $mysqli->query("SELECT * FROM units ORDER BY full_name");
 													$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$id."'");
 
-													showForm($currencyResult, $unitResult, $goodResult);
+													$photos = array();
+													$photoResult = $mysqli->query("SELECT * FROM goods_photos WHERE good_id = '".$id."'");
+
+													while($photo = $photoResult->fetch_assoc()) {
+														array_push($photos, $photo);
+													}
+
+													showForm($currencyResult, $unitResult, $goodResult, $photos);
 												}
 											}
 											else {
@@ -392,7 +401,13 @@ if(!empty($_REQUEST['id'])) {
 												$unitResult = $mysqli->query("SELECT * FROM units ORDER BY full_name");
 												$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$id."'");
 
-												showForm($currencyResult, $unitResult, $goodResult);
+												$photos = array();
+												$photoResult = $mysqli->query("SELECT * FROM goods_photos WHERE good_id = '".$id."'");
+												while($photo = $photoResult->fetch_assoc()) {
+													array_push($photos, $photo);
+												}
+
+												showForm($currencyResult, $unitResult, $goodResult, $photos);
 											}
 										} else {
 											echo "<br /><br /><b>К сожалению, выбранный раздел не содержит товаров.</b>";
@@ -424,7 +439,13 @@ if(!empty($_REQUEST['id'])) {
 										$unitResult = $mysqli->query("SELECT * FROM units ORDER BY full_name");
 										$goodResult = $mysqli->query("SELECT * FROM catalogue_new WHERE id = '".$id."'");
 
-										showForm($currencyResult, $unitResult, $goodResult);
+										$photos = array();
+										$photoResult = $mysqli->query("SELECT * FROM goods_photos WHERE good_id = '".$id."'");
+										while($photo = $photoResult->fetch_assoc()) {
+											array_push($photos, $photo);
+										}
+
+										showForm($currencyResult, $unitResult, $goodResult, $photos);
 									}
 								} else {
 									echo "<br /><br /><b>К сожалению, выбранный раздел не содержит товаров.</b>";
@@ -505,7 +526,7 @@ if(!empty($_REQUEST['id'])) {
 	<div style="clear: both;"></div>
 
 	<?php
-		function showForm($currencyResult, $unitResult, $goodResult) {
+		function showForm($currencyResult, $unitResult, $goodResult, $photos) {
 			$good = $goodResult->fetch_assoc();
 
 			echo "
@@ -519,6 +540,25 @@ if(!empty($_REQUEST['id'])) {
 				<a href='../../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><span class='link' style='font-size: 14px;'>(нажмите для просмотра фотографии)</span></a>
 				<br />
 				<input type='file' id='goodPhotoInput' class='file' name='goodPhoto' />
+				<br /><br />
+				<label for='goodPhotoInput'>Дополнительные фотографии товара:</label>
+				<br />
+				<input type='file' id='goodAdditionalPhotosInput' class='file' name='goodAdditionalPhotos[]' multiple />
+				<br />
+				<div id='goodPhotosContainer'>
+			";
+
+			foreach ($photos as $photo) {
+				echo "
+					<div class='goodPhotoContainer'>
+						<a href='../../img/catalogue/photos/big/".$photo['big']."' class='lightview' data-lightview-group='good'><img src='../../img/catalogue/photos/small/".$photo['small']."' class='goodPhoto' /></a>
+						<i class='fa fa-trash font-awesome-link' aria-hidden='true' onclick='deletePhoto(\"".$photo['id']."\", \"".$good['id']."\")'></i>
+					</div>
+				";
+			}
+
+			echo "
+				</div>
 				<br /><br />
 				<label for='goodBlueprintInput'>Чертёж (если есть):</label>
 			";

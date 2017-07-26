@@ -98,6 +98,9 @@ function editGood() {
 						case "blueprint":
 							status = "При загрузке чертежа произошла ошибка.";
 							break;
+						case "additionalPhotos":
+							status = "При загрузке дополнительных фотографий произошла ошибка.";
+							break;
 						case "code":
 							status = "Товар с указанным артикулом уже существует.";
 							break;
@@ -108,6 +111,26 @@ function editGood() {
 							status = response;
 							break;
 					}
+
+					$.ajax({
+						type: "POST",
+						data: formData,
+						dataType: "json",
+						processData: false,
+						contentType: false,
+						url: "../../scripts/admin/goods/ajaxRebuildPhotosContainer.php",
+						success: function (code) {
+							$('#goodPhotosContainer').css("opacity", 0);
+
+							setTimeout(function () {
+								$('#goodPhotosContainer').html(code);
+								$('#goodPhotosContainer').css("opacity", 1);
+							}, 300)
+						},
+						error: function(xhr, textStatus) {
+							$.notify(textStatus + "; " + errorThrown, "error");
+						}
+					});
 
 					if(responseField.css('opacity') === 1) {
 						responseField.css('opacity', 0);
@@ -131,7 +154,7 @@ function editGood() {
 					}
 				},
 				error: function(xhr, textStatus) {
-					alert([xhr.status, textStatus]);
+					$.notify(textStatus + "; " + errorThrown, "error");
 				}
 			});
 		} else {
@@ -161,5 +184,56 @@ function editGood() {
 			responseField.html("<br />Заполните все поля.<br />");
 			responseField.css('opacity', 1);
 		}
+	}
+}
+
+function deletePhoto(photo_id, good_id) {
+	if(confirm("Вы действительно хотите удаить эту фотографию?")) {
+		$.ajax({
+			type: "POST",
+			data: {"photo_id": photo_id, "good_id": good_id},
+			url: "../../scripts/admin/goods/ajaxDeletePhoto.php",
+			success: function (response) {
+				switch (response) {
+					case "ok":
+						$.notify("Фотография была успешно удалена.", "success");
+						break;
+					case "failed":
+						$.notify("При удалении фотографии произошла ошибка.", "error");
+						break;
+					case "id":
+						$.notify("Эта фотография не относится к выбранному товару.", "error");
+						break;
+					default:
+						$.notify(response, "warn");
+						break;
+				}
+
+				var formData = new FormData($('#editForm').get(0));
+
+				$.ajax({
+					type: "POST",
+					data: formData,
+					dataType: "json",
+					processData: false,
+					contentType: false,
+					url: "../../scripts/admin/goods/ajaxRebuildPhotosContainer.php",
+					success: function (code) {
+						$('#goodPhotosContainer').css("opacity", 0);
+
+						setTimeout(function () {
+							$('#goodPhotosContainer').html(code);
+							$('#goodPhotosContainer').css("opacity", 1);
+						}, 300)
+					},
+					error: function(xhr, textStatus) {
+						$.notify(textStatus + "; " + errorThrown, "error");
+					}
+				});
+			},
+			error: function(xhr, textStatus) {
+				$.notify(textStatus + "; " + errorThrown, "error");
+			}
+		});
 	}
 }
