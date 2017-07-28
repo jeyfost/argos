@@ -575,7 +575,7 @@ if(!empty($_REQUEST['id'])) {
 				<input type='file' id='goodBlueprintInput' class='file' name='goodBlueprint' />
 				<br /><br />
 				<label for='goodCodeInput'>Артикул (<span class='redLink' onclick='setCode()'>установить первый незанятый</span>):</label>
-				<br />
+				<div id='preloaderContainer'></div>
 				<input type='number' min='1' step='1' id='goodCodeInput' name='goodCode' onblur='checkCode()' value='".$good['code']."' />
 				<br /><br />
 				<label for='currencySelect'>Выберите валюту прихода:</label>

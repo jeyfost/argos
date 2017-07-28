@@ -19,10 +19,12 @@ function setCode() {
 		type: "POST",
 		url: "../../scripts/admin/goods/ajaxSetCode.php",
 		beforeSend: function () {
-			$("#goodCodeInput").val("Идёт поиск кода...");
+			$('#preloaderContainer').html("<img src='../../img/system/spinner.gif' />");
+			$('#preloaderContainer').css('display', 'block');
 		},
 		success: function(response) {
 			$("#goodCodeInput").val(response);
+			$('#preloaderContainer').html("");
 		}
 	});
 }

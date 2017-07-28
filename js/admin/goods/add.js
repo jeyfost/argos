@@ -2,8 +2,13 @@ function setCode() {
 	$.ajax({
 		type: "POST",
 		url: "../../scripts/admin/goods/ajaxSetCode.php",
+		beforeSend: function () {
+			$('#preloaderContainer').html("<img src='../../img/system/spinner.gif' />");
+			$('#preloaderContainer').css('display', 'block');
+		},
 		success: function(response) {
 			$("#goodCodeInput").val(response);
+			$('#preloaderContainer').html("");
 		}
 	});
 }
