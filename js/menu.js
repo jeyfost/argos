@@ -105,7 +105,7 @@ $(document).ready(function() {
         hideDropDownList();
     });
 
-    $('.menuLink').mouseut(function() {
+    $('.menuLink').mouseout(function() {
         hideDropDownList();
     });
 
