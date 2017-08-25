@@ -67,7 +67,7 @@ a:hover.tooltips span { visibility: visible; opacity: 0.7; bottom: 30px; left: 5
 .goodDescription {margin-left: 37px; margin-top: 10px; font-size: 15px;}
 .radio {width: 16px; padding: 0; margin: 0; position: relative; float: left;}
 .radioLabel {margin: 5px auto auto 5px; position: relative; float: left;}
-.districtButton {position: relative; float: left; width: 120px; height: 40px; line-height: 40px; color: #fff; background-color: #df4e47; cursor: pointer; text-align: center; font-size: 14px;}
+.districtButton {display: inline-block; margin-right: 5px; margin-bottom: 5px; width: 120px; height: 40px; line-height: 40px; color: #fff; background-color: #df4e47; cursor: pointer; text-align: center; font-size: 14px;}
 .clientBlock {display: inline-block; border: 1px solid #ddd; padding: 5px; margin: 5px; text-align: center;}
 .clientCheckbox {position: relative; float: left; width: 30px; border-right: 1px solid #ddd;}
 .client {position: relative; float: left; padding-left: 5px; text-align: left;}

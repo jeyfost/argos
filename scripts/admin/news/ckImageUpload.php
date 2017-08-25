@@ -24,7 +24,7 @@ if($_FILES['upload']) {
 
 		move_uploaded_file($_FILES['upload']['tmp_name'], "../../../img/photos/content/".$name);
 
-		$full_path = 'https://localhost/test/editor/images/'.$name;
+		$full_path = $_SERVER['HTTP_HOST'].'/new/img/photos/content/'.$name;
 		$message = "Файл ".$_FILES['upload']['name']." загружен.";
 		$size = @getimagesize("../../../img/photos/content/".$name);
 

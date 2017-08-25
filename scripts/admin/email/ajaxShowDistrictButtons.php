@@ -42,7 +42,7 @@ if($location != '') {
 			$to = $to = ($i * 10 + 1)." — ".$j;;
 		}
 
-		echo "<div class='districtButton' id='db".$i."'"; if($i != 0) {echo " style='margin-left: 5px;'";} echo " onclick='sendDistrictEmail(\"".$i."\")'><span>".$to."</span></div>";
+		echo "<div class='districtButton' id='db".$i."' onclick='sendDistrictEmail(\"".$i."\")'><span>".$to."</span></div>";
 	}
 
 	echo "<div style='clear: both;'></div>";

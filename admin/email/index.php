@@ -169,7 +169,7 @@ if(isset($_SESSION['userID'])) {
 			<br />
 			<h2>&darr; Для продолжения работы выберите раздел</h2>
 			<a href="send.php"><input type="button" class="button" id="sendButton" value="Отправление" onmouseover="buttonChange('sendButton', 1)" onmouseout="buttonChange('sendButton', 0)" style="margin-left: 0;" /></a>
-			<a href="history.php"><input type="button" class="button" id="historyButton" value="История" onmouseover="buttonChange('historyButton', 1)" onmouseout="buttonChange('historyButton', 0)" /></a>z
+			<a href="history.php"><input type="button" class="button" id="historyButton" value="История" onmouseover="buttonChange('historyButton', 1)" onmouseout="buttonChange('historyButton', 0)" /></a>
 			<div style="clear: both;"></div>
 		</div>
 		<div style="clear: both;"></div>
