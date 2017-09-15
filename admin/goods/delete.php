@@ -262,7 +262,7 @@ if(!empty($_REQUEST['id'])) {
 			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/product.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Товары</span></a> > <a href="edit.php"><span class="breadCrumbsText">Удаление товаров</span></a><?php if(!empty($_REQUEST['id'])) {echo " > <a href='".$_SERVER['REQUEST_URI']."'><span class='breadCrumbsText'>".$goodName[0]."</span></a>";} ?></div></div>
 			<div style="clear: both;"></div>
 			<br />
-			<h2>Редактирование товаров</h2>
+			<h2>Удаление товаров</h2>
 			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" style="margin-left: 0;" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
 			<a href="edit.php"><input type="button" class="button" id="editButton" value="Редактирование" onmouseover="buttonChange('editButton', 1)" onmouseout="buttonChange('editButton', 0)" /></a>
 			<a href="delete.php"><input type="button" class="buttonActive" id="deleteButton" value="Удаление" /></a>
