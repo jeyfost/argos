@@ -211,6 +211,17 @@ if(empty($_REQUEST['id'])) {
 					?>
 				</select>
 				<br /><br />
+				<label for="groupSelect">Выберите группу:</label>
+				<br />
+				<select id="groupSelect" name="group">
+					<?php
+						$groupResult = $mysqli->query("SELECT * FROM filters ORDER BY name");
+						while($group = $groupResult->fetch_assoc()) {
+							echo "<option value='".$group['id']."'"; if($client['filter'] == $group['id']) {echo " selected";} echo ">".$group['name']."</option>";
+						}
+					?>
+				</select>
+				<br /><br />
 				<label for='phoneInput'>Номер телефона (опционально):</label>
 				<br />
 				<input type='text' id='phoneInput' name='phone' value='<?= $client['phone'] ?>' />

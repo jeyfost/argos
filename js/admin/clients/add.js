@@ -45,6 +45,8 @@ function addClient() {
 									case "district":
 										$.notify("Выберите область / город.", "error");
 										break;
+									case "group":
+										$.notify("Выберите группу.", "error");
 									default:
 										$.notify(response, "warn");
 										break;

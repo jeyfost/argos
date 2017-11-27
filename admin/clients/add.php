@@ -197,6 +197,18 @@ if(isset($_SESSION['userID'])) {
 					?>
 				</select>
 				<br /><br />
+				<label for="groupSelect">Выберите группу:</label>
+				<br />
+				<select id="groupSelect" name="group">
+					<option value="">- Выберите группу -</option>
+					<?php
+						$groupResult = $mysqli->query("SELECT * FROM filters ORDER BY name");
+						while($group = $groupResult->fetch_assoc()) {
+							echo "<option value='".$group['id']."'>".$group['name']."</option>";
+						}
+					?>
+				</select>
+				<br /><br />
 				<label for='phoneInput'>Номер телефона (опционально):</label>
 				<br />
 				<input type='text' id='phoneInput' name='phone' />

@@ -15,6 +15,7 @@ $name = $mysqli->real_escape_string($_POST['name']);
 $email = $mysqli->real_escape_string($_POST['email']);
 $phone = $mysqli->real_escape_string($_POST['phone']);
 $district = $_POST['district'];
+$group = $_POST['group'];
 $text = $_POST['text'];
 $hash = md5(rand(0, 1000000).md5(date("d-m-Y H:i:s")."; ".$email));
 
@@ -36,22 +37,26 @@ if($nameCheck[0] == 0) {
 
 	if($emailCheck[0] == 0) {
 		if($district != "") {
-			if($phone != '' and $phoneCheck[0] == 0) {
-				if($mysqli->query("INSERT INTO clients (email, name, location, hash, in_send, disactivation_date, phone, notes) VALUES ('".$email."', '".$name."', '".$district."', '".$hash."', '1', '0000-00-00 00:00:00', '".$phone."', '".$text."')")) {
-					echo "ok";
-				} else {
-					echo "failed";
-				}
-			} else {
-				if($phone == '') {
-					if($mysqli->query("INSERT INTO clients (email, name, location, hash, in_send, disactivation_date, notes) VALUES ('".$email."', '".$name."', '".$district."', '".$hash."', '1', '0000-00-00 00:00:00', '".$text."')")) {
+			if($group != "") {
+				if($phone != '' and $phoneCheck[0] == 0) {
+					if($mysqli->query("INSERT INTO clients (email, name, location, hash, in_send, disactivation_date, phone, notes, filter) VALUES ('".$email."', '".$name."', '".$district."', '".$hash."', '1', '0000-00-00 00:00:00', '".$phone."', '".$text."', '".$group."')")) {
 						echo "ok";
 					} else {
 						echo "failed";
 					}
 				} else {
-					echo "phone";
+					if($phone == '') {
+						if($mysqli->query("INSERT INTO clients (email, name, location, hash, in_send, disactivation_date, notes, filter) VALUES ('".$email."', '".$name."', '".$district."', '".$hash."', '1', '0000-00-00 00:00:00', '".$text."', '".$group."')")) {
+							echo "ok";
+						} else {
+							echo "failed";
+						}
+					} else {
+						echo "phone";
+					}
 				}
+			} else {
+				echo "group";
 			}
 		} else {
 			echo "district";

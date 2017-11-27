@@ -16,6 +16,7 @@ $email = $mysqli->real_escape_string($_POST['email']);
 $phone = $mysqli->real_escape_string($_POST['phone']);
 $id = $mysqli->real_escape_string($_POST['id']);
 $district = $_POST['district'];
+$group = $_POST['group'];
 $text = $_POST['text'];
 
 if($text == "<p><br></p>") {
@@ -47,14 +48,14 @@ if($nameCheck[0] == 0) {
 		if($phone != '' and $phoneCheck[0] == 0) {
 			if($client['in_send'] == 0) {
 				if($inSend == 1) {
-					if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', in_send = '1', disactivation_date = '0000-00-00 00:00:00', phone = '".$phone."', notes = '".$text."' WHERE id = '".$id."'"))
+					if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', in_send = '1', disactivation_date = '0000-00-00 00:00:00', phone = '".$phone."', notes = '".$text."', filter = '".$group."' WHERE id = '".$id."'"))
 					{
 						echo "ok";
 					} else {
 						echo "failed";
 					}
 				} else {
-					if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', phone = '".$phone."', notes = '".$text."' WHERE id = '".$id."'"))
+					if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', phone = '".$phone."', notes = '".$text."', filter = '".$group."' WHERE id = '".$id."'"))
 					{
 						echo "ok";
 					} else {
@@ -63,14 +64,14 @@ if($nameCheck[0] == 0) {
 				}
 			} else {
 				if($inSend == 0) {
-					if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', in_send = '0', disactivation_date = '".date("Y-m-d H:i:s")."', phone = '".$phone."', notes = '".$text."' WHERE id = '".$id."'"))
+					if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', in_send = '0', disactivation_date = '".date("Y-m-d H:i:s")."', phone = '".$phone."', notes = '".$text."', filter = '".$group."' WHERE id = '".$id."'"))
 					{
 						echo "ok";
 					} else {
 						echo "failed";
 					}
 				} else {
-					if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', phone = '".$phone."', notes = '".$text."' WHERE id = '".$id."'"))
+					if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', phone = '".$phone."', notes = '".$text."', filter = '".$group."' WHERE id = '".$id."'"))
 					{
 						echo "ok";
 					} else {
@@ -82,14 +83,14 @@ if($nameCheck[0] == 0) {
 			if($phone == '') {
 				if($client['in_send'] == 0) {
 					if($inSend == 1) {
-						if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', in_send = '1', disactivation_date = '0000-00-00 00:00:00', phone = '".$phone."', notes = '".$text."' WHERE id = '".$id."'"))
+						if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', in_send = '1', disactivation_date = '0000-00-00 00:00:00', phone = '".$phone."', notes = '".$text."', filter = '".$group."' WHERE id = '".$id."'"))
 						{
 							echo "ok";
 						} else {
 							echo "failed";
 						}
 					} else {
-						if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', phone = '".$phone."', notes = '".$text."' WHERE id = '".$id."'"))
+						if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', phone = '".$phone."', notes = '".$text."', filter = '".$group."' WHERE id = '".$id."'"))
 						{
 							echo "ok";
 						} else {
@@ -98,14 +99,14 @@ if($nameCheck[0] == 0) {
 					}
 				} else {
 					if($inSend == 0) {
-						if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', in_send = '0', disactivation_date = '".date("Y-m-d H:i:s")."', phone = '".$phone."', notes = '".$text."' WHERE id = '".$id."'"))
+						if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', in_send = '0', disactivation_date = '".date("Y-m-d H:i:s")."', phone = '".$phone."', notes = '".$text."', filter = '".$group."' WHERE id = '".$id."'"))
 						{
 							echo "ok";
 						} else {
 							echo "failed";
 						}
 					} else {
-						if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', phone = '".$phone."', notes = '".$text."' WHERE id = '".$id."'"))
+						if($mysqli->query("UPDATE clients SET email = '".$email."', name = '".$name."', location = '".$_POST['district']."', phone = '".$phone."', notes = '".$text."', filter = '".$group."' WHERE id = '".$id."'"))
 						{
 							echo "ok";
 						} else {
