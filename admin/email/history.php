@@ -231,7 +231,11 @@ if(!empty($_REQUEST['id'])) {
 									$cResult = $mysqli->query("SELECT * FROM clients WHERE id = '".$client[$i]."'");
 									$c = $cResult->fetch_assoc();
 
-									$sendTo .= $c['name'];
+									if(!empty($c['name'])) {
+										$sendTo .= $c['name'];
+									} else {
+										$sendTo .= $c['email'];
+									}
 
 									if($i < count($client) - 1) {
 										$sendTo .= "<br /><hr />";
@@ -258,7 +262,11 @@ if(!empty($_REQUEST['id'])) {
 									$cResult = $mysqli->query("SELECT * FROM clients WHERE id = '".$client[$i]."'");
 									$c = $cResult->fetch_assoc();
 
-									$sendTo .= $c['name'];
+									if(!empty($c['name'])) {
+										$sendTo .= $c['name'];
+									} else {
+										$sendTo .= $c['email'];
+									}
 
 									if($i < count($client) - 1) {
 										$sendTo .= "<br /><hr />";
