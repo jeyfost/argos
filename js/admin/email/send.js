@@ -50,6 +50,25 @@ function oneForm() {
 	}, 300);
 }
 
+function filterForm() {
+	$('#email').hide('300');
+
+	setTimeout(function () {
+		$.ajax({
+			type: "POST",
+			url: "../../scripts/admin/email/ajaxShowFilterForm.php",
+			success: function (html) {
+				$('#email').html(html);
+				CKEDITOR.replace("text");
+				$('#email').show('300');
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				$.notify(textStatus + "; " + errorThrown, "error");
+			}
+		});
+	}, 300);
+}
+
 function sendEmail() {
 	var formData = new FormData($('#sendForm').get(0));
 
@@ -241,6 +260,63 @@ function sendDistrictEmail(i) {
 	}
 }
 
+function sendFilterEmail(i) {
+	var formData = new FormData($('#sendForm').get(0));
+	var text = document.getElementsByTagName("iframe")[0].contentDocument.getElementsByTagName("body")[0].innerHTML;
+	var subject = $('#subjectInput').val();
+	var id = "db" + i;
+
+	formData.append("text", text);
+	formData.append("parameter", i);
+
+	if(subject !== '') {
+		if(text !== '' && text !== "<p><br></p>") {
+			$.ajax({
+				type: "POST",
+				data: formData,
+				dataType: "json",
+				processData: false,
+				contentType: false,
+				url: "../../scripts/admin/email/ajaxSendFilterEmail.php",
+				beforeSend: function () {
+					$.notify("Письма отправляются...", "info");
+				},
+				success: function (response) {
+					switch(response) {
+						case "ok":
+							$.notify("Письма успешно отправлены.", "success");
+							break;
+						case "failed":
+							$.notify("При отправке писем произошла ошибка.", "error");
+							break;
+						case "files":
+							$.notify("Некоторые файлы имеют недопустимый формат.", "error");
+							break;
+						case "partly":
+							$.notify("Не все письма были успешно отправлены.", "warn");
+							break;
+						default:
+							$.notify(response, "warn");
+							break;
+					}
+
+					$('#' + id).css('color', '#df4e47');
+					$('#' + id).css('background-color', '#ddd');
+					$('#' + id).css('cursor', 'default');
+					$('#' + id).removeAttribute('onclick');
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					$.notify(textStatus + "; " + errorThrown, "error");
+				}
+			});
+		} else {
+			$.notify("Введите текст сообщения", "error");
+		}
+	} else {
+		$.notify("Введите тему сообщения", "error");
+	}
+}
+
 function loadDistrictButtons() {
 	var formData = new FormData($('#sendForm').get(0));
 
@@ -263,6 +339,39 @@ function loadDistrictButtons() {
 			$.notify(textStatus + "; " + errorThrown, "error");
 		}
 	});
+}
+
+function loadDistrictButtonsFilter() {
+	var district = $('#districtSelect').val();
+	var group = $('#groupSelect').val();
+
+	if(district !== "") {
+		if(group !== "") {
+			$.ajax({
+				type: "POST",
+				data: {
+					"district": district,
+					"group": group
+				},
+				url: "../../scripts/admin/email/ajaxShowDistrictButtonsFilter.php",
+				success: function (response) {
+					$('#districtButtons').hide('300');
+
+					setTimeout(function () {
+						$('#districtButtons').html(response);
+						$('#districtButtons').show('300');
+					}, 300);
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					$.notify(textStatus + "; " + errorThrown, "error");
+				}
+			});
+		} else {
+			$('#districtButtons').hide('300');
+		}
+	} else {
+		$('#districtButtons').hide('300');
+	}
 }
 
 function loadClientsGrid() {

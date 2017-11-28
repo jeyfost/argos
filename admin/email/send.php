@@ -186,6 +186,10 @@ if(isset($_SESSION['userID'])) {
 				<div style="clear: both;"></div>
 				<input type="radio" class="radio" id="oneRadio" name="recipient" value="one" onclick="oneForm()" />
 				<label for="oneRadio" class="radioLabel">Отправить одному клиенту</label>
+				<br />
+				<div style="clear: both;"></div>
+				<input type="radio" class="radio" id="filterRadio" name="recipient" value="filter" onclick="filterForm()" />
+				<label for="filterRadio" class="radioLabel">Фильтры</label>
 				<br /><br />
 				<div id="email"></div>
 			</form>

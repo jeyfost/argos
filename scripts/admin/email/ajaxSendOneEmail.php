@@ -33,7 +33,7 @@ if(!empty($_FILES['attachment']['tmp_name'][0])) {
 if($filesErrors == 0) {
 	$from = "ЧТУП Аргос-ФМ <".CONTACT_EMAIL.">";
 	$subject = $mysqli->real_escape_string($_POST['subject']);
-	$reply = CONTACT_EMAIL;
+	$reply = REPLY_EMAIL;
 	$text = $_POST['text'];
 	$to = $mysqli->real_escape_string($_POST['email']);
 

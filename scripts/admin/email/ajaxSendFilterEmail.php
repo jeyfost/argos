@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: jeyfost
- * Date: 05.04.2017
- * Time: 8:10
+ * Date: 28.11.2017
+ * Time: 8:51
  */
 
 include("../../connect.php");
@@ -14,9 +14,6 @@ ob_start();
 $filesErrors = 0;
 $filesCount = 0;
 $fileNames = "";
-
-$c = substr($_POST['clients'], 0, strlen($_POST['clients']) - 1);
-$client = explode(';', $c);
 
 if(!empty($_FILES['attachment']['tmp_name'][0])) {
 	for($i = 0; $i < count($_FILES['attachment']['name']); $i++) {
@@ -35,6 +32,7 @@ if(!empty($_FILES['attachment']['tmp_name'][0])) {
 
 if($filesErrors == 0) {
 	$location = $mysqli->real_escape_string($_POST['district']);
+	$group = $mysqli->real_escape_string($_POST['group']);
 	$from = "ЧТУП Аргос-ФМ <".CONTACT_EMAIL.">";
 	$subject = $mysqli->real_escape_string($_POST['subject']);
 	$reply = REPLY_EMAIL;
@@ -67,20 +65,23 @@ if($filesErrors == 0) {
 	$baseMessage = $message;
 	$mailCount = 0;
 	$mailSuccessCount = 0;
+	$c = "";
+	$start = $p * 10 + 1;
 
-	for($i = 0; $i < count($client); $i++) {
-		$customerResult = $mysqli->query("SELECT * FROM clients WHERE id = '".$client[$i]."'");
-		$customer = $customerResult->fetch_assoc();
-
-		$fullMessage = $baseMessage."--PHP-mixed-".$hash."\n\n"."--------------------\n\nВесь ассортимент продукции можно посмотреть на нашем сайте: www.argos-fm.by\nА также уточнить наличие по телефону: +375 (222) 707-707 или посетить нас по адресу: Республика Беларусь, г. Могилёв, ул. Залуцкого, д.21\n\nМы всегда рады сотрудничеству с Вами!\n\nЕсли вы не хотите в дальнейшем получать эту рассылку, вы можете отписаться, перейдя по <a href='https://argos-fm.by/test/scripts/admin/email/stop.php?hash=".$customer['hash']."' target='_blank'>это ссылке</a>.\n";
+	$clientResult = $mysqli->query("SELECT * FROM clients WHERE location = '".$location."' AND in_send = '1' AND filter = '".$group."' LIMIT ".$start.", 10");
+	while($client = $clientResult->fetch_assoc()) {
+		$fullMessage = $baseMessage."--PHP-mixed-".$hash."\n\n"."--------------------\n\nВесь ассортимент продукции можно посмотреть на нашем сайте: www.argos-fm.by\nА также уточнить наличие по телефону: +375 (222) 707-707 или посетить нас по адресу: Республика Беларусь, г. Могилёв, ул. Залуцкого, д.21\n\nМы всегда рады сотрудничеству с Вами!\n\nЕсли вы не хотите в дальнейшем получать эту рассылку, вы можете отписаться, перейдя по <a href='https://argos-fm.by/test/scripts/admin/email/stop.php?hash=".$client['hash']."' target='_blank'>это ссылке</a>.\n";
 		$mailCount++;
 
-		if(mail($customer['email'], $subject, $fullMessage, $headers)) {
+		if(mail($client['email'], $subject, $fullMessage, $headers)) {
 			$mailSuccessCount++;
+			$c .= $client['id'].";";
 		}
 	}
 
-	$mysqli->query("INSERT INTO mail_result (subject, text, send_to, date, count, send, files_count, filenames) VALUES ('".$subject."', '".$text."', '".$c."', '".date('Y-m-d H:i:s')."', '".$mailCount."', '".$mailSuccessCount."', '".$filesCount."', '".$fileNames."')");
+	$c = substr($c, 0, strlen($c) - 1);
+
+	$mysqli->query("INSERT INTO mail_result (subject, text, send_to, date, count, send, files_count, filenames) VALUES ('".$subject."', '".$text."', 'district ".$location.": ".$c."', '".date('Y-m-d H:i:s')."', '".$mailCount."', '".$mailSuccessCount."', '".$filesCount."', '".$fileNames."')");
 
 	if($mailSuccessCount > 0) {
 		if($mailSuccessCount == $mailCount) {
@@ -94,7 +95,6 @@ if($filesErrors == 0) {
 } else {
 	echo "files";
 }
-
 $req = ob_get_contents();
 ob_end_clean();
 echo json_encode($req);
