@@ -523,7 +523,8 @@ if(!empty($good['subcategory2'])) {
 								echo "
 									<td style='width: 65px; vertical-align: top;'>
 										<div class='itemPurchase'>
-											<img src='/img/system/toBasket.png' id='toBasketIMG".$id."' class='toBasketIMG' onmouseover='changeIcon(\"toBasketIMG".$id."\", \"toBasketRed.png\", 1)' onmouseout='changeIcon(\"toBasketIMG".$id."\", \"toBasket.png\", 1)' title='Добавить в корзину' onclick='addToBasket(\"".$id."\", \"quantityInput".$id."\", \"addingResult".$id."\")' />
+											<span onclick='addToBasket(\"".$id."\", \"quantityInput".$id."\", \"addingResult".$id."\")' class='addToBasketFont'>Добавить в корзину</span>
+											<br /><br />
 											<form method='post'>
 												<label for='quantityInput".$id."'>Кол-во в ".$unit['in_name'].":</label>
 												<input type='number' id='quantityInput".$id."' min='1' step='1' value='1' class='itemQuantityInput' />
