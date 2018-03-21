@@ -11,7 +11,7 @@ if($userResult->num_rows == 0) {
 } else {
 	while($user = $userResult->fetch_assoc()) {
 		echo "
-			<a class='searchLink' href='personal.php?section=2&user=".$user['id']."'>
+			<a class='searchLink' href='/personal/personal.php?section=2&user=".$user['id']."'>
 				<div class='searchItem' style='border: 1px solid #ddd;'>
 				<div style='width: 100%; height: 10px;'></div>
 					<table style='position: relative; margin: 0 auto;'>

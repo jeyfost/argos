@@ -38,7 +38,7 @@ if($numbers > 1) {
 		if($page < $numbers) {
 			echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: pointer;' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")' onclick='goToPage(\"2\", \"".$id."\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div>";
 		} else {
-			echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"../img/cursor/no.cur\"), auto;'<span class='goodStyle'>Следующая</span></div>";
+			echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"/img/cursor/no.cur\"), auto;'<span class='goodStyle'>Следующая</span></div>";
 		}
 	} else {
 		if($page < 5) {
@@ -52,11 +52,11 @@ if($numbers > 1) {
 				echo "<div id='pb".$i."' "; if($i == $page) {echo "class='pageNumberBlockActive'";} else {echo "class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$i."\", \"pbt".$i."\")' onmouseout='pageBlock(0, \"pb".$i."\", \"pbt".$i."\")' onclick='goToPage(\"".$i."\", \"".$id."\")'";} echo "><span "; if($i == $page) {echo "class='goodStyleWhite'";} else {echo "class='goodStyleRed' id='pbt".$i."'";} echo ">".$i."</span></div>";
 			}
 
-			echo "<div class='pageNumberBlock' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>";
+			echo "<div class='pageNumberBlock' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>";
 			echo "<div id='pb".$numbers."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$numbers."\", \"pbt".$numbers."\")' onclick='goToPage(\"".$numbers."\", \"".$id."\")' onmouseout='pageBlock(0, \"pb".$numbers."\", \"pbt".$numbers."\")'><span class='goodStyleRed' id='pbt".$numbers."'>".$numbers."</span></div>";
 
 			if($page == $numbers) {
-				echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
+				echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
 			} else {
 				echo "<div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")' onclick='goToPage(\"".$numbers."\", \"".$id."\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div>";
 			}
@@ -91,7 +91,7 @@ if($numbers > 1) {
 				}
 
 				if($page == $numbers) {
-					echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
+					echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
 				} else {
 					echo "<div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")' onclick='goToPage(\"".($page + 1)."\", \"".$id."\")' style='cursor: pointer;'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div>";
 				}

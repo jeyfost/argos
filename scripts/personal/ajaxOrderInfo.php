@@ -129,11 +129,11 @@ while($order = $orderResult->fetch_assoc()) {
 					<tr>
 						<td style='width: 100px;' valign='top'>
 							<div class='catalogueIMG' onmouseover='actionIcon(\"actionIcon".$good['id']."\", 1)' onmouseout='actionIcon(\"actionIcon".$good['id']."\", 0)'>
-								<a href='../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='../img/catalogue/small/".$good['small']."' /></a>
+								<a href='/img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='/img/catalogue/small/".$good['small']."' /></a>
 				";
 
 				if($active > 0) {
-					echo "<img src='../img/system/action.png' class='actionIMG' id='actionIcon".$good['id']."' />";
+					echo "<img src='/img/system/action.png' class='actionIMG' id='actionIcon".$good['id']."' />";
 				}
 
 				echo "
@@ -143,7 +143,7 @@ while($order = $orderResult->fetch_assoc()) {
 							<div class='catalogueInfo'>
 								<div class='catalogueName'>
 									<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
-									<div style='margin-left: 15px; font-size: 17px;'><a href='../catalogue/item.php?id=".$catalogue['id']."' class='catalogueNameLink'>".$good['name']."</a></div>
+									<div style='margin-left: 15px; font-size: 17px;'><a href='/catalogue/item.php?id=".$catalogue['id']."' class='catalogueNameLink'>".$good['name']."</a></div>
 									<div style='clear: both;'></div>
 								</div>
 							<div class='catalogueDescription'>
@@ -166,7 +166,7 @@ while($order = $orderResult->fetch_assoc()) {
 				";
 
 				if($good['sketch'] != '') {
-					echo "<br /><br /><a href='../img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-options='skin: \"light\"'><span class='sketchFont'>Чертёж</span></a>";
+					echo "<br /><br /><a href='/img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-options='skin: \"light\"'><span class='sketchFont'>Чертёж</span></a>";
 				}
 
 				echo "
@@ -176,7 +176,7 @@ while($order = $orderResult->fetch_assoc()) {
 					</td>
 					<td style='width: 65px; vertical-align: top;'>
 						<div class='itemPurchase'>
-							<img src='../img/system/delete.png' id='deleteIMG".$good['id']."' style='cursor: pointer; float: right;' title='Убрать товар из заказа' onmouseover='changeIcon(\"deleteIMG".$good['id']."\", \"deleteRed.png\", 1)' onmouseout='changeIcon(\"deleteIMG".$good['id']."\", \"delete.png\", 1)' onclick='removeGoodFromOrder(\"".$good['id']."\", \"".$id."\")' />
+							<img src='/img/system/delete.png' id='deleteIMG".$good['id']."' style='cursor: pointer; float: right;' title='Убрать товар из заказа' onmouseover='changeIcon(\"deleteIMG".$good['id']."\", \"deleteRed.png\", 1)' onmouseout='changeIcon(\"deleteIMG".$good['id']."\", \"delete.png\", 1)' onclick='removeGoodFromOrder(\"".$good['id']."\", \"".$id."\")' />
 							<br /><br />
 							<form method='post'>
 								<label for='quantityInput".$good['id']."'>Кол-во в ".$unit['in_name'].":</label>
