@@ -5,24 +5,24 @@ function addToBasket(good_id, input, response_field) {
 		$.ajax({
 			type: 'POST',
 			data: {"goodID": good_id, "quantity": quantity},
-			url: "scripts/catalogue/ajaxAddToBasket.php",
+			url: "/scripts/catalogue/ajaxAddToBasket.php",
 			success: function(response) {
 				$.ajax({
 					type: 'POST',
 					data: {"goodID": good_id},
-					url: 'scripts/catalogue/ajaxCheckBasket.php',
+					url: '/scripts/catalogue/ajaxCheckBasket.php',
 					success: function(result) {
-						if (result == "a") {
-							$('#basketIcon').html("<a href='personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: 1' id='basketIMG' /><div id='basketLabel'>1</div></a>");
+						if (result === "a") {
+							$('#basketIcon').html("<a href='/personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\")' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\")'><img src='/img/system/basketFull.png' title='Корзина | Товаров в корзине: 1' id='basketIMG' /><div id='basketLabel'>1</div></a>");
 						} else {
-							$('#basketIcon').html("<a href='personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 0)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 0)'><img src='img/system/basketFull.png' title='Корзина | Товаров в корзине: " + result + "' id='basketIMG' /><div id='basketLabel'>" + result + "</div></a>");
+							$('#basketIcon').html("<a href='/personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\")' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\")'><img src='/img/system/basketFull.png' title='Корзина | Товаров в корзине: " + result + "' id='basketIMG' /><div id='basketLabel'>" + result + "</div></a>");
 						}
 					}
 				});
 
 				switch(response) {
 					case "a":
-						if(document.getElementById(response_field).style.opacity == 1) {
+						if(document.getElementById(response_field).style.opacity === 1) {
 							document.getElementById(response_field).style.opacity = 0;
 							setTimeout(function() {
 								document.getElementById(response_field).style.color = "#53acff";
@@ -36,7 +36,7 @@ function addToBasket(good_id, input, response_field) {
 						}
 						break;
 					case "b":
-						if(document.getElementById(response_field).style.opacity == 1) {
+						if(document.getElementById(response_field).style.opacity === 1) {
 							document.getElementById(response_field).style.opacity = 0;
 							setTimeout(function() {
 								document.getElementById(response_field).style.color = "#df4e47";
@@ -50,7 +50,7 @@ function addToBasket(good_id, input, response_field) {
 						}
 						break;
 					case "c":
-						if(document.getElementById(response_field).style.opacity == 1) {
+						if(document.getElementById(response_field).style.opacity === 1) {
 							document.getElementById(response_field).style.opacity = 0;
 							setTimeout(function() {
 								document.getElementById(response_field).style.color = "#53acff";
@@ -68,7 +68,7 @@ function addToBasket(good_id, input, response_field) {
 			}
 		});
 	} else {
-		if(document.getElementById(response_field).style.opacity == 1) {
+		if(document.getElementById(response_field).style.opacity === 1) {
 			document.getElementById(response_field).style.opacity = 0;
 			setTimeout(function() {
 				document.getElementById(response_field).style.color = "#df4e47";

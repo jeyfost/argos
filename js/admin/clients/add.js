@@ -15,7 +15,7 @@ function addClient() {
 			$.ajax({
 				type: "POST",
 				data: {"email": email},
-				url: "../../scripts/admin/email/ajaxValidateEmail.php",
+				url: "/scripts/admin/email/ajaxValidateEmail.php",
 				success: function (result) {
 					if(result === "ok") {
 						$.ajax({
@@ -24,7 +24,7 @@ function addClient() {
 							dataType: "json",
 							processData: false,
 							contentType: false,
-							url: "../../scripts/admin/clients/ajaxAddClient.php",
+							url: "/scripts/admin/clients/ajaxAddClient.php",
 							success: function (response) {
 								switch(response) {
 									case "ok":

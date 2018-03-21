@@ -1,9 +1,9 @@
 function setCode() {
 	$.ajax({
 		type: "POST",
-		url: "../../scripts/admin/goods/ajaxSetCode.php",
+		url: "/scripts/admin/goods/ajaxSetCode.php",
 		beforeSend: function () {
-			$('#preloaderContainer').html("<img src='../../img/system/spinner.gif' />");
+			$('#preloaderContainer').html("<img src='/img/system/spinner.gif' />");
 			$('#preloaderContainer').css('display', 'block');
 		},
 		success: function(response) {
@@ -49,19 +49,19 @@ function addGood() {
 				type: "POST",
 				data: formData,
 				dataType: "json",
-				url: "../../scripts/admin/goods/ajaxAddGood.php",
+				url: "/scripts/admin/goods/ajaxAddGood.php",
 				contentType: false,
 				processData: false,
 				beforeSend: function() {
 					if(responseField.css('opacity') === 1) {
 						responseField.css('opacity', 0);
 						setTimeout(function() {
-							responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
+							responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 							responseField.css('opacity', 1);
 						}, 300);
 					} else {
 						responseField.css('color', '#df4e47');
-						responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
+						responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 						responseField.css('opacity', 1);
 					}
 				},

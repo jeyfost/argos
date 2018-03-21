@@ -16,17 +16,17 @@ function addNews() {
 					dataType: "json",
 					processData: false,
 					contentType: false,
-					url: '../../scripts/admin/news/ajaxAddNews.php',
+					url: '/scripts/admin/news/ajaxAddNews.php',
 					beforeSend: function() {
 						if(responseField.css('opacity') === 1) {
 							responseField.css('opacity', 0);
 							setTimeout(function() {
-								responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
+								responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 								responseField.css('opacity', 1);
 							}, 300);
 						} else {
 							responseField.css('color', '#df4e47');
-							responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
+							responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 							responseField.css('opacity', 1);
 						}
 					},

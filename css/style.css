@@ -8,7 +8,7 @@ table {border: none; transition: .3s;}
 td {padding-left: 10px; padding-right: 10px;}
 select {height: 40px; line-height: 40px;}
 
-#breadCrumbs a span:hover, .basicLink:hover, .copy a:hover, p a:hover, .searchLink:hover {text-decoration: none;}
+#breadCrumbs a span:hover, .basicLink:hover, .copy a:hover, p a:hover, .searchLink:hover, .addToBasketFont:hover {text-decoration: none;}
 
 .catalogueItemTextDecorated:hover {text-decoration: underline;}
 .catalogueDescription a span:hover, .sketchFont:hover, td a:hover, span b a:hover, .tdLink:hover {text-decoration: underline;}
@@ -68,7 +68,7 @@ select {height: 40px; line-height: 40px;}
     #changeGoodPriceForm {position: relative; float: left;}
     #searchList {position: absolute; top: 0; right: 0; width: 480px; z-index: 5; background-color: #fff; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); padding: 10px; display: none; overflow: hidden;}
     #space {width: 100%; height: 80px;}
-    #basketLabel {position: absolute; width: 15px; height: 15px; line-height: 15px; background: url('../img/system/round.png') no-repeat; top: 15px; left: 20px; color: #fff; font-size: 8px; text-align: center;}
+    #basketLabel {position: absolute; width: 15px; height: 15px; line-height: 15px; background: url('/img/system/round.png') no-repeat; top: 15px; left: 20px; color: #fff; font-size: 8px; text-align: center;}
     #personalMenu {position: relative; float: left; margin-top: 20px; width: 19%; padding: 10px;}
     #innerSearch {position: relative; float: left;}
     #innerSearchInput {width: 180px; height: 20px; line-height: 20px; color: #777;}
@@ -115,8 +115,8 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 
 #menu {width: 100%; height: 60px; position: fixed; top: 0; left: 0; z-index: 10; background-color: #fff;}
 #footer {width: 100%; height: 60px; position: fixed; bottom: 0; left: 0; z-index: 4; background-color: #fff; font-family: Verdana, Arial, sans-serif; font-size: 12px;}
-#menuShadow {width: 100%; height: 14px; background: url(../img/system/shadow.png) 50% 0 no-repeat; position: fixed; left: 0; top: 60px; z-index: 11;}
-#footerShadow {width: 100%; height: 14px; background: url(../img/system/shadowInverted.png) 50% 0 no-repeat; position: fixed; left: 0; bottom: 60px; z-index: 4;}
+#menuShadow {width: 100%; height: 14px; background: url(/img/system/shadow.png) 50% 0 no-repeat; position: fixed; left: 0; top: 60px; z-index: 11;}
+#footerShadow {width: 100%; height: 14px; background: url(/img/system/shadowInverted.png) 50% 0 no-repeat; position: fixed; left: 0; bottom: 60px; z-index: 4;}
 #mainImg {width: 100%; height: calc(100% - 120px); height: -moz-calc(100% - 120px); max-height: calc(100% - 120px); max-height: -moz-calc(100% - 120px); overflow: hidden; position: absolute; left: 0; top: 60px; z-index: 1;}
 #logo {float: left; margin-top: 5px;}
 #centralBlock {position: relative; margin: 80px auto 0 auto; width: 70%; z-index: 1;}
@@ -183,3 +183,4 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .previewPhoto {display: inline-block; vertical-align: middle; transition: .3s; width: 100px;}
 .recomendedGoodContainer {padding: 10px; display: inline-block; text-align: center; transition: .3s; border: 1px solid #fff; max-width: 150px;}
 .catalogueNameLink {color: #4c4c4c;}
+.addToBasketFont {color: #df4e47; text-decoration: underline; cursor: pointer;}

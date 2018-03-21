@@ -155,34 +155,35 @@ if(isset($_SESSION['userID'])) {
 
     <title>Аргос-ФМ | Каталог</title>
 
-    <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
-    <link rel='stylesheet' media='screen' type='text/css' href='../css/style.css'>
-	<link rel="stylesheet" type="text/css" href="../js/lightview/css/lightview/lightview.css" />
+    <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
+    <link rel='stylesheet' media='screen' type='text/css' href='/css/style.css'>
+    <link rel='stylesheet' media='screen' type='text/css' href='/css/media.css'>
+	<link rel="stylesheet" type="text/css" href="/js/lightview/css/lightview/lightview.css" />
     <?php
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== false) {
-			echo "<link rel='stylesheet' media='screen' type='text/css' href='../css/styleOpera.css'>";
+			echo "<link rel='stylesheet' media='screen' type='text/css' href='/css/styleOpera.css'>";
 		}
 	?>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="../js/menu1.js"></script>
-	<script type="text/javascript" src="../js/common.js"></script>
-	<script type="text/javascript" src="../js/catalogue.js"></script>
+    <script type="text/javascript" src="/js/menu1.js"></script>
+	<script type="text/javascript" src="/js/common.js"></script>
+	<script type="text/javascript" src="/js/catalogue.js"></script>
 	<!--[if lt IE 9]>
-  		<script type="text/javascript" src="../js/lightview/js/excanvas/excanvas.js"></script>
+  		<script type="text/javascript" src="/js/lightview/js/excanvas/excanvas.js"></script>
 	<![endif]-->
-	<script type="text/javascript" src="../js/lightview/js/spinners/spinners.min.js"></script>
-	<script type="text/javascript" src="../js/lightview/js/lightview/lightview.js"></script>
+	<script type="text/javascript" src="/js/lightview/js/spinners/spinners.min.js"></script>
+	<script type="text/javascript" src="/js/lightview/js/lightview/lightview.js"></script>
 
     <?php
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== false) {
-			echo "<script type='text/javascript' src='../js/indexOpera.js'></script>";
+			echo "<script type='text/javascript' src='/js/indexOpera.js'></script>";
 		}
 	?>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
-		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('../img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
+		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('/img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
 	</style>
 
     <script type="text/javascript">
@@ -201,16 +202,16 @@ if(isset($_SESSION['userID'])) {
 
     <div id="menu">
         <div class="container" style="height: 100%;">
-            <a href="index.php"><img src="../img/system/logo.png" id="logo" /></a>
+            <a href="index.php"><img src="/img/system/logo.png" id="logo" /></a>
 			<div id="personalButtons">
 				<?php
 					if(isset($_SESSION['userID'])) {
 						echo "
 							<div class='headerIcon'>
-								<a href='../scripts/personal/logout.php'><img src='../img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon(\"exitIMG\", \"exitRed.png\", 1)' onmouseout='changeIcon(\"exitIMG\", \"exit.png\", 1)' /></a>
+								<a href='/scripts/personal/logout.php'><img src='/img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon(\"exitIMG\", \"exitRed.png\", 1)' onmouseout='changeIcon(\"exitIMG\", \"exit.png\", 1)' /></a>
 							</div>
 							<div class='headerIcon'>
-								<a href='../personal/personal.php?section=1'><img src='../img/system/personal.png' title='Личный кабинет' id='personalIMG' onmouseover='changeIcon(\"personalIMG\", \"personalRed.png\", 1)' onmouseout='changeIcon(\"personalIMG\", \"personal.png\", 1)' /></a>
+								<a href='/personal/personal.php?section=1'><img src='/img/system/personal.png' title='Личный кабинет' id='personalIMG' onmouseover='changeIcon(\"personalIMG\", \"personalRed.png\", 1)' onmouseout='changeIcon(\"personalIMG\", \"personal.png\", 1)' /></a>
 							</div>
 						";
 						if($_SESSION['userID'] == 1) {
@@ -220,13 +221,13 @@ if(isset($_SESSION['userID'])) {
 							if($basketQuantity[0] > 0) {
 								echo "
 									<div class='headerIcon' id='basketIcon'>
-										<a href='../personal/orders.php?section=1&p=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
+										<a href='/personal/orders.php?section=1&p=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='/img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
 									</div>
 								";
 							} else {
 								echo "
 									<div class='headerIcon'>
-										<a href='../personal/orders.php'><img src='../img/system/basketFull.png' title='Заявки' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
+										<a href='/personal/orders.php'><img src='/img/system/basketFull.png' title='Заявки' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
 									</div>
 								";
 							}
@@ -237,13 +238,13 @@ if(isset($_SESSION['userID'])) {
 							if($basketQuantity[0] > 0) {
 								echo "
 									<div class='headerIcon' id='basketIcon'>
-										<a href='../personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
+										<a href='/personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='/img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
 									</div>
 								";
 							} else {
 								echo "
 									<div class='headerIcon' id='basketIcon'>
-										<a href='../personal/basket.php'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
+										<a href='/personal/basket.php'><img src='/img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
 									</div>
 								";
 							}
@@ -251,7 +252,7 @@ if(isset($_SESSION['userID'])) {
 					} else {
 						echo "
 							<div class='headerIcon'>
-								<a href='../personal/login.php'><img src='../img/system/login.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon(\"loginIMG\", \"loginRed.png\", 1)' onmouseout='changeIcon(\"loginIMG\", \"login.png\", 1)' /></a>
+								<a href='/personal/login.php'><img src='/img/system/login.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon(\"loginIMG\", \"loginRed.png\", 1)' onmouseout='changeIcon(\"loginIMG\", \"login.png\", 1)' /></a>
 							</div>
 						";
 					}
@@ -268,41 +269,41 @@ if(isset($_SESSION['userID'])) {
             <div id="menuLinks">
                 <div class="menuLink" id="catalogueLink" <?php echo "onmouseover='showDropdownList(\"1\", \"catalogueLink\", \"catalogueLink".strtoupper($mysqli->real_escape_string($_REQUEST['type']))."\")'"; ?>>
                     <a href="index.php?type=fa&p=1" class="menuPoint" style="color: #df4e47;">Каталог</a>
-                    <img src="../img/system/downArrow.png" />
+                    <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="aboutLink" onmouseover="showDropdownList('1', 'aboutLink')">
-                    <a href="../about/info.php">О компании</a>
-                    <img src="../img/system/downArrow.png" />
+                    <a href="/about/info.php">О компании</a>
+                    <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLinkNotDD">
-                    <a href="../news.php">Новости</a>
+                    <a href="/news.php">Новости</a>
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="storesLink" onmouseover="showDropdownList('1', 'storesLink')">
-                    <a href="../stores/company.php">Где купить</a>
-                    <img src="../img/system/downArrow.png" />
+                    <a href="/stores/company.php">Где купить</a>
+                    <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLinkNotDD">
-                    <a href="../actions.php">Акции</a>
+                    <a href="/actions.php">Акции</a>
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="partnersLink" onmouseover="showDropdownList('1', 'partnersLink')">
-                    <a href="../partners/cooperation.php">Партнерам</a>
-                    <img src="../img/system/downArrow.png" />
+                    <a href="/partners/cooperation.php">Партнерам</a>
+                    <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="contactsLink" onmouseover="showDropdownList('1', 'contactsLink')">
-           	        <a href="../contacts/stores.php">Контакты</a>
-                    <img src="../img/system/downArrow.png" />
+           	        <a href="/contacts/stores.php">Контакты</a>
+                    <img src="/img/system/downArrow.png" />
                 </div>
                 <div style="clear: both;"></div>
             </div>
         	<div style="clear: both;"></div>
         </div>
-        <div id="menuIcon" onclick="showHideMobileMenu()"><img src="../img/system/mobile/menuIcon.png" title="Меню" <?php if($detect->isMobile()) {echo "style='display: block;'";} ?> /></div>
+        <div id="menuIcon" onclick="showHideMobileMenu()"><img src="/img/system/mobile/menuIcon.png" title="Меню" <?php if($detect->isMobile()) {echo "style='display: block;'";} ?> /></div>
 		<div id="mobileMenu">
 			<div class="mobileMenuItem" style="margin-top: 0;">
 				<a href="index.php?type=fa&p=1" class="mobileMenuPointBig">Каталог</a>
@@ -320,54 +321,54 @@ if(isset($_SESSION['userID'])) {
 			</div>
 			<hr />
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="../about/info.php" class="mobileMenuPointBig">О компании</a>
+				<a href="/about/info.php" class="mobileMenuPointBig">О компании</a>
 				<div class="subMenu">
-					<a href="../about/info.php" class="mobileMenuPointSmall">- Общая информация</a>
+					<a href="/about/info.php" class="mobileMenuPointSmall">- Общая информация</a>
 					<br />
-					<a href="../about/assortment.php" class="mobileMenuPointSmall">- Ассортимент</a>
+					<a href="/about/assortment.php" class="mobileMenuPointSmall">- Ассортимент</a>
 					<br />
-					<a href="../about/awards.php" class="mobileMenuPointSmall">- Достижения и награды</a>
+					<a href="/about/awards.php" class="mobileMenuPointSmall">- Достижения и награды</a>
 					<br />
-					<a href="../about/gallery.php" class="mobileMenuPointSmall">- Фотогалерея</a>
+					<a href="/about/gallery.php" class="mobileMenuPointSmall">- Фотогалерея</a>
 					<br />
-					<a href="../about/vacancies.php" class="mobileMenuPointSmall">- Вакансии</a>
+					<a href="/about/vacancies.php" class="mobileMenuPointSmall">- Вакансии</a>
 				</div>
 			</div>
 			<hr />
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="../news.php" class="mobileMenuPointBig">Новости</a>
+				<a href="/news.php" class="mobileMenuPointBig">Новости</a>
 			</div>
 			<hr />
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="../stores/company.php" class="mobileMenuPointBig">Где купить</a>
+				<a href="/stores/company.php" class="mobileMenuPointBig">Где купить</a>
 				<div class="subMenu">
-					<a href="../stores/company.php" class="mobileMenuPointSmall">- Фирменная сеть</a>
+					<a href="/stores/company.php" class="mobileMenuPointSmall">- Фирменная сеть</a>
 					<br />
-					<a href="../stores/representatives.php" class="mobileMenuPointSmall">- Партнёрская сеть</a>
+					<a href="/stores/representatives.php" class="mobileMenuPointSmall">- Партнёрская сеть</a>
 				</div>
 			</div>
 			<hr />
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="../actions.php" class="mobileMenuPointBig">Акции</a>
+				<a href="/actions.php" class="mobileMenuPointBig">Акции</a>
 			</div>
 			<hr />
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="../partners/cooperation.php" class="mobileMenuPointBig">Партнёрам</a>
+				<a href="/partners/cooperation.php" class="mobileMenuPointBig">Партнёрам</a>
 				<div class="subMenu">
-					<a href="../partners/cooperation.php" class="mobileMenuPointSmall">- Сотрудничество</a>
+					<a href="/partners/cooperation.php" class="mobileMenuPointSmall">- Сотрудничество</a>
 					<br />
-					<a href="../partners/news.php" class="mobileMenuPointSmall">- Новости для клиентов</a>
+					<a href="/partners/news.php" class="mobileMenuPointSmall">- Новости для клиентов</a>
 				</div>
 			</div>
 			<hr />
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="../contacts/stores.php" class="mobileMenuPointBig">Контакты</a>
+				<a href="/contacts/stores.php" class="mobileMenuPointBig">Контакты</a>
 				<div class="subMenu">
-					<a href="../contacts/stores.php" class="mobileMenuPointSmall">- Магазины</a>
+					<a href="/contacts/stores.php" class="mobileMenuPointSmall">- Магазины</a>
 					<br />
-					<a href="../contacts/main.php" class="mobileMenuPointSmall">- Головное предприятие</a>
+					<a href="/contacts/main.php" class="mobileMenuPointSmall">- Головное предприятие</a>
 					<br />
-					<a href="../contacts/mail.php" class="mobileMenuPointSmall">- Обратная связь</a>
+					<a href="/contacts/mail.php" class="mobileMenuPointSmall">- Обратная связь</a>
 				</div>
 			</div>
 			<?php
@@ -420,7 +421,7 @@ if(isset($_SESSION['userID'])) {
     </div>
     <div id="dropDownLine">
         <div id="dropDownArrowContainer">
-            <img src="../img/system/dropDownListArrow.png" id="dropDownArrow" />
+            <img src="/img/system/dropDownListArrow.png" id="dropDownArrow" />
         </div>
         <div id="dropDownList"></div>
     </div>
@@ -433,7 +434,7 @@ if(isset($_SESSION['userID'])) {
 			echo "
 				<h1 style='margin-top: 80px;'>".$type['type_name']."</h1>
 				<div id='breadCrumbs'>
-				<a href='../index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='index.php?type=fa&p=1'><span class='breadCrumbsText'>Каталог</span></a> > <a href='index.php?type=".$type['catalogue_type']."&p=1'><span class='breadCrumbsText'>".$type['type_name']."</span></a>
+				<a href='/'><span class='breadCrumbsText'>Главная</span></a> > <a href='index.php?type=fa&p=1'><span class='breadCrumbsText'>Каталог</span></a> > <a href='index.php?type=".$type['catalogue_type']."&p=1'><span class='breadCrumbsText'>".$type['type_name']."</span></a>
 			";
 
 			if(!empty($_REQUEST['c'])) {
@@ -472,7 +473,7 @@ if(isset($_SESSION['userID'])) {
 				$categoryResult = $mysqli->query("SELECT * FROM categories_new WHERE type = '".$type['catalogue_type']."' ORDER BY name");
 				while($category = $categoryResult->fetch_assoc()) {
 					echo "
-						<a href='index.php?type=".$type['catalogue_type']."&c=".$category['id']."&p=1'><div class='categoryContainer'"; if($_REQUEST['c'] != $category['id']) {echo " onmouseover='categoryStyle(1, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")' onmouseout='categoryStyle(0, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")'";} echo "><img src='../img/icons/"; if($_REQUEST['c'] == $category['id']) {echo $category['picture_red'];} else {echo $category['picture'];} echo "' id='categoryIMG".$category['id']."' /><div class='categoryNameContainer'><span id='categoryText".$category['id']."'"; if($_REQUEST['c'] == $category['id']) {echo " style='color: #df4e47;'";} echo ">".$category['name']."</span></div></div></a>
+						<a href='index.php?type=".$type['catalogue_type']."&c=".$category['id']."&p=1'><div class='categoryContainer'"; if($_REQUEST['c'] != $category['id']) {echo " onmouseover='categoryStyle(1, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")' onmouseout='categoryStyle(0, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")'";} echo "><img src='/img/icons/"; if($_REQUEST['c'] == $category['id']) {echo $category['picture_red'];} else {echo $category['picture'];} echo "' id='categoryIMG".$category['id']."' /><div class='categoryNameContainer'><span id='categoryText".$category['id']."'"; if($_REQUEST['c'] == $category['id']) {echo " style='color: #df4e47;'";} echo ">".$category['name']."</span></div></div></a>
 					";
 
 					if(!empty($_REQUEST['c']) and $category['id'] == $_REQUEST['c']) {
@@ -595,11 +596,11 @@ if(isset($_SESSION['userID'])) {
 								<tr>
 									<td style='width: 100px;' valign='top'>
 										<div class='catalogueIMG'>
-											<a href='../img/catalogue/big/".$catalogue['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-options='skin: \"light\"' data-lightview-title='".$catalogue['name']."' data-lightview-caption='".nl2br(strip_tags($catalogue['description']))."'><img src='../img/catalogue/small/".$catalogue['small']."' /></a>
+											<a href='/img/catalogue/big/".$catalogue['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-options='skin: \"light\"' data-lightview-title='".$catalogue['name']."' data-lightview-caption='".nl2br(strip_tags($catalogue['description']))."'><img src='/img/catalogue/small/".$catalogue['small']."' /></a>
 							";
 
 							if($active > 0) {
-								echo "<img src='../img/system/action.png' class='actionIMG' />";
+								echo "<img src='/img/system/action.png' class='actionIMG' />";
 							}
 
 							echo "
@@ -654,7 +655,7 @@ if(isset($_SESSION['userID'])) {
 							";
 
 							if($catalogue['sketch'] != '') {
-								echo "<br /><a href='../img/catalogue/sketch/".$catalogue['sketch']."' data-lightview-title='".$catalogue['name'].": Чертёж' data-lightview-options='skin: \"light\"' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
+								echo "<br /><a href='/img/catalogue/sketch/".$catalogue['sketch']."' data-lightview-title='".$catalogue['name'].": Чертёж' data-lightview-options='skin: \"light\"' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
 							}
 
 							echo "
@@ -665,7 +666,8 @@ if(isset($_SESSION['userID'])) {
 							if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
 								echo "
 									<div class='itemPurchase'>
-										<img src='../img/system/toBasket.png' id='toBasketIMG".$catalogue['id']."' class='toBasketIMG' onmouseover='changeIcon(\"toBasketIMG".$catalogue['id']."\", \"toBasketRed.png\", 1)' onmouseout='changeIcon(\"toBasketIMG".$catalogue['id']."\", \"toBasket.png\", 1)' title='Добавить в корзину' onclick='addToBasket(\"".$catalogue['id']."\", \"quantityInput".$catalogue['id']."\", \"addingResult".$catalogue['id']."\")' />
+									    <span onclick='addToBasket(\"".$catalogue['id']."\", \"quantityInput".$catalogue['id']."\", \"addingResult".$catalogue['id']."\")' class='addToBasketFont'>Добавить в корзину</span>
+									    <br /><br />
 										<form method='post'>
 											<label for='quantityInput".$catalogue['id']."'>Кол-во в ".$unit['in_name'].":</label>
 											<input type='number' id='quantityInput".$catalogue['id']."' min='1' step='1' value='1' class='itemQuantityInput' />
@@ -709,7 +711,7 @@ if(isset($_SESSION['userID'])) {
 					echo "<br /><br />";
 
 					if($_REQUEST['p'] == 1) {
-						echo "<div class='pageNumberBlockSide' id='pbPrev' style='cursor: url(\"../img/cursor/no.cur\"), auto;'><span class='goodStyle'>Предыдущая</span></div>";
+						echo "<div class='pageNumberBlockSide' id='pbPrev' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Предыдущая</span></div>";
 					} else {
 						echo "<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev'>Предыдущая</span></div></a>";
 					}
@@ -727,7 +729,7 @@ if(isset($_SESSION['userID'])) {
 					}
 
 					if($_REQUEST['p'] == $numbers) {
-						echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"../img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
+						echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
 					} else {
 						echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>";
 					}
@@ -737,7 +739,7 @@ if(isset($_SESSION['userID'])) {
 				} else {
 					if($_REQUEST['p'] < 5) {
 						if($_REQUEST['p'] == 1) {
-							echo "<div class='pageNumberBlockSide' id='pbPrev' style='cursor: url(\"../img/cursor/no.cur\"), auto;'><span class='goodStyle'>Предыдущая</span></div>";
+							echo "<div class='pageNumberBlockSide' id='pbPrev' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Предыдущая</span></div>";
 						} else {
 							echo "<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev'>Предыдущая</span></div></a>";
 						}
@@ -754,11 +756,11 @@ if(isset($_SESSION['userID'])) {
 							}
 						}
 
-						echo "<div class='pageNumberBlock' style='cursor: url(\"../img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>";
+						echo "<div class='pageNumberBlock' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>";
 						echo "<a href='".$link.$numbers."' class='noBorder'><div id='pb".$numbers."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$numbers."\", \"pbt".$numbers."\")' onmouseout='pageBlock(0, \"pb".$numbers."\", \"pbt".$numbers."\")'><span class='goodStyleRed' id='pbt".$numbers."'>".$numbers."</span></div></a>";
 
 						if($_REQUEST['p'] == $numbers) {
-							echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"../img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
+							echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
 						} else {
 							echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>";
 						}
@@ -804,7 +806,7 @@ if(isset($_SESSION['userID'])) {
 							}
 
 							if($_REQUEST['p'] == $numbers) {
-								echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"../img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
+								echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
 							} else {
 								echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>";
 							}
@@ -826,7 +828,7 @@ if(isset($_SESSION['userID'])) {
     <div id="footer">
 		<div class="container">
 			<div class="copy">&copy; ЧТУП &laquo;Аргос-ФМ&raquo;<br />2008 - <?php echo date('Y'); ?></div>
-			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="../contacts/main.php">Контактная информация</a></div>
+			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="/contacts/main.php">Контактная информация</a></div>
 			<div class="copy" style="float: right;">Разработка сайта<br /><a href="https://airlab.by/">airlab</a></div>
 		</div>
 		<div style="clear: both;"></div>

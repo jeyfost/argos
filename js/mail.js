@@ -70,13 +70,13 @@ function sendMail() {
 					$.ajax({
 						type: "POST",
 						data: {"email": email},
-						url: "../scripts/contacts/ajaxValidateEmail.php",
+						url: "/scripts/contacts/ajaxValidateEmail.php",
 						success: function(result) {
 							if(result === "a") {
 								$.ajax({
 									type: "POST",
 									data: {"g-recaptcha-response": grecaptcha.getResponse()},
-									url: "../scripts/contacts/ajaxValidateCaptcha.php",
+									url: "/scripts/contacts/ajaxValidateCaptcha.php",
 									success: function(r) {
 										if(r === "a") {
 											$.ajax({
@@ -87,15 +87,15 @@ function sendMail() {
 													"subject": subject,
 													"message": message
 												},
-												url: "../scripts/contacts/ajaxSendMail.php",
+												url: "/scripts/contacts/ajaxSendMail.php",
 												beforeSend: function() {
 													if(response_filed.css("opacity") === "0") {
-														response_filed.html("<br /><img src='../img/system/preloader.gif' />");
+														response_filed.html("<br /><img src='/img/system/preloader.gif' />");
 														response_filed.css("opacity", "1");
 													} else {
 														response_filed.css("opacity", "0");
 														setTimeout(function() {
-															response_filed.html("<br /><img src='../img/system/preloader.gif' />");
+															response_filed.html("<br /><img src='/img/system/preloader.gif' />");
 															response_filed.css("opacity", "1");
 														}, 300);
 													}

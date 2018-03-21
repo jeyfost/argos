@@ -18,22 +18,22 @@ if($_SESSION['userID'] == 1) {
 
     <title>Вход в панель администрирования</title>
 
-    <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
-    <link rel='stylesheet' media='screen' type='text/css' href='../css/admin.css'>
-	<link rel="stylesheet" type="text/css" href="../js/lightview/css/lightview/lightview.css" />
+    <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
+    <link rel='stylesheet' media='screen' type='text/css' href='/css/admin.css'>
+	<link rel="stylesheet" type="text/css" href="/js/lightview/css/lightview/lightview.css" />
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<!--[if lt IE 9]>
-  		<script type="text/javascript" src="../js/lightview/js/excanvas/excanvas.js"></script>
+  		<script type="text/javascript" src="/js/lightview/js/excanvas/excanvas.js"></script>
 	<![endif]-->
-	<script type="text/javascript" src="../js/lightview/js/spinners/spinners.min.js"></script>
-	<script type="text/javascript" src="../js/lightview/js/lightview/lightview.js"></script>
-	<script type="text/javascript" src="../js/common.js"></script>
-	<script type="text/javascript" src="../js/admin/index.js"></script>
+	<script type="text/javascript" src="/js/lightview/js/spinners/spinners.min.js"></script>
+	<script type="text/javascript" src="/js/lightview/js/lightview/lightview.js"></script>
+	<script type="text/javascript" src="/js/common.js"></script>
+	<script type="text/javascript" src="/js/admin/index.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
-		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('../img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
+		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('/img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
 	</style>
 
 	<script type="text/javascript">
@@ -51,7 +51,7 @@ if($_SESSION['userID'] == 1) {
 	<div id="page-preloader"><span class="spinner"></span></div>
 
 	<div id="loginBlock">
-		<form method="post" action="../scripts/admin/login.php">
+		<form method="post" action="/scripts/admin/login.php">
 			<div style="width: 100%; text-align: center;">
 				<span>Вход в панель администрирования</span>
 				<br /><br />

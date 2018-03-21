@@ -109,7 +109,7 @@ function  sendCV() {
 			$.ajax({
 				type: "POST",
 				data: {"email": email},
-				url: "../scripts/contacts/ajaxValidateEmail.php",
+				url: "/scripts/contacts/ajaxValidateEmail.php",
 				success: function (validity) {
 					if(validity === "a") {
 						$.ajax({
@@ -118,7 +118,7 @@ function  sendCV() {
 							dataType: "json",
 							processData: false,
 							contentType: false,
-							url: "../scripts/about/ajaxSendCV.php",
+							url: "/scripts/about/ajaxSendCV.php",
 							beforeSend: function () {
 								$.notify("Ваше резюме отправляется...", "info");
 							},

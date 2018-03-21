@@ -8,7 +8,7 @@ function districtForm() {
 	setTimeout(function() {
 		$.ajax({
 			type: "POST",
-			url: "../../scripts/admin/email/ajaxShowDistrictForm.php",
+			url: "/scripts/admin/email/ajaxShowDistrictForm.php",
 			success: function(html) {
 				$('#email').html(html);
 				CKEDITOR.replace("text");
@@ -27,7 +27,7 @@ function setForm() {
 	setTimeout(function() {
 		$.ajax({
 			type: "POST",
-			url: "../../scripts/admin/email/ajaxShowSetForm.php",
+			url: "/scripts/admin/email/ajaxShowSetForm.php",
 			success: function(html) {
 				$('#email').html(html);
 				CKEDITOR.replace("text");
@@ -56,7 +56,7 @@ function filterForm() {
 	setTimeout(function () {
 		$.ajax({
 			type: "POST",
-			url: "../../scripts/admin/email/ajaxShowFilterForm.php",
+			url: "/scripts/admin/email/ajaxShowFilterForm.php",
 			success: function (html) {
 				$('#email').html(html);
 				CKEDITOR.replace("text");
@@ -78,7 +78,7 @@ function sendEmail() {
 		dataType: "json",
 		processData: false,
 		contentType: false,
-		url: "../../scripts/admin/email/ajaxCheckType.php",
+		url: "/scripts/admin/email/ajaxCheckType.php",
 		success: function (type) {
 			var formData = new FormData($('#sendForm').get(0));
 			var text = document.getElementsByTagName("iframe")[0].contentDocument.getElementsByTagName("body")[0].innerHTML;
@@ -105,7 +105,7 @@ function sendEmail() {
 									processData: false,
 									contentType: false,
 									dataType: "json",
-									url: "../../scripts/admin/email/ajaxSendSetEmail.php",
+									url: "/scripts/admin/email/ajaxSendSetEmail.php",
 									beforeSend: function () {
 										$.notify("Письмо отправляется...", "info");
 									},
@@ -143,7 +143,7 @@ function sendEmail() {
 								$.ajax({
 									type: "POST",
 									data: {"email": email},
-									url: "../../scripts/admin/email/ajaxValidateEmail.php",
+									url: "/scripts/admin/email/ajaxValidateEmail.php",
 									success: function (res) {
 										if(res === "ok") {
 											$.ajax({
@@ -152,7 +152,7 @@ function sendEmail() {
 												dataType: "json",
 												processData: false,
 												contentType: false,
-												url: "../../scripts/admin/email/ajaxSendOneEmail.php",
+												url: "/scripts/admin/email/ajaxSendOneEmail.php",
 												beforeSend: function () {
 													$.notify("Письмо отправляется...", "info");
 												},
@@ -220,7 +220,7 @@ function sendDistrictEmail(i) {
 				dataType: "json",
 				processData: false,
 				contentType: false,
-				url: "../../scripts/admin/email/ajaxSendDistrictEmail.php",
+				url: "/scripts/admin/email/ajaxSendDistrictEmail.php",
 				beforeSend: function () {
 					$.notify("Письма отправляются...", "info");
 				},
@@ -277,7 +277,7 @@ function sendFilterEmail(i) {
 				dataType: "json",
 				processData: false,
 				contentType: false,
-				url: "../../scripts/admin/email/ajaxSendFilterEmail.php",
+				url: "/scripts/admin/email/ajaxSendFilterEmail.php",
 				beforeSend: function () {
 					$.notify("Письма отправляются...", "info");
 				},
@@ -326,7 +326,7 @@ function loadDistrictButtons() {
 		dataType: "json",
 		contentType: false,
 		processData: false,
-		url: "../../scripts/admin/email/ajaxShowDistrictButtons.php",
+		url: "/scripts/admin/email/ajaxShowDistrictButtons.php",
 		success: function(response) {
 			$('#districtButtons').hide('300');
 
@@ -353,7 +353,7 @@ function loadDistrictButtonsFilter() {
 					"district": district,
 					"group": group
 				},
-				url: "../../scripts/admin/email/ajaxShowDistrictButtonsFilter.php",
+				url: "/scripts/admin/email/ajaxShowDistrictButtonsFilter.php",
 				success: function (response) {
 					$('#districtButtons').hide('300');
 
@@ -383,7 +383,7 @@ function loadClientsGrid() {
 		dataType: "json",
 		contentType: false,
 		processData: false,
-		url: "../../scripts/admin/email/ajaxShowClientsGrid.php",
+		url: "/scripts/admin/email/ajaxShowClientsGrid.php",
 		success: function(response) {
 			$('#clientsGrid').hide('300');
 

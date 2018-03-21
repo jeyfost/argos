@@ -12,7 +12,7 @@ function deleteAward() {
 			processData: false,
 			contentType: false,
 			dataType: "json",
-			url: "../../scripts/admin/achievements/ajaxDeleteAward.php",
+			url: "/scripts/admin/achievements/ajaxDeleteAward.php",
 			success: function(response) {
 				switch(response) {
 					case "ok":

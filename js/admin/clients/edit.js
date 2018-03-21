@@ -24,7 +24,7 @@ function editClient(id) {
 			$.ajax({
 				type: "POST",
 				data: {"email": email},
-				url: "../../scripts/admin/email/ajaxValidateEmail.php",
+				url: "/scripts/admin/email/ajaxValidateEmail.php",
 				success: function (result) {
 					if(result === "ok") {
 						$.ajax({
@@ -33,7 +33,7 @@ function editClient(id) {
 							dataType: "json",
 							processData: false,
 							contentType: false,
-							url: "../../scripts/admin/clients/ajaxEditClient.php",
+							url: "/scripts/admin/clients/ajaxEditClient.php",
 							success: function (response) {
 								switch(response) {
 									case "ok":

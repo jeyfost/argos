@@ -7,7 +7,7 @@ function deleteAlbum() {
 
 	$.ajax({
 		type: "POST",
-		url: "../../scripts/admin/albums/ajaxCheckPhotos.php",
+		url: "/scripts/admin/albums/ajaxCheckPhotos.php",
 		data: formData,
 		dataType: "json",
 		processData: false,
@@ -24,7 +24,7 @@ function deleteAlbum() {
 			if(confirm(message)) {
 				$.ajax({
 					type: "POST",
-					url: "../../scripts/admin/albums/ajaxDeleteAlbum.php",
+					url: "/scripts/admin/albums/ajaxDeleteAlbum.php",
 					data: formData,
 					dataType: "json",
 					processData: false,

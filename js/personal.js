@@ -6,7 +6,7 @@ $(window).on('load', function () {
 			$.ajax({
 				type: 'POST',
 				data: {"query": $('#innerSearchInput').val()},
-				url: "../scripts/personal/ajaxUserSearch.php",
+				url: "/scripts/personal/ajaxUserSearch.php",
 				success: function (response) {
 					$('#innerSearchList').html(response);
 					$('#innerSearchList').show('fast');
@@ -26,7 +26,7 @@ $(window).on('load', function () {
 			$.ajax({
 				type: 'POST',
 				data: {"query": $('#innerSearchInput').val()},
-				url: "../scripts/personal/ajaxUserSearch.php",
+				url: "/scripts/personal/ajaxUserSearch.php",
 				success: function (response) {
 					$('#innerSearchList').html(response);
 					$('#innerSearchList').show('fast');
@@ -65,7 +65,7 @@ function adminEditUser(id) {
 					"phone": phone,
 					"discount": discount
 				},
-				url: "../scripts/personal/ajaxAdminEditUser.php",
+				url: "/scripts/personal/ajaxAdminEditUser.php",
 				success: function (response) {
 					switch (response) {
 						case "email":
@@ -242,8 +242,13 @@ function editUserInfo() {
 	if (name !== '' && phone !== '') {
 		$.ajax({
 			type: "POST",
-			data: {"company": company, "name": name, "position": position, "phone": phone},
-			url: "../scripts/personal/ajaxEditUserInfo.php",
+			data: {
+				"company": company,
+				"name": name,
+				"position": position,
+				"phone": phone
+			},
+			url: "/scripts/personal/ajaxEditUserInfo.php",
 			success: function (response) {
 				switch (response) {
 					case "a":
@@ -303,7 +308,7 @@ function editUserEmail() {
 		$.ajax({
 			type: "POST",
 			data: {"email": email},
-			url: "../scripts/personal/ajaxSendEmailConfirmation.php",
+			url: "/scripts/personal/ajaxSendEmailConfirmation.php",
 			success: function (response) {
 				switch (response) {
 					case "a":
@@ -432,8 +437,11 @@ function editUserPassword() {
 		} else {
 			$.ajax({
 				type: "POST",
-				data: {"password": password, "passwordConfirm": password_confirm},
-				url: "../scripts/personal/ajaxChangePassword.php",
+				data: {
+					"password": password,
+					"passwordConfirm": password_confirm
+				},
+				url: "/scripts/personal/ajaxChangePassword.php",
 				success: function (response) {
 					switch (response) {
 						case "a":
@@ -506,7 +514,7 @@ function setRates(ids) {
 
 	$.ajax({
 		type: "POST",
-		url: "../scripts/personal/ajaxSelectCurrency.php",
+		url: "/scripts/personal/ajaxSelectCurrency.php",
 		success: function (response) {
 			var ids = response.split(',');
 			var form = document.forms.currencyForm;
@@ -520,8 +528,11 @@ function setRates(ids) {
 
 			$.ajax({
 				type: "POST",
-				data: {"values": values, "ids": response},
-				url: "../scripts/personal/ajaxSetRates.php",
+				data: {
+					"values": values,
+					"ids": response
+				},
+				url: "/scripts/personal/ajaxSetRates.php",
 				success: function (result) {
 					switch (result) {
 						case "a":
@@ -594,16 +605,16 @@ function setOfficialRates() {
 
 	$.ajax({
 		type: "POST",
-		url: "../scripts/personal/ajaxCheckRates.php",
+		url: "/scripts/personal/ajaxCheckRates.php",
 		beforeSend: function () {
 			if (response_field.css('opacity') === 1) {
 				response_field.css('opacity', '0');
 				setTimeout(function () {
-					response_field.html("<img src='../img/system/spinner.gif' /><br /><br />");
+					response_field.html("<img src='/img/system/spinner.gif' /><br /><br />");
 					response_field.css("opacity", "1");
 				}, 300);
 			} else {
-				response_field.html("<img src='../img/system/spinner.gif' /><br /><br />");
+				response_field.html("<img src='/img/system/spinner.gif' /><br /><br />");
 				response_field.css("opacity", "1");
 			}
 		},
@@ -611,16 +622,16 @@ function setOfficialRates() {
 			if (result === "not actual") {
 				$.ajax({
 					type: "POST",
-					url: "../scripts/personal/ajaxSetOfficialRates.php",
+					url: "/scripts/personal/ajaxSetOfficialRates.php",
 					beforeSend: function () {
 						if (response_field.css('opacity') === 1) {
 							response_field.css('opacity', '0');
 							setTimeout(function () {
-								response_field.html("<img src='../img/system/spinner.gif' /><br /><br />");
+								response_field.html("<img src='/img/system/spinner.gif' /><br /><br />");
 								response_field.css("opacity", "1");
 							}, 300);
 						} else {
-							response_field.html("<img src='../img/system/spinner.gif' /><br /><br />");
+							response_field.html("<img src='/img/system/spinner.gif' /><br /><br />");
 							response_field.css("opacity", "1");
 						}
 					},
@@ -630,7 +641,7 @@ function setOfficialRates() {
 								$.ajax({
 									type: "POST",
 									data: {"code": "USD"},
-									url: "../scripts/personal/ajaxGetRate.php",
+									url: "/scripts/personal/ajaxGetRate.php",
 									success: function (rate) {
 										$('#currencyInput1').val(rate);
 									}
@@ -639,7 +650,7 @@ function setOfficialRates() {
 								$.ajax({
 									type: "POST",
 									data: {"code": "RUB"},
-									url: "../scripts/personal/ajaxGetRate.php",
+									url: "/scripts/personal/ajaxGetRate.php",
 									success: function (rate) {
 										$('#currencyInput2').val(rate);
 									}
@@ -648,7 +659,7 @@ function setOfficialRates() {
 								$.ajax({
 									type: "POST",
 									data: {"code": "EUR"},
-									url: "../scripts/personal/ajaxGetRate.php",
+									url: "/scripts/personal/ajaxGetRate.php",
 									success: function (rate) {
 										$('#currencyInput3').val(rate);
 									}
@@ -722,7 +733,7 @@ function sortBy(sort) {
 	$.ajax({
 		type: "POST",
 		data: {"sort": sort},
-		url: "../scripts/personal/ajaxSort.php",
+		url: "/scripts/personal/ajaxSort.php",
 		success: function () {
 			location.reload();
 		}

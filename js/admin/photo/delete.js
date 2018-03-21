@@ -7,7 +7,7 @@ function deletePhoto(id) {
 		$.ajax({
 			type: "POST",
 			data: {"id": id},
-			url: "../../scripts/admin/photo/ajaxDeletePhoto.php",
+			url: "/scripts/admin/photo/ajaxDeletePhoto.php",
 			success: function(response) {
 				switch(response) {
 					case "ok":

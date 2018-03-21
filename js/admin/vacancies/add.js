@@ -11,7 +11,7 @@ function addVacancy() {
 			$.ajax({
 				type: "POST",
 				data: {"position": position, "text": text},
-				url: "../../scripts/admin/vacancies/ajaxAddVacancy.php",
+				url: "/scripts/admin/vacancies/ajaxAddVacancy.php",
 				success: function (response) {
 					switch(response) {
 						case "ok":

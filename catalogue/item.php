@@ -83,36 +83,36 @@ if(!empty($good['subcategory2'])) {
 
     <title><?= $good['name'] ?></title>
 
-    <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
-    <link rel='stylesheet' media='screen' type='text/css' href='../css/style.css'>
-	<link rel="stylesheet" type="text/css" href="../js/lightview/css/lightview/lightview.css" />
-	<link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
+    <link rel='stylesheet' media='screen' type='text/css' href='/css/style.css'>
+	<link rel="stylesheet" type="text/css" href="/js/lightview/css/lightview/lightview.css" />
+	<link rel="stylesheet" href="/js/font-awesome-4.7.0/css/font-awesome.min.css">
     <?php
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== false) {
-			echo "<link rel='stylesheet' media='screen' type='text/css' href='../css/styleOpera.css'>";
+			echo "<link rel='stylesheet' media='screen' type='text/css' href='/css/styleOpera.css'>";
 		}
 	?>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="../js/menu1.js"></script>
-	<script type="text/javascript" src="../js/common.js"></script>
-	<script type="text/javascript" src="../js/item.js"></script>
-	<script type="text/javascript" src="../js/notify.js"></script>
+    <script type="text/javascript" src="/js/menu1.js"></script>
+	<script type="text/javascript" src="/js/common.js"></script>
+	<script type="text/javascript" src="/js/item.js"></script>
+	<script type="text/javascript" src="/js/notify.js"></script>
 	<!--[if lt IE 9]>
-  		<script type="text/javascript" src="../js/lightview/js/excanvas/excanvas.js"></script>
+  		<script type="text/javascript" src="/js/lightview/js/excanvas/excanvas.js"></script>
 	<![endif]-->
-	<script type="text/javascript" src="../js/lightview/js/spinners/spinners.min.js"></script>
-	<script type="text/javascript" src="../js/lightview/js/lightview/lightview.js"></script>
+	<script type="text/javascript" src="/js/lightview/js/spinners/spinners.min.js"></script>
+	<script type="text/javascript" src="/js/lightview/js/lightview/lightview.js"></script>
 
     <?php
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== false) {
-			echo "<script type='text/javascript' src='../js/indexOpera.js'></script>";
+			echo "<script type='text/javascript' src='/js/indexOpera.js'></script>";
 		}
 	?>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
-		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('../img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
+		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('/img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
 	</style>
 
     <script type="text/javascript">
@@ -131,16 +131,16 @@ if(!empty($good['subcategory2'])) {
 
     <div id="menu">
         <div class="container" style="height: 100%;">
-            <a href="../index.php"><img src="../img/system/logo.png" id="logo" /></a>
+            <a href="/"><img src="/img/system/logo.png" id="logo" /></a>
 			<div id="personalButtons">
 				<?php
 					if(isset($_SESSION['userID'])) {
 						echo "
 							<div class='headerIcon'>
-								<a href='../scripts/personal/logout.php'><img src='../img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon(\"exitIMG\", \"exitRed.png\", 1)' onmouseout='changeIcon(\"exitIMG\", \"exit.png\", 1)' /></a>
+								<a href='/scripts/personal/logout.php'><img src='/img/system/exit.png' title='Выйти из своей учётной записи' id='exitIMG' onmouseover='changeIcon(\"exitIMG\", \"exitRed.png\")' onmouseout='changeIcon(\"exitIMG\", \"exit.png\")' /></a>
 							</div>
 							<div class='headerIcon'>
-								<a href='../personal/personal.php?section=1'><img src='../img/system/personal.png' title='Личный кабинет' id='personalIMG' onmouseover='changeIcon(\"personalIMG\", \"personalRed.png\", 1)' onmouseout='changeIcon(\"personalIMG\", \"personal.png\", 1)' /></a>
+								<a href='/personal/personal.php?section=1'><img src='/img/system/personal.png' title='Личный кабинет' id='personalIMG' onmouseover='changeIcon(\"personalIMG\", \"personalRed.png\")' onmouseout='changeIcon(\"personalIMG\", \"personal.png\")' /></a>
 							</div>
 						";
 						if($_SESSION['userID'] == 1) {
@@ -150,13 +150,13 @@ if(!empty($good['subcategory2'])) {
 							if($basketQuantity[0] > 0) {
 								echo "
 									<div class='headerIcon' id='basketIcon'>
-										<a href='../personal/orders.php?section=1&p=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
+										<a href='/personal/orders.php?section=1&p=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\")' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\")'><img src='/img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
 									</div>
 								";
 							} else {
 								echo "
 									<div class='headerIcon'>
-										<a href='../personal/orders.php'><img src='../img/system/basketFull.png' title='Заявки' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
+										<a href='/personal/orders.php'><img src='/img/system/basketFull.png' title='Заявки' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\")' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\")' /></a>
 									</div>
 								";
 							}
@@ -167,13 +167,13 @@ if(!empty($good['subcategory2'])) {
 							if($basketQuantity[0] > 0) {
 								echo "
 									<div class='headerIcon' id='basketIcon'>
-										<a href='../personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
+										<a href='/personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\")' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\")'><img src='/img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' /><div id='basketLabel'>".$basketQuantity[0]."</div></a>
 									</div>
 								";
 							} else {
 								echo "
 									<div class='headerIcon' id='basketIcon'>
-										<a href='../personal/basket.php'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)' /></a>
+										<a href='/personal/basket.php'><img src='/img/system/basketFull.png' title='Корзина | Товаров в корзине: ".$basketQuantity[0]."' id='basketIMG' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\")' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\")' /></a>
 									</div>
 								";
 							}
@@ -181,7 +181,7 @@ if(!empty($good['subcategory2'])) {
 					} else {
 						echo "
 							<div class='headerIcon'>
-								<a href='../personal/login.php'><img src='../img/system/login.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon(\"loginIMG\", \"loginRed.png\", 1)' onmouseout='changeIcon(\"loginIMG\", \"login.png\", 1)' /></a>
+								<a href='/personal/login.php'><img src='/img/system/login.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon(\"loginIMG\", \"loginRed.png\")' onmouseout='changeIcon(\"loginIMG\", \"login.png\")' /></a>
 							</div>
 						";
 					}
@@ -198,41 +198,41 @@ if(!empty($good['subcategory2'])) {
             <div id="menuLinks">
                 <div class="menuLink" id="catalogueLink" <?php echo "onmouseover='showDropdownList(\"1\", \"catalogueLink\", \"catalogueLink".strtoupper($good['type'])."\")'"; ?>>
                     <a href="index.php?type=fa&p=1" class="menuPoint" style="color: #df4e47;">Каталог</a>
-                    <img src="../img/system/downArrow.png" />
+                    <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="aboutLink" onmouseover="showDropdownList('1', 'aboutLink')">
-                    <a href="../about/info.php">О компании</a>
-                    <img src="../img/system/downArrow.png" />
+                    <a href="/about/info.php">О компании</a>
+                    <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLinkNotDD">
-                    <a href="../news.php">Новости</a>
+                    <a href="/news.php">Новости</a>
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="storesLink" onmouseover="showDropdownList('1', 'storesLink')">
-                    <a href="../stores/company.php">Где купить</a>
-                    <img src="../img/system/downArrow.png" />
+                    <a href="/stores/company.php">Где купить</a>
+                    <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLinkNotDD">
-                    <a href="../actions.php">Акции</a>
+                    <a href="/actions.php">Акции</a>
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="partnersLink" onmouseover="showDropdownList('1', 'partnersLink')">
-                    <a href="../partners/cooperation.php">Партнерам</a>
-                    <img src="../img/system/downArrow.png" />
+                    <a href="/partners/cooperation.php">Партнерам</a>
+                    <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="contactsLink" onmouseover="showDropdownList('1', 'contactsLink')">
-           	        <a href="../contacts/stores.php">Контакты</a>
-                    <img src="../img/system/downArrow.png" />
+           	        <a href="/contacts/stores.php">Контакты</a>
+                    <img src="/img/system/downArrow.png" />
                 </div>
                 <div style="clear: both;"></div>
             </div>
         	<div style="clear: both;"></div>
         </div>
-        <div id="menuIcon" onclick="showHideMobileMenu()"><img src="../img/system/mobile/menuIcon.png" title="Меню" /></div>
+        <div id="menuIcon" onclick="showHideMobileMenu()"><img src="/img/system/mobile/menuIcon.png" title="Меню" /></div>
 		<div id="mobileMenu">
 			<div class="mobileMenuItem" style="margin-top: 0;">
 				<a href="index.php?type=fa&p=1" class="mobileMenuPointBig">Каталог</a>
@@ -250,54 +250,54 @@ if(!empty($good['subcategory2'])) {
 			</div>
 			<hr />
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="../about/info.php" class="mobileMenuPointBig">О компании</a>
+				<a href="/about/info.php" class="mobileMenuPointBig">О компании</a>
 				<div class="subMenu">
-					<a href="../about/info.php" class="mobileMenuPointSmall">- Общая информация</a>
+					<a href="/about/info.php" class="mobileMenuPointSmall">- Общая информация</a>
 					<br />
-					<a href="../about/assortment.php" class="mobileMenuPointSmall">- Ассортимент</a>
+					<a href="/about/assortment.php" class="mobileMenuPointSmall">- Ассортимент</a>
 					<br />
-					<a href="../about/awards.php" class="mobileMenuPointSmall">- Достижения и награды</a>
+					<a href="/about/awards.php" class="mobileMenuPointSmall">- Достижения и награды</a>
 					<br />
-					<a href="../about/gallery.php" class="mobileMenuPointSmall">- Фотогалерея</a>
+					<a href="/about/gallery.php" class="mobileMenuPointSmall">- Фотогалерея</a>
 					<br />
-					<a href="../about/vacancies.php" class="mobileMenuPointSmall">- Вакансии</a>
+					<a href="/about/vacancies.php" class="mobileMenuPointSmall">- Вакансии</a>
 				</div>
 			</div>
 			<hr />
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="../news.php" class="mobileMenuPointBig">Новости</a>
+				<a href="/news.php" class="mobileMenuPointBig">Новости</a>
 			</div>
 			<hr />
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="../stores/company.php" class="mobileMenuPointBig">Где купить</a>
+				<a href="/stores/company.php" class="mobileMenuPointBig">Где купить</a>
 				<div class="subMenu">
-					<a href="../stores/company.php" class="mobileMenuPointSmall">- Фирменная сеть</a>
+					<a href="/stores/company.php" class="mobileMenuPointSmall">- Фирменная сеть</a>
 					<br />
-					<a href="../stores/representatives.php" class="mobileMenuPointSmall">- Партнёрская сеть</a>
+					<a href="/stores/representatives.php" class="mobileMenuPointSmall">- Партнёрская сеть</a>
 				</div>
 			</div>
 			<hr />
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="../actions.php" class="mobileMenuPointBig">Акции</a>
+				<a href="/actions.php" class="mobileMenuPointBig">Акции</a>
 			</div>
 			<hr />
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="../partners/cooperation.php" class="mobileMenuPointBig">Партнёрам</a>
+				<a href="/partners/cooperation.php" class="mobileMenuPointBig">Партнёрам</a>
 				<div class="subMenu">
-					<a href="../partners/cooperation.php" class="mobileMenuPointSmall">- Сотрудничество</a>
+					<a href="/partners/cooperation.php" class="mobileMenuPointSmall">- Сотрудничество</a>
 					<br />
-					<a href="../partners/news.php" class="mobileMenuPointSmall">- Новости для клиентов</a>
+					<a href="/partners/news.php" class="mobileMenuPointSmall">- Новости для клиентов</a>
 				</div>
 			</div>
 			<hr />
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="../contacts/stores.php" class="mobileMenuPointBig">Контакты</a>
+				<a href="/contacts/stores.php" class="mobileMenuPointBig">Контакты</a>
 				<div class="subMenu">
-					<a href="../contacts/stores.php" class="mobileMenuPointSmall">- Магазины</a>
+					<a href="/contacts/stores.php" class="mobileMenuPointSmall">- Магазины</a>
 					<br />
-					<a href="../contacts/main.php" class="mobileMenuPointSmall">- Головное предприятие</a>
+					<a href="/contacts/main.php" class="mobileMenuPointSmall">- Головное предприятие</a>
 					<br />
-					<a href="../contacts/mail.php" class="mobileMenuPointSmall">- Обратная связь</a>
+					<a href="/contacts/mail.php" class="mobileMenuPointSmall">- Обратная связь</a>
 				</div>
 			</div>
 			<?php
@@ -306,14 +306,14 @@ if(!empty($good['subcategory2'])) {
 						echo "
 							<hr />
 							<div class='mobileMenuItem' style='margin-top: 0;'>
-								<a href='../personal/orders.php?section=1&p=1' class='mobileMenuPointBig'>Заказы</a>
+								<a href='/personal/orders.php?section=1&p=1' class='mobileMenuPointBig'>Заказы</a>
 							</div>
 						";
 					} else {
 						echo "
 							<hr />
 							<div class='mobileMenuItem' style='margin-top: 0;'>
-								<a href='../personal/basket.php?section=1' class='mobileMenuPointBig'>Корзина</a>
+								<a href='/personal/basket.php?section=1' class='mobileMenuPointBig'>Корзина</a>
 							</div>
 						";
 					}
@@ -324,14 +324,14 @@ if(!empty($good['subcategory2'])) {
 						echo "
 							<hr />
 							<div class='mobileMenuItem' style='margin-top: 0;'>
-								<a href='../personal/personal.php?section=1' class='mobileMenuPointBig'>Управление сайтом</a>
+								<a href='/personal/personal.php?section=1' class='mobileMenuPointBig'>Управление сайтом</a>
 							</div>
 						";
 					} else {
 						echo "
 							<hr />
 							<div class='mobileMenuItem' style='margin-top: 0;'>
-								<a href='../personal/personal.php?section=1' class='mobileMenuPointBig'>Личный кабинет</a>
+								<a href='/personal/personal.php?section=1' class='mobileMenuPointBig'>Личный кабинет</a>
 							</div>
 						";
 					}
@@ -339,7 +339,7 @@ if(!empty($good['subcategory2'])) {
 					echo "
 						<hr />
 						<div class='mobileMenuItem' style='margin-top: 0;'>
-							<a href='../scripts/personal/logout.php' class='mobileMenuPointBig'>Выйти из аккаунта</a>
+							<a href='/scripts/personal/logout.php' class='mobileMenuPointBig'>Выйти из аккаунта</a>
 						</div>
 					";
 				}
@@ -350,7 +350,7 @@ if(!empty($good['subcategory2'])) {
     </div>
     <div id="dropDownLine">
         <div id="dropDownArrowContainer">
-            <img src="../img/system/dropDownListArrow.png" id="dropDownArrow" />
+            <img src="/img/system/dropDownListArrow.png" id="dropDownArrow" />
         </div>
         <div id="dropDownList"></div>
     </div>
@@ -361,7 +361,7 @@ if(!empty($good['subcategory2'])) {
 
 		<h1 style='margin-top: 80px;'><?= $good['name'] ?></h1>
 		<div id='breadCrumbs'>
-			<a href='../index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='index.php'><span class='breadCrumbsText'>Каталог</span></a> > <a href='index.php?type=<?= $good['type'] ?>'><span class='breadCrumbsText'><?= $type['type_name'] ?></span></a> > <a href='index.php?type=<?= $good['type'] ?>&c=<? $good['category'] ?>'><span class='breadCrumbsText'><?= $goodCategory['name'] ?></span></a><?php if(!empty($good['subcategory'])) {echo " > <a href='index.php?type=".$good['type']."&c=".$good['category']."&s=".$good['subcategory']."'><span class='breadCrumbsText'>".$goodSubcategory['name']."</span></a>";} if(!empty($good['subcategory2'])) {echo " > <a href='index.php?type=".$good['type']."&c=".$good['category']."&s=".$good['subcategory']."&s2=".$good['subcategory2']."'><span class='breadCrumbsText'>".$goodSubcategory2['name']."</span></a>";} ?>
+			<a href='/'><span class='breadCrumbsText'>Главная</span></a> > <a href='index.php'><span class='breadCrumbsText'>Каталог</span></a> > <a href='index.php?type=<?= $good['type'] ?>'><span class='breadCrumbsText'><?= $type['type_name'] ?></span></a> > <a href='index.php?type=<?= $good['type'] ?>&c=<? $good['category'] ?>'><span class='breadCrumbsText'><?= $goodCategory['name'] ?></span></a><?php if(!empty($good['subcategory'])) {echo " > <a href='index.php?type=".$good['type']."&c=".$good['category']."&s=".$good['subcategory']."'><span class='breadCrumbsText'>".$goodSubcategory['name']."</span></a>";} if(!empty($good['subcategory2'])) {echo " > <a href='index.php?type=".$good['type']."&c=".$good['category']."&s=".$good['subcategory']."&s2=".$good['subcategory2']."'><span class='breadCrumbsText'>".$goodSubcategory2['name']."</span></a>";} ?>
 		</div>
 
 		<div id="catalogueMenu">
@@ -375,7 +375,7 @@ if(!empty($good['subcategory2'])) {
 				$categoryResult = $mysqli->query("SELECT * FROM categories_new WHERE type = '".$type['catalogue_type']."' ORDER BY name");
 				while($category = $categoryResult->fetch_assoc()) {
 					echo "
-						<a href='index.php?type=".$type['catalogue_type']."&c=".$category['id']."&p=1'><div class='categoryContainer'"; if($goodCategory['id'] != $category['id']) {echo " onmouseover='categoryItemStyle(1, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")' onmouseout='categoryItemStyle(0, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")'";} echo "><img src='../img/icons/"; if($goodCategory['id'] == $category['id']) {echo $category['picture_red'];} else {echo $category['picture'];} echo "' id='categoryIMG".$category['id']."' /><div class='categoryNameContainer'><span id='categoryText".$category['id']."'"; if($goodCategory['id'] == $category['id']) {echo " style='color: #df4e47;'";} echo ">".$category['name']."</span></div></div></a>
+						<a href='index.php?type=".$type['catalogue_type']."&c=".$category['id']."&p=1'><div class='categoryContainer'"; if($goodCategory['id'] != $category['id']) {echo " onmouseover='categoryItemStyle(1, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")' onmouseout='categoryItemStyle(0, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")'";} echo "><img src='/img/icons/"; if($goodCategory['id'] == $category['id']) {echo $category['picture_red'];} else {echo $category['picture'];} echo "' id='categoryIMG".$category['id']."' /><div class='categoryNameContainer'><span id='categoryText".$category['id']."'"; if($goodCategory['id'] == $category['id']) {echo " style='color: #df4e47;'";} echo ">".$category['name']."</span></div></div></a>
 					";
 
 					if(!empty($good['subcategory']) and $category['id'] == $goodCategory['id']) {
@@ -472,11 +472,11 @@ if(!empty($good['subcategory2'])) {
 				<tbody>
 					<tr>
 						<td id="itemPhotoContainer">
-							<img src="../img/catalogue/big/<?= $good['picture'] ?>" id="itemPhoto" />
+							<img src="/img/catalogue/big/<?= $good['picture'] ?>" id="itemPhoto" />
 							<?php
 								if($active > 0) {
 									echo "
-										<img src='../img/system/action.png' style='opacity: .6; float: left;' />
+										<img src='/img/system/action.png' style='opacity: .6; float: left;' />
 										<div style='clear: both;'></div>
 									";
 								}
@@ -523,7 +523,7 @@ if(!empty($good['subcategory2'])) {
 								echo "
 									<td style='width: 65px; vertical-align: top;'>
 										<div class='itemPurchase'>
-											<img src='../img/system/toBasket.png' id='toBasketIMG".$id."' class='toBasketIMG' onmouseover='changeIcon(\"toBasketIMG".$id."\", \"toBasketRed.png\", 1)' onmouseout='changeIcon(\"toBasketIMG".$id."\", \"toBasket.png\", 1)' title='Добавить в корзину' onclick='addToBasket(\"".$id."\", \"quantityInput".$id."\", \"addingResult".$id."\")' />
+											<img src='/img/system/toBasket.png' id='toBasketIMG".$id."' class='toBasketIMG' onmouseover='changeIcon(\"toBasketIMG".$id."\", \"toBasketRed.png\", 1)' onmouseout='changeIcon(\"toBasketIMG".$id."\", \"toBasket.png\", 1)' title='Добавить в корзину' onclick='addToBasket(\"".$id."\", \"quantityInput".$id."\", \"addingResult".$id."\")' />
 											<form method='post'>
 												<label for='quantityInput".$id."'>Кол-во в ".$unit['in_name'].":</label>
 												<input type='number' id='quantityInput".$id."' min='1' step='1' value='1' class='itemQuantityInput' />
@@ -538,9 +538,9 @@ if(!empty($good['subcategory2'])) {
 							if($_SESSION['userID'] == 1) {
 								echo "
 									<td style='width: 50px; vertical-align: top; text-align: center;'>
-										<a href='../admin/goods/edit.php?type=".$good['type']."&category=".$good['category']; if(!empty($good['subcategory'])) {echo "&subcategory=".$good['subcategory'];} if(!empty($good['subcategory2'])) {echo "&subcategory2=".$good['subcategory2'];}  echo "&id=".$id."' style='color: #4c4c4c;'><i class='fa fa-pencil' id='editIcon' aria-hidden='true' onmouseover='changeFontColor(\"editIcon\", 1)' onmouseout='changeFontColor(\"editIcon\", 0)' style='cursor: pointer;' title='Редактировать товар'></i></a>
+										<a href='/admin/goods/edit.php?type=".$good['type']."&category=".$good['category']; if(!empty($good['subcategory'])) {echo "&subcategory=".$good['subcategory'];} if(!empty($good['subcategory2'])) {echo "&subcategory2=".$good['subcategory2'];}  echo "&id=".$id."' style='color: #4c4c4c;'><i class='fa fa-pencil' id='editIcon' aria-hidden='true' onmouseover='changeFontColor(\"editIcon\", 1)' onmouseout='changeFontColor(\"editIcon\", 0)' style='cursor: pointer;' title='Редактировать товар'></i></a>
 										&nbsp;
-										<a href='../admin/goods/delete.php?type=".$good['type']."&category=".$good['category']; if(!empty($good['subcategory'])) {echo "&subcategory=".$good['subcategory'];} if(!empty($good['subcategory2'])) {echo "&subcategory2=".$good['subcategory2'];}  echo "&id=".$id."' style='color: #4c4c4c;'><i class='fa fa-trash' id='deleteIcon' aria-hidden='true' onmouseover='changeFontColor(\"deleteIcon\", 1)' onmouseout='changeFontColor(\"deleteIcon\", 0)' style='cursor: pointer;' title='Удалить товар'></i></a>
+										<a href='/admin/goods/delete.php?type=".$good['type']."&category=".$good['category']; if(!empty($good['subcategory'])) {echo "&subcategory=".$good['subcategory'];} if(!empty($good['subcategory2'])) {echo "&subcategory2=".$good['subcategory2'];}  echo "&id=".$id."' style='color: #4c4c4c;'><i class='fa fa-trash' id='deleteIcon' aria-hidden='true' onmouseover='changeFontColor(\"deleteIcon\", 1)' onmouseout='changeFontColor(\"deleteIcon\", 0)' style='cursor: pointer;' title='Удалить товар'></i></a>
 									</td>
 								";
 							}
@@ -551,21 +551,21 @@ if(!empty($good['subcategory2'])) {
 			<br />
 			<h3>Дополнительные фотографии</h3>
 			<div id="previewContainer">
-				<a href="../img/catalogue/big/<?= $good['picture'] ?>" class="lightview" data-lightview-options="skin: 'light'" data-lightview-group="item"><img src="../img/catalogue/small/<?= $good['small'] ?>" class="previewPhoto" id="itemMainPhoto" onmouseover='changeItemPhoto("itemMainPhoto", 1)' onmouseout='changeItemPhoto("itemMainPhoto", 0)' /></a>
+				<a href="/img/catalogue/big/<?= $good['picture'] ?>" class="lightview" data-lightview-options="skin: 'light'" data-lightview-group="item"><img src="/img/catalogue/small/<?= $good['small'] ?>" class="previewPhoto" id="itemMainPhoto" onmouseover='changeItemPhoto("itemMainPhoto", 1)' onmouseout='changeItemPhoto("itemMainPhoto", 0)' /></a>
 
 				<?php
 					$photoResult = $mysqli->query("SELECT * FROM goods_photos WHERE good_id = '".$id."'");
 					while($photo = $photoResult->fetch_assoc()) {
 						echo "
 							<div style='width: 20px; display: inline-block;'></div>
-							<a href='../img/catalogue/photos/big/".$photo['big']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-group='item'><img src='../img/catalogue/photos/small/".$photo['small']."' id='itemPhoto".$photo['id']."' class='previewPhoto' onmouseover='changeItemPhoto(\"itemPhoto".$photo['id']."\", 1)' onmouseout='changeItemPhoto(\"itemPhoto".$photo['id']."\", 0)' /></a>
+							<a href='/img/catalogue/photos/big/".$photo['big']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-group='item'><img src='/img/catalogue/photos/small/".$photo['small']."' id='itemPhoto".$photo['id']."' class='previewPhoto' onmouseover='changeItemPhoto(\"itemPhoto".$photo['id']."\", 1)' onmouseout='changeItemPhoto(\"itemPhoto".$photo['id']."\", 0)' /></a>
 						";
 					}
 
 					if(!empty($good['sketch'])) {
 						echo "
 							<div style='width: 20px; display: inline-block;'></div>
-							<a href='../img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-group='item'><img src='../img/catalogue/sketch/".$good['sketch']."' style='width: 100px;' id='itemSketch' class='previewPhoto' onmouseover='changeItemPhoto(\"itemSketch\", 1)' onmouseout='changeItemPhoto(\"itemSketch\", 0)' /></a>
+							<a href='/img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-group='item'><img src='/img/catalogue/sketch/".$good['sketch']."' style='width: 100px;' id='itemSketch' class='previewPhoto' onmouseover='changeItemPhoto(\"itemSketch\", 1)' onmouseout='changeItemPhoto(\"itemSketch\", 0)' /></a>
 						";
 					}
 				?>
@@ -665,22 +665,12 @@ if(!empty($good['subcategory2'])) {
 						";
 
 						foreach ($items as $item) {
-							$link = "index.php?type=".$item['type']."&c=".$item['category'];
-
-							if(!empty($item['subcategory'])) {
-								$link .= "&s=".$item['subcategory'];
-							}
-
-							if(!empty($item['subcategory2'])) {
-								$link .= "&s2=".$item['subcategory2'];
-							}
-
-							$link .= "&p=1";
+							$link = "item.php?id=".$item['id'];
 
 							echo "
 								<a href='".$link."' style='color: #4c4c4c;' target='_blank'>
 									<div class='recomendedGoodContainer' id='goodContainer".$item['id']."' onmouseover='markContainer(\"goodContainer".$item['id']."\", \"goodPhoto".$item['id']."\", 1)' onmouseout='markContainer(\"goodContainer".$item['id']."\", \"goodPhoto".$item['id']."\", 0)'>
-										<div class='recomendedGoodPhotoContainer'><img src='../img/catalogue/small/".$item['small']."' id='goodPhoto".$item['id']."' style='transition: .3s;' /></div>
+										<div class='recomendedGoodPhotoContainer'><img src='/img/catalogue/small/".$item['small']."' id='goodPhoto".$item['id']."' style='transition: .3s;' /></div>
 										<br />
 										<div class='recomendedGoodNameContainer'>".$item['name']."</div>
 										<div style='clear: both;'></div>
@@ -701,7 +691,7 @@ if(!empty($good['subcategory2'])) {
     <div id="footer">
 		<div class="container">
 			<div class="copy">&copy; ЧТУП &laquo;Аргос-ФМ&raquo;<br />2008 - <?php echo date('Y'); ?></div>
-			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="../contacts/main.php">Контактная информация</a></div>
+			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="/contacts/main.php">Контактная информация</a></div>
 			<div class="copy" style="float: right;">Разработка сайта<br /><a href="https://airlab.by/">airlab</a></div>
 		</div>
 		<div style="clear: both;"></div>

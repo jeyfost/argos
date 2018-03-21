@@ -13,7 +13,7 @@ function editAlbum() {
 			dataType: "json",
 			processData: false,
 			contentType: false,
-			url: "../../scripts/admin/albums/ajaxEditAlbum.php",
+			url: "/scripts/admin/albums/ajaxEditAlbum.php",
 			success: function (response) {
 				switch(response) {
 					case "ok":

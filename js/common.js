@@ -74,7 +74,7 @@ function sendRegistrationEmailAgain(email, hash) {
 	$.ajax({
 		type: "POST",
 		data: {"email": email, "hash": hash},
-		url: "../scripts/personal/ajaxSendRegistrationEmail.php",
+		url: "/scripts/personal/ajaxSendRegistrationEmail.php",
 		beforeSend: function() {
 			$.notify("Письмо отправляется...", "info");
 		},

@@ -8,7 +8,7 @@ function deleteAction() {
 
 		$.ajax({
 			type: "POST",
-			url: "../../scripts/admin/actions/ajaxDeleteAction.php",
+			url: "/scripts/admin/actions/ajaxDeleteAction.php",
 			data: formData,
 			dataType: "json",
 			processData: false,

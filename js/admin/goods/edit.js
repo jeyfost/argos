@@ -17,9 +17,9 @@ function selectGood(type, category, subcategory, subcategory2, id) {
 function setCode() {
 	$.ajax({
 		type: "POST",
-		url: "../../scripts/admin/goods/ajaxSetCode.php",
+		url: "/scripts/admin/goods/ajaxSetCode.php",
 		beforeSend: function () {
-			$('#preloaderContainer').html("<img src='../../img/system/spinner.gif' />");
+			$('#preloaderContainer').html("<img src='/img/system/spinner.gif' />");
 			$('#preloaderContainer').css('display', 'block');
 		},
 		success: function(response) {
@@ -66,19 +66,19 @@ function editGood() {
 				type: "POST",
 				data: formData,
 				dataType: "json",
-				url: "../../scripts/admin/goods/ajaxEditGood.php",
+				url: "/scripts/admin/goods/ajaxEditGood.php",
 				contentType: false,
 				processData: false,
 				beforeSend: function() {
 					if(responseField.css('opacity') === 1) {
 						responseField.css('opacity', 0);
 						setTimeout(function() {
-							responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
+							responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 							responseField.css('opacity', 1);
 						}, 300);
 					} else {
 						responseField.css('color', '#df4e47');
-						responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
+						responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 						responseField.css('opacity', 1);
 					}
 				},
@@ -120,7 +120,7 @@ function editGood() {
 						dataType: "json",
 						processData: false,
 						contentType: false,
-						url: "../../scripts/admin/goods/ajaxRebuildPhotosContainer.php",
+						url: "/scripts/admin/goods/ajaxRebuildPhotosContainer.php",
 						success: function (code) {
 							$('#goodPhotosContainer').css("opacity", 0);
 
@@ -195,7 +195,7 @@ function deletePhoto(photo_id) {
 		$.ajax({
 			type: "POST",
 			data: {"photo_id": photo_id},
-			url: "../../scripts/admin/goods/ajaxDeletePhoto.php",
+			url: "/scripts/admin/goods/ajaxDeletePhoto.php",
 			success: function (response) {
 				switch (response) {
 					case "ok":
@@ -217,7 +217,7 @@ function deletePhoto(photo_id) {
 					dataType: "json",
 					processData: false,
 					contentType: false,
-					url: "../../scripts/admin/goods/ajaxRebuildPhotosContainer.php",
+					url: "/scripts/admin/goods/ajaxRebuildPhotosContainer.php",
 					success: function (code) {
 						$('#goodPhotosContainer').css("opacity", 0);
 

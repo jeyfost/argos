@@ -21,7 +21,7 @@ function scrollUp() {
 
 		$.ajax({
 			type: 'POST',
-			url: 'scripts/index/ajaxLoadCategories.php',
+			url: '/scripts/index/ajaxLoadCategories.php',
 			data: {"type": "fa"},
 			beforeSend: function() {
 				$('#rightSideBlockCategories').css('opacity', '0');
@@ -40,7 +40,7 @@ function scrollUp() {
 
 		$.ajax({
 			type: 'POST',
-			url: 'scripts/index/ajaxLoadCategories.php',
+			url: '/scripts/index/ajaxLoadCategories.php',
 			data: {"type": "em"},
 			beforeSend: function() {
 				$('#rightSideBlockCategories').css('opacity', '0');
@@ -59,7 +59,7 @@ function scrollUp() {
 
 		$.ajax({
 			type: 'POST',
-			url: 'scripts/index/ajaxLoadCategories.php',
+			url: '/scripts/index/ajaxLoadCategories.php',
 			data: {"type": "ca"},
 			beforeSend: function () {
 				$('#rightSideBlockCategories').css('opacity', '0');
@@ -96,7 +96,7 @@ function scrollDown() {
 
 		$.ajax({
 			type: 'POST',
-			url: 'scripts/index/ajaxLoadCategories.php',
+			url: '/scripts/index/ajaxLoadCategories.php',
 			data: {"type": "em"},
 			beforeSend: function() {
 				$('#rightSideBlockCategories').css('opacity', '0');
@@ -117,7 +117,7 @@ function scrollDown() {
 
 		$.ajax({
 			type: 'POST',
-			url: 'scripts/index/ajaxLoadCategories.php',
+			url: '/scripts/index/ajaxLoadCategories.php',
 			data: {"type": "ca"},
 			beforeSend: function() {
 				$('#rightSideBlockCategories').css('opacity', '0');
@@ -136,7 +136,7 @@ function scrollDown() {
 
 		$.ajax({
 			type: 'POST',
-			url: 'scripts/index/ajaxLoadCategories.php',
+			url: '/scripts/index/ajaxLoadCategories.php',
 			data: {"type": "dg"},
 			beforeSend: function () {
 				$('#rightSideBlockCategories').css('opacity', '0');
@@ -165,7 +165,7 @@ function scrollFirst() {
 
 		$.ajax({
 			type: 'POST',
-			url: 'scripts/index/ajaxLoadCategories.php',
+			url: '/scripts/index/ajaxLoadCategories.php',
 			data: {"type": "fa"},
 			beforeSend: function () {
 				$('#rightSideBlockCategories').css('opacity', '0');
@@ -194,7 +194,7 @@ function scrollSecond() {
 
 		$.ajax({
 			type: 'POST',
-			url: 'scripts/index/ajaxLoadCategories.php',
+			url: '/scripts/index/ajaxLoadCategories.php',
 			data: {"type": "em"},
 			beforeSend: function () {
 				$('#rightSideBlockCategories').css('opacity', '0');
@@ -222,7 +222,7 @@ function scrollThird() {
 
 		$.ajax({
 			type: 'POST',
-			url: 'scripts/index/ajaxLoadCategories.php',
+			url: '/scripts/index/ajaxLoadCategories.php',
 			data: {"type": "ca"},
 			beforeSend: function () {
 				$('#rightSideBlockCategories').css('opacity', '0');
@@ -251,7 +251,7 @@ function scrollFourth() {
 
 		$.ajax({
 			type: 'POST',
-			url: 'scripts/index/ajaxLoadCategories.php',
+			url: '/scripts/index/ajaxLoadCategories.php',
 			data: {"type": "dg"},
 			beforeSend: function () {
 				$('#rightSideBlockCategories').css('opacity', '0');

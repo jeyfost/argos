@@ -13,7 +13,7 @@ function addPhotos() {
 			processData: false,
 			contentType: false,
 			dataType: "json",
-			url: "../../scripts/admin/photo/ajaxAddPhotos.php",
+			url: "/scripts/admin/photo/ajaxAddPhotos.php",
 			beforeSend: function() {
 				$.notify("Фотографии добавляются...", "info");
 			},

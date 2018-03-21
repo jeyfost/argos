@@ -3,7 +3,7 @@ function showOrderDetails(id) {
 	$.ajax({
 		type: "POST",
 		data: {"id": id},
-		url: "../scripts/personal/ajaxOrderDetailedInfo.php",
+		url: "/scripts/personal/ajaxOrderDetailedInfo.php",
 		success: function(response) {
 			if(response_field.css('opacity') === 1) {
 				response_field.css('opacity', '0');
@@ -31,7 +31,7 @@ function showOrderDetailsHistory(id) {
 	$.ajax({
 		type: "POST",
 		data: {"id": id},
-		url: "../scripts/personal/ajaxOrderDetailedInfoHistory.php",
+		url: "/scripts/personal/ajaxOrderDetailedInfoHistory.php",
 		success: function(response) {
 			if(response_field.css('opacity') === 1) {
 				response_field.css('opacity', '0');
@@ -58,7 +58,7 @@ function selectClient(file_name) {
 	$.ajax({
 		type: "POST",
 		data: {"client": $('#clientSelect').val()},
-		url: "../scripts/personal/" + file_name +  ".php",
+		url: "/scripts/personal/" + file_name +  ".php",
 		success: function(response) {
 			var order_response = $('#orderResponse');
 			var table = $('#ordersTable');
@@ -115,7 +115,7 @@ function selectClient(file_name) {
 				$.ajax({
 					type: "POST",
 					data: {"client": $('#clientSelect').val()},
-					url: "../scripts/personal/ajaxCalculatePages.php",
+					url: "/scripts/personal/ajaxCalculatePages.php",
 					success: function(result) {
 						if(numbers.css('opacity') === 1) {
 							numbers.css('opacity', 0);
@@ -138,7 +138,7 @@ function acceptOrder(id) {
 	$.ajax({
 		type: "POST",
 		data: {"id": id},
-		url: "../scripts/personal/ajaxAcceptOrder.php",
+		url: "/scripts/personal/ajaxAcceptOrder.php",
 		success: function(response) {
 			var order_response = $('#orderResponse');
 			var response_filed = $('#responseField');
@@ -165,7 +165,7 @@ function acceptOrder(id) {
 
 				$.ajax({
 					type: 'POST',
-					url: "../scripts/personal/ajaxRebuildHistoryTable.php",
+					url: "/scripts/personal/ajaxRebuildHistoryTable.php",
 					success: function(r) {
 						$('#personalContent').html(r);
 					}
@@ -173,7 +173,7 @@ function acceptOrder(id) {
 
 				$.ajax({
 					type: "POST",
-					url: "../scripts/personal/ajaxAdminOrdersQuantity.php",
+					url: "/scripts/personal/ajaxAdminOrdersQuantity.php",
 					success: function (quantity) {
 						if(quantity > 0) {
 							$('#basketLabel').html(quantity);
@@ -207,7 +207,7 @@ function cancelOrder(id) {
 		$.ajax({
 			type: "POST",
 			data: {"id": id},
-			url: "../scripts/personal/ajaxAdminCancelOrder.php",
+			url: "/scripts/personal/ajaxAdminCancelOrder.php",
 			success: function(response) {
 				var order_response = $('#orderResponse');
 				var response_field = $('#responseField');
@@ -234,7 +234,7 @@ function cancelOrder(id) {
 
 					$.ajax({
 						type: 'POST',
-						url: "../scripts/personal/ajaxRebuildTableCancel.php",
+						url: "/scripts/personal/ajaxRebuildTableCancel.php",
 						success: function(r) {
 							$('#personalContent').html(r);
 						}
@@ -242,7 +242,7 @@ function cancelOrder(id) {
 
 					$.ajax({
 						type: "POST",
-						url: "../scripts/personal/ajaxAdminOrdersQuantity.php",
+						url: "/scripts/personal/ajaxAdminOrdersQuantity.php",
 						success: function (quantity) {
 							if(quantity > 0) {
 								$('#basketLabel').html(quantity);
@@ -254,20 +254,6 @@ function cancelOrder(id) {
 						}
 					});
 				} else {
-					/*
-					if(order_response.css('opacity') === 1) {
-						order_response.css('opacity', 0);
-						setTimeout(function() {
-							order_response.css('color', '#df4e47');
-							order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
-							order_response.css('opacity', 1);
-						}, 300);
-					} else {
-						order_response.css('color', '#df4e47');
-						order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
-						order_response.css('opacity', 1);
-					}
-					*/
 					if(order_response.css('opacity') === 1) {
 						order_response.css('opacity', 0);
 						setTimeout(function() {
@@ -292,7 +278,7 @@ function goToPage(page, user) {
 	$.ajax({
 		type: "POST",
 		data: {"page": page, "userID": user},
-		url: "../scripts/personal/ajaxGoToPage.php",
+		url: "/scripts/personal/ajaxGoToPage.php",
 		success: function(response) {
 			table.css('opacity', 0);
 			setTimeout(function() {
@@ -305,7 +291,7 @@ function goToPage(page, user) {
 			$.ajax({
 				type: "POST",
 				data: {"page": page, "userID": user},
-				url: "../scripts/personal/ajaxRebuildPageNumbers.php",
+				url: "/scripts/personal/ajaxRebuildPageNumbers.php",
 				success: function(result) {
 					if(numbers.css('opacity') === 1) {
 						numbers.css('opacity', 0);
@@ -329,8 +315,12 @@ function changeQuantityDetailed(id, order_id) {
 	if($('#' + input).val() !== '') {
 		$.ajax({
 			type: "POST",
-			data: {"id": id, "quantity": $('#' + input).val(), "orderID": order_id},
-			url: "../scripts/personal/ajaxChangeQuantityDetailed.php",
+			data: {
+				"id": id,
+				"quantity": $('#' + input).val(),
+				"orderID": order_id
+			},
+			url: "/scripts/personal/ajaxChangeQuantityDetailed.php",
 			success: function(response) {
 				$('#totalPriceText').html(response);
 			}
@@ -342,7 +332,7 @@ function removeGoodFromOrder(good_id, order_id) {
 	$.ajax({
 		type: "POST",
 		data: {"orderID": order_id},
-		url: "../scripts/personal/ajaxCountGoods.php",
+		url: "/scripts/personal/ajaxCountGoods.php",
 		success: function(quantity) {
 			if(quantity > 1) {
 				var message = "Вы действительно хотите удалить эту группу товаров из заказа?";
@@ -353,14 +343,17 @@ function removeGoodFromOrder(good_id, order_id) {
 			if(confirm(message)) {
 				$.ajax({
 					type: "POST",
-					data: {"goodID": good_id, "orderID": order_id},
-					url: "../scripts/personal/ajaxRemoveGoodFromOrder.php",
+					data: {
+						"goodID": good_id,
+						"orderID": order_id
+					},
+					url: "/scripts/personal/ajaxRemoveGoodFromOrder.php",
 					success: function(response) {
 						if(response === "a") {
 							$.ajax({
 								type: "POST",
 								data: {"orderID": order_id},
-								url: "../scripts/personal/ajaxCalculateOrderPrice.php",
+								url: "/scripts/personal/ajaxCalculateOrderPrice.php",
 								success: function(result) {
 									$('#ci' + good_id).hide('fast');
 									$('#cis' + good_id).hide('fast');
@@ -376,7 +369,7 @@ function removeGoodFromOrder(good_id, order_id) {
 							$.ajax({
 								type: "POST",
 								data: {"orderID": order_id},
-								url: "../scripts/personal/ajaxRebuildOrdersTableAdmin.php",
+								url: "/scripts/personal/ajaxRebuildOrdersTableAdmin.php",
 								success: function(r) {
 									$('#personalContent').html(r);
 								}
@@ -408,20 +401,26 @@ function addComment(id) {
 	if(text !== '' && text !== "Текст комментария...") {
 		$.ajax({
 			type: "POST",
-			data: {"order_id": id, "text": text},
-			url: "../scripts/personal/ajaxAddComment.php",
+			data: {
+				"order_id": id,
+				"text": text
+			},
+			url: "/scripts/personal/ajaxAddComment.php",
 			success: function (response) {
 				switch (response) {
 					case "ok":
 						$.ajax({
 							type: "POST",
 							data: {"order_id": id},
-							url: "../scripts/personal/ajaxLastComment.php",
+							url: "/scripts/personal/ajaxLastComment.php",
 							success: function (comment) {
 								$.ajax({
 									type: "POST",
-									data: {"order_id": id, "text": text},
-									url: "../scripts/personal/ajaxSendEmailWithComment.php",
+									data: {
+										"order_id": id,
+										"text": text
+									},
+									url: "/scripts/personal/ajaxSendEmailWithComment.php",
 									success: function() {
 										$.notify("Комментарий успешно добавлен.", "success");
 

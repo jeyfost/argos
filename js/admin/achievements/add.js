@@ -15,7 +15,7 @@ function addAward() {
 				processData: false,
 				contentType: false,
 				dataType: "json",
-				url: "../../scripts/admin/achievements/ajaxAddPhotos.php",
+				url: "/scripts/admin/achievements/ajaxAddPhotos.php",
 				beforeSend: function() {
 					$.notify("Награда добавляется...", "info");
 				},

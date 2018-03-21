@@ -12,7 +12,7 @@ function deleteVacancy() {
 			processData: false,
 			contentType: false,
 			dataType: "json",
-			url: "../../scripts/admin/vacancies/ajaxDeleteVacancy.php",
+			url: "/scripts/admin/vacancies/ajaxDeleteVacancy.php",
 			success: function(response) {
 				switch(response) {
 					case "ok":

@@ -21,7 +21,7 @@ function searchClient() {
 		$.ajax({
 			type: "POST",
 			data: {"search": search},
-			url: "../../scripts/admin/clients/ajaxSearchInactive.php",
+			url: "/scripts/admin/clients/ajaxSearchInactive.php",
 			success: function(response) {
 				var x = parseInt(searchInput.offset().left);
 				var y = parseInt(searchInput.offset().top + 40);
@@ -69,7 +69,7 @@ function returnClient(id) {
 		$.ajax({
 			type: "POST",
 			data: {"id": id},
-			url: "../../scripts/admin/clients/ajaxReturnClient.php",
+			url: "/scripts/admin/clients/ajaxReturnClient.php",
 			success: function (response) {
 				switch(response) {
 					case "ok":

@@ -29,17 +29,17 @@
 
     <title>Регистрация отменена</title>
 
-    <link rel='shortcut icon' href='../img/icons/favicon.ico' type='image/x-icon'>
-	<link rel='icon' href='../img/icons/favicon.ico' type='image/x-icon'>
-    <link rel='stylesheet' media='screen' type='text/css' href='../css/style.css'>
+    <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
+	<link rel='icon' href='/img/icons/favicon.ico' type='image/x-icon'>
+    <link rel='stylesheet' media='screen' type='text/css' href='/css/style.css'>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/menu1.js"></script>
-	<script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="/js/menu1.js"></script>
+	<script type="text/javascript" src="/js/common.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
-		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('../img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
+		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('/img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
 	</style>
 
 	<script type="text/javascript">
@@ -58,10 +58,10 @@
 
     <div id="menu">
         <div class="container" style="height: 100%;">
-            <a href="../index.php"><img src="../img/system/logo.png" id="logo" /></a>
+            <a href="/"><img src="/img/system/logo.png" id="logo" /></a>
 			<div id="personalButtons">
 				<div class="headerIcon">
-					<a href='login.php'><img src='../img/system/loginRed.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon("loginIMG", "login.png", 1)' onmouseout='changeIcon("loginIMG", "loginRed.png", 1)' /></a>
+					<a href='login.php'><img src='/img/system/loginRed.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon("loginIMG", "login.png")' onmouseout='changeIcon("loginIMG", "loginRed.png")' /></a>
 				</div>
 				<div id='searchBlock'>
 					<form method='post'>
@@ -72,36 +72,36 @@
 			</div>
             <div id="menuLinks">
                 <div class="menuLink" id="catalogueLink" onmouseover="showDropdownList('1', 'catalogueLink')">
-                    <a href="../catalogue/index.php?type=fa&p=1" class="menuPoint">Каталог</a>
-                    <img src="../img/system/downArrow.png" />
+                    <a href="/catalogue/index.php?type=fa&p=1" class="menuPoint">Каталог</a>
+                    <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="aboutLink" onmouseover="showDropdownList('1', 'aboutLink')">
-                    <a href="../about/info.php">О компании</a>
-                    <img src="../img/system/downArrow.png" />
+                    <a href="/about/info.php">О компании</a>
+                    <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLinkNotDD">
-                    <a href="../news.php">Новости</a>
+                    <a href="/news.php">Новости</a>
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="storesLink" onmouseover="showDropdownList('1', 'storesLink')">
-                    <a href="../stores/company.php">Где купить</a>
-                    <img src="../img/system/downArrow.png" />
+                    <a href="/stores/company.php">Где купить</a>
+                    <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLinkNotDD">
-                    <a href="../actions.php">Акции</a>
+                    <a href="/actions.php">Акции</a>
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="partnersLink" onmouseover="showDropdownList('1', 'partnersLink')">
-                    <a href="../partners/cooperation.php">Партнерам</a>
-                    <img src="../img/system/downArrow.png" />
+                    <a href="/partners/cooperation.php">Партнерам</a>
+                    <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="contactsLink" onmouseover="showDropdownList('1', 'contactsLink')">
-                    <a href="../contacts/stores.php">Контакты</a>
-                    <img src="../img/system/downArrow.png" />
+                    <a href="/contacts/stores.php">Контакты</a>
+                    <img src="/img/system/downArrow.png" />
                 </div>
                 <div style="clear: both;"></div>
             </div>
@@ -225,7 +225,7 @@
     </div>
     <div id="dropDownLine">
         <div id="dropDownArrowContainer">
-            <img src="../img/system/dropDownListArrow.png" id="dropDownArrow" />
+            <img src="/img/system/dropDownListArrow.png" id="dropDownArrow" />
         </div>
         <div id="dropDownList"></div>
     </div>
@@ -236,7 +236,7 @@
 		<div id="topSection">
 			<h1>Регистрация отменена</h1>
 			<div id="breadCrumbs">
-				<a href="../index.php"><span class="breadCrumbsText">Главная</span></a> > <a href="register.php"><span class="breadCrumbsText">Отмена регистрации</span></a>
+				<a href="/"><span class="breadCrumbsText">Главная</span></a> > <a href="register.php"><span class="breadCrumbsText">Отмена регистрации</span></a>
 			</div>
 		</div>
 
@@ -247,7 +247,7 @@
     <div id="footer">
 		<div class="container">
 			<div class="copy">&copy; ЧТУП &laquo;Аргос-ФМ&raquo;<br />2008 - <?php echo date('Y'); ?></div>
-			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="../contacts/main.php">Контактная информация</a></div>
+			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="/contacts/main.php">Контактная информация</a></div>
 			<div class="copy" style="float: right;">Разработка сайта<br /><a href="https://airlab.by/">airlab</a></div>
 		</div>
 		<div style="clear: both;"></div>

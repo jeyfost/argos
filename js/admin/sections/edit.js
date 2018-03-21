@@ -15,33 +15,33 @@ function editCategory() {
 	var sectionName = $("#sectionNameInput").val();
 	var formData = new FormData($('#editForm').get(0));
 
-	if(sectionName != '') {
+	if(sectionName !== '') {
 		$.ajax({
 			type: 'POST',
 			data: formData,
 			dataType: "json",
 			contentType: false,
 			processData: false,
-			url: '../../scripts/admin/sections/ajaxCheckCategory.php',
+			url: '/scripts/admin/sections/ajaxCheckCategory.php',
 			success: function(result) {
-				if(result == "ok") {
+				if(result === "ok") {
 					$.ajax({
 						type: 'POST',
 						data: formData,
 						dataType: "json",
 						contentType: false,
 						processData: false,
-						url: "../../scripts/admin/sections/ajaxEditCategory.php",
+						url: "/scripts/admin/sections/ajaxEditCategory.php",
 						beforeSend: function() {
-							if(responseField.css('opacity') == 1) {
+							if(responseField.css('opacity') === 1) {
 								responseField.css('opacity', 0);
 								setTimeout(function() {
-									responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
+									responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 									responseField.css('opacity', 1);
 								}, 300);
 							} else {
 								responseField.css('color', '#df4e47');
-								responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
+								responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 								responseField.css('opacity', 1);
 							}
 						},
@@ -67,10 +67,10 @@ function editCategory() {
 									break;
 							}
 
-							if(responseField.css('opacity') == 1) {
+							if(responseField.css('opacity') === 1) {
 								responseField.css('opacity', 0);
 								setTimeout(function() {
-									if(s == 1) {
+									if(s === 1) {
 										responseField.css('color', '#53acff');
 									} else {
 										responseField.css('color', '#df4e47');
@@ -79,7 +79,7 @@ function editCategory() {
 									responseField.css('opacity', 1);
 								}, 300);
 							} else {
-								if(s == 1) {
+								if(s === 1) {
 									responseField.css('color', '#53acff');
 								} else {
 									responseField.css('color', '#df4e47');
@@ -90,7 +90,7 @@ function editCategory() {
 						}
 					});
 				} else {
-					if(responseField.css('opacity') == 1) {
+					if(responseField.css('opacity') === 1) {
 						responseField.css('opacity', 0);
 						setTimeout(function() {
 							responseField.css('color', '#df4e47');
@@ -106,7 +106,7 @@ function editCategory() {
 			}
 		});
 	} else {
-		if(responseField.css('opacity') == 1) {
+		if(responseField.css('opacity') === 1) {
 			responseField.css('opacity', 0);
 			setTimeout(function() {
 				responseField.css('color', '#df4e47');
@@ -126,33 +126,33 @@ function editSubcategory() {
 	var sectionName = $("#sectionNameInput").val();
 	var formData = new FormData($('#editForm').get(0));
 
-	if(sectionName != '') {
+	if(sectionName !== '') {
 		$.ajax({
 			type: 'POST',
 			data: formData,
 			dataType: "json",
 			contentType: false,
 			processData: false,
-			url: '../../scripts/admin/sections/ajaxCheckSubcategory.php',
+			url: '/scripts/admin/sections/ajaxCheckSubcategory.php',
 			success: function(result) {
-				if(result == "ok") {
+				if(result === "ok") {
 					$.ajax({
 						type: 'POST',
 						data: formData,
 						dataType: "json",
 						contentType: false,
 						processData: false,
-						url: "../../scripts/admin/sections/ajaxEditSubcategory.php",
+						url: "/scripts/admin/sections/ajaxEditSubcategory.php",
 						beforeSend: function() {
-							if(responseField.css('opacity') == 1) {
+							if(responseField.css('opacity') === 1) {
 								responseField.css('opacity', 0);
 								setTimeout(function() {
-									responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
+									responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 									responseField.css('opacity', 1);
 								}, 300);
 							} else {
 								responseField.css('color', '#df4e47');
-								responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
+								responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 								responseField.css('opacity', 1);
 							}
 						},
@@ -174,10 +174,10 @@ function editSubcategory() {
 									break;
 							}
 
-							if(responseField.css('opacity') == 1) {
+							if(responseField.css('opacity') === 1) {
 								responseField.css('opacity', 0);
 								setTimeout(function() {
-									if(s == 1) {
+									if(s === 1) {
 										responseField.css('color', '#53acff');
 									} else {
 										responseField.css('color', '#df4e47');
@@ -186,7 +186,7 @@ function editSubcategory() {
 									responseField.css('opacity', 1);
 								}, 300);
 							} else {
-								if(s == 1) {
+								if(s === 1) {
 									responseField.css('color', '#53acff');
 								} else {
 									responseField.css('color', '#df4e47');
@@ -197,7 +197,7 @@ function editSubcategory() {
 						}
 					});
 				} else {
-					if(responseField.css('opacity') == 1) {
+					if(responseField.css('opacity') === 1) {
 						responseField.css('opacity', 0);
 						setTimeout(function() {
 							responseField.css('color', '#df4e47');

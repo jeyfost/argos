@@ -13,7 +13,7 @@ function editAward() {
 			processData: false,
 			contentType: false,
 			dataType: "json",
-			url: "../../scripts/admin/achievements/ajaxEditAward.php",
+			url: "/scripts/admin/achievements/ajaxEditAward.php",
 			success: function(response) {
 				switch(response) {
 					case "ok":

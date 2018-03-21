@@ -21,7 +21,7 @@ function searchClient() {
 		$.ajax({
 			type: "POST",
 			data: {"search": search},
-			url: "../../scripts/admin/clients/ajaxSearch.php",
+			url: "/scripts/admin/clients/ajaxSearch.php",
 			success: function(response) {
 				var x = parseInt(searchInput.offset().left);
 				var y = parseInt(searchInput.offset().top + 40);

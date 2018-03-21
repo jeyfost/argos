@@ -9,7 +9,7 @@ function addAlbum() {
 		$.ajax({
 			type: "POST",
 			data: {"name": name},
-			url: "../../scripts/admin/albums/ajaxAddAlbum.php",
+			url: "/scripts/admin/albums/ajaxAddAlbum.php",
 			success: function (response) {
 				switch(response) {
 					case "ok":

@@ -116,25 +116,25 @@ if(!empty($_REQUEST['id'])) {
 
     <title>Редактирование товаров</title>
 
-    <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
-    <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
-	<link rel="stylesheet" type="text/css" href="../../js/lightview/css/lightview/lightview.css" />
-	<link rel="stylesheet" href="../../css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
+    <link rel='stylesheet' media='screen' type='text/css' href='/css/admin.css'>
+	<link rel="stylesheet" type="text/css" href="/js/lightview/css/lightview/lightview.css" />
+	<link rel="stylesheet" href="/js/font-awesome-4.7.0/css/font-awesome.min.css">
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<!--[if lt IE 9]>
-  		<script type="text/javascript" src="../../js/lightview/js/excanvas/excanvas.js"></script>
+  		<script type="text/javascript" src="/js/lightview/js/excanvas/excanvas.js"></script>
 	<![endif]-->
-	<script type="text/javascript" src="../../js/lightview/js/spinners/spinners.min.js"></script>
-	<script type="text/javascript" src="../../js/lightview/js/lightview/lightview.js"></script>
-	<script type="text/javascript" src="../../js/common.js"></script>
-	<script type="text/javascript" src="../../js/notify.js"></script>
-	<script type="text/javascript" src="../../js/admin/admin.js"></script>
-	<script type="text/javascript" src="../../js/admin/goods/edit.js"></script>
+	<script type="text/javascript" src="/js/lightview/js/spinners/spinners.min.js"></script>
+	<script type="text/javascript" src="/js/lightview/js/lightview/lightview.js"></script>
+	<script type="text/javascript" src="/js/common.js"></script>
+	<script type="text/javascript" src="/js/notify.js"></script>
+	<script type="text/javascript" src="/js/admin/admin.js"></script>
+	<script type="text/javascript" src="/js/admin/goods/edit.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
-		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('../../img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
+		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('/img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
 	</style>
 
 	<script type="text/javascript">
@@ -153,92 +153,92 @@ if(!empty($_REQUEST['id'])) {
 
 	<div id="menu">
 		<div id="logo">
-			<a href="../"><img src="../../img/system/logo.png" /></a>
+			<a href="/"><img src="/img/system/logo.png" /></a>
 		</div>
 		<div class="line"></div>
-		<a href="../goods/">
+		<a href="/admin/goods/">
 			<div class="menuPointActive">
-				<div class="menuIMG"><img src="../../img/system/admin/goods.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/goods.png" /></div>
 				<div class="menuText">Товары</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../sections/">
+		<a href="/admin/sections/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/sections.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/sections.png" /></div>
 				<div class="menuText">Разделы</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../news/">
+		<a href="/admin/news/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/news.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/news.png" /></div>
 				<div class="menuText">Новости</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../actions/">
+		<a href="/admin/actions/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/sale.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/sale.png" /></div>
 				<div class="menuText">Акции</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../photo/">
+		<a href="/admin/photo/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/photo.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/photo.png" /></div>
 				<div class="menuText">Фотогалерея</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../albums/">
+		<a href="/admin/albums/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/album.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/album.png" /></div>
 				<div class="menuText">Альбомы</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../achievements/">
+		<a href="/admin/achievements/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/achievement.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/achievement.png" /></div>
 				<div class="menuText">Достижения</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../vacancies/">
+		<a href="/admin/vacancies/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/person.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/person.png" /></div>
 				<div class="menuText">Вакансии</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../clients/">
+		<a href="/admin/clients/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/clients.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/clients.png" /></div>
 				<div class="menuText">Клиентская база</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../email/">
+		<a href="/admin/email/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/mail.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/mail.png" /></div>
 				<div class="menuText">Email-рассылки</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../../">
+		<a href="/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/home.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/home.png" /></div>
 				<div class="menuText">Вернуться на сайт</div>
 			</div>
 		</a>
@@ -253,7 +253,7 @@ if(!empty($_REQUEST['id'])) {
 				<br />
 				<span style="font-size: 14px;">Вы вошли как пользователь <b style="color: #df4e47;"><?php echo $userLogin[0]; ?></b></span>
 			</div>
-			<a href="../../"><img src="../../img/system/exit.png" id="exitIMG" title="Выйти из панели администрирования" onmouseover="changeIcon('exitIMG', 'exitRed.png', 2)" onmouseout="changeIcon('exitIMG', 'exit.png', 2)" /></a>
+			<a href="/"><img src="/img/system/exit.png" id="exitIMG" title="Выйти из панели администрирования" onmouseover="changeIcon('exitIMG', 'exitRed.png')" onmouseout="changeIcon('exitIMG', 'exit.png')" /></a>
 		</div>
 		<br />
 		<div id="admContent">
@@ -261,7 +261,7 @@ if(!empty($_REQUEST['id'])) {
 				$goodNameResult = $mysqli->query("SELECT name FROM catalogue_new WHERE id = '".$id."'");
 				$goodName = $goodNameResult->fetch_array(MYSQLI_NUM);
 			?>
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/product.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Товары</span></a> > <a href="edit.php"><span class="breadCrumbsText">Редактирование товаров</span></a><?php if(!empty($_REQUEST['id'])) {echo " > <a href='".$_SERVER['REQUEST_URI']."'><span class='breadCrumbsText'>".$goodName[0]."</span></a>";} ?></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="/img/system/admin/icons/product.png" title="Товары" /></div><div id="breadCrumbsTextContainer"><a href="/admin/admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Товары</span></a> > <a href="edit.php"><span class="breadCrumbsText">Редактирование товаров</span></a><?php if(!empty($_REQUEST['id'])) {echo " > <a href='".$_SERVER['REQUEST_URI']."'><span class='breadCrumbsText'>".$goodName[0]."</span></a>";} ?></div></div>
 			<div style="clear: both;"></div>
 			<br />
 			<h2>Редактирование товаров</h2>
@@ -504,7 +504,7 @@ if(!empty($_REQUEST['id'])) {
 							echo "
 								<tr>
 									<td style='background-color: "; if($id == $good['id']) {echo "#cbd7ff";} else {echo "#ededed";} echo ";'>".$i."</td>
-									<td style='background-color: #fff; width: 100px;'><a href='../../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='../../img/catalogue/small/".$good['small']."' /></a></td>
+									<td style='background-color: #fff; width: 100px;'><a href='/img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='/img/catalogue/small/".$good['small']."' /></a></td>
 									<td"; if($id == $good['id']) {echo " style='background-color: #cbd7ff;'";} echo "><a href='".$link."'><span class='link'>".$good['name']."</span></a></td>
 									<td"; if($id == $good['id']) {echo " style='background-color: #cbd7ff;'";} echo ">".$good['code']."</td>
 								</tr>
@@ -537,7 +537,7 @@ if(!empty($_REQUEST['id'])) {
 				<br /><br />
 				<label for='goodPhotoInput'>Фотография товара (как минимум 100*100 пикселей)</label>
 				<br />
-				<a href='../../img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><span class='link' style='font-size: 14px;'>(нажмите для просмотра фотографии)</span></a>
+				<a href='/img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><span class='link' style='font-size: 14px;'>(нажмите для просмотра фотографии)</span></a>
 				<br />
 				<input type='file' id='goodPhotoInput' class='file' name='goodPhoto' />
 				<br /><br />
@@ -551,7 +551,7 @@ if(!empty($_REQUEST['id'])) {
 			foreach ($photos as $photo) {
 				echo "
 					<div class='goodPhotoContainer' onmouseover='fadePhoto(\"goodPhoto".$photo['id']."\", 1)' onmouseout='fadePhoto(\"goodPhoto".$photo['id']."\", 0)'>
-						<a href='../../img/catalogue/photos/big/".$photo['big']."' class='lightview' data-lightview-group='good'><img src='../../img/catalogue/photos/small/".$photo['small']."' class='goodPhoto' id='goodPhoto".$photo['id']."' /></a>
+						<a href='/img/catalogue/photos/big/".$photo['big']."' class='lightview' data-lightview-group='good'><img src='/img/catalogue/photos/small/".$photo['small']."' class='goodPhoto' id='goodPhoto".$photo['id']."' /></a>
 						<i class='fa fa-trash font-awesome-link' aria-hidden='true' onclick='deletePhoto(\"".$photo['id']."\")'></i>
 					</div>
 				";
@@ -566,7 +566,7 @@ if(!empty($_REQUEST['id'])) {
 			if(!empty($good['sketch'])) {
 				echo "
 					<br />
-					<a href='../../img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='Чертёж'><span class='link' style='font-size: 14px;'>(нажмите для просмотра чертежа)</span></a>
+					<a href='/img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='Чертёж'><span class='link' style='font-size: 14px;'>(нажмите для просмотра чертежа)</span></a>
 				";
 			}
 

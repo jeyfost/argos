@@ -11,7 +11,7 @@ $(window).on("load", function() {
 });
 
 function changeFont(id, action) {
-	if(action == 1) {
+	if(action === 1) {
 		document.getElementById(id).style.color = "#df4e47";
 		document.getElementById(id).style.textDecoration = "none";
 	} else {

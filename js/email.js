@@ -18,7 +18,7 @@ function sendEmail(email) {
 				dataType: "json",
 				contentType: false,
 				processData: false,
-				url: "../scripts/personal/ajaxSendEmailToUser.php",
+				url: "/scripts/personal/ajaxSendEmailToUser.php",
 				beforeSend: function () {
 					$.notify("Письмо отправляется...", "info");
 				},

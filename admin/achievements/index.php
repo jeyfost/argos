@@ -26,22 +26,22 @@ if(isset($_SESSION['userID'])) {
 
     <title>Панель администрирования</title>
 
-    <link rel='shortcut icon' href='../../img/icons/favicon.ico' type='image/x-icon'>
-    <link rel='stylesheet' media='screen' type='text/css' href='../../css/admin.css'>
-	<link rel="stylesheet" type="text/css" href="../../js/lightview/css/lightview/lightview.css" />
+    <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
+    <link rel='stylesheet' media='screen' type='text/css' href='/css/admin.css'>
+	<link rel="stylesheet" type="text/css" href="/js/lightview/css/lightview/lightview.css" />
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<!--[if lt IE 9]>
-  		<script type="text/javascript" src="../../js/lightview/js/excanvas/excanvas.js"></script>
+  		<script type="text/javascript" src="/js/lightview/js/excanvas/excanvas.js"></script>
 	<![endif]-->
-	<script type="text/javascript" src="../../js/lightview/js/spinners/spinners.min.js"></script>
-	<script type="text/javascript" src="../../js/lightview/js/lightview/lightview.js"></script>
-	<script type="text/javascript" src="../../js/common.js"></script>
-	<script type="text/javascript" src="../../js/admin/admin.js"></script>
+	<script type="text/javascript" src="/js/lightview/js/spinners/spinners.min.js"></script>
+	<script type="text/javascript" src="/js/lightview/js/lightview/lightview.js"></script>
+	<script type="text/javascript" src="/js/common.js"></script>
+	<script type="text/javascript" src="/js/admin/admin.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
-		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('../../img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
+		#page-preloader .spinner {width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; background: url('/img/system/spinner.gif') no-repeat 50% 50%; margin: -16px 0 0 -16px;}
 	</style>
 
 	<script type="text/javascript">
@@ -60,92 +60,92 @@ if(isset($_SESSION['userID'])) {
 
 	<div id="menu">
 		<div id="logo">
-			<a href="../"><img src="../../img/system/logo.png" /></a>
+			<a href="/"><img src="/img/system/logo.png" /></a>
 		</div>
 		<div class="line"></div>
-		<a href="../goods/">
+		<a href="/admin/goods/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/goods.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/goods.png" /></div>
 				<div class="menuText">Товары</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../sections/">
+		<a href="/admin/sections/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/sections.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/sections.png" /></div>
 				<div class="menuText">Разделы</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../news/">
+		<a href="/admin/news/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/news.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/news.png" /></div>
 				<div class="menuText">Новости</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../actions/">
+		<a href="/admin/actions/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/sale.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/sale.png" /></div>
 				<div class="menuText">Акции</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../photo/">
+		<a href="/admin/photo/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/photo.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/photo.png" /></div>
 				<div class="menuText">Фотогалерея</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../albums/">
+		<a href="/admin/albums/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/album.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/album.png" /></div>
 				<div class="menuText">Альбомы</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../achievements/">
+		<a href="/admin/achievements/">
 			<div class="menuPointActive">
-				<div class="menuIMG"><img src="../../img/system/admin/achievement.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/achievement.png" /></div>
 				<div class="menuText">Достижения</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../vacancies/">
+		<a href="/admin/vacancies/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/person.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/person.png" /></div>
 				<div class="menuText">Вакансии</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../clients/">
+		<a href="/admin/clients/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/clients.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/clients.png" /></div>
 				<div class="menuText">Клиентская база</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../email/">
+		<a href="/admin/email/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/mail.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/mail.png" /></div>
 				<div class="menuText">Email-рассылки</div>
 			</div>
 		</a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
-		<a href="../../">
+		<a href="/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="../../img/system/admin/home.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/home.png" /></div>
 				<div class="menuText">Вернуться на сайт</div>
 			</div>
 		</a>
@@ -160,11 +160,12 @@ if(isset($_SESSION['userID'])) {
 				<br />
 				<span style="font-size: 14px;">Вы вошли как пользователь <b style="color: #df4e47;"><?php echo $userLogin[0]; ?></b></span>
 			</div>
-			<a href="../"><img src="../../img/system/exit.png" id="exitIMG" title="Выйти из панели администрирования" onmouseover="changeIcon('exitIMG', 'exitRed.png', 2)" onmouseout="changeIcon('exitIMG', 'exit.png', 2)" /></a>
+			<a href="/"><img src="/img/system/exit.png" id="exitIMG" title="Выйти из панели администрирования" onmouseover="changeIcon('exitIMG', 'exitRed.png')" onmouseout="changeIcon('exitIMG', 'exit.png')" /></a>
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="../../img/system/admin/icons/award.png" title="Награды и достижения" /></div><div id="breadCrumbsTextContainer"><a href="../admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Достижения</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="/img/system/admin/icons/award.png" title="Награды и достижения" /></div><div id="breadCrumbsTextContainer"><a href="/admin/admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Достижения</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="/img/system/admin/icons/award.png" title="Награды и достижения" /></div><div id="breadCrumbsTextContainer"><a href="/admin/admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Достижения</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
 			<h2>&darr; Для продолжения работы выберите функцию</h2>

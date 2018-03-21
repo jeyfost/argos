@@ -5,10 +5,10 @@
 function categoryItemStyle(action, img, text, imgBlack, imgRed) {
 	if(action === 1) {
 		document.getElementById(text).style.color = "#df4e47";
-		document.getElementById(img).src = "../img/icons/" + imgRed;
+		document.getElementById(img).src = "/img/icons/" + imgRed;
 	} else {
 		document.getElementById(text).style.color = "#4f4f4f";
-		document.getElementById(img).src = "../img/icons/" + imgBlack;
+		document.getElementById(img).src = "/img/icons/" + imgBlack;
 	}
 }
 
@@ -35,8 +35,11 @@ function changePrice(good_id, block, price, currency, unit, rate) {
 function saveGoodPrice(good_id, block, currency, unit, rate) {
 	$.ajax({
 		type: 'POST',
-		data: {"goodID": good_id, "price": $('#changeGoodPriceInput').val()},
-		url: "../scripts/catalogue/ajaxSaveGoodPrice.php",
+		data: {
+			"goodID": good_id,
+			"price": $('#changeGoodPriceInput').val()
+		},
+		url: "/scripts/catalogue/ajaxSaveGoodPrice.php",
 		success: function(response) {
 			if(response === "a") {
 				var price = $('#changeGoodPriceInput').val();
@@ -67,26 +70,29 @@ function addToBasket(good_id, input, response_field) {
 	if(quantity > 0) {
 		$.ajax({
 			type: 'POST',
-			data: {"goodID": good_id, "quantity": quantity},
-			url: "../scripts/catalogue/ajaxAddToBasket.php",
+			data: {
+				"goodID": good_id,
+				"quantity": quantity
+			},
+			url: "/scripts/catalogue/ajaxAddToBasket.php",
 			success: function(response) {
 				$.ajax({
 					type: 'POST',
 					data: {"goodID": good_id},
-					url: '../scripts/catalogue/ajaxCheckBasket.php',
+					url: '/scripts/catalogue/ajaxCheckBasket.php',
 					success: function(result) {
 						if (result === "a") {
-							$('#basketIcon').html("<a href='../personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: 1' id='basketIMG' /><div id='basketLabel'>1</div></a>");
+							$('#basketIcon').html("<a href='/personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\")' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\")'><img src='/img/system/basketFull.png' title='Корзина | Товаров в корзине: 1' id='basketIMG' /><div id='basketLabel'>1</div></a>");
 						} else {
-							$('#basketIcon').html("<a href='../personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\", 1)' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\", 1)'><img src='../img/system/basketFull.png' title='Корзина | Товаров в корзине: " + result + "' id='basketIMG' /><div id='basketLabel'>" + result + "</div></a>");
+							$('#basketIcon').html("<a href='/personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\")' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\")'><img src='/img/system/basketFull.png' title='Корзина | Товаров в корзине: " + result + "' id='basketIMG' /><div id='basketLabel'>" + result + "</div></a>");
 						}
 					}
 				});
 
 				switch(response) {
 					case "a":
-						if(document.getElementById(response_field).style.opacity === 1) {
-							document.getElementById(response_field).style.opacity = 0;
+						if(document.getElementById(response_field).style.opacity === "1") {
+							document.getElementById(response_field).style.opacity = "0";
 							setTimeout(function() {
 								document.getElementById(response_field).style.color = "#53acff";
 								document.getElementById(response_field).innerHTML = "Товар добавлен в корзину";
@@ -99,8 +105,8 @@ function addToBasket(good_id, input, response_field) {
 						}
 						break;
 					case "b":
-						if(document.getElementById(response_field).style.opacity === 1) {
-							document.getElementById(response_field).style.opacity = 0;
+						if(document.getElementById(response_field).style.opacity === "1") {
+							document.getElementById(response_field).style.opacity = "0";
 							setTimeout(function() {
 								document.getElementById(response_field).style.color = "#df4e47";
 								document.getElementById(response_field).innerHTML = "Произошла ошибка";
@@ -113,8 +119,8 @@ function addToBasket(good_id, input, response_field) {
 						}
 						break;
 					case "c":
-						if(document.getElementById(response_field).style.opacity === 1) {
-							document.getElementById(response_field).style.opacity = 0;
+						if(document.getElementById(response_field).style.opacity === "1") {
+							document.getElementById(response_field).style.opacity = "0";
 							setTimeout(function() {
 								document.getElementById(response_field).style.color = "#53acff";
 								document.getElementById(response_field).innerHTML = "Количество товара в корзине было увеличино на " + quantity;
@@ -131,8 +137,8 @@ function addToBasket(good_id, input, response_field) {
 			}
 		});
 	} else {
-		if(document.getElementById(response_field).style.opacity === 1) {
-			document.getElementById(response_field).style.opacity = 0;
+		if(document.getElementById(response_field).style.opacity === "1") {
+			document.getElementById(response_field).style.opacity = "0";
 			setTimeout(function() {
 				document.getElementById(response_field).style.color = "#df4e47";
 				document.getElementById(response_field).innerHTML = "Введите положительное значение";

@@ -11,35 +11,35 @@ function addSection() {
 	var sectionName = $("#sectionNameInput").val();
 	var formData = new FormData($('#addForm').get(0));
 
-	if(sectionName != '') {
-		if($('#sectionBlackImg').val() != '') {
-			if($('#sectionRedImg').val() != '') {
+	if(sectionName !== '') {
+		if($('#sectionBlackImg').val() !== '') {
+			if($('#sectionRedImg').val() !== '') {
 				$.ajax({
 					type: 'POST',
 					data: formData,
 					dataType: "json",
 					contentType: false,
 					processData: false,
-					url: '../../scripts/admin/sections/ajaxCheckCategory.php',
+					url: '/scripts/admin/sections/ajaxCheckCategory.php',
 					success: function(result) {
-						if(result == "ok") {
+						if(result === "ok") {
 							$.ajax({
 								type: 'POST',
 								data: formData,
 								dataType: "json",
 								contentType: false,
 								processData: false,
-								url: "../../scripts/admin/sections/ajaxAddSection.php",
+								url: "/scripts/admin/sections/ajaxAddSection.php",
 								beforeSend: function() {
-									if(responseField.css('opacity') == 1) {
+									if(responseField.css('opacity') === 1) {
 										responseField.css('opacity', 0);
 										setTimeout(function() {
-											responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
+											responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 											responseField.css('opacity', 1);
 										}, 300);
 									} else {
 										responseField.css('color', '#df4e47');
-										responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
+										responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 										responseField.css('opacity', 1);
 									}
 								},
@@ -69,10 +69,10 @@ function addSection() {
 											break;
 									}
 
-									if(responseField.css('opacity') == 1) {
+									if(responseField.css('opacity') === 1) {
 										responseField.css('opacity', 0);
 										setTimeout(function() {
-											if(s == 1) {
+											if(s === 1) {
 												responseField.css('color', '#53acff');
 											} else {
 												responseField.css('color', '#df4e47');
@@ -81,7 +81,7 @@ function addSection() {
 											responseField.css('opacity', 1);
 										}, 300);
 									} else {
-										if(s == 1) {
+										if(s === 1) {
 											responseField.css('color', '#53acff');
 										} else {
 											responseField.css('color', '#df4e47');
@@ -92,7 +92,7 @@ function addSection() {
 								}
 							});
 						} else {
-							if(responseField.css('opacity') == 1) {
+							if(responseField.css('opacity') === 1) {
 								responseField.css('opacity', 0);
 								setTimeout(function() {
 									responseField.css('color', '#df4e47');
@@ -108,7 +108,7 @@ function addSection() {
 					}
 				});
 			} else {
-				if(responseField.css('opacity') == 1) {
+				if(responseField.css('opacity') === 1) {
 					responseField.css('opacity', 0);
 					setTimeout(function() {
 						responseField.css('color', '#df4e47');
@@ -122,7 +122,7 @@ function addSection() {
 				}
 			}
 		} else {
-			if(responseField.css('opacity') == 1) {
+			if(responseField.css('opacity') === 1) {
 				responseField.css('opacity', 0);
 				setTimeout(function() {
 					responseField.css('color', '#df4e47');
@@ -136,7 +136,7 @@ function addSection() {
 			}
 		}
 	} else {
-		if(responseField.css('opacity') == 1) {
+		if(responseField.css('opacity') === 1) {
 			responseField.css('opacity', 0);
 			setTimeout(function() {
 				responseField.css('color', '#df4e47');
@@ -156,33 +156,33 @@ function addSubsection() {
 	var sectionName = $("#sectionNameInput").val();
 	var formData = new FormData($('#addForm').get(0));
 
-	if(sectionName != '') {
+	if(sectionName !== '') {
 		$.ajax({
 			type: 'POST',
 			data: formData,
 			dataType: "json",
 			contentType: false,
 			processData: false,
-			url: '../../scripts/admin/sections/ajaxCheckSubcategory.php',
+			url: '/scripts/admin/sections/ajaxCheckSubcategory.php',
 			success: function(result) {
-				if(result == "ok") {
+				if(result === "ok") {
 					$.ajax({
 						type: 'POST',
 						data: formData,
 						dataType: "json",
 						contentType: false,
 						processData: false,
-						url: "../../scripts/admin/sections/ajaxAddSubsection.php",
+						url: "/scripts/admin/sections/ajaxAddSubsection.php",
 						beforeSend: function() {
-							if(responseField.css('opacity') == 1) {
+							if(responseField.css('opacity') === 1) {
 								responseField.css('opacity', 0);
 								setTimeout(function() {
-									responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
+									responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 									responseField.css('opacity', 1);
 								}, 300);
 							} else {
 								responseField.css('color', '#df4e47');
-								responseField.html("<br /><img src='../../img/system/spinner.gif' /><br />");
+								responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 								responseField.css('opacity', 1);
 							}
 						},
@@ -204,10 +204,10 @@ function addSubsection() {
 									break;
 							}
 
-							if(responseField.css('opacity') == 1) {
+							if(responseField.css('opacity') === 1) {
 									responseField.css('opacity', 0);
 								setTimeout(function() {
-									if(s == 1) {
+									if(s === 1) {
 										responseField.css('color', '#53acff');
 									} else {
 										responseField.css('color', '#df4e47');
@@ -216,7 +216,7 @@ function addSubsection() {
 									responseField.css('opacity', 1);
 								}, 300);
 							} else {
-								if(s == 1) {
+								if(s === 1) {
 									responseField.css('color', '#53acff');
 								} else {
 									responseField.css('color', '#df4e47');
@@ -227,7 +227,7 @@ function addSubsection() {
 						}
 					});
 				} else {
-					if(responseField.css('opacity') == 1) {
+					if(responseField.css('opacity') === 1) {
 						responseField.css('opacity', 0);
 						setTimeout(function() {
 							responseField.css('color', '#df4e47');
@@ -243,7 +243,7 @@ function addSubsection() {
 			}
 		});
 	} else {
-		if(responseField.css('opacity') == 1) {
+		if(responseField.css('opacity') === 1) {
 			responseField.css('opacity', 0);
 			setTimeout(function() {
 				responseField.css('color', '#df4e47');

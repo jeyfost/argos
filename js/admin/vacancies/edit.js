@@ -16,7 +16,7 @@ function editVacancy() {
 			processData: false,
 			contentType: false,
 			dataType: "json",
-			url: "../../scripts/admin/vacancies/ajaxEditVacancy.php",
+			url: "/scripts/admin/vacancies/ajaxEditVacancy.php",
 			success: function(response) {
 				switch(response) {
 					case "ok":

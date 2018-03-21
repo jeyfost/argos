@@ -37,7 +37,7 @@ function editAction() {
 						dataType: "json",
 						processData: false,
 						contentType: false,
-						url: "../../scripts/admin/actions/ajaxEditAction.php",
+						url: "/scripts/admin/actions/ajaxEditAction.php",
 						success: function (response) {
 							switch(response) {
 								case "ok":

@@ -37,12 +37,6 @@ $(window).on("load", function() {
 	*/
 });
 
-function changeIcon(id, img, depth) {
-	var d = "";
-
-	for(var i = 0; i < depth; i++) {
-		d += "../";
-	}
-
-    document.getElementById(id).src = d + "img/system/" + img;
+function changeIcon(id, img) {
+    document.getElementById(id).src = "/img/system/" + img;
 }

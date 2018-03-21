@@ -3,18 +3,17 @@
  */
 
 function changeDeleteIcon(id, action) {
-	if(action == 1) {
-		document.getElementById(id).src = "../../img/system/deleteRed.png";
+	if(action === 1) {
+		document.getElementById(id).src = "/img/system/deleteRed.png";
 	} else {
-		document.getElementById(id).src = "../../img/system/delete.png";
+		document.getElementById(id).src = "/img/system/delete.png";
 	}
 }
 
 function searchFocus(id) {
 	var search = document.getElementById(id).value;
-	var searchList = $('#searchList');
 
-	if(search == "Поиск...") {
+	if(search === "Поиск...") {
 		document.getElementById(id).value = '';
 	}
 }
@@ -22,7 +21,7 @@ function searchFocus(id) {
 function searchBlur(id) {
 	var search = document.getElementById(id).value;
 
-	if(search == '') {
+	if(search === '') {
 		document.getElementById(id).value = 'Поиск...';
 	}
 }
@@ -44,14 +43,17 @@ function searchGood(id) {
 	var search = $('#' + id).val();
 	var searchList = $('#searchList');
 
-	if(search != '') {
+	if(search !== '') {
 		$.ajax({
 			type: 'POST',
-			data: {"search": search, "id": id},
-			url: "../../scripts/admin/actions/ajaxSearch.php",
+			data: {
+				"search": search,
+				"id": id
+			},
+			url: "/scripts/admin/actions/ajaxSearch.php",
 			success: function(response) {
 				searchList.html('');
-				searchList.html("<div style='float: right;'><img src='../../img/system/delete.png' style='cursor: pointer;' id='sl_" + id + "' onmouseover='changeDeleteIcon(\"sl_" + id + "\", 1)' onmouseout='changeDeleteIcon(\"sl_" + id + "\", 0)' title='Закрыть результат поиска' onclick='closeSearchList()' /></div><div style='clear: both;'></div>" + response);
+				searchList.html("<div style='float: right;'><img src='/img/system/delete.png' style='cursor: pointer;' id='sl_" + id + "' onmouseover='changeDeleteIcon(\"sl_" + id + "\", 1)' onmouseout='changeDeleteIcon(\"sl_" + id + "\", 0)' title='Закрыть результат поиска' onclick='closeSearchList()' /></div><div style='clear: both;'></div>" + response);
 
 				var x = $('#' + id).offset().left;
 				var y = parseInt($('#' + id).offset().top + 40);
@@ -76,7 +78,7 @@ function chooseGood(id, block) {
 	$.ajax({
 		type: 'POST',
 		data: {"id": id, "block": block},
-		url: "../../scripts/admin/actions/ajaxChooseGood.php",
+		url: "/scripts/admin/actions/ajaxChooseGood.php",
 		success: function(response) {
 			$('#' + block).html(response);
 			$('#' + block).attr("good_id", id);
@@ -92,7 +94,7 @@ function chooseGood(id, block) {
 function addGoodBlock() {
 	var base_html = $('#goodsBlock').html();
 	var random_id = md5(Math.random(0, 1000000) + md5(Date.now()));
-	var new_html = "<div class='actionGoodBlock' id='" + random_id + "' style='background-color: #f8f8f8;'><div style='float: right;'><img src='../../img/system/delete.png' style='cursor: pointer;' id='di" + random_id + "' onmouseover='changeDeleteIcon(\"di" + random_id + "\", 1)' onmouseout='changeDeleteIcon(\"di" + random_id + "\", 0)' title='Убрать этот блок' onclick='closeGoodBlock(\"" + random_id +"\")' /></div><div style='clear: both;'></div><br /><input type='text' id='search_" + random_id + "' class='searchFieldInput' value='Поиск...' onfocus='searchFocus(\"search_" + random_id + "\")' onblur='searchBlur(\"search_" + random_id + "\")' onkeyup='searchGood(\"search_" + random_id +"\")' /><br /><div id='g_" + random_id + "' class='goodBlock'></div><div style='clear: both;'></div></div></div>";
+	var new_html = "<div class='actionGoodBlock' id='" + random_id + "' style='background-color: #f8f8f8;'><div style='float: right;'><img src='/img/system/delete.png' style='cursor: pointer;' id='di" + random_id + "' onmouseover='changeDeleteIcon(\"di" + random_id + "\", 1)' onmouseout='changeDeleteIcon(\"di" + random_id + "\", 0)' title='Убрать этот блок' onclick='closeGoodBlock(\"" + random_id +"\")' /></div><div style='clear: both;'></div><br /><input type='text' id='search_" + random_id + "' class='searchFieldInput' value='Поиск...' onfocus='searchFocus(\"search_" + random_id + "\")' onblur='searchBlur(\"search_" + random_id + "\")' onkeyup='searchGood(\"search_" + random_id +"\")' /><br /><div id='g_" + random_id + "' class='goodBlock'></div><div style='clear: both;'></div></div></div>";
 
 	$('#goodsBlock').html(base_html + new_html);
 }
@@ -134,7 +136,7 @@ function addAction() {
 							dataType: "json",
 							processData: false,
 							contentType: false,
-							url: "../../scripts/admin/actions/ajaxAddAction.php",
+							url: "/scripts/admin/actions/ajaxAddAction.php",
 							success: function (response) {
 								switch(response) {
 									case "ok":
