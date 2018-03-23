@@ -685,7 +685,7 @@ if(isset($_SESSION['userID'])) {
 					        $summ = $k." коп.";
                         }
 
-					    echo "<span>Общая сумма всех покупок: ".$summ."</span>";
+					    echo "<span><b>Общая сумма покупок:</b> ".$summ."</span>";
                     }
 
 					echo "

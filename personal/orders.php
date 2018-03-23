@@ -469,6 +469,32 @@ if(isset($_SESSION['userID'])) {
 
 					echo "
 						</table>
+					";
+
+					$summ = 0;
+
+					$ordersResult = $mysqli->query("SELECT * FROM orders_info WHERE status = 1");
+					while($orders = $ordersResult->fetch_assoc()) {
+					    $summ += $orders['summ'];
+                    }
+
+                    if($summ > 0) {
+                        $r = floor($summ);
+                        $k = round(($summ - $r) * 100);
+
+                        if($r > 0) {
+                            $summ = $r." руб. ".$k." коп.";
+                        } else {
+                            $summ = $k." коп.";
+                        }
+
+                        echo "
+                            <br /><br />
+                            <span><b>Общая сумма заказов через сайт:</b> ".$summ."</span>
+                        ";
+                    }
+
+					echo "
 						<div id='pageNumbers'>
 					";
 
