@@ -88,6 +88,7 @@ if(isset($_SESSION['userID'])) {
 
     <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='/css/style.css'>
+    <link rel='stylesheet' media='screen' type='text/css' href='/css/media.css'>
 	<link rel="stylesheet" type="text/css" href="/js/lightview/css/lightview/lightview.css" />
 	<link rel="stylesheet" href="/js/font-awesome-4.7.0/css/font-awesome.min.css">
     <?php
@@ -662,8 +663,32 @@ if(isset($_SESSION['userID'])) {
 						";
 					}
 
+					$summ = 0;
+					$ordersResult = $mysqli->query("SELECT * FROM orders_info WHERE user_id = '".$_SESSION['userID']."' AND status = '1'");
+
+					while($orders = $ordersResult->fetch_assoc()) {
+					    $summ += $orders['summ'];
+                    }
+
 					echo "
 						</table>
+						<br /><br />
+					";
+
+					if($summ > 0) {
+					    $r = floor($summ);
+					    $k = round(($summ - $r) * 100);
+
+					    if($r > 0) {
+					        $summ = $r." руб. ".$k." коп.";
+                        } else {
+					        $summ = $k." коп.";
+                        }
+
+					    echo "<span>Общая сумма всех покупок: ".$summ."</span>";
+                    }
+
+					echo "
 						<div id='pageNumbers'>
 					";
 
