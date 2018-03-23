@@ -8,6 +8,8 @@ ob_start();
 $row = 1;
 
 if(!empty($_FILES['csvFile']['tmp_name'])) {
+    /* Первая колонка в файле — артикул, вторая — цена в валюте прихода, третья — количество */
+
 	$uploadDir = "../../../files/1C/";
 	$name = "update.csv";
 	$upload = $uploadDir.$name;
@@ -18,7 +20,7 @@ if(!empty($_FILES['csvFile']['tmp_name'])) {
 		while(($data = fgetcsv($handle, ",")) !== FALSE) {
 			$num = count($data);
 
-			for ($c=0; $c < $num; $c++) {
+			for ($c = 0; $c < $num; $c++) {
 				$stats = explode(";", $data[$c]);
 				$code = $stats[0];
 				$price = $stats[1];

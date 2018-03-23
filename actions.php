@@ -741,7 +741,8 @@ if(isset($_SESSION['userID'])) {
 						if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
 							echo "
 								<div class='itemPurchase'>
-									<img src='/img/system/toBasket.png' id='toBasketIMG".$good['id']."' class='toBasketIMG' onmouseover='changeIcon(\"toBasketIMG".$good['id']."\", \"toBasketRed.png\")' onmouseout='changeIcon(\"toBasketIMG".$good['id']."\", \"toBasket.png\")' title='Добавить в корзину' onclick='addToBasket(\"".$good['id']."\", \"quantityInput".$good['id']."\", \"addingResult".$good['id']."\")' />
+									<span onclick='addToBasket(\"".$good['id']."\", \"quantityInput".$good['id']."\", \"addingResult".$good['id']."\")' class='addToBasketFont'>Добавить в корзину</span>
+									    <br /><br />
 									<form method='post'>
 										<label for='quantityInput".$good['id']."'>Кол-во в ".$unit['in_name'].":</label>
 										<input type='number' id='quantityInput".$good['id']."' min='1' step='1' value='1' class='itemQuantityInput' />

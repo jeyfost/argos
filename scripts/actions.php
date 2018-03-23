@@ -10,13 +10,13 @@ function echoAction($actions) {
 	echo "
 		<a href='actions.php?id=".$actions['id']."'>
 			<div class='newsPreview' id='newsPreview".$actions['id']."'>
-				<img src='img/photos/actions/".$actions['preview']."' />
+				<img src='/img/photos/actions/".$actions['preview']."' />
 				<br /><br />
 				<div style='text-align: left;'>
 					<span style='color: #df4e47; font-style: italic; font-size: 14px;'>"; if($actions['from_date'] != $actions['to_date']) { echo $from_date." — ".$to_date;} else {echo $from_date;} echo "</span>
 					<p style='color: #4c4c4c; margin-top: 0;'>".$actions['header']."</p>
 					<br />
-					<div style='text-align: right;'><img src='img/system/arrow.png' /></div>
+					<div style='text-align: right;'><img src='/img/system/arrow.png' /></div>
 				</div>
 			</div>
 		</a>

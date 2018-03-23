@@ -7,7 +7,7 @@ function makeUpdate() {
 		$.ajax({
 			type: "POST",
 			data: formData,
-			dastaType: "json",
+			dataType: "json",
 			contentType: false,
 			processData: false,
 			url: "/scripts/admin/goods/ajaxUpdate.php",
@@ -29,14 +29,14 @@ function makeUpdate() {
 				var status;
 
 				switch(response) {
-					case '"ok"':
+					case "ok":
 						s = 1;
 						status = "Данные по товарам были успешно обновлены.";
 						break;
-					case '"failed"':
+					case "failed":
 						status = "Во время обновления данных произошла ошибка.";
 						break;
-					case '"partly"':
+					case "partly":
 						status = "Не все товары были обновлены.";
 						break;
 					default:

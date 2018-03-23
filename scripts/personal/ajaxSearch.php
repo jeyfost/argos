@@ -6,10 +6,12 @@ include("../connect.php");
 $query = $mysqli->real_escape_string($_POST['query']);
 
 $searchResult = $mysqli->query("SELECT * FROM catalogue_new WHERE name LIKE '%".$query."%' OR code LIKE '%".$query."%' ORDER BY name LIMIT 10");
+
 if($searchResult->num_rows == 0) {
 	echo "<i>К сожалению, поиск не дал результата.</i>";
 } else {
 	$j = 0;
+
 	while($search = $searchResult->fetch_assoc()) {
 		$j++;
 		$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$search['unit']."'");
@@ -17,27 +19,13 @@ if($searchResult->num_rows == 0) {
 		$rateResult = $mysqli->query("SELECT rate FROM currency WHERE id = '".$search['currency']."'");
 		$rate = $rateResult->fetch_array(MYSQLI_NUM);
 
-		$price = $search['price'] * $rate[0];
+        $price = $search['price'] * $rate[0];
 
-		if(isset($_SESSION['userID'])) {
+		if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
 			$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
 			$discount = $discountResult->fetch_array(MYSQLI_NUM);
 
-			$price = $price - $price * ($discount[0] / 100);
-		}
-
-		$price = round(($price), 2, PHP_ROUND_HALF_UP);
-		$roubles = floor($price);
-		$kopeck = ($price - $roubles) * 100;
-		if($kopeck == 100) {
-			$kopeck = 0;
-			$roubles++;
-		}
-
-		if($roubles == 0) {
-			$price = $kopeck." коп.";
-		} else {
-			$price = $roubles." руб. ".$kopeck." коп.";
+			$price = $price * (1 - $discount[0] / 100);
 		}
 
 		$typeResult = $mysqli->query("SELECT type_name FROM types WHERE catalogue_type = '".$search['type']."'");
@@ -76,6 +64,29 @@ if($searchResult->num_rows == 0) {
 				echo $string[0]."<br />";
 			}
 		}
+
+        $roubles = floor($price);
+        $kopeck = round(($price - $roubles) * 100);
+
+        if($kopeck == 100) {
+            $kopeck = 0;
+            $roubles ++;
+        }
+
+        if($roubles == 0 and $kopeck == 0) {
+            $kopeck = 1;
+        }
+
+        if($kopeck == 100) {
+            $kopeck = 0;
+            $roubles++;
+        }
+
+        if($roubles == 0) {
+            $price = $kopeck." коп.";
+        } else {
+            $price = $roubles." руб. ".$kopeck." коп.";
+        }
 
 		echo "
 					<br />
