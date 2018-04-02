@@ -1,3 +1,93 @@
+$(window).on("load", function() {
+    $('#orderSearchInput').on("keyup", function () {
+        if($('#orderSearchInput').val() !== '') {
+            searchOrder();
+        } else {
+            if($('#orderSearchInput').css('display') !== "none") {
+                $('#orderSearchListAdmin').hide("fast");
+            }
+        }
+    });
+
+    $('#orderSearchInput').on("focus", function () {
+        if($('#orderSearchInput').val() !== '') {
+            searchOrder();
+        } else {
+            if($('#orderSearchInput').css('display') !== "none") {
+                $('#orderSearchListAdmin').hide("fast");
+            }
+        }
+    });
+
+    $('#orderHistorySearchInput').on("keyup", function () {
+        if($('#orderHistorySearchInput').val() !== '') {
+            searchHistoryOrder();
+        } else {
+            if($('#orderHistorySearchInput').css('display') !== "none") {
+                $('#orderHistorySearchList').hide("fast");
+            }
+        }
+    });
+
+    $('#orderHistorySearchInput').on("focus", function () {
+        if($('#orderHistorySearchInput').val() !== '') {
+            searchHistoryOrder();
+        } else {
+            if($('#orderHistorySearchInput').css('display') !== "none") {
+                $('#orderHistorySearchList').hide("fast");
+            }
+        }
+    });
+});
+
+$(document).mouseup(function (e) {
+    var sl = $("#orderSearchListAdmin");
+    if(document.getElementById('orderSearchInput') !== document.activeElement) {
+        if (sl.has(e.target).length === 0){
+            sl.hide('fast');
+        }
+    }
+
+    var s2 = $("#orderHistorySearchList");
+    if(document.getElementById('orderHistorySearchInput') !== document.activeElement) {
+        if (s2.has(e.target).length === 0){
+            s2.hide('fast');
+        }
+    }
+});
+
+function searchOrder() {
+    var query = $('#orderSearchInput').val();
+
+    if(query !== 'Номер заказа...' && query !== '') {
+        $.ajax({
+            type: "POST",
+            data: {"query": query},
+            url: "/scripts/personal/ajaxSearchActiveOrderAdmin.php",
+            success: function (response) {
+                $('#orderSearchListAdmin').html(response);
+                $('#orderSearchListAdmin').show('fast');
+            }
+        });
+    }
+}
+
+function searchHistoryOrder() {
+    var query = $('#orderHistorySearchInput').val();
+
+    if(query !== 'Номер заказа...' && query !== '') {
+        $.ajax({
+            type: "POST",
+            data: {"query": query},
+            url: "/scripts/personal/ajaxSearchHistoryOrderUser.php",
+            success: function (response) {
+                $('#orderHistorySearchList').html(response);
+                $('#orderHistorySearchList').show('fast');
+            }
+        });
+    }
+}
+
 function showOrderDetails(id) {
 	var response_field = $('#responseField');
 	$.ajax({

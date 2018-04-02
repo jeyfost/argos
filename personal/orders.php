@@ -381,7 +381,20 @@ if(isset($_SESSION['userID'])) {
 						echo "
 								</select>
 							</form>
-							<br /><br />
+							<br />
+						";
+
+                        if($ordersQuantity[0] > 1) {
+                            echo "
+                                <div id='orderSearchListAdmin'></div>
+						        <form method='post'>
+						            <input id='orderSearchInput' class='orderSearchInput' placeholder='Номер заказа...' />
+						        </form>
+						        <br />
+						    ";
+                        }
+
+						echo "
 							<div id='orderResponse'></div>
 							<table style='min-width: 100%; text-align: center;' id='ordersTable'>
 								<tr class='headTR'>
