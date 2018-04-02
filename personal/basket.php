@@ -611,7 +611,7 @@ if(isset($_SESSION['userID'])) {
 						    echo "
                                 <div id='orderSearchList'></div>
 						        <form method='post'>
-						            <input id='orderSearchInput' placeholder='Номер заказа...' />
+						            <input id='orderSearchInput' class='orderSearchInput' placeholder='Номер заказа...' />
 						        </form>
 						        <br />
 						    ";
@@ -648,6 +648,19 @@ if(isset($_SESSION['userID'])) {
 					break;
 				case 3:
 					$j = 0;
+
+					$ordersQuantityResult = $mysqli->query("SELECT COUNT(id) FROM orders_info WHERE user_id = '".$_SESSION['userID']."' AND status = '1'");
+					$ordersQuantity = $ordersQuantityResult->fetch_array(MYSQLI_NUM);
+
+					if($ordersQuantity > 1) {
+                        echo "
+                            <div id='orderHistorySearchList'></div>
+						    <form method='post'>
+						        <input id='orderHistorySearchInput' class='orderSearchInput' placeholder='Номер заказа...' />
+						    </form>
+						    <br />
+						";
+                    }
 
 					echo "
 						<table style='min-width: 100%; text-align: center;' id='ordersTable'>
