@@ -165,7 +165,7 @@ if(isset($_SESSION['userID'])) {
 				?>
 				<div id='searchBlock'>
 					<form method='post'>
-						<input type='text' id='searchFieldInput' name=searchField' value='Поиск...' />
+						<input type='text' id='searchFieldInput' name='searchField' value='Поиск...' />
 					</form>
 				</div>
 				<div style="clear: both;"></div>
@@ -605,6 +605,19 @@ if(isset($_SESSION['userID'])) {
 						$orderResult = $mysqli->query("SELECT * FROM orders_info WHERE user_id = '".$_SESSION['userID']."' AND status = '0'");
 						echo "
 							<p>Активные заявки — это заказы, которые ещё не обработаны менеджером. До момента принятия заказа вы вправе редактировать свои заказы. Для этого нажмите на соответствующий номер заказа, выделенный красным цветом.</p>
+						";
+
+						if($ordersQuantity[0] > 1) {
+						    echo "
+                                <div id='orderSearchList'></div>
+						        <form method='post'>
+						            <input id='orderSearchInput' placeholder='Номер заказа...' />
+						        </form>
+						        <br />
+						    ";
+                        }
+
+						echo "
 							<table style='width: 100%; text-align: center;'>
 								<tr class='headTR'>
 									<td>№</td>
@@ -620,7 +633,7 @@ if(isset($_SESSION['userID'])) {
 								<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 									<td>".$j."</td>
 									<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
-									<td><a href='order.php?id=".$order['id']."' target='_blank' class='font-awesome-link' title='Открыть детализацию закаа в новом окне'><i class='fa fa-folder-open-o' aria-hidden='true'></i></a></td>
+									<td><a href='order.php?id=".$order['id']."' target='_blank' class='font-awesome-link' title='Открыть детализацию заказа в новом окне'><i class='fa fa-folder-open-o' aria-hidden='true'></i></a></td>
 									<td>".dateFormattedDayToYear($order['send_date'])."</td>
 									<td><span class='tdLink' onclick='cancelOrder(\"".$order['id']."\")'>Отменить заказ</span></td>
 								</tr>

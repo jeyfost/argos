@@ -259,7 +259,7 @@ if(isset($_SESSION['userID'])) {
 					echo "
 						<div id='searchBlock'>
 							<form method='post'>
-								<input id='searchFieldInput' name=searchField' value='Поиск...' />
+								<input id='searchFieldInput' name='searchField' value='Поиск...' />
 							</form>
 						</div>
 					";

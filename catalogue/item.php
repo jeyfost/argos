@@ -188,7 +188,7 @@ if(!empty($good['subcategory2'])) {
 					echo "
 						<div id='searchBlock'>
 							<form method='post'>
-								<input id='searchFieldInput' name=searchField' value='Поиск...' />
+								<input id='searchFieldInput' name='searchField' value='Поиск...' />
 							</form>
 						</div>
 					";

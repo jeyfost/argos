@@ -1,3 +1,50 @@
+$(window).on("load", function() {
+	$('#orderSearchInput').on("keyup", function () {
+        if($('#orderSearchInput').val() !== '') {
+            searchOrder();
+        } else {
+            if($('#orderSearchInput').css('display') !== "none") {
+                $('#orderSearchList').hide("fast");
+            }
+        }
+    });
+
+	$('#orderSearchInput').on("focus", function () {
+		if($('#orderSearchInput').val() !== '') {
+            searchOrder();
+		} else {
+            if($('#orderSearchInput').css('display') !== "none") {
+                $('#orderSearchList').hide("fast");
+			}
+		}
+    });
+});
+
+$(document).mouseup(function (e) {
+    var sl = $("#orderSearchList");
+    if(document.getElementById('orderSearchInput') !== document.activeElement) {
+        if (sl.has(e.target).length === 0){
+            sl.hide('fast');
+        }
+    }
+});
+
+function searchOrder() {
+	var query = $('#orderSearchInput').val();
+
+	if(query !== 'Номер заказа...' && query !== '') {
+		$.ajax({
+			type: "POST",
+			data: {"query": query},
+			url: "/scripts/personal/ajaxSearchActiveOrderUser.php",
+			success: function (response) {
+                $('#orderSearchList').html(response);
+                $('#orderSearchList').show('fast');
+            }
+		});
+	}
+}
+
 function removeGood(id) {
 	$.ajax({
 		type: "POST",
