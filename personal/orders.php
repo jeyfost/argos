@@ -432,6 +432,10 @@ if(isset($_SESSION['userID'])) {
 					break;
 				case 2:
 					$j = 0;
+
+					$ordersQuantityResult = $mysqli->query("SELECT COUNT(id) FROM orders_info WHERE status = '1'");
+					$ordersQuantity = $ordersQuantityResult->fetch_array(MYSQLI_NUM);
+
 					echo "
 						<form method='post'>
 							<label for='clientSelect'>Клиент:</label>
@@ -449,7 +453,20 @@ if(isset($_SESSION['userID'])) {
 					echo "
 							</select>
 						</form>
-						<br /><br />
+						<br />
+					";
+
+                    if($ordersQuantity[0] > 1) {
+                        echo "
+                            <div id='orderHistorySearchListAdmin'></div>
+						    <form method='post'>
+						        <input id='orderHistorySearchInput' class='orderSearchInput' placeholder='Номер заказа...' />
+						    </form>
+						    <br />
+						";
+                    }
+
+					echo "
 						<div id='orderResponse'></div>
 						<table style='min-width: 100%; text-align: center;' id='ordersTable'>
 							<tr class='headTR'>

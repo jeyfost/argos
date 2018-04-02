@@ -24,7 +24,7 @@ $(window).on("load", function() {
             searchHistoryOrder();
         } else {
             if($('#orderHistorySearchInput').css('display') !== "none") {
-                $('#orderHistorySearchList').hide("fast");
+                $('#orderHistorySearchListAdmin').hide("fast");
             }
         }
     });
@@ -34,7 +34,7 @@ $(window).on("load", function() {
             searchHistoryOrder();
         } else {
             if($('#orderHistorySearchInput').css('display') !== "none") {
-                $('#orderHistorySearchList').hide("fast");
+                $('#orderHistorySearchListAdmin').hide("fast");
             }
         }
     });
@@ -48,7 +48,7 @@ $(document).mouseup(function (e) {
         }
     }
 
-    var s2 = $("#orderHistorySearchList");
+    var s2 = $("#orderHistorySearchListAdmin");
     if(document.getElementById('orderHistorySearchInput') !== document.activeElement) {
         if (s2.has(e.target).length === 0){
             s2.hide('fast');
@@ -79,10 +79,10 @@ function searchHistoryOrder() {
         $.ajax({
             type: "POST",
             data: {"query": query},
-            url: "/scripts/personal/ajaxSearchHistoryOrderUser.php",
+            url: "/scripts/personal/ajaxSearchHistoryOrderAdmin.php",
             success: function (response) {
-                $('#orderHistorySearchList').html(response);
-                $('#orderHistorySearchList').show('fast');
+                $('#orderHistorySearchListAdmin').html(response);
+                $('#orderHistorySearchListAdmin').show('fast');
             }
         });
     }
