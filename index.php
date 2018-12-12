@@ -226,15 +226,15 @@ if(isset($_SESSION['userID'])) {
 		<div class="mainImgContainer" id="mic5"><img src="/img/system/main5.jpg" id="mainImg5" /></div>
 
         <div id="leftSideBlock">
-            <span id="mainText1" class="mainBigText" onclick="scrollFirst()">Мебельная фурнитура</span>
+            <span id="mainText1" class="mainBigText" onclick="scrollFirst()" name="active">Мебельная фурнитура</span>
             <br /><br />
-            <span id='mainText2' class="mainSmallText" onclick="scrollSecond()">Кромочные материалы</span>
+            <span id='mainText2' class="mainSmallText" onclick="scrollSecond()" name="deactive">Кромочные материалы</span>
             <br /><br />
-            <span id='mainText3' class="mainSmallText" onclick="scrollThird()">Аксессуары для штор</span>
+            <span id='mainText3' class="mainSmallText" onclick="scrollThird()" name="deactive">Аксессуары для штор</span>
             <br /><br />
-            <span id='mainText4' class="mainSmallText" onclick="scrollFourth()">Ручной инструмент</span>
+            <span id='mainText4' class="mainSmallText" onclick="scrollFourth()" name="deactive">Ручной инструмент</span>
 			<br /><br />
-            <span id='mainText5' class="mainSmallText" onclick="scrollFifth()">Сопутствующие товары</span>
+            <span id='mainText5' class="mainSmallText" onclick="scrollFifth()" name="deactive">Сопутствующие товары</span>
         </div>
         <div id="rightSideBlock" class="rightSideBlock">
             <div class="rightSideBlockHeader">Разделы</div>

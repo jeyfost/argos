@@ -40,6 +40,19 @@ function resetAttributes() {
 }
 
 function scrollFirst() {
+	var attribute = $("#mainText1").attr("name");
+
+	if(attribute === "active") {
+		window.location.href="/catalogue/index.php?type=fa&p=1";
+	} else {
+		$("#mainText2").attr("name", "deactive");
+		$("#mainText3").attr("name", "deactive");
+		$("#mainText4").attr("name", "deactive");
+		$("#mainText5").attr("name", "deactive");
+
+		$("#mainText1").attr("name", "active");
+	}
+
 	var difference = 60 - $('#mic1').offset().top;
 
 	$('#mic1').offset({top: $('#mic1').offset().top + difference});
@@ -74,6 +87,19 @@ function scrollFirst() {
 }
 
 function scrollSecond() {
+    var attribute = $("#mainText2").attr("name");
+
+    if(attribute === "active") {
+        window.location.href="/catalogue/index.php?type=em&p=1";
+    } else {
+        $("#mainText1").attr("name", "deactive");
+        $("#mainText3").attr("name", "deactive");
+        $("#mainText4").attr("name", "deactive");
+        $("#mainText5").attr("name", "deactive");
+
+        $("#mainText2").attr("name", "active");
+    }
+
 	var difference = 60 - $('#mic2').offset().top;
 
 	$('#mic1').offset({top: $('#mic1').offset().top + difference});
@@ -108,6 +134,20 @@ function scrollSecond() {
 }
 
 function scrollThird() {
+    var attribute = $("#mainText3").attr("name");
+
+    if(attribute === "active") {
+        window.location.href="/catalogue/index.php?type=ca&p=1";
+    } else {
+        $("#mainText1").attr("name", "deactive");
+        $("#mainText2").attr("name", "deactive");
+        $("#mainText4").attr("name", "deactive");
+        $("#mainText5").attr("name", "deactive");
+
+        $("#mainText3").attr("name", "active");
+
+    }
+
 	var difference = 60 - $('#mic3').offset().top;
 
 	$('#mic1').offset({top: $('#mic1').offset().top + difference});
@@ -142,6 +182,19 @@ function scrollThird() {
 }
 
 function scrollFourth() {
+    var attribute = $("#mainText4").attr("name");
+
+    if(attribute === "active") {
+        window.location.href="/catalogue/index.php?type=ht&p=1";
+    } else {
+        $("#mainText1").attr("name", "deactive");
+        $("#mainText2").attr("name", "deactive");
+        $("#mainText3").attr("name", "deactive");
+        $("#mainText5").attr("name", "deactive");
+
+        $("#mainText4").attr("name", "active");
+    }
+
 	var difference = 60 - $('#mic4').offset().top;
 
 	$('#mic1').offset({top: $('#mic1').offset().top + difference});
@@ -176,6 +229,19 @@ function scrollFourth() {
 }
 
 function scrollFifth() {
+    var attribute = $("#mainText5").attr("name");
+
+    if(attribute === "active") {
+        window.location.href="/catalogue/index.php?type=dg&p=1";
+    } else {
+        $("#mainText1").attr("name", "deactive");
+        $("#mainText2").attr("name", "deactive");
+        $("#mainText3").attr("name", "deactive");
+        $("#mainText4").attr("name", "deactive");
+
+        $("#mainText5").attr("name", "active");
+    }
+
 	var difference = 60 - $('#mic5').offset().top;
 
 	$('#mic1').offset({top: $('#mic1').offset().top + difference});
