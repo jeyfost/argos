@@ -19,8 +19,8 @@ select {height: 40px; line-height: 40px;}
 @media screen and (max-width: 960px) {
     .mobileMenuPointBig:hover, .mobileMenuPointSmall:hover {color: #df4e47;}
 
-    #menuLinks, #mainImg2, #mainImg3, #mainImg4, #personalButtons {display: none;}
-    #menuIcon {float: right; margin: -48px 25px auto auto; cursor: pointer;}
+    #menuLinks, #mainImg2, #mainImg3, #mainImg4, #personalButtons {display: none !important;}
+    #menuIcon {float: right; margin: -48px 25px auto auto; cursor: pointer; display: block;}
     #catalogueMenu {position: relative; float: left; margin-top: 20px; margin-bottom: 20px; width: 100%; padding: 10px; border: 1px solid #d7d5d1;}
     #pageNumbers {position: relative; margin: 0 auto 120px auto; text-align: center; font-size: 15px; transition: .3s;}
     #personalMenu {position: relative; float: left; margin-top: 20px; margin-bottom: 20px; width: 100%; padding: 10px;}

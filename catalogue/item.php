@@ -234,6 +234,17 @@ if(!empty($good['subcategory2'])) {
         </div>
         <div id="menuIcon" onclick="showHideMobileMenu()"><img src="/img/system/mobile/menuIcon.png" title="Меню" /></div>
 		<div id="mobileMenu">
+            <?php
+                if(empty($_SESSION['userID'])) {
+                    echo "
+                            <div class='mobileMenuItem' style='margin-top: 0;'>
+                                <a href='/personal/login.php' class='mobileMenuPointBig'>Войти</a>
+                            </div>
+                            <hr />
+                        ";
+                }
+            ?>
+
 			<div class="mobileMenuItem" style="margin-top: 0;">
 				<a href="index.php?type=fa&p=1" class="mobileMenuPointBig">Каталог</a>
 				<div class="subMenu">
