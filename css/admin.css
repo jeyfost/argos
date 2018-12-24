@@ -10,7 +10,7 @@ td {padding: 5px 10px 5px 10px; margin: 3px;}
 tr {margin-top: 20px;}
 select {height: 40px; line-height: 40px; margin-top: 5px; padding: 5px;}
 a.tooltips {position: relative; display: inline;}
-a.tooltips span {position: absolute; width: 900px; color: #FFFFFF; background: #000000; height: 38px; line-height: 38px; text-align: center; visibility: hidden; border-radius: 4px; box-shadow: 0 -3px 0 #df4e47;}
+a.tooltips span {position: absolute; width: 900px; color: #FFFFFF; background: #000000; height: 38px; line-height: 38px; text-align: center; visibility: hidden; border-radius: 4px; box-shadow: 0 -3px 0 #ff282b;}
 a.tooltips span:after {content: ''; position: absolute; top: 100%; left: 50%; margin-left: -8px; width: 0; height: 0; border-top: 8px solid #000000; border-right: 8px solid transparent; border-left: 8px solid transparent;}
 a:hover.tooltips span { visibility: visible; opacity: 0.7; bottom: 30px; left: 50%; margin-left: -456px; z-index: 999;}
 
@@ -18,8 +18,8 @@ a:hover.tooltips span { visibility: visible; opacity: 0.7; bottom: 30px; left: 5
 .breadCrumbsText:hover, .redLink:hover, .link:hover, .searchLink:hover {text-decoration: none;}
 .searchLink .searchItem:hover {background-color: #f3f3f3;}
 .sketchFont:hover {text-decoration: underline;}
-.districtButton:hover {color: #df4e47; background-color: #ddd;}
-.font-awesome-link:hover {color: #df4e47;}
+.districtButton:hover {color: #ff282b; background-color: #ddd;}
+.font-awesome-link:hover {color: #ff282b;}
 
 #loginBlock {position: relative; margin: 0 auto; padding: 20px; background-color: #fff; width: 320px; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4);}
 #loginSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer;}
@@ -46,10 +46,10 @@ a:hover.tooltips span { visibility: visible; opacity: 0.7; bottom: 30px; left: 5
 .menuText {position: relative; float: left; height: 100%; margin-left: 10px; line-height: 40px; color: #4c4c4c;}
 .line {width: 100%; height: 1px; background-color: #dedede; margin-top: 10px;}
 .button {height: 30px; max-width: 160px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: left; margin-left: 10px; padding: auto 5px;}
-.buttonActive {height: 30px; max-width: 160px; border: none; background-color: #df4e47; color: #fff; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: left; margin-left: 10px; padding: auto 5px;}
-.redLink, .searchInfo a .noBorder {text-decoration: underline; color: #df4e47; cursor: pointer;}
+.buttonActive {height: 30px; max-width: 160px; border: none; background-color: #ff282b; color: #fff; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: left; margin-left: 10px; padding: auto 5px;}
+.redLink, .searchInfo a .noBorder {text-decoration: underline; color: #ff282b; cursor: pointer;}
 .file {border: none;}
-.link {color: #df4e47; text-decoration: underline;}
+.link {color: #ff282b; text-decoration: underline;}
 .checkbox {width: 20px; height: 20px; position: relative; float: left;}
 .dateInput {position: relative; float: left; width: 150px;}
 .smallInput {width: 150px;}
@@ -59,7 +59,7 @@ a:hover.tooltips span { visibility: visible; opacity: 0.7; bottom: 30px; left: 5
 .searchIMG {width: 100px; position: relative; float: left; margin-top: 5px; margin-left: 5px;}
 .searchInfo {width: 365px; padding-left: 10px; position: relative; float: left; margin-top: 5px; font-size: 15px;}
 .searchLink {color: #4c4c4c; text-decoration: underline;}
-.sketchFont {font-size: 16px; color: #df4e47; text-decoration: none;}
+.sketchFont {font-size: 16px; color: #ff282b; text-decoration: none;}
 .goodBlock {width: 100%;}
 .goodImg {position: relative; float: left; width: 100px;}
 .goodInfo {position: relative; float: left; margin-left: 20px;}
@@ -67,15 +67,15 @@ a:hover.tooltips span { visibility: visible; opacity: 0.7; bottom: 30px; left: 5
 .goodDescription {margin-left: 37px; margin-top: 10px; font-size: 15px;}
 .radio {width: 16px; padding: 0; margin: 0; position: relative; float: left;}
 .radioLabel {margin: 5px auto auto 5px; position: relative; float: left;}
-.districtButton {display: inline-block; margin-right: 5px; margin-bottom: 5px; width: 120px; height: 40px; line-height: 40px; color: #fff; background-color: #df4e47; cursor: pointer; text-align: center; font-size: 14px;}
+.districtButton {display: inline-block; margin-right: 5px; margin-bottom: 5px; width: 120px; height: 40px; line-height: 40px; color: #fff; background-color: #ff282b; cursor: pointer; text-align: center; font-size: 14px;}
 .clientBlock {display: inline-block; border: 1px solid #ddd; padding: 5px; margin: 5px; text-align: center;}
 .clientCheckbox {position: relative; float: left; width: 30px; border-right: 1px solid #ddd;}
 .client {position: relative; float: left; padding-left: 5px; text-align: left;}
 .goodStyleWhite {color: #fff;}
-.goodStyleRed {color: #df4e47;}
+.goodStyleRed {color: #ff282b;}
 .pageNumberBlockSide {position: relative; float: left; background-color: #ffffff; height: 30px; line-height: 30px; padding-left: 10px; padding-right: 10px; text-align: center;}
 .pageNumberBlock {position: relative; float: left; background-color: #ffffff; width: 40px; height: 30px; line-height: 30px; text-align: center;}
-.pageNumberBlockActive {position: relative; float: left; background-color: #df4e47; width: 40px; height: 30px; line-height: 30px; text-align: center;}
+.pageNumberBlockActive {position: relative; float: left; background-color: #ff282b; width: 40px; height: 30px; line-height: 30px; text-align: center;}
 .basicText {color: #4c4c4c; text-decoration: none;}
 .codeCell {position: relative; float: left; padding: 5px; margin: 5px auto auto 5px; background-color: #f7f7f7;}
 .goodPhotoContainer {display: inline-block; margin-left: 10px; width: 30px; text-align: center; padding: 5px; border: 1px solid #d7d5d1; vertical-align: top; transition: .3s;}

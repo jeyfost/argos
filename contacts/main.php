@@ -168,7 +168,7 @@ if(isset($_SESSION['userID'])) {
 					<span class="slash"> /</span>
 				</div>
 				<div class="menuLink" id="contactsLink" onmouseover="showDropdownList('1', 'contactsLink', 'contactsLinkMain')">
-					<a href="/contacts/stores.php" class="menuPoint" style="color: #df4e47;">Контакты</a>
+					<a href="/contacts/stores.php" class="menuPoint" style="color: #ff282b;">Контакты</a>
 					<img src="/img/system/downArrow.png" />
 				</div>
 				<div style="clear: both;"></div>
@@ -330,7 +330,7 @@ if(isset($_SESSION['userID'])) {
 					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=TRFDdk4LfiXmytO-3UCq_hXaFXJG-3Zd&amp;width=500&amp;height=440&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
 				</div>
 				<div class="mapDescription">
-					<h2><span style="color: #df4e47;">Аргос-ФМ</span> Головной офис</h2>
+					<h2><span style="color: #ff282b;">Аргос-ФМ</span> Головной офис</h2>
 					<b>Адрес:</b>
 					<br />
 					<span>212040, Республика Беларусь, г. Могилёв, ул. Залуцкого, 21</span>

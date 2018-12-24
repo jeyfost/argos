@@ -147,7 +147,7 @@ if(isset($_SESSION['userID'])) {
 					<span class="slash"> /</span>
 				</div>
 				<div class="menuLink" id="aboutLink" onmouseover="showDropdownList('1', 'aboutLink', 'aboutLinkVacancies')">
-					<a href="/about/info.php" style="color: #df4e47;">О компании</a>
+					<a href="/about/info.php" style="color: #ff282b;">О компании</a>
 					<img src="/img/system/downArrow.png" />
 					<span class="slash"> /</span>
 				</div>
@@ -340,7 +340,7 @@ if(isset($_SESSION['userID'])) {
 					echo "На данный момент открытых вакансий нет, но вы можете отправить нам своё резюме через форму ниже.";
 				} else {
 					echo "
-						<span style='font-style: italic; font-size: 14px;'>Общее количество вакансий: <span style='color: #df4e47;'>".$vacanciesCount[0]."</span></span>
+						<span style='font-style: italic; font-size: 14px;'>Общее количество вакансий: <span style='color: #ff282b;'>".$vacanciesCount[0]."</span></span>
 						<hr />
 						<br />
 					";
@@ -396,7 +396,7 @@ if(isset($_SESSION['userID'])) {
 
 						echo "
 							<h2>".$i.". ".$vacancy['position']."</h2>
-							<span style='font-style: italic; font-size: 14px;'>Дата открытия вакансии: <span style='color: #df4e47;'>".$date."</span></span>
+							<span style='font-style: italic; font-size: 14px;'>Дата открытия вакансии: <span style='color: #ff282b;'>".$date."</span></span>
 							<br /><br />
 							".$vacancy['text']."
 							<br /><br />

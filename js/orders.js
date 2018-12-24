@@ -278,12 +278,12 @@ function acceptOrder(id) {
 				if(order_response.css('opacity') === 1) {
 					order_response.css('opacity', 0);
 					setTimeout(function() {
-						order_response.css('color', '#df4e47');
+						order_response.css('color', '#ff282b');
 						order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
 						order_response.css('opacity', 1);
 					}, 300);
 				} else {
-					order_response.css('color', '#df4e47');
+					order_response.css('color', '#ff282b');
 					order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
 					order_response.css('opacity', 1);
 				}
@@ -347,12 +347,12 @@ function cancelOrder(id) {
 					if(order_response.css('opacity') === 1) {
 						order_response.css('opacity', 0);
 						setTimeout(function() {
-							order_response.css('color', '#df4e47');
+							order_response.css('color', '#ff282b');
 							order_response.html(response + "<br /><br />");
 							order_response.css('opacity', 1);
 						}, 300);
 					} else {
-						order_response.css('color', '#df4e47');
+						order_response.css('color', '#ff282b');
 						order_response.html(response + "<br /><br />");
 						order_response.css('opacity', 1);
 					}

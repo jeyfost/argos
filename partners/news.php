@@ -182,7 +182,7 @@ if(isset($_SESSION['userID'])) {
 					<span class="slash"> /</span>
 				</div>
 				<div class="menuLink" id="partnersLink" onmouseover="showDropdownList('1', 'partnersLink', 'partnersLinkClientNews')">
-					<a href="/partners/cooperation.php" style="color: #df4e47;">Партнерам</a>
+					<a href="/partners/cooperation.php" style="color: #ff282b;">Партнерам</a>
 					<img src="/img/system/downArrow.png" />
 					<span class="slash"> /</span>
 				</div>
@@ -376,7 +376,7 @@ if(isset($_SESSION['userID'])) {
 									<img src='/img/photos/news/" . $yearNews['preview'] . "' />
 									<br /><br />
 									<div style='text-align: left;'>
-										<span style='color: #df4e47; font-style: italic; font-size: 14px;'>" . $d . "</span>
+										<span style='color: #ff282b; font-style: italic; font-size: 14px;'>" . $d . "</span>
 										<p style='color: #4c4c4c; margin-top: 0;'>" . $yearNews['header'] . "</p>
 										<br />
 										<div style='text-align: right;'><img src='/img/system/arrow.png' /></div>
@@ -395,7 +395,7 @@ if(isset($_SESSION['userID'])) {
 				<?php
 					$yearResult = $mysqli->query("SELECT DISTINCT year FROM news WHERE client = '1' ORDER BY year DESC");
 					while($year = $yearResult->fetch_array(MYSQLI_NUM)) {
-						echo "<a href='news.php?year=".$year[0]."'><span id='yearFont".$year[0]."' "; if($_REQUEST['year'] != $year[0]) {echo "style='font-style: italic; font-size: 14px; color: #4c4c4c; text-decoration: underline;' onmouseover='changeFont(\"yearFont".$year[0]."\", 1)' onmouseout='changeFont(\"yearFont".$year[0]."\", 0)'";} else {echo "style='font-style: italic; font-size: 14px; color: #df4e47;'";} echo "'>".$year[0]."</span></a> ";
+						echo "<a href='news.php?year=".$year[0]."'><span id='yearFont".$year[0]."' "; if($_REQUEST['year'] != $year[0]) {echo "style='font-style: italic; font-size: 14px; color: #4c4c4c; text-decoration: underline;' onmouseover='changeFont(\"yearFont".$year[0]."\", 1)' onmouseout='changeFont(\"yearFont".$year[0]."\", 0)'";} else {echo "style='font-style: italic; font-size: 14px; color: #ff282b;'";} echo "'>".$year[0]."</span></a> ";
 					}
 				?>
 			</div>
@@ -422,7 +422,7 @@ if(isset($_SESSION['userID'])) {
 								<img src='/img/photos/news/".$news['preview']."' />
 								<br /><br />
 								<div style='text-align: left;'>
-									<span style='color: #df4e47; font-style: italic; font-size: 14px;'>".$date."</span>
+									<span style='color: #ff282b; font-style: italic; font-size: 14px;'>".$date."</span>
 									<p style='color: #4c4c4c; margin-top: 0;'>".$news['header']."</p>
 									<br />
 									<div style='text-align: right;'><img src='/img/system/arrow.png' /></div>
@@ -433,11 +433,11 @@ if(isset($_SESSION['userID'])) {
 				}
 			} else {
 				echo "
-					<span style='color: #df4e47; font-style: italic; font-size: 14px;'>".$date."</span>
+					<span style='color: #ff282b; font-style: italic; font-size: 14px;'>".$date."</span>
 					<br /><br />
 					<h2>".$news['header']."</h2>
 					<p>".$news['text']."</p>
-					<a href='news.php'><span style='color: #df4e47; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>Больше новостей</span></a>
+					<a href='news.php'><span style='color: #ff282b; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>Больше новостей</span></a>
 					";
 			}
 			?>

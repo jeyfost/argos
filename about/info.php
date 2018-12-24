@@ -145,7 +145,7 @@ if(isset($_SESSION['userID'])) {
 					<span class="slash"> /</span>
 				</div>
 				<div class="menuLink" id="aboutLink" onmouseover="showDropdownList('1', 'aboutLink', 'aboutLinkCommon')">
-					<a href="/about/info.php" style="color: #df4e47;">О компании</a>
+					<a href="/about/info.php" style="color: #ff282b;">О компании</a>
 					<img src="/img/system/downArrow.png" />
 					<span class="slash"> /</span>
 				</div>
@@ -312,7 +312,7 @@ if(isset($_SESSION['userID'])) {
 
 	<div id="page">
 		<div id="searchList"></div>
-		<h1 style='margin-top: 80px;'>Информация о компании <span style="color: #df4e47;"> Аргос-ФМ</span></h1>
+		<h1 style='margin-top: 80px;'>Информация о компании <span style="color: #ff282b;"> Аргос-ФМ</span></h1>
 		<div id='breadCrumbs'>
 			<a href='/'><span class='breadCrumbsText'>Главная</span></a> > <a href='info.php'><span class='breadCrumbsText'>О компании</span></a> > <a href='info.php'><span class='breadCrumbsText'>Основная информация</span></a>
 		</div>

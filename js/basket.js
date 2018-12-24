@@ -115,7 +115,7 @@ function removeGood(id) {
 							$('#basketLabel').hide('fast');
 							$('#personalContent').hide('300');
 							setTimeout(function () {
-								$('#personalContent').html("<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='/catalogue/index.php?type=fa&p=1' style='color: #df4e47;'>из каталога</a></b>.</span>");
+								$('#personalContent').html("<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='/catalogue/index.php?type=fa&p=1' style='color: #ff282b;'>из каталога</a></b>.</span>");
 								$('#personalContent').show('fast');
 							}, 300);
 						}
@@ -197,7 +197,7 @@ function clearBasket() {
 					$('#basketLabel').html();
 					$('#basketLabel').hide('300');
 					setTimeout(function () {
-						$('#personalContent').html("<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='/catalogue/index.php?type=fa&p=1' style='color: #df4e47;'>из каталога</a></b>.</span>");
+						$('#personalContent').html("<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='/catalogue/index.php?type=fa&p=1' style='color: #ff282b;'>из каталога</a></b>.</span>");
 						$('#personalContent').show('fast');
 					}, 300);
 				} else {
@@ -231,19 +231,19 @@ function sendOrder() {
 				$('#basketLabel').html();
 				$('#basketLabel').hide('300');
 				setTimeout(function () {
-					$('#personalContent').html("<span style='font-size: 15px;'><b>Ваш заказ был отправлен менеджерам. Отслеживать статус заказа можно на странице <a href='/personal/basket.php?section=2' style='color: #df4e47;'>\"Активные заявки\"</a></b>.<br /><br />Обращаем ваше внимание, что итоговая стоимость явлеятся приблизительной и может изменяться как в одну, так и в другую сторону в зависимости от изменения курсов валют. Точную сумму в белорусских рублях вам назовут при подтверждении заказа.</span>");
+					$('#personalContent').html("<span style='font-size: 15px;'><b>Ваш заказ был отправлен менеджерам. Отслеживать статус заказа можно на странице <a href='/personal/basket.php?section=2' style='color: #ff282b;'>\"Активные заявки\"</a></b>.<br /><br />Обращаем ваше внимание, что итоговая стоимость явлеятся приблизительной и может изменяться как в одну, так и в другую сторону в зависимости от изменения курсов валют. Точную сумму в белорусских рублях вам назовут при подтверждении заказа.</span>");
 					$('#personalContent').show('fast');
 				}, 300);
 			} else {
 				if (response_field.css('opacity') === 1) {
 					response_field.css('opacity', '0');
 					setTimeout(function () {
-						response_field.css('color', '#df4e47');
+						response_field.css('color', '#ff282b');
 						response_field.html('При оформлении заказа произошла ошибка. Попробуйта снова.<br /><br />');
 						response_field.css('opacity', '1');
 					}, 300);
 				} else {
-					response_field.css('color', '#df4e47');
+					response_field.css('color', '#ff282b');
 					response_field.html('При оформлении заказа произошла ошибка. Попробуйта снова.<br /><br />');
 					response_field.css('opacity', '1');
 				}

@@ -248,10 +248,10 @@
 				if(isset($_SESSION['recoveryPassword'])) {
 					switch($_SESSION['recoveryPassword']) {
 						case "empty":
-							echo "<span style='color: #df4e47; font-size: 16px; font-style: italic;'>Вы не ввели новый пароль.</span><br/><br/>";
+							echo "<span style='color: #ff282b; font-size: 16px; font-style: italic;'>Вы не ввели новый пароль.</span><br/><br/>";
 							break;
 						case "failed":
-							echo "<span style='color: #df4e47; font-size: 16px; font-style: italic;'>При смене пароля произошла ошибка. Попробуйте снова.</span><br/><br/>";
+							echo "<span style='color: #ff282b; font-size: 16px; font-style: italic;'>При смене пароля произошла ошибка. Попробуйте снова.</span><br/><br/>";
 							break;
 						default: break;
 					}

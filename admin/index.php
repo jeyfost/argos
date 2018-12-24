@@ -57,7 +57,7 @@ if($_SESSION['userID'] == 1) {
 				<br /><br />
 				<?php
 					if(isset($_SESSION['loginError'])) {
-						echo "<span style='color: #df4e47; font-size: 14px;'>Введённые вами логин или пароль не верны.</span><br /><br />";
+						echo "<span style='color: #ff282b; font-size: 14px;'>Введённые вами логин или пароль не верны.</span><br /><br />";
 						unset($_SESSION['loginError']);
 					}
 				?>

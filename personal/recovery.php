@@ -234,10 +234,10 @@
 				if(isset($_SESSION['recovery'])) {
 					switch($_SESSION['recovery']) {
 						case "empty":
-							echo "<span style='color: #df4e47; font-size: 16px; font-style: italic;'>Вы не ввели логин или email.</span><br/><br/>";
+							echo "<span style='color: #ff282b; font-size: 16px; font-style: italic;'>Вы не ввели логин или email.</span><br/><br/>";
 							break;
 						case "failed":
-							echo "<span style='color: #df4e47; font-size: 16px; font-style: italic;'>Вы ввели несуществующий логин или email.</span><br/><br/>";
+							echo "<span style='color: #ff282b; font-size: 16px; font-style: italic;'>Вы ввели несуществующий логин или email.</span><br/><br/>";
 							break;
 						default: break;
 					}

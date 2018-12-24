@@ -25,7 +25,7 @@ $number = $commentsCount[0];
 
 echo "
 	<div class='orderComment'>
-		<div style='border-bottom: 1px dotted #999; padding: 5px;'><b>Комментарий №".$number."</b> от <b>".dateFormatted($comment['date'])."</b>. Автор: <b>"; if($comment['user_id'] == 1) {echo "<span style='color: #df4e47;'>".$author[0]."</span>";} else {echo $author[0];} echo "</b></div>
+		<div style='border-bottom: 1px dotted #999; padding: 5px;'><b>Комментарий №".$number."</b> от <b>".dateFormatted($comment['date'])."</b>. Автор: <b>"; if($comment['user_id'] == 1) {echo "<span style='color: #ff282b;'>".$author[0]."</span>";} else {echo $author[0];} echo "</b></div>
 		<div class='commentSection'><br />".$comment['text']."</div>
 	</div>
 ";

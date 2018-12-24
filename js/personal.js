@@ -72,12 +72,12 @@ function adminEditUser(id) {
 							if (response_field.css('opacity') === 1) {
 								response_field.css('opacity', '0');
 								setTimeout(function () {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('Вы ввели email неверного формата.<br /><br />');
 									response_field.css('opacity', '1');
 								}, 300);
 							} else {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Вы ввели email неверного формата.<br /><br />');
 								response_field.css('opacity', '1');
 							}
@@ -86,12 +86,12 @@ function adminEditUser(id) {
 							if (response_field.css('opacity') === 1) {
 								response_field.css('opacity', '0');
 								setTimeout(function () {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('Введённый вами email уже существует.<br /><br />');
 									response_field.css('opacity', '1');
 								}, 300);
 							} else {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Введённый вами email уже существует.<br /><br />');
 								response_field.css('opacity', '1');
 							}
@@ -100,12 +100,12 @@ function adminEditUser(id) {
 							if (response_field.css('opacity') === 1) {
 								response_field.css('opacity', '0');
 								setTimeout(function () {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('При изменении email-адреса произошла ошибка. Попробуйте снова.<br /><br />');
 									response_field.css('opacity', '1');
 								}, 300);
 							} else {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('При изменении email-адреса произошла ошибка. Попробуйте снова.<br /><br />');
 								response_field.css('opacity', '1');
 							}
@@ -128,12 +128,12 @@ function adminEditUser(id) {
 							if (response_field.css('opacity') === 1) {
 								response_field.css('opacity', '0');
 								setTimeout(function () {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('Не было зафиксировано ни одного изменения.<br /><br />');
 									response_field.css('opacity', '1');
 								}, 300);
 							} else {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Не было зафиксировано ни одного изменения.<br /><br />');
 								response_field.css('opacity', '1');
 							}
@@ -142,12 +142,12 @@ function adminEditUser(id) {
 							if (response_field.css('opacity') === 1) {
 								response_field.css('opacity', '0');
 								setTimeout(function () {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('При изменении логина произошла ошибка. Попробуйте снова.<br /><br />');
 									response_field.css('opacity', '1');
 								}, 300);
 							} else {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('При изменении логина произошла ошибка. Попробуйте снова.<br /><br />');
 								response_field.css('opacity', '1');
 							}
@@ -156,12 +156,12 @@ function adminEditUser(id) {
 							if (response_field.css('opacity') === 1) {
 								response_field.css('opacity', '0');
 								setTimeout(function () {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('Введённый вами логин уже существует.<br /><br />');
 									response_field.css('opacity', '1');
 								}, 300);
 							} else {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Введённый вами логин уже существует.<br /><br />');
 								response_field.css('opacity', '1');
 							}
@@ -170,12 +170,12 @@ function adminEditUser(id) {
 							if (response_field.css('opacity') === 1) {
 								response_field.css('opacity', '0');
 								setTimeout(function () {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('При изменении пароля произошла ошибка. Попробуйте снова.<br /><br />');
 									response_field.css('opacity', '1');
 								}, 300);
 							} else {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('При изменении пароля произошла ошибка. Попробуйте снова.<br /><br />');
 								response_field.css('opacity', '1');
 							}
@@ -184,18 +184,18 @@ function adminEditUser(id) {
 							if (response_field.css('opacity') === 1) {
 								response_field.css('opacity', '0');
 								setTimeout(function () {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('При редактировании основной информации произошла ошибка. Попробуйте снова.<br /><br />');
 									response_field.css('opacity', '1');
 								}, 300);
 							} else {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('При редактировании основной информации произошла ошибка. Попробуйте снова.<br /><br />');
 								response_field.css('opacity', '1');
 							}
 							break;
 						default:
-							response_field.css('color', '#df4e47');
+							response_field.css('color', '#ff282b');
 							response_field.html(response + '<br /><br />');
 							response_field.css('opacity', '1');
 							break;
@@ -206,12 +206,12 @@ function adminEditUser(id) {
 			if (response_field.css('opacity') === 1) {
 				response_field.css('opacity', '0');
 				setTimeout(function () {
-					response_field.css('color', '#df4e47');
+					response_field.css('color', '#ff282b');
 					response_field.html('Размер скидки должен составлять от 0.01% до 99.99%.<br /><br />');
 					response_field.css('opacity', '1');
 				}, 300);
 			} else {
-				response_field.css('color', '#df4e47');
+				response_field.css('color', '#ff282b');
 				response_field.html('Размер скидки должен составлять от 0.01% до 99.99%.<br /><br />');
 				response_field.css('opacity', '1');
 			}
@@ -220,12 +220,12 @@ function adminEditUser(id) {
 		if (response_field.css('opacity') === 1) {
 			response_field.css('opacity', '0');
 			setTimeout(function () {
-				response_field.css('color', '#df4e47');
+				response_field.css('color', '#ff282b');
 				response_field.html('Необходимо заполнить поля "Логин", "Email", "Контактное лицо", "Номер телефона", "Скидка в %".<br /><br />');
 				response_field.css('opacity', '1');
 			}, 300);
 		} else {
-			response_field.css('color', '#df4e47');
+			response_field.css('color', '#ff282b');
 			response_field.html('Необходимо заполнить поля "Логин", "Email", "Контактное лицо", "Номер телефона", "Скидка в %".<br /><br />');
 			response_field.css('opacity', '1');
 		}
@@ -269,12 +269,12 @@ function editUserInfo() {
 						if (response_field.css('opacity') === 1) {
 							response_field.css('opacity', '0');
 							setTimeout(function () {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
 								response_field.css('opacity', '1');
 							}, 300);
 						} else {
-							response_field.css('color', '#df4e47');
+							response_field.css('color', '#ff282b');
 							response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
 							response_field.css('opacity', '1');
 						}
@@ -288,12 +288,12 @@ function editUserInfo() {
 		if (response_field.css('opacity') === 1) {
 			response_field.css('opacity', '0');
 			setTimeout(function () {
-				response_field.css('color', '#df4e47');
+				response_field.css('color', '#ff282b');
 				response_field.html('Необходимо заполнить поля "Контактное лицо" и "Номер телефона".<br /><br />');
 				response_field.css('opacity', '1');
 			}, 300);
 		} else {
-			response_field.css('color', '#df4e47');
+			response_field.css('color', '#ff282b');
 			response_field.html('Необходимо заполнить поля "Контактное лицо" и "Номер телефона".<br /><br />');
 			response_field.css('opacity', '1');
 		}
@@ -329,12 +329,12 @@ function editUserEmail() {
 						if (response_field.css('opacity') === 1) {
 							response_field.css('opacity', '0');
 							setTimeout(function () {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
 								response_field.css('opacity', '1');
 							}, 300);
 						} else {
-							response_field.css('color', '#df4e47');
+							response_field.css('color', '#ff282b');
 							response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
 							response_field.css('opacity', '1');
 						}
@@ -343,12 +343,12 @@ function editUserEmail() {
 						if (response_field.css('opacity') === 1) {
 							response_field.css('opacity', '0');
 							setTimeout(function () {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Вы ввели email неверного формата. Уточните адрес.<br /><br />');
 								response_field.css('opacity', '1');
 							}, 300);
 						} else {
-							response_field.css('color', '#df4e47');
+							response_field.css('color', '#ff282b');
 							response_field.html('Вы ввели email неверного формата. Уточните адрес.<br /><br />');
 							response_field.css('opacity', '1');
 						}
@@ -357,12 +357,12 @@ function editUserEmail() {
 						if (response_field.css('opacity') === 1) {
 							response_field.css('opacity', '0');
 							setTimeout(function () {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Вы ввели email, который уже указан у вас в профиле.<br /><br />');
 								response_field.css('opacity', '1');
 							}, 300);
 						} else {
-							response_field.css('color', '#df4e47');
+							response_field.css('color', '#ff282b');
 							response_field.html('Вы ввели email, который уже указан у вас в профиле.<br /><br />');
 							response_field.css('opacity', '1');
 						}
@@ -371,12 +371,12 @@ function editUserEmail() {
 						if (response_field.css('opacity') === 1) {
 							response_field.css('opacity', '0');
 							setTimeout(function () {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Вы ввели email, который уже используется другим пользователем.<br /><br />');
 								response_field.css('opacity', '1');
 							}, 300);
 						} else {
-							response_field.css('color', '#df4e47');
+							response_field.css('color', '#ff282b');
 							response_field.html('Вы ввели email, который уже используется другим пользователем.<br /><br />');
 							response_field.css('opacity', '1');
 						}
@@ -390,12 +390,12 @@ function editUserEmail() {
 		if (response_field.css('opacity') === 1) {
 			response_field.css('opacity', '0');
 			setTimeout(function () {
-				response_field.css('color', '#df4e47');
+				response_field.css('color', '#ff282b');
 				response_field.html('Введите новый email.<br /><br />');
 				response_field.css('opacity', '1');
 			}, 300);
 		} else {
-			response_field.css('color', '#df4e47');
+			response_field.css('color', '#ff282b');
 			response_field.html('Введите новый email.<br /><br />');
 			response_field.css('opacity', '1');
 		}
@@ -411,12 +411,12 @@ function editUserPassword() {
 		if (response_field.css('opacity') === 1) {
 			response_field.css('opacity', '0');
 			setTimeout(function () {
-				response_field.css('color', '#df4e47');
+				response_field.css('color', '#ff282b');
 				response_field.html('Введите новый пароль.<br /><br />');
 				response_field.css('opacity', '1');
 			}, 300);
 		} else {
-			response_field.css('color', '#df4e47');
+			response_field.css('color', '#ff282b');
 			response_field.html('Введите новый пароль.<br /><br />');
 			response_field.css('opacity', '1');
 		}
@@ -425,12 +425,12 @@ function editUserPassword() {
 			if (response_field.css('opacity') === 1) {
 				response_field.css('opacity', '0');
 				setTimeout(function () {
-					response_field.css('color', '#df4e47');
+					response_field.css('color', '#ff282b');
 					response_field.html('Введите подтверждение нового пароля.<br /><br />');
 					response_field.css('opacity', '1');
 				}, 300);
 			} else {
-				response_field.css('color', '#df4e47');
+				response_field.css('color', '#ff282b');
 				response_field.html('Введите подтверждение нового пароля.<br /><br />');
 				response_field.css('opacity', '1');
 			}
@@ -462,12 +462,12 @@ function editUserPassword() {
 							if (response_field.css('opacity') === 1) {
 								response_field.css('opacity', '0');
 								setTimeout(function () {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
 									response_field.css('opacity', '1');
 								}, 300);
 							} else {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
 								response_field.css('opacity', '1');
 							}
@@ -476,12 +476,12 @@ function editUserPassword() {
 							if (response_field.css('opacity') === 1) {
 								response_field.css('opacity', '0');
 								setTimeout(function () {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('Введённые вами пароли не совпадают.<br /><br />');
 									response_field.css('opacity', '1');
 								}, 300);
 							} else {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Введённые вами пароли не совпадают.<br /><br />');
 								response_field.css('opacity', '1');
 							}
@@ -490,12 +490,12 @@ function editUserPassword() {
 							if (response_field.css('opacity') === 1) {
 								response_field.css('opacity', '0');
 								setTimeout(function () {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('Ваш старый пароль совпадает с введённым.<br /><br />');
 									response_field.css('opacity', '1');
 								}, 300);
 							} else {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Ваш старый пароль совпадает с введённым.<br /><br />');
 								response_field.css('opacity', '1');
 							}
@@ -553,12 +553,12 @@ function setRates(ids) {
 							if (response_field.css('opacity') === 1) {
 								response_field.css('opacity', '0');
 								setTimeout(function () {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('Произошла ошибка. Не все курсы были установлены.<br /><br />');
 									response_field.css('opacity', '1');
 								}, 300);
 							} else {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Произошла ошибка. Не все курсы были установлены.<br /><br />');
 								response_field.css('opacity', '1');
 							}
@@ -567,12 +567,12 @@ function setRates(ids) {
 							if (response_field.css('opacity') === 1) {
 								response_field.css('opacity', '0');
 								setTimeout(function () {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('Неверный формат ввода.<br /><br />');
 									response_field.css('opacity', '1');
 								}, 300);
 							} else {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Неверный формат ввода.<br /><br />');
 								response_field.css('opacity', '1');
 							}
@@ -581,12 +581,12 @@ function setRates(ids) {
 							if (response_field.css('opacity') === 1) {
 								response_field.css('opacity', '0');
 								setTimeout(function () {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
 									response_field.css('opacity', '1');
 								}, 300);
 							} else {
-								response_field.css('color', '#df4e47');
+								response_field.css('color', '#ff282b');
 								response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
 								response_field.css('opacity', '1');
 							}
@@ -682,12 +682,12 @@ function setOfficialRates() {
 								if (response_field.css('opacity') === 1) {
 									response_field.css('opacity', '0');
 									setTimeout(function () {
-										response_field.css('color', '#df4e47');
+										response_field.css('color', '#ff282b');
 										response_field.html('Не все курсы были успешно обновлены.<br /><br />');
 										response_field.css('opacity', '1');
 									}, 300);
 								} else {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('Не все курсы были успешно обновлены.<br /><br />');
 									response_field.css('opacity', '1');
 								}
@@ -696,12 +696,12 @@ function setOfficialRates() {
 								if (response_field.css('opacity') === 1) {
 									response_field.css('opacity', '0');
 									setTimeout(function () {
-										response_field.css('color', '#df4e47');
+										response_field.css('color', '#ff282b');
 										response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
 										response_field.css('opacity', '1');
 									}, 300);
 								} else {
-									response_field.css('color', '#df4e47');
+									response_field.css('color', '#ff282b');
 									response_field.html('Произошла ошибка. Попробуйте снова.<br /><br />');
 									response_field.css('opacity', '1');
 								}

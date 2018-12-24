@@ -13,11 +13,11 @@ select {height: 40px; line-height: 40px;}
 .catalogueItemTextDecorated:hover {text-decoration: underline;}
 .catalogueDescription a span:hover, .sketchFont:hover, td a:hover, span b a:hover, .tdLink:hover {text-decoration: underline;}
 .newsPreview:hover {background-color: #ededed;}
-.font-awesome-link:hover, .catalogueNameLink:hover {color: #df4e47;}
+.font-awesome-link:hover, .catalogueNameLink:hover {color: #ff282b;}
 
 /* mobile */
 @media screen and (max-width: 960px) {
-    .mobileMenuPointBig:hover, .mobileMenuPointSmall:hover {color: #df4e47;}
+    .mobileMenuPointBig:hover, .mobileMenuPointSmall:hover {color: #ff282b;}
 
     #menuLinks, #mainImg2, #mainImg3, #mainImg4, #personalButtons {display: none !important;}
     #menuIcon {float: right; margin: -48px 25px auto auto; cursor: pointer; display: block;}
@@ -46,10 +46,10 @@ select {height: 40px; line-height: 40px;}
 
 /* screen */
 @media screen and (min-width: 961px){
-    #menuLinks a:hover, .rightSideBlock ul li a:hover, .mainSmallText:hover {color: #df4e47;}
+    #menuLinks a:hover, .rightSideBlock ul li a:hover, .mainSmallText:hover {color: #ff282b;}
 
     .searchLink .searchItem:hover {background-color: #f3f3f3;}
-    .yearFont:hover {text-decoration: none; color: #df4e47;}
+    .yearFont:hover {text-decoration: none; color: #ff282b;}
 
     #menuLinks {float: right; text-align: right; margin-top: 32px; line-height: 24px;}
     #menuLinks a, .rightSideBlock ul li a {font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; color: #4c4c4c; transition: .2s;}
@@ -93,7 +93,7 @@ select {height: 40px; line-height: 40px;}
     .dropDownLink a {font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; color: #4c4c4c;}
     .mainBigText {font-size: 48px; color: #fff; text-decoration: none; cursor: pointer; transition: .3s;}
     .mainSmallText {font-size: 18px; color: #fff; cursor: pointer; top: 30px;}
-    .rightSideBlockHeader {width: 100%; height: 30px; padding-top: 10px; text-align: center; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 17px; color: #df4e47; text-transform: uppercase; transition: .2s;}
+    .rightSideBlockHeader {width: 100%; height: 30px; padding-top: 10px; text-align: center; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 17px; color: #ff282b; text-transform: uppercase; transition: .2s;}
     .rsbSpace {position: relative; float: left; width: 15px; height: 1px;}
     .rsbLine {position: relative; float: left; width: calc(100% - 30px); width: -moz-calc(100% - 30px); height: 1px; background-color: #ccc;}
     .rightSideBlock {background-color: #fff; z-index: 2; position: absolute; top: 10px; right: 5%; transition: .2s; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4);}
@@ -113,7 +113,7 @@ select {height: 40px; line-height: 40px;}
 }
 
 a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcategory2Container, a span {color: #4c4c4c;}
-.catalogueDescription a span, .goodStyleRed {color: #df4e47;}
+.catalogueDescription a span, .goodStyleRed {color: #ff282b;}
 
 /* home index.php */
 
@@ -134,7 +134,7 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 #clearBasketButton {margin-right: 10px;}
 #registrationDescription {position: relative; float: left; padding-left: 40px;}
 #registrationContainer {width: 350px; position: relative; float: left;}
-#registrationStatus, #catalogueContent td a span {color: #df4e47;}
+#registrationStatus, #catalogueContent td a span {color: #ff282b;}
 #CVForm {background-color: #f3f3f3; padding: 10px; border: 1px solid #dedede; display: inline-block;}
 #messageInput, #commentInput {resize: none; transition: .3s; word-wrap: break-word; width: 452px; height: 25px; padding: 10px; font-style: italic; margin-top: 5px; color: #9e9e9e;}
 #itemPhotoContainer {width: 400px; padding: 10px; border: 1px solid #d7d5d1; float: left; text-align: center;}
@@ -146,9 +146,9 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .mainImgContainer {width: 100%; height: 100%; overflow: hidden; transition: .3s; margin: 0; padding: 0;}
 .mainImgContainer img {min-height: 100%; width: 100%;}
 .copy {float: left; position: relative; height: 100%; padding-top: 15px;}
-.copy a, p a {color: #df4e47; text-decoration: underline;}
+.copy a, p a {color: #ff282b; text-decoration: underline;}
 .breadCrumbsText {text-decoration: underline;}
-.basicLink {color: #df4e47; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; text-decoration: underline;}
+.basicLink {color: #ff282b; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; text-decoration: underline;}
 .categoryNameContainer {position: absolute; left: 40px; margin-top: -24px;}
 .catalogueItem {width: 100%;}
 .catalogueIMG {width: 100px; height: 100px; transition: .3s; display: inline-block;}
@@ -162,14 +162,14 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .addingResult, #goodResponseField, #responseField, #orderResponse {transition: .3s; opacity: 0; font-size: 14px;}
 .pageNumberBlockSide {position: relative; float: left; background-color: #ffffff; height: 30px; line-height: 30px; padding-left: 10px; padding-right: 10px; text-align: center;}
 .pageNumberBlock {position: relative; float: left; background-color: #ffffff; width: 40px; height: 30px; line-height: 30px; text-align: center;}
-.pageNumberBlockActive {position: relative; float: left; background-color: #df4e47; width: 40px; height: 30px; line-height: 30px; text-align: center;}
+.pageNumberBlockActive {position: relative; float: left; background-color: #ff282b; width: 40px; height: 30px; line-height: 30px; text-align: center;}
 .goodStyleWhite {color: #fff;}
 .subcategoryContainer {margin-left: 30px; font-size: 15px;}
 .subcategory2Container {margin-left: 48px; font-size: 15px;}
-.sketchFont, td a {font-size: 16px; color: #df4e47; text-decoration: none;}
+.sketchFont, td a {font-size: 16px; color: #ff282b; text-decoration: none;}
 .actionIMG {position: absolute; top: 70px; left: 70px; opacity: .6; transition: .3s;}
 .personalMenuLink {width: 100%; height: 40px; line-height: 40px; text-align: center; color: #4c4c4c; background-color: #dedede;}
-.personalMenuLinkActive {width: 100%; height: 40px; line-height: 40px; text-align: center; color: #fff; background-color: #df4e47;}
+.personalMenuLinkActive {width: 100%; height: 40px; line-height: 40px; text-align: center; color: #fff; background-color: #ff282b;}
 .awardBlock {width: 100px; text-align: center; cursor: pointer; margin: 10px auto auto 10px; display: inline-block; vertical-align: top;}
 .newsPreview {width: 200px; text-align: center; margin: 10px auto auto 10px; padding: 10px; display: inline-block; vertical-align: top; border: 1px solid #c9c9c9; transition: .3s; background-color: #fff;}
 .awardPhoto {margin-left: 2px; transition: .3s;}
@@ -178,7 +178,7 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .albumName {margin: 0;}
 .headTR {background-color: #ffeecb; height: 40px; text-align: center;}
 .headTR td {cursor: pointer;}
-.tdLink {color: #df4e47; cursor: pointer;}
+.tdLink {color: #ff282b; cursor: pointer;}
 .orderComment {width: 100%; padding: 5px; margin-top: 10px; background-color: #eee; border: 1px dashed #999;}
 .commentSection {width: 100%; padding: 5px;}
 .button {height: 30px; max-width: 160px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: left; padding: auto 5px;}
@@ -187,5 +187,5 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .previewPhoto {display: inline-block; vertical-align: middle; transition: .3s; width: 100px;}
 .recomendedGoodContainer {padding: 10px; display: inline-block; text-align: center; transition: .3s; border: 1px solid #fff; max-width: 150px;}
 .catalogueNameLink {color: #4c4c4c;}
-.addToBasketFont {color: #df4e47; text-decoration: underline; cursor: pointer;}
+.addToBasketFont {color: #ff282b; text-decoration: underline; cursor: pointer;}
 .orderSearchInput {width: 180px; height: 20px; line-height: 20px; color: #777;}

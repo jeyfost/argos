@@ -232,7 +232,7 @@ if(isset($_SESSION['userID'])) {
 		<div id="loginStatus">
 			<?php
 				if(isset($_SESSION['loginError'])) {
-					echo "<span style='color: #df4e47; font-size: 16px; font-style: italic;'>Вы неверно ввели логин (email) или пароль.</span><br/><br/>";
+					echo "<span style='color: #ff282b; font-size: 16px; font-style: italic;'>Вы неверно ввели логин (email) или пароль.</span><br/><br/>";
 				}
 
 			unset($_SESSION['loginError']);

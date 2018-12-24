@@ -704,7 +704,7 @@ if(isset($_SESSION['userID'])) {
 									echo "<span style='color: #53acff;'>Адрес электронной почты был успешно изменён.</span>";
 									break;
 								case "failed":
-									echo "<span style='color: #df4e47;'>Произошла ошибка. Попробуйте снова.</span>";
+									echo "<span style='color: #ff282b;'>Произошла ошибка. Попробуйте снова.</span>";
 									break;
 								default: break;
 							}

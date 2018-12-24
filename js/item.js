@@ -4,7 +4,7 @@
 
 function categoryItemStyle(action, img, text, imgBlack, imgRed) {
 	if(action === 1) {
-		document.getElementById(text).style.color = "#df4e47";
+		document.getElementById(text).style.color = "#ff282b";
 		document.getElementById(img).src = "/img/icons/" + imgRed;
 	} else {
 		document.getElementById(text).style.color = "#4f4f4f";
@@ -14,7 +14,7 @@ function categoryItemStyle(action, img, text, imgBlack, imgRed) {
 
 function subcategoryStyle(action, id) {
 	if(action === 1) {
-		document.getElementById(id).style.color = "#df4e47";
+		document.getElementById(id).style.color = "#ff282b";
 	} else {
 		document.getElementById(id).style.color = "#4f4f4f";
 	}
@@ -108,12 +108,12 @@ function addToBasket(good_id, input, response_field) {
 						if(document.getElementById(response_field).style.opacity === "1") {
 							document.getElementById(response_field).style.opacity = "0";
 							setTimeout(function() {
-								document.getElementById(response_field).style.color = "#df4e47";
+								document.getElementById(response_field).style.color = "#ff282b";
 								document.getElementById(response_field).innerHTML = "Произошла ошибка";
 								document.getElementById(response_field).style.opacity = "1";
 							}, 300);
 						} else {
-							document.getElementById(response_field).style.color = "#df4e47";
+							document.getElementById(response_field).style.color = "#ff282b";
 							document.getElementById(response_field).innerHTML = "Произошла ошибка";
 							document.getElementById(response_field).style.opacity = "1";
 						}
@@ -140,12 +140,12 @@ function addToBasket(good_id, input, response_field) {
 		if(document.getElementById(response_field).style.opacity === "1") {
 			document.getElementById(response_field).style.opacity = "0";
 			setTimeout(function() {
-				document.getElementById(response_field).style.color = "#df4e47";
+				document.getElementById(response_field).style.color = "#ff282b";
 				document.getElementById(response_field).innerHTML = "Введите положительное значение";
 				document.getElementById(response_field).style.opacity = "1";
 			}, 300);
 		} else {
-			document.getElementById(response_field).style.color = "#df4e47";
+			document.getElementById(response_field).style.color = "#ff282b";
 			document.getElementById(response_field).innerHTML = "Введите положительное значение";
 			document.getElementById(response_field).style.opacity = "1";
 		}
@@ -154,7 +154,7 @@ function addToBasket(good_id, input, response_field) {
 
 function changeFontColor(id, action) {
 	if(action === 1) {
-		document.getElementById(id).style.color = '#df4e47';
+		document.getElementById(id).style.color = '#ff282b';
 	} else {
 		document.getElementById(id).style.color = '#4c4c4c';
 

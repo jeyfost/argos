@@ -163,7 +163,7 @@ if(isset($_SESSION['userID'])) {
 					<span class="slash"> /</span>
 				</div>
 				<div class="menuLink" id="partnersLink" onmouseover="showDropdownList('1', 'partnersLink', 'partnersLinkCooperation')">
-					<a href="/partners/cooperation.php" style="color: #df4e47;">Партнерам</a>
+					<a href="/partners/cooperation.php" style="color: #ff282b;">Партнерам</a>
 					<img src="/img/system/downArrow.png" />
 					<span class="slash"> /</span>
 				</div>

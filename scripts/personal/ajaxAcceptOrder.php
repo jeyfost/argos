@@ -206,7 +206,7 @@ function sendMail($email, $id, $goods, $summ) {
 					</center>
 					<br /><br />
 					<div style='text-align: center;'><b>Итоговая стоимость заказа: </b>".$summ." руб.</div>
-					<p>Полную детализацию заказа можно посмотреть на <a href='https://argos-fm.by/personal/order.php?id=".$id."' target='_blank' style='color: #df4e47;'>этой странице</a>, предварительно авторизовавшись на сайте.</p>
+					<p>Полную детализацию заказа можно посмотреть на <a href='https://argos-fm.by/personal/order.php?id=".$id."' target='_blank' style='color: #ff282b;'>этой странице</a>, предварительно авторизовавшись на сайте.</p>
 					<br /><hr /><br />
 					<p style='font-size: 12px;'>Это автоматическая рассылка. Отвечать на неё не нужно.</p>
 					<div style='width: 100%; height: 10px;'></div>

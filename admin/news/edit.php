@@ -189,7 +189,7 @@ if(!empty($_REQUEST['id'])) {
 			<div id="topText">
 				<span style="font-size: 18px; font-weight: bold;">Панель администрирования</span>
 				<br />
-				<span style="font-size: 14px;">Вы вошли как пользователь <b style="color: #df4e47;"><?php echo $userLogin[0]; ?></b></span>
+				<span style="font-size: 14px;">Вы вошли как пользователь <b style="color: #ff282b;"><?php echo $userLogin[0]; ?></b></span>
 			</div>
 			<a href="/"><img src="/img/system/exit.png" id="exitIMG" title="Выйти из панели администрирования" onmouseover="changeIcon('exitIMG', 'exitRed.png')" onmouseout="changeIcon('exitIMG', 'exit.png')" /></a>
 		</div>
@@ -268,7 +268,7 @@ if(!empty($_REQUEST['id'])) {
 									<input type='file' class='file' id='previewInput' name='previewPhoto' />
 									<br /><br />
 									<input type='checkbox' id='clientNewsCheckbox' name='clientNews' class='checkbox' value='checked'"; if($news['client'] == 1) {echo " checked='checked'";} echo " />
-									<label for='clientNewsCheckbox'> Новость для клиентов (<a class='tooltips' href='#' style='border-bottom: 1px dashed #df4e47; color: #df4e47; cursor: help;'>что это за опция?<span>Новости для клиентов — это новости, которые будут интересны только клиентам, например, новые приходы, цены, прайсы и т.д.</span></a>)</label>
+									<label for='clientNewsCheckbox'> Новость для клиентов (<a class='tooltips' href='#' style='border-bottom: 1px dashed #ff282b; color: #ff282b; cursor: help;'>что это за опция?<span>Новости для клиентов — это новости, которые будут интересны только клиентам, например, новые приходы, цены, прайсы и т.д.</span></a>)</label>
 									<div style='clear: both;'></div>
 									<br />
 									<label for='textInput'>Текст новости:</label>

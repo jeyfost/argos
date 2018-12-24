@@ -116,13 +116,13 @@ function sendMail() {
 														}
 													} else {
 														if(response_filed.css("opacity") === "0") {
-															response_filed.css("color", "#df4e47");
+															response_filed.css("color", "#ff282b");
 															response_filed.html("<br />При отправке письма прозишла ошибка.");
 															response_filed.css("opacity", "1");
 														} else {
 															response_filed.css("opacity", "0");
 															setTimeout(function() {
-																response_filed.css("color", "#df4e47");
+																response_filed.css("color", "#ff282b");
 																response_filed.html("<br />При отправке письма прозиошла ошибка.");
 																response_filed.css("opacity", "1");
 															}, 300);
@@ -132,13 +132,13 @@ function sendMail() {
 											});
 										} else {
 											if(response_filed.css("opacity") === "0") {
-												response_filed.css("color", "#df4e47");
+												response_filed.css("color", "#ff282b");
 												response_filed.html("<br />Вы не прошли проверку на робота.");
 												response_filed.css("opacity", "1");
 											} else {
 												response_filed.css("opacity", "0");
 												setTimeout(function() {
-													response_filed.css("color", "#df4e47");
+													response_filed.css("color", "#ff282b");
 													response_filed.html("<br />Вы не прошли проверку на робота.");
 													response_filed.css("opacity", "1");
 												}, 300);
@@ -148,13 +148,13 @@ function sendMail() {
 								});
 							} else {
 								if(response_filed.css("opacity") === "0") {
-									response_filed.css("color", "#df4e47");
+									response_filed.css("color", "#ff282b");
 									response_filed.html("<br />Формат введённого вами email-адреса неверен.");
 									response_filed.css("opacity", "1");
 								} else {
 									response_filed.css("opacity", "0");
 									setTimeout(function() {
-										response_filed.css("color", "#df4e47");
+										response_filed.css("color", "#ff282b");
 										response_filed.html("<br />Формат введённого вами email-адреса неверен.");
 										response_filed.css("opacity", "1");
 									}, 300);
@@ -164,13 +164,13 @@ function sendMail() {
 					});
 				} else {
 					if(response_filed.css("opacity") === "0") {
-						response_filed.css("color", "#df4e47");
+						response_filed.css("color", "#ff282b");
 						response_filed.html("<br />Введите текст сообщения.");
 						response_filed.css("opacity", "1");
 					} else {
 						response_filed.css("opacity", "0");
 						setTimeout(function() {
-							response_filed.css("color", "#df4e47");
+							response_filed.css("color", "#ff282b");
 							response_filed.html("<br />Введите текст сообщения.");
 							response_filed.css("opacity", "1");
 						}, 300);
@@ -178,13 +178,13 @@ function sendMail() {
 				}
 			} else {
 				if(response_filed.css("opacity") === "0") {
-					response_filed.css("color", "#df4e47");
+					response_filed.css("color", "#ff282b");
 					response_filed.html("<br />Введите тему сообщения.");
 					response_filed.css("opacity", "1");
 				} else {
 					response_filed.css("opacity", "0");
 					setTimeout(function() {
-						response_filed.css("color", "#df4e47");
+						response_filed.css("color", "#ff282b");
 						response_filed.html("<br />Введите тему сообщения.");
 						response_filed.css("opacity", "1");
 					}, 300);
@@ -192,13 +192,13 @@ function sendMail() {
 			}
 		} else {
 			if(response_filed.css("opacity") === "0") {
-				response_filed.css("color", "#df4e47");
+				response_filed.css("color", "#ff282b");
 				response_filed.html("<br />Введите ваш email-адрес.");
 				response_filed.css("opacity", "1");
 			} else {
 				response_filed.css("opacity", "0");
 				setTimeout(function() {
-					response_filed.css("color", "#df4e47");
+					response_filed.css("color", "#ff282b");
 					response_filed.html("<br />Введите ваш email-адрес.");
 					response_filed.css("opacity", "1");
 				}, 300);
@@ -206,13 +206,13 @@ function sendMail() {
 		}
 	} else {
 		if(response_filed.css("opacity") === "0") {
-			response_filed.css("color", "#df4e47");
+			response_filed.css("color", "#ff282b");
 			response_filed.html("<br />Введите ваше имя.");
 			response_filed.css("opacity", "1");
 		} else {
 			response_filed.css("opacity", "0");
 			setTimeout(function() {
-				response_filed.css("color", "#df4e47");
+				response_filed.css("color", "#ff282b");
 				response_filed.html("<br />Введите ваше имя.");
 				response_filed.css("opacity", "1");
 			}, 300);

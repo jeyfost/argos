@@ -1,7 +1,7 @@
 $(window).on("load", function() {
 	$(".yearFont").mouseover(function() {
 		$(this).css("text-decoration", "none");
-		$(this).css("color", "#df4e47");
+		$(this).css("color", "#ff282b");
 	});
 
 	$(".yearFont").mouseout(function() {
@@ -12,7 +12,7 @@ $(window).on("load", function() {
 
 function changeFont(id, action) {
 	if(action === 1) {
-		document.getElementById(id).style.color = "#df4e47";
+		document.getElementById(id).style.color = "#ff282b";
 		document.getElementById(id).style.textDecoration = "none";
 	} else {
 		document.getElementById(id).style.color = "#4c4c4c";

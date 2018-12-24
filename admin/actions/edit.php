@@ -171,7 +171,7 @@ if(!empty($_REQUEST['id'])) {
 			<div id="topText">
 				<span style="font-size: 18px; font-weight: bold;">Панель администрирования</span>
 				<br />
-				<span style="font-size: 14px;">Вы вошли как пользователь <b style="color: #df4e47;"><?php echo $userLogin[0]; ?></b></span>
+				<span style="font-size: 14px;">Вы вошли как пользователь <b style="color: #ff282b;"><?php echo $userLogin[0]; ?></b></span>
 			</div>
 			<a href="/"><img src="/img/system/exit.png" id="exitIMG" title="Выйти из панели администрирования" onmouseover="changeIcon('exitIMG', 'exitRed.png')" onmouseout="changeIcon('exitIMG', 'exit.png')" /></a>
 		</div>
@@ -297,7 +297,7 @@ if(!empty($_REQUEST['id'])) {
 									{
 										if(strtotime($action['from_date']) >= $today or (strtotime($action['from_date']) < $today and strtotime($action['to_date']) >= $today)) {
 											$actionCount++;
-											$status .= "c <span style='color: #df4e47;'>".$action['from_date']."</span> по <span style='color: #df4e47;'>".$action['to_date']."</span>; ";
+											$status .= "c <span style='color: #ff282b;'>".$action['from_date']."</span> по <span style='color: #ff282b;'>".$action['to_date']."</span>; ";
 										}
 									}
 								}
@@ -315,7 +315,7 @@ if(!empty($_REQUEST['id'])) {
 									</div>
 									<div class='goodInfo'>
 										<div class='goodName'>
-											<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
+											<div style='width: 5px; height: 30px; background-color: #ff282b; position: relative; float: left;'></div>
 											<div style='margin-left: 15px;'>".$good['name']."</div>
 											<div style='clear: both;'></div>
 										</div>
@@ -375,7 +375,7 @@ if(!empty($_REQUEST['id'])) {
 						echo "
 							</div>
 							<br />
-							<span class='redLink' style='text-decoration: none; border-bottom: 1px dashed #df4e47;' onclick='addGoodBlock()'>+ Добавить ещё один товар</span>
+							<span class='redLink' style='text-decoration: none; border-bottom: 1px dashed #ff282b;' onclick='addGoodBlock()'>+ Добавить ещё один товар</span>
 							<br /><br />
 							<input type='button' class='button' style='margin: 0;' id='editActionButton' onmouseover='buttonChange(\"editActionButton\", 1)' onmouseout='buttonChange(\"editActionButton\", 0)' onclick='editAction()' value='Редактировать' />
 						";

@@ -243,7 +243,7 @@ function sendDistrictEmail(i) {
 							break;
 					}
 
-					$('#' + id).css('color', '#df4e47');
+					$('#' + id).css('color', '#ff282b');
 					$('#' + id).css('background-color', '#ddd');
 					$('#' + id).css('cursor', 'default');
 					$('#' + id).removeAttribute('onclick');
@@ -300,7 +300,7 @@ function sendFilterEmail(i) {
 							break;
 					}
 
-					$('#' + id).css('color', '#df4e47');
+					$('#' + id).css('color', '#ff282b');
 					$('#' + id).css('background-color', '#ddd');
 					$('#' + id).css('cursor', 'default');
 					$('#' + id).removeAttribute('onclick');

@@ -39,7 +39,7 @@ while($goodAction = $goodActionResult->fetch_assoc()) {
 	{
 		if(strtotime($action['from_date']) >= $today or (strtotime($action['from_date']) < $today and strtotime($action['to_date']) >= $today)) {
 			$actionCount++;
-			$status .= "c <span style='color: #df4e47;'>".$action['from_date']."</span> по <span style='color: #df4e47;'>".$action['to_date']."</span>; ";
+			$status .= "c <span style='color: #ff282b;'>".$action['from_date']."</span> по <span style='color: #ff282b;'>".$action['to_date']."</span>; ";
 		}
 	}
 }
@@ -57,7 +57,7 @@ echo "
 	</div>
 	<div class='goodInfo'>
 		<div class='goodName'>
-			<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
+			<div style='width: 5px; height: 30px; background-color: #ff282b; position: relative; float: left;'></div>
 			<div style='margin-left: 15px;'>".$good['name']."</div>
 			<div style='clear: both;'></div>
 		</div>
