@@ -68,7 +68,7 @@ function sendMail($email, $id, $admin, $goods, $summ) {
 				</div>
 				<br />
 				<div style='padding: 20px; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); background-color: #fff; width: 600px; text-align: left;'>
-					<p style='text-align: center;'>Ваш заказ №".$id." был отклонён. Для уточнения деталей свяжитесь с нами по телефону ".$admin['phone']." или отправьте письмо по адресу <a href='mailto:".$admin['email']."' style='color: #df4e47;'>".$admin['email']."</a>.</p>
+					<p style='text-align: center;'>Ваш заказ №".$id." был отклонён. Для уточнения деталей свяжитесь с нами по телефону ".$admin['phone']." или отправьте письмо по адресу <a href='mailto:".$admin['email']."' style='color: #ff282b;'>".$admin['email']."</a>.</p>
 					<br /><br /> 
 					<center>
 						<b>Детализация заказа</b>

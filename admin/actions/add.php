@@ -161,7 +161,7 @@ if(isset($_SESSION['userID'])) {
 			<div id="topText">
 				<span style="font-size: 18px; font-weight: bold;">Панель администрирования</span>
 				<br />
-				<span style="font-size: 14px;">Вы вошли как пользователь <b style="color: #df4e47;"><?php echo $userLogin[0]; ?></b></span>
+				<span style="font-size: 14px;">Вы вошли как пользователь <b style="color: #ff282b;"><?php echo $userLogin[0]; ?></b></span>
 			</div>
 			<a href="/"><img src="/img/system/exit.png" id="exitIMG" title="Выйти из панели администрирования" onmouseover="changeIcon('exitIMG', 'exitRed.png')" onmouseout="changeIcon('exitIMG', 'exit.png')" /></a>
 		</div>
@@ -213,7 +213,7 @@ if(isset($_SESSION['userID'])) {
 				<div id="searchList"></div>
 				<div id="goodsBlock"></div>
 				<br />
-				<span class="redLink" style="text-decoration: none; border-bottom: 1px dashed #df4e47;" onclick="addGoodBlock()">+ Добавить ещё один товар</span>
+				<span class="redLink" style="text-decoration: none; border-bottom: 1px dashed #ff282b;" onclick="addGoodBlock()">+ Добавить ещё один товар</span>
 				<br /><br />
 				<input type='button' class='button' style='margin: 0;' id='addActionButton' onmouseover='buttonChange("addActionButton", 1)' onmouseout='buttonChange("addActionButton", 0)' onclick='addAction()' value='Добавить' />
 			</form>

@@ -210,7 +210,7 @@ if(!empty($_REQUEST['edit'])) {
 			<div id="topText">
 				<span style="font-size: 18px; font-weight: bold;">Панель администрирования</span>
 				<br />
-				<span style="font-size: 14px;">Вы вошли как пользователь <b style="color: #df4e47;"><?php echo $userLogin[0]; ?></b></span>
+				<span style="font-size: 14px;">Вы вошли как пользователь <b style="color: #ff282b;"><?php echo $userLogin[0]; ?></b></span>
 			</div>
 			<a href="/"><img src="/img/system/exit.png" id="exitIMG" title="Выйти из панели администрирования" onmouseover="changeIcon('exitIMG', 'exitRed.png')" onmouseout="changeIcon('exitIMG', 'exit.png')" /></a>
 		</div>

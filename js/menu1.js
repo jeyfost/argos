@@ -3,13 +3,13 @@ function showDropdownList(action, id, highlighted) {
         switch(id) {
             case "catalogueLink":
                 if(highlighted === "catalogueLinkFA") {
-                    $('#dropDownList').html("<div class='dropDownLink' style='background-color: #df4e47;'><a href='/catalogue/index.php?type=fa&p=1' id='catalogueLinkFAA' style='color: #fff'>Мебельная фурнитура</a></div>");
+                    $('#dropDownList').html("<div class='dropDownLink' style='background-color: #ff282b;'><a href='/catalogue/index.php?type=fa&p=1' id='catalogueLinkFAA' style='color: #fff'>Мебельная фурнитура</a></div>");
                 } else {
 					$('#dropDownList').html("<div class='dropDownLink' id='catalogueLinkFA' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkFA\", \"catalogueLinkFAA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkFA\", \"catalogueLinkFAA\")'><a href='/catalogue/index.php?type=fa&p=1' id='catalogueLinkFAA'>Мебельная фурнитура</a></div>");
 				}
 
 				if(highlighted === "catalogueLinkEM") {
-					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' style='background-color: #df4e47;'><a href='/catalogue/index.php?type=em&p=1' id='catalogueLinkEMA' style='color: #fff'>Кромочные материалы</a></div>");
+					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' style='background-color: #ff282b;'><a href='/catalogue/index.php?type=em&p=1' id='catalogueLinkEMA' style='color: #fff'>Кромочные материалы</a></div>");
 				} else {
 					$('#dropDownList').html($('#dropDownList').html() + "<div class='dropDownLink' id='catalogueLinkEM' onmouseover='changeDropDownLink(\"1\", \"catalogueLinkEM\", \"catalogueLinkEMA\")' onmouseout='changeDropDownLink(\"0\", \"catalogueLinkEM\", \"catalogueLinkEMA\")'><a href='/catalogue/index.php?type=em&p=1' id='catalogueLinkEMA'>Кромочные материалы</a></div>");
 				}

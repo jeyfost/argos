@@ -203,7 +203,7 @@ if(isset($_SESSION['userID'])) {
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLinkNotDD">
-                    <a href="/actions.php" style="color: #df4e47;">Акции</a>
+                    <a href="/actions.php" style="color: #ff282b;">Акции</a>
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="partnersLink" onmouseover="showDropdownList('1', 'partnersLink')">
@@ -366,7 +366,7 @@ if(isset($_SESSION['userID'])) {
 			<?php
 				$yearResult = $mysqli->query("SELECT DISTINCT year FROM actions ORDER BY year DESC");
 				while($year = $yearResult->fetch_array(MYSQLI_NUM)) {
-					echo "<a href='actions.php?year=".$year[0]."'><span"; if($_REQUEST['year'] == $year[0]) {echo " style='color: #df4e47; font-style: italic; font-size: 14px;";} else {echo " style='color: #4c4c4c; font-style: italic; font-size: 14px; text-decoration: underline;'";} echo " class='yearFont' id='yf".$year[0]."' onmouseover='fontChange(\"yf".$year[0]."\", 1)' onmouseout='fontChange(\"yf".$year[0]."\", 0)'>".$year[0]."</span></a> ";
+					echo "<a href='actions.php?year=".$year[0]."'><span"; if($_REQUEST['year'] == $year[0]) {echo " style='color: #ff282b; font-style: italic; font-size: 14px;";} else {echo " style='color: #4c4c4c; font-style: italic; font-size: 14px; text-decoration: underline;'";} echo " class='yearFont' id='yf".$year[0]."' onmouseover='fontChange(\"yf".$year[0]."\", 1)' onmouseout='fontChange(\"yf".$year[0]."\", 0)'>".$year[0]."</span></a> ";
 				}
 			?>
 		</div>
@@ -628,7 +628,7 @@ if(isset($_SESSION['userID'])) {
 								<img src='/img/photos/actions/".$actions['preview']."' />
 								<br /><br />
 								<div style='text-align: left;'>
-									<span style='color: #df4e47; font-style: italic; font-size: 14px;'>".$d."</span>
+									<span style='color: #ff282b; font-style: italic; font-size: 14px;'>".$d."</span>
 									<p style='color: #4c4c4c; margin-top: 0;'>".$actions['header']."</p>
 									<br />
 									<div style='text-align: right;'><img src='/img/system/arrow.png' /></div>
@@ -665,7 +665,7 @@ if(isset($_SESSION['userID'])) {
 				}
 
 				echo "
-						<span style='color: #df4e47;'>".$date."</span></span>
+						<span style='color: #ff282b;'>".$date."</span></span>
 				";
 
 				$goodsCountResult = $mysqli->query("SELECT COUNT(id) FROM action_goods WHERE action_id = '".$_REQUEST['id']."'");
@@ -711,7 +711,7 @@ if(isset($_SESSION['userID'])) {
 										<td>
 											<div class='catalogueInfo'>
 												<div class='catalogueName'>
-													<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
+													<div style='width: 5px; height: 30px; background-color: #ff282b; position: relative; float: left;'></div>
 													<div style='margin-left: 15px;'><a href='/catalogue/item.php?id=".$good['id']."' class='catalogueNameLink'>".$good['name']."</a></div>
 													<div style='clear: both;'></div>
 												</div>
@@ -731,7 +731,7 @@ if(isset($_SESSION['userID'])) {
 									<b>Артикул: </b>".$good['code']."
 									<br />
 									<div id='goodPrice".$good['id']."'>
-										<span><b>Стоимость за ".$unit['short_name'].": </b><span style='color: #df4e47; font-weight: bold;'>"; if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span></span>
+										<span><b>Стоимость за ".$unit['short_name'].": </b><span style='color: #ff282b; font-weight: bold;'>"; if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span></span>
 								";
 
 								if($good['sketch'] != '') {
@@ -778,18 +778,18 @@ if(isset($_SESSION['userID'])) {
 						$discount = $discountResult->fetch_array(MYSQLI_NUM);
 
 						if($discount[0] > 0) {
-							echo "<b>Обратите внимание, ваша личная скидка, равная <span style='color: #df4e47;'>".$discount[0]."%</span>, при покупке акционных товаров <span style='color: #df4e47;'>не учитывается</span>.</b>";
+							echo "<b>Обратите внимание, ваша личная скидка, равная <span style='color: #ff282b;'>".$discount[0]."%</span>, при покупке акционных товаров <span style='color: #ff282b;'>не учитывается</span>.</b>";
 						}
 					} else {
 						if($_SESSION['userID'] != 1) {
-							echo "Чтобы получить возможность купить акционные в онлайн-режиме, необходимо <a href='/personal/login.php'><span style='color: #df4e47; text-decoration: underline;'>войти на сайт</span></a>, либо <a href='/personal/register.php'><span style='color: #df4e47; text-decoration: underline;'>зарегистрироваться</span></a>, если у вас ещё нет своей учётной записи.";
+							echo "Чтобы получить возможность купить акционные в онлайн-режиме, необходимо <a href='/personal/login.php'><span style='color: #ff282b; text-decoration: underline;'>войти на сайт</span></a>, либо <a href='/personal/register.php'><span style='color: #ff282b; text-decoration: underline;'>зарегистрироваться</span></a>, если у вас ещё нет своей учётной записи.";
 						}
 					}
 				}
 
 				echo "
 						<br /><br />
-						<a href='/actions.php'><span style='color: #df4e47; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>Больше акций</span></a>
+						<a href='/actions.php'><span style='color: #ff282b; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>Больше акций</span></a>
 					</div>
 				";
 			}

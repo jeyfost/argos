@@ -174,7 +174,7 @@ function sendMail($email, $id, $goods, $summ) {
 				<br />
 				<div style='padding: 20px; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); background-color: #fff; width: 600px; text-align: left;'>
 					<p>Ваш заказ №".$id." был принят к сборке. Забрать его вы сможете по адресу: г. Могилёв, ул. Залуцкого, д. 21.</p>
-					<p>Время работы можно узнать в <a href='https://argos-fm.by/contacts/stores.php' style='color: #df4e47;'>разделе с контактной информацией</a>.</p>
+					<p>Время работы можно узнать в <a href='https://argos-fm.by/contacts/stores.php' style='color: #ff282b;'>разделе с контактной информацией</a>.</p>
 					<br /><br /> 
 					<center>
 						<b>Детализация заказа</b>

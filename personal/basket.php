@@ -371,7 +371,7 @@ if(isset($_SESSION['userID'])) {
 			switch($_REQUEST['section']) {
 				case 1:
 					if($basketQuantity[0] == 0) {
-						echo "<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='/catalogue/index.php?type=fa&p=1' style='color: #df4e47;'>из каталога</a></b>.</span>";
+						echo "<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='/catalogue/index.php?type=fa&p=1' style='color: #ff282b;'>из каталога</a></b>.</span>";
 					} else {
 						echo "<span style='font-size: 15px;'>Всего групп товаров в коризне: <b id='basketQuantityText'>".$basketQuantity[0]."</b></span><br /><br />";
 						$totalNormal = 0;
@@ -504,7 +504,7 @@ if(isset($_SESSION['userID'])) {
 										<td>
 											<div class='catalogueInfo'>
 												<div class='catalogueName'>
-													<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
+													<div style='width: 5px; height: 30px; background-color: #ff282b; position: relative; float: left;'></div>
 													<div style='margin-left: 15px;'><a href='/catalogue/item.php?id=".$good['id']."' class='catalogueNameLink'>".$good['name']."</a></div>
 													<div style='clear: both;'></div>
 												</div>
@@ -524,7 +524,7 @@ if(isset($_SESSION['userID'])) {
 									<b>Артикул: </b>".$good['code']."
 									<br />
 									<div id='goodPrice".$good['id']."'>
-										<span><b>Стоимость за ".$unit['short_name'].": </b>"; if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";} echo "
+										<span><b>Стоимость за ".$unit['short_name'].": </b>"; if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";} echo "
 								";
 
 								if($good['sketch'] != '') {
@@ -580,7 +580,7 @@ if(isset($_SESSION['userID'])) {
 						";
 
 						if($actionGoodsQuantity > 0) {
-							echo "<span style='float: right; font-size: 14px; color: #df4e47;'>Ваша личная скидка не действует на акционные товары.</span><br /><br />";
+							echo "<span style='float: right; font-size: 14px; color: #ff282b;'>Ваша личная скидка не действует на акционные товары.</span><br /><br />";
 						}
 
 						echo "

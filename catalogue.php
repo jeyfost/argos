@@ -268,7 +268,7 @@ if(isset($_SESSION['userID'])) {
 			</div>
             <div id="menuLinks">
                 <div class="menuLink" id="catalogueLink" <?php echo "onmouseover='showDropdownList(\"1\", \"catalogueLink\", \"catalogueLink".strtoupper($mysqli->real_escape_string($_REQUEST['type']))."\")'"; ?>>
-                    <a href="/catalogue/index.php?type=fa&p=1" class="menuPoint" style="color: #df4e47;">Каталог</a>
+                    <a href="/catalogue/index.php?type=fa&p=1" class="menuPoint" style="color: #ff282b;">Каталог</a>
                     <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
@@ -476,7 +476,7 @@ if(isset($_SESSION['userID'])) {
 		<div id="catalogueMenu">
 			<?php
 				echo "
-					<center><a href='/catalogue/index.php?type=".$type['catalogue_type']."&p=1'><span style='color: #df4e47;'>".$type['type_name']."</span></a></center>
+					<center><a href='/catalogue/index.php?type=".$type['catalogue_type']."&p=1'><span style='color: #ff282b;'>".$type['type_name']."</span></a></center>
 					<div style='width: 100%; height: 1px; background-color: #d7d5d1; margin-top: 10px;'></div>
 					<div style='margin-top: 10px; width: 100%;'></div>
 				";
@@ -484,7 +484,7 @@ if(isset($_SESSION['userID'])) {
 				$categoryResult = $mysqli->query("SELECT * FROM categories_new WHERE type = '".$type['catalogue_type']."' ORDER BY name");
 				while($category = $categoryResult->fetch_assoc()) {
 					echo "
-						<a href='/catalogue/index.php?type=".$type['catalogue_type']."&c=".$category['id']."&p=1'><div class='categoryContainer'"; if($_REQUEST['c'] != $category['id']) {echo " onmouseover='categoryStyle(1, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")' onmouseout='categoryStyle(0, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")'";} echo "><img src='img/icons/"; if($_REQUEST['c'] == $category['id']) {echo $category['picture_red'];} else {echo $category['picture'];} echo "' id='categoryIMG".$category['id']."' /><div class='categoryNameContainer'><span id='categoryText".$category['id']."'"; if($_REQUEST['c'] == $category['id']) {echo " style='color: #df4e47;'";} echo ">".$category['name']."</span></div></div></a>
+						<a href='/catalogue/index.php?type=".$type['catalogue_type']."&c=".$category['id']."&p=1'><div class='categoryContainer'"; if($_REQUEST['c'] != $category['id']) {echo " onmouseover='categoryStyle(1, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")' onmouseout='categoryStyle(0, \"categoryIMG".$category['id']."\", \"categoryText".$category['id']."\", \"".$category['picture']."\", \"".$category['picture_red']."\")'";} echo "><img src='img/icons/"; if($_REQUEST['c'] == $category['id']) {echo $category['picture_red'];} else {echo $category['picture'];} echo "' id='categoryIMG".$category['id']."' /><div class='categoryNameContainer'><span id='categoryText".$category['id']."'"; if($_REQUEST['c'] == $category['id']) {echo " style='color: #ff282b;'";} echo ">".$category['name']."</span></div></div></a>
 					";
 
 					if(!empty($_REQUEST['c']) and $category['id'] == $_REQUEST['c']) {
@@ -494,7 +494,7 @@ if(isset($_SESSION['userID'])) {
 						if($subcategoriesCount[0] > 0) {
 							$subcategoryResult = $mysqli->query("SELECT * FROM subcategories_new WHERE category = '".$mysqli->real_escape_string($_REQUEST['c'])."' ORDER BY name");
 							while($subcategory = $subcategoryResult->fetch_assoc()) {
-								echo "<a href='/catalogue/index.php?type=".$type['catalogue_type']."&c=".$category['id']."&s=".$subcategory['id']."&p=1'"; if($_REQUEST['s'] != $subcategory['id']) {echo " onmouseover='subcategoryStyle(1, \"subcategoryText".$subcategory['id']."\")' onmouseout='subcategoryStyle(0, \"subcategoryText".$subcategory['id']."\")'";} echo "><div class='subcategoryContainer'><span id='subcategoryText".$subcategory['id']."'"; if($_REQUEST['s'] == $subcategory['id']) {echo " style='color: #df4e47;'";} echo ">— ".$subcategory['name']."</span></div></a>";
+								echo "<a href='/catalogue/index.php?type=".$type['catalogue_type']."&c=".$category['id']."&s=".$subcategory['id']."&p=1'"; if($_REQUEST['s'] != $subcategory['id']) {echo " onmouseover='subcategoryStyle(1, \"subcategoryText".$subcategory['id']."\")' onmouseout='subcategoryStyle(0, \"subcategoryText".$subcategory['id']."\")'";} echo "><div class='subcategoryContainer'><span id='subcategoryText".$subcategory['id']."'"; if($_REQUEST['s'] == $subcategory['id']) {echo " style='color: #ff282b;'";} echo ">— ".$subcategory['name']."</span></div></a>";
 
 								if(!empty($_REQUEST['s']) and $subcategory['id'] == $_REQUEST['s']) {
 									$subcategories2CountResult = $mysqli->query("SELECT COUNT(id) FROM subcategories2 WHERE subcategory = '".$subcategory['id']."'");
@@ -503,7 +503,7 @@ if(isset($_SESSION['userID'])) {
 									if($subcategories2Count[0] > 0) {
 										$subcategory2Result = $mysqli->query("SELECT * FROM subcategories2 WHERE subcategory = '".$subcategory['id']."' ORDER BY name");
 										while($subcategory2 = $subcategory2Result->fetch_assoc()) {
-											echo "<a href='/catalogue/index.php?type=".$type['catalogue_type']."&c=".$category['id']."&s=".$subcategory['id']."&s2=".$subcategory2['id']."&p=1'"; if($_REQUEST['s2'] != $subcategory2['id']) {echo " onmouseover='subcategoryStyle(1, \"subcategory2Text".$subcategory2['id']."\")' onmouseout='subcategoryStyle(0, \"subcategory2Text".$subcategory2['id']."\")'";} echo "><div class='subcategory2Container'><span id='subcategory2Text".$subcategory2['id']."'"; if($_REQUEST['s2'] == $subcategory2['id']) {echo " style='color: #df4e47;'";} echo ">— ".$subcategory2['name']."</span></div></a>";
+											echo "<a href='/catalogue/index.php?type=".$type['catalogue_type']."&c=".$category['id']."&s=".$subcategory['id']."&s2=".$subcategory2['id']."&p=1'"; if($_REQUEST['s2'] != $subcategory2['id']) {echo " onmouseover='subcategoryStyle(1, \"subcategory2Text".$subcategory2['id']."\")' onmouseout='subcategoryStyle(0, \"subcategory2Text".$subcategory2['id']."\")'";} echo "><div class='subcategory2Container'><span id='subcategory2Text".$subcategory2['id']."'"; if($_REQUEST['s2'] == $subcategory2['id']) {echo " style='color: #ff282b;'";} echo ">— ".$subcategory2['name']."</span></div></a>";
 										}
 										echo "<div style='width: 100%; height: 5px;'></div>";
 									}
@@ -620,7 +620,7 @@ if(isset($_SESSION['userID'])) {
 									<td>
 										<div class='catalogueInfo'>
 												<div class='catalogueName'>
-													<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
+													<div style='width: 5px; height: 30px; background-color: #ff282b; position: relative; float: left;'></div>
 													<div style='margin-left: 15px;'><a href='/catalogue/item.php?id=".$catalogue['id']."' class='catalogueNameLink'>".$catalogue['name']."</a></div>
 													<div style='clear: both;'></div>
 												</div>
@@ -661,7 +661,7 @@ if(isset($_SESSION['userID'])) {
 								<b>Артикул: </b>".$catalogue['code']."
 								<br />
 								<div id='goodPrice".$catalogue['id']."'>
-									<span"; if($_SESSION['userID'] == 1 and $active == 0) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Цена за ".$unit['for_name'].": </b>"; if($catalogue['price'] == 0 or $catalogue['price'] == null) {echo "по запросу";} else {if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>"; if($active > 0) {echo "</span>";}} echo "
+									<span"; if($_SESSION['userID'] == 1 and $active == 0) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Цена за ".$unit['for_name'].": </b>"; if($catalogue['price'] == 0 or $catalogue['price'] == null) {echo "по запросу";} else {if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>"; if($active > 0) {echo "</span>";}} echo "
 								</div>
 							";
 

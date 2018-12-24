@@ -38,7 +38,7 @@ function addSection() {
 											responseField.css('opacity', 1);
 										}, 300);
 									} else {
-										responseField.css('color', '#df4e47');
+										responseField.css('color', '#ff282b');
 										responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
 										responseField.css('opacity', 1);
 									}
@@ -75,7 +75,7 @@ function addSection() {
 											if(s === 1) {
 												responseField.css('color', '#53acff');
 											} else {
-												responseField.css('color', '#df4e47');
+												responseField.css('color', '#ff282b');
 											}
 											responseField.html("<br />" + status + "<br />");
 											responseField.css('opacity', 1);
@@ -84,7 +84,7 @@ function addSection() {
 										if(s === 1) {
 											responseField.css('color', '#53acff');
 										} else {
-											responseField.css('color', '#df4e47');
+											responseField.css('color', '#ff282b');
 										}
 										responseField.html("<br />" + status + "<br />");
 										responseField.css('opacity', 1);
@@ -95,12 +95,12 @@ function addSection() {
 							if(responseField.css('opacity') === 1) {
 								responseField.css('opacity', 0);
 								setTimeout(function() {
-									responseField.css('color', '#df4e47');
+									responseField.css('color', '#ff282b');
 									responseField.html("<br />Введённое вами название раздела уже существует.<br />");
 									responseField.css('opacity', 1);
 								}, 300);
 							} else {
-								responseField.css('color', '#df4e47');
+								responseField.css('color', '#ff282b');
 								responseField.html("<br />Введённое вами название раздела уже существует.<br />");
 								responseField.css('opacity', 1);
 							}

@@ -4,11 +4,11 @@
 
 function pageBlock(action, block, text) {
 	if(action === 1) {
-		document.getElementById(block).style.backgroundColor = "#df4e47";
+		document.getElementById(block).style.backgroundColor = "#ff282b";
 		document.getElementById(text).style.color = "#fff";
 	} else {
 		document.getElementById(block).style.backgroundColor = "#fff";
-		document.getElementById(text).style.color = "#df4e47";
+		document.getElementById(text).style.color = "#ff282b";
 	}
 }
 

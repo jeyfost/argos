@@ -43,7 +43,7 @@ for($i = 0; $i < $buttonsCount; $i++) {
 }
 
 if($clientsCount[0] == 0) {
-	echo "<span style='color: #df4e47;'>Не найдено ни одного предприятия с выбранными критериями.</span>";
+	echo "<span style='color: #ff282b;'>Не найдено ни одного предприятия с выбранными критериями.</span>";
 }
 
 echo "<div style='clear: both;'></div>";

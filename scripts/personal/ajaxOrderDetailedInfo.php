@@ -21,7 +21,7 @@ $actionGoodsQuantity = 0;
 echo "<div style='width: 100%; background-color: #ffeecb; height: 40px; line-height: 40px; font-size: 16px; text-align: center;'>Детализация заказа №".$id."</div><br /><br />";
 
 if($discount[0] > 0) {
-	echo "<p>В детализации показаны цены на товары с учётом личной скидки клиента. Размер скидки составляет <b>".$discount[0]."%.</b><span style='color: #df4e47;'> На акционные товары скидка не распространяется.</span></p><br /><br />";
+	echo "<p>В детализации показаны цены на товары с учётом личной скидки клиента. Размер скидки составляет <b>".$discount[0]."%.</b><span style='color: #ff282b;'> На акционные товары скидка не распространяется.</span></p><br /><br />";
 }
 
 while($order = $orderResult->fetch_assoc()) {
@@ -150,7 +150,7 @@ while($order = $orderResult->fetch_assoc()) {
 						<td>
 							<div class='catalogueInfo'>
 								<div class='catalogueName'>
-									<div style='width: 5px; height: 30px; background-color: #df4e47; position: relative; float: left;'></div>
+									<div style='width: 5px; height: 30px; background-color: #ff282b; position: relative; float: left;'></div>
 									<div style='margin-left: 15px; font-size: 17px;'><a href='/catalogue/item.php?id=".$good['id']."' class='catalogueNameLink'>".$good['name']."</a></div>
 									<div style='clear: both;'></div>
 								</div>
@@ -170,7 +170,7 @@ while($order = $orderResult->fetch_assoc()) {
 					<b>Артикул: </b>".$good['code']."
 					<br />
 					<div id='goodPrice".$good['id']."'>
-						<span><b>Стоимость за ".$unit['short_name'].": </b>"; if($active > 0) {echo "<span style='color: #df4e47; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";}
+						<span><b>Стоимость за ".$unit['short_name'].": </b>"; if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";} if($roubles > 0) {echo $roubles." руб. ";} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";}
 
 				if($good['sketch'] != '') {
 					echo "<br /><br /><a href='/img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-options='skin: \"light\"'><span class='sketchFont'>Чертёж</span></a>";
@@ -227,7 +227,7 @@ echo "
 ";
 
 if($actionGoodsQuantity > 0) {
-	echo "<span style='float: right; font-size: 14px; color: #df4e47;'>Личная скидка клиента не действует на акционные товары.</span><br /><br />";
+	echo "<span style='float: right; font-size: 14px; color: #ff282b;'>Личная скидка клиента не действует на акционные товары.</span><br /><br />";
 }
 
 echo "
@@ -263,7 +263,7 @@ if($commentsCount[0] == 0) {
 
 		echo "
 			<div class='orderComment'>
-				<div style='border-bottom: 1px dotted #999; padding: 5px;'><b>Комментарий №".$number."</b> от <b>".dateFormatted($comment['date'])."</b>. Автор: <b>"; if($comment['user_id'] == 1) {echo "<span style='color: #df4e47;'>".$author[0]."</span>";} else {echo $author[0];} echo "</b></div>
+				<div style='border-bottom: 1px dotted #999; padding: 5px;'><b>Комментарий №".$number."</b> от <b>".dateFormatted($comment['date'])."</b>. Автор: <b>"; if($comment['user_id'] == 1) {echo "<span style='color: #ff282b;'>".$author[0]."</span>";} else {echo $author[0];} echo "</b></div>
 				<div class='commentSection'><br />".$comment['text']."</div>
 			</div>
 		";
