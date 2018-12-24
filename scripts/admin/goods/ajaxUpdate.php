@@ -8,7 +8,7 @@ ob_start();
 $row = 1;
 
 if(!empty($_FILES['csvFile']['tmp_name'])) {
-    /* Первая колонка в файле — артикул, вторая — цена в валюте прихода, третья — количество */
+    /* Первая колонка в файле — артикул, вторая — единицы измерения, третья — цена в валюте прихода, четвёртая — количество в остатке */
 
 	$uploadDir = "../../../files/1C/";
 	$name = "update.csv";
@@ -23,34 +23,36 @@ if(!empty($_FILES['csvFile']['tmp_name'])) {
 			for ($c = 0; $c < $num; $c++) {
 				$stats = explode(";", $data[$c]);
 				$code = $stats[0];
-				$price = $stats[1];
+				$price = $stats[2];
 				$quantity = $stats[2];
 
-				if(!empty($code)) {
-					switch(strlen($code)) {
-						case 1:
-							$code = "000".$code;
-							break;
-						case 2:
-							$code = "00".$code;
-							break;
-						case 3:
-							$code = "0".$code;
-							break;
-						default: break;
-					}
+				if($price > 0) {
+                    if(!empty($code)) {
+                        switch(strlen($code)) {
+                            case 1:
+                                $code = "000".$code;
+                                break;
+                            case 2:
+                                $code = "00".$code;
+                                break;
+                            case 3:
+                                $code = "0".$code;
+                                break;
+                            default: break;
+                        }
 
-					$goodCheckResult = $mysqli->query("SELECT COUNT(id) FROM catalogue_new WHERE code = '".$code."'");
-					$goodCheck = $goodCheckResult->fetch_array(MYSQLI_NUM);
+                        $goodCheckResult = $mysqli->query("SELECT COUNT(id) FROM catalogue_new WHERE code = '".$code."'");
+                        $goodCheck = $goodCheckResult->fetch_array(MYSQLI_NUM);
 
-					$i = 0;
+                        $i = 0;
 
-					if($goodCheck[0] == 1) {
-						if($mysqli->query("UPDATE catalogue_new SET price = '".$price."', quantity = '".$quantity."' WHERE code = '".$code."'")) {
-							$i++;
-						}
-					}
-				}
+                        if($goodCheck[0] == 1) {
+                            if($mysqli->query("UPDATE catalogue_new SET price = '".$price."', quantity = '".$quantity."' WHERE code = '".$code."'")) {
+                                $i++;
+                            }
+                        }
+                    }
+                }
 			}
 		}
 
