@@ -249,6 +249,7 @@ if(isset($_SESSION['userID'])) {
 			<input type="password" id="loginPasswordInput" name="loginPassword" />
 			<br /><br />
 			<input type="submit" value="Войти" id="loginSubmit" onmouseover="buttonChange('loginSubmit', 1)" onmouseout="buttonChange('loginSubmit', 0)" />
+            <a href="/personal/register.php"><input type="button" value="Регистрация" id="registrationButton" onmouseover="buttonChange('registrationButton', 1)" onmouseout="buttonChange('registrationButton', 0)" /></a>
 		</form>
 
 		<div style="margin-top: 40px; width: 100%;">

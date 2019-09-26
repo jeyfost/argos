@@ -4,12 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/personal/basket.php" line="683" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="Добавлена возможность поиска заказов в разделе активных заказов пользователя">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/media.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/media.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personal/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/personal/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/personal/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/personal/login.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,11 +43,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="media.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="media.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/media.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="204">
+              <caret line="10" column="166" selection-start-line="10" selection-start-column="166" selection-end-line="10" selection-end-column="166" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/personal/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="243" column="18" lean-forward="true" selection-start-line="243" selection-start-column="18" selection-end-line="243" selection-end-column="18" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,8 +67,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="135" column="22" selection-start-line="135" selection-start-column="1" selection-end-line="135" selection-end-column="22" />
+            <state relative-caret-position="264">
+              <caret line="128" column="258" selection-start-line="128" selection-start-column="258" selection-end-line="128" selection-end-column="258" />
             </state>
           </provider>
         </entry>
@@ -168,7 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts/admin/actions/ajaxChooseGood.php" />
         <option value="$PROJECT_DIR$/scripts/admin/actions/ajaxSearch.php" />
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxRebuildPhotosContainer.php" />
         <option value="$PROJECT_DIR$/scripts/index/ajaxLoadCategories.php" />
@@ -216,9 +225,10 @@
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxUpdate.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/personal/personal.php" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/personal/register.php" />
         <option value="$PROJECT_DIR$/css/media.css" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/personal/login.php" />
       </list>
     </option>
   </component>
@@ -519,14 +529,7 @@
       <workItem from="1545801048245" duration="42000" />
       <workItem from="1553429897380" duration="52000" />
       <workItem from="1568610299213" duration="368000" />
-      <workItem from="1569477770492" duration="2601000" />
-    </task>
-    <task id="LOCAL-00200" summary="Добавлена отдельная страница заказа">
-      <created>1500378041985</created>
-      <option name="number" value="00200" />
-      <option name="presentableId" value="LOCAL-00200" />
-      <option name="project" value="LOCAL" />
-      <updated>1500378041985</updated>
+      <workItem from="1569477770492" duration="5571000" />
     </task>
     <task id="LOCAL-00201" summary="Оптимизированы запросы к категориям товаров">
       <created>1500379858890</created>
@@ -864,11 +867,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545637797834</updated>
     </task>
-    <option name="localTasksCounter" value="249" />
+    <task id="LOCAL-00249" summary="Исправлена страница регистрации">
+      <created>1569481686753</created>
+      <option name="number" value="00249" />
+      <option name="presentableId" value="LOCAL-00249" />
+      <option name="project" value="LOCAL" />
+      <updated>1569481686754</updated>
+    </task>
+    <option name="localTasksCounter" value="250" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="606219000" />
+    <option name="totallyTimeSpent" value="609189000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -967,7 +977,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлен эффект увеличения прозрачности при наведении курсора на превью дополнительных фотографий в разделе редактирования товара" />
     <MESSAGE value="Реализовано отображение прелоадера при нажатии на &quot;установить первый незанятый артикул&quot;" />
     <MESSAGE value="Исправлены мелкие ошибки" />
     <MESSAGE value="Исправлены ошибки в меню" />
@@ -992,7 +1001,8 @@
     <MESSAGE value="Исправлен цвет некоторых элементов" />
     <MESSAGE value="Изменён цвет некоторых элементов 2" />
     <MESSAGE value="Исправлена функция обновления товара по выгрузке из 1С" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлена функция обновления товара по выгрузке из 1С" />
+    <MESSAGE value="Исправлена страница регистрации" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлена страница регистрации" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1047,11 +1057,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/menu1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4883" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/ajaxSearch.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1488,13 +1493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="135" column="22" selection-start-line="135" selection-start-column="1" selection-end-line="135" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/personal/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1504,8 +1502,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/media.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="204">
+          <caret line="10" column="166" selection-start-line="10" selection-start-column="166" selection-end-line="10" selection-end-column="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="128" column="258" selection-start-line="128" selection-start-column="258" selection-end-line="128" selection-end-column="258" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personal/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="243" column="18" lean-forward="true" selection-start-line="243" selection-start-column="18" selection-end-line="243" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
