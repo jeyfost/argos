@@ -19,6 +19,7 @@
     <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
 	<link rel='icon' href='/img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='/css/style.css'>
+    <link rel='stylesheet' media='screen' type='text/css' href='/css/media.css'>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/menu1.js"></script>
@@ -308,9 +309,9 @@
 			<div id="registrationDescription">
 				<span style="font-size: 24px;">Зачем нужна регистрация?</span>
 				<ul>
-					<li>Вы получаете возможность онлайн-заказа товаров</li>
-					<li>Каждая учётная запись имеет возможность подключения персональных скидок</li>
-					<li>Вы сможете просматривать полную статистику совершённых заказов и потраченных средств</li>
+					<li>Вы получаете возможность онлайн-заказа товаров.</li>
+					<li>Каждая учётная запись имеет возможность подключения персональных скидок.</li>
+					<li>Вы сможете просматривать полную статистику совершённых заказов.</li>
 				</ul>
 			</div>
 			<div style="clear: both;"></div>
