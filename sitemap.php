@@ -97,6 +97,8 @@ if(isset($_SESSION['userID'])) {
 
 <body>
 
+    <div id="page-preloader"><span class="spinner"></span></div>
+
     <div id="menu">
         <div class="container" style="height: 100%;">
             <a href="/"><img src="/img/system/logo.png" id="logo" /></a>
