@@ -6,6 +6,8 @@
 		header("Location: ../index.php");
 	}
 
+	include ("../layouts/footer.php");
+
 ?>
 
 <!doctype html>
@@ -265,12 +267,7 @@
 
 	<div id="footerShadow"></div>
     <div id="footer">
-		<div class="container">
-			<div class="copy">&copy; ЧТУП &laquo;Аргос-ФМ&raquo;<br />2008 - <?php echo date('Y'); ?></div>
-			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="/contacts/main.php">Контактная информация</a> | <a href="/sitemap.php">Карта сайта</a></div>
-            <div class="copy" style="float: right;"><i class="fa fa-phone" aria-hidden="true"></i> +375 (222) 747-800<br /><i class="fa fa-phone" aria-hidden="true"></i> +375 (222) 707-707</div>
-		</div>
-		<div style="clear: both;"></div>
+		<?= footer() ?>
 	</div>
 
 </body>
