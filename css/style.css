@@ -8,7 +8,7 @@ table {border: none; transition: .3s;}
 td {padding-left: 10px; padding-right: 10px;}
 select {height: 40px; line-height: 40px;}
 
-#breadCrumbs a span:hover, .basicLink:hover, .copy a:hover, p a:hover, .searchLink:hover, .addToBasketFont:hover {text-decoration: none;}
+#breadCrumbs a span:hover, .basicLink:hover, .copy a:hover, p a:hover, .searchLink:hover, .addToBasketFont:hover, .link:hover, .headLink:hover {text-decoration: none;}
 
 .catalogueItemTextDecorated:hover {text-decoration: underline;}
 .catalogueDescription a span:hover, .sketchFont:hover, td a:hover, span b a:hover, .tdLink:hover {text-decoration: underline;}
@@ -146,7 +146,8 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .mainImgContainer {width: 100%; height: 100%; overflow: hidden; transition: .3s; margin: 0; padding: 0;}
 .mainImgContainer img {min-height: 100%; width: 100%;}
 .copy {float: left; position: relative; height: 100%; padding-top: 15px;}
-.copy a, p a {color: #ff282b; text-decoration: underline;}
+.copy a, p a, .link, .headLink {color: #ff282b; text-decoration: underline;}
+.headLink {font-weight: bold; font-size: 20px;}
 .breadCrumbsText {text-decoration: underline;}
 .basicLink {color: #ff282b; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; text-decoration: underline;}
 .categoryNameContainer {position: absolute; left: 40px; margin-top: -24px;}
