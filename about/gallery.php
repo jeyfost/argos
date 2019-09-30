@@ -55,6 +55,7 @@ if(isset($_SESSION['userID'])) {
 	<![endif]-->
 	<script type="text/javascript" src="/js/lightview/js/spinners/spinners.min.js"></script>
 	<script type="text/javascript" src="/js/lightview/js/lightview/lightview.js"></script>
+    <link rel="stylesheet" href="/js/font-awesome-4.7.0/css/font-awesome.min.css">
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -367,7 +368,7 @@ if(isset($_SESSION['userID'])) {
 		<div class="container">
 			<div class="copy">&copy; ЧТУП &laquo;Аргос-ФМ&raquo;<br />2008 - <?php echo date('Y'); ?></div>
 			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="/contacts/main.php">Контактная информация</a> | <a href="/sitemap.php">Карта сайта</a></div>
-			<div class="copy" style="float: right;">Разработка сайта<br /><a href="https://airlab.by/">airlab</a></div>
+            <div class="copy" style="float: right;"><i class="fa fa-phone" aria-hidden="true"></i> +375 (222) 747-800<br /><i class="fa fa-phone" aria-hidden="true"></i> +375 (222) 707-707</div>
 		</div>
 		<div style="clear: both;"></div>
 	</div>

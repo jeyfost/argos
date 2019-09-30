@@ -32,6 +32,7 @@
     <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
 	<link rel='icon' href='/img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='/css/style.css'>
+    <link rel="stylesheet" href="/js/font-awesome-4.7.0/css/font-awesome.min.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/menu1.js"></script>
@@ -248,7 +249,7 @@
 		<div class="container">
 			<div class="copy">&copy; ЧТУП &laquo;Аргос-ФМ&raquo;<br />2008 - <?php echo date('Y'); ?></div>
 			<div class="copy" style="margin-left: 40px;">Республика Беларусь, г. Могилёв, ул. Залуцкого, 21<br /><a href="/contacts/main.php">Контактная информация</a> | <a href="/sitemap.php">Карта сайта</a></div>
-			<div class="copy" style="float: right;">Разработка сайта<br /><a href="https://airlab.by/">airlab</a></div>
+            <div class="copy" style="float: right;"><i class="fa fa-phone" aria-hidden="true"></i> +375 (222) 747-800<br /><i class="fa fa-phone" aria-hidden="true"></i> +375 (222) 707-707</div>
 		</div>
 		<div style="clear: both;"></div>
 	</div>
