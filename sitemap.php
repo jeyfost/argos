@@ -456,7 +456,7 @@ if(isset($_SESSION['userID'])) {
                 </ul>
             </li>
             <li>
-                <a href="/about" class="headLink">О компании</a>
+                <a href="/about/info.php" class="headLink">О компании</a>
 
                 <ul type="square">
                     <li><a href="/about/info.php" class="link">Общая информация</a></li>
@@ -486,7 +486,7 @@ if(isset($_SESSION['userID'])) {
                 ?>
             </li>
             <li>
-                <a href="/stores" class="headLink">Где купить</a>
+                <a href="/stores/company.php" class="headLink">Где купить</a>
 
                 <ul type="square">
                     <li><a href="/stores/company.php" class="link">Фирменная сеть</a></li>
@@ -513,7 +513,7 @@ if(isset($_SESSION['userID'])) {
                 ?>
             </li>
             <li>
-                <a href="/partners" class="headLink">Партнёрам</a>
+                <a href="/partners/cooperation.php" class="headLink">Партнёрам</a>
 
                 <ul type="square">
                     <li><a href="/partners/cooperation.php" class="link">Сотрудничество</a></li>
@@ -539,7 +539,7 @@ if(isset($_SESSION['userID'])) {
                 </ul>
             </li>
             <li>
-                <a href="/contacts" class="headLink">Контакты</a>
+                <a href="/contacts/stores.php" class="headLink">Контакты</a>
 
                 <ul type="square">
                     <li><a href="/contacts/stores.php" class="link">Магазины</a></li>
