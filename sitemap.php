@@ -58,7 +58,7 @@ if(isset($_SESSION['userID'])) {
     <meta name='keywords' content='мебельная фурнитура, комплектующие для мебели, Аргос-ФМ, комплектующие для мебели Могилев, Могилев, кромочные материалы, кромка, кромка ПВХ, ручки мебельные, мебельная фурнитура Могилев, кромка ПВХ Могилев, лента кромочная, лента кромочная Могилев, ручки мебельные Могилев, кромка Могилев'>
     <meta name='description' content='Комплексные поставки всех видов мебельной фурнитуры импортного и отечественного производства. Республика Беларусь, г. Могилёв.'>
 
-    <title>Акции</title>
+    <title>Карта сайта</title>
 
     <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
     <link rel='icon' href='/img/icons/favicon.ico' type='image/x-icon'>
@@ -466,7 +466,25 @@ if(isset($_SESSION['userID'])) {
                     <li><a href="/about/vacancies.php" class="link">Вакансии</a></li>
                 </ul>
             </li>
-            <li><a href="/news.php" class="headLink">Новости</a></li>
+            <li>
+                <a href="/news.php" class="headLink">Новости</a>
+
+                <?php
+                    $newsCountResult = $mysqli->query("SELECT COUNT(id) FROM news");
+                    $newsCount = $newsCountResult->fetch_array(MYSQLI_NUM);
+
+                    if($newsCount[0] > 0) {
+                        echo "<ol>
+";
+                        $newsResult = $mysqli->query("SELECT * FROM news ORDER BY date DESC");
+                        while($news = $newsResult->fetch_assoc()) {
+                            echo "<li><a href='/news.php?id=".$news['id']."' class='link'>".$news['header']."</a></li>";
+                        }
+
+                        echo "</ol>";
+                    }
+                ?>
+            </li>
             <li>
                 <a href="/stores" class="headLink">Где купить</a>
 
@@ -475,13 +493,49 @@ if(isset($_SESSION['userID'])) {
                     <li><a href="/stores/representatives.php" class="link">Партнёрская сеть</a></li>
                 </ul>
             </li>
-            <li><a href="/actions.php" class="headLink">Акции</a></li>
+            <li>
+                <a href="/actions.php" class="headLink">Акции</a>
+
+                <?php
+                    $actionsCountResult = $mysqli->query("SELECT COUNT(id) FROM actions");
+                    $actionsCount = $actionsCountResult->fetch_array(MYSQLI_NUM);
+
+                    if($actionsCount[0] > 0) {
+                        echo "<ol>";
+
+                        $actionResult = $mysqli->query("SELECT * FROM actions ORDER BY date DESC");
+                        while ($action = $actionResult->fetch_assoc()) {
+                            echo "<li><a href='/actions.php?id=".$action['id']."' class='link'>".$action['header']."</a></li>";
+                        }
+
+                        echo "</ol>";
+                    }
+                ?>
+            </li>
             <li>
                 <a href="/partners" class="headLink">Партнёрам</a>
 
                 <ul type="square">
                     <li><a href="/partners/cooperation.php" class="link">Сотрудничество</a></li>
-                    <li><a href="/partners/news.php" class="link">Новости для клиентов</a></li>
+                    <li>
+                        <a href="/partners/news.php" class="link">Новости для клиентов</a>
+
+                        <?php
+                            $newsCountResult = $mysqli->query("SELECT COUNT(id) FROM news WHERE client = '1'");
+                            $newsCount = $newsCountResult->fetch_array(MYSQLI_NUM);
+
+                            if($newsCount[0] > 0) {
+                                echo "<ol>";
+
+                                $newsResult = $mysqli->query("SELECT * FROM news WHERE client = '1' ORDER BY date DESC");
+                                while ($news = $newsResult->fetch_assoc()) {
+                                    echo "<li><a href='news.php?id=".$news['id']."' class='link'>".$news['header']."</a></li>";
+                                }
+
+                                echo "</ol>";
+                            }
+                        ?>
+                    </li>
                 </ul>
             </li>
             <li>
