@@ -395,7 +395,6 @@ if(isset($_SESSION['userID'])) {
 								<div style='text-align: left;'>
 									<span style='color: #ff282b; font-style: italic; font-size: 14px;'>".$date."</span>
 									<p style='color: #4c4c4c; margin-top: 0;'>".$news['header']."</p>
-									<br />
 									<div style='text-align: right;'><img src='/img/system/arrow.png' /></div>
 								</div>
 							</div>
