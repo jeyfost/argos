@@ -10,9 +10,30 @@ if(!empty($_REQUEST['year'])) {
 	$newsCount = $newsCountResult->fetch_array(MYSQLI_NUM);
 
 	if($newsCount[0] == 0) {
-		header("Location: news.php");
+		header("Location: news.php?p=1");
 	}
 }
+
+if(empty($_REQUEST['year'])) {
+    $quantityResult = $mysqli->query("SELECT COUNT(id) FROM news");
+} else {
+    $quantityResult = $mysqli->query("SELECT COUNT(id) FROM news WHERE year = '".$mysqli->real_escape_string($_REQUEST['year'])."'");
+}
+
+$quantity = $quantityResult->fetch_array(MYSQLI_NUM);
+
+if($quantity[0] > 10) {
+    if($quantity[0] % 10 != 0) {
+        $numbers = intval(($quantity[0] / 10) + 1);
+    } else {
+        $numbers = intval($quantity[0] / 10);
+    }
+} else {
+    $numbers = 1;
+}
+
+$page = $mysqli->real_escape_string($_REQUEST['p']);
+$start = $page * 10 - 10;
 
 if(!empty($_REQUEST['id'])) {
 	$newsCountResult = $mysqli->query("SELECT COUNT(id) FROM news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
@@ -21,6 +42,23 @@ if(!empty($_REQUEST['id'])) {
 	if($newsCount[0] == 0) {
 		header("Location: news.php");
 	}
+} else {
+    if(empty($_REQUEST['p'])) {
+        $parameter = explode("?", $_SERVER['REQUEST_URI']);
+
+        if(empty($parameter[1])) {
+            header("Location: news.php?p=1");
+        } else {
+            header("Location: ".$_SERVER['REQUEST_URI']."&p=1");
+        }
+    } else {
+        if($mysqli->real_escape_string($_REQUEST['p']) < 1 or $mysqli->real_escape_string($_REQUEST['p']) > $numbers) {
+            $uri = explode("&p=", $_SERVER['REQUEST_URI']);
+            $link = $uri[0]."&p=1";
+
+            header("Location: ".$link);
+        }
+    }
 }
 
 if(isset($_SESSION['userID'])) {
@@ -365,95 +403,222 @@ if(isset($_SESSION['userID'])) {
 		<div style="width: 100%; text-align: right;">
 			<span style='color: #4c4c4c; font-style: italic; font-size: 16px;'>Архив: </span>
 			<?php
-                echo "<a href='news.php'><span style='"; if(empty($_REQUEST['year'])) {echo "color: #ff282b; font-style: italic; font-size: 14px; text-decoration: none;'";} else {echo "color: #4c4c4c; font-style: italic; font-size: 14px; text-decoration: underline;' onmouseover='changeFont(\"allYears\", 1)' onmouseout='changeFont(\"allYears\", 0)'";} echo " class='yearFont' id='allYears'>Все</span></a> ";
+                echo "<a href='news.php?p=1'><span style='"; if(empty($_REQUEST['year'])) {echo "color: #ff282b; font-style: italic; font-size: 14px; text-decoration: none;'";} else {echo "color: #4c4c4c; font-style: italic; font-size: 14px; text-decoration: underline;' onmouseover='changeFont(\"allYears\", 1)' onmouseout='changeFont(\"allYears\", 0)'";} echo " class='yearFont' id='allYears'>Все</span></a> ";
 
 				$yearResult = $mysqli->query("SELECT DISTINCT year FROM news ORDER BY year DESC");
 				while($year = $yearResult->fetch_array(MYSQLI_NUM)) {
-					echo "<a href='/news.php?year=".$year[0]."'><span style='"; if($_REQUEST['year'] == $year[0]) {echo "color: #ff282b; font-style: italic; font-size: 14px; text-decoration: none;'";} else {echo "color: #4c4c4c; font-style: italic; font-size: 14px; text-decoration: underline;' onmouseover='changeFont(\"year".$year[0]."\", 1)' onmouseout='changeFont(\"year".$year[0]."\", 0)'";} echo " class='yearFont' id='year".$year[0]."'>".$year[0]."</span></a> ";
+					echo "<a href='/news.php?year=".$year[0]."&p=1'><span style='"; if($_REQUEST['year'] == $year[0]) {echo "color: #ff282b; font-style: italic; font-size: 14px; text-decoration: none;'";} else {echo "color: #4c4c4c; font-style: italic; font-size: 14px; text-decoration: underline;' onmouseover='changeFont(\"year".$year[0]."\", 1)' onmouseout='changeFont(\"year".$year[0]."\", 0)'";} echo " class='yearFont' id='year".$year[0]."'>".$year[0]."</span></a> ";
 				}
 			?>
 		</div>
 		<div style="width: 100%; height: 1px; background-color: #c9c9c9; margin-top: 5px;"></div>
 		<br />
-		<?php
-			if(empty($_REQUEST['id'])) {
-				if(empty($_REQUEST['year'])) {
-					$newsResult = $mysqli->query("SELECT * FROM news ORDER BY id DESC");
-				} else {
-					$newsResult = $mysqli->query("SELECT * FROM news WHERE year = '".$_REQUEST['year']."' ORDER BY id DESC");
-				}
+        <div class="newsContent">
+            <?php
+                if(empty($_REQUEST['id'])) {
+                    if(empty($_REQUEST['year'])) {
+                        $newsResult = $mysqli->query("SELECT * FROM news ORDER BY id DESC LIMIT ".$start.", ".NEWS_ON_PAGE);
+                    } else {
+                        $newsResult = $mysqli->query("SELECT * FROM news WHERE year = '".$_REQUEST['year']."' ORDER BY id DESC LIMIT ".$start.", ".NEWS_ON_PAGE);
+                    }
 
-				while($news = $newsResult->fetch_assoc()) {
-					$month = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
-					$index = (int)substr($news['date'], 3, 2) - 1;
+                    while($news = $newsResult->fetch_assoc()) {
+                        $month = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
+                        $index = (int)substr($news['date'], 3, 2) - 1;
 
-					$date = substr($news['date'], 0, 2)." ".$month[$index]." ".substr($news['date'], 6, 4);
+                        $date = substr($news['date'], 0, 2)." ".$month[$index]." ".substr($news['date'], 6, 4);
 
-					echo "
-						<a href='news.php?id=".$news['id']."'>
-							<div class='newsPreview' id='newsPreview".$news['id']."'>
-								<img src='/img/photos/news/".$news['preview']."' />
-								<br /><br />
-								<div style='text-align: left;'>
-									<span style='color: #ff282b; font-style: italic; font-size: 14px;'>".$date."</span>
-									<p style='color: #4c4c4c; margin-top: 0;'>".$news['header']."</p>
-									<div style='text-align: right;'><img src='/img/system/arrow.png' /></div>
-								</div>
-							</div>
-						</a>
-					";
-				}
-			} else {
-				$newsResult = $mysqli->query("SELECT * FROM news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
-				$news = $newsResult->fetch_assoc();
+                        echo "
+                            <a href='news.php?id=".$news['id']."'>
+                                <div class='newsPreview' id='newsPreview".$news['id']."'>
+                                    <img src='/img/photos/news/".$news['preview']."' />
+                                    <br /><br />
+                                    <div style='text-align: left;'>
+                                        <span style='color: #ff282b; font-style: italic; font-size: 14px;'>".$date."</span>
+                                        <p style='color: #4c4c4c; margin-top: 0;'>".$news['header']."</p>
+                                        <div style='text-align: right;'><img src='/img/system/arrow.png' /></div>
+                                    </div>
+                                </div>
+                            </a>
+                        ";
+                    }
+                } else {
+                    $newsResult = $mysqli->query("SELECT * FROM news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+                    $news = $newsResult->fetch_assoc();
 
-				$month = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
-				$index = (int)substr($news['date'], 3, 2) - 1;
-				$j = 0;
+                    $month = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
+                    $index = (int)substr($news['date'], 3, 2) - 1;
+                    $j = 0;
 
-				$date = substr($news['date'], 0, 2)." ".$month[$index]." ".substr($news['date'], 6, 4);
+                    $date = substr($news['date'], 0, 2)." ".$month[$index]." ".substr($news['date'], 6, 4);
 
-				echo "
-					<div id='personalMenu'>
-						<div id='newsSlider'>
-				";
+                    echo "
+                        <div id='personalMenu'>
+                            <div id='newsSlider'>
+                    ";
 
-				$yearNewsResult = $mysqli->query("SELECT * FROM news WHERE year = '".$news['year']."' ORDER BY id DESC");
-				while($yearNews = $yearNewsResult->fetch_assoc()) {
-					$j++;
-					$i = (int)substr($yearNews['date'], 3, 2) - 1;
-					$d = substr($yearNews['date'], 0, 2)." ".$month[$i]." ".substr($yearNews['date'], 6, 4);
+                    $yearNewsResult = $mysqli->query("SELECT * FROM news WHERE year = '".$news['year']."' ORDER BY id DESC");
+                    while($yearNews = $yearNewsResult->fetch_assoc()) {
+                        $j++;
+                        $i = (int)substr($yearNews['date'], 3, 2) - 1;
+                        $d = substr($yearNews['date'], 0, 2)." ".$month[$i]." ".substr($yearNews['date'], 6, 4);
 
-					echo "
-						<a href='/news.php?id=".$yearNews['id']."'>
-							<div class='newsPreview' id='newsPreview".$yearNews['id']."' "; if($j > 1) {echo "style='margin-left: 0;";} else {echo "style='margin: 0;";} if($yearNews['id'] == $_REQUEST['id']) {echo " background-color: #ededed;'";} else {echo "'";} echo ">
-								<img src='/img/photos/news/".$yearNews['preview']."' />
-								<br /><br />
-								<div style='text-align: left;'>
-									<span style='color: #ff282b; font-style: italic; font-size: 14px;'>".$d."</span>
-									<p style='color: #4c4c4c; margin-top: 0;'>".$yearNews['header']."</p>
-									<br />
-									<div style='text-align: right;'><img src='/img/system/arrow.png' /></div>
-								</div>
-							</div>
-						</a>
-					";
-				}
+                        echo "
+                            <a href='/news.php?id=".$yearNews['id']."'>
+                                <div class='newsPreview' id='newsPreview".$yearNews['id']."' "; if($j > 1) {echo "style='margin-left: 0;";} else {echo "style='margin: 0;";} if($yearNews['id'] == $_REQUEST['id']) {echo " background-color: #ededed;'";} else {echo "'";} echo ">
+                                    <img src='/img/photos/news/".$yearNews['preview']."' />
+                                    <br /><br />
+                                    <div style='text-align: left;'>
+                                        <span style='color: #ff282b; font-style: italic; font-size: 14px;'>".$d."</span>
+                                        <p style='color: #4c4c4c; margin-top: 0;'>".$yearNews['header']."</p>
+                                        <br />
+                                        <div style='text-align: right;'><img src='/img/system/arrow.png' /></div>
+                                    </div>
+                                </div>
+                            </a>
+                        ";
+                    }
 
-				echo "
-						</div>
-					</div>
+                    echo "
+                            </div>
+                        </div>
+    
+                        <div id='personalContent'>
+                            <span style='color: #ff282b; font-style: italic; font-size: 14px;'>".$date."</span>
+                            <br /><br />
+                            <h2>".$news['header']."</h2>
+                            <p>".$news['text']."</p>
+                            <a href='/news.php'><span style='color: #ff282b; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>Больше новостей</span></a>
+                        </div>
+                    ";
+                }
+            ?>
 
-					<div id='personalContent'>
-						<span style='color: #ff282b; font-style: italic; font-size: 14px;'>".$date."</span>
-						<br /><br />
-						<h2>".$news['header']."</h2>
-						<p>".$news['text']."</p>
-						<a href='/news.php'><span style='color: #ff282b; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>Больше новостей</span></a>
-					</div>
-				";
-			}
-		?>
+        </div>
+        <div class="newsNumbers">
+            <?php
+                echo "<div id='pageNumbers'>";
+
+                if($numbers > 1) {
+                    if(empty($_REQUEST['year'])) {
+                        $uri = explode("?p=", $_SERVER['REQUEST_URI']);
+                    } else {
+                        $uri = explode("&p=", $_SERVER['REQUEST_URI']);
+                    }
+
+                    $link = $uri[0]."&p=";
+                    if($numbers <= 7) {
+                        echo "<br /><br />";
+
+                        if($_REQUEST['p'] == 1) {
+                            echo "<div class='pageNumberBlockSide' id='pbPrev' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Предыдущая</span></div>";
+                        } else {
+                            echo "<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev'>Предыдущая</span></div></a>";
+                        }
+
+                        for($i = 1; $i <= $numbers; $i++) {
+                            if($_REQUEST['p'] != $i) {
+                                echo "<a href='".$link.$i."' class='noBorder'>";
+                            }
+
+                            echo "<div id='pb".$i."' "; if($i == $_REQUEST['p']) {echo "class='pageNumberBlockActive'";} else {echo "class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$i."\", \"pbt".$i."\")' onmouseout='pageBlock(0, \"pb".$i."\", \"pbt".$i."\")'";} echo "><span "; if($i == $_REQUEST['p']) {echo "class='goodStyleWhite'";} else {echo "class='goodStyleRed' id='pbt".$i."'";} echo ">".$i."</span></div>";
+
+                            if($_REQUEST['p'] != $i) {
+                                echo "</a>";
+                            }
+                        }
+
+                        if($_REQUEST['p'] == $numbers) {
+                            echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
+                        } else {
+                            echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>";
+                        }
+
+                        echo "</div>";
+
+                    } else {
+                        if($_REQUEST['p'] < 5) {
+                            if($_REQUEST['p'] == 1) {
+                                echo "<div class='pageNumberBlockSide' id='pbPrev' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Предыдущая</span></div>";
+                            } else {
+                                echo "<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev'>Предыдущая</span></div></a>";
+                            }
+
+                            for($i = 1; $i <= 5; $i++) {
+                                if($_REQUEST['p'] != $i) {
+                                    echo "<a href='".$link.$i."' class='noBorder'>";
+                                }
+
+                                echo "<div id='pb".$i."' "; if($i == $_REQUEST['p']) {echo "class='pageNumberBlockActive'";} else {echo "class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$i."\", \"pbt".$i."\")' onmouseout='pageBlock(0, \"pb".$i."\", \"pbt".$i."\")'";} echo "><span "; if($i == $_REQUEST['p']) {echo "class='goodStyleWhite'";} else {echo "class='goodStyleRed' id='pbt".$i."'";} echo ">".$i."</span></div>";
+
+                                if($_REQUEST['p'] != $i) {
+                                    echo "</a>";
+                                }
+                            }
+
+                            echo "<div class='pageNumberBlock' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>";
+                            echo "<a href='".$link.$numbers."' class='noBorder'><div id='pb".$numbers."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$numbers."\", \"pbt".$numbers."\")' onmouseout='pageBlock(0, \"pb".$numbers."\", \"pbt".$numbers."\")'><span class='goodStyleRed' id='pbt".$numbers."'>".$numbers."</span></div></a>";
+
+                            if($_REQUEST['p'] == $numbers) {
+                                echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
+                            } else {
+                                echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>";
+                            }
+
+                            echo "</div>";
+                        } else {
+                            $check = $numbers - 3;
+
+                            if($_REQUEST['p'] >= 5 and $_REQUEST['p'] < $check) {
+                                echo "
+                                        <br /><br />
+                                        <div id='pageNumbers'>
+                                            <a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev'>Предыдущая</span></div></a>
+                                            <a href='".$link."1' class='noBorder'><div id='pb1' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1\", \"pbt1\")' onmouseout='pageBlock(0, \"pb1\", \"pbt1\")'><span class='goodStyleRed' id='pbt1'>1</span></div></a>
+                                            <div class='pageNumberBlock' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>
+                                            <a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div id='pb".($_REQUEST['p'] - 1)."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".($_REQUEST['p'] - 1)."\", \"pbt".($_REQUEST['p'] - 1)."\")' onmouseout='pageBlock(0, \"pb".($_REQUEST['p'] - 1)."\", \"pbt".($_REQUEST['p'] - 1)."\")'><span class='goodStyleRed' id='pbt".($_REQUEST['p'] - 1)."'>".($_REQUEST['p'] - 1)."</span></div></a>
+                                            <div class='pageNumberBlockActive'><span class='goodStyleWhite'>".$_REQUEST['p']."</span></div>
+                                            <a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div id='pb".($_REQUEST['p'] + 1)."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".($_REQUEST['p'] + 1)."\", \"pbt".($_REQUEST['p'] + 1)."\")' onmouseout='pageBlock(0, \"pb".($_REQUEST['p'] + 1)."\", \"pbt".($_REQUEST['p'] + 1)."\")'><span class='goodStyleRed' id='pbt".($_REQUEST['p'] + 1)."'>".($_REQUEST['p'] + 1)."</span></div></a>
+                                            <div class='pageNumberBlock' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>
+                                            <a href='".$link.$numbers."' class='noBorder'><div id='pb".$numbers."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$numbers."\", \"pbt".$numbers."\")' onmouseout='pageBlock(0, \"pb".$numbers."\", \"pbt".$numbers."\")'><span class='goodStyleRed' id='pbt".$numbers."'>".$numbers."</span></div></a>
+                                            <a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>
+                                        </div>
+                                    ";
+                            } else {
+                                echo "
+                                        <br /><br />
+                                        <div id='pageNumbers'>
+                                            <a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev'>Предыдущая</span></div></a>
+                                            <a href='".$link."1' class='noBorder'><div id='pb1' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1\", \"pbt1\")' onmouseout='pageBlock(0, \"pb1\", \"pbt1\")'><span class='goodStyleRed' id='pbt1'>1</span></div></a>
+                                            <div class='pageNumberBlock' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>
+                                    ";
+
+                                for($i = ($numbers - 4); $i <= $numbers; $i++) {
+                                    if($_REQUEST['p'] != $i) {
+                                        echo "<a href='".$link.$i."' class='noBorder'>";
+                                    }
+
+                                    echo "<div id='pb".$i."' "; if($i == $_REQUEST['p']) {echo "class='pageNumberBlockActive'";} else {echo "class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$i."\", \"pbt".$i."\")' onmouseout='pageBlock(0, \"pb".$i."\", \"pbt".$i."\")'";} echo "><span "; if($i == $_REQUEST['p']) {echo "class='goodStyleWhite'";} else {echo "class='goodStyleRed' id='pbt".$i."'";} echo ">".$i."</span></div>";
+
+                                    if($_REQUEST['p'] != $i) {
+                                        echo "</a>";
+                                    }
+                                }
+
+                                if($_REQUEST['p'] == $numbers) {
+                                    echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
+                                } else {
+                                    echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>";
+                                }
+                            }
+                        }
+                    }
+                }
+
+                echo "</div><div style='clear: both;'></div>";
+
+            ?>
+        </div>
 	</div>
 
 	<div style="clear: both;"></div>

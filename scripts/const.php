@@ -8,3 +8,4 @@
 
 define("CONTACT_EMAIL", "mail@argos-fm.by");
 define("REPLY_EMAIL", "argos-fm@mail.ru");
+define("NEWS_ON_PAGE", 10);
