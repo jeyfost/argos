@@ -165,7 +165,7 @@ if(isset($_SESSION['userID'])) {
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLinkNotDD">
-                    <a href="/news.php">Новости</a>
+                    <a href="/news.php?p=1">Новости</a>
                     <span class="slash"> /</span>
                 </div>
                 <div class="menuLink" id="storesLink" onmouseover="showDropdownList('1', 'storesLink')">
@@ -223,7 +223,7 @@ if(isset($_SESSION['userID'])) {
 			</div>
 			<hr />
 			<div class="mobileMenuItem" style="margin-top: 0;">
-				<a href="/news.php" class="mobileMenuPointBig">Новости</a>
+				<a href="/news.php?p=1" class="mobileMenuPointBig">Новости</a>
 			</div>
 			<hr />
 			<div class="mobileMenuItem" style="margin-top: 0;">
