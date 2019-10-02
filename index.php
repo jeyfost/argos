@@ -3,6 +3,7 @@
 session_start();
 
 include ("scripts/connect.php");
+include ("scripts/helpers.php");
 include ("layouts/footer.php");
 require_once ("scripts/mobileDetect.php");
 
@@ -45,6 +46,10 @@ if(isset($_SESSION['userID'])) {
 	$count = $loginsCount[0] + 1;
 
 	$mysqli->query("UPDATE users SET last_login = '".date('d-m-Y H:i:s')."', logins_count = '".$count."' WHERE id = '".$_SESSION['userID']."'");
+}
+
+if(time() - filemtime("sitemap.xml") >= 86400) {
+    generateSitemapXML();
 }
 
 ?>
