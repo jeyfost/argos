@@ -35,6 +35,7 @@ if(isset($_SESSION['userID'])) {
 
 <head>
  	<meta charset="utf-8">
+ 	<meta name="description" content="Периодически мы ищем новых людей в нашу дружную команду. Предложения с новыми вакансиями мы публикуем в открытом доступе.">
 
     <title>Аргос-ФМ | Вакансии</title>
 

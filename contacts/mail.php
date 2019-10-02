@@ -35,6 +35,7 @@ if(isset($_SESSION['userID'])) {
 
 <head>
  	<meta charset="utf-8">
+ 	<meta name="description" content="Напишите нам через форму обратной связи, если у вас есть вопросы и предложения.">
 
     <title>Аргос-ФМ | Обратная связь</title>
 

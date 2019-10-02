@@ -35,6 +35,7 @@ if(isset($_SESSION['userID'])) {
 
 <head>
  	<meta charset="utf-8">
+ 	<meta name="description" content="Адреса наших магазинов с контактными телефонами и картами проезда.">
 
     <title>Фирменная сеть компании Аргос-ФМ</title>
 

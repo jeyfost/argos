@@ -53,6 +53,7 @@ if(isset($_SESSION['userID'])) {
 
 <head>
  	<meta charset="utf-8">
+ 	<meta name="description" content="Специализированные новости для наших партнёров о новых поступлениях и акционных предложениях.">
 
     <title>Аргос-ФМ | Новости для клиентов</title>
 
