@@ -36,7 +36,7 @@ if(isset($_SESSION['userID'])) {
 <head>
  	<meta charset="utf-8">
 
-    <title>Достижения и награды</title>
+    <title>Аргос-ФМ | Достижения и награды</title>
 
     <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='/css/style.css'>

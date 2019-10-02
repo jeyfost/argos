@@ -42,6 +42,9 @@ if(!empty($_REQUEST['id'])) {
 	if($newsCount[0] == 0) {
 		header("Location: news.php?p=1");
 	}
+
+	$newsResult = $mysqli->query("SELECT * FROM news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+	$news = $newsResult->fetch_assoc();
 } else {
     if(empty($_REQUEST['p'])) {
         $parameter = explode("?", $_SERVER['REQUEST_URI']);
@@ -108,7 +111,15 @@ if(isset($_SESSION['userID'])) {
     <meta name='keywords' content='мебельная фурнитура, комплектующие для мебели, Аргос-ФМ, комплектующие для мебели Могилев, Могилев, кромочные материалы, кромка, кромка ПВХ, ручки мебельные, мебельная фурнитура Могилев, кромка ПВХ Могилев, лента кромочная, лента кромочная Могилев, ручки мебельные Могилев, кромка Могилев'>
     <meta name='description' content='Комплексные поставки всех видов мебельной фурнитуры импортного и отечественного производства. Республика Беларусь, г. Могилёв.'>
 
-    <title>Новости</title>
+    <title>
+        <?php
+            if(empty($_REQUEST['id'])) {
+                echo "Аргос-ФМ | Новости";
+            } else {
+                echo "Аргос-ФМ | ".$news['header'];
+            }
+        ?>
+    </title>
 
     <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
 	<link rel='icon' href='/img/icons/favicon.ico' type='image/x-icon'>
