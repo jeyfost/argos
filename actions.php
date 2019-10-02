@@ -784,7 +784,7 @@ if(isset($_SESSION['userID'])) {
 						}
 					} else {
 						if($_SESSION['userID'] != 1) {
-							echo "Чтобы получить возможность купить акционные в онлайн-режиме, необходимо <a href='/personal/login.php'><span style='color: #ff282b; text-decoration: underline;'>войти на сайт</span></a>, либо <a href='/personal/register.php'><span style='color: #ff282b; text-decoration: underline;'>зарегистрироваться</span></a>, если у вас ещё нет своей учётной записи.";
+							echo "Чтобы получить возможность купить акционные товары в онлайн-режиме, необходимо <a href='/personal/login.php'><span style='color: #ff282b; text-decoration: underline;'>войти на сайт</span></a>, либо <a href='/personal/register.php'><span style='color: #ff282b; text-decoration: underline;'>зарегистрироваться</span></a>, если у вас ещё нет своей учётной записи.";
 						}
 					}
 				}
