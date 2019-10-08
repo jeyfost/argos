@@ -193,7 +193,7 @@ if(!empty($_FILES['goodPhoto']['tmp_name']) and $_FILES['goodPhoto']['error'] ==
                         $blueprintTmpName = $_FILES['goodBlueprint']['tmp_name'];
                         $blueprintUpload = $blueprintUploadDir.$blueprintDBName;
 
-                        if($mysqli->query("INSERT INTO catalogue_new (type, category, subcategory, subcategory2, name, picture, small, sketch, description, price, code, currency, unit) VALUES ('".$goodType."', '".$goodCategory."', '".$goodSubcategory."', '".$goodSubcategory2."', '".$goodName."', '".$bigPhotoDBName."', '".$smallPhotoDBName."', '".$blueprintDBName."', '".$goodDescription."', '".$goodPrice."', '".$goodCode."', '".$goodCurrency."', '".$goodUnit."')")) {
+                        if($mysqli->query("INSERT INTO catalogue_new (type, category, subcategory, subcategory2, name, picture, small, sketch, description, price, code, currency, unit, quantity) VALUES ('".$goodType."', '".$goodCategory."', '".$goodSubcategory."', '".$goodSubcategory2."', '".$goodName."', '".$bigPhotoDBName."', '".$smallPhotoDBName."', '".$blueprintDBName."', '".$goodDescription."', '".$goodPrice."', '".$goodCode."', '".$goodCurrency."', '".$goodUnit."', '".$goodQuantity."')")) {
                             image_resize($smallPhotoTmpName, $smallPhotoUpload, 100, 100);
                             move_uploaded_file($bigPhotoTmpName, $bigPhotoUpload);
                             move_uploaded_file($smallPhotoTmpName, $smallPhotoUpload);
@@ -232,7 +232,7 @@ if(!empty($_FILES['goodPhoto']['tmp_name']) and $_FILES['goodPhoto']['error'] ==
                         }
                     }
                 } else {
-                    if($mysqli->query("INSERT INTO catalogue_new (type, category, subcategory, subcategory2, name, picture, small, sketch, description, price, code, currency, unit) VALUES ('".$goodType."', '".$goodCategory."', '".$goodSubcategory."', '".$goodSubcategory2."', '".$goodName."', '".$bigPhotoDBName."', '".$smallPhotoDBName."', '', '".$goodDescription."', '".$goodPrice."', '".$goodCode."', '".$goodCurrency."', '".$goodUnit."')")) {
+                    if($mysqli->query("INSERT INTO catalogue_new (type, category, subcategory, subcategory2, name, picture, small, sketch, description, price, code, currency, unit, quantity) VALUES ('".$goodType."', '".$goodCategory."', '".$goodSubcategory."', '".$goodSubcategory2."', '".$goodName."', '".$bigPhotoDBName."', '".$smallPhotoDBName."', '', '".$goodDescription."', '".$goodPrice."', '".$goodCode."', '".$goodCurrency."', '".$goodUnit."', '".$goodQuantity."')")) {
                         image_resize($smallPhotoTmpName, $smallPhotoUpload, 100, 100);
                         move_uploaded_file($bigPhotoTmpName, $bigPhotoUpload);
                         move_uploaded_file($smallPhotoTmpName, $smallPhotoUpload);

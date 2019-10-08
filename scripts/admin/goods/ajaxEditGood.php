@@ -178,7 +178,7 @@ if($codeCheck[0] == 0) {
 	$a = 0;
 	$aOK = 0;
 
-	if($mysqli->query("UPDATE catalogue_new SET name = '".$goodName."', description = '".$goodDescription."', price = '".$goodPrice."', code = '".$goodCode."', currency = '".$goodCurrency."', unit = '".$goodUnit."' WHERE id = '".$goodID."'")) {
+	if($mysqli->query("UPDATE catalogue_new SET name = '".$goodName."', description = '".$goodDescription."', price = '".$goodPrice."', code = '".$goodCode."', currency = '".$goodCurrency."', unit = '".$goodUnit."', quantity = '".$goodQuantity."' WHERE id = '".$goodID."'")) {
 		if(!empty($_FILES['goodBlueprint']['tmp_name'])) {
 			$bp = 1;
 
