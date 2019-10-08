@@ -5,7 +5,7 @@ include("connect.php");
 
 $query = $mysqli->real_escape_string($_POST['query']);
 
-$searchResult = $mysqli->query("SELECT * FROM catalogue_new WHERE name LIKE '%".$query."%' OR code LIKE '%".$query."%' ORDER BY name LIMIT 10");
+$searchResult = $mysqli->query("SELECT * FROM catalogue_new WHERE name LIKE '%".$query."%' OR code LIKE '%".$query."%' OR description LIKE '%".$query."%' ORDER BY name LIMIT 10");
 
 if($searchResult->num_rows == 0) {
 	echo "<i>К сожалению, поиск не дал результата.</i>";
@@ -16,35 +16,42 @@ if($searchResult->num_rows == 0) {
 		$j++;
 		$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$search['unit']."'");
 		$unit = $unitResult->fetch_assoc();
-		$rateResult = $mysqli->query("SELECT rate FROM currency WHERE id = '".$search['currency']."'");
-		$rate = $rateResult->fetch_array(MYSQLI_NUM);
 
-		$price = $search['price'] * $rate[0];
+		echo $search['price'];
 
-		if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
-			$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
-			$discount = $discountResult->fetch_array(MYSQLI_NUM);
+		if($search['price'] == 0 or $search['price'] == null) {
+		    $price = " по запросу";
+        } else {
+            $rateResult = $mysqli->query("SELECT rate FROM currency WHERE id = '".$search['currency']."'");
+            $rate = $rateResult->fetch_array(MYSQLI_NUM);
 
-			$price = $price * (1 - $discount[0] / 100);
-		}
+            $price = $search['price'] * $rate[0];
 
-        $roubles = floor($price);
-        $kopeck = round(($price - $roubles) * 100);
+            if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
+                $discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
+                $discount = $discountResult->fetch_array(MYSQLI_NUM);
 
-        if($kopeck == 100) {
-            $kopeck = 0;
-            $roubles ++;
+                $price = $price * (1 - $discount[0] / 100);
+            }
+
+            $roubles = floor($price);
+            $kopeck = round(($price - $roubles) * 100);
+
+            if($kopeck == 100) {
+                $kopeck = 0;
+                $roubles ++;
+            }
+
+            if($roubles == 0 and $kopeck == 0) {
+                $kopeck = 1;
+            }
+
+            if($roubles == 0) {
+                $price = $kopeck." коп.";
+            } else {
+                $price = $roubles." руб. ".$kopeck." коп.";
+            }
         }
-
-        if($roubles == 0 and $kopeck == 0) {
-            $kopeck = 1;
-        }
-
-		if($roubles == 0) {
-			$price = $kopeck." коп.";
-		} else {
-			$price = $roubles." руб. ".$kopeck." коп.";
-		}
 
 		$typeResult = $mysqli->query("SELECT type_name FROM types WHERE catalogue_type = '".$search['type']."'");
 		$type = $typeResult->fetch_array(MYSQLI_NUM);
