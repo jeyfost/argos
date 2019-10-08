@@ -231,9 +231,9 @@ if($codeCheck[0] == 0) {
 
 		if(count($_FILES['goodAdditionalPhotos']['name']) > 0) {
 			for($i = 0; $i < count($_FILES['goodAdditionalPhotos']['name']); $i++) {
-				$a++;
-
 				if(!empty($_FILES['goodAdditionalPhotos']['tmp_name'][$i]) and $_FILES['goodAdditionalPhotos']['error'][$i] == 0 and substr($_FILES['goodAdditionalPhotos']['type'][$i], 0, 5) == "image") {
+                    $a++;
+
 					$bigPhotoName = randomName($_FILES['goodAdditionalPhotos']['tmp_name'][$i]);
 					$bigPhotoDBName = $bigPhotoName.".".substr($_FILES['goodAdditionalPhotos']['name'][$i], count($_FILES['goodAdditionalPhotos']['name'][$i]) - 4, 4);
 					$bigPhotoUploadDir = "../../../img/catalogue/photos/big/";
