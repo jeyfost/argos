@@ -39,10 +39,11 @@ function addGood() {
 	var goodName = $('#goodNameInput').val();
 	var goodCode = $('#goodCodeInput').val();
 	var goodPrice = $('#goodPriceInput').val();
+	var goodQuantity = $('#goodQuantityInput').val();
 	var goodDescription = $('#goodDescriptionInput').val();
 	var formData = new FormData($('#addForm').get(0));
 
-	if(goodName !== "" && goodCode !== "" && goodPrice !== "" && goodDescription !== "") {
+	if(goodName !== "" && goodCode !== "" && goodPrice !== "" && goodQuantity !== "" && goodDescription !== "") {
 		if($('#goodPhotoInput').val() !== "") {
 
 			$.ajax({
@@ -94,6 +95,10 @@ function addGood() {
 							s = 0;
 							status = "Стоимость товара не может быть отрицательной.";
 							break;
+                        case "quantity":
+                            s = 0;
+                            status = "Остаток товара на складе не может быть отрицательным.";
+                            break;
 						default:
 							status = response;
 							break;

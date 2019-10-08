@@ -592,6 +592,10 @@ if(!empty($_REQUEST['id'])) {
 				<br />
 				<input type='number' min='0.0000' step='0.0001' id='goodPriceInput' name='goodPrice' value='".$good['price']."' />
 				<br /><br />
+				<label for='goodQuantityInput'>Остаток на складе:</label>
+				<br />
+            <input type='number' min='0.0000' step='0.0001' id='goodQuantityInput' name='goodQuantity' value='".$good['quantity']."' />
+				<br /><br />
 				<label for='unitSelect'>Единицы измерения:</label>
 				<br />
 				<select id='unitSelect' name='goodUnit'>

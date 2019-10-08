@@ -15,6 +15,7 @@ $goodUnit = $mysqli->real_escape_string($_POST['goodUnit']);
 $goodName = $mysqli->real_escape_string($_POST['goodName']);
 $goodCode = $mysqli->real_escape_string($_POST['goodCode']);
 $goodPrice = $mysqli->real_escape_string($_POST['goodPrice']);
+$goodQuantity = $mysqli->real_escape_string($_POST['goodQuantity']);
 $goodDescription = $mysqli->real_escape_string(str_replace("\n", "<br />", $_POST['goodDescription']));
 
 function image_resize($source_path, $destination_path, $new_width, $quality = FALSE, $new_height = FALSE)

@@ -405,6 +405,10 @@ if(!empty($_REQUEST['subcategory2'])) {
 				<br />
 				<input type='number' min='0.0000' step='0.0001' id='goodPriceInput' name='goodPrice' />
 				<br /><br />
+				<label for='goodQuantityInput'>Остаток на складе:</label>
+				<br />
+				<input type='number' min='0.0000' step='0.0001' id='goodQuantityInput' name='goodQuantity' />
+				<br /><br />
 				<label for='unitSelect'>Единицы измерения:</label>
 				<br />
 				<select id='unitSelect' name='goodUnit'>

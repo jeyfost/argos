@@ -56,110 +56,126 @@ function editGood() {
 	var goodCode = $('#goodCodeInput').val();
 	var goodCurrency = $('#currencySelect').val();
 	var goodPrice = $('#goodPriceInput').val();
+	var goodQuantity = $('#goodQuantityInput').val();
 	var goodUnit = $('#unitSelect').val();
 	var goodDescription = $('#goodDescriptionInput').val();
 	var formData = new FormData($('#editForm').get(0));
 
 	if(goodName !== '' && goodCode !== '' && goodCurrency !== '' && goodUnit !== '' && goodDescription !== '') {
 		if(parseInt(goodPrice) >= 0) {
-			$.ajax({
-				type: "POST",
-				data: formData,
-				dataType: "json",
-				url: "/scripts/admin/goods/ajaxEditGood.php",
-				contentType: false,
-				processData: false,
-				beforeSend: function() {
-					if(responseField.css('opacity') === 1) {
-						responseField.css('opacity', 0);
-						setTimeout(function() {
-							responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
-							responseField.css('opacity', 1);
-						}, 300);
-					} else {
-						responseField.css('color', '#ff282b');
-						responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
-						responseField.css('opacity', 1);
-					}
-				},
-				success: function(response) {
-					var s = 0;
-					var status;
+			if(parseInt(goodQuantity) >= 0) {
+                $.ajax({
+                    type: "POST",
+                    data: formData,
+                    dataType: "json",
+                    url: "/scripts/admin/goods/ajaxEditGood.php",
+                    contentType: false,
+                    processData: false,
+                    beforeSend: function() {
+                        if(responseField.css('opacity') === 1) {
+                            responseField.css('opacity', 0);
+                            setTimeout(function() {
+                                responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
+                                responseField.css('opacity', 1);
+                            }, 300);
+                        } else {
+                            responseField.css('color', '#ff282b');
+                            responseField.html("<br /><img src='/img/system/spinner.gif' /><br />");
+                            responseField.css('opacity', 1);
+                        }
+                    },
+                    success: function(response) {
+                        var s = 0;
+                        var status;
 
-					switch(response) {
-						case "ok":
-							s = 1;
-							status = "Товар успешно отрадактирован.";
-							break;
-						case "failed":
-							status = "При редактировании товара произошла ошибка.";
-							break;
-						case "photo":
-							status = "При загрузке фотографии произошла ошибка.";
-							break;
-						case "blueprint":
-							status = "При загрузке чертежа произошла ошибка.";
-							break;
-						case "additionalPhotos":
-							status = "При загрузке дополнительных фотографий произошла ошибка.";
-							break;
-						case "code":
-							status = "Товар с указанным артикулом уже существует.";
-							break;
-						case "photos":
-							status = "При загрузке фотографии и чертежа произошла ошибка.";
-							break;
-						default:
-							status = response;
-							break;
-					}
+                        switch(response) {
+                            case "ok":
+                                s = 1;
+                                status = "Товар успешно отрадактирован.";
+                                break;
+                            case "failed":
+                                status = "При редактировании товара произошла ошибка.";
+                                break;
+                            case "photo":
+                                status = "При загрузке фотографии произошла ошибка.";
+                                break;
+                            case "blueprint":
+                                status = "При загрузке чертежа произошла ошибка.";
+                                break;
+                            case "additionalPhotos":
+                                status = "При загрузке дополнительных фотографий произошла ошибка.";
+                                break;
+                            case "code":
+                                status = "Товар с указанным артикулом уже существует.";
+                                break;
+                            case "photos":
+                                status = "При загрузке фотографии и чертежа произошла ошибка.";
+                                break;
+                            default:
+                                status = response;
+                                break;
+                        }
 
-					$.ajax({
-						type: "POST",
-						data: formData,
-						dataType: "json",
-						processData: false,
-						contentType: false,
-						url: "/scripts/admin/goods/ajaxRebuildPhotosContainer.php",
-						success: function (code) {
-							$('#goodPhotosContainer').css("opacity", 0);
+                        $.ajax({
+                            type: "POST",
+                            data: formData,
+                            dataType: "json",
+                            processData: false,
+                            contentType: false,
+                            url: "/scripts/admin/goods/ajaxRebuildPhotosContainer.php",
+                            success: function (code) {
+                                $('#goodPhotosContainer').css("opacity", 0);
 
-							setTimeout(function () {
-								$('#goodPhotosContainer').html(code);
-							}, 300);
+                                setTimeout(function () {
+                                    $('#goodPhotosContainer').html(code);
+                                }, 300);
 
-							$('#goodPhotosContainer').css("opacity", 1);
-						},
-						error: function(xhr, textStatus) {
-							$.notify(textStatus + "; " + errorThrown, "error");
-						}
-					});
+                                $('#goodPhotosContainer').css("opacity", 1);
+                            },
+                            error: function(xhr, textStatus) {
+                                $.notify(textStatus + "; " + errorThrown, "error");
+                            }
+                        });
 
-					if(responseField.css('opacity') === 1) {
-						responseField.css('opacity', 0);
-						setTimeout(function() {
-							if(s === 1) {
-								responseField.css('color', '#53acff');
-							} else {
-								responseField.css('color', '#ff282b');
-							}
-							responseField.html("<br />" + status + "<br />");
-							responseField.css('opacity', 1);
-						}, 300);
-					} else {
-						if(s === 1) {
-							responseField.css('color', '#53acff');
-						} else {
-							responseField.css('color', '#ff282b');
-						}
-						responseField.html("<br />" + status + "<br />");
-						responseField.css('opacity', 1);
-					}
-				},
-				error: function(xhr, textStatus) {
-					$.notify(textStatus + "; " + errorThrown, "error");
-				}
-			});
+                        if(responseField.css('opacity') === 1) {
+                            responseField.css('opacity', 0);
+                            setTimeout(function() {
+                                if(s === 1) {
+                                    responseField.css('color', '#53acff');
+                                } else {
+                                    responseField.css('color', '#ff282b');
+                                }
+                                responseField.html("<br />" + status + "<br />");
+                                responseField.css('opacity', 1);
+                            }, 300);
+                        } else {
+                            if(s === 1) {
+                                responseField.css('color', '#53acff');
+                            } else {
+                                responseField.css('color', '#ff282b');
+                            }
+                            responseField.html("<br />" + status + "<br />");
+                            responseField.css('opacity', 1);
+                        }
+                    },
+                    error: function(xhr, textStatus) {
+                        $.notify(textStatus + "; " + errorThrown, "error");
+                    }
+                });
+			} else {
+                if(responseField.css('opacity') === 1) {
+                    responseField.css('opacity', 0);
+                    setTimeout(function() {
+                        responseField.css('color', '#ff282b');
+                        responseField.html("<br />Остаток на складе не может быть отрицательным.<br />");
+                        responseField.css('opacity', 1);
+                    }, 300);
+                } else {
+                    responseField.css('color', '#ff282b');
+                    responseField.html("<br />Остаток на складе не может быть отрицательным.<br />");
+                    responseField.css('opacity', 1);
+                }
+			}
 		} else {
 			if(responseField.css('opacity') === 1) {
 				responseField.css('opacity', 0);
