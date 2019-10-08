@@ -8,7 +8,7 @@ ob_start();
 $row = 1;
 
 if(!empty($_FILES['csvFile']['tmp_name'])) {
-    /* Первая колонка в файле — артикул, вторая — единицы измерения, третья — цена в валюте прихода, четвёртая — количество в остатке */
+    /* Первая колонка в файле — артикул, вторая — цена, третья - единицы измерения, четвертая — количество в остатке */
 
 	$uploadDir = "../../../files/1C/";
 	$name = "update.csv";
@@ -23,10 +23,11 @@ if(!empty($_FILES['csvFile']['tmp_name'])) {
 			for ($c = 0; $c < $num; $c++) {
 				$stats = explode(";", $data[$c]);
 				$code = $stats[0];
-				$price = $stats[2];
-				$quantity = $stats[2];
+				$price = $stats[1];
+				$unit = iconv("CP1251", "UTF-8", $stats[2]);
+				$quantity = $stats[3];
 
-				if($price > 0) {
+				if(!empty($price) and $price > 0) {
                     if(!empty($code)) {
                         switch(strlen($code)) {
                             case 1:
@@ -46,9 +47,19 @@ if(!empty($_FILES['csvFile']['tmp_name'])) {
 
                         $i = 0;
 
-                        if($goodCheck[0] == 1) {
+                        if($goodCheck[0] > 0) {
                             if($mysqli->query("UPDATE catalogue_new SET price = '".$price."', quantity = '".$quantity."' WHERE code = '".$code."'")) {
                                 $i++;
+
+                                $dbUnitCheckResult = $mysqli->query("SELECT COUNT(id) FROM units WHERE short_name = '".$unit."'");
+                                $dbUnitCheck = $dbUnitCheckResult->fetch_array(MYSQLI_NUM);
+
+                                if($dbUnitCheck[0] > 0) {
+                                    $dbUnitResult = $mysqli->query("SELECT * FROM units WHERE short_name = '".$unit."'");
+                                    $dbUnit = $dbUnitResult->fetch_assoc();
+
+                                    $mysqli->query("UPDATE catalogue_new SET unit = '".$dbUnit['id']."' WHERE code = '".$code."'");
+                                }
                             }
                         }
                     }
