@@ -168,7 +168,7 @@ if(!empty($_FILES['goodPhoto']['tmp_name']) and $_FILES['goodPhoto']['error'] ==
 	$goodCheck = $goodCheckResult->fetch_array(MYSQLI_NUM);
 
 	if($goodCheck[0] == 0) {
-		if($goodPrice > 0) {
+		if($goodPrice >= 0) {
 			$bigPhotoName = randomName($_FILES['goodPhoto']['tmp_name']);
 			$bigPhotoDBName = $bigPhotoName.".".substr($_FILES['goodPhoto']['name'], count($_FILES['goodPhoto']['name']) - 4, 4);
 			$bigPhotoUploadDir = '../../../img/catalogue/big/';

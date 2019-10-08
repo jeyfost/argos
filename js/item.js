@@ -53,6 +53,12 @@ function saveGoodPrice(good_id, block, currency, unit, rate) {
 					price = kopeck + " коп.";
 				}
 
+                if(roubles <= 0 && kopeck <= 0) {
+                    price = " по запросу";
+                }
+
+                console.log(price);
+
 				document.getElementById(block).innerHTML = "<span style='cursor: pointer;' onclick='changePrice(\"" + good_id + "\", \"" + block + "\", \"" + $('#changeGoodPriceInput').val() + "\", \"" + currency + "\", \"" + unit + "\", \"" + rate + "\")' title='Изменить стоимость товара'><b>Стоимость за " + unit + ": </b>" + price + "</span>";
 			} else {
 				$.notify("Введите положительное значение", "error");

@@ -11,7 +11,7 @@ include("../connect.php");
 $price = $mysqli->real_escape_string($_POST['price']);
 $goodID = $mysqli->real_escape_string($_POST['goodID']);
 
-if($price > 0) {
+if($price >= 0) {
 	if($mysqli->query("UPDATE catalogue_new SET price = '".$price."' WHERE id = '".$goodID."'")) {
 		echo "a";
 	} else {

@@ -61,7 +61,7 @@ function editGood() {
 	var formData = new FormData($('#editForm').get(0));
 
 	if(goodName !== '' && goodCode !== '' && goodCurrency !== '' && goodUnit !== '' && goodDescription !== '') {
-		if(parseInt(goodPrice) > 0) {
+		if(parseInt(goodPrice) >= 0) {
 			$.ajax({
 				type: "POST",
 				data: formData,
@@ -165,12 +165,12 @@ function editGood() {
 				responseField.css('opacity', 0);
 				setTimeout(function() {
 					responseField.css('color', '#ff282b');
-					responseField.html("<br />Заполните все поля.<br />");
+					responseField.html("<br />Цена не может быть меньше нуля.<br />");
 					responseField.css('opacity', 1);
 				}, 300);
 			} else {
 				responseField.css('color', '#ff282b');
-				responseField.html("<br />Заполните все поля.<br />");
+				responseField.html("<br />Цена не может быть меньше нуля.<br />");
 				responseField.css('opacity', 1);
 			}
 		}

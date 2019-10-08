@@ -590,7 +590,7 @@ if(!empty($_REQUEST['id'])) {
 				<br /><br />
 				<label for='goodPriceInput'>Розничная стоимость (в валюте прихода):</label>
 				<br />
-				<input type='number' min='0.0001' step='0.0001' id='goodPriceInput' name='goodPrice' value='".$good['price']."' />
+				<input type='number' min='0.0000' step='0.0001' id='goodPriceInput' name='goodPrice' value='".$good['price']."' />
 				<br /><br />
 				<label for='unitSelect'>Единицы измерения:</label>
 				<br />

@@ -403,7 +403,7 @@ if(!empty($_REQUEST['subcategory2'])) {
 				<br /><br />
 				<label for='goodPriceInput'>Розничная стоимость (в валюте прихода):</label>
 				<br />
-				<input type='number' min='0.0001' step='0.0001' id='goodPriceInput' name='goodPrice' />
+				<input type='number' min='0.0000' step='0.0001' id='goodPriceInput' name='goodPrice' />
 				<br /><br />
 				<label for='unitSelect'>Единицы измерения:</label>
 				<br />
