@@ -101,7 +101,7 @@ if($searchResult->num_rows == 0) {
 					<br />
 					<b>Артикул: </b>".$search['code']."
 					<br />
-					<b>Стоимость за ".$unit['short_name'].": </b>".$price."
+					<b>Стоимость за ".$unit['short_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b>".$price."
 					<br /><br />
 				</div>
 				<div style='clear: both;'></div>

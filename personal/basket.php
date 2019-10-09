@@ -526,7 +526,7 @@ if(isset($_SESSION['userID'])) {
 									<b>Артикул: </b>".$good['code']."
 									<br />
 									<div id='goodPrice".$good['id']."'>
-										<span><b>Стоимость за ".$unit['short_name'].": </b>"; if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";}echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";} echo "
+										<span><b>Стоимость за ".$unit['short_name']; if($user['discount'] > 0) {echo " с учётом скидки";} echo ": </b>"; if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";}echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";} echo "
 								";
 
 								if($good['sketch'] != '') {
