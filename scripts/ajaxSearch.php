@@ -96,6 +96,8 @@ if($searchResult->num_rows == 0) {
 					<br />
 					<b>Артикул: </b>".$search['code']."
 					<br />
+                    <b>Наличие: </b>"; if($search['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} echo "
+					<br />
 					<b>Стоимость за ".$unit['short_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b>".$price."
 		";
 

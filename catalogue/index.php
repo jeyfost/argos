@@ -662,6 +662,8 @@ if(isset($_SESSION['userID'])) {
 								<br />
 								<b>Артикул: </b>".$catalogue['code']."
 								<br />
+                                <b>Наличие: </b>"; if($catalogue['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} echo "
+								<br />
 								<div id='goodPrice".$catalogue['id']."'>
 									<span"; if($_SESSION['userID'] == 1 and $active == 0) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Цена за ".$unit['for_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b>"; if($catalogue['price'] == 0 or $catalogue['price'] == null) {echo "по запросу";} else {if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";} echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";}} echo "
 								</div>
