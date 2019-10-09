@@ -479,7 +479,7 @@ if(isset($_SESSION['userID'])) {
 							}
 
 							$roubles = floor($price);
-							$kopeck = round(($price - $roubles) * 100);
+							$kopeck = ceil(($price - $roubles) * 100);
 
 							if($kopeck == 100) {
 								$kopeck = 0;
@@ -563,7 +563,7 @@ if(isset($_SESSION['userID'])) {
 
 						$total = $totalAction + $totalNormal * (1 - $user['discount'] / 100);
 						$roubles = floor($total);
-						$kopeck = round(($total - $roubles) * 100);
+						$kopeck = ceil(($total - $roubles) * 100);
 
 						if($kopeck == 100) {
 							$kopeck = 0;
@@ -574,7 +574,7 @@ if(isset($_SESSION['userID'])) {
 
                         $totalWOD = $totalAction + $totalNormal;
                         $roubles = floor($totalWOD);
-                        $kopeck = round(($totalWOD - $roubles) * 100);
+                        $kopeck = ceil(($totalWOD - $roubles) * 100);
 
                         if($kopeck == 100) {
                             $kopeck = 0;
@@ -716,7 +716,7 @@ if(isset($_SESSION['userID'])) {
 
 					if($summ > 0) {
 					    $r = floor($summ);
-					    $k = round(($summ - $r) * 100);
+					    $k = ceil(($summ - $r) * 100);
 
 					    if($r > 0) {
 					        $summ = $r." руб. ".$k." коп.";

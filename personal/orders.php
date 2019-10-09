@@ -511,7 +511,7 @@ if(isset($_SESSION['userID'])) {
 
                     if($summ > 0) {
                         $r = floor($summ);
-                        $k = round(($summ - $r) * 100);
+                        $k = ceil(($summ - $r) * 100);
 
                         $k = ceil($k);
 

@@ -470,7 +470,7 @@ if(!empty($good['subcategory2'])) {
 				}
 
 				$roubles = floor($price);
-				$kopeck = round(($price - $roubles) * 100);
+				$kopeck = ceil(($price - $roubles) * 100);
 
 				if($kopeck == 100) {
 					$kopeck = 0;

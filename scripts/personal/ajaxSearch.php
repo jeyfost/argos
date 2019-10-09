@@ -72,7 +72,7 @@ if($searchResult->num_rows == 0) {
 
 		if($search['price'] > 0) {
             $roubles = floor($price);
-            $kopeck = round(($price - $roubles) * 100);
+            $kopeck = ceil(($price - $roubles) * 100);
 
             if($kopeck == 100) {
                 $kopeck = 0;

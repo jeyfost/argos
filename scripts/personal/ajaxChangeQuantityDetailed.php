@@ -114,7 +114,7 @@ if($mysqli->query("UPDATE orders SET quantity = '".$quantity."' WHERE good_id = 
 
 	$total = $totalAction + $totalNormal * (1 - $discount[0] / 100);
 	$roubles = floor($total);
-	$kopeck = round(($total - $roubles) * 100);
+	$kopeck = ceil(($total - $roubles) * 100);
 
 	if($kopeck == 100) {
 		$kopeck = 0;

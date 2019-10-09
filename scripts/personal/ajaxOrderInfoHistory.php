@@ -60,7 +60,7 @@ while($order = $orderResult->fetch_assoc()) {
 	}
 
 	$roubles = floor($price);
-	$kopeck = round(($price - $roubles) * 100);
+	$kopeck = ceil(($price - $roubles) * 100);
 
 	if($kopeck == 100) {
 		$kopeck = 0;
@@ -148,7 +148,7 @@ $totalResult = $mysqli->query("SELECT summ FROM orders_info WHERE id = '".$id."'
 $total = $totalResult->fetch_array(MYSQLI_NUM);
 
 $roubles = floor($total[0]);
-$kopeck = round($total[0] - $roubles) * 100;
+$kopeck = ceil($total[0] - $roubles) * 100;
 
 if($kopeck == 100) {
 	$kopeck = 0;
