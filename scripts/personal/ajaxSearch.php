@@ -88,11 +88,13 @@ if($searchResult->num_rows == 0) {
                 $roubles++;
             }
 
-            if($roubles == 0) {
-                $price = $kopeck." коп.";
-            } else {
-                $price = $roubles." руб. ".$kopeck." коп.";
+            $kopeck = ceil($kopeck);
+
+            if(strlen($kopeck) == 1) {
+                $kopeck = "0".$kopeck;
             }
+
+            $price = $roubles." руб. ".$kopeck." коп.";
         }
 
 		echo "

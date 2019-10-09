@@ -513,11 +513,13 @@ if(isset($_SESSION['userID'])) {
                         $r = floor($summ);
                         $k = round(($summ - $r) * 100);
 
-                        if($r > 0) {
-                            $summ = $r." руб. ".$k." коп.";
-                        } else {
-                            $summ = $k." коп.";
+                        $k = ceil($k);
+
+                        if(strlen($k) == 1) {
+                            $k = "0".$k;
                         }
+
+                        $summ = $r." руб. ".$k." коп.";
 
                         echo "
                             <br /><br />

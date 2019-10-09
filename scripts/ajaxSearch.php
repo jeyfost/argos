@@ -46,11 +46,13 @@ if($searchResult->num_rows == 0) {
                 $kopeck = 1;
             }
 
-            if($roubles == 0) {
-                $price = $kopeck." коп.";
-            } else {
-                $price = $roubles." руб. ".$kopeck." коп.";
+            $kopeck = ceil($kopeck);
+
+            if(strlen($kopeck) == 1) {
+                $kopeck = "0".$kopeck;
             }
+
+            $price = $roubles." руб. ".$kopeck." коп.";
         }
 
 		$typeResult = $mysqli->query("SELECT type_name FROM types WHERE catalogue_type = '".$search['type']."'");
