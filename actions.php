@@ -690,6 +690,7 @@ if(isset($_SESSION['userID'])) {
 						$price = $actionGood['price'] * $currency['rate'];
 						$roubles = floor($price);
 						$kopeck = ceil(($price - $roubles) * 100);
+
 						if($kopeck == 100) {
 							$kopeck = 0;
 							$roubles ++;
@@ -732,8 +733,10 @@ if(isset($_SESSION['userID'])) {
 									<br />
 									<b>Артикул: </b>".$good['code']."
 									<br />
+									<b>Наличие: </b>"; if($good['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} echo "
+									<br />
 									<div id='goodPrice".$good['id']."'>
-										<span><b>Стоимость за ".$unit['short_name'].": </b><span style='color: #ff282b; font-weight: bold;'>"; if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span></span>
+										<span><b>Стоимость за ".$unit['short_name'].": </b><span style='color: #ff282b; font-weight: bold;'>"; echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span></span>
 								";
 
 								if($good['sketch'] != '') {
@@ -751,7 +754,7 @@ if(isset($_SESSION['userID'])) {
 							</div>
 						";
 
-						if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
+						if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1 and $good['price'] > 0 and $good['quantity'] > 0) {
 							echo "
 								<div class='itemPurchase'>
 									<span onclick='addToBasket(\"".$good['id']."\", \"quantityInput".$good['id']."\", \"addingResult".$good['id']."\")' class='addToBasketFont'>Добавить в корзину</span>
