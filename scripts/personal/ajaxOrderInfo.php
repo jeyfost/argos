@@ -144,7 +144,7 @@ while($order = $orderResult->fetch_assoc()) {
 							<div class='catalogueInfo'>
 								<div class='catalogueName'>
 									<div style='width: 5px; height: 30px; background-color: #ff282b; position: relative; float: left;'></div>
-									<div style='margin-left: 15px; font-size: 17px;'><a href='/catalogue/item.php?id=".$catalogue['id']."' class='catalogueNameLink'>".$good['name']."</a></div>
+									<div style='margin-left: 15px; font-size: 17px;'><a href='/catalogue/item.php?id=".$good['id']."' class='catalogueNameLink'>".$good['name']."</a></div>
 									<div style='clear: both;'></div>
 								</div>
 							<div class='catalogueDescription'>
@@ -216,18 +216,38 @@ if(strlen($kopeck) == 1) {
 
 $total = $roubles." руб. ".$kopeck." коп.";
 
-echo "
+$totalWOD = $totalAction + $totalNormal;
+$roubles = floor($totalWOD);
+$kopeck = round(($totalWOD - $roubles) * 100);
+
+if($kopeck == 100) {
+    $kopeck = 0;
+    $roubles++;
+}
+
+$kopeck = ceil($kopeck);
+
+if(strlen($kopeck) == 1) {
+    $kopeck = "0".$kopeck;
+}
+
+$totalWOD = $roubles." руб. ".$kopeck." коп.";
+
+if($discount[0] > 0) {
+    echo "
+    <div style='float: right;'><b>Общая стоимость без скидки: </b><span>".$totalWOD."</span></div>
 	<br /><br />
 	<div style='float: right;'><b>Ваша личная скидка: </b><span>".$discount[0]."%</span></div>
 	<br />
 ";
+}
 
 if($actionGoodsQuantity > 0) {
 	echo "<span style='float: right; font-size: 14px; color: #ff282b;'>Ваша личная скидка не действует на акционные товары.</span><br /><br />";
 }
 
 echo "
-	<div style='float: right;'><b>Общая стоимость: </b><span id='totalPriceText'>".$total."</span></div>
+	<div style='float: right;'><b>Итого к оплате: </b><span id='totalPriceText'>".$total."</span></div>
 	<br />
 ";
 

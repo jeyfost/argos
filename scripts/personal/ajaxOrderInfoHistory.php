@@ -161,12 +161,6 @@ if(strlen($kopeck) == 1) {
 
 $total = $roubles." руб. ".$kopeck." коп.";
 
-echo "
-	<br /><br />
-	<div style='float: right;'><b>Ваша личная скидка: </b><span>".$discount[0]."%</span></div>
-	<br />
-";
-
 if($actionGoodsQuantity > 0) {
 	echo "<span style='float: right; font-size: 14px; color: #ff282b;'>Ваша личная скидка не действует на акционные товары.</span><br /><br />";
 }

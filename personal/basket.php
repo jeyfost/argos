@@ -564,29 +564,40 @@ if(isset($_SESSION['userID'])) {
 						$total = $totalAction + $totalNormal * (1 - $user['discount'] / 100);
 						$roubles = floor($total);
 						$kopeck = round(($total - $roubles) * 100);
+
 						if($kopeck == 100) {
 							$kopeck = 0;
 							$roubles++;
 						}
 
-						if($roubles == 0) {
-							$total = $kopeck." коп.";
-						} else {
-							$total = $roubles." руб. ".$kopeck." коп.";
-						}
+						$total = $roubles." руб. ".$kopeck." коп.";
 
-						echo "
-							<br /><br />
-							<div style='float: right;'><b>Ваша личная скидка: </b><span>".$user['discount']."%</span></div>
-							<br />
-						";
+                        $totalWOD = $totalAction + $totalNormal;
+                        $roubles = floor($totalWOD);
+                        $kopeck = round(($totalWOD - $roubles) * 100);
+
+                        if($kopeck == 100) {
+                            $kopeck = 0;
+                            $roubles++;
+                        }
+
+                        $totalWOD = $roubles." руб. ".$kopeck." коп.";
+
+						if($user['discount'] > 0) {
+                            echo "
+                                <div style='float: right;'><b>Общая стоимость без скидки: </b><span>".$totalWOD."</span></div>
+                                <br /><br />
+                                <div style='float: right;'><b>Ваша личная скидка: </b><span>".$user['discount']."%</span></div>
+                                <br />
+                            ";
+                        }
 
 						if($actionGoodsQuantity > 0) {
 							echo "<span style='float: right; font-size: 14px; color: #ff282b;'>Ваша личная скидка не действует на акционные товары.</span><br /><br />";
 						}
 
 						echo "
-							<div style='float: right;'><b>Общая стоимость: </b><span id='totalPriceText'>".$total."</span></div>
+							<div style='float: right;'><b>Итого к оплате: </b><span id='totalPriceText'>".$total."</span></div>
 							<br /><br />
 							<div id='responseField'></div>
 							<form method='post'>
