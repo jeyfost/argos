@@ -678,7 +678,7 @@ if(isset($_SESSION['userID'])) {
 								<td style='width: 65px; vertical-align: top;'>
 							";
 
-							if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
+							if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1 and $catalogue['price'] > 0 and $catalogue['quantity'] > 0) {
 								echo "
 									<div class='itemPurchase'>
 									    <span onclick='addToBasket(\"".$catalogue['id']."\", \"quantityInput".$catalogue['id']."\", \"addingResult".$catalogue['id']."\")' class='addToBasketFont'>Добавить в корзину</span>

@@ -537,7 +537,7 @@ if(!empty($good['subcategory2'])) {
 							?>
 						</td>
 						<?php
-							if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
+							if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1 and $good['price'] > 0 and $good['quantity'] > 0) {
 								echo "
 									<td style='width: 65px; vertical-align: top;'>
 										<div class='itemPurchase'>
