@@ -368,7 +368,7 @@ if(isset($_SESSION['userID'])) {
 					<br /><br />
 					<b>Телефон:</b>
 					<br />
-					<span>+375 (222) 70-77-66</span>
+					<span><?= KALUZHSKAYA_CITY ?></span>
 					<br /><br />
 					<b>Время работы:</b>
 					<br />

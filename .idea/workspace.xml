@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contacts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/contacts/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contacts/stores.php" beforeDir="false" afterPath="$PROJECT_DIR$/contacts/stores.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/const.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/const.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
@@ -62,35 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contacts/main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="354" column="37" selection-start-line="354" selection-start-column="37" selection-end-line="354" selection-end-column="37" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stores.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/contacts/stores.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="343" column="40" selection-start-line="343" selection-start-column="40" selection-end-line="343" selection-end-column="40" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="const.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="const.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/const.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+            <state relative-caret-position="272">
+              <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -155,7 +128,6 @@
         <option value="$PROJECT_DIR$/personal/recovery.php" />
         <option value="$PROJECT_DIR$/personal/register.php" />
         <option value="$PROJECT_DIR$/personal/success.php" />
-        <option value="$PROJECT_DIR$/layouts/footer.php" />
         <option value="$PROJECT_DIR$/js/news.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/sitemap.xml" />
@@ -201,8 +173,9 @@
         <option value="$PROJECT_DIR$/scripts/admin/sections/ajaxCheckSubcategory.php" />
         <option value="$PROJECT_DIR$/catalogue/index.php" />
         <option value="$PROJECT_DIR$/contacts/main.php" />
-        <option value="$PROJECT_DIR$/scripts/const.php" />
         <option value="$PROJECT_DIR$/contacts/stores.php" />
+        <option value="$PROJECT_DIR$/layouts/footer.php" />
+        <option value="$PROJECT_DIR$/scripts/const.php" />
       </list>
     </option>
   </component>
@@ -247,12 +220,7 @@
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="catalogue" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
-              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="contacts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
@@ -494,21 +462,7 @@
       <workItem from="1570511114464" duration="17046000" />
       <workItem from="1570598161477" duration="843000" />
       <workItem from="1570607833726" duration="19491000" />
-      <workItem from="1571035261813" duration="2672000" />
-    </task>
-    <task id="LOCAL-00233" summary="Относительные пути ссылок заменены на абсолютные v2">
-      <created>1521644229708</created>
-      <option name="number" value="00233" />
-      <option name="presentableId" value="LOCAL-00233" />
-      <option name="project" value="LOCAL" />
-      <updated>1521644229708</updated>
-    </task>
-    <task id="LOCAL-00234" summary="На странице товара иконка корзины была заменена на ссылку">
-      <created>1521644542155</created>
-      <option name="number" value="00234" />
-      <option name="presentableId" value="LOCAL-00234" />
-      <option name="project" value="LOCAL" />
-      <updated>1521644542155</updated>
+      <workItem from="1571035261813" duration="2928000" />
     </task>
     <task id="LOCAL-00235" summary="На странице товара исправлен блок &quot;Хлебные крошки&quot;">
       <created>1521644756423</created>
@@ -839,11 +793,25 @@
       <option name="project" value="LOCAL" />
       <updated>1570626688127</updated>
     </task>
-    <option name="localTasksCounter" value="282" />
+    <task id="LOCAL-00282" summary="Обновлены телефонные номера в разделе с контактной информацией">
+      <created>1571042650658</created>
+      <option name="number" value="00282" />
+      <option name="presentableId" value="LOCAL-00282" />
+      <option name="project" value="LOCAL" />
+      <updated>1571042650659</updated>
+    </task>
+    <task id="LOCAL-00283" summary="Обновлены телефонные номера в футере">
+      <created>1571042793642</created>
+      <option name="number" value="00283" />
+      <option name="presentableId" value="LOCAL-00283" />
+      <option name="project" value="LOCAL" />
+      <updated>1571042793642</updated>
+    </task>
+    <option name="localTasksCounter" value="284" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="722164000" />
+    <option name="totallyTimeSpent" value="722420000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -917,8 +885,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Уменьшена высота карточек с новостями" />
-    <MESSAGE value="Добавлена кнопкаотображения всех новостей в разделе новостей" />
     <MESSAGE value="Страница новостей разбита на блоки по 10 новостей" />
     <MESSAGE value="Мелкие правки на странице новостей" />
     <MESSAGE value="Исправлены ссылки на раделы в карте сайта" />
@@ -942,7 +908,9 @@
     <MESSAGE value="Исправлено округление стоимости товаров" />
     <MESSAGE value="На странице с акциями исправлен формат отображения стоимости товара и отключена возможность добавления товаров в корзину, у которых не указана цена и которых нет на складе" />
     <MESSAGE value="Исправлено добавление нового подраздела третьего уровня" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлено добавление нового подраздела третьего уровня" />
+    <MESSAGE value="Обновлены телефонные номера в разделе с контактной информацией" />
+    <MESSAGE value="Обновлены телефонные номера в футере" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновлены телефонные номера в футере" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -997,13 +965,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/about/assortment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="37" column="276" selection-start-line="37" selection-start-column="276" selection-end-line="37" selection-end-column="276" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/about/info.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1064,13 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
@@ -1386,17 +1340,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/contacts/stores.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="91" column="45" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/const.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+        <state relative-caret-position="289">
+          <caret line="343" column="40" selection-start-line="343" selection-start-column="40" selection-end-line="343" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1410,13 +1360,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contacts/stores.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="343" column="40" selection-start-line="343" selection-start-column="40" selection-end-line="343" selection-end-column="40" />
+        <state relative-caret-position="-3576">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="65" lean-forward="true" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="91" column="45" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/const.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
         </state>
       </provider>
     </entry>
