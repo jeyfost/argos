@@ -340,15 +340,19 @@ if(isset($_SESSION['userID'])) {
 					<br /><br />
 					<b>Телефон/факс (отдел маркетинга):</b>
 					<br />
-					<span>+375 (222) 707-707</span>
+					<span><?= MARKETING_MOBILE ?></span>
+                    <br />
+                    <span><?= MARKETING_CITY ?></span>
 					<br /><br />
 					<b>Телефон/факс (отдел сбыта):</b>
 					<br />
-					<span>+375 (222) 747-800</span>
+                    <span><?= SALES_MOBILE ?></span>
+                    <br />
+					<span><?= SALES_CITY ?></span>
 					<br /><br />
 					<b>Телефон (директор):</b>
 					<br />
-					<span>+375 (222) 703-900</span>
+					<span><?= GM_CITY ?></span>
 					<br /><br />
 					<b>Email:</b>
 					<br />
