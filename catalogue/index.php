@@ -530,16 +530,20 @@ if(isset($_SESSION['userID'])) {
 		<div id="catalogueContent">
 			<?php
 			if(!empty($_REQUEST['s2'])) {
-				$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE subcategory2 = '".$mysqli->real_escape_string($_REQUEST['s2'])."' ORDER BY name LIMIT ".$start.", 10");
-
+				$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE subcategory2 = '".$mysqli->real_escape_string($_REQUEST['s2'])."' AND quantity > 0 ORDER BY name LIMIT ".$start.", 10");
+                $catalogueAbsentResult = $mysqli->query("SELECT * FROM catalogue_new WHERE subcategory2 = '".$mysqli->real_escape_string($_REQUEST['s2'])."' AND quantity = 0 ORDER BY name LIMIT ".$start.", 10");
 			} else {
 				if(!empty($_REQUEST['s'])) {
-					$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE subcategory = '".$mysqli->real_escape_string($_REQUEST['s'])."' ORDER BY name LIMIT ".$start.", 10");
+					$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE subcategory = '".$mysqli->real_escape_string($_REQUEST['s'])."' AND quantity > 0 ORDER BY name LIMIT ".$start.", 10");
+                    $catalogueAbsentResult = $mysqli->query("SELECT * FROM catalogue_new WHERE subcategory = '".$mysqli->real_escape_string($_REQUEST['s'])."' AND quantity = 0 ORDER BY name LIMIT ".$start.", 10");
+
 				} else {
 					if(!empty($_REQUEST['c'])) {
-						$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE category = '".$mysqli->real_escape_string($_REQUEST['c'])."' ORDER BY name LIMIT ".$start.", 10");
+						$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE category = '".$mysqli->real_escape_string($_REQUEST['c'])."' AND quantity > 0 ORDER BY name LIMIT ".$start.", 10");
+                        $catalogueAbsentResult = $mysqli->query("SELECT * FROM catalogue_new WHERE category = '".$mysqli->real_escape_string($_REQUEST['c'])."' AND quantity = 0 ORDER BY name LIMIT ".$start.", 10");
 					} else {
-						$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE type = '".$mysqli->real_escape_string($_REQUEST['type'])."' ORDER BY name LIMIT ".$start.", 10");
+						$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE type = '".$mysqli->real_escape_string($_REQUEST['type'])."' AND quantity > 0 ORDER BY name LIMIT ".$start.", 10");
+                        $catalogueAbsentResult = $mysqli->query("SELECT * FROM catalogue_new WHERE type = '".$mysqli->real_escape_string($_REQUEST['type'])."' AND quantity = 0 ORDER BY name LIMIT ".$start.", 10");
 					}
 				}
 			}
@@ -549,6 +553,8 @@ if(isset($_SESSION['userID'])) {
 			} else {
 				echo "<span style='font-size: 15px;'><b>К сожалению, на данный момент в этом разделе нет товаров. Приносим свои извинения за доставленные неудобства.</b></span>";
 			}
+
+            /* ОТОБРАЖЕНИЕ ТОВАРОВ, КОТОРЫЕ ЕСТЬ НА СКЛАДЕ */
 
 			while($catalogue = $catalogueResult->fetch_array()) {
 				$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$catalogue['unit']."'");
@@ -709,7 +715,7 @@ if(isset($_SESSION['userID'])) {
 					</div>
 				";
 
-				echo "
+                echo "
 						<div style='clear: both;'></div>
 					</div>
 					<div style='width: 100%; height: 20px;'></div>
@@ -717,6 +723,176 @@ if(isset($_SESSION['userID'])) {
 					<div style='width: 100%; height: 20px;'></div>
 				";
 			}
+
+            /* ОТОБРАЖЕНИЕ ТОВАРОВ, КОТОРЫХ НЕТ НА СКЛАДЕ */
+
+            while($catalogue = $catalogueAbsentResult->fetch_array()) {
+                $unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$catalogue['unit']."'");
+                $unit = $unitResult->fetch_assoc();
+
+                $active = 0;
+
+                $actionIDResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$catalogue['id']."'");
+                if($actionIDResult->num_rows > 0) {
+                    while($actionID = $actionIDResult->fetch_assoc()) {
+                        $actionResult = $mysqli->query("SELECT * FROM actions WHERE id = '".$actionID['action_id']."'");
+                        $action = $actionResult->fetch_assoc();
+                        $from = strtotime($action['from_date']);
+                        $to = strtotime($action['to_date']);
+                        $today = strtotime(date('d-m-Y'));
+
+                        if($today >= $from and $today <= $to) {
+                            $active = 1;
+                            $aID = $action['id'];
+                        }
+                    }
+                }
+
+                $currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$catalogue['currency']."'");
+                $currency = $currencyResult->fetch_assoc();
+
+                if($active == 0) {
+                    $price = $catalogue['price'] * $currency['rate'];
+
+                    if(isset($_SESSION['userID'])) {
+                        $discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
+                        $discount = $discountResult->fetch_array(MYSQLI_NUM);
+
+                        $price = $price * (1 - $discount[0] / 100);
+                    }
+                } else {
+                    $actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$catalogue['id']."' AND action_id = '".$aID."'");
+                    $actionGood = $actionGoodResult->fetch_assoc();
+
+                    $price = $actionGood['price'] * $currency['rate'];
+                }
+
+                $roubles = floor($price);
+                $kopeck = ceil(($price - $roubles) * 100);
+
+                if($kopeck == 100) {
+                    $kopeck = 0;
+                    $roubles ++;
+                }
+
+                if($roubles == 0 and $kopeck == 0) {
+                    $kopeck = 1;
+                }
+
+                echo "
+					<div class='catalogueItem'>
+						<div class='itemDescription'>
+							<table style='border: none; width: 100%;'>
+								<tr>
+									<td style='width: 100px;' valign='top'>
+										<div class='catalogueIMG'>
+											<a href='/img/catalogue/big/".$catalogue['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-options='skin: \"light\"' data-lightview-title='".$catalogue['name']."' data-lightview-caption='".nl2br(strip_tags($catalogue['description']))."'><img src='/img/catalogue/small/".$catalogue['small']."' /></a>
+							";
+
+                if($active > 0) {
+                    echo "<img src='/img/system/action.png' class='actionIMG' />";
+                }
+
+                echo "
+										</div>
+									</td>
+									<td>
+										<div class='catalogueInfo'>
+												<div class='catalogueName'>
+													<div style='width: 5px; height: 30px; background-color: #ff282b; position: relative; float: left;'></div>
+													<div style='margin-left: 15px;'><a href='item.php?id=".$catalogue['id']."' class='catalogueNameLink'>".$catalogue['name']."</a></div>
+													<div style='clear: both;'></div>
+												</div>
+												<div class='catalogueDescription'>
+													<table style='width: 100%;'>
+														<tbody>
+															<tr>
+																<td>
+							";
+
+                $description = str_replace("\n", "", $catalogue['description']);
+                $strings = explode("<br />", $description);
+
+                for($i = 0; $i < count($strings); $i++) {
+                    $string = explode(':', $strings[$i]);
+                    if(count($string) > 1) {
+                        for($j = 0; $j < count($string); $j++) {
+                            if($j == 0) {
+                                echo "<b>".$string[$j].":</b>";
+                            } else {
+                                if($j == (count($string) - 1)) {
+                                    echo $string[$j];
+                                } else {
+                                    echo $string[$j].":";
+                                }
+                            }
+                        }
+                        echo "<br />";
+                    } else {
+                        echo $string[0]."<br />";
+                    }
+                }
+
+                echo "
+								<br />
+								<div style='width: 100%; border-bottom: 1px dotted #d4d4d4;'></div>
+								<br />
+								<b>Артикул: </b>".$catalogue['code']."
+								<br />
+                                <b>Наличие: </b>"; if($catalogue['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} echo "
+								<br />
+								<div id='goodPrice".$catalogue['id']."'>
+									<span"; if($_SESSION['userID'] == 1 and $active == 0) {echo " style='cursor: pointer;' onclick='changePrice(\"".$catalogue['id']."\", \"goodPrice".$catalogue['id']."\", \"".$catalogue['price']."\", \"".$currency['code']."\", \"".$unit['short_name']."\", \"".$currency['rate']."\")' title='Изменить стоимость товара'";} echo "><b>Цена за ".$unit['for_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b>"; if($catalogue['price'] == 0 or $catalogue['price'] == null) {echo "по запросу";} else {if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";} echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";}} echo "
+								</div>
+							";
+
+                if($catalogue['sketch'] != '') {
+                    echo "<br /><a href='/img/catalogue/sketch/".$catalogue['sketch']."' data-lightview-title='".$catalogue['name'].": Чертёж' data-lightview-options='skin: \"light\"' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
+                }
+
+                echo "
+								</td>
+								<td style='width: 65px; vertical-align: top;'>
+							";
+
+                if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1 and $catalogue['price'] > 0 and $catalogue['quantity'] > 0) {
+                    echo "
+									<div class='itemPurchase'>
+									    <span onclick='addToBasket(\"".$catalogue['id']."\", \"quantityInput".$catalogue['id']."\", \"addingResult".$catalogue['id']."\")' class='addToBasketFont'>Добавить в корзину</span>
+									    <br /><br />
+										<form method='post'>
+											<label for='quantityInput".$catalogue['id']."'>Кол-во в ".$unit['in_name'].":</label>
+											<input type='number' id='quantityInput".$catalogue['id']."' min='1' step='1' value='1' class='itemQuantityInput' />
+										</form>
+										<br />
+										<div class='addingResult' id='addingResult".$catalogue['id']."' onclick='hideBlock(\"addingResult".$catalogue['id']."\")'></div>
+									</div>
+			
+								";
+                }
+
+                echo "
+																</td>
+															</tr>	
+														</tbody>
+													</table>	
+											</div>
+										</div>
+									</td>
+								</tr>
+							</table>
+						<div style='clear: both;'></div>
+					</div>
+				";
+
+                echo "
+						<div style='clear: both;'></div>
+					</div>
+					<div style='width: 100%; height: 20px;'></div>
+					<div style='width: 100%; height: 1px; background-color: #d7d5d1; margin-top: 10px;'></div>
+					<div style='width: 100%; height: 20px;'></div>
+				";
+            }
 
 			echo "<div id='pageNumbers'>";
 
