@@ -256,6 +256,16 @@ $start = intval($page) * 10 - 10;
 				<br />
 				<input type="text" id="searchInput" placeholder="Любые данные по клиенту..." onkeyup="searchClient()" onblur="searchBlur()" />
 				<br /><br />
+                <?php
+                    $showStart = $start + 1;
+                    $showStop = $start + 10;
+
+                    if($showStop > $clientsCount[0]) {
+                        $showStop = $clientsCount[0];
+                    }
+                ?>
+                <span style="font-size: 15px;">Показано клиентов: <b><?= $showStart ?></b> - <b><?= $showStop ?></b> из <b><?= $clientsCount[0] ?></b></span>
+				<br /><br />
 				<table>
 					<thead style="background-color: #ececec;">
 						<td>№</td>
