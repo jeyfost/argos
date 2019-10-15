@@ -379,7 +379,7 @@ if(!empty($_REQUEST['subcategory2'])) {
 				<br />
 				<input type='file' id='goodPhotoInput' class='file' name='goodPhoto' />
 				<br /><br />
-				<label for='goodPhotoInput'>Дополнительные фотографии товара:</label>
+				<label for='goodAdditionalPhotosInput'>Дополнительные фотографии товара:</label>
 				<br />
 				<input type='file' id='goodAdditionalPhotosInput' class='file' name='goodAdditionalPhotos[]' multiple />
 				<br /><br />
