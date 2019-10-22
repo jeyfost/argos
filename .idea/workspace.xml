@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/ajaxSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ajaxSearch.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -460,14 +459,7 @@
       <workItem from="1570607833726" duration="19491000" />
       <workItem from="1571035261813" duration="3649000" />
       <workItem from="1571117684398" duration="6111000" />
-      <workItem from="1571726948044" duration="623000" />
-    </task>
-    <task id="LOCAL-00241" summary="Добавлена возможность поиска заказов в разделе активных заказов администратора">
-      <created>1522687886055</created>
-      <option name="number" value="00241" />
-      <option name="presentableId" value="LOCAL-00241" />
-      <option name="project" value="LOCAL" />
-      <updated>1522687886055</updated>
+      <workItem from="1571726948044" duration="724000" />
     </task>
     <task id="LOCAL-00242" summary="Добавлена возможность поиска заказов в разделе истории заказов пользователя">
       <created>1522688341957</created>
@@ -805,11 +797,18 @@
       <option name="project" value="LOCAL" />
       <updated>1571127854156</updated>
     </task>
-    <option name="localTasksCounter" value="290" />
+    <task id="LOCAL-00290" summary="Исправлен скрипт поиска на главной странице">
+      <created>1571729267076</created>
+      <option name="number" value="00290" />
+      <option name="presentableId" value="LOCAL-00290" />
+      <option name="project" value="LOCAL" />
+      <updated>1571729267076</updated>
+    </task>
+    <option name="localTasksCounter" value="291" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="729875000" />
+    <option name="totallyTimeSpent" value="729976000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -822,11 +821,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4975" weight="0.31848854" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50385606" side_tool="true" weight="0.3166441" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32341" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
@@ -846,7 +845,6 @@
       <window_info anchor="bottom" id="Messages" order="8" weight="0.3293011" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
     </layout>
   </component>
@@ -883,7 +881,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Оптимизированы meta-теги title на всех страницах" />
     <MESSAGE value="Оптимизированы meta-теги description на всех страницах" />
     <MESSAGE value="Исправлен скрипт обработки выгрузок из 1С" />
     <MESSAGE value="Исправлена ошибка при редактировании товара: «При загрузке дополнительных фотографий произошла ошибка»" />
@@ -908,7 +905,8 @@
     <MESSAGE value="Исправлен атрибут &quot;for&quot; у тега &quot;label&quot; в разделе добавления товаров в панели администрирования" />
     <MESSAGE value="Добавлено отображение количества записей в клиентской базе" />
     <MESSAGE value="Сортировка товаров в каталоге возвращена к прежней логике" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сортировка товаров в каталоге возвращена к прежней логике" />
+    <MESSAGE value="Исправлен скрипт поиска на главной странице" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлен скрипт поиска на главной странице" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

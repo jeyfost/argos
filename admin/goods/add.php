@@ -272,7 +272,7 @@ if(!empty($_REQUEST['subcategory2'])) {
 									if($subcategory2Check[0] > 0) {
 										echo "
 											<br /><br />
-											<label for='subcategory2Select'>- Выберите подраздел 2-го уровня:</label>
+											<label for='subcategory2Select'>Выберите подраздел 2-го уровня:</label>
 											<br />
 											<select id='subcategory2Select' name='goodSubcategory2' onchange='selectSubcategory2(\"".$_REQUEST['type']."\", \"".$_REQUEST['category']."\", \"".$_REQUEST['subcategory']."\", this.options[this.selectedIndex].value)'>
 												<option value=''>- Выберите подраздел 2-го уровня -</option>
