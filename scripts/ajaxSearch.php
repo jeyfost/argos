@@ -17,8 +17,6 @@ if($searchResult->num_rows == 0) {
 		$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$search['unit']."'");
 		$unit = $unitResult->fetch_assoc();
 
-		echo $search['price'];
-
 		if($search['price'] == 0 or $search['price'] == null) {
 		    $price = " по запросу";
         } else {
