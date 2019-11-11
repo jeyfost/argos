@@ -99,7 +99,7 @@ select {height: 40px; line-height: 40px;}
     .rightSideBlock {background-color: #fff; z-index: 2; position: absolute; top: 10px; right: 5%; transition: .2s; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4);}
     .rightSideBlock ul {padding-left: 20px; padding-right: 20px; list-style: none; transition: .2s;}
     .rightSideBlock ul li {margin: 10px auto auto auto; transition: .2s;}
-    .categoryContainer {width: 100%; font-size: 15px; display: inline-block;}
+    .categoryContainer {width: 100%; font-size: 15px; display: inline-block; padding-bottom: 10px;}
     .itemPurchase {position: relative; float: right; width: 100px; text-align: center;}
     .headerIcon {position: relative; float: right; width: 20px; padding-left: 10px;}
     .searchItem {width: 100%;}
@@ -154,7 +154,7 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .catalogueItem {width: 100%;}
 .catalogueIMG {width: 100px; height: 100px; transition: .3s; display: inline-block;}
 .catalogueInfo {display: inline-block; width: 100%;}
-.catalogueName {margin-left: 10px; height: 30px; padding-left: 10px; padding-right: 10px; line-height: 30px;}
+.catalogueName {margin-left: 10px; height: 30px; padding-left: 10px; padding-right: 10px; padding-bottom: 12px; line-height: 30px;}
 .catalogueDescription {margin-left: 37px; margin-top: 10px; font-size: 15px;}
 .toBasketIMG {cursor: pointer;}
 .itemQuantityInput {width: 65px; margin-top: 5px;}
@@ -165,8 +165,8 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .pageNumberBlock {position: relative; float: left; background-color: #ffffff; width: 40px; height: 30px; line-height: 30px; text-align: center;}
 .pageNumberBlockActive {position: relative; float: left; background-color: #ff282b; width: 40px; height: 30px; line-height: 30px; text-align: center;}
 .goodStyleWhite {color: #fff;}
-.subcategoryContainer {margin-left: 30px; font-size: 15px;}
-.subcategory2Container {margin-left: 48px; font-size: 15px;}
+.subcategoryContainer {margin-left: 30px; font-size: 15px; padding-bottom: 10px;}
+.subcategory2Container {margin-left: 48px; font-size: 15px; padding-bottom: 10px;}
 .sketchFont, td a {font-size: 16px; color: #ff282b; text-decoration: none;}
 .actionIMG {position: absolute; top: 70px; left: 70px; opacity: .6; transition: .3s;}
 .personalMenuLink {width: 100%; height: 40px; line-height: 40px; text-align: center; color: #4c4c4c; background-color: #dedede;}
