@@ -24,7 +24,7 @@ if(!empty($_FILES['csvFile']['tmp_name'])) {
 				$stats = explode(";", $data[$c]);
 				$code = $stats[0];
 				$price = $stats[1];
-				$unit = iconv("CP1251", "UTF-8", $stats[2]);
+				$unit = $stats[2];
 				$quantity = $stats[3];
 
 				if(!empty($price) and $price > 0) {
