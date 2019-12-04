@@ -17,6 +17,10 @@ if(!empty($_FILES['csvFile']['tmp_name'])) {
 	move_uploaded_file($_FILES['csvFile']['tmp_name'], $upload);
 
 	if(($handle = fopen($upload, "r")) !== FALSE) {
+	    if($_POST['zero'] == 1) {
+	        $mysqli->query("UPDATE catalogue_new SET quantity = 0");
+        }
+
 		while(($data = fgetcsv($handle, ",")) !== FALSE) {
 			$num = count($data);
 

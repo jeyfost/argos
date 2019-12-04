@@ -184,7 +184,9 @@ if(isset($_SESSION['userID'])) {
 				<label for="fileSelect">Выберите <b>CSV</b> файл, содержащий выгрузку 1С:</label>
 				<br />
 				<input type="file" class='file' name="csvFile" id="fileSelect" accept=".csv" />
-				<br />
+				<br /><br />
+                <input type="checkbox" id='zeroCheckbox' name="zero" class="checkbox" value="1" />&nbsp;&nbsp;<label for="zeroCheckbox">Обнулить остатки</label>
+                <br /><br />
 				<div id="responseField"></div>
 				<br />
 				<input type='button' id='makeUpdateButton' class='button' value='Обновить' onmouseover='buttonChange("makeUpdateButton", 1)' onmouseout='buttonChange("makeUpdateButton", 0)' style='margin: 0;' onclick='makeUpdate()'>
