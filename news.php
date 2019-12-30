@@ -514,11 +514,12 @@ if(isset($_SESSION['userID'])) {
                     if($numbers > 1) {
                         if(empty($_REQUEST['year'])) {
                             $uri = explode("?p=", $_SERVER['REQUEST_URI']);
+                            $link = $uri[0]."?p=";
                         } else {
                             $uri = explode("&p=", $_SERVER['REQUEST_URI']);
+                            $link = $uri[0]."&p=";
                         }
 
-                        $link = $uri[0]."&p=";
                         if($numbers <= 7) {
                             echo "<br /><br />";
 

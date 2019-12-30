@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/goods/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/goods/update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/admin/goods/ajaxUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/admin/goods/ajaxUpdate.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,7 +62,7 @@
       <file leaf-file-name="ajaxUpdate.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxUpdate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="17">
               <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
             </state>
           </provider>
@@ -73,12 +71,8 @@
       <file leaf-file-name="update.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/goods/update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
+            <state relative-caret-position="3179">
               <caret line="187" column="94" selection-start-line="187" selection-start-column="94" selection-end-line="187" selection-end-column="94" />
-              <folding>
-                <element signature="e#7438#7444#0#HTML" expanded="true" />
-                <element signature="e#7444#7450#0#HTML" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -228,7 +222,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1616" />
@@ -522,14 +516,8 @@
       <workItem from="1573477746027" duration="819000" />
       <workItem from="1573795889728" duration="602000" />
       <workItem from="1575352601546" duration="3353000" />
-      <workItem from="1575436697382" duration="1967000" />
-    </task>
-    <task id="LOCAL-00246" summary="Исправлен цвет некоторых элементов">
-      <created>1545633293377</created>
-      <option name="number" value="00246" />
-      <option name="presentableId" value="LOCAL-00246" />
-      <option name="project" value="LOCAL" />
-      <updated>1545633293377</updated>
+      <workItem from="1575436697382" duration="2047000" />
+      <workItem from="1575897551640" duration="12000" />
     </task>
     <task id="LOCAL-00247" summary="Изменён цвет некоторых элементов 2">
       <created>1545634289950</created>
@@ -867,11 +855,18 @@
       <option name="project" value="LOCAL" />
       <updated>1575356985437</updated>
     </task>
-    <option name="localTasksCounter" value="295" />
+    <task id="LOCAL-00295" summary="Исправлен скрипт обновления остатков. Теперь остатки сначала обнуляются, затем записываются новые">
+      <created>1575447413600</created>
+      <option name="number" value="00295" />
+      <option name="presentableId" value="LOCAL-00295" />
+      <option name="project" value="LOCAL" />
+      <updated>1575447413601</updated>
+    </task>
+    <option name="localTasksCounter" value="296" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="737285000" />
+    <option name="totallyTimeSpent" value="737377000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -883,18 +878,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4975" weight="0.31848854" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50385606" side_tool="true" weight="0.3166441" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32341" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33868894" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34318766" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.117609255" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -909,6 +902,7 @@
       <window_info anchor="bottom" id="Messages" order="8" weight="0.3293011" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
     </layout>
   </component>
@@ -1390,18 +1384,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/goods/update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
+        <state relative-caret-position="3179">
           <caret line="187" column="94" selection-start-line="187" selection-start-column="94" selection-end-line="187" selection-end-column="94" />
-          <folding>
-            <element signature="e#7438#7444#0#HTML" expanded="true" />
-            <element signature="e#7444#7450#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxUpdate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="17">
           <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
         </state>
       </provider>
