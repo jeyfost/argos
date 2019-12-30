@@ -345,6 +345,7 @@ if(isset($_SESSION['userID'])) {
 								<span id='awardText".$award['id']."' style='transition: .3s;'>".$award['name']."</span>
 							</div>
 						</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					";
 				}
 			?>
