@@ -333,7 +333,42 @@ if(isset($_SESSION['userID'])) {
 		</div>
 
 		<div id="personalContent">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p><span style="color: #fe2427;"><b>«Аргос-ФМ»</b></span> является официальным  представителем многих ведущих брендов и производителей мебельной фурнитуры, комплектующих, мебельной кромки, инструмента, а также шторной фурнитуры и аксессуаров. Широкая география прямых поставок: Европа, Турция, Китай, Россия – позволяет всегда иметь в наличии большой  ассортимент продукции. Прямой контакт с производителями комплектующих и фурнитуры   позволяет постоянно совершенствовать качество изделий и работать над новыми образцами.</p>
+            <br />
+            <div style="width: 100%; text-align: center;">
+                <div class="partner" style="margin: 0 !important;">
+                    <a href="http://aldi04.ru/" target="_blank"><img src="https://argos-fm.by/pictures/mail/aldi/logo.png" style="height: 80px;" title="АЛДИ" /></a>
+                </div>
+                <div class="partner" style="margin: 0 !important;">
+                    <a href="http://www.smoltex.ru/" target="_blank"><img src="https://argos-fm.by/pictures/mail/smoltex/logo.png" title="Smoltex" /></a>
+                </div>
+                <div class="partner">
+                    <a href="http://www.ozkardeslermetal.com.tr/" target="_blank"><img src="https://argos-fm.by/pictures/mail/ozkm/logo.png" style="height: 70px;" title="ÖZKARDEŞLER METAL MOBİLYA AKSESUARLARI" /></a>
+                </div>
+                <div class="partner">
+                    <a href="http://www.kapsantr.com/english/" target="_blank"><img src="https://argos-fm.by/pictures/mail/kapsan/logo.png" style="height: 50px;" title="KAPSAN" /></a>
+                </div>
+                <div class="partner">
+                    <a href="https://www.boyard.biz/" target="_blank"><img src="https://argos-fm.by/pictures/mail/boyard/boyard.png" style="height: 50px;" title="BOYARD" /></a>
+                </div>
+                <div class="partner">
+                    <a href="https://www.gtv.com.pl/ru" target="_blank"><img src="https://argos-fm.by/pictures/mail/gtv/gtv.png" style="height: 35px;" title="GTV" /></a>
+                </div>
+                <div class="partner">
+                    <a href="https://www.gtv.com.pl/ru" target="_blank"><img src="https://argos-fm.by/pictures/mail/hogert/logo.jpg" style="height: 60px;" title="Högert Technik" /></a>
+                </div>
+                <div class="partner">
+                    <a href="http://kromag.com.ua/" target="_blank"><img src="https://argos-fm.by/pictures/mail/kromag/logo.png" style="height: 60px;" title="Kromag" /></a>
+                </div>
+                <div class="partner">
+                    <a href="https://www.hranipex.cz/cs/" target="_blank"><img src="https://argos-fm.by/pictures/mail/hranipex/logoBig.png" style="height: 30px;" title="Hranipex" /></a>
+                </div>
+                <div class="partner">
+                    <a href="http://bramek.ru/" target="_blank"><img src="https://argos-fm.by/pictures/mail/bramek/logo.png" style="height: 45px;" title="Bramek" /></a>
+                </div>
+            </div>
+            <br />
+            <p>Ассортимент включает свыше 1000 разновидностей <a href="/catalogue/index.php?type=fa&c=9&p=1">мебельных ручек</a>, огромный выбор <a href="/catalogue/index.php?type=fa&c=2&p=1">мебельных опор</a>, <a href="/catalogue/index.php?type=fa&c=19&p=1">кухонные аксессуары и комплектующие</a>, различные <a href="/catalogue/index.php?type=fa&c=3&p=1">системы крепежа</a>, <a href="/catalogue/index.php?type=em&p=1">кромочные материалы</a>, <a href="/catalogue/index.php?type=fa&c=10&p=1">направляющие для выдвижных ящиков</a>, <a href="/catalogue/index.php?type=fa&c=23&p=1">комплектующие для шкафов-купе</a>, <a href="/catalogue/index.php?type=fa&c=25&p=1">механизмы и фурнитура для раздвижных столов</a>, <a href="/catalogue/index.php?type=fa&c=4&p=1">мебельные петли</a>, <a href="/catalogue/index.php?type=fa&c=11&p=1">замки</a>, <a href="/catalogue/index.php?type=fa&c=1&p=1">крючки</a>, различные профили, <a href="/catalogue/index.php?type=fa&c=42&s=1048&p=1">светодиодные светильники</a>, <a href="/catalogue/index.php?type=fa&c=29&p=1">декоративные элементы для мебели</a>, <a href="/catalogue/index.php?type=fa&c=3&p=1">метизная продукция</a>, <a href="/catalogue/index.php?type=ht&p=1">инструмент</a>, <a href="/catalogue/index.php?type=ca&p=1">шторная фурнитура и аксессуары</a>, отделочные и упаковочные материалы и многое другое.</p>
 		</div>
 	</div>
 
