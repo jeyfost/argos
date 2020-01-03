@@ -50,7 +50,7 @@ function addToBasket(good_id, input, response_field) {
 						if (result === "a") {
 							$('#basketIcon').html("<a href='/personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\")' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\")'><img src='/img/system/basketFull.png' title='Корзина | Товаров в корзине: 1' id='basketIMG' /><div id='basketLabel'>1</div></a>");
 						} else {
-							$('#basketIcon').html("<a href='personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\")' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\")'><img src='/img/system/basketFull.png' title='Корзина | Товаров в корзине: " + result + "' id='basketIMG' /><div id='basketLabel'>" + result + "</div></a>");
+							$('#basketIcon').html("<a href='/personal/basket.php?section=1' onmouseover='changeIcon(\"basketIMG\", \"basketFullRed.png\")' onmouseout='changeIcon(\"basketIMG\", \"basketFull.png\")'><img src='/img/system/basketFull.png' title='Корзина | Товаров в корзине: " + result + "' id='basketIMG' /><div id='basketLabel'>" + result + "</div></a>");
 						}
 					}
 				});
