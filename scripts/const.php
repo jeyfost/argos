@@ -6,7 +6,7 @@
  * Time: 12:28
  */
 
-define("CONTACT_EMAIL", "mail@argos-fm.by");
+define("CONTACT_EMAIL", "argos-fm@mail.ru");
 define("REPLY_EMAIL", "argos-fm@mail.ru");
 
 define("NEWS_ON_PAGE", 10);
