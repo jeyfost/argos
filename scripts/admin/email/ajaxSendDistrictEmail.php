@@ -65,7 +65,7 @@ if($filesErrors == 0) {
 	$mailCount = 0;
 	$mailSuccessCount = 0;
 	$c = "";
-	$start = $p * 10 + 1;
+	$start = $p * 10;
 
 	$clientResult = $mysqli->query("SELECT * FROM clients WHERE location = '".$location."' AND in_send = '1' LIMIT ".$start.", 10");
 	while($client = $clientResult->fetch_assoc()) {

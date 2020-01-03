@@ -50,29 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2924">
+            <state relative-caret-position="674">
               <caret line="172" column="74" selection-start-line="172" selection-start-column="74" selection-end-line="172" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="send.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/admin/email/send.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3485">
-              <caret line="205" column="9" selection-start-line="205" selection-start-column="9" selection-end-line="205" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxSendDistrictEmail.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/admin/email/ajaxSendDistrictEmail.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
-              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -161,7 +143,6 @@
         <option value="$PROJECT_DIR$/scripts/admin/sections/ajaxCheckSubcategory.php" />
         <option value="$PROJECT_DIR$/contacts/main.php" />
         <option value="$PROJECT_DIR$/layouts/footer.php" />
-        <option value="$PROJECT_DIR$/scripts/const.php" />
         <option value="$PROJECT_DIR$/admin/goods/add.php" />
         <option value="$PROJECT_DIR$/admin/clients/database.php" />
         <option value="$PROJECT_DIR$/catalogue.php" />
@@ -185,6 +166,7 @@
         <option value="$PROJECT_DIR$/scripts/admin/email/ajaxShowDistrictButtons.php" />
         <option value="$PROJECT_DIR$/admin/clients/inactive.php" />
         <option value="$PROJECT_DIR$/scripts/admin/email/ajaxSendDistrictEmail.php" />
+        <option value="$PROJECT_DIR$/scripts/const.php" />
       </list>
     </option>
   </component>
@@ -218,7 +200,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,19 +216,13 @@
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
-              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="email" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="contacts" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -504,13 +479,7 @@
       <workItem from="1578035054485" duration="417000" />
       <workItem from="1578035690817" duration="159000" />
       <workItem from="1578035953754" duration="299000" />
-    </task>
-    <task id="LOCAL-00257" summary="Уменьшена высота карточек с новостями">
-      <created>1569911586248</created>
-      <option name="number" value="00257" />
-      <option name="presentableId" value="LOCAL-00257" />
-      <option name="project" value="LOCAL" />
-      <updated>1569911586248</updated>
+      <workItem from="1578037171904" duration="731000" />
     </task>
     <task id="LOCAL-00258" summary="Добавлена кнопкаотображения всех новостей в разделе новостей">
       <created>1569916126078</created>
@@ -848,11 +817,18 @@
       <option name="project" value="LOCAL" />
       <updated>1578035452285</updated>
     </task>
-    <option name="localTasksCounter" value="306" />
+    <task id="LOCAL-00306" summary="Изменён контактный адрес">
+      <created>1578037274017</created>
+      <option name="number" value="00306" />
+      <option name="presentableId" value="LOCAL-00306" />
+      <option name="project" value="LOCAL" />
+      <updated>1578037274017</updated>
+    </task>
+    <option name="localTasksCounter" value="307" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="752586000" />
+    <option name="totallyTimeSpent" value="753317000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -870,11 +846,12 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4975" weight="0.31848854" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50385606" side_tool="true" weight="0.3166441" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32341" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2506427" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25385603" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.117609255" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -889,7 +866,6 @@
       <window_info anchor="bottom" id="Messages" order="8" weight="0.3293011" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
     </layout>
   </component>
@@ -926,7 +902,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="На странице с акциями исправлен формат отображения стоимости товара и отключена возможность добавления товаров в корзину, у которых не указана цена и которых нет на складе" />
     <MESSAGE value="Исправлено добавление нового подраздела третьего уровня" />
     <MESSAGE value="Обновлены телефонные номера в разделе с контактной информацией" />
     <MESSAGE value="Обновлены телефонные номера в футере" />
@@ -951,7 +926,8 @@
     <MESSAGE value="Исправлены некоторые адреса ссылок" />
     <MESSAGE value="Исправлен скрипт подсчёта адресов в клиентской базе, доступных для рассылки" />
     <MESSAGE value="Исправлен порядок сортировки отписавшихся от расылки клиентов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлен порядок сортировки отписавшихся от расылки клиентов" />
+    <MESSAGE value="Изменён контактный адрес" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменён контактный адрес" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1006,13 +982,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/basket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="284" column="9" selection-start-line="284" selection-start-column="9" selection-end-line="284" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/personal/basket.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1137,13 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="12" column="65" lean-forward="true" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/const.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -1361,24 +1323,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/scripts/const.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2924">
-          <caret line="172" column="74" selection-start-line="172" selection-start-column="74" selection-end-line="172" selection-end-column="74" />
+        <state relative-caret-position="238">
+          <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/email/send.js">
+    <entry file="file://$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3485">
-          <caret line="205" column="9" selection-start-line="205" selection-start-column="9" selection-end-line="205" selection-end-column="9" />
+        <state relative-caret-position="153">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/admin/email/ajaxSendDistrictEmail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
+        <state relative-caret-position="17">
           <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/email/send.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3564">
+          <caret line="205" column="9" selection-start-line="205" selection-start-column="9" selection-end-line="205" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#input#3;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="674">
+          <caret line="172" column="74" selection-start-line="172" selection-start-column="74" selection-end-line="172" selection-end-column="74" />
         </state>
       </provider>
     </entry>
