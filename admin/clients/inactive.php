@@ -273,13 +273,13 @@ $start = intval($page) * 10 - 10;
 						<?php
 							if(!empty($_REQUEST['district'])) {
 								if($_REQUEST['district'] == "all") {
-									$clientResult = $mysqli->query("SELECT * FROM clients WHERE in_send = '0' ORDER BY name LIMIT ".$start.", 10");
+									$clientResult = $mysqli->query("SELECT * FROM clients WHERE in_send = '0' ORDER BY disactivation_date DESC LIMIT ".$start.", 10");
 								} else {
 									$district = $mysqli->real_escape_string($_REQUEST['district']);
-									$clientResult = $mysqli->query("SELECT * FROM clients WHERE location = '".$district."' AND in_send = '0' ORDER BY name LIMIT ".$start.", 10");
+									$clientResult = $mysqli->query("SELECT * FROM clients WHERE location = '".$district."' AND in_send = '0' ORDER BY disactivation_date DESC LIMIT ".$start.", 10");
 								}
 							} else {
-								$clientResult = $mysqli->query("SELECT * FROM clients WHERE in_send = '0' ORDER BY name LIMIT ".$start.", 10");
+								$clientResult = $mysqli->query("SELECT * FROM clients WHERE in_send = '0' ORDER BY disactivation_date DESC LIMIT ".$start.", 10");
 							}
 
 							if(!empty($_REQUEST['p'])) {
