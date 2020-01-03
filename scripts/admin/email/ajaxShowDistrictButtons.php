@@ -14,7 +14,7 @@ ob_start();
 $location = $mysqli->real_escape_string($_POST['district']);
 
 if($location != '') {
-	$clientsCountResult = $mysqli->query("SELECT COUNT(id) FROM clients WHERE location = '".$location."'");
+	$clientsCountResult = $mysqli->query("SELECT COUNT(id) FROM clients WHERE location = '".$location."' AND in_send = '1'");
 	$clientsCount = $clientsCountResult->fetch_array(MYSQLI_NUM);
 
 	$buttonsCount = intval($clientsCount[0] / 10);

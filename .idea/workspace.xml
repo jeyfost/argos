@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxSendRegistrationEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxSendRegistrationEmail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/register.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,8 +53,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="674">
-              <caret line="194" column="82" selection-start-line="194" selection-start-column="82" selection-end-line="194" selection-end-column="82" />
+            <state relative-caret-position="96">
+              <caret line="172" column="74" selection-start-line="172" selection-start-column="74" selection-end-line="172" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -72,12 +70,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Боль</find>
       <find>pageN</find>
-      <find />
+      <find>о комп</find>
       <find>rightS</find>
       <find>User1</find>
-      <find />
+      <find>Чтобы получить возможность купить акционные</find>
       <find>news.php</find>
       <find>по</find>
       <find>$a</find>
@@ -97,11 +94,12 @@
       <find>Дочерние</find>
       <find>show</find>
       <find>Удали</find>
-      <find />
+      <find>- Вы</find>
       <find>subcA</find>
       <find>breadC</find>
       <find>&amp;p=</find>
       <find>personal/cancel.php</find>
+      <find>addtobasket</find>
     </findStrings>
     <replaceStrings>
       <replace>catalogue/index.php</replace>
@@ -471,13 +469,7 @@
       <workItem from="1577791015481" duration="173000" />
       <workItem from="1578027959006" duration="156000" />
       <workItem from="1578030424973" duration="178000" />
-    </task>
-    <task id="LOCAL-00254" summary="На странице с картой сайта добавлен прелоадер">
-      <created>1569840704446</created>
-      <option name="number" value="00254" />
-      <option name="presentableId" value="LOCAL-00254" />
-      <option name="project" value="LOCAL" />
-      <updated>1569840704446</updated>
+      <workItem from="1578031220276" duration="246000" />
     </task>
     <task id="LOCAL-00255" summary="Футер вынесен в отдельный файл">
       <created>1569851473825</created>
@@ -815,11 +807,18 @@
       <option name="project" value="LOCAL" />
       <updated>1577791102246</updated>
     </task>
-    <option name="localTasksCounter" value="303" />
+    <task id="LOCAL-00303" summary="Исправлены некоторые адреса ссылок">
+      <created>1578031448516</created>
+      <option name="number" value="00303" />
+      <option name="presentableId" value="LOCAL-00303" />
+      <option name="project" value="LOCAL" />
+      <updated>1578031448517</updated>
+    </task>
+    <option name="localTasksCounter" value="304" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="751465000" />
+    <option name="totallyTimeSpent" value="751711000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -842,7 +841,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2377892" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24100257" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.117609255" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
@@ -893,7 +892,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлена информация о наличии товара на складе" />
     <MESSAGE value="Убрана возможность добавления в корзину товаров, если не указана их стоимость или их нет на складе" />
     <MESSAGE value="Исправлено округление стоимости товаров" />
     <MESSAGE value="На странице с акциями исправлен формат отображения стоимости товара и отключена возможность добавления товаров в корзину, у которых не указана цена и которых нет на складе" />
@@ -918,7 +916,8 @@
     <MESSAGE value="Добавлен текст в разделе «Сотрудничество»" />
     <MESSAGE value="Добавлен новый магазин" />
     <MESSAGE value="hotfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="hotfix" />
+    <MESSAGE value="Исправлены некоторые адреса ссылок" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлены некоторые адреса ссылок" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -973,6 +972,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3298">
+          <caret line="194" column="82" selection-start-line="194" selection-start-column="82" selection-end-line="194" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/admin/goods/edit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2058">
@@ -1326,9 +1332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/personal/cancel.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/partners/cooperation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1348,8 +1351,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="194" column="82" selection-start-line="194" selection-start-column="82" selection-end-line="194" selection-end-column="82" />
+        <state relative-caret-position="96">
+          <caret line="172" column="74" selection-start-line="172" selection-start-column="74" selection-end-line="172" selection-end-column="74" />
         </state>
       </provider>
     </entry>
