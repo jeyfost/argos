@@ -7,6 +7,7 @@
  */
 
 define("CONTACT_EMAIL", "argos-fm@mail.ru");
+define("CV_CONTACT_EMAIL", "foster_andrew@tut.by");
 define("REPLY_EMAIL", "argos-fm@mail.ru");
 
 define("NEWS_ON_PAGE", 10);
