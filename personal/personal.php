@@ -435,11 +435,11 @@ if(isset($_SESSION['userID'])) {
 						if(empty($_REQUEST['user']))
 						{
 							if(!isset($_SESSION['sort'])) {
-								$_SESSION['sort'] = "login";
+								$_SESSION['sort'] = "id";
 							}
 
 							if(!isset($_SESSION['sort_type'])) {
-								$_SESSION['sort_type'] = "ASC";
+								$_SESSION['sort_type'] = "DESC";
 							}
 
 							$count = 0;
