@@ -250,7 +250,7 @@ if(isset($_SESSION['userID'])) {
 			<div class="mobileMenuItem" style="margin-top: 0;">
 				<a href="/contacts/stores.php" class="mobileMenuPointBig">Контакты</a>
 				<div class="subMenu">
-					<a href="/contacts/stores.php" class="mobileMenuPointSmall">- Магазины</a>
+					<a href="/contacts/stores.php" class="mobileMenuPointSmall">- Торговые объекты</a>
 					<br />
 					<a href="/contacts/main.php" class="mobileMenuPointSmall">- Головное предприятие</a>
 					<br />
@@ -320,7 +320,7 @@ if(isset($_SESSION['userID'])) {
 			<a href='/'><span class='breadCrumbsText'>Главная</span></a> > <a href='stores.php'><span class='breadCrumbsText'>Контактная информация</span></a> > <a href='main.php'><span class='breadCrumbsText'>Головной офис</span></a>
 		</div>
 		<div id="personalMenu">
-			<a href='stores.php'><div class='personalMenuLink' id='pbl1' onmouseover='buttonChange("pbl1", 1)' onmouseout='buttonChange("pbl1", 0)'>Магазины</div></a>
+			<a href='stores.php'><div class='personalMenuLink' id='pbl1' onmouseover='buttonChange("pbl1", 1)' onmouseout='buttonChange("pbl1", 0)'>Торговые объекты</div></a>
 			<div style='width: 100%; height: 5px;'></div>
 			<a href='main.php'><div class='personalMenuLinkActive'>Головное предприятие</div></a>
 			<div style='width: 100%; height: 5px;'></div>

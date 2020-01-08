@@ -35,9 +35,9 @@ if(isset($_SESSION['userID'])) {
 
 <head>
  	<meta charset="utf-8">
- 	<meta name="description" content="Наши розничные магазины находятся в разных районах г. Могилёва. На странице находятся адреса, контактные телефоны и карты проезда.">
+ 	<meta name="description" content="Наши торговые объекты находятся в разных районах г. Могилёва. На странице находятся адреса, контактные телефоны и карты проезда.">
 
-    <title>Адреса магазинов компании Аргос-ФМ</title>
+    <title>Адреса торговых объектов компании Аргос-ФМ</title>
 
     <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='/css/style.css'>
@@ -250,7 +250,7 @@ if(isset($_SESSION['userID'])) {
 			<div class="mobileMenuItem" style="margin-top: 0;">
 				<a href="/contacts/stores.php" class="mobileMenuPointBig">Контакты</a>
 				<div class="subMenu">
-					<a href="/contacts/stores.php" class="mobileMenuPointSmall">- Магазины</a>
+					<a href="/contacts/stores.php" class="mobileMenuPointSmall">- Торговые объекты</a>
 					<br />
 					<a href="/contacts/main.php" class="mobileMenuPointSmall">- Головное предприятие</a>
 					<br />
@@ -315,13 +315,13 @@ if(isset($_SESSION['userID'])) {
 
 	<div id="page">
 		<div id="searchList"></div>
-		<h1 style='margin-top: 80px;'>Адреса магазинов</h1>
+		<h1 style='margin-top: 80px;'>Адреса торговых объектов</h1>
 		<div id='breadCrumbs'>
-			<a href='/index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='stores.php'><span class='breadCrumbsText'>Контактная информация</span></a> > <a href='stores.php'><span class='breadCrumbsText'>Магазины</span></a>
+			<a href='/index.php'><span class='breadCrumbsText'>Главная</span></a> > <a href='stores.php'><span class='breadCrumbsText'>Контактная информация</span></a> > <a href='stores.php'><span class='breadCrumbsText'>Торговые объекты</span></a>
 		</div>
 
 		<div id="personalMenu">
-			<a href='stores.php'><div class='personalMenuLinkActive'>Магазины</div></a>
+			<a href='stores.php'><div class='personalMenuLinkActive'>Торговые объекты</div></a>
 			<div style='width: 100%; height: 5px;'></div>
 			<a href='main.php'><div class='personalMenuLink' id='pbl2' onmouseover='buttonChange("pbl2", 1)' onmouseout='buttonChange("pbl2", 0)'>Головное предприятие</div></a>
 			<div style='width: 100%; height: 5px;'></div>
@@ -334,7 +334,7 @@ if(isset($_SESSION['userID'])) {
 					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=TRFDdk4LfiXmytO-3UCq_hXaFXJG-3Zd&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
 				</div>
 				<div class="mapDescription">
-					<h2>1. Магазин мебельной фурнитуры</h2>
+					<h2>1. Торговый объект «Мебельная Фурнитура»</h2>
 					<b>Адрес:</b>
 					<br />
 					<span>212040, Республика Беларусь, г. Могилёв, ул. Залуцкого, 21</span>
@@ -361,7 +361,7 @@ if(isset($_SESSION['userID'])) {
 					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=om0QHqcbbq7ki3IzQujwQF5MaychC7ZG&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
 				</div>
 				<div class="mapDescription">
-					<h2>2. Магазин мебельной фурнитуры</h2>
+					<h2>2. Торговый объект «Мебельная Фурнитура»</h2>
 					<b>Адрес:</b>
 					<br />
 					<span>212011, Республика Беларусь, г. Могилёв, ул. Калужская, 13</span>
@@ -384,7 +384,7 @@ if(isset($_SESSION['userID'])) {
                     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A37a9788d8058775f398c68f31f236ff639a62d1548cc4b66666ff50c8507d4de&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
                 </div>
                 <div class="mapDescription">
-                    <h2>3. Магазин мебельной фурнитуры</h2>
+                    <h2>3. Торговый объект «Мебельная Фурнитура»</h2>
                     <b>Адрес:</b>
                     <br />
                     <span>212026, Республика Беларусь, г. Могилёв, ул. Якубовского, 55</span>

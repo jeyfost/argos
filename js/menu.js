@@ -45,9 +45,9 @@ function showDropdownList(action, id, highlighted) {
                 break;
             case "contactsLink":
 				if(highlighted === "contactsLinkStores") {
-					$('#dropDownList').html("<div class='dropDownLink' id='contactsLinkStores' style='background-color: #ff282b;'><a href='/contacts/stores.php' id='contactsLinkStoresA' style='color: #fff;'>Магазины</a></div>")
+					$('#dropDownList').html("<div class='dropDownLink' id='contactsLinkStores' style='background-color: #ff282b;'><a href='/contacts/stores.php' id='contactsLinkStoresA' style='color: #fff;'>Торговые объекты</a></div>")
 				} else {
-					$('#dropDownList').html("<div class='dropDownLink' id='contactsLinkStores' onmouseover='changeDropDownLink(\"1\", \"contactsLinkStores\", \"contactsLinkStoresA\")' onmouseout='changeDropDownLink(\"0\", \"contactsLinkStores\", \"contactsLinkStoresA\")'><a href='/contacts/stores.php' id='contactsLinkStoresA'>Магазины</a></div>");
+					$('#dropDownList').html("<div class='dropDownLink' id='contactsLinkStores' onmouseover='changeDropDownLink(\"1\", \"contactsLinkStores\", \"contactsLinkStoresA\")' onmouseout='changeDropDownLink(\"0\", \"contactsLinkStores\", \"contactsLinkStoresA\")'><a href='/contacts/stores.php' id='contactsLinkStoresA'>Торговые объекты</a></div>");
 				}
 
 				if(highlighted === "contactsLinkMain") {

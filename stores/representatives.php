@@ -35,7 +35,7 @@ if(isset($_SESSION['userID'])) {
 
 <head>
  	<meta charset="utf-8">
- 	<meta name="description" content="Адреса магазинов наших партнёров, где вы можете приобрести продукцию компании Аргос-ФМ, с контактными телефонами и картами проезда.">
+ 	<meta name="description" content="Адреса торговых объектов наших партнёров, где вы можете приобрести продукцию компании Аргос-ФМ, с контактными телефонами и картами проезда.">
 
     <title>Партнёрская сеть компании Аргос-ФМ</title>
 
@@ -250,7 +250,7 @@ if(isset($_SESSION['userID'])) {
 			<div class="mobileMenuItem" style="margin-top: 0;">
 				<a href="/contacts/stores.php" class="mobileMenuPointBig">Контакты</a>
 				<div class="subMenu">
-					<a href="/contacts/stores.php" class="mobileMenuPointSmall">- Магазины</a>
+					<a href="/contacts/stores.php" class="mobileMenuPointSmall">- Торговые объекты</a>
 					<br />
 					<a href="/contacts/main.php" class="mobileMenuPointSmall">- Головное предприятие</a>
 					<br />
@@ -332,7 +332,7 @@ if(isset($_SESSION['userID'])) {
 					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=om0QHqcbbq7ki3IzQujwQF5MaychC7ZG&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
 				</div>
 				<div class="mapDescription">
-					<h2>1. Магазин мебельной фурнитуры</h2>
+					<h2>1. Торговый объект «Мебельная Фурнитура»</h2>
 					<b>Адрес:</b>
 					<br />
 					<span>212011, Республика Беларусь, г. Могилёв, ул. Калужская, 13</span>
@@ -359,7 +359,7 @@ if(isset($_SESSION['userID'])) {
 					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=TRFDdk4LfiXmytO-3UCq_hXaFXJG-3Zd&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
 				</div>
 				<div class="mapDescription">
-					<h2>2. Магазин мебельной фурнитуры</h2>
+					<h2>2. Торговый объект «Мебельная Фурнитура»</h2>
 					<b>Адрес:</b>
 					<br />
 					<span>212040, Республика Беларусь, г. Могилёв, ул. Залуцкого, 21</span>
@@ -382,7 +382,7 @@ if(isset($_SESSION['userID'])) {
                     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A37a9788d8058775f398c68f31f236ff639a62d1548cc4b66666ff50c8507d4de&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
                 </div>
                 <div class="mapDescription">
-                    <h2>3. Магазин мебельной фурнитуры</h2>
+                    <h2>3. Торговый объект «Мебельная Фурнитура»</h2>
                     <b>Адрес:</b>
                     <br />
                     <span>212026, Республика Беларусь, г. Могилёв, ул. Якубовского, 55</span>

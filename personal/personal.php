@@ -295,7 +295,7 @@ if(isset($_SESSION['userID'])) {
 			<div class="mobileMenuItem" style="margin-top: 0;">
 				<a href="/contacts/stores.php" class="mobileMenuPointBig">Контакты</a>
 				<div class="subMenu">
-					<a href="/contacts/stores.php" class="mobileMenuPointSmall">- Магазины</a>
+					<a href="/contacts/stores.php" class="mobileMenuPointSmall">- Торговые объекты</a>
 					<br />
 					<a href="/contacts/main.php" class="mobileMenuPointSmall">- Головное предприятие</a>
 					<br />
