@@ -30,7 +30,9 @@ $message .= "
 						<div style='padding: 20px; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); background-color: #fff; width: 600px; text-align: left;'>
 							<b>Имя: </b>" . $name . "
 							<br />
-							<b>Текст письма: </b>" . $text . "
+							<b>Email: </b>" . $email . "
+							<br /><br />
+							<b>Текст письма: </b>" . $text . "													
 							<div style='width: 100%; height: 10px;'></div>
 						</div>
 						<br /><br />
@@ -38,10 +40,12 @@ $message .= "
 				</div>
 			";
 
-$message .= "--PHP-mixed-" . $hash . "\n";
-
-if (@mail($to, $subject, $message, $headers)) {
-	echo "a";
+if($mysqli->query("INSERT INTO messages (name, email, text) VALUES ('".$name."', '".$email."', '".$text."')")) {
+    if (@mail($to, $subject, $message, $headers)) {
+        echo "a";
+    } else {
+        echo "b";
+    }
 } else {
-	echo "b";
+    echo "b";
 }
