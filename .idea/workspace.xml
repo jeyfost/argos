@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -109,20 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mail.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mail.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/mail.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-221">
               <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxSendMail.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="48" column="8" lean-forward="true" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -551,14 +541,7 @@
       <workItem from="1578139586311" duration="593000" />
       <workItem from="1578466225070" duration="7455000" />
       <workItem from="1579614266468" duration="110000" />
-      <workItem from="1580367193378" duration="3923000" />
-    </task>
-    <task id="LOCAL-00262" summary="Добавлена динамическая XML-карта сайта">
-      <created>1570015599485</created>
-      <option name="number" value="00262" />
-      <option name="presentableId" value="LOCAL-00262" />
-      <option name="project" value="LOCAL" />
-      <updated>1570015599487</updated>
+      <workItem from="1580367193378" duration="4425000" />
     </task>
     <task id="LOCAL-00263" summary="Правка текста на странице акций">
       <created>1570015687234</created>
@@ -896,11 +879,18 @@
       <option name="project" value="LOCAL" />
       <updated>1578479918777</updated>
     </task>
-    <option name="localTasksCounter" value="311" />
+    <task id="LOCAL-00311" summary="Доработан скрипт отправки сообщений из раздела обратной связи. Добавлена функция записи всех отправленных сообщений из раздела обратной связи в базу данных.">
+      <created>1580374061372</created>
+      <option name="number" value="00311" />
+      <option name="presentableId" value="LOCAL-00311" />
+      <option name="project" value="LOCAL" />
+      <updated>1580374061373</updated>
+    </task>
+    <option name="localTasksCounter" value="312" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="766072000" />
+    <option name="totallyTimeSpent" value="766574000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -916,6 +906,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4975" weight="0.31848854" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32882273" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50385606" side_tool="true" weight="0.3166441" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
@@ -925,7 +916,7 @@
       <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26992288" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.117609255" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.117609255" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
@@ -935,7 +926,6 @@
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="12" weight="0.3293011" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.3293011" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
@@ -974,8 +964,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Обновлен номер телефона в магазине" />
-    <MESSAGE value="Обновлены номера телефонов в разделе фирменной сети" />
     <MESSAGE value="Изменён порядок следования товаров в каталоге. Сначала показаны те, которые есть в наличии" />
     <MESSAGE value="Исправлен атрибут &quot;for&quot; у тега &quot;label&quot; в разделе добавления товаров в панели администрирования" />
     <MESSAGE value="Добавлено отображение количества записей в клиентской базе" />
@@ -999,7 +987,9 @@
     <MESSAGE value="Магазины заменены на торговые объекты" />
     <MESSAGE value="Доработан скрипт отправки резюме" />
     <MESSAGE value="Изменена сортировка по умолчанию в разделе с пользователями сайта" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменена сортировка по умолчанию в разделе с пользователями сайта" />
+    <MESSAGE value="ДОработан скрипт отправки сообщений из раздела обратной связи. Добавлена функция записи всех отправленных сообщений из раздела обратной связи в базу данных." />
+    <MESSAGE value="Доработан скрипт отправки сообщений из раздела обратной связи. Добавлена функция записи всех отправленных сообщений из раздела обратной связи в базу данных." />
+    <option name="LAST_COMMIT_MESSAGE" value="Доработан скрипт отправки сообщений из раздела обратной связи. Добавлена функция записи всех отправленных сообщений из раздела обратной связи в базу данных." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1448,13 +1438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/mail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/const.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1464,8 +1447,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="48" column="8" lean-forward="true" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
+        <state relative-caret-position="306">
+          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/mail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
         </state>
       </provider>
     </entry>

@@ -27,7 +27,7 @@ if(!empty($_FILES['csvFile']['tmp_name'])) {
 			for ($c = 0; $c < $num; $c++) {
 				$stats = explode(";", $data[$c]);
 				$code = $stats[0];
-				$price = $stats[1];
+				$price = str_replace(" ", "", $stats[1]);
 				$unit = $stats[2];
 				$quantity = $stats[3];
 
