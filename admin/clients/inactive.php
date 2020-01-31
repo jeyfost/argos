@@ -264,7 +264,7 @@ $start = intval($page) * 10 - 10;
 						<td>Email</td>
 						<td>Область/город</td>
 						<td>Группа</td>
-						<td>В рассылке</td>
+						<td>Дата отписки</td>
 						<td>Заметки</td>
 						<td>Редактирование</td>
 						<td>Вернуть в рассылку</td>
@@ -296,12 +296,6 @@ $start = intval($page) * 10 - 10;
 								$groupResult = $mysqli->query("SELECT name FROM filters WHERE id = '".$client['filter']."'");
 								$group = $groupResult->fetch_array(MYSQLI_NUM);
 
-								if($client['in_send'] == "1") {
-									$inSend = "да";
-								} else {
-									$inSend = "нет";
-								}
-
 								echo "
 									<tr id='tr".$i."'"; if($i % 2 == 0) {echo " style='background-color: #ededed;'";} echo " onmouseover='searchItemHover(\"tr".$i."\", 1, \"".$i."\")' onmouseout='searchItemHover(\"tr".$i."\", 0, \"".$i."\")'>
 										<td>".$i."</td>
@@ -310,7 +304,7 @@ $start = intval($page) * 10 - 10;
 										<td>".$client['email']."</td>
 										<td style='text-align: center;'>".$location[0]."</td>
 										<td style='text-align: center;'>".$group[0]."</td>
-										<td style='text-align: center;'>".$inSend."</td>
+										<td style='text-align: center;'>".$client['disactivation_date']."</td>
 										<td>".$client['notes-']."</td>
 										<td style='text-align: center;'><a href='edit.php?id=".$client['id']."'><span class='redLink' style='font-size: 14px;'>Редактировать</span></a></td>
 										<td style='text-align: center;'><span class='redLink' style='font-size: 14px; cursor: pointer;' onclick='returnClient(\"".$client['id']."\")'>Вернуть</span></td>
