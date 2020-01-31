@@ -86,7 +86,7 @@ if($from <= $to) {
 							$previewResult = $mysqli->query("SELECT preview FROM actions WHERE id = '".$_POST['action']."'");
 							$preview = $previewResult->fetch_array(MYSQLI_NUM);
 
-							if($mysqli->query("UPDATE actions SET preview = '".$previewDBName."'")) {
+							if($mysqli->query("UPDATE actions SET preview = '".$previewDBName."' WHERE id = '".$_POST['action']."'")) {
 								$img = new SimpleImage($previewTmpName);
 								$img->resizeToWidth(200);
 								$img->save($previewUpload);
