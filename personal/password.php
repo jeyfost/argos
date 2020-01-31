@@ -280,7 +280,6 @@
 			}
 		?>
 
-
 		<div style="margin-top: 40px; width: 100%;">
 			<a href="login.php" class="basicLink">Я помню пароль!</a>
 		</div>

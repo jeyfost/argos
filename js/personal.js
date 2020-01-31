@@ -740,6 +740,38 @@ function sortBy(sort) {
 	});
 }
 
+function unsubscribe(hash) {
+	if(confirm("Вы уверены, что хотите отписаться от рассылки и потерять персональную скидку?")) {
+		$.ajax({
+			type: "POST",
+			data: {"hash": hash},
+			url: "/scripts/personal/ajaxUnsubscribe.php",
+			success: function (response) {
+                switch (response) {
+                    case "ok":
+                        $.notify("Вы были отписаны от рассылки. Заявка на аннулирование скидки отправлена менеджерам.", "success");
+
+                        setTimeout(function () {
+                            window.location.href = "/";
+                        }, 3000);
+                        break;
+                    case "hash":
+                        $.notify("Личный идентификатор пользователя указан с ошибкой. Попробуйте снова или обратитесь к нашим менеджерам.", "warn");
+                        break;
+                    case "failed":
+                        $.notify("Произошла ошибка. Попробуйте снова или обратитесь к нашим менеджерам.", "error");
+                        break;
+                    default:
+                        break;
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $.notify(textStatus + "; " + errorThrown, "error");
+            }
+		});
+	}
+}
+
 $(document).mouseup(function (e) {
 	var container = $("#innerSearchList");
 	if (document.getElementById('innerSearchInput') !== document.activeElement) {
