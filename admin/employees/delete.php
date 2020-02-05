@@ -201,7 +201,7 @@ if(!empty($_REQUEST['id'])) {
             <form id="deleteForm" method="post">
                 <label for="employeeSelect">Выберите сотрудника:</label>
                 <br />
-                <select id="employeeSelect" name="employee" onchange="window.location = 'edit.php?id=' + this.options[this.selectedIndex].value">
+                <select id="employeeSelect" name="employee" onchange="window.location = 'delete.php?id=' + this.options[this.selectedIndex].value">
                     <option value="">- Выберите сотрудника -</option>
                     <?php
                     $employeeResult = $mysqli->query("SELECT * FROM employees ORDER BY full_name");
@@ -212,7 +212,10 @@ if(!empty($_REQUEST['id'])) {
                 </select>
                 <?php
                 if(!empty($_REQUEST['id'])) {
-                    echo "<input type='button' class='button' style='margin: 0;' id='deleteEmployeeButton' onmouseover='buttonChange(\"deleteEmployeeButton\", 1)' onmouseout='buttonChange(\"deleteEmployeeButton\", 0)' onclick='deleteEmployee()' value='Удалить' />";
+                    echo "
+                        <br /><br />
+                        <input type='button' class='button' style='margin: 0;' id='deleteEmployeeButton' onmouseover='buttonChange(\"deleteEmployeeButton\", 1)' onmouseout='buttonChange(\"deleteEmployeeButton\", 0)' onclick='deleteEmployee()' value='Удалить' />
+                        ";
                 }
                 ?>
             </form>
