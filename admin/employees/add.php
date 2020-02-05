@@ -1,10 +1,10 @@
 <?php
-    /**
-     * Created by PhpStorm.
-     * User: jeyfost
-     * Date: 05.02.2020
-     * Time: 13:44
-     */
+/**
+ * Created by PhpStorm.
+ * User: jeyfost
+ * Date: 05.02.2020
+ * Time: 14:01
+ */
 
     session_start();
     include("../../scripts/connect.php");
@@ -43,6 +43,8 @@
     <script type="text/javascript" src="/js/lightview/js/lightview/lightview.js"></script>
     <script type="text/javascript" src="/js/common.js"></script>
     <script type="text/javascript" src="/js/admin/admin.js"></script>
+    <script type="text/javascript" src="/js/admin/employees/add.js"></script>
+    <script type="text/javascript" src="/js/notify.js"></script>
 
     <style>
         #page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -181,9 +183,30 @@
             <br />
             <h2>&darr; Для продолжения работы выберите раздел</h2>
             <a href="list.php"><input type="button" class="button" id="listButton" value="Список сотрудников" onmouseover="buttonChange('listButton', 1)" onmouseout="buttonChange('listButton', 0)" style="margin-left: 0;" /></a>
-            <a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
+            <a href="add.php"><input type="button" class="buttonActive" id="addButton" value="Добавление" /></a>
             <a href="edit.php"><input type="button" class="button" id="editButton" value="Редактирование" onmouseover="buttonChange('editButton', 1)" onmouseout="buttonChange('editButton', 0)" /></a>
             <a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
+            <div style="clear: both;"></div>
+            <br /><br />
+            <form id="addForm" method="post">
+                <label for="fullNameInput">ФИО:</label>
+                <br />
+                <input type='text' id='fullNameInput' name='fullName' />
+                <br /><br />
+                <label for="nameInput">Имя:</label>
+                <br />
+                <input type='text' id='nameInput' name='name' />
+                <br /><br />
+                <label for="positionInput">Должность:</label>
+                <br />
+                <input type='text' id='positionInput' name='position' />
+                <br /><br />
+                <label for="phoneInput">Номер телефона:</label>
+                <br />
+                <input type='text' id='phoneInput' name='phone' />
+                <br /><br />
+                <input type='button' class='button' style='margin: 0;' id='addEmployeeButton' onmouseover='buttonChange("addEmployeeButton", 1)' onmouseout='buttonChange("addEmployeeButton", 0)' onclick='addEmployee()' value='Добавить' />
+            </form>
             <div style="clear: both;"></div>
         </div>
         <div style="clear: both;"></div>
