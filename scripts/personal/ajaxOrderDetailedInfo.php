@@ -238,6 +238,19 @@ if($actionGoodsQuantity > 0) {
 echo "
 	<div style='float: right;'><b>Общая стоимость: </b><span id='totalPriceText'>".$total."</span></div>
 	<br /><br />
+	<select id='employeeSelect' name='employee' style='float: right;'>
+	    <option value=''>- Выберите сотрудника, принимающего заказ -</option>
+";
+
+$employeeResult = $mysqli->query("SELECT * FROM employees ORDER BY full_name");
+while($employee = $employeeResult->fetch_assoc()) {
+    echo "<option value='".$employee['id']."'>".$employee['full_name']."</option>";
+}
+
+echo "
+    </select>
+    <div style='clear: both;'></div>
+	<br /><br />
 	<input type='button' id='acceptButton' onclick='acceptOrder(\"".$id."\")' value='Принять заказ' onmouseover='buttonChange(\"acceptButton\", 1)' onmouseout='buttonChange(\"acceptButton\", 0)'>
 ";
 

@@ -181,8 +181,16 @@ if($actionGoodsQuantity > 0) {
 	echo "<span style='float: right; font-size: 14px; color: #ff282b;'>Ваша личная скидка не действует на акционные товары.</span><br /><br />";
 }
 
+$employeeIDResult = $mysqli->query("SELECT manager FROM orders_info WHERE id = '".$id."'");
+$employeeID = $employeeIDResult->fetch_array(MYSQLI_NUM);
+
+$employeeResult = $mysqli->query("SELECT * FROM employees WHERE id = '".$employeeID[0]."'");
+$employee = $employeeResult->fetch_assoc();
+
 echo "
 	<div style='float: right;'><b>Общая стоимость в момент принятия заказа: </b><span id='totalPriceText'>".$total."</span></div>
+	<br /><br />
+	<div style='float: right; text-align: right;'><b>Сотрудник, принявший заказ:</b><br /><span id='totalPriceText'>".$employee['phone'].", ".$employee['name']."</span></div>
 ";
 
 $commentsCountResult = $mysqli->query("SELECT COUNT(id) FROM orders_comments WHERE order_id = '".$id."'");
@@ -197,6 +205,7 @@ if($commentsCount[0] == 0) {
 	$commentsResult = $mysqli->query("SELECT * FROM orders_comments WHERE order_id = '".$id."' ORDER BY date");
 
 	echo "
+        <br /><br />
 		<div id='orderCommentsField'>
 			<h3>Комментарии к заказу</h3>
 			<hr /><br />

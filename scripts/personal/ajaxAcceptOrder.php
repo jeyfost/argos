@@ -9,6 +9,7 @@ if($_SESSION['userID'] != 1) {
 include("../connect.php");
 
 $id = $mysqli->real_escape_string($_POST['id']);
+$empployee = $mysqli->real_escape_string($_POST['employee']);
 
 $userResult = $mysqli->query("SELECT user_id FROM orders_info WHERE id = '".$id."'");
 $user = $userResult->fetch_array(MYSQLI_NUM);
@@ -147,15 +148,21 @@ while($orderItem = $orderItemResult->fetch_assoc()) {
 	$i++;
 }
 
-if($mysqli->query("UPDATE orders_info SET summ = '".$total."', proceed_date = '".date('d-m-Y H:i:s')."', status = '1' WHERE id = '".$id."'")) {
-	sendMail($customer['email'], $id, $goods, $total);
+if($mysqli->query("UPDATE orders_info SET summ = '".$total."', proceed_date = '".date('d-m-Y H:i:s')."', status = '1', manager = '".$empployee."' WHERE id = '".$id."'")) {
+    $employeeResult = $mysqli->query("SELECT * FROM employees WHERE id = '".$empployee."'");
+    $employee = $employeeResult->fetch_assoc();
+
+    $name = $employee['name'];
+    $phone = $employee['phone'];
+
+	sendMail($customer['email'], $id, $goods, $total, $name, $phone);
 
 	echo "a";
 } else {
 	echo "b";
 }
 
-function sendMail($email, $id, $goods, $summ) {
+function sendMail($email, $id, $goods, $summ, $name, $phone) {
 	$from = "ЧТУП Аргос-ФМ <no-reply@argos-fm.by>";
 	$reply = "no-reply@argos-fm.by";
 	$subject = "Заказ №".$id." был принят";
@@ -206,6 +213,8 @@ function sendMail($email, $id, $goods, $summ) {
 					</center>
 					<br /><br />
 					<div style='text-align: center;'><b>Итоговая стоимость заказа: </b>".$summ." руб.</div>
+					<br /><br />
+					<div style='text-align: center;'><b>Сотрудник, принявший заказ: </b>".$phone.", ".$name."</div>
 					<p>Полную детализацию заказа можно посмотреть на <a href='https://argos-fm.by/personal/order.php?id=".$id."' target='_blank' style='color: #ff282b;'>этой странице</a>, предварительно авторизовавшись на сайте.</p>
 					<br /><hr /><br />
 					<p style='font-size: 12px;'>Это автоматическая рассылка. Отвечать на неё не нужно.</p>

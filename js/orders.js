@@ -225,71 +225,80 @@ function selectClient(file_name) {
 }
 
 function acceptOrder(id) {
-	$.ajax({
-		type: "POST",
-		data: {"id": id},
-		url: "/scripts/personal/ajaxAcceptOrder.php",
-		success: function(response) {
-			var order_response = $('#orderResponse');
-			var response_filed = $('#responseField');
+	var employee = $('#employeeSelect').val();
 
-			if(response === "a") {
-				response_filed.css("opacity", 0);
-				setTimeout(function() {
-					response_filed.html("");
-				}, 300);
+	if(employee !== '') {
+        $.ajax({
+            type: "POST",
+            data: {
+                "id": id,
+                "employee": employee
+            },
+            url: "/scripts/personal/ajaxAcceptOrder.php",
+            success: function(response) {
+                var order_response = $('#orderResponse');
+                var response_filed = $('#responseField');
 
-				selectClient();
-				if(order_response.css('opacity') === 1) {
-					order_response.css('opacity', 0);
-					setTimeout(function() {
-						order_response.css('color', '#53acff');
-						order_response.html("Заказ был успешно принят.<br /><br />");
-						order_response.css('opacity', 1);
-					}, 300);
-				} else {
-					order_response.css('color', '#53acff');
-					order_response.html("Заказ был успешно принят.<br /><br />");
-					order_response.css('opacity', 1);
-				}
+                if(response === "a") {
+                    response_filed.css("opacity", 0);
+                    setTimeout(function() {
+                        response_filed.html("");
+                    }, 300);
 
-				$.ajax({
-					type: 'POST',
-					url: "/scripts/personal/ajaxRebuildHistoryTable.php",
-					success: function(r) {
-						$('#personalContent').html(r);
-					}
-				});
+                    selectClient();
+                    if(order_response.css('opacity') === 1) {
+                        order_response.css('opacity', 0);
+                        setTimeout(function() {
+                            order_response.css('color', '#53acff');
+                            order_response.html("Заказ был успешно принят.<br /><br />");
+                            order_response.css('opacity', 1);
+                        }, 300);
+                    } else {
+                        order_response.css('color', '#53acff');
+                        order_response.html("Заказ был успешно принят.<br /><br />");
+                        order_response.css('opacity', 1);
+                    }
 
-				$.ajax({
-					type: "POST",
-					url: "/scripts/personal/ajaxAdminOrdersQuantity.php",
-					success: function (quantity) {
-						if(quantity > 0) {
-							$('#basketLabel').html(quantity);
-						} else {
-							$('#basketIMG').css('display', 'none');
-							$('#basketLabel').css('display', 'none');
-							$('#basketLabel').html('');
-						}
-					}
-				});
-			} else {
-				if(order_response.css('opacity') === 1) {
-					order_response.css('opacity', 0);
-					setTimeout(function() {
-						order_response.css('color', '#ff282b');
-						order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
-						order_response.css('opacity', 1);
-					}, 300);
-				} else {
-					order_response.css('color', '#ff282b');
-					order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
-					order_response.css('opacity', 1);
-				}
-			}
-		}
-	});
+                    $.ajax({
+                        type: 'POST',
+                        url: "/scripts/personal/ajaxRebuildHistoryTable.php",
+                        success: function(r) {
+                            $('#personalContent').html(r);
+                        }
+                    });
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/scripts/personal/ajaxAdminOrdersQuantity.php",
+                        success: function (quantity) {
+                            if(quantity > 0) {
+                                $('#basketLabel').html(quantity);
+                            } else {
+                                $('#basketIMG').css('display', 'none');
+                                $('#basketLabel').css('display', 'none');
+                                $('#basketLabel').html('');
+                            }
+                        }
+                    });
+                } else {
+                    if(order_response.css('opacity') === 1) {
+                        order_response.css('opacity', 0);
+                        setTimeout(function() {
+                            order_response.css('color', '#ff282b');
+                            order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
+                            order_response.css('opacity', 1);
+                        }, 300);
+                    } else {
+                        order_response.css('color', '#ff282b');
+                        order_response.html("Произошла ошибка. Попробуйте снова.<br /><br />");
+                        order_response.css('opacity', 1);
+                    }
+                }
+            }
+        });
+	} else {
+		$.notify("Выберите сотрудника, принимающего заказ.", "error");
+	}
 }
 
 function cancelOrder(id) {
