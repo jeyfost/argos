@@ -14,7 +14,7 @@ $name = $mysqli->real_escape_string($_POST['name']);
 $position = $mysqli->real_escape_string($_POST['position']);
 $phone = $mysqli->real_escape_string($_POST['phone']);
 
-if($mysqli->query("UPDATE employees SET full_name = '".$fullName."', name = '".$name."', position = '".$position."', phone = '".$phone."'")) {
+if($mysqli->query("UPDATE employees SET full_name = '".$fullName."', name = '".$name."', position = '".$position."', phone = '".$phone."' WHERE id = '".$id."'")) {
     echo "ok";
 } else {
     echo "failed";

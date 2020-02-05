@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: jeyfost
  * Date: 05.02.2020
- * Time: 14:52
+ * Time: 15:20
  */
 
 session_start();
@@ -25,7 +25,7 @@ if(!empty($_REQUEST['id'])) {
     $employeeCheck = $employeeCheckResult->fetch_array(MYSQLI_NUM);
 
     if($employeeCheck[0] == 0) {
-        header("Location: edit.php");
+        header("Location: delete.php");
     }
 }
 
@@ -53,7 +53,7 @@ if(!empty($_REQUEST['id'])) {
     <script type="text/javascript" src="/js/lightview/js/lightview/lightview.js"></script>
     <script type="text/javascript" src="/js/common.js"></script>
     <script type="text/javascript" src="/js/admin/admin.js"></script>
-    <script type="text/javascript" src="/js/admin/employees/edit.js"></script>
+    <script type="text/javascript" src="/js/admin/employees/delete.js"></script>
     <script type="text/javascript" src="/js/notify.js"></script>
 
     <style>
@@ -194,48 +194,26 @@ if(!empty($_REQUEST['id'])) {
             <h2>&darr; Для продолжения работы выберите раздел</h2>
             <a href="list.php"><input type="button" class="button" id="listButton" value="Список сотрудников" onmouseover="buttonChange('listButton', 1)" onmouseout="buttonChange('listButton', 0)" style="margin-left: 0;" /></a>
             <a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
-            <a href="edit.php"><input type="button" class="buttonActive" id="editButton" value="Редактирование" /></a>
-            <a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
+            <a href="edit.php"><input type="button" class="button" id="editButton" value="Редактирование" onmouseover="buttonChange('editButton', 1)" onmouseout="buttonChange('editButton', 0)" /></a>
+            <a href="delete.php"><input type="button" class="buttonActive" id="deleteButton" value="Удаление" /></a>
             <div style="clear: both;"></div>
             <br /><br />
-            <form id="editForm" method="post">
+            <form id="deleteForm" method="post">
                 <label for="employeeSelect">Выберите сотрудника:</label>
                 <br />
                 <select id="employeeSelect" name="employee" onchange="window.location = 'edit.php?id=' + this.options[this.selectedIndex].value">
                     <option value="">- Выберите сотрудника -</option>
                     <?php
-                        $employeeResult = $mysqli->query("SELECT * FROM employees ORDER BY full_name");
-                        while($employee = $employeeResult->fetch_assoc()) {
-                            echo "<option value='".$employee['id']."'"; if($_REQUEST['id'] == $employee['id']) {echo " selected";} echo ">".$employee['full_name']."</option>";
-                        }
+                    $employeeResult = $mysqli->query("SELECT * FROM employees ORDER BY full_name");
+                    while($employee = $employeeResult->fetch_assoc()) {
+                        echo "<option value='".$employee['id']."'"; if($_REQUEST['id'] == $employee['id']) {echo " selected";} echo ">".$employee['full_name']."</option>";
+                    }
                     ?>
                 </select>
                 <?php
-                    if(!empty($_REQUEST['id'])) {
-                        $employeeResult = $mysqli->query("SELECT * FROM employees WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
-                        $employee = $employeeResult->fetch_assoc();
-
-                        echo "
-                            <br /><br />
-                            <label for='fullNameInput'>ФИО:</label>
-                            <br />
-                            <input type='text' id='fullNameInput' name='fullName' value='".$employee['full_name']."' />
-                            <br /><br />
-                            <label for='nameInput'>Имя:</label>
-                            <br />
-                            <input type='text' id='nameInput' name='name' value='".$employee['name']."' />
-                            <br /><br />
-                            <label for='positionInput'>Должность:</label>
-                            <br />
-                            <input type='text' id='positionInput' name='position' value='".$employee['position']."' />
-                            <br /><br />
-                            <label for='phoneInput'>Номер телефона:</label>
-                            <br />
-                            <input type='text' id='phoneInput' name='phone' value='".$employee['phone']."' />
-                            <br /><br />
-                            <input type='button' class='button' style='margin: 0;' id='editEmployeeButton' onmouseover='buttonChange(\"editEmployeeButton\", 1)' onmouseout='buttonChange(\"editEmployeeButton\", 0)' onclick='editEmployee()' value='Редактировать' />
-                        ";
-                    }
+                if(!empty($_REQUEST['id'])) {
+                    echo "<input type='button' class='button' style='margin: 0;' id='deleteEmployeeButton' onmouseover='buttonChange(\"deleteEmployeeButton\", 1)' onmouseout='buttonChange(\"deleteEmployeeButton\", 0)' onclick='deleteEmployee()' value='Удалить' />";
+                }
                 ?>
             </form>
             <div style="clear: both;"></div>
