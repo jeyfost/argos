@@ -133,6 +133,13 @@ if(isset($_SESSION['userID'])) {
 				<div class="menuText">Клиентская база</div>
 			</div>
 		</a>
+        <div class="line"></div>
+        <a href="/admin/employees/">
+            <div class="menuPoint">
+                <div class="menuIMG"><img src="/img/system/admin/employees.png" /></div>
+                <div class="menuText">Сотрудники</div>
+            </div>
+        </a>
 		<div style="clear: both;"></div>
 		<div class="line"></div>
 		<a href="/admin/email/">

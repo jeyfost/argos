@@ -179,6 +179,13 @@ if(!empty($_REQUEST['subcategory2'])) {
 			</div>
 		</a>
 		<div style="clear: both;"></div>
+        <div class="line"></div>
+        <a href="/admin/employees/">
+            <div class="menuPoint">
+                <div class="menuIMG"><img src="/img/system/admin/employees.png" /></div>
+                <div class="menuText">Сотрудники</div>
+            </div>
+        </a>
 		<div class="line"></div>
 		<a href="/admin/email/">
 			<div class="menuPoint">

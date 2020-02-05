@@ -199,6 +199,13 @@ $start = intval($page) * 10 - 10;
 			</div>
 		</a>
 		<div style="clear: both;"></div>
+        <div class="line"></div>
+        <a href="/admin/employees/">
+            <div class="menuPoint">
+                <div class="menuIMG"><img src="/img/system/admin/employees.png" /></div>
+                <div class="menuText">Сотрудники</div>
+            </div>
+        </a>
 		<div class="line"></div>
 		<a href="/admin/email/">
 			<div class="menuPoint">
@@ -233,7 +240,7 @@ $start = intval($page) * 10 - 10;
 			<div style="clear: both;"></div>
 			<br />
 			<h2>Отписавшиеся от рассылки</h2>
-			<a href="database.php"><input type="button" class="button" id="databaseButton" style="margin-left: 0;" value="База данных" onmouseover="buttonChange('databaseButton', 1)" onmouseout="buttonChange('databaseButton', 0)" /></a>
+			<a href="database.php"><input type="button" class="button" id="databaseButton" style="margin-left: 0;" value="Клиентская база" onmouseover="buttonChange('databaseButton', 1)" onmouseout="buttonChange('databaseButton', 0)" /></a>
 			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
 			<a href="inactive.php"><input type="button" class="buttonActive" id="inactiveButton" value="Кто отписался?" /></a>
 			<div style="clear: both;"></div>

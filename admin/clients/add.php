@@ -137,6 +137,13 @@ if(isset($_SESSION['userID'])) {
 			</div>
 		</a>
 		<div style="clear: both;"></div>
+        <div class="line"></div>
+        <a href="/admin/employees/">
+            <div class="menuPoint">
+                <div class="menuIMG"><img src="/img/system/admin/employees.png" /></div>
+                <div class="menuText">Сотрудники</div>
+            </div>
+        </a>
 		<div class="line"></div>
 		<a href="/admin/email/">
 			<div class="menuPoint">
@@ -171,7 +178,7 @@ if(isset($_SESSION['userID'])) {
 			<div style="clear: both;"></div>
 			<br />
 			<h2>Добавление записи в клиентскую базу</h2>
-			<a href="database.php"><input type="button" class="button" id="databaseButton" style="margin-left: 0;" value="База данных" onmouseover="buttonChange('databaseButton', 1)" onmouseout="buttonChange('databaseButton', 0)" /></a>
+			<a href="database.php"><input type="button" class="button" id="databaseButton" style="margin-left: 0;" value="Клиентская база" onmouseover="buttonChange('databaseButton', 1)" onmouseout="buttonChange('databaseButton', 0)" /></a>
 			<a href="add.php"><input type="button" class="buttonActive" id="addButton" value="Добавление" /></a>
 			<a href="inactive.php"><input type="button" class="button" id="inactiveButton" value="Кто отписался?" onmouseover="buttonChange('inactiveButton', 1)" onmouseout="buttonChange('inactiveButton', 0)" /></a>
 			<div style="clear: both;"></div>

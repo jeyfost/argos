@@ -1,18 +1,18 @@
 <?php
 
-session_start();
-include("../../scripts/connect.php");
+    session_start();
+    include("../../scripts/connect.php");
 
-if(isset($_SESSION['userID'])) {
-	if($_SESSION['userID'] != 1) {
-		header("Location: ../../");
-	} else {
-		$userLoginResult = $mysqli->query("SELECT login from users WHERE id = '".$_SESSION['userID']."'");
-		$userLogin = $userLoginResult->fetch_array(MYSQLI_NUM);
-	}
-} else {
-	header("Location: ../index.php");
-}
+    if(isset($_SESSION['userID'])) {
+        if($_SESSION['userID'] != 1) {
+            header("Location: ../../");
+        } else {
+            $userLoginResult = $mysqli->query("SELECT login from users WHERE id = '".$_SESSION['userID']."'");
+            $userLogin = $userLoginResult->fetch_array(MYSQLI_NUM);
+        }
+    } else {
+        header("Location: ../index.php");
+    }
 
 ?>
 
@@ -134,8 +134,15 @@ if(isset($_SESSION['userID'])) {
 			</div>
 		</a>
 		<div style="clear: both;"></div>
+        <div class="line"></div>
+        <a href="/admin/employees/">
+            <div class="menuPoint">
+                <div class="menuIMG"><img src="/img/system/admin/employees.png" /></div>
+                <div class="menuText">Сотрудники</div>
+            </div>
+        </a>
 		<div class="line"></div>
-		<a href="/email/">
+		<a href="/admin/email/">
 			<div class="menuPoint">
 				<div class="menuIMG"><img src="/img/system/admin/mail.png" /></div>
 				<div class="menuText">Email-рассылки</div>
