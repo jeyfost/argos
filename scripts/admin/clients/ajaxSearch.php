@@ -21,6 +21,9 @@ if($searchResult->num_rows > 0) {
 		$locationResult = $mysqli->query("SELECT name FROM locations WHERE id = '".$search['location']."'");
 		$location = $locationResult->fetch_array(MYSQLI_NUM);
 
+		$groupResult = $mysqli->query("SELECT * FROM filters WHERE id = '".$search['filter']."'");
+		$group = $groupResult->fetch_assoc();
+
 		echo "
 			<a href='edit.php?id=".$search['id']."' class='basicText'>
 				<div class='searchItem' id='si".$search['id']."' style='padding: 5px;"; if($i % 2 == 0) {echo " background-color: #d9d9d9";} echo "' onmouseover='searchItemHover(\"si".$search['id']."\", 1, \"".$i."\")' onmouseout='searchItemHover(\"si".$search['id']."\", 0, \"".$i."\")' title='Редактировать'>
@@ -84,6 +87,18 @@ if($searchResult->num_rows > 0) {
 							<b>Дата отписки:</b> ".$date."
 						";
 					}
+
+					echo "
+                        <br />
+					    <b>Группа:</b> ".$group['name']."
+					";
+
+					if(!empty($search['notes'])) {
+					    echo "
+					        <br />
+						    <b>Заметки:</b> ".$search['notes']."
+					    ";
+                    }
 
 					echo "
 				</div>
