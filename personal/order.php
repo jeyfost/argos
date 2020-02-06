@@ -12,9 +12,9 @@ if(!isset($_SESSION['userID'])) {
 
 if(empty($_REQUEST['id'])) {
 	if($_SESSION['userID'] == 1) {
-		header("Location: ../orders.php?section=1&p=1");
+		header("Location: orders.php?section=1&p=1");
 	} else {
-		header("Location: ../basket.php?section=1");
+		header("Location: basket.php?section=1");
 	}
 } else {
 	$id = $mysqli->real_escape_string($_REQUEST['id']);
@@ -24,9 +24,9 @@ if(empty($_REQUEST['id'])) {
 
 	if($orderCheck[0] == 0) {
 		if($_SESSION['userID'] == 1) {
-			header("Location: ../orders.php?section=1&p=1");
+			header("Location: orders.php?section=1&p=1");
 		} else {
-			header("Location: ../basket.php?section=1");
+			header("Location: basket.php?section=1");
 		}
 	}
 }
@@ -36,7 +36,7 @@ $order = $orderResult->fetch_assoc();
 
 if($_SESSION['userID'] != 1) {
 	if($order['user_id'] != $_SESSION['userID']) {
-		header("Location: ../basket.php?section=1");
+		header("Location: basket.php?section=1");
 	}
 }
 

@@ -9,7 +9,7 @@ if($_SESSION['userID'] != 1) {
 include("../connect.php");
 
 $id = $mysqli->real_escape_string($_POST['id']);
-$empployee = $mysqli->real_escape_string($_POST['employee']);
+$employee = $mysqli->real_escape_string($_POST['employee']);
 
 $userResult = $mysqli->query("SELECT user_id FROM orders_info WHERE id = '".$id."'");
 $user = $userResult->fetch_array(MYSQLI_NUM);
@@ -148,8 +148,8 @@ while($orderItem = $orderItemResult->fetch_assoc()) {
 	$i++;
 }
 
-if($mysqli->query("UPDATE orders_info SET summ = '".$total."', proceed_date = '".date('d-m-Y H:i:s')."', status = '1', manager = '".$empployee."' WHERE id = '".$id."'")) {
-    $employeeResult = $mysqli->query("SELECT * FROM employees WHERE id = '".$empployee."'");
+if($mysqli->query("UPDATE orders_info SET summ = '".$total."', proceed_date = '".date('d-m-Y H:i:s')."', status = '1', manager = '".$employee."' WHERE id = '".$id."'")) {
+    $employeeResult = $mysqli->query("SELECT * FROM employees WHERE id = '".$employee."'");
     $employee = $employeeResult->fetch_assoc();
 
     $name = $employee['name'];

@@ -250,6 +250,9 @@ while($employee = $employeeResult->fetch_assoc()) {
 echo "
     </select>
     <div style='clear: both;'></div>
+    <div id='orderResponse' style='float: right;'></div>
+    <div id='responseField' style='float: right;'></div>
+    <div style='clear: both;'></div>
 	<br /><br />
 	<input type='button' id='acceptButton' onclick='acceptOrder(\"".$id."\")' value='Принять заказ' onmouseover='buttonChange(\"acceptButton\", 1)' onmouseout='buttonChange(\"acceptButton\", 0)'>
 ";
