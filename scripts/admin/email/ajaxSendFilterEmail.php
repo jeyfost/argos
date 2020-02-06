@@ -70,7 +70,7 @@ if($filesErrors == 0) {
 
 	$clientResult = $mysqli->query("SELECT * FROM clients WHERE location = '".$location."' AND in_send = '1' AND filter = '".$group."' LIMIT ".$start.", 10");
 	while($client = $clientResult->fetch_assoc()) {
-		$fullMessage = $baseMessage."--PHP-mixed-".$hash."\n\n"."--------------------\n\nВесь ассортимент продукции можно посмотреть на нашем сайте: www.argos-fm.by\nА также уточнить наличие по телефону: +375 (222) 707-707 или посетить нас по адресу: Республика Беларусь, г. Могилёв, ул. Залуцкого, д.21\n\nМы всегда рады сотрудничеству с Вами!\n\nЕсли вы не хотите в дальнейшем получать эту рассылку, вы можете отписаться, перейдя по <a href='https://argos-fm.by/test/scripts/admin/email/stop.php?hash=".$client['hash']."' target='_blank'>это ссылке</a>.\n";
+		$fullMessage = $baseMessage."--PHP-mixed-".$hash."\n\n"."--------------------\n\nВесь ассортимент продукции можно посмотреть на нашем сайте: www.argos-fm.by\nА также уточнить наличие по телефону: +375 (222) 707-707 или посетить нас по адресу: Республика Беларусь, г. Могилёв, ул. Залуцкого, д.21\n\nМы всегда рады сотрудничеству с Вами!\n\nЕсли вы не хотите в дальнейшем получать эту рассылку, вы можете отписаться, перейдя по <a href='https://argos-fm.by/personal/unsubscribe.php?hash=".$client['hash']."' target='_blank'>это ссылке</a>.\n";
 		$mailCount++;
 
 		if(mail($client['email'], $subject, $fullMessage, $headers)) {
