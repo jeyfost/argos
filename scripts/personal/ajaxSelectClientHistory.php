@@ -19,6 +19,7 @@ if($orderCount[0] > 0) {
 			<tr class='headTR'>
 				<td>№</td>
 				<td>Заказ</td>
+				<td style='cursor: default;'><i class='fa fa-folder-open-o' aria-hidden='true'></i></td>
 				<td>Клиент</td>
 				<td>Дата оформления</td>
 				<td>Дата принятия</td>
@@ -33,6 +34,7 @@ if($orderCount[0] > 0) {
 				<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 					<td>".$j."</td>
 						<td><span class='tdLink' onclick='showOrderDetailsHistory(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
+						<td><a href='order.php?id=".$order['id']."' target='_blank' class='font-awesome-link' title='Открыть детализацию заказа в новом окне'><i class='fa fa-folder-open-o' aria-hidden='true'></i></a></td>
 						<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
 						<td>".dateFormattedDayToYear($order['send_date'])."</td>
 						<td>".dateFormattedDayToYear($order['proceed_date'])."</td>
@@ -44,6 +46,7 @@ if($orderCount[0] > 0) {
 			<tr class='headTR'>
 				<td>№</td>
 				<td>Заказ</td>
+				<td style='cursor: default;'><i class='fa fa-folder-open-o' aria-hidden='true'></i></td>
 				<td>Клиент</td>
 				<td>Дата оформления</td>
 				<td>Дата принятия</td>
@@ -59,6 +62,7 @@ if($orderCount[0] > 0) {
 					<tr"; if($j % 2 == 0) {echo " style='background-color: #ddd;'";} echo ">
 						<td>".$j."</td>
 						<td><span class='tdLink' onclick='showOrderDetailsHistory(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
+						<td><a href='order.php?id=".$order['id']."' target='_blank' class='font-awesome-link' title='Открыть детализацию заказа в новом окне'><i class='fa fa-folder-open-o' aria-hidden='true'></i></a></td>
 						<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
 						<td>".dateFormattedDayToYear($order['send_date'])."</td>
 						<td>".dateFormattedDayToYear($order['proceed_date'])."</td>
