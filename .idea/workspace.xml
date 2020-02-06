@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/goods/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/goods/edit.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,32 +55,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mail.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contacts/mail.php">
+      <file leaf-file-name="add.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/goods/add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="346" column="90" selection-start-line="346" selection-start-column="90" selection-end-line="346" selection-end-column="90" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="-346">
+              <caret line="390" column="64" selection-start-line="390" selection-start-column="39" selection-end-line="390" selection-end-column="64" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mail.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/mail.js">
+      <file leaf-file-name="edit.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/goods/edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-176">
-              <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxSendMail.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="45" column="12" lean-forward="true" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+            <state relative-caret-position="402">
+              <caret line="550" column="53" selection-start-line="550" selection-start-column="53" selection-end-line="550" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -96,14 +84,13 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Артик</find>
       <find>Артику</find>
       <find>ceil(</find>
       <find>$cli</find>
       <find>Дочерние</find>
       <find>show</find>
       <find>Удали</find>
-      <find>- Вы</find>
+      <find />
       <find>subcA</find>
       <find>breadC</find>
       <find>&amp;p=</find>
@@ -113,12 +100,12 @@
       <find>Магазин</find>
       <find>sectio</find>
       <find>sort</find>
-      <find>Цена за</find>
+      <find />
       <find>error</find>
       <find>UPDATE</find>
       <find>База</find>
-      <find>база да</find>
-      <find>База да</find>
+      <find />
+      <find />
       <find>база</find>
       <find>&quot;/email</find>
       <find>searchItemHover</find>
@@ -126,6 +113,7 @@
       <find>showOrderD</find>
       <find>acceptOrder</find>
       <find>sendMail</find>
+      <find>stop.php</find>
     </findStrings>
     <replaceStrings>
       <replace>catalogue/index.php</replace>
@@ -142,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/albums/delete.php" />
         <option value="$PROJECT_DIR$/admin/albums/edit.php" />
         <option value="$PROJECT_DIR$/admin/albums/index.php" />
         <option value="$PROJECT_DIR$/admin/clients/add.php" />
@@ -155,7 +142,6 @@
         <option value="$PROJECT_DIR$/admin/goods/add.php" />
         <option value="$PROJECT_DIR$/admin/goods/codes.php" />
         <option value="$PROJECT_DIR$/admin/goods/delete.php" />
-        <option value="$PROJECT_DIR$/admin/goods/edit.php" />
         <option value="$PROJECT_DIR$/admin/goods/index.php" />
         <option value="$PROJECT_DIR$/admin/goods/update.php" />
         <option value="$PROJECT_DIR$/admin/news/add.php" />
@@ -193,6 +179,8 @@
         <option value="$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php" />
         <option value="$PROJECT_DIR$/js/orders.js" />
         <option value="$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php" />
+        <option value="$PROJECT_DIR$/scripts/admin/email/ajaxSendFilterEmail.php" />
+        <option value="$PROJECT_DIR$/admin/goods/edit.php" />
       </list>
     </option>
   </component>
@@ -213,7 +201,7 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-4" />
+    <option name="x" value="-3" />
     <option name="width" value="1612" />
     <option name="height" value="876" />
   </component>
@@ -235,18 +223,13 @@
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
-              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="contacts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="goods" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -520,21 +503,7 @@
       <workItem from="1580738548799" duration="307000" />
       <workItem from="1580897511000" duration="13986000" />
       <workItem from="1580965505958" duration="898000" />
-      <workItem from="1580973684386" duration="1563000" />
-    </task>
-    <task id="LOCAL-00276" summary="Убрана строка &quot;Ваша личная скидка: 0%&quot;, если скидки у покупателя нет">
-      <created>1570616473845</created>
-      <option name="number" value="00276" />
-      <option name="presentableId" value="LOCAL-00276" />
-      <option name="project" value="LOCAL" />
-      <updated>1570616473845</updated>
-    </task>
-    <task id="LOCAL-00277" summary="Добавлена информация о наличии товара на складе">
-      <created>1570618328906</created>
-      <option name="number" value="00277" />
-      <option name="presentableId" value="LOCAL-00277" />
-      <option name="project" value="LOCAL" />
-      <updated>1570618328906</updated>
+      <workItem from="1580973684386" duration="3536000" />
     </task>
     <task id="LOCAL-00278" summary="Убрана возможность добавления в корзину товаров, если не указана их стоимость или их нет на складе">
       <created>1570620896485</created>
@@ -865,11 +834,25 @@
       <option name="project" value="LOCAL" />
       <updated>1580965777627</updated>
     </task>
-    <option name="localTasksCounter" value="325" />
+    <task id="LOCAL-00325" summary="При сохранении письма в БД теперь сохраняется и дата отправки сообщения">
+      <created>1580976361326</created>
+      <option name="number" value="00325" />
+      <option name="presentableId" value="LOCAL-00325" />
+      <option name="project" value="LOCAL" />
+      <updated>1580976361327</updated>
+    </task>
+    <task id="LOCAL-00326" summary="Исправлены ссылки на отписку от рассылки">
+      <created>1580977016946</created>
+      <option name="number" value="00326" />
+      <option name="presentableId" value="LOCAL-00326" />
+      <option name="project" value="LOCAL" />
+      <updated>1580977016946</updated>
+    </task>
+    <option name="localTasksCounter" value="327" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="788934000" />
+    <option name="totallyTimeSpent" value="790907000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -892,9 +875,10 @@
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32341" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22236504" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22236504" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.117609255" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.117609255" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -907,7 +891,6 @@
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32882273" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -943,8 +926,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправлено время работы магазинов" />
-    <MESSAGE value="Добавлен текст в разделе «Сотрудничество»" />
     <MESSAGE value="Добавлен новый магазин" />
     <MESSAGE value="Исправлены некоторые адреса ссылок" />
     <MESSAGE value="Исправлен скрипт подсчёта адресов в клиентской базе, доступных для рассылки" />
@@ -968,7 +949,9 @@
     <MESSAGE value="Добавлен раздел со списком сотрудников принимающих заказы" />
     <MESSAGE value="Добавлена возможность указать сотрудника, принявшего заказ" />
     <MESSAGE value="При сохранении письма в БД теперь сохраняется и тема сообщения" />
-    <option name="LAST_COMMIT_MESSAGE" value="При сохранении письма в БД теперь сохраняется и тема сообщения" />
+    <MESSAGE value="При сохранении письма в БД теперь сохраняется и дата отправки сообщения" />
+    <MESSAGE value="Исправлены ссылки на отписку от рассылки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлены ссылки на отписку от рассылки" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1033,27 +1016,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/vacancies/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="154" column="12" selection-start-line="154" selection-start-column="12" selection-end-line="154" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/vacancies/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="142" column="12" selection-start-line="142" selection-start-column="12" selection-end-line="142" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/achievements/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="144" column="12" selection-start-line="144" selection-start-column="12" selection-end-line="144" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/achievements/delete.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1213,13 +1175,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/goods/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/employees/edit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1361,10 +1316,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/scripts/admin/email/stop.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="181" column="42" selection-start-line="181" selection-start-column="42" selection-end-line="181" selection-end-column="42" />
+        <state relative-caret-position="374">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/email/ajaxSendFilterEmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="72" column="484" selection-start-line="72" selection-start-column="484" selection-end-line="72" selection-end-column="484" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/mail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-176">
+          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1378,17 +1354,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/mail.js">
+    <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-176">
-          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+        <state relative-caret-position="283">
+          <caret line="181" column="42" selection-start-line="181" selection-start-column="42" selection-end-line="181" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/contacts/ajaxSendMail.php">
+    <entry file="file://$PROJECT_DIR$/admin/goods/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="45" column="12" lean-forward="true" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+        <state relative-caret-position="-346">
+          <caret line="390" column="64" selection-start-line="390" selection-start-column="39" selection-end-line="390" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/goods/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="550" column="53" selection-start-line="550" selection-start-column="53" selection-end-line="550" selection-end-column="53" />
         </state>
       </provider>
     </entry>
