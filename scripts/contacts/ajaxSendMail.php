@@ -40,7 +40,7 @@ $message .= "
 				</div>
 			";
 
-if($mysqli->query("INSERT INTO messages (name, email, text) VALUES ('".$name."', '".$email."', '".$text."')")) {
+if($mysqli->query("INSERT INTO messages (name, email, subject, text) VALUES ('".$name."', '".$email."', '".$subject."', '".$text."')")) {
     if (@mail($to, $subject, $message, $headers)) {
         echo "a";
     } else {
