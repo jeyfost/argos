@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/goods/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/goods/add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/goods/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/goods/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,20 +79,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/goods/add.php">
+      <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/goods/edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="424" column="105" selection-start-line="424" selection-start-column="105" selection-end-line="424" selection-end-column="105" />
+            <state relative-caret-position="453">
+              <caret line="611" column="140" lean-forward="true" selection-start-line="611" selection-start-column="140" selection-end-line="611" selection-end-column="140" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajaxAddGood.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php">
+      <file leaf-file-name="ajaxEditGood.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1252">
-              <caret line="235" column="412" selection-start-line="235" selection-start-column="412" selection-end-line="235" selection-end-column="412" />
+            <state relative-caret-position="453">
+              <caret line="181" column="148" selection-start-line="181" selection-start-column="148" selection-end-line="181" selection-end-column="148" />
             </state>
           </provider>
         </entry>
@@ -154,7 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts/admin/clients/ajaxSearch.php" />
         <option value="$PROJECT_DIR$/admin/admin.php" />
         <option value="$PROJECT_DIR$/admin/achievements/add.php" />
         <option value="$PROJECT_DIR$/admin/achievements/delete.php" />
@@ -175,7 +174,6 @@
         <option value="$PROJECT_DIR$/admin/email/send.php" />
         <option value="$PROJECT_DIR$/admin/goods/codes.php" />
         <option value="$PROJECT_DIR$/admin/goods/delete.php" />
-        <option value="$PROJECT_DIR$/admin/goods/edit.php" />
         <option value="$PROJECT_DIR$/admin/goods/index.php" />
         <option value="$PROJECT_DIR$/admin/goods/update.php" />
         <option value="$PROJECT_DIR$/admin/news/add.php" />
@@ -205,6 +203,8 @@
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxUpdate.php" />
         <option value="$PROJECT_DIR$/admin/goods/add.php" />
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php" />
+        <option value="$PROJECT_DIR$/admin/goods/edit.php" />
+        <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php" />
       </list>
     </option>
   </component>
@@ -546,14 +546,7 @@
       <workItem from="1580897511000" duration="13986000" />
       <workItem from="1580965505958" duration="898000" />
       <workItem from="1580973684386" duration="14484000" />
-      <workItem from="1581051919370" duration="7239000" />
-    </task>
-    <task id="LOCAL-00287" summary="Исправлен атрибут &quot;for&quot; у тега &quot;label&quot; в разделе добавления товаров в панели администрирования">
-      <created>1571124487498</created>
-      <option name="number" value="00287" />
-      <option name="presentableId" value="LOCAL-00287" />
-      <option name="project" value="LOCAL" />
-      <updated>1571124487498</updated>
+      <workItem from="1581051919370" duration="7774000" />
     </task>
     <task id="LOCAL-00288" summary="Добавлено отображение количества записей в клиентской базе">
       <created>1571127671581</created>
@@ -891,11 +884,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581069466281</updated>
     </task>
-    <option name="localTasksCounter" value="336" />
+    <task id="LOCAL-00336" summary="Добавлена функция установки оптовых цен в разделе добавления товара">
+      <created>1581069677809</created>
+      <option name="number" value="00336" />
+      <option name="presentableId" value="LOCAL-00336" />
+      <option name="project" value="LOCAL" />
+      <updated>1581069677809</updated>
+    </task>
+    <option name="localTasksCounter" value="337" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="809094000" />
+    <option name="totallyTimeSpent" value="809629000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -969,7 +969,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ДОработан скрипт отправки сообщений из раздела обратной связи. Добавлена функция записи всех отправленных сообщений из раздела обратной связи в базу данных." />
     <MESSAGE value="Доработан скрипт отправки сообщений из раздела обратной связи. Добавлена функция записи всех отправленных сообщений из раздела обратной связи в базу данных." />
     <MESSAGE value="Исправлен скрипт обновления остатков товаров из 1С" />
     <MESSAGE value="В таблице с отписавшимися от рассылки клиентами добавлена колонка с датой отписки" />
@@ -994,7 +993,8 @@
     <MESSAGE value="hotfix" />
     <MESSAGE value="Исправлен путь иконки клиентской базы" />
     <MESSAGE value="Добавлена функция установки оптовых цен через выгрузку 1С" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена функция установки оптовых цен через выгрузку 1С" />
+    <MESSAGE value="Добавлена функция установки оптовых цен в разделе добавления товара" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена функция установки оптовых цен в разделе добавления товара" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1059,13 +1059,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="158" column="40" lean-forward="true" selection-start-line="151" selection-start-column="8" selection-end-line="158" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/achievements/add.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1193,13 +1186,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
           <caret line="249" column="40" selection-start-line="249" selection-start-column="40" selection-end-line="249" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/goods/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="251" column="40" selection-start-line="251" selection-start-column="40" selection-end-line="251" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1418,10 +1404,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+        <state relative-caret-position="1252">
+          <caret line="235" column="412" selection-start-line="235" selection-start-column="412" selection-end-line="235" selection-end-column="412" />
         </state>
       </provider>
     </entry>
@@ -1432,10 +1418,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php">
+    <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1252">
-          <caret line="235" column="412" selection-start-line="235" selection-start-column="412" selection-end-line="235" selection-end-column="412" />
+        <state relative-caret-position="17">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/goods/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="611" column="140" lean-forward="true" selection-start-line="611" selection-start-column="140" selection-end-line="611" selection-end-column="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="181" column="148" selection-start-line="181" selection-start-column="148" selection-end-line="181" selection-end-column="148" />
         </state>
       </provider>
     </entry>

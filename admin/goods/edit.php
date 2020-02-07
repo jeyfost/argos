@@ -607,6 +607,10 @@ if(!empty($_REQUEST['id'])) {
 				<br />
 				<input type='number' min='0.0000' step='0.0001' id='goodPriceInput' name='goodPrice' value='".$good['price']."' />
 				<br /><br />
+				<label for='goodPriceOptInput'>Оптовая стоимость (в валюте прихода):</label>
+				<br />
+				<input type='number' min='0.0000' step='0.0001' id='goodPriceOptInput' name='goodPriceOpt' value='".$good['price_opt']."' />
+				<br /><br />
 				<label for='goodQuantityInput'>Остаток на складе:</label>
 				<br />
             <input type='number' min='0.0000' step='0.0001' id='goodQuantityInput' name='goodQuantity' value='".$good['quantity']."' />

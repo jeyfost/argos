@@ -15,6 +15,7 @@ $goodUnit = $mysqli->real_escape_string($_POST['goodUnit']);
 $goodName = $mysqli->real_escape_string($_POST['goodName']);
 $goodCode = $mysqli->real_escape_string($_POST['goodCode']);
 $goodPrice = $mysqli->real_escape_string($_POST['goodPrice']);
+$goodPriceOpt = $mysqli->real_escape_string($_POST['goodPriceOpt']);
 $goodQuantity = $mysqli->real_escape_string($_POST['goodQuantity']);
 $goodDescription = $mysqli->real_escape_string(str_replace("\n", "<br />", $_POST['goodDescription']));
 
@@ -178,7 +179,7 @@ if($codeCheck[0] == 0) {
 	$a = 0;
 	$aOK = 0;
 
-	if($mysqli->query("UPDATE catalogue_new SET name = '".$goodName."', description = '".$goodDescription."', price = '".$goodPrice."', code = '".$goodCode."', currency = '".$goodCurrency."', unit = '".$goodUnit."', quantity = '".$goodQuantity."' WHERE id = '".$goodID."'")) {
+	if($mysqli->query("UPDATE catalogue_new SET name = '".$goodName."', description = '".$goodDescription."', price = '".$goodPrice."', price_opt = '".$goodPriceOpt."', code = '".$goodCode."', currency = '".$goodCurrency."', unit = '".$goodUnit."', quantity = '".$goodQuantity."' WHERE id = '".$goodID."'")) {
 		if(!empty($_FILES['goodBlueprint']['tmp_name'])) {
 			$bp = 1;
 
