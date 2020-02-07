@@ -29,7 +29,7 @@
 
     <meta charset="utf-8">
 
-    <title>Панель администрирования</title>
+    <title>Добавление сотрудников</title>
 
     <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='/css/admin.css'>
@@ -157,6 +157,14 @@
         </a>
         <div style="clear: both;"></div>
         <div class="line"></div>
+        <a href="/admin/messages/">
+            <div class="menuPoint">
+                <div class="menuIMG"><img src="/img/system/admin/messages.png" /></div>
+                <div class="menuText">Сообщения</div>
+            </div>
+        </a>
+        <div style="clear: both;"></div>
+        <div class="line"></div>
         <a href="/">
             <div class="menuPoint">
                 <div class="menuIMG"><img src="/img/system/admin/home.png" /></div>
@@ -178,7 +186,7 @@
         </div>
         <br />
         <div id="admContent">
-            <div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="/img/system/admin/icons/employees.png" title="Клиентская база" /></div><div id="breadCrumbsTextContainer"><a href="/admin/admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Сотрудники</span></a></div></div>
+            <div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="/img/system/admin/icons/employees.png" title="Сотрудники" /></div><div id="breadCrumbsTextContainer"><a href="/admin/admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Сотрудники</span></a> > <a href="add.php"><span class="breadCrumbsText">Добавление сотрудников</span></a></div></div>
             <div style="clear: both;"></div>
             <br />
             <h2>&darr; Для продолжения работы выберите раздел</h2>

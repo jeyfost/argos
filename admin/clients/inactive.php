@@ -214,6 +214,14 @@ $start = intval($page) * 10 - 10;
 			</div>
 		</a>
 		<div style="clear: both;"></div>
+        <div class="line"></div>
+        <a href="/admin/messages/">
+            <div class="menuPoint">
+                <div class="menuIMG"><img src="/img/system/admin/messages.png" /></div>
+                <div class="menuText">Сообщения</div>
+            </div>
+        </a>
+        <div style="clear: both;"></div>
 		<div class="line"></div>
 		<a href="/">
 			<div class="menuPoint">
