@@ -223,7 +223,7 @@ $start = intval($page) * 10 - 10;
             <div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="/img/system/admin/icons/messages.png" title="Сообщения" /></div><div id="breadCrumbsTextContainer"><a href="/admin/admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Сообщения</span></a></div></div>
             <div style="clear: both;"></div>
             <br />
-            <h2>Полученные сообщения</h2>
+            <h2>Полученные через форму обратной связи сообщения</h2>
             <div id="goodsTable" <?php if(!empty($_REQUEST['id'])) {echo "style='display: none;'";} ?>>
                 <?php
                 if(empty($_REQUEST['id'])) {

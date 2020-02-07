@@ -8,7 +8,7 @@ ob_start();
 $row = 1;
 
 if(!empty($_FILES['csvFile']['tmp_name'])) {
-    /* Первая колонка в файле — артикул, вторая — цена, третья - единицы измерения, четвертая — количество в остатке */
+    /* Первая колонка в файле [0] — артикул, вторая [1] — цена розничная, третья [2] — цена оптовая, четвертая [3] - единицы измерения, пятая [4] — количество в остатке */
 
 	$uploadDir = "../../../files/1C/";
 	$name = "update.csv";
@@ -28,10 +28,11 @@ if(!empty($_FILES['csvFile']['tmp_name'])) {
 				$stats = explode(";", $data[$c]);
 				$code = $stats[0];
 				$price = str_replace(" ", "", $stats[1]);
-				$unit = $stats[2];
-				$quantity = $stats[3];
+				$price_opt = str_replace(" ", "", $stats[2]);
+				$unit = $stats[3];
+				$quantity = $stats[4];
 
-				if(!empty($price) and $price > 0) {
+				if(!empty($price) and $price > 0 and !empty($price_opt) and $price_opt > 0) {
                     if(!empty($code)) {
                         switch(strlen($code)) {
                             case 1:
@@ -52,7 +53,7 @@ if(!empty($_FILES['csvFile']['tmp_name'])) {
                         $i = 0;
 
                         if($goodCheck[0] > 0) {
-                            if($mysqli->query("UPDATE catalogue_new SET price = '".$price."', quantity = '".$quantity."' WHERE code = '".$code."'")) {
+                            if($mysqli->query("UPDATE catalogue_new SET price = '".$price."', price_opt = '".$price_opt."', quantity = '".$quantity."' WHERE code = '".$code."'")) {
                                 $i++;
 
                                 $dbUnitCheckResult = $mysqli->query("SELECT COUNT(id) FROM units WHERE short_name = '".$unit."'");
