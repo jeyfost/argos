@@ -129,7 +129,7 @@ if(isset($_SESSION['userID'])) {
 		<div class="line"></div>
 		<a href="/admin/clients/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="/admin/img/system/admin/clients.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/clients.png" /></div>
 				<div class="menuText">Клиентская база</div>
 			</div>
 		</a>

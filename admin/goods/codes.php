@@ -143,7 +143,7 @@ if(isset($_SESSION['userID'])) {
 		<div class="line"></div>
 		<a href="/admin/email/">
 			<div class="menuPoint">
-				<div class="menuIMG"><img src="/admin/img/system/admin/mail.png" /></div>
+				<div class="menuIMG"><img src="/img/system/admin/mail.png" /></div>
 				<div class="menuText">Email-рассылки</div>
 			</div>
 		</a>
