@@ -64,7 +64,7 @@ if($searchResult->num_rows == 0) {
                 $actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$search['id']."' AND action_id = '".$aID."'");
                 $actionGood = $actionGoodResult->fetch_assoc();
 
-                $price = $actionGood['price'] * $currency['rate'];
+                $price = $actionGood['price'] * $rate[0];
             }
         }
 
@@ -87,6 +87,13 @@ if($searchResult->num_rows == 0) {
 			<div class='searchItem'"; if($j % 2 == 0) {echo " style='background-color: #d9d9d9;'";} echo ">
 				<div class='searchIMG'>
 					<a href='/img/catalogue/big/".$search['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$search['name']."' data-lightview-caption='".nl2br(strip_tags($search['description']))."'><img src='/img/catalogue/small/".$search['small']."' /></a>
+		";
+
+        if($active > 0) {
+            echo "<img src='/img/system/action.png' class='actionIMGSearch' />";
+        }
+
+		echo "
 				</div>
 				<div class='searchInfo'>
 					<span style='font-size: 18px; font-style: italic;'><a href='/catalogue/item.php?id=".$search['id']."' class='catalogueNameLink'>".$search['name']."</a></span>
@@ -138,7 +145,7 @@ if($searchResult->num_rows == 0) {
 					<br />
                     <b>Наличие: </b>"; if($search['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} echo "
 					<br />
-					<b>Цена за ".$unit['short_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b>".$price."
+					<b>Цена за ".$unit['short_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b>"; if($active == 1) {echo "<span style='color: #ff282b; font-weight: bold;'>";} echo $price; if($active == 1) {echo "</span>";} echo "
 					<br /><br />
 				</div>
 				<div style='clear: both;'></div>
