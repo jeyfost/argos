@@ -31,6 +31,9 @@ if(isset($_SESSION['userID'])) {
 		setcookie("argosfm_login", $user['login'], time()+60*60*24*30*12, '/');
 		setcookie("argosfm_password", $user['password'], time()+60*60*24*30*12, '/');
 	}
+
+    $userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
+    $user = $userResult->fetch_assoc();
 } else {
 	if(isset($_COOKIE['argosfm_login']) and isset($_COOKIE['argosfm_password']) and !empty($_COOKIE['argosfm_login']) and !empty($_COOKIE['argosfm_password'])) {
 		$userResult = $mysqli->query("SELECT * FROM users WHERE login = '".$_COOKIE['argosfm_login']."'");
@@ -455,10 +458,15 @@ if(!empty($good['subcategory2'])) {
 
 				if($active == 0) {
 					$price = $good['price'] * $currency['rate'];
+					$price_opt = $good['price_opt'] * $currency['rate'];
 
 					if(isset($_SESSION['userID'])) {
 						$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
 						$discount = $discountResult->fetch_array(MYSQLI_NUM);
+
+                        if($user['opt'] == 1) {
+                            $price = $price_opt;
+                        }
 
 						$price = $price * (1 - $discount[0] / 100);
 					}
