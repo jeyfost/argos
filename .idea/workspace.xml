@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalogue/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/ajaxSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ajaxSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,8 +66,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catalogue/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="593" column="67" lean-forward="true" selection-start-line="589" selection-start-column="24" selection-end-line="593" selection-end-column="67" />
+            <state relative-caret-position="238">
+              <caret line="677" column="659" selection-start-line="677" selection-start-column="457" selection-end-line="677" selection-end-column="659" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -85,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="catalogue.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="catalogue.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catalogue.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="591" column="67" selection-start-line="591" selection-start-column="67" selection-end-line="591" selection-end-column="67" />
+            <state relative-caret-position="265">
+              <caret line="672" column="605" selection-start-line="672" selection-start-column="605" selection-end-line="672" selection-end-column="605" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -104,6 +106,28 @@
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxSearch.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/ajaxSearch.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxSearch.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSearch.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,8 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>breadC</find>
-      <find>&amp;p=</find>
       <find>personal/cancel.php</find>
       <find>addtobasket</find>
       <find>sendDistr</find>
@@ -150,6 +172,8 @@
       <find>responseF</find>
       <find>page</find>
       <find>admin/img</find>
+      <find>по за</find>
+      <find>по запр</find>
     </findStrings>
     <replaceStrings>
       <replace>catalogue/index.php</replace>
@@ -166,9 +190,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/achievements/delete.php" />
-        <option value="$PROJECT_DIR$/admin/achievements/edit.php" />
-        <option value="$PROJECT_DIR$/admin/achievements/index.php" />
         <option value="$PROJECT_DIR$/admin/actions/add.php" />
         <option value="$PROJECT_DIR$/admin/actions/delete.php" />
         <option value="$PROJECT_DIR$/admin/actions/edit.php" />
@@ -215,8 +236,11 @@
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php" />
         <option value="$PROJECT_DIR$/admin/goods/edit.php" />
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php" />
+        <option value="$PROJECT_DIR$/catalogue/item.php" />
         <option value="$PROJECT_DIR$/catalogue/index.php" />
         <option value="$PROJECT_DIR$/catalogue.php" />
+        <option value="$PROJECT_DIR$/scripts/ajaxSearch.php" />
+        <option value="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" />
       </list>
     </option>
   </component>
@@ -259,25 +283,13 @@
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="catalogue" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
-              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
-              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="goods" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="personal" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -553,21 +565,7 @@
       <workItem from="1580965505958" duration="898000" />
       <workItem from="1580973684386" duration="14484000" />
       <workItem from="1581051919370" duration="8402000" />
-      <workItem from="1581315933609" duration="1812000" />
-    </task>
-    <task id="LOCAL-00289" summary="Сортировка товаров в каталоге возвращена к прежней логике">
-      <created>1571127854156</created>
-      <option name="number" value="00289" />
-      <option name="presentableId" value="LOCAL-00289" />
-      <option name="project" value="LOCAL" />
-      <updated>1571127854156</updated>
-    </task>
-    <task id="LOCAL-00290" summary="Исправлен скрипт поиска на главной странице">
-      <created>1571729267076</created>
-      <option name="number" value="00290" />
-      <option name="presentableId" value="LOCAL-00290" />
-      <option name="project" value="LOCAL" />
-      <updated>1571729267076</updated>
+      <workItem from="1581315933609" duration="4971000" />
     </task>
     <task id="LOCAL-00291" summary="hotfix">
       <created>1571738718761</created>
@@ -898,11 +896,25 @@
       <option name="project" value="LOCAL" />
       <updated>1581070178659</updated>
     </task>
-    <option name="localTasksCounter" value="338" />
+    <task id="LOCAL-00338" summary="В каталоге добавлено отображение оптовых цен">
+      <created>1581323130513</created>
+      <option name="number" value="00338" />
+      <option name="presentableId" value="LOCAL-00338" />
+      <option name="project" value="LOCAL" />
+      <updated>1581323130514</updated>
+    </task>
+    <task id="LOCAL-00339" summary="Добавлено отображение оптовых цен на странице товара">
+      <created>1581323309499</created>
+      <option name="number" value="00339" />
+      <option name="presentableId" value="LOCAL-00339" />
+      <option name="project" value="LOCAL" />
+      <updated>1581323309499</updated>
+    </task>
+    <option name="localTasksCounter" value="340" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="812069000" />
+    <option name="totallyTimeSpent" value="815228000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -976,8 +988,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправлен скрипт обновления остатков товаров из 1С" />
-    <MESSAGE value="В таблице с отписавшимися от рассылки клиентами добавлена колонка с датой отписки" />
     <MESSAGE value="Добавлена страница с отпиской от рассылки" />
     <MESSAGE value="Исправлен скрипт редактирования акции. Превью всех акций менялись при редактировании одной" />
     <MESSAGE value="Исправлено выравнивание текста в новостях и в истории заказов у администратора" />
@@ -1001,7 +1011,9 @@
     <MESSAGE value="Добавлена функция установки оптовых цен через выгрузку 1С" />
     <MESSAGE value="Добавлена функция установки оптовых цен в разделе добавления товара" />
     <MESSAGE value="Добавлена функция установки оптовых цен в разделе редактирования товара" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена функция установки оптовых цен в разделе редактирования товара" />
+    <MESSAGE value="В каталоге добавлено отображение оптовых цен" />
+    <MESSAGE value="Добавлено отображение оптовых цен на странице товара" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлено отображение оптовых цен на странице товара" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1066,27 +1078,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/achievements/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="169" column="40" selection-start-line="169" selection-start-column="40" selection-end-line="169" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/achievements/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="158" column="40" selection-start-line="158" selection-start-column="40" selection-end-line="158" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/actions/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="161" column="40" selection-start-line="161" selection-start-column="40" selection-end-line="161" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/actions/delete.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -1409,10 +1400,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/catalogue/item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="468" column="25" selection-start-line="468" selection-start-column="25" selection-end-line="468" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/catalogue/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="593" column="67" lean-forward="true" selection-start-line="589" selection-start-column="24" selection-end-line="593" selection-end-column="67" />
+        <state relative-caret-position="238">
+          <caret line="677" column="659" selection-start-line="677" selection-start-column="457" selection-end-line="677" selection-end-column="659" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -1433,8 +1437,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/catalogue.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="591" column="67" selection-start-line="591" selection-start-column="67" selection-end-line="591" selection-end-column="67" />
+        <state relative-caret-position="265">
+          <caret line="672" column="605" selection-start-line="672" selection-start-column="605" selection-end-line="672" selection-end-column="605" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -1449,6 +1453,24 @@
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ajaxSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

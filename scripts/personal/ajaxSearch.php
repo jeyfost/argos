@@ -7,6 +7,11 @@ $query = $mysqli->real_escape_string($_POST['query']);
 
 $searchResult = $mysqli->query("SELECT * FROM catalogue_new WHERE name LIKE '%".$query."%' OR code LIKE '%".$query."%' OR description LIKE '%".$query."%' ORDER BY name LIMIT 10");
 
+if(isset($_SESSION['userID'])) {
+    $userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
+    $user = $userResult->fetch_assoc();
+}
+
 if($searchResult->num_rows == 0) {
 	echo "<i>К сожалению, поиск не дал результата.</i>";
 } else {
@@ -17,19 +22,49 @@ if($searchResult->num_rows == 0) {
 		$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$search['unit']."'");
 		$unit = $unitResult->fetch_assoc();
 
-		if($search['price'] == 0 or $search['price'] == null) {
+        $active = 0;
+
+        $actionIDResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$search['id']."'");
+        if($actionIDResult->num_rows > 0) {
+            while($actionID = $actionIDResult->fetch_assoc()) {
+                $actionResult = $mysqli->query("SELECT * FROM actions WHERE id = '".$actionID['action_id']."'");
+                $action = $actionResult->fetch_assoc();
+                $from = strtotime($action['from_date']);
+                $to = strtotime($action['to_date']);
+                $today = strtotime(date('d-m-Y'));
+
+                if($today >= $from and $today <= $to) {
+                    $active = 1;
+                    $aID = $action['id'];
+                }
+            }
+        }
+
+        if(($user['opt'] == 1 and ($search['price'] == 0 or $search['price'] == null or $search['price_opt'] == 0)) or ($user['opt'] == 0 and ($search['price'] == 0 or $search['price'] == null))) {
 		    $price = " по запросу";
         } else {
             $rateResult = $mysqli->query("SELECT rate FROM currency WHERE id = '".$search['currency']."'");
             $rate = $rateResult->fetch_array(MYSQLI_NUM);
 
-            $price = $search['price'] * $rate[0];
+            if($active == 0) {
+                $price = $search['price'] * $rate[0];
+                $price_opt = $search['price_opt'] * $rate[0];
 
-            if(isset($_SESSION['userID']) and $_SESSION['userID'] != 1) {
-                $discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
-                $discount = $discountResult->fetch_array(MYSQLI_NUM);
+                if(isset($_SESSION['userID'])) {
+                    $discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
+                    $discount = $discountResult->fetch_array(MYSQLI_NUM);
 
-                $price = $price * (1 - $discount[0] / 100);
+                    if($user['opt'] == 1) {
+                        $price = $price_opt;
+                    }
+
+                    $price = $price * (1 - $discount[0] / 100);
+                }
+            } else {
+                $actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$search['id']."' AND action_id = '".$aID."'");
+                $actionGood = $actionGoodResult->fetch_assoc();
+
+                $price = $actionGood['price'] * $currency['rate'];
             }
         }
 
@@ -70,7 +105,7 @@ if($searchResult->num_rows == 0) {
 			}
 		}
 
-		if($search['price'] > 0) {
+		if($price > 0 and $price !== " по запросу") {
             $roubles = floor($price);
             $kopeck = ceil(($price - $roubles) * 100);
 
@@ -103,7 +138,7 @@ if($searchResult->num_rows == 0) {
 					<br />
                     <b>Наличие: </b>"; if($search['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} echo "
 					<br />
-					<b>Стоимость за ".$unit['short_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b>".$price."
+					<b>Цена за ".$unit['short_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b>".$price."
 					<br /><br />
 				</div>
 				<div style='clear: both;'></div>
