@@ -467,7 +467,12 @@ if(isset($_SESSION['userID'])) {
 							$currency = $currencyResult->fetch_assoc();
 
 							if($active == 0) {
-								$price = $good['price'] * $currency['rate'];
+							    if($user['opt'] == 1) {
+                                    $price = $good['price'] * $currency['rate'];
+                                } else {
+                                    $price = $good['price_opt'] * $currency['rate'];
+                                }
+
 								$totalNormal += $price * $basket['quantity'];
 								$price = $price * (1 - $user['discount'] / 100);
 							} else {
@@ -512,7 +517,9 @@ if(isset($_SESSION['userID'])) {
 												</div>
 												<div class='catalogueDescription'>
 								";
+
 								$strings = explode("<br />", $good['description']);
+
 								for($i = 0; $i < count($strings); $i++) {
 									$string = explode(':', $strings[$i]);
 									if(count($string) > 1) {
@@ -521,6 +528,7 @@ if(isset($_SESSION['userID'])) {
 										echo $string[0]."<br />";
 									}
 								}
+
 								echo "
 									<br />
 									<b>Артикул: </b>".$good['code']."
@@ -582,6 +590,11 @@ if(isset($_SESSION['userID'])) {
                         }
 
                         $totalWOD = $roubles." руб. ".$kopeck." коп.";
+
+                        echo "
+                            <div style='float: right;'><b>Ваши цены: </b><span> "; if($user['opt'] == 1) {echo "оптовые";} else {echo "розничные";} echo "</span></div>
+                            <br />
+                        ";
 
 						if($user['discount'] > 0) {
                             echo "
