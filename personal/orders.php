@@ -419,7 +419,7 @@ if(isset($_SESSION['userID'])) {
 									<td><a href='order.php?id=".$order['id']."' target='_blank' class='font-awesome-link' title='Открыть детализацию заказа в новом окне'><i class='fa fa-folder-open-o' aria-hidden='true'></i></a></td>
 									<td>".dateFormattedDayToYear($order['send_date'])."</td>
 									<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
-									<td><span class='tdLink' onclick='acceptOrder(\"".$order['id']."\")'>Принять заказ</span></td>
+									<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")'>Принять заказ</span></td>
 									<td><span class='tdLink' onclick='cancelOrder(\"".$order['id']."\")'>Отменить заказ</span></td>
 								</tr>
 							";
