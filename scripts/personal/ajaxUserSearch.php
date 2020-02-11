@@ -14,7 +14,7 @@ if($userResult->num_rows == 0) {
 			<a class='searchLink' href='/personal/personal.php?section=2&user=".$user['id']."'>
 				<div class='searchItem' style='border: 1px solid #ddd;'>
 				<div style='width: 100%; height: 10px;'></div>
-					<table style='position: relative; margin: 0 auto;'>
+					<table style='position: relative; margin: 0 auto; text-align: center;'>
 						<tr class='headTR' style='background-color: #badfff;'>
 							<td nowrap>ID</td>
 								<td nowrap>Логин</td>
@@ -22,7 +22,8 @@ if($userResult->num_rows == 0) {
 								<td nowrap>Имя</td>
 								<td nowrap>Организация</td>
 								<td nowrap>Должность</td>
-								<td nowrap>Скидка</td>
+								<td nowrap>Цены</td>
+								<td nowrap>Доп. скидка</td>
 								<td nowrap>Дата регистрации</td>
 								<td nowrap>Последний визит</td>
 								<td nowrap>Просмотрено страниц</td>
@@ -34,7 +35,8 @@ if($userResult->num_rows == 0) {
 								<td>".$user['name']."</td>
 								<td>".$user['company']."</td>
 								<td>".$user['position']."</td>
-								<td style='text-align: center;'>".$user['discount']."%</td>
+								<td>"; if($user['opt'] == 1) {echo "Опт";} else {echo "Розница";} echo "</td>
+								<td>".$user['discount']."%</td>
 								<td>".$user['registration_date']."</td>
 								<td>".$user['last_login']."</td>
 								<td style='text-align: center;'>".$user['logins_count']."</td>

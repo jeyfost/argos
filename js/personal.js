@@ -49,6 +49,13 @@ function adminEditUser(id) {
 	var phone = $('#userPhoneInput').val();
 	var discount = $('#userDiscountInput').val();
 	var response_field = $('#responseFiled');
+    var checkbox;
+
+    if($('#optPriceCheckbox').is(':checked')) {
+        checkbox = 1;
+    } else {
+        checkbox = 0;
+    }
 
 	if (login !== '' && email !== '' && name !== '' && phone !== '' && discount !== '') {
 		if (discount > 0 && discount < 100) {
@@ -63,7 +70,8 @@ function adminEditUser(id) {
 					"name": name,
 					"position": position,
 					"phone": phone,
-					"discount": discount
+					"discount": discount,
+					"checkbox": checkbox
 				},
 				url: "/scripts/personal/ajaxAdminEditUser.php",
 				success: function (response) {

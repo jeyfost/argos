@@ -17,6 +17,7 @@ $name = $mysqli->real_escape_string($_POST['name']);
 $position = $mysqli->real_escape_string($_POST['position']);
 $phone = $mysqli->real_escape_string($_POST['phone']);
 $discount = $mysqli->real_escape_string($_POST['discount']);
+$checkbox = $mysqli->real_escape_string($_POST['checkbox']);
 $count = 0;
 $error = 0;
 
@@ -103,7 +104,7 @@ if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		}
 	}
 
-	if($mysqli->query("UPDATE users SET company = '".$company."', name = '".$name."', position = '".$position."', phone = '".$phone."', discount = '".$discount."' WHERE id = '".$id."'")) {
+	if($mysqli->query("UPDATE users SET company = '".$company."', name = '".$name."', position = '".$position."', phone = '".$phone."', discount = '".$discount."', opt = '".$checkbox."' WHERE id = '".$id."'")) {
 		$count++;
 	} else {
 		echo "failed";

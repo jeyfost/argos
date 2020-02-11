@@ -463,7 +463,8 @@ if(isset($_SESSION['userID'])) {
 										<td id='td4' onclick='sortBy(\"name\")' title='Сортировать по имени' nowrap>Имя"; if($_SESSION['sort'] == "name") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
 										<td id='td5' onclick='sortBy(\"company\")' title='Сортировать по названию организации' nowrap>Организация"; if($_SESSION['sort'] == "company") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
 										<td id='td6' onclick='sortBy(\"position\")' title='Сортировать по должности' nowrap>Должность"; if($_SESSION['sort'] == "position") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
-										<td id='td7' onclick='sortBy(\"discount\")' title='Сортировать по личной скидке' nowrap>Скидка"; if($_SESSION['sort'] == "discount") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td id='td11' onclick='sortBy(\"opt\")' title='Сортировать по типу цены' nowrap>Цены"; if($_SESSION['sort'] == "opt") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
+										<td id='td7' onclick='sortBy(\"discount\")' title='Сортировать по дополнительной скидке' nowrap>Доп. скидка"; if($_SESSION['sort'] == "discount") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
 										<td id='td8' onclick='sortBy(\"registration_date\")' title='Сортировать по дате регистрации' nowrap>Дата регистрации"; if($_SESSION['sort'] == "registration_date") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
 										<td id='td9' onclick='sortBy(\"last_login\")' title='Сортировать по дате последнего визита' nowrap>Последний визит"; if($_SESSION['sort'] == "last_login") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
 										<td id='td10' onclick='sortBy(\"logins_count\")' title='Сортировать по количеству просмотренных страниц' nowrap>Просмотрено страниц"; if($_SESSION['sort'] == "logins_count") {if($_SESSION['sort_type'] == "ASC") {echo "<span style='font-size: 12px;'> &#9650;</span>";} else {echo "<span style='font-size: 12px;'> &#9660;</span>";}} echo "</td>
@@ -482,6 +483,7 @@ if(isset($_SESSION['userID'])) {
 										<td>".$users['name']."</td>
 										<td>".$users['company']."</td>
 										<td>".$users['position']."</td>
+										<td>"; if($users['opt'] == 1) {echo "Опт";} else {echo "Розница";} echo "</td>
 										<td style='text-align: center;'>".$users['discount']."%</td>
 										<td>".$users['registration_date']."</td>
 										<td>".$users['last_login']."</td>
@@ -643,7 +645,10 @@ if(isset($_SESSION['userID'])) {
 									<br />
 									<input type='text' id='userPhoneInput' value='".$user['phone']."' />
 									<br /><br />
-									<label for='userDiscountInput'>Скидка в %:</label>
+                                    <label for='optPriceCheckbox'>Оптовые цены</label>
+                                    <input type='checkbox' class='checkbox' id='optPriceCheckbox' name='optPrice'"; if($user['opt'] == 1) {echo " checked";} echo ">
+									<br /><br />
+									<label for='userDiscountInput'>Дополнительная скидка в %:</label>
 									<br />
 									<input type='number' id='userDiscountInput' min='0.01' max='99.99' step='0.01' value='".$user['discount']."' />
 									<br /><br />

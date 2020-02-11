@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/actions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personal/basket.php" beforeDir="false" afterPath="$PROJECT_DIR$/personal/basket.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/personal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/personal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/personal/personal.php" beforeDir="false" afterPath="$PROJECT_DIR$/personal/personal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderInfoHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderInfoHistory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxAdminEditUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxAdminEditUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxUserSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxUserSearch.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,18 +58,20 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="589">
+              <caret line="197" column="71" selection-start-line="197" selection-start-column="71" selection-end-line="197" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personal.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="personal.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/personal/personal.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="695" column="122" selection-start-line="695" selection-start-column="122" selection-end-line="695" selection-end-column="122" />
+            <state relative-caret-position="442">
+              <caret line="655" column="213" selection-start-line="655" selection-start-column="213" selection-end-line="655" selection-end-column="213" />
               <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -102,6 +102,37 @@
                 <element signature="n#style#0;n#input#4;n#form#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="personal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/personal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2210">
+              <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxAdminEditUser.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxAdminEditUser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="106" column="182" selection-start-line="106" selection-start-column="182" selection-end-line="106" selection-end-column="182" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxUserSearch.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxUserSearch.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="37" column="94" selection-start-line="37" selection-start-column="94" selection-end-line="37" selection-end-column="94" />
+              <folding>
+                <element signature="n#style#0;n#td#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,10 +175,10 @@
       <find>ещ</find>
       <find>Стоимость за</find>
       <find>dis</find>
-      <find>userRes</find>
       <find>disc</find>
       <find>addTo</find>
       <find>личная</find>
+      <find>userRes</find>
     </findStrings>
     <replaceStrings>
       <replace>catalogue/index.php</replace>
@@ -164,9 +195,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/email/send.php" />
-        <option value="$PROJECT_DIR$/admin/goods/codes.php" />
-        <option value="$PROJECT_DIR$/admin/goods/delete.php" />
         <option value="$PROJECT_DIR$/admin/goods/index.php" />
         <option value="$PROJECT_DIR$/admin/goods/update.php" />
         <option value="$PROJECT_DIR$/admin/news/add.php" />
@@ -203,7 +231,6 @@
         <option value="$PROJECT_DIR$/catalogue.php" />
         <option value="$PROJECT_DIR$/scripts/ajaxSearch.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/js/common.js" />
         <option value="$PROJECT_DIR$/scripts/admin/actions/ajaxSearch.php" />
         <option value="$PROJECT_DIR$/scripts/admin/actions/ajaxChooseGood.php" />
@@ -214,7 +241,11 @@
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderInfoHistory.php" />
+        <option value="$PROJECT_DIR$/scripts/personal/ajaxUserSearch.php" />
         <option value="$PROJECT_DIR$/personal/personal.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/js/personal.js" />
+        <option value="$PROJECT_DIR$/scripts/personal/ajaxAdminEditUser.php" />
       </list>
     </option>
   </component>
@@ -258,6 +289,23 @@
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="clients" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="personal" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
@@ -534,14 +582,7 @@
       <workItem from="1580973684386" duration="14484000" />
       <workItem from="1581051919370" duration="8402000" />
       <workItem from="1581315933609" duration="8042000" />
-      <workItem from="1581398495392" duration="11897000" />
-    </task>
-    <task id="LOCAL-00303" summary="Исправлены некоторые адреса ссылок">
-      <created>1578031448516</created>
-      <option name="number" value="00303" />
-      <option name="presentableId" value="LOCAL-00303" />
-      <option name="project" value="LOCAL" />
-      <updated>1578031448517</updated>
+      <workItem from="1581398495392" duration="14133000" />
     </task>
     <task id="LOCAL-00304" summary="Исправлен скрипт подсчёта адресов в клиентской базе, доступных для рассылки">
       <created>1578035225430</created>
@@ -879,11 +920,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581413892019</updated>
     </task>
-    <option name="localTasksCounter" value="352" />
+    <task id="LOCAL-00352" summary="Добавлено отображение графы с типом цен в личном кабинете пользователя">
+      <created>1581414830365</created>
+      <option name="number" value="00352" />
+      <option name="presentableId" value="LOCAL-00352" />
+      <option name="project" value="LOCAL" />
+      <updated>1581414830366</updated>
+    </task>
+    <option name="localTasksCounter" value="353" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="830196000" />
+    <option name="totallyTimeSpent" value="832432000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -957,7 +1005,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправлены ссылки на отписку от рассылки" />
     <MESSAGE value="В разделе редактирования товара исправлен label дополнительных фотографий" />
     <MESSAGE value="Раздел с историей рассылок разбит на страницы по 10 записей" />
     <MESSAGE value="На странице с полноформатной детализацией заказа исправлена функция принятия заказа" />
@@ -982,14 +1029,15 @@
     <MESSAGE value="Добавлено отображение оптовых цен в корзине" />
     <MESSAGE value="Добавлено отображение оптовых цен в детализации активных заявок пользователя" />
     <MESSAGE value="Добавлено отображение оптовых цен в детализации истории заказов пользователя" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлено отображение оптовых цен в детализации истории заказов пользователя" />
+    <MESSAGE value="Добавлено отображение графы с типом цен в личном кабинете пользователя" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлено отображение графы с типом цен в личном кабинете пользователя" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/personal/personal.php</url>
-          <line>609</line>
+          <line>611</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -1024,7 +1072,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/personal/personal.php</url>
-          <line>705</line>
+          <line>713</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -1034,12 +1082,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/personal/personal.php</url>
-          <line>674</line>
+          <line>679</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/personal/personal.php</url>
-          <line>729</line>
+          <line>737</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1057,55 +1105,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/photo/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="158" column="40" selection-start-line="158" selection-start-column="40" selection-end-line="158" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/sections/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="199" column="40" selection-start-line="199" selection-start-column="40" selection-end-line="199" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/sections/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="210" column="40" selection-start-line="210" selection-start-column="40" selection-end-line="210" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/sections/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="210" column="40" selection-start-line="210" selection-start-column="40" selection-end-line="210" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/sections/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="158" column="40" selection-start-line="158" selection-start-column="40" selection-end-line="158" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/vacancies/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="161" column="40" selection-start-line="161" selection-start-column="40" selection-end-line="161" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/vacancies/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="170" column="40" selection-start-line="170" selection-start-column="40" selection-end-line="170" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/vacancies/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
@@ -1461,18 +1460,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/web-forms.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="595" column="16" selection-start-line="595" selection-start-column="16" selection-end-line="595" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="589">
+          <caret line="197" column="71" selection-start-line="197" selection-start-column="71" selection-end-line="197" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/clients/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/clients/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="304" column="207" selection-start-line="304" selection-start-column="207" selection-end-line="304" selection-end-column="207" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" selection-end-column="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/personal/personal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="695" column="122" selection-start-line="695" selection-start-column="122" selection-end-line="695" selection-end-column="122" />
+        <state relative-caret-position="442">
+          <caret line="655" column="213" selection-start-line="655" selection-start-column="213" selection-end-line="655" selection-end-column="213" />
           <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -1504,6 +1533,31 @@
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxUserSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="37" column="94" selection-start-line="37" selection-start-column="94" selection-end-line="37" selection-end-column="94" />
+          <folding>
+            <element signature="n#style#0;n#td#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/personal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2210">
+          <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxAdminEditUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="106" column="182" selection-start-line="106" selection-start-column="182" selection-end-line="106" selection-end-column="182" />
         </state>
       </provider>
     </entry>
