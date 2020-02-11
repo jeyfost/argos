@@ -674,6 +674,34 @@ if(isset($_SESSION['userID'])) {
 								</div>
 							";
 
+                            if($_SESSION['userID'] == 1) {
+                                if($price_opt == 0 or $price_opt == null) {
+                                    $price_opt = "не установлена в базе данных";
+                                } else {
+                                    $roubles = floor($price_opt);
+                                    $kopeck = ceil(($price_opt - $roubles) * 100);
+
+                                    if($kopeck == 100) {
+                                        $kopeck = 0;
+                                        $roubles ++;
+                                    }
+
+                                    if($roubles == 0 and $kopeck == 0) {
+                                        $kopeck = 1;
+                                    }
+
+                                    $kopeck = ceil($kopeck);
+
+                                    if(strlen($kopeck) == 1) {
+                                        $kopeck = "0".$kopeck;
+                                    }
+
+                                    $price_opt = $roubles." руб. ".$kopeck." коп.";
+                                }
+
+                                echo "<b>Цена оптовая за ".$unit['for_name'].": </b>".$price_opt;
+                            }
+
 							if($catalogue['sketch'] != '') {
 								echo "<br /><a href='/img/catalogue/sketch/".$catalogue['sketch']."' data-lightview-title='".$catalogue['name'].": Чертёж' data-lightview-options='skin: \"light\"' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
 							}
