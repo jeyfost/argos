@@ -58,7 +58,7 @@ function adminEditUser(id) {
     }
 
 	if (login !== '' && email !== '' && name !== '' && phone !== '' && discount !== '') {
-		if (discount > 0 && discount < 100) {
+		if (discount >= 0 && discount < 100) {
 			$.ajax({
 				type: "POST",
 				data: {
@@ -215,7 +215,7 @@ function adminEditUser(id) {
 				response_field.css('opacity', '0');
 				setTimeout(function () {
 					response_field.css('color', '#ff282b');
-					response_field.html('Размер скидки должен составлять от 0.01% до 99.99%.<br /><br />');
+					response_field.html('Размер скидки должен составлять от 0% до 99.99%.<br /><br />');
 					response_field.css('opacity', '1');
 				}, 300);
 			} else {
