@@ -69,7 +69,12 @@ while($order = $orderResult->fetch_assoc()) {
 			$actionGoodsQuantity++;
 			$price = $actionGood['price'] * $currency[0];
 		} else {
-			$price = $good['price'] * $currency[0];
+		    if($user['opt'] == 0) {
+                $price = $good['price'] * $currency[0];
+            } else {
+                $price = $good['price_opt'] * $currency[0];
+            }
+
 			$price = $price * (1 - $user['discount'] / 100);
 		}
 	}

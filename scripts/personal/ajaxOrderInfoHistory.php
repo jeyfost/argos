@@ -6,8 +6,8 @@ include("../helpers.php");
 
 $id = $mysqli->real_escape_string($_POST['id']);
 
-$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
-$discount = $discountResult->fetch_array(MYSQLI_NUM);
+$userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
+$user = $userResult->fetch_assoc();
 
 $orderDateResult = $mysqli->query("SELECT send_date FROM orders_info WHERE id = '".$id."'");
 $orderDate = $orderDateResult->fetch_array(MYSQLI_NUM);
@@ -43,8 +43,13 @@ while($order = $orderResult->fetch_assoc()) {
 	$currency = $currencyResult->fetch_array(MYSQLI_NUM);
 
 	if($aID == 0) {
-		$price = $good['price'] * $currency[0];
-		$price = $price * (1 - $discount[0] / 100);
+	    if($user['opt'] == 0) {
+            $price = $good['price'] * $currency[0];
+        } else {
+            $price = $good['price_opt'] * $currency[0];
+        }
+
+		$price = $price * (1 - $user['discount'] / 100);
 	} else {
 		$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$good['id']."' AND action_id = '".$aID."'");
 		if($actionGoodResult->num_rows > 0) {
@@ -54,8 +59,13 @@ while($order = $orderResult->fetch_assoc()) {
 			$actionGoodsQuantity++;
 			$price = $actionGood['price'] * $currency[0];
 		} else {
-			$price = $good['price'] * $currency[0];
-			$price = $price * (1 - $discount[0] / 100);
+		    if($user['opt'] == 0) {
+                $price = $good['price'] * $currency[0];
+            } else {
+                $price = $good['price_opt'] * $currency[0];
+            }
+
+			$price = $price * (1 - $user['discount'] / 100);
 		}
 	}
 
@@ -112,7 +122,7 @@ while($order = $orderResult->fetch_assoc()) {
                     <b>Наличие: </b>"; if($good['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} echo "
 					<br />
 					<div id='goodPrice".$good['id']."'>
-						<span><b>Цена за ".$unit['short_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b>"; if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";} echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";} echo "
+						<span><b>Цена за ".$unit['short_name']; if($user['discount'] > 0) {echo " с учётом скидки";} echo ": </b>"; if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";} echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";} echo "
 				";
 
 				if($good['sketch'] != '') {
@@ -174,6 +184,8 @@ $employeeResult = $mysqli->query("SELECT * FROM employees WHERE id = '".$employe
 $employee = $employeeResult->fetch_assoc();
 
 echo "
+    <div style='float: right;'><b>Ваши цены: </b><span id='totalPriceText'>"; if($user['opt'] == 1) {echo "оптовые";} else {echo "розничные";} echo "</span></div>
+    <br />
 	<div style='float: right;'><b>Общая стоимость на момент принятия заказа: </b><span id='totalPriceText'>".$total."</span></div>
 	<br /><br />
 	<div style='float: right; text-align: right;'><b>Сотрудник, принявший заказ:</b><br /><span id='totalPriceText'>".$employee['phone'].", ".$employee['name']."</span></div>
