@@ -64,7 +64,7 @@
       <file leaf-file-name="item.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catalogue/item.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
+            <state relative-caret-position="606">
               <caret line="528" column="41" lean-forward="true" selection-start-line="528" selection-start-column="41" selection-end-line="528" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -77,26 +77,25 @@
         </entry>
       </file>
       <file leaf-file-name="ajaxSearch.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/ajaxSearch.php">
+        <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSearch.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="200" column="37" lean-forward="true" selection-start-line="200" selection-start-column="37" selection-end-line="200" selection-end-column="37" />
+            <state relative-caret-position="147">
+              <caret line="156" column="25" lean-forward="true" selection-start-line="156" selection-start-column="25" selection-end-line="156" selection-end-column="25" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="ajaxSearch.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSearch.php">
+        <entry file="file://$PROJECT_DIR$/scripts/ajaxSearch.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="235" column="9" selection-start-line="235" selection-start-column="9" selection-end-line="235" selection-end-column="9" />
+            <state relative-caret-position="323">
+              <caret line="173" column="17" selection-start-line="173" selection-start-column="17" selection-end-line="173" selection-end-column="17" />
               <folding>
+                <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -208,8 +207,8 @@
         <option value="$PROJECT_DIR$/catalogue.php" />
         <option value="$PROJECT_DIR$/catalogue/index.php" />
         <option value="$PROJECT_DIR$/catalogue/item.php" />
-        <option value="$PROJECT_DIR$/scripts/ajaxSearch.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" />
+        <option value="$PROJECT_DIR$/scripts/ajaxSearch.php" />
       </list>
     </option>
   </component>
@@ -545,14 +544,7 @@
       <workItem from="1580973684386" duration="14484000" />
       <workItem from="1581051919370" duration="8402000" />
       <workItem from="1581315933609" duration="8042000" />
-      <workItem from="1581398495392" duration="18453000" />
-    </task>
-    <task id="LOCAL-00308" summary="Магазины заменены на торговые объекты">
-      <created>1578468941269</created>
-      <option name="number" value="00308" />
-      <option name="presentableId" value="LOCAL-00308" />
-      <option name="project" value="LOCAL" />
-      <updated>1578468941270</updated>
+      <workItem from="1581398495392" duration="19832000" />
     </task>
     <task id="LOCAL-00309" summary="Доработан скрипт отправки резюме">
       <created>1578478125603</created>
@@ -890,11 +882,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581419368457</updated>
     </task>
-    <option name="localTasksCounter" value="357" />
+    <task id="LOCAL-00357" summary="Добавлена возможность видеть оптовую и розничную цену в поиске у администратора">
+      <created>1581425202936</created>
+      <option name="number" value="00357" />
+      <option name="presentableId" value="LOCAL-00357" />
+      <option name="project" value="LOCAL" />
+      <updated>1581425202936</updated>
+    </task>
+    <option name="localTasksCounter" value="358" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="836752000" />
+    <option name="totallyTimeSpent" value="838131000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -968,7 +967,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="При поиске клиента в клиентской базе, по нему выдаётся больше информации" />
     <MESSAGE value="В панели аминистрирования добавлен раздел просмотра сообщений, отправленных через форму обратной связи" />
     <MESSAGE value="hotfix" />
     <MESSAGE value="Исправлен путь иконки клиентской базы" />
@@ -993,7 +991,8 @@
     <MESSAGE value="Исправлена функция установки нулевой скидки у клиента" />
     <MESSAGE value="В каталоге у администратора добавлена возможность видеть оптовую и розничную цену" />
     <MESSAGE value="Добавлена возможность видеть оптовую и розничную цену на странице товара у администратора" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность видеть оптовую и розничную цену на странице товара у администратора" />
+    <MESSAGE value="Добавлена возможность видеть оптовую и розничную цену в поиске у администратора" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность видеть оптовую и розничную цену в поиске у администратора" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1482,19 +1481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/catalogue/item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="528" column="41" lean-forward="true" selection-start-line="528" selection-start-column="41" selection-end-line="528" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/catalogue.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
@@ -1568,11 +1554,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/ajaxSearch.php">
+    <entry file="file://$PROJECT_DIR$/catalogue/item.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="200" column="37" lean-forward="true" selection-start-line="200" selection-start-column="37" selection-end-line="200" selection-end-column="37" />
+        <state relative-caret-position="606">
+          <caret line="528" column="41" lean-forward="true" selection-start-line="528" selection-start-column="41" selection-end-line="528" selection-end-column="41" />
           <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -1580,12 +1569,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSearch.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="235" column="9" selection-start-line="235" selection-start-column="9" selection-end-line="235" selection-end-column="9" />
+        <state relative-caret-position="147">
+          <caret line="156" column="25" lean-forward="true" selection-start-line="156" selection-start-column="25" selection-end-line="156" selection-end-column="25" />
           <folding>
+            <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ajaxSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="173" column="17" selection-start-line="173" selection-start-column="17" selection-end-line="173" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

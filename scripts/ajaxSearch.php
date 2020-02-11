@@ -149,45 +149,53 @@ if($searchResult->num_rows == 0) {
                 $price = $search['price'] * $rate[0];
                 $price_opt = $search['price_opt'] * $rate[0];
 
-                $roubles = floor($price);
-                $kopeck = ceil(($price - $roubles) * 100);
+                if($price > 0) {
+                    $roubles = floor($price);
+                    $kopeck = ceil(($price - $roubles) * 100);
 
-                if($kopeck == 100) {
-                    $kopeck = 0;
-                    $roubles ++;
+                    if($kopeck == 100) {
+                        $kopeck = 0;
+                        $roubles ++;
+                    }
+
+                    if($roubles == 0 and $kopeck == 0) {
+                        $kopeck = 1;
+                    }
+
+                    $kopeck = ceil($kopeck);
+
+                    if(strlen($kopeck) == 1) {
+                        $kopeck = "0".$kopeck;
+                    }
+
+                    $price = $roubles." руб. ".$kopeck." коп.";
+                } else {
+                    $price = "по запросу";
                 }
 
-                if($roubles == 0 and $kopeck == 0) {
-                    $kopeck = 1;
+                if($price_opt > 0) {
+                    $roubles = floor($price_opt);
+                    $kopeck = ceil(($price_opt - $roubles) * 100);
+
+                    if($kopeck == 100) {
+                        $kopeck = 0;
+                        $roubles ++;
+                    }
+
+                    if($roubles == 0 and $kopeck == 0) {
+                        $kopeck = 1;
+                    }
+
+                    $kopeck = ceil($kopeck);
+
+                    if(strlen($kopeck) == 1) {
+                        $kopeck = "0".$kopeck;
+                    }
+
+                    $price_opt = $roubles." руб. ".$kopeck." коп.";
+                } else {
+                    $price_opt = "не установлена в базе данных";
                 }
-
-                $kopeck = ceil($kopeck);
-
-                if(strlen($kopeck) == 1) {
-                    $kopeck = "0".$kopeck;
-                }
-
-                $price = $roubles." руб. ".$kopeck." коп.";
-
-                $roubles = floor($price_opt);
-                $kopeck = ceil(($price_opt - $roubles) * 100);
-
-                if($kopeck == 100) {
-                    $kopeck = 0;
-                    $roubles ++;
-                }
-
-                if($roubles == 0 and $kopeck == 0) {
-                    $kopeck = 1;
-                }
-
-                $kopeck = ceil($kopeck);
-
-                if(strlen($kopeck) == 1) {
-                    $kopeck = "0".$kopeck;
-                }
-
-                $price_opt = $roubles." руб. ".$kopeck." коп.";
 
                 echo "
                 <b>Цена розничная за ".$unit['short_name'].": </b>".$price."
