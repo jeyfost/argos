@@ -138,8 +138,90 @@ if($searchResult->num_rows == 0) {
 					<br />
                     <b>Наличие: </b>"; if($search['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} echo "
 					<br />
-					<b>Цена за ".$unit['short_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b>".$price."
 		";
+
+        if($active == 0) {
+            if($_SESSION['userID'] != 1) {
+                echo "
+			        <b>Цена за ".$unit['short_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b>".$price."
+                ";
+            } else {
+                $price = $search['price'] * $rate[0];
+                $price_opt = $search['price_opt'] * $rate[0];
+
+                $roubles = floor($price);
+                $kopeck = ceil(($price - $roubles) * 100);
+
+                if($kopeck == 100) {
+                    $kopeck = 0;
+                    $roubles ++;
+                }
+
+                if($roubles == 0 and $kopeck == 0) {
+                    $kopeck = 1;
+                }
+
+                $kopeck = ceil($kopeck);
+
+                if(strlen($kopeck) == 1) {
+                    $kopeck = "0".$kopeck;
+                }
+
+                $price = $roubles." руб. ".$kopeck." коп.";
+
+                $roubles = floor($price_opt);
+                $kopeck = ceil(($price_opt - $roubles) * 100);
+
+                if($kopeck == 100) {
+                    $kopeck = 0;
+                    $roubles ++;
+                }
+
+                if($roubles == 0 and $kopeck == 0) {
+                    $kopeck = 1;
+                }
+
+                $kopeck = ceil($kopeck);
+
+                if(strlen($kopeck) == 1) {
+                    $kopeck = "0".$kopeck;
+                }
+
+                $price_opt = $roubles." руб. ".$kopeck." коп.";
+
+                echo "
+                <b>Цена розничная за ".$unit['short_name'].": </b>".$price."
+                <br />
+                <b>Цена оптовая за ".$unit['short_name'].": </b>".$price_opt."
+            ";
+            }
+        } else {
+            $price = $actionGood['price'] * $rate[0];
+
+            $roubles = floor($price);
+            $kopeck = ceil(($price - $roubles) * 100);
+
+            if($kopeck == 100) {
+                $kopeck = 0;
+                $roubles ++;
+            }
+
+            if($roubles == 0 and $kopeck == 0) {
+                $kopeck = 1;
+            }
+
+            $kopeck = ceil($kopeck);
+
+            if(strlen($kopeck) == 1) {
+                $kopeck = "0".$kopeck;
+            }
+
+            $price = $roubles." руб. ".$kopeck." коп.";
+
+            echo "
+			        <b>Цена за ".$unit['short_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b><span style='color: #ff282b; font-weight: bold;'>".$price."</span>
+                ";
+        }
 
 		if($search['sketch'] != '') {
 			echo "<br /><br /><a href='/img/catalogue/sketch/".$search['sketch']."' class='lightview' data-lightview-options='skin: \"light\"'><span class='sketchFont'>Чертёж</span></a>";
