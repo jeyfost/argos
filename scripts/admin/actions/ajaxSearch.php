@@ -40,6 +40,7 @@ if($searchResult->num_rows > 0) {
             $rate = $rateResult->fetch_array(MYSQLI_NUM);
 
             $price = $search['price'] * $rate[0];
+            $price_opt = $search['price_opt'] * $rate[0];
 
             $roubles = floor($price);
             $kopeck = ceil(($price - $roubles) * 100);
@@ -60,6 +61,26 @@ if($searchResult->num_rows > 0) {
             }
 
             $price = $roubles." руб. ".$kopeck." коп.";
+
+            $roubles = floor($price_opt);
+            $kopeck = ceil(($price_opt - $roubles) * 100);
+
+            if($kopeck == 100) {
+                $kopeck = 0;
+                $roubles ++;
+            }
+
+            if($roubles == 0 and $kopeck == 0) {
+                $kopeck = 1;
+            }
+
+            $kopeck = ceil($kopeck);
+
+            if(strlen($kopeck) == 1) {
+                $kopeck = "0".$kopeck;
+            }
+
+            $price_opt = $roubles." руб. ".$kopeck." коп.";
 
             $typeResult = $mysqli->query("SELECT type_name FROM types WHERE catalogue_type = '".$search['type']."'");
             $type = $typeResult->fetch_array(MYSQLI_NUM);
@@ -102,7 +123,9 @@ if($searchResult->num_rows > 0) {
 					<br />
 					<b>Артикул: </b>".$search['code']."
 					<br />
-					<b>Цена за ".$unit['short_name'].": </b>".$price."
+					<b>Цена розничная за ".$unit['short_name'].": </b>".$price."
+					<br />
+					<b>Цена оптовая за ".$unit['short_name'].": </b>".$price_opt."
 		    ";
 
             if($search['sketch'] != '') {

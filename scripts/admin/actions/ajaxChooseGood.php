@@ -19,13 +19,47 @@ $currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$good['cu
 $currency = $currencyResult->fetch_assoc();
 
 $price = $good['price'] * $currency['rate'];
+$price_opt = $good['price_opt'] * $currency['rate'];
+
 $roubles = floor($price);
 $kopeck = ceil(($price - $roubles) * 100);
 
 if($kopeck == 100) {
-	$kopeck = 0;
-	$roubles ++;
+    $kopeck = 0;
+    $roubles ++;
 }
+
+if($roubles == 0 and $kopeck == 0) {
+    $kopeck = 1;
+}
+
+$kopeck = ceil($kopeck);
+
+if(strlen($kopeck) == 1) {
+    $kopeck = "0".$kopeck;
+}
+
+$price = $roubles." руб. ".$kopeck." коп.";
+
+$roubles = floor($price_opt);
+$kopeck = ceil(($price_opt - $roubles) * 100);
+
+if($kopeck == 100) {
+    $kopeck = 0;
+    $roubles ++;
+}
+
+if($roubles == 0 and $kopeck == 0) {
+    $kopeck = 1;
+}
+
+$kopeck = ceil($kopeck);
+
+if(strlen($kopeck) == 1) {
+    $kopeck = "0".$kopeck;
+}
+
+$price_opt = $roubles." руб. ".$kopeck." коп.";
 
 $today = strtotime(date('d-m-Y'));
 $actionCount = 0;
@@ -88,7 +122,9 @@ echo "
 			<br />
 			<b>Артикул: </b>".$good['code']."
 			<br />
-			<span><b>Цена за ".$unit['for_name'].": </b>"; if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>
+			<span><b>Цена розничная за".$unit['for_name'].": </b>".$price."</span>
+			<br />
+			<span><b>Цена оптовая за".$unit['for_name'].": </b>".$price_opt."</span>
 			".$status."
 			<br /><br >
 			<label for='np_".$randomID."'>Акционная стоимость в <b>".$currency['code']." (".$currency['currency_name'].")</b>:</label>
