@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,8 +63,8 @@
       <file leaf-file-name="orders.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/personal/orders.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="417" column="73" selection-start-line="417" selection-start-column="73" selection-end-line="417" selection-end-column="73" />
+            <state relative-caret-position="442">
+              <caret line="491" column="79" lean-forward="true" selection-start-line="491" selection-start-column="79" selection-end-line="491" selection-end-column="79" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -82,17 +81,34 @@
       <file leaf-file-name="orders.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/orders.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+            <state relative-caret-position="230">
+              <caret line="118" column="9" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajaxOrderDetailedInfo.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ajaxOrderDetailedInfoHistory.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="178" column="6" lean-forward="true" selection-start-line="178" selection-start-column="6" selection-end-line="178" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxOrderDetailedInfo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="235" column="10" selection-start-line="235" selection-start-column="10" selection-end-line="235" selection-end-column="10" />
+            <state relative-caret-position="164">
+              <caret line="235" column="10" lean-forward="true" selection-start-line="234" selection-start-column="4" selection-end-line="235" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#!!top" expanded="true" />
@@ -162,8 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/albums/edit.php" />
-        <option value="$PROJECT_DIR$/admin/albums/index.php" />
         <option value="$PROJECT_DIR$/admin/clients/add.php" />
         <option value="$PROJECT_DIR$/admin/clients/database.php" />
         <option value="$PROJECT_DIR$/admin/clients/edit.php" />
@@ -213,6 +227,8 @@
         <option value="$PROJECT_DIR$/scripts/admin/actions/ajaxSearch.php" />
         <option value="$PROJECT_DIR$/scripts/admin/actions/ajaxChooseGood.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" />
+        <option value="$PROJECT_DIR$/scripts/personal/ajaxSelectClient.php" />
+        <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" />
       </list>
     </option>
   </component>
@@ -543,21 +559,7 @@
       <workItem from="1580973684386" duration="14484000" />
       <workItem from="1581051919370" duration="8402000" />
       <workItem from="1581315933609" duration="8042000" />
-      <workItem from="1581398495392" duration="7772000" />
-    </task>
-    <task id="LOCAL-00296" summary="Исправлена ссылка на другие страницы в разделе новостей">
-      <created>1577685179146</created>
-      <option name="number" value="00296" />
-      <option name="presentableId" value="LOCAL-00296" />
-      <option name="project" value="LOCAL" />
-      <updated>1577685179146</updated>
-    </task>
-    <task id="LOCAL-00297" summary="Доработан раздел с ассортиментом продукции">
-      <created>1577704251341</created>
-      <option name="number" value="00297" />
-      <option name="presentableId" value="LOCAL-00297" />
-      <option name="project" value="LOCAL" />
-      <updated>1577704251343</updated>
+      <workItem from="1581398495392" duration="8615000" />
     </task>
     <task id="LOCAL-00298" summary="Увеличено расстояние между фотографиями в разделе с достижениями и наградами">
       <created>1577704325581</created>
@@ -888,11 +890,25 @@
       <option name="project" value="LOCAL" />
       <updated>1581407015690</updated>
     </task>
-    <option name="localTasksCounter" value="345" />
+    <task id="LOCAL-00345" summary="Добавлено отображение оптовых цен в разделе активных заявок">
+      <created>1581410399933</created>
+      <option name="number" value="00345" />
+      <option name="presentableId" value="LOCAL-00345" />
+      <option name="project" value="LOCAL" />
+      <updated>1581410399933</updated>
+    </task>
+    <task id="LOCAL-00346" summary="Исправлена таблица на странице активных заявок при выборе пользователя">
+      <created>1581410804825</created>
+      <option name="number" value="00346" />
+      <option name="presentableId" value="LOCAL-00346" />
+      <option name="project" value="LOCAL" />
+      <updated>1581410804825</updated>
+    </task>
+    <option name="localTasksCounter" value="347" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="826071000" />
+    <option name="totallyTimeSpent" value="826914000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -915,7 +931,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23071979" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23071979" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.117609255" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
@@ -966,8 +982,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлен раздел добавления сотрудников" />
-    <MESSAGE value="Добавлен раздел редактирования сотрудников" />
     <MESSAGE value="Добавлен раздел удаления сотрудников" />
     <MESSAGE value="Добавлен раздел со списком сотрудников принимающих заказы" />
     <MESSAGE value="Добавлена возможность указать сотрудника, принявшего заказ" />
@@ -991,7 +1005,9 @@
     <MESSAGE value="Исправлено отображение акционных товаров в поиске" />
     <MESSAGE value="Исправлен поиск товаров в разделе акций" />
     <MESSAGE value="В разделе акций добавлены оптовые цены" />
-    <option name="LAST_COMMIT_MESSAGE" value="В разделе акций добавлены оптовые цены" />
+    <MESSAGE value="Добавлено отображение оптовых цен в разделе активных заявок" />
+    <MESSAGE value="Исправлена таблица на странице активных заявок при выборе пользователя" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлена таблица на странице активных заявок при выборе пользователя" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1056,27 +1072,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/clients/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="158" column="40" selection-start-line="158" selection-start-column="40" selection-end-line="158" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/email/send.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="161" column="40" selection-start-line="161" selection-start-column="40" selection-end-line="161" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/goods/codes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="157" column="40" selection-start-line="157" selection-start-column="40" selection-end-line="157" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/goods/delete.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
@@ -1408,10 +1403,24 @@
     <entry file="file://$PROJECT_DIR$/personal/order.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSelectClientHistory.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSelectClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="67" column="231" selection-start-line="67" selection-start-column="231" selection-end-line="67" selection-end-column="231" />
+          <folding>
+            <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/personal/orders.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="417" column="73" selection-start-line="417" selection-start-column="73" selection-end-line="417" selection-end-column="73" />
+        <state relative-caret-position="442">
+          <caret line="491" column="79" lean-forward="true" selection-start-line="491" selection-start-column="79" selection-end-line="491" selection-end-column="79" />
           <folding>
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -1426,15 +1435,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/orders.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+        <state relative-caret-position="230">
+          <caret line="118" column="9" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="235" column="10" selection-start-line="235" selection-start-column="10" selection-end-line="235" selection-end-column="10" />
+        <state relative-caret-position="164">
+          <caret line="235" column="10" lean-forward="true" selection-start-line="234" selection-start-column="4" selection-end-line="235" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="178" column="6" lean-forward="true" selection-start-line="178" selection-start-column="6" selection-end-line="178" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#!!top" expanded="true" />
