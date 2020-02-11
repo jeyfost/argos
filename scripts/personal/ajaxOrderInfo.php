@@ -6,8 +6,8 @@ include("../helpers.php");
 
 $id = $mysqli->real_escape_string($_POST['id']);
 
-$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
-$discount = $discountResult->fetch_array(MYSQLI_NUM);
+$userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
+$user = $userResult->fetch_assoc();
 
 $orderResult = $mysqli->query("SELECT * FROM orders WHERE order_id = '".$id."'");
 
@@ -101,9 +101,14 @@ while($order = $orderResult->fetch_assoc()) {
 	$currency = $currencyResult->fetch_array(MYSQLI_NUM);
 
 	if($aID == 0) {
-		$price = $good['price'] * $currency[0];
+	    if($user['opt'] == 0) {
+            $price = $good['price'] * $currency[0];
+        } else {
+            $price = $good['price_opt'] * $currency[0];
+        }
+
 		$totalNormal += $price * $order['quantity'];
-		$price = $price * (1 - $discount[0] / 100);
+		$price = $price * (1 - $user['discount'] / 100);
 	} else {
 		$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$order['good_id']."' AND action_id = '".$aID."'");
 		$actionGood = $actionGoodResult->fetch_assoc();
@@ -165,7 +170,7 @@ while($order = $orderResult->fetch_assoc()) {
                     <b>Наличие: </b>"; if($good['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} echo "
 					<br />
 					<div id='goodPrice".$good['id']."'>
-						<span><b>Цена за ".$unit['short_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b>"; if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";} echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span'>";} echo "
+						<span><b>Цена за ".$unit['short_name']; if($user['discount'] > 0) {echo " с учётом скидки";} echo ": </b>"; if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";} echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span'>";} echo "
 				";
 
 				if($good['sketch'] != '') {
@@ -201,7 +206,7 @@ while($order = $orderResult->fetch_assoc()) {
 	";
 }
 
-$total = $totalAction + $totalNormal * (1 - $discount[0] / 100);
+$total = $totalAction + $totalNormal * (1 - $user['discount'] / 100);
 $roubles = floor($total);
 $kopeck = ceil(($total - $roubles) * 100);
 
@@ -235,11 +240,16 @@ if(strlen($kopeck) == 1) {
 
 $totalWOD = $roubles." руб. ".$kopeck." коп.";
 
-if($discount[0] > 0) {
+echo "
+    <div style='float: right;'><b>Ваши цены: </b><span> "; if($user['opt'] == 1) {echo "оптовые";} else {echo "розничные";} echo "</span></div>
+    <br />
+";
+
+if($user['discount'] > 0) {
     echo "
     <div style='float: right;'><b>Общая стоимость без скидки: </b><span>".$totalWOD."</span></div>
 	<br /><br />
-	<div style='float: right;'><b>Ваша личная скидка: </b><span>".$discount[0]."%</span></div>
+	<div style='float: right;'><b>Ваша личная скидка: </b><span>".$user['discount']."%</span></div>
 	<br />
 ";
 }
