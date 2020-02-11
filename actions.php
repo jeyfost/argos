@@ -736,7 +736,7 @@ if(isset($_SESSION['userID'])) {
 									<b>Наличие: </b>"; if($good['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} echo "
 									<br />
 									<div id='goodPrice".$good['id']."'>
-										<span><b>Стоимость за ".$unit['short_name'].": </b><span style='color: #ff282b; font-weight: bold;'>"; echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span></span>
+										<span><b>Цена за ".$unit['short_name'].": </b><span style='color: #ff282b; font-weight: bold;'>"; echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span></span>
 								";
 
 								if($good['sketch'] != '') {

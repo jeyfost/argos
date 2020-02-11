@@ -29,7 +29,7 @@ function changeItemPhoto(id, action) {
 }
 
 function changePrice(good_id, block, price, currency, unit, rate) {
-	document.getElementById(block).innerHTML = "<form id='changeGoodPriceForm' method='post'><b>Стоимость за " + unit + " в " + currency + ": </b><input type='number' value='" + price + "' min='0.0001' step='0.0001' id='changeGoodPriceInput' onblur='saveGoodPrice(\"" + good_id + "\", \"" + block + "\", \"" + currency + "\", \"" + unit + "\", \"" + rate + "\")' autofocus /></form><div style='clear: both;'><br /><br /><div id='goodResponseField'></div></div>";
+	document.getElementById(block).innerHTML = "<form id='changeGoodPriceForm' method='post'><b>Цена за " + unit + " в " + currency + ": </b><input type='number' value='" + price + "' min='0.0001' step='0.0001' id='changeGoodPriceInput' onblur='saveGoodPrice(\"" + good_id + "\", \"" + block + "\", \"" + currency + "\", \"" + unit + "\", \"" + rate + "\")' autofocus /></form><div style='clear: both;'><br /><br /><div id='goodResponseField'></div></div>";
 }
 
 function saveGoodPrice(good_id, block, currency, unit, rate) {
@@ -59,7 +59,7 @@ function saveGoodPrice(good_id, block, currency, unit, rate) {
 
                 console.log(price);
 
-				document.getElementById(block).innerHTML = "<span style='cursor: pointer;' onclick='changePrice(\"" + good_id + "\", \"" + block + "\", \"" + $('#changeGoodPriceInput').val() + "\", \"" + currency + "\", \"" + unit + "\", \"" + rate + "\")' title='Изменить стоимость товара'><b>Стоимость за " + unit + ": </b>" + price + "</span>";
+				document.getElementById(block).innerHTML = "<span style='cursor: pointer;' onclick='changePrice(\"" + good_id + "\", \"" + block + "\", \"" + $('#changeGoodPriceInput').val() + "\", \"" + currency + "\", \"" + unit + "\", \"" + rate + "\")' title='Изменить стоимость товара'><b>Цена за " + unit + ": </b>" + price + "</span>";
 			} else {
 				$.notify("Введите положительное значение", "error");
 			}

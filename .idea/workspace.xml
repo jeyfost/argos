@@ -4,12 +4,19 @@
     <bookmark url="file://$PROJECT_DIR$/personal/basket.php" line="696" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
+    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="Исправлен поиск товаров в разделе акций">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/ajaxSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ajaxSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/actions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/actions/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/actions/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/catalogue.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/catalogue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/item.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/personal/basket.php" beforeDir="false" afterPath="$PROJECT_DIR$/personal/basket.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/admin/actions/ajaxChooseGood.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/admin/actions/ajaxChooseGood.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/admin/actions/ajaxSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/admin/actions/ajaxSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderInfoHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderInfoHistory.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,64 +64,48 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="171" column="45" selection-start-line="171" selection-start-column="43" selection-end-line="171" selection-end-column="45" />
+            <state relative-caret-position="102">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/common.js">
+      <file leaf-file-name="add.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/actions/add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+            <state relative-caret-position="252">
+              <caret line="230" column="117" selection-start-line="230" selection-start-column="117" selection-end-line="230" selection-end-column="117" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/catalogue/index.php">
+      <file leaf-file-name="add.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/admin/actions/add.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="677" column="659" selection-start-line="677" selection-start-column="457" selection-end-line="677" selection-end-column="659" />
+            <state relative-caret-position="230">
+              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="catalogue.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/catalogue.php">
+      <file leaf-file-name="ajaxSearch.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/actions/ajaxSearch.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="623" column="29" lean-forward="true" selection-start-line="621" selection-start-column="28" selection-end-line="623" selection-end-column="29" />
+            <state relative-caret-position="459">
+              <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,22 +114,26 @@
       <file leaf-file-name="ajaxSearch.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/ajaxSearch.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="112" column="74" selection-start-line="112" selection-start-column="74" selection-end-line="112" selection-end-column="74" />
+            <state relative-caret-position="561">
+              <caret line="87" column="55" lean-forward="true" selection-start-line="69" selection-start-column="12" selection-end-line="87" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajaxSearch.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSearch.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/catalogue/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="92" column="74" selection-start-line="92" selection-start-column="74" selection-end-line="92" selection-end-column="74" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="11509">
+              <caret line="677" column="659" selection-start-line="677" selection-start-column="457" selection-end-line="677" selection-end-column="659" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="catalogue.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/catalogue.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10591">
+              <caret line="623" column="29" selection-start-line="621" selection-start-column="28" selection-end-line="623" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -154,8 +149,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sendDistr</find>
-      <find>Магазин</find>
       <find>sectio</find>
       <find>sort</find>
       <find>Цена за</find>
@@ -184,6 +177,8 @@
       <find>.actionImg</find>
       <find>по запр</find>
       <find>actionIMG</find>
+      <find>ещ</find>
+      <find>Стоимость за</find>
     </findStrings>
     <replaceStrings>
       <replace>catalogue/index.php</replace>
@@ -200,7 +195,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/actions/edit.php" />
         <option value="$PROJECT_DIR$/admin/albums/add.php" />
         <option value="$PROJECT_DIR$/admin/albums/delete.php" />
         <option value="$PROJECT_DIR$/admin/albums/edit.php" />
@@ -251,6 +245,7 @@
         <option value="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/js/common.js" />
+        <option value="$PROJECT_DIR$/scripts/admin/actions/ajaxSearch.php" />
       </list>
     </option>
   </component>
@@ -271,7 +266,7 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1" />
+    <option name="x" value="-3" />
     <option name="width" value="1612" />
     <option name="height" value="876" />
   </component>
@@ -283,6 +278,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -293,19 +289,30 @@
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="personal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="actions" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -575,21 +582,8 @@
       <workItem from="1580965505958" duration="898000" />
       <workItem from="1580973684386" duration="14484000" />
       <workItem from="1581051919370" duration="8402000" />
-      <workItem from="1581315933609" duration="6711000" />
-    </task>
-    <task id="LOCAL-00292" summary="Добавлен текст в разделе «О компании»">
-      <created>1572863332575</created>
-      <option name="number" value="00292" />
-      <option name="presentableId" value="LOCAL-00292" />
-      <option name="project" value="LOCAL" />
-      <updated>1572863332575</updated>
-    </task>
-    <task id="LOCAL-00293" summary="Увеличены вертикальные отступы элементов каталога">
-      <created>1573478554757</created>
-      <option name="number" value="00293" />
-      <option name="presentableId" value="LOCAL-00293" />
-      <option name="project" value="LOCAL" />
-      <updated>1573478554757</updated>
+      <workItem from="1581315933609" duration="8042000" />
+      <workItem from="1581398495392" duration="4181000" />
     </task>
     <task id="LOCAL-00294" summary="Исправлена кодировка входящих данных по единицам измерения">
       <created>1575356985436</created>
@@ -920,11 +914,25 @@
       <option name="project" value="LOCAL" />
       <updated>1581330161709</updated>
     </task>
-    <option name="localTasksCounter" value="341" />
+    <task id="LOCAL-00341" summary="Исправлено отображение акционных товаров в поиске">
+      <created>1581331775247</created>
+      <option name="number" value="00341" />
+      <option name="presentableId" value="LOCAL-00341" />
+      <option name="project" value="LOCAL" />
+      <updated>1581331775247</updated>
+    </task>
+    <task id="LOCAL-00342" summary="Исправлен поиск товаров в разделе акций">
+      <created>1581405061126</created>
+      <option name="number" value="00342" />
+      <option name="presentableId" value="LOCAL-00342" />
+      <option name="project" value="LOCAL" />
+      <updated>1581405061127</updated>
+    </task>
+    <option name="localTasksCounter" value="343" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="816968000" />
+    <option name="totallyTimeSpent" value="822480000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -947,7 +955,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22750643" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23071979" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.117609255" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
@@ -998,8 +1006,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправлен скрипт редактирования акции. Превью всех акций менялись при редактировании одной" />
-    <MESSAGE value="Исправлено выравнивание текста в новостях и в истории заказов у администратора" />
     <MESSAGE value="Добавлена главная страница раздела «Сотрудники» в панели администрирования" />
     <MESSAGE value="Добавлен раздел добавления сотрудников" />
     <MESSAGE value="Добавлен раздел редактирования сотрудников" />
@@ -1023,7 +1029,9 @@
     <MESSAGE value="В каталоге добавлено отображение оптовых цен" />
     <MESSAGE value="Добавлено отображение оптовых цен на странице товара" />
     <MESSAGE value="Добавлено отображение оптовых цен в поиске" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлено отображение оптовых цен в поиске" />
+    <MESSAGE value="Исправлено отображение акционных товаров в поиске" />
+    <MESSAGE value="Исправлен поиск товаров в разделе акций" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлен поиск товаров в разделе акций" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1088,27 +1096,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/albums/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="160" column="40" selection-start-line="160" selection-start-column="40" selection-end-line="160" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/albums/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="168" column="40" selection-start-line="168" selection-start-column="40" selection-end-line="168" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/albums/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="168" column="40" selection-start-line="168" selection-start-column="40" selection-end-line="168" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/albums/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -1411,30 +1398,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/catalogue/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="11509">
           <caret line="677" column="659" selection-start-line="677" selection-start-column="457" selection-end-line="677" selection-end-column="659" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="171" column="45" selection-start-line="171" selection-start-column="43" selection-end-line="171" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1442,47 +1407,69 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="92" column="74" selection-start-line="92" selection-start-column="74" selection-end-line="92" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catalogue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10591">
+          <caret line="623" column="29" selection-start-line="621" selection-start-column="28" selection-end-line="623" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/actions/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="230" column="117" selection-start-line="230" selection-start-column="117" selection-end-line="230" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/actions/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/ajaxSearch.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="112" column="74" selection-start-line="112" selection-start-column="74" selection-end-line="112" selection-end-column="74" />
+        <state relative-caret-position="561">
+          <caret line="87" column="55" lean-forward="true" selection-start-line="69" selection-start-column="12" selection-end-line="87" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/catalogue.php">
+    <entry file="file://$PROJECT_DIR$/scripts/admin/actions/ajaxSearch.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="623" column="29" lean-forward="true" selection-start-line="621" selection-start-column="28" selection-end-line="623" selection-end-column="29" />
+        <state relative-caret-position="459">
+          <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
         </state>
       </provider>
     </entry>

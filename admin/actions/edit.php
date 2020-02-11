@@ -361,7 +361,7 @@ if(!empty($_REQUEST['id'])) {
 											<br />
 											<b>Артикул: </b>".$good['code']."
 											<br />
-											<span><b>Стоимость за ".$unit['for_name'].": </b>"; if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>
+											<span><b>Цена за ".$unit['for_name'].": </b>"; if($roubles > 0) {echo $roubles." руб. ";} echo ceil($kopeck)." коп.</span>
 											".$status."
 											<br /><br >
 											<label for='np_".$randomID."'>Акционная стоимость в <b>".$currency['code']." (".$currency['currency_name'].")</b>:</label>

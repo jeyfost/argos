@@ -112,7 +112,7 @@ while($order = $orderResult->fetch_assoc()) {
                     <b>Наличие: </b>"; if($good['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} echo "
 					<br />
 					<div id='goodPrice".$good['id']."'>
-						<span><b>Стоимость за ".$unit['short_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b>"; if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";} echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";} echo "
+						<span><b>Цена за ".$unit['short_name']; if($discount[0] > 0) {echo " с учётом скидки";} echo ": </b>"; if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";} echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";} echo "
 				";
 
 				if($good['sketch'] != '') {
