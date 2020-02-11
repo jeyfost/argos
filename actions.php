@@ -783,7 +783,7 @@ if(isset($_SESSION['userID'])) {
 						$discount = $discountResult->fetch_array(MYSQLI_NUM);
 
 						if($discount[0] > 0) {
-							echo "<b>Обратите внимание, ваша личная скидка, равная <span style='color: #ff282b;'>".$discount[0]."%</span>, при покупке акционных товаров <span style='color: #ff282b;'>не учитывается</span>.</b>";
+							echo "<b>Обратите внимание, ваша дополнительная скидка, равная <span style='color: #ff282b;'>".$discount[0]."%</span>, при покупке акционных товаров <span style='color: #ff282b;'>не учитывается</span>.</b>";
 						}
 					} else {
 						if($_SESSION['userID'] != 1) {

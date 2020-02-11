@@ -673,6 +673,9 @@ if(isset($_SESSION['userID'])) {
 
 				switch($_REQUEST['section']) {
 					case 1:
+					    $userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
+					    $user = $userResult->fetch_assoc();
+
 						echo "
 							<form method='post'>
 								<label for='personalCompanyInput'>Название компании:</label>
@@ -691,7 +694,11 @@ if(isset($_SESSION['userID'])) {
 								<br />
 								<input type='text' id='personalPhoneInput' name='personalPhone' value='".$personal['phone']."' />
 								<br /><br />
-								<label>Ваша личная скидка на все товары:</label>
+								<label>Ваши цены на все товары:</label>
+								<br />
+								<input type='text' value='"; if($user['opt'] == 1) {echo "Оптовые";} else {echo "Розничные";} echo "' readonly style='background-color: #ddd; border: none;'>
+								<br /><br />
+								<label>Ваша дополнительная скидка на все товары:</label>
 								<br />
 								<input type='text' value='".$personal['discount']."%' readonly style='background-color: #ddd; border: none;'>
 								<br /><br />

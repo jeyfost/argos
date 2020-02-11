@@ -174,7 +174,7 @@ if(strlen($kopeck) == 1) {
 $total = $roubles." руб. ".$kopeck." коп.";
 
 if($actionGoodsQuantity > 0) {
-	echo "<span style='float: right; font-size: 14px; color: #ff282b;'>Ваша личная скидка не действует на акционные товары.</span><br /><br />";
+	echo "<span style='float: right; font-size: 14px; color: #ff282b;'>Ваша дополнительная скидка не действует на акционные товары.</span><br /><br />";
 }
 
 $employeeIDResult = $mysqli->query("SELECT manager FROM orders_info WHERE id = '".$id."'");

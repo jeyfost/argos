@@ -234,12 +234,12 @@ echo "
     <br /><br />
     <div style='float: right;'><b>Цены клиента: </b><span> "; if($user['opt'] == 1) {echo "оптовые";} else {echo "розничные";} echo "</span></div>
 	<br />
-	<div style='float: right;'><b>Личная скидка клиента: </b><span>".$user['discount']."%</span></div>
+	<div style='float: right;'><b>Дополнительная скидка клиента: </b><span>".$user['discount']."%</span></div>
 	<br />
 ";
 
 if($actionGoodsQuantity > 0) {
-	echo "<span style='float: right; font-size: 14px; color: #ff282b;'>Личная скидка клиента не действует на акционные товары.</span><br /><br />";
+	echo "<span style='float: right; font-size: 14px; color: #ff282b;'>Дополнительная скидка клиента не действует на акционные товары.</span><br /><br />";
 }
 
 echo "

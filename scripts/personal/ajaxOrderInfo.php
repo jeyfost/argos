@@ -249,13 +249,13 @@ if($user['discount'] > 0) {
     echo "
     <div style='float: right;'><b>Общая стоимость без скидки: </b><span>".$totalWOD."</span></div>
 	<br /><br />
-	<div style='float: right;'><b>Ваша личная скидка: </b><span>".$user['discount']."%</span></div>
+	<div style='float: right;'><b>Ваша дополнительная скидка: </b><span>".$user['discount']."%</span></div>
 	<br />
 ";
 }
 
 if($actionGoodsQuantity > 0) {
-	echo "<span style='float: right; font-size: 14px; color: #ff282b;'>Ваша личная скидка не действует на акционные товары.</span><br /><br />";
+	echo "<span style='float: right; font-size: 14px; color: #ff282b;'>Ваша дополнительная скидка не действует на акционные товары.</span><br /><br />";
 }
 
 echo "
