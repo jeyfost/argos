@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/ajaxSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ajaxSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +45,7 @@
       <file leaf-file-name="media.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/media.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="136">
               <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
             </state>
           </provider>
@@ -55,7 +54,7 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="3145">
               <caret line="185" column="44" selection-start-line="185" selection-start-column="44" selection-end-line="185" selection-end-column="44" />
             </state>
           </provider>
@@ -64,8 +63,8 @@
       <file leaf-file-name="item.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catalogue/item.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="528" column="41" lean-forward="true" selection-start-line="528" selection-start-column="41" selection-end-line="528" selection-end-column="41" />
+            <state relative-caret-position="17">
+              <caret line="528" column="41" selection-start-line="528" selection-start-column="41" selection-end-line="528" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -76,27 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajaxSearch.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSearch.php">
+      <file leaf-file-name="ajaxAddGood.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="156" column="25" lean-forward="true" selection-start-line="156" selection-start-column="25" selection-end-line="156" selection-end-column="25" />
-              <folding>
-                <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxSearch.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/ajaxSearch.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="173" column="17" selection-start-line="173" selection-start-column="17" selection-end-line="173" selection-end-column="17" />
-              <folding>
-                <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="357">
+              <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -186,7 +169,6 @@
         <option value="$PROJECT_DIR$/admin/messages/index.php" />
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxUpdate.php" />
         <option value="$PROJECT_DIR$/admin/goods/add.php" />
-        <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php" />
         <option value="$PROJECT_DIR$/admin/goods/edit.php" />
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php" />
         <option value="$PROJECT_DIR$/js/common.js" />
@@ -209,6 +191,7 @@
         <option value="$PROJECT_DIR$/catalogue/item.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" />
         <option value="$PROJECT_DIR$/scripts/ajaxSearch.php" />
+        <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php" />
       </list>
     </option>
   </component>
@@ -252,17 +235,25 @@
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="catalogue" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
-              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="personal" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="goods" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
@@ -544,14 +535,8 @@
       <workItem from="1580973684386" duration="14484000" />
       <workItem from="1581051919370" duration="8402000" />
       <workItem from="1581315933609" duration="8042000" />
-      <workItem from="1581398495392" duration="19832000" />
-    </task>
-    <task id="LOCAL-00309" summary="Доработан скрипт отправки резюме">
-      <created>1578478125603</created>
-      <option name="number" value="00309" />
-      <option name="presentableId" value="LOCAL-00309" />
-      <option name="project" value="LOCAL" />
-      <updated>1578478125603</updated>
+      <workItem from="1581398495392" duration="19933000" />
+      <workItem from="1581497803849" duration="203000" />
     </task>
     <task id="LOCAL-00310" summary="Изменена сортировка по умолчанию в разделе с пользователями сайта">
       <created>1578479918777</created>
@@ -889,11 +874,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581425202936</updated>
     </task>
-    <option name="localTasksCounter" value="358" />
+    <task id="LOCAL-00358" summary="Исправлено отображение цен в поиске у администратора">
+      <created>1581429667541</created>
+      <option name="number" value="00358" />
+      <option name="presentableId" value="LOCAL-00358" />
+      <option name="project" value="LOCAL" />
+      <updated>1581429667541</updated>
+    </task>
+    <option name="localTasksCounter" value="359" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="838131000" />
+    <option name="totallyTimeSpent" value="838504000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -911,15 +903,14 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4975" weight="0.31848854" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50385606" side_tool="true" weight="0.31529093" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
+      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" visible="true" weight="0.32070366" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32341" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23071979" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23393317" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.117609255" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
@@ -932,6 +923,7 @@
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32882273" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -967,7 +959,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="В панели аминистрирования добавлен раздел просмотра сообщений, отправленных через форму обратной связи" />
     <MESSAGE value="hotfix" />
     <MESSAGE value="Исправлен путь иконки клиентской базы" />
     <MESSAGE value="Добавлена функция установки оптовых цен через выгрузку 1С" />
@@ -992,7 +983,8 @@
     <MESSAGE value="В каталоге у администратора добавлена возможность видеть оптовую и розничную цену" />
     <MESSAGE value="Добавлена возможность видеть оптовую и розничную цену на странице товара у администратора" />
     <MESSAGE value="Добавлена возможность видеть оптовую и розничную цену в поиске у администратора" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность видеть оптовую и розничную цену в поиске у администратора" />
+    <MESSAGE value="Исправлено отображение цен в поиске у администратора" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлено отображение цен в поиске у администратора" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1067,6 +1059,51 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/css/media.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3145">
+          <caret line="185" column="44" selection-start-line="185" selection-start-column="44" selection-end-line="185" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catalogue/item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8976">
+          <caret line="528" column="41" lean-forward="true" selection-start-line="528" selection-start-column="41" selection-end-line="528" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2652">
+          <caret line="156" column="25" lean-forward="true" selection-start-line="156" selection-start-column="25" selection-end-line="156" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ajaxSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2941">
+          <caret line="173" column="17" selection-start-line="173" selection-start-column="17" selection-end-line="173" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/vacancies/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
@@ -1158,13 +1195,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1252">
-          <caret line="235" column="412" selection-start-line="235" selection-start-column="412" selection-end-line="235" selection-end-column="412" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/goods/add.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
@@ -1215,16 +1245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-476">
           <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1235,20 +1255,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/personal/order.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSelectClientHistory.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSelectClient.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="67" column="231" selection-start-line="67" selection-start-column="231" selection-end-line="67" selection-end-column="231" />
-          <folding>
-            <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1301,14 +1311,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="312" column="9" selection-start-line="312" selection-start-column="9" selection-end-line="312" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#b#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#b#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#b#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1316,13 +1318,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1445">
           <caret line="8" selection-start-line="8" selection-end-line="9" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1337,13 +1332,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="74" column="41" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1351,33 +1339,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2475">
           <caret line="186" column="98" selection-start-line="186" selection-start-column="98" selection-end-line="186" selection-end-column="98" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/catalogue/ajaxAddToBasket.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/actions.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/actions.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/js/catalogue.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1413,10 +1381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="37" column="94" selection-start-line="37" selection-start-column="94" selection-end-line="37" selection-end-column="94" />
-          <folding>
-            <element signature="n#style#0;n#td#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1476,7 +1440,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="3145">
           <caret line="185" column="44" selection-start-line="185" selection-start-column="44" selection-end-line="185" selection-end-column="44" />
         </state>
       </provider>
@@ -1485,50 +1449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
           <caret line="702" column="29" lean-forward="true" selection-start-line="676" selection-start-column="28" selection-end-line="702" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#center#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1536,44 +1456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
           <caret line="706" column="97" selection-start-line="706" selection-start-column="97" selection-end-line="706" selection-end-column="97" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/catalogue/item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="528" column="41" lean-forward="true" selection-start-line="528" selection-start-column="41" selection-end-line="528" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="156" column="25" lean-forward="true" selection-start-line="156" selection-start-column="25" selection-end-line="156" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1585,6 +1467,33 @@
             <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="156" column="25" selection-start-line="156" selection-start-column="25" selection-end-line="156" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catalogue/item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="528" column="41" selection-start-line="528" selection-start-column="41" selection-end-line="528" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
         </state>
       </provider>
     </entry>

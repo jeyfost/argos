@@ -18,6 +18,10 @@ $goodPriceOpt = $mysqli->real_escape_string($_POST['goodPriceOpt']);
 $goodQuantity = $mysqli->real_escape_string($_POST['goodQuantity']);
 $goodDescription = $mysqli->real_escape_string(str_replace("\n", "<br />", $_POST['goodDescription']));
 
+if(substr($goodName, 0, 1) == " ") {
+    $goodName = substr($goodName, 1, strlen($goodName) - 1);
+}
+
 function image_resize($source_path, $destination_path, $new_width, $quality = FALSE, $new_height = FALSE)
 {
 	ini_set("gd.jpeg_ignore_warning", 1);
