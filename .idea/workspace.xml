@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,11 +74,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajaxAddGood.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ajaxAddGood.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+            <state relative-caret-position="340">
+              <caret line="20" selection-start-line="20" selection-end-line="22" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxEditGood.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -170,7 +178,6 @@
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxUpdate.php" />
         <option value="$PROJECT_DIR$/admin/goods/add.php" />
         <option value="$PROJECT_DIR$/admin/goods/edit.php" />
-        <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php" />
         <option value="$PROJECT_DIR$/js/common.js" />
         <option value="$PROJECT_DIR$/scripts/admin/actions/ajaxSearch.php" />
         <option value="$PROJECT_DIR$/scripts/admin/actions/ajaxChooseGood.php" />
@@ -192,6 +199,7 @@
         <option value="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" />
         <option value="$PROJECT_DIR$/scripts/ajaxSearch.php" />
         <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php" />
+        <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php" />
       </list>
     </option>
   </component>
@@ -536,14 +544,7 @@
       <workItem from="1581051919370" duration="8402000" />
       <workItem from="1581315933609" duration="8042000" />
       <workItem from="1581398495392" duration="19933000" />
-      <workItem from="1581497803849" duration="203000" />
-    </task>
-    <task id="LOCAL-00310" summary="Изменена сортировка по умолчанию в разделе с пользователями сайта">
-      <created>1578479918777</created>
-      <option name="number" value="00310" />
-      <option name="presentableId" value="LOCAL-00310" />
-      <option name="project" value="LOCAL" />
-      <updated>1578479918777</updated>
+      <workItem from="1581497803849" duration="652000" />
     </task>
     <task id="LOCAL-00311" summary="Доработан скрипт отправки сообщений из раздела обратной связи. Добавлена функция записи всех отправленных сообщений из раздела обратной связи в базу данных.">
       <created>1580374061372</created>
@@ -881,11 +882,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581429667541</updated>
     </task>
-    <option name="localTasksCounter" value="359" />
+    <task id="LOCAL-00359" summary="Добавлена проверка на первый символ пробела в названии товара в разделе добавления и редактиования товара">
+      <created>1581498153978</created>
+      <option name="number" value="00359" />
+      <option name="presentableId" value="LOCAL-00359" />
+      <option name="project" value="LOCAL" />
+      <updated>1581498153979</updated>
+    </task>
+    <option name="localTasksCounter" value="360" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="838504000" />
+    <option name="totallyTimeSpent" value="838884000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -897,13 +905,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4975" weight="0.31848854" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50385606" side_tool="true" weight="0.31529093" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" visible="true" weight="0.32070366" />
+      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32341" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
@@ -959,7 +967,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hotfix" />
     <MESSAGE value="Исправлен путь иконки клиентской базы" />
     <MESSAGE value="Добавлена функция установки оптовых цен через выгрузку 1С" />
     <MESSAGE value="Добавлена функция установки оптовых цен в разделе добавления товара" />
@@ -984,7 +991,8 @@
     <MESSAGE value="Добавлена возможность видеть оптовую и розничную цену на странице товара у администратора" />
     <MESSAGE value="Добавлена возможность видеть оптовую и розничную цену в поиске у администратора" />
     <MESSAGE value="Исправлено отображение цен в поиске у администратора" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлено отображение цен в поиске у администратора" />
+    <MESSAGE value="Добавлена проверка на первый символ пробела в названии товара в разделе добавления и редактиования товара" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена проверка на первый символ пробела в названии товара в разделе добавления и редактиования товара" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1199,13 +1207,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
           <caret line="424" column="105" selection-start-line="424" selection-start-column="105" selection-end-line="424" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="181" column="148" selection-start-line="181" selection-start-column="148" selection-end-line="181" selection-end-column="148" />
         </state>
       </provider>
     </entry>
@@ -1492,8 +1493,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxAddGood.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxEditGood.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
