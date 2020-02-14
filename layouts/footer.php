@@ -15,6 +15,6 @@ function footer() {
         </div>
         <div style='clear: both;'></div>
         
-        <div onclick=\"scrollToTop()\" id=\"scroll\"><i class=\"fa fa-chevron-up\" aria-hidden=\"true\"></i></div>
+        <div onclick='scrollToTop()' id='scroll'><i class='fa fa-chevron-up' aria-hidden='true' style='font-size: 24px;'></i></div>
     ";
 }

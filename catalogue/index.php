@@ -553,7 +553,7 @@ if(isset($_SESSION['userID'])) {
 			}
 
 			/* КНОПКИ ПОСТРАНИЧНОЙ НАВИГАЦИИ В ВЕРХНЕЙ ЧАСТИ КАТАЛОГА */
-			/*
+
             echo "
                 <div style='width: 100%; position: relative; float: left;'>
                     <div id='pageNumbers'>
@@ -674,7 +674,7 @@ if(isset($_SESSION['userID'])) {
                 </div>
                 <br /><br /><br />
             ";
-            */
+
 
             /* ОТОБРАЖЕНИЕ ТОВАРОВ, КОТОРЫЕ ЕСТЬ НА СКЛАДЕ */
 
