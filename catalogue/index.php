@@ -533,15 +533,15 @@ if(isset($_SESSION['userID'])) {
 		<div id="catalogueContent">
 			<?php
 			if(!empty($_REQUEST['s2'])) {
-				$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE subcategory2 = '".$mysqli->real_escape_string($_REQUEST['s2'])."' ORDER BY name LIMIT ".$start.", 10");
+				$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE subcategory2 = '".$mysqli->real_escape_string($_REQUEST['s2'])."' ORDER BY quantity > 0 DESC, name ASC LIMIT ".$start.", 10");
 			} else {
 				if(!empty($_REQUEST['s'])) {
-					$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE subcategory = '".$mysqli->real_escape_string($_REQUEST['s'])."' ORDER BY name LIMIT ".$start.", 10");
+					$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE subcategory = '".$mysqli->real_escape_string($_REQUEST['s'])."' ORDER BY quantity > 0 DESC, name ASC LIMIT ".$start.", 10");
 				} else {
 					if(!empty($_REQUEST['c'])) {
-						$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE category = '".$mysqli->real_escape_string($_REQUEST['c'])."' ORDER BY name LIMIT ".$start.", 10");
+						$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE category = '".$mysqli->real_escape_string($_REQUEST['c'])."' ORDER BY quantity > 0 DESC, name ASC LIMIT ".$start.", 10");
 					} else {
-						$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE type = '".$mysqli->real_escape_string($_REQUEST['type'])."' ORDER BY name LIMIT ".$start.", 10");
+						$catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE type = '".$mysqli->real_escape_string($_REQUEST['type'])."' ORDER BY quantity > 0 DESC, name ASC LIMIT ".$start.", 10");
 					}
 				}
 			}
