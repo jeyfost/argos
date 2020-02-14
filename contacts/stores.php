@@ -403,6 +403,7 @@ if(isset($_SESSION['userID'])) {
     <div id="footer">
 		<?= footer() ?>
 	</div>
+
 </body>
 
 </html>

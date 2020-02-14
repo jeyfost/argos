@@ -14,5 +14,7 @@ function footer() {
             <div class='copy' style='float: right;'><i class='fa fa-phone' aria-hidden='true'></i> ".SALES_CITY."<br /><i class='fa fa-phone' aria-hidden='true'></i> ".SALES_MOBILE."</div>
         </div>
         <div style='clear: both;'></div>
+        
+        <div onclick=\"scrollToTop()\" id=\"scroll\"><i class=\"fa fa-chevron-up\" aria-hidden=\"true\"></i></div>
     ";
 }
