@@ -271,7 +271,7 @@ if(isset($_SESSION['userID'])) {
 					echo "<div style='clear: both;'></div>";
 				?>
 			</div>
-            <div id="menuLinks">
+            <div id="menuLinks" <?php if($detect->isMobile()) {echo "style='display: none;'";} ?>>
                 <div class="menuLink" id="catalogueLink" <?php echo "onmouseover='showDropdownList(\"1\", \"catalogueLink\", \"catalogueLink".strtoupper($mysqli->real_escape_string($_REQUEST['type']))."\")'"; ?>>
                     <a href="/catalogue/index.php?type=fa&p=1" class="menuPoint" style="color: #ff282b;">Каталог</a>
                     <img src="/img/system/downArrow.png" />
