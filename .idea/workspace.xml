@@ -4,10 +4,11 @@
     <bookmark url="file://$PROJECT_DIR$/personal/basket.php" line="709" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="Открыта панель постраничной навигации в верхней части страницы каталога, увеличена кнопка прокрутки до верхней части страницы">
+    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalogue/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="172" column="45" selection-start-line="172" selection-start-column="45" selection-end-line="172" selection-end-column="45" />
+            <state relative-caret-position="511">
+              <caret line="198" column="19" selection-start-line="198" selection-start-column="14" selection-end-line="198" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -66,11 +67,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catalogue/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="674" column="14" selection-start-line="674" selection-start-column="14" selection-end-line="674" selection-end-column="14" />
+            <state relative-caret-position="656">
+              <caret line="665" column="288" selection-start-line="665" selection-start-column="288" selection-end-line="665" selection-end-column="288" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -99,8 +100,8 @@
       <file leaf-file-name="catalogue.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catalogue.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="673" column="14" selection-start-line="673" selection-start-column="14" selection-end-line="673" selection-end-column="14" />
+            <state relative-caret-position="504">
+              <caret line="673" column="36" selection-start-line="673" selection-start-column="36" selection-end-line="673" selection-end-column="36" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -141,8 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>searchItemHover</find>
-      <find>orderComme</find>
       <find>showOrderD</find>
       <find>acceptOrder</find>
       <find>sendMail</find>
@@ -171,6 +170,8 @@
       <find>isMo</find>
       <find>personalMenuLi</find>
       <find>isMob</find>
+      <find>черт</find>
+      <find>pageN</find>
     </findStrings>
     <replaceStrings>
       <replace>catalogue/index.php</replace>
@@ -234,10 +235,10 @@
         <option value="$PROJECT_DIR$/about/assortment.php" />
         <option value="$PROJECT_DIR$/admin/achievements/add.php" />
         <option value="$PROJECT_DIR$/css/media.css" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/layouts/footer.php" />
         <option value="$PROJECT_DIR$/catalogue.php" />
         <option value="$PROJECT_DIR$/catalogue/index.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
       </list>
     </option>
   </component>
@@ -578,14 +579,7 @@
       <workItem from="1581398495392" duration="19933000" />
       <workItem from="1581497803849" duration="1311000" />
       <workItem from="1581659762834" duration="7900000" />
-      <workItem from="1581916422304" duration="2107000" />
-    </task>
-    <task id="LOCAL-00317" summary="Добавлена главная страница раздела «Сотрудники» в панели администрирования">
-      <created>1580900237517</created>
-      <option name="number" value="00317" />
-      <option name="presentableId" value="LOCAL-00317" />
-      <option name="project" value="LOCAL" />
-      <updated>1580900237519</updated>
+      <workItem from="1581916422304" duration="4163000" />
     </task>
     <task id="LOCAL-00318" summary="Добавлен раздел добавления сотрудников">
       <created>1580902607707</created>
@@ -923,11 +917,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581689337484</updated>
     </task>
-    <option name="localTasksCounter" value="366" />
+    <task id="LOCAL-00366" summary="Увеличен отступ между панелью постраничной навигации и содержимым каталога">
+      <created>1581935787664</created>
+      <option name="number" value="00366" />
+      <option name="presentableId" value="LOCAL-00366" />
+      <option name="project" value="LOCAL" />
+      <updated>1581935787664</updated>
+    </task>
+    <option name="localTasksCounter" value="367" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="849550000" />
+    <option name="totallyTimeSpent" value="851606000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1001,7 +1002,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлено отображение оптовых цен в поиске" />
     <MESSAGE value="Исправлено отображение акционных товаров в поиске" />
     <MESSAGE value="Исправлен поиск товаров в разделе акций" />
     <MESSAGE value="В разделе акций добавлены оптовые цены" />
@@ -1026,7 +1026,8 @@
     <MESSAGE value="Добавлена загатовка под кнопки постраничной навигации в верхней части страницы каталога" />
     <MESSAGE value="Скрыто меню для полной версии сайта в мобильной версии" />
     <MESSAGE value="Открыта панель постраничной навигации в верхней части страницы каталога, увеличена кнопка прокрутки до верхней части страницы" />
-    <option name="LAST_COMMIT_MESSAGE" value="Открыта панель постраничной навигации в верхней части страницы каталога, увеличена кнопка прокрутки до верхней части страницы" />
+    <MESSAGE value="Увеличен отступ между панелью постраничной навигации и содержимым каталога" />
+    <option name="LAST_COMMIT_MESSAGE" value="Увеличен отступ между панелью постраничной навигации и содержимым каталога" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1460,20 +1461,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="172" column="45" selection-start-line="172" selection-start-column="45" selection-end-line="172" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/admin/sections/ajaxDeleteCategory.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/catalogue.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="673" column="14" selection-start-line="673" selection-start-column="14" selection-end-line="673" selection-end-column="14" />
+        <state relative-caret-position="504">
+          <caret line="673" column="36" selection-start-line="673" selection-start-column="36" selection-end-line="673" selection-end-column="36" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -1504,8 +1498,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/catalogue/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="674" column="14" selection-start-line="674" selection-start-column="14" selection-end-line="674" selection-end-column="14" />
+        <state relative-caret-position="656">
+          <caret line="665" column="288" selection-start-line="665" selection-start-column="288" selection-end-line="665" selection-end-column="288" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -1527,6 +1521,13 @@
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="198" column="19" selection-start-line="198" selection-start-column="14" selection-end-line="198" selection-end-column="19" />
         </state>
       </provider>
     </entry>

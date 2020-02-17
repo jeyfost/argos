@@ -556,7 +556,7 @@ if(isset($_SESSION['userID'])) {
 
             echo "
                 <div style='width: 100%; position: relative; float: left;'>
-                    <div id='pageNumbers'>
+                    <div id='pageNumbers1'>
             ";
 
             if($numbers > 1) {
@@ -566,9 +566,9 @@ if(isset($_SESSION['userID'])) {
                     echo "<br /><br />";
 
                     if($_REQUEST['p'] == 1) {
-                        echo "<div class='pageNumberBlockSide' id='pbPrev' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Предыдущая</span></div>";
+                        echo "<div class='pageNumberBlockSide' id='pbPrev1' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Предыдущая</span></div>";
                     } else {
-                        echo "<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev'>Предыдущая</span></div></a>";
+                        echo "<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev1\", \"pbtPrev1\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev1'>Предыдущая</span></div></a>";
                     }
 
                     for($i = 1; $i <= $numbers; $i++) {
@@ -576,7 +576,7 @@ if(isset($_SESSION['userID'])) {
                             echo "<a href='".$link.$i."' class='noBorder'>";
                         }
 
-                        echo "<div id='pb".$i."' "; if($i == $_REQUEST['p']) {echo "class='pageNumberBlockActive'";} else {echo "class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$i."\", \"pbt".$i."\")' onmouseout='pageBlock(0, \"pb".$i."\", \"pbt".$i."\")'";} echo "><span "; if($i == $_REQUEST['p']) {echo "class='goodStyleWhite'";} else {echo "class='goodStyleRed' id='pbt".$i."'";} echo ">".$i."</span></div>";
+                        echo "<div id='pb1".$i."' "; if($i == $_REQUEST['p']) {echo "class='pageNumberBlockActive'";} else {echo "class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1".$i."\", \"pbt1".$i."\")' onmouseout='pageBlock(0, \"pb1".$i."\", \"pbt1".$i."\")'";} echo "><span "; if($i == $_REQUEST['p']) {echo "class='goodStyleWhite'";} else {echo "class='goodStyleRed' id='pbt1".$i."'";} echo ">".$i."</span></div>";
 
                         if($_REQUEST['p'] != $i) {
                             echo "</a>";
@@ -584,9 +584,9 @@ if(isset($_SESSION['userID'])) {
                     }
 
                     if($_REQUEST['p'] == $numbers) {
-                        echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
+                        echo "<div class='pageNumberBlockSide' id='pbNext1' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
                     } else {
-                        echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>";
+                        echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext1' onmouseover='pageBlock(1, \"pbNext1\", \"pbtNext1\")' onmouseout='pageBlock(0, \"pbNext1\", \"pbtNext1\")'><span class='goodStyleRed' id='pbtNext1'>Следующая</span></div></a>";
                     }
 
                     echo "</div>";
@@ -594,9 +594,9 @@ if(isset($_SESSION['userID'])) {
                 } else {
                     if($_REQUEST['p'] < 5) {
                         if($_REQUEST['p'] == 1) {
-                            echo "<div class='pageNumberBlockSide' id='pbPrev' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Предыдущая</span></div>";
+                            echo "<div class='pageNumberBlockSide' id='pbPrev1' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Предыдущая</span></div>";
                         } else {
-                            echo "<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev'>Предыдущая</span></div></a>";
+                            echo "<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev1' onmouseover='pageBlock(1, \"pbPrev1\", \"pbtPrev1\")' onmouseout='pageBlock(0, \"pbPrev1\", \"pbtPrev1\")'><span class='goodStyleRed' id='pbtPrev1'>Предыдущая</span></div></a>";
                         }
 
                         for($i = 1; $i <= 5; $i++) {
@@ -604,7 +604,7 @@ if(isset($_SESSION['userID'])) {
                                 echo "<a href='".$link.$i."' class='noBorder'>";
                             }
 
-                            echo "<div id='pb".$i."' "; if($i == $_REQUEST['p']) {echo "class='pageNumberBlockActive'";} else {echo "class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$i."\", \"pbt".$i."\")' onmouseout='pageBlock(0, \"pb".$i."\", \"pbt".$i."\")'";} echo "><span "; if($i == $_REQUEST['p']) {echo "class='goodStyleWhite'";} else {echo "class='goodStyleRed' id='pbt".$i."'";} echo ">".$i."</span></div>";
+                            echo "<div id='pb1".$i."' "; if($i == $_REQUEST['p']) {echo "class='pageNumberBlockActive'";} else {echo "class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1".$i."\", \"pbt1".$i."\")' onmouseout='pageBlock(0, \"pb1".$i."\", \"pbt1".$i."\")'";} echo "><span "; if($i == $_REQUEST['p']) {echo "class='goodStyleWhite'";} else {echo "class='goodStyleRed' id='pbt1".$i."'";} echo ">".$i."</span></div>";
 
                             if($_REQUEST['p'] != $i) {
                                 echo "</a>";
@@ -612,12 +612,12 @@ if(isset($_SESSION['userID'])) {
                         }
 
                         echo "<div class='pageNumberBlock' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>";
-                        echo "<a href='".$link.$numbers."' class='noBorder'><div id='pb".$numbers."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$numbers."\", \"pbt".$numbers."\")' onmouseout='pageBlock(0, \"pb".$numbers."\", \"pbt".$numbers."\")'><span class='goodStyleRed' id='pbt".$numbers."'>".$numbers."</span></div></a>";
+                        echo "<a href='".$link.$numbers."' class='noBorder'><div id='pb1".$numbers."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1".$numbers."\", \"pbt1".$numbers."\")' onmouseout='pageBlock(0, \"pb1".$numbers."\", \"pbt1".$numbers."\")'><span class='goodStyleRed' id='pbt1".$numbers."'>".$numbers."</span></div></a>";
 
                         if($_REQUEST['p'] == $numbers) {
-                            echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
+                            echo "<div class='pageNumberBlockSide' id='pbNext1' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
                         } else {
-                            echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>";
+                            echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext1' onmouseover='pageBlock(1, \"pbNext1\", \"pbtNext1\")' onmouseout='pageBlock(0, \"pbNext1\", \"pbtNext1\")'><span class='goodStyleRed' id='pbtNext1'>Следующая</span></div></a>";
                         }
 
                         echo "</div>";
@@ -627,24 +627,24 @@ if(isset($_SESSION['userID'])) {
                         if($_REQUEST['p'] >= 5 and $_REQUEST['p'] < $check) {
                             echo "
                                         <br /><br />
-                                        <div id='pageNumbers'>
-                                            <a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev'>Предыдущая</span></div></a>
-                                            <a href='".$link."1' class='noBorder'><div id='pb1' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1\", \"pbt1\")' onmouseout='pageBlock(0, \"pb1\", \"pbt1\")'><span class='goodStyleRed' id='pbt1'>1</span></div></a>
+                                        <div id='pageNumbers1'>
+                                            <a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev1' onmouseover='pageBlock(1, \"pbPrev1\", \"pbtPrev1\")' onmouseout='pageBlock(0, \"pbPrev1\", \"pbtPrev1\")'><span class='goodStyleRed' id='pbtPrev1'>Предыдущая</span></div></a>
+                                            <a href='".$link."1' class='noBorder'><div id='pb11' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb11\", \"pbt11\")' onmouseout='pageBlock(0, \"pb11\", \"pbt11\")'><span class='goodStyleRed' id='pbt11'>1</span></div></a>
                                             <div class='pageNumberBlock' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>
-                                            <a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div id='pb".($_REQUEST['p'] - 1)."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".($_REQUEST['p'] - 1)."\", \"pbt".($_REQUEST['p'] - 1)."\")' onmouseout='pageBlock(0, \"pb".($_REQUEST['p'] - 1)."\", \"pbt".($_REQUEST['p'] - 1)."\")'><span class='goodStyleRed' id='pbt".($_REQUEST['p'] - 1)."'>".($_REQUEST['p'] - 1)."</span></div></a>
+                                            <a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div id='pb1".($_REQUEST['p'] - 1)."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1".($_REQUEST['p'] - 1)."\", \"pbt1".($_REQUEST['p'] - 1)."\")' onmouseout='pageBlock(0, \"pb1".($_REQUEST['p'] - 1)."\", \"pbt1".($_REQUEST['p'] - 1)."\")'><span class='goodStyleRed' id='pbt1".($_REQUEST['p'] - 1)."'>".($_REQUEST['p'] - 1)."</span></div></a>
                                             <div class='pageNumberBlockActive'><span class='goodStyleWhite'>".$_REQUEST['p']."</span></div>
-                                            <a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div id='pb".($_REQUEST['p'] + 1)."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".($_REQUEST['p'] + 1)."\", \"pbt".($_REQUEST['p'] + 1)."\")' onmouseout='pageBlock(0, \"pb".($_REQUEST['p'] + 1)."\", \"pbt".($_REQUEST['p'] + 1)."\")'><span class='goodStyleRed' id='pbt".($_REQUEST['p'] + 1)."'>".($_REQUEST['p'] + 1)."</span></div></a>
+                                            <a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div id='pb1".($_REQUEST['p'] + 1)."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1".($_REQUEST['p'] + 1)."\", \"pbt1".($_REQUEST['p'] + 1)."\")' onmouseout='pageBlock(0, \"pb1".($_REQUEST['p'] + 1)."\", \"pbt1".($_REQUEST['p'] + 1)."\")'><span class='goodStyleRed' id='pbt1".($_REQUEST['p'] + 1)."'>".($_REQUEST['p'] + 1)."</span></div></a>
                                             <div class='pageNumberBlock' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>
-                                            <a href='".$link.$numbers."' class='noBorder'><div id='pb".$numbers."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$numbers."\", \"pbt".$numbers."\")' onmouseout='pageBlock(0, \"pb".$numbers."\", \"pbt".$numbers."\")'><span class='goodStyleRed' id='pbt".$numbers."'>".$numbers."</span></div></a>
-                                            <a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>
+                                            <a href='".$link.$numbers."' class='noBorder'><div id='pb1".$numbers."' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1".$numbers."\", \"pbt1".$numbers."\")' onmouseout='pageBlock(0, \"pb1".$numbers."\", \"pbt1".$numbers."\")'><span class='goodStyleRed' id='pbt1".$numbers."'>".$numbers."</span></div></a>
+                                            <a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext1' onmouseover='pageBlock(1, \"pbNext1\", \"pbtNext1\")' onmouseout='pageBlock(0, \"pbNext1\", \"pbtNext1\")'><span class='goodStyleRed' id='pbtNext1'>Следующая</span></div></a>
                                         </div>
                                     ";
                         } else {
                             echo "
                                         <br /><br />
-                                        <div id='pageNumbers'>
-                                            <a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev\", \"pbtPrev\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev'>Предыдущая</span></div></a>
-                                            <a href='".$link."1' class='noBorder'><div id='pb1' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1\", \"pbt1\")' onmouseout='pageBlock(0, \"pb1\", \"pbt1\")'><span class='goodStyleRed' id='pbt1'>1</span></div></a>
+                                        <div id='pageNumbers1'>
+                                            <a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev1' onmouseover='pageBlock(1, \"pbPrev1\", \"pbtPrev1\")' onmouseout='pageBlock(0, \"pbPrev1\", \"pbtPrev1\")'><span class='goodStyleRed' id='pbtPrev1'>Предыдущая</span></div></a>
+                                            <a href='".$link."1' class='noBorder'><div id='pb11' class='pageNumberBlock' onmouseover='pageBlock(1, \"pb11\", \"pbt11\")' onmouseout='pageBlock(0, \"pb11\", \"pbt11\")'><span class='goodStyleRed' id='pbt11'>1</span></div></a>
                                             <div class='pageNumberBlock' style='cursor: url(\"img/cursor/no.cur\"), auto;'><span class='goodStyle'>...</span></div>
                                     ";
 
@@ -653,7 +653,7 @@ if(isset($_SESSION['userID'])) {
                                     echo "<a href='".$link.$i."' class='noBorder'>";
                                 }
 
-                                echo "<div id='pb".$i."' "; if($i == $_REQUEST['p']) {echo "class='pageNumberBlockActive'";} else {echo "class='pageNumberBlock' onmouseover='pageBlock(1, \"pb".$i."\", \"pbt".$i."\")' onmouseout='pageBlock(0, \"pb".$i."\", \"pbt".$i."\")'";} echo "><span "; if($i == $_REQUEST['p']) {echo "class='goodStyleWhite'";} else {echo "class='goodStyleRed' id='pbt".$i."'";} echo ">".$i."</span></div>";
+                                echo "<div id='pb1".$i."' "; if($i == $_REQUEST['p']) {echo "class='pageNumberBlockActive'";} else {echo "class='pageNumberBlock' onmouseover='pageBlock(1, \"pb1".$i."\", \"pbt1".$i."\")' onmouseout='pageBlock(0, \"pb1".$i."\", \"pbt1".$i."\")'";} echo "><span "; if($i == $_REQUEST['p']) {echo "class='goodStyleWhite'";} else {echo "class='goodStyleRed' id='pbt1".$i."'";} echo ">".$i."</span></div>";
 
                                 if($_REQUEST['p'] != $i) {
                                     echo "</a>";
@@ -661,9 +661,9 @@ if(isset($_SESSION['userID'])) {
                             }
 
                             if($_REQUEST['p'] == $numbers) {
-                                echo "<div class='pageNumberBlockSide' id='pbNext' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
+                                echo "<div class='pageNumberBlockSide' id='pbNext1' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Следующая</span></div>";
                             } else {
-                                echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>";
+                                echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext1' onmouseover='pageBlock(1, \"pbNext1\", \"pbtNext1\")' onmouseout='pageBlock(0, \"pbNext1\", \"pbtNext1\")'><span class='goodStyleRed' id='pbtNext1'>Следующая</span></div></a>";
                             }
                         }
                     }
@@ -833,7 +833,7 @@ if(isset($_SESSION['userID'])) {
                             }
 
 							if($catalogue['sketch'] != '') {
-								echo "<br /><a href='/img/catalogue/sketch/".$catalogue['sketch']."' data-lightview-title='".$catalogue['name'].": Чертёж' data-lightview-options='skin: \"light\"' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
+								echo "<br /><br /><a href='/img/catalogue/sketch/".$catalogue['sketch']."' data-lightview-title='".$catalogue['name'].": Чертёж' data-lightview-options='skin: \"light\"' class='lightview'><span class='sketchFont'>Чертёж</span></a>";
 							}
 
 							echo "
