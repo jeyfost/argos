@@ -670,10 +670,11 @@ if(isset($_SESSION['userID'])) {
                 }
             }
 
-            echo "
-                </div>
-                <br /><br /><br />
-            ";
+            echo "</div>";
+
+            if($numbers > 1) {
+                echo "<br /><br /><br /><br />";
+            }
 
 
             /* ОТОБРАЖЕНИЕ ТОВАРОВ, КОТОРЫЕ ЕСТЬ НА СКЛАДЕ */
