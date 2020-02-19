@@ -566,7 +566,7 @@ if(isset($_SESSION['userID'])) {
                     if($_REQUEST['p'] == 1) {
                         echo "<div class='pageNumberBlockSide' id='pbPrev1' style='cursor: url(\"/img/cursor/no.cur\"), auto;'><span class='goodStyle'>Предыдущая</span></div>";
                     } else {
-                        echo "<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev' onmouseover='pageBlock(1, \"pbPrev1\", \"pbtPrev1\")' onmouseout='pageBlock(0, \"pbPrev\", \"pbtPrev\")'><span class='goodStyleRed' id='pbtPrev1'>Предыдущая</span></div></a>";
+                        echo "<a href='".$link.($_REQUEST['p'] - 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbPrev1' onmouseover='pageBlock(1, \"pbPrev1\", \"pbtPrev1\")' onmouseout='pageBlock(0, \"pbPrev1\", \"pbtPrev1\")'><span class='goodStyleRed' id='pbtPrev1'>Предыдущая</span></div></a>";
                     }
 
                     for($i = 1; $i <= $numbers; $i++) {
