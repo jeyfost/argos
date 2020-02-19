@@ -21,6 +21,9 @@ if(empty($_REQUEST['section'])) {
 include("../scripts/connect.php");
 include("../scripts/helpers.php");
 include ("../layouts/footer.php");
+require_once("../scripts/mobileDetect.php");
+
+$detect = new Mobile_Detect;
 
 if($_REQUEST['section'] == 3) {
 	if(empty($_REQUEST['p'])) {
