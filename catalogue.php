@@ -663,6 +663,8 @@ if(isset($_SESSION['userID'])) {
                             } else {
                                 echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext1' onmouseover='pageBlock(1, \"pbNext1\", \"pbtNext1\")' onmouseout='pageBlock(0, \"pbNext1\", \"pbtNext1\")'><span class='goodStyleRed' id='pbtNext1'>Следующая</span></div></a>";
                             }
+
+                            echo "</div>";
                         }
                     }
                 }
@@ -979,6 +981,8 @@ if(isset($_SESSION['userID'])) {
 							} else {
 								echo "<a href='".$link.($_REQUEST['p'] + 1)."' class='noBorder'><div class='pageNumberBlockSide' id='pbNext' onmouseover='pageBlock(1, \"pbNext\", \"pbtNext\")' onmouseout='pageBlock(0, \"pbNext\", \"pbtNext\")'><span class='goodStyleRed' id='pbtNext'>Следующая</span></div></a>";
 							}
+
+							echo "</div>";
 						}
 					}
 				}

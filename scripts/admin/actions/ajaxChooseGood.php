@@ -122,9 +122,9 @@ echo "
 			<br />
 			<b>Артикул: </b>".$good['code']."
 			<br />
-			<span><b>Цена розничная за".$unit['for_name'].": </b>".$price."</span>
+			<span><b>Цена розничная за ".$unit['for_name'].": </b>".$price."</span>
 			<br />
-			<span><b>Цена оптовая за".$unit['for_name'].": </b>".$price_opt."</span>
+			<span><b>Цена оптовая за ".$unit['for_name'].": </b>".$price_opt."</span>
 			".$status."
 			<br /><br >
 			<label for='np_".$randomID."'>Акционная стоимость в <b>".$currency['code']." (".$currency['currency_name'].")</b>:</label>

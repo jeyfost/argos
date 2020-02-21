@@ -86,6 +86,8 @@ select {height: 40px; line-height: 40px;}
     #page {position: relative; margin: 60px auto auto auto; width: 90%;}
     #mailSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer; position: relative; float: right; margin-top: 45px;}
     #mobileMenu {display: none;}
+    #orderGoodsSearchList {position: absolute; top: 0; right: 0; width: 480px; z-index: 999; background-color: #fff; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); padding: 10px; display: none; overflow: hidden;}
+    #orderGoodsSearchList .searchItem {cursor: pointer;}
 
     .menuLink img {margin: auto auto 3px 3px;}
     .slash {font-size: 14px; margin-left: 5px;}
@@ -199,3 +201,9 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .newsNumbers #pageNumbers {display: inline-block; vertical-align: bottom; margin: 0 auto; text-align: center; font-size: 15px; transition: .3s;}
 .partner {display: inline-block; vertical-align: middle; margin: 10px auto auto 15px;}
 .checkbox {width: 20px; height: 20px; position: relative; float: left;}
+.redLink {text-decoration: underline; color: #ff282b; cursor: pointer;}
+.orderGoodBlock {width: 100%; margin-top: 10px; padding: 5px; border: 1px dashed #aeaeae;}
+.goodImg {position: relative; float: left; width: 100px;}
+.goodInfo {position: relative; float: left; margin-left: 20px;}
+.goodName {margin-left: 10px; height: 30px; padding-left: 10px; padding-right: 10px; line-height: 30px;}
+.goodDescription {margin-left: 37px; margin-top: 10px; font-size: 15px;}

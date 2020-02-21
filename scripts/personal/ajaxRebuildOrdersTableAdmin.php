@@ -43,7 +43,7 @@ if($ordersQuantity[0] == 0) {
 				<td>Заказ</td>
 				<td>Дата оформления</td>
 				<td>Клиент</td>
-				<td>Принять заказ</td>
+				<td>Детализация заказа</td>
 				<td>Отмена заказа</td>
 			</tr>
 	";
@@ -59,7 +59,7 @@ if($ordersQuantity[0] == 0) {
 				<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")' title='Открыть детализацию заказа'>Заказ №".$order['id']."</span></td>
 				<td>".substr($order['send_date'], 0, 10)." в ".substr($order['send_date'], 11, 8)."</td>
 				<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
-				<td><span class='tdLink' onclick='acceptOrder(\"".$order['id']."\")'>Принять заказ</span></td>
+				<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")'>Открыть детализацию</span></td>
 				<td><span class='tdLink' onclick='cancelOrder(\"".$order['id']."\")'>Отменить заказ</span></td>
 			</tr>
 		";

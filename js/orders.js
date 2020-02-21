@@ -411,7 +411,7 @@ function goToPage(page, user) {
 function changeQuantityDetailed(id, order_id) {
 	var input = "quantityInput" + id;
 
-	if($('#' + input).val() !== '') {
+	if($('#' + input).val() !== '' && parseInt($('#' + input).val()) > 0) {
 		$.ajax({
 			type: "POST",
 			data: {
@@ -427,7 +427,7 @@ function changeQuantityDetailed(id, order_id) {
 	}
 }
 
-function removeGoodFromOrder(good_id, order_id) {
+function removeGoodFromOrder(good_id, order_id, user_id) {
 	$.ajax({
 		type: "POST",
 		data: {"orderID": order_id},
@@ -451,8 +451,11 @@ function removeGoodFromOrder(good_id, order_id) {
 						if(response === "a") {
 							$.ajax({
 								type: "POST",
-								data: {"orderID": order_id},
-								url: "/scripts/personal/ajaxCalculateOrderPrice.php",
+								data: {
+									"order_id": order_id,
+									"user_id": user_id
+								},
+								url: "/scripts/personal/ajaxRecalculateOrderPriceAfterDelete.php",
 								success: function(result) {
 									$('#ci' + good_id).hide('fast');
 									$('#cis' + good_id).hide('fast');
@@ -551,5 +554,221 @@ function addComment(id) {
 		});
 	} else {
 		$.notify("Введите текст комментария", "error");
+	}
+}
+
+function addGoodToOrder(user_id, order_id) {
+    var base_html = $('#goodsBlock').html();
+    var random_id = md5(Math.random(0, 1000000) + md5(Date.now()));
+
+    var new_html = "<div class='orderGoodBlock' id='" + random_id + "' style='background-color: #f8f8f8;'><div style='float: right;'><img src='/img/system/delete.png' style='cursor: pointer;' id='di" + random_id + "' onmouseover='changeDeleteIcon(\"di" + random_id + "\", 1)' onmouseout='changeDeleteIcon(\"di" + random_id + "\", 0)' title='Убрать этот блок' onclick='closeGoodBlock(\"" + random_id +"\", \"" + user_id + "\", \"" + order_id + "\")' /></div><div style='clear: both;'></div><br /><input type='text' id='search_" + random_id + "' class='searchFieldInput' value='Поиск...' onfocus='searchFocus(\"search_" + random_id + "\", \"" + user_id + "\", \"" + order_id + "\")' onblur='searchBlur(\"search_" + random_id + "\")' onkeyup='searchGood(\"search_" + random_id +"\", \"" + user_id + "\", \"" + order_id + "\")' /><br /><div id='g_" + random_id + "' class='goodBlock'></div><div style='clear: both;'></div></div></div>";
+
+    $('#goodsBlock').html(base_html + new_html);
+}
+
+function closeGoodBlock(block, user_id, order_id, good_id) {
+	$('#' + block).hide('300');
+    closeSearchList();
+
+    $.ajax({
+        type: "POST",
+        data: {
+			"order_id": order_id,
+			"good_id": good_id
+		},
+		url: "/scripts/personal/ajaxCloseGoodBlock.php",
+		success: function (response) {
+        	switch(response) {
+				case "ok":
+                    setTimeout(function() {
+                        $('#' + block).remove();
+                    }, 300);
+
+                    recalculateOrderPriceAfterDelete(user_id, order_id);
+					break;
+				case "failed":
+                    $.notify("Добавленный товар не был удалён. Необходимо перезагрузить страницу и удалить снова.", "error");
+					break;
+				default:
+					break;
+			}
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            $.notify(textStatus + "; " + errorThrown, "error");
+        }
+    });
+}
+
+function changeDeleteIcon(id, action) {
+    if(action === 1) {
+        document.getElementById(id).src = "/img/system/deleteRed.png";
+    } else {
+        document.getElementById(id).src = "/img/system/delete.png";
+    }
+}
+
+function searchFocus(id, user_id, order_id) {
+    var search = document.getElementById(id).value;
+
+    if(search === "Поиск...") {
+        document.getElementById(id).value = '';
+    }
+
+}
+
+function searchBlur(id) {
+    var search = document.getElementById(id).value;
+
+    if(search === '') {
+        document.getElementById(id).value = 'Поиск...';
+    }
+
+}
+
+function searchGood(id, user_id, order_id) {
+    var search = $('#' + id).val();
+    var searchList = $('#orderGoodsSearchList');
+
+    if(search !== "Поиск..." || search !== "") {
+        var x = $('#' + id).offset().left;
+        var y = parseInt($('#' + id).offset().top + 40);
+
+        searchList.offset({top: y, left: x});
+        searchList.show('300');
+	}
+
+    if(search !== '') {
+        $.ajax({
+            type: 'POST',
+            data: {
+                "search": search,
+                "id": id,
+				"user_id": user_id,
+				"order_id": order_id
+            },
+            url: "/scripts/personal/ajaxOrderSearch.php",
+            success: function(response) {
+                searchList.html('');
+                searchList.html("<div style='float: right;'><img src='/img/system/delete.png' style='cursor: pointer;' id='sl_" + id + "' onmouseover='changeDeleteIcon(\"sl_" + id + "\", 1)' onmouseout='changeDeleteIcon(\"sl_" + id + "\", 0)' title='Закрыть результат поиска' onclick='closeSearchList()' /></div><div style='clear: both;'></div>" + response);
+
+                var x = $('#' + id).offset().left;
+                var y = parseInt($('#' + id).offset().top + 40);
+
+                searchList.offset({top: y, left: x});
+                searchList.show('300');
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $.notify(textStatus + "; " + errorThrown, "error");
+            }
+        });
+    } else {
+        searchList.hide('300');
+
+        setTimeout(function() {
+            searchList.html('');
+        }, 300)
+    }
+}
+
+function closeSearchList() {
+    $('#orderGoodsSearchList').hide('300');
+}
+
+function chooseGood(id, block, user_id, order_id) {
+    var random_id = block.substr(2);
+
+    $.ajax({
+        type: 'POST',
+        data: {
+        	"id": id,
+			"block": block,
+			"user_id": user_id,
+			"order_id": order_id
+		},
+        url: "/scripts/personal/ajaxChooseGood.php",
+        success: function(response) {
+        	if(response === "duplicate") {
+				$.notify("Этот товар уже есть в заявке.", "error");
+			} else {
+                $('#' + block).html(response);
+                $('#' + block).attr("good_id", id);
+                $('#search_' + block.substring(2)).val("Поиск...");
+                closeSearchList();
+
+                recalculateOrderPrice(user_id, order_id, id);
+
+                $('#di' + random_id).attr("onclick", "closeGoodBlock('" + random_id + "', '" + user_id + "', '" + order_id + "', '" + id + "')");
+			}
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            $.notify(textStatus + "; " + errorThrown, "error");
+        }
+    });
+}
+
+function recalculateOrderPrice(user_id, order_id, good_id) {
+	$.ajax({
+		type: "POST",
+		data: {
+			"user_id": user_id,
+			"order_id": order_id,
+			"good_id": good_id
+		},
+		url: "/scripts/personal/ajaxRecalculateOrderPrice.php",
+		success: function (response) {
+			$('#totalPriceText').html(response);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            $.notify(textStatus + "; " + errorThrown, "error");
+        }
+	});
+}
+
+function recalculatePriceFromInput(good_id, user_id, order_id, block) {
+	var quantity = $('#' + block).val();
+
+	if(quantity !== "" && parseInt(quantity) > 0) {
+        $.ajax({
+			type: "POST",
+			data: {
+				"good_id": good_id,
+				"user_id": user_id,
+				"order_id": order_id,
+				"quantity": quantity
+			},
+			url: "/scripts/personal/ajaxRecalculateOrderPriceFromInput.php",
+			success: function (response) {
+                $('#totalPriceText').html(response);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $.notify(textStatus + "; " + errorThrown, "error");
+            }
+        });
+	}
+}
+
+function recalculateOrderPriceAfterDelete(user_id, order_id) {
+	$.ajax({
+		type: "POST",
+		data: {
+			"user_id": user_id,
+			"order_id": order_id
+		},
+		url: "/scripts/personal/ajaxRecalculateOrderPriceAfterDelete.php",
+		success: function (response) {
+            $('#totalPriceText').html(response);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            $.notify(textStatus + "; " + errorThrown, "error");
+        }
+	});
+}
+
+function checkQuantity(block, order_id, user_id, good_id) {
+	var quantity = $('#' + block).val();
+
+	if(quantity === '' || parseInt(quantity) <= 0) {
+		$('#' + block).val("1");
+		recalculatePriceFromInput(good_id, user_id, order_id, block);
 	}
 }

@@ -136,8 +136,8 @@ while($order = $orderResult->fetch_assoc()) {
 	$unit = $unitResult->fetch_assoc();
 
 	echo "
-		<div class='catalogueItem' id='ci".$good['id']."'>
-			<div class='itemDescription'>
+		<div class='catalogueItem'>
+			<div class='itemDescription' id='ci".$good['id']."'>
 				<table style='border: none; width: 100%;'>
 					<tr>
 						<td style='width: 100px;' valign='top'>
@@ -191,11 +191,11 @@ while($order = $orderResult->fetch_assoc()) {
 					</td>
 					<td style='width: 65px; vertical-align: top;'>
 						<div class='itemPurchase'>
-							<img src='/img/system/delete.png' id='deleteIMG".$good['id']."' style='cursor: pointer; float: right;' title='Убрать товар из заказа' onmouseover='changeIcon(\"deleteIMG".$good['id']."\", \"deleteRed.png\", 1)' onmouseout='changeIcon(\"deleteIMG".$good['id']."\", \"delete.png\", 1)' onclick='removeGoodFromOrder(\"".$good['id']."\", \"".$id."\")' />
+							<img src='/img/system/delete.png' id='deleteIMG".$good['id']."' style='cursor: pointer; float: right;' title='Убрать товар из заказа' onmouseover='changeIcon(\"deleteIMG".$good['id']."\", \"deleteRed.png\", 1)' onmouseout='changeIcon(\"deleteIMG".$good['id']."\", \"delete.png\", 1)' onclick='removeGoodFromOrder(\"".$good['id']."\", \"".$id."\", \"".$userID[0]."\")' />
 							<br /><br />
 							<form method='post'>
 								<label for='quantityInput".$good['id']."'>Кол-во в ".$unit['in_name'].":</label>
-								<input type='number' id='quantityInput".$good['id']."' min='1' step='1' value='".$order['quantity']."' class='itemQuantityInput' onchange='changeQuantityDetailed(\"".$good['id']."\", \"".$id."\")' onkeyup='changeQuantityDetailed(\"".$good['id']."\", \"".$id."\")' />
+								<input type='number' id='quantityInput".$good['id']."' min='1' step='1' value='".$order['quantity']."' class='itemQuantityInput' onchange='changeQuantityDetailed(\"".$good['id']."\", \"".$id."\")' onkeyup='changeQuantityDetailed(\"".$good['id']."\", \"".$id."\")' onblur='checkQuantity(\"quantityInput".$good['id']."\", \"".$id."\", \"".$userID[0]."\", \"".$good['id']."\")' />
 							</form>
 							<br />
 							<div class='addingResult' id='addingResult".$good['id']."' onclick='hideBlock(\"addingResult".$good['id']."\")'></div>
@@ -231,6 +231,11 @@ if(strlen($kopeck) == 1) {
 $total = $roubles." руб. ".$kopeck." коп.";
 
 echo "
+    <br />
+    <div id='orderGoodsSearchList'></div>
+    <div id='goodsBlock'></div>
+    <br />
+    <span class='redLink' style='text-decoration: none; border-bottom: 1px dashed #ff282b;' onclick='addGoodToOrder(\"".$userID[0]."\", \"".$id."\")'>+ Добавить ещё один товар</span>
     <br /><br />
     <div style='float: right;'><b>Цены клиента: </b><span> "; if($user['opt'] == 1) {echo "оптовые";} else {echo "розничные";} echo "</span></div>
 	<br />

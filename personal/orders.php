@@ -108,6 +108,7 @@ if(isset($_SESSION['userID'])) {
 	<![endif]-->
 	<script type="text/javascript" src="/js/lightview/js/spinners/spinners.min.js"></script>
 	<script type="text/javascript" src="/js/lightview/js/lightview/lightview.js"></script>
+	<script type="text/javascript" src="/js/md5.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -404,7 +405,7 @@ if(isset($_SESSION['userID'])) {
 									<td style='cursor: default;'><i class='fa fa-folder-open-o' aria-hidden='true'></i></td>
 									<td style='cursor: default;'>Дата оформления</td>
 									<td style='cursor: default;'>Клиент</td>
-									<td style='cursor: default;'>Принять заказ</td>
+									<td style='cursor: default;'>Детализация заказа</td>
 									<td style='cursor: default;'>Отмена заказа</td>
 								</tr>
 						";
@@ -419,7 +420,7 @@ if(isset($_SESSION['userID'])) {
 									<td><a href='order.php?id=".$order['id']."' target='_blank' class='font-awesome-link' title='Открыть детализацию заказа в новом окне'><i class='fa fa-folder-open-o' aria-hidden='true'></i></a></td>
 									<td>".dateFormattedDayToYear($order['send_date'])."</td>
 									<td>"; if(!empty($user['company'])) {echo $user['company']." — ";} echo $user['name']." — ".$user['phone']; echo "</td>
-									<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")'>Принять заказ</span></td>
+									<td><span class='tdLink' onclick='showOrderDetails(\"".$order['id']."\")'>Открыть детализацию</span></td>
 									<td><span class='tdLink' onclick='cancelOrder(\"".$order['id']."\")'>Отменить заказ</span></td>
 								</tr>
 							";

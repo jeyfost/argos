@@ -11,8 +11,8 @@ if($mysqli->query("UPDATE orders SET quantity = '".$quantity."' WHERE good_id = 
 	$userIDResult = $mysqli->query("SELECT user_id FROM orders WHERE order_id = '".$orderID."'");
 	$userID = $userIDResult->fetch_array(MYSQLI_NUM);
 
-	$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$userID[0]."'");
-	$discount = $discountResult->fetch_array(MYSQLI_NUM);
+	$userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$userID[0]."'");
+	$user = $userResult->fetch_assoc();
 
 	$totalNormal = 0;
 	$totalAction = 0;
@@ -101,7 +101,12 @@ if($mysqli->query("UPDATE orders SET quantity = '".$quantity."' WHERE good_id = 
 		$currency = $currencyResult->fetch_array(MYSQLI_NUM);
 
 		if($aID == 0) {
-			$price = $good['price'] * $currency[0];
+		    if($user['opt'] == 1) {
+                $price = $good['price_opt'] * $currency[0];
+            } else {
+                $price = $good['price'] * $currency[0];
+            }
+
 			$totalNormal += $price * $order['quantity'];
 		} else {
 			$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$order['good_id']."' AND action_id = '".$aID."'");
@@ -112,7 +117,7 @@ if($mysqli->query("UPDATE orders SET quantity = '".$quantity."' WHERE good_id = 
 		}
 	}
 
-	$total = $totalAction + $totalNormal * (1 - $discount[0] / 100);
+	$total = $totalAction + $totalNormal * (1 - $user['discount'] / 100);
 	$roubles = floor($total);
 	$kopeck = ceil(($total - $roubles) * 100);
 

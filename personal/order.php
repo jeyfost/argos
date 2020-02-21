@@ -91,6 +91,7 @@ if(isset($_SESSION['userID'])) {
 	<script type="text/javascript" src="/js/orders.js"></script>
 	<script type="text/javascript" src="/js/order.js"></script>
 	<script type="text/javascript" src="/js/notify.js"></script>
+	<script type="text/javascript" src="/js/md5.js"></script>
 	<!--[if lt IE 9]>
   		<script type="text/javascript" src="/js/lightview/js/excanvas/excanvas.js"></script>
 	<![endif]-->
