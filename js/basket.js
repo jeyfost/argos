@@ -252,28 +252,17 @@ function sendOrder() {
 	});
 }
 
-function changeQuantity(id) {
-	var input = "quantityInput" + id;
-
-	if ($('#' + input).val() !== '') {
-		$.ajax({
-			type: "POST",
-			data: {"id": id, "quantity": $('#' + input).val()},
-			url: "/scripts/personal/ajaxChangeQuantity.php",
-			success: function (response) {
-				$('#totalPriceText').html(response);
-			}
-		});
-	}
-}
-
 function changeQuantityDetailed(id, order_id) {
 	var input = "quantityInput" + id;
 
 	if ($('#' + input).val() !== '') {
 		$.ajax({
 			type: "POST",
-			data: {"id": id, "quantity": $('#' + input).val(), "orderID": order_id},
+			data: {
+				"id": id,
+				"quantity": $('#' + input).val()
+				"orderID": order_id
+			},
 			url: "/scripts/personal/ajaxChangeQuantityDetailed.php",
 			success: function (response) {
 				$('#totalPriceText').html(response);
@@ -363,7 +352,10 @@ function addComment(id) {
 	if(text !== '' && text !== "Текст комментария...") {
 		$.ajax({
 			type: "POST",
-			data: {"order_id": id, "text": text},
+			data: {
+				"order_id": id,
+				"text": text
+			},
 			url: "/scripts/personal/ajaxAddComment.php",
 			success: function (response) {
 				switch (response) {

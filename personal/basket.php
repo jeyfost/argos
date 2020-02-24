@@ -105,6 +105,7 @@ if(isset($_SESSION['userID'])) {
     <script type="text/javascript" src="/js/menu1.js"></script>
 	<script type="text/javascript" src="/js/common.js"></script>
 	<script type="text/javascript" src="/js/basket.js"></script>
+	<script type="text/javascript" src="/js/basketFunctions.js"></script>
 	<script type="text/javascript" src="/js/notify.js"></script>
 	<!--[if lt IE 9]>
   		<script type="text/javascript" src="/js/lightview/js/excanvas/excanvas.js"></script>
@@ -471,9 +472,9 @@ if(isset($_SESSION['userID'])) {
 
 							if($active == 0) {
 							    if($user['opt'] == 1) {
-                                    $price = $good['price'] * $currency['rate'];
-                                } else {
                                     $price = $good['price_opt'] * $currency['rate'];
+                                } else {
+                                    $price = $good['price'] * $currency['rate'];
                                 }
 
 								$totalNormal += $price * $basket['quantity'];
@@ -581,6 +582,10 @@ if(isset($_SESSION['userID'])) {
 							$roubles++;
 						}
 
+                        if(strlen($kopeck) == 1) {
+                            $kopeck = "0".$kopeck;
+                        }
+
 						$total = $roubles." руб. ".$kopeck." коп.";
 
                         $totalWOD = $totalAction + $totalNormal;
@@ -592,6 +597,10 @@ if(isset($_SESSION['userID'])) {
                             $roubles++;
                         }
 
+                        if(strlen($kopeck) == 1) {
+                            $kopeck = "0".$kopeck;
+                        }
+
                         $totalWOD = $roubles." руб. ".$kopeck." коп.";
 
                         echo "
@@ -601,7 +610,7 @@ if(isset($_SESSION['userID'])) {
 
 						if($user['discount'] > 0) {
                             echo "
-                                <div style='float: right;'><b>Общая стоимость без скидки: </b><span>".$totalWOD."</span></div>
+                                <div style='float: right;'><b>Общая стоимость без скидки: </b><span id='totalPriceWODText'>".$totalWOD."</span></div>
                                 <br /><br />
                                 <div style='float: right;'><b>Ваша дополнительная скидка: </b><span>".$user['discount']."%</span></div>
                                 <br />

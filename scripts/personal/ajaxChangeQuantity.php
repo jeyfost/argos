@@ -6,9 +6,10 @@ include("../connect.php");
 $quantity = $mysqli->real_escape_string($_POST['quantity']);
 $id = $mysqli->real_escape_string($_POST['id']);
 
+$userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
+$user = $userResult->fetch_assoc();
+
 if($mysqli->query("UPDATE basket SET quantity = '".$quantity."' WHERE user_id = '".$_SESSION['userID']."' AND good_id = '".$id."'")) {
-	$discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
-	$discount = $discountResult->fetch_array(MYSQLI_NUM);
 
 	$totalNormal = 0;
 	$totalAction = 0;
@@ -94,10 +95,15 @@ if($mysqli->query("UPDATE basket SET quantity = '".$quantity."' WHERE user_id = 
 		$good = $goodResult->fetch_assoc();
 
 		$currencyResult = $mysqli->query("SELECT * FROM currency WHERE id = '".$good['currency']."'");
-			$currency = $currencyResult->fetch_assoc();
+		$currency = $currencyResult->fetch_assoc();
 
 		if($aID == 0) {
-			$price = $good['price'] * $currency['rate'];
+		    if($user['opt'] == 1) {
+                $price = $good['price_opt'] * $currency['rate'];
+            } else {
+                $price = $good['price'] * $currency['rate'];
+            }
+
 			$totalNormal += $price * $basket['quantity'];
 		} else {
 			$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$basket['good_id']."' AND action_id = '".$aID."'");
@@ -108,7 +114,7 @@ if($mysqli->query("UPDATE basket SET quantity = '".$quantity."' WHERE user_id = 
 		}
 	}
 
-	$total = $totalAction + $totalNormal * (1 - $discount[0] / 100);
+	$total = $totalAction + $totalNormal * (1 - $user['discount'] / 100);
 	$roubles = floor($total);
 	$kopeck = ceil(($total - $roubles) * 100);
 
