@@ -260,12 +260,21 @@ function changeQuantityDetailed(id, order_id) {
 			type: "POST",
 			data: {
 				"id": id,
-				"quantity": $('#' + input).val()
+				"quantity": $('#' + input).val(),
 				"orderID": order_id
 			},
 			url: "/scripts/personal/ajaxChangeQuantityDetailed.php",
 			success: function (response) {
 				$('#totalPriceText').html(response);
+
+				$.ajax({
+					type: "POST",
+					data: {"orderID": order_id},
+					url: "/scripts/personal/ajaxBasketActiveCalculatePriceBeforeDiscount.php",
+					success: function (priceWOD) {
+						$('#totalPriceWODText').html(priceWOD);
+                    }
+				});
 			}
 		});
 	}
@@ -273,6 +282,7 @@ function changeQuantityDetailed(id, order_id) {
 
 function showOrderDetails(id) {
 	var response_field = $('#responseField');
+
 	$.ajax({
 		type: "POST",
 		data: {"id": id},
@@ -400,5 +410,59 @@ function addComment(id) {
 		});
 	} else {
 		$.notify("Введите текст комментария", "error");
+	}
+}
+
+function changeQuantity(id) {
+    var input = "quantityInput" + id;
+    var quantity = $('#' + input).val();
+
+    if (quantity !== '' && quantity > 0) {
+        $.ajax({
+            type: "POST",
+            data: {
+                "id": id,
+                "quantity": quantity
+            },
+            url: "/scripts/personal/ajaxChangeQuantity.php",
+            success: function (response) {
+                $('#totalPriceText').html(response);
+
+                $.ajax({
+                    type: "POST",
+                    url: "/scripts/personal/ajaxBasketCalculatePriceBeforeDiscount.php",
+                    success: function (priceWOD) {
+                        $('#totalPriceWODText').html(priceWOD);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        $.notify(textStatus + "; " + errorThrown, "error");
+                    }
+                });
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $.notify(textStatus + "; " + errorThrown, "error");
+            }
+        });
+    }
+}
+
+function checkQuantity(block, good_id) {
+    var quantity = $('#' + block).val();
+
+    if(quantity <= 0 || quantity === "") {
+        $('#' + block).val(1);
+
+        changeQuantity(good_id);
+    }
+}
+
+function checkQuantityActive(good_id, order_id) {
+	var block = "quantityInput" + good_id;
+	var quantity = $('#' + block).val();
+
+	if(quantity <= 0 || quantity === "") {
+        $('#' + block).val(1);
+
+        changeQuantityDetailed(good_id, order_id);
 	}
 }

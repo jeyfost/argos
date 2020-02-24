@@ -11,6 +11,7 @@ $user = $userResult->fetch_assoc();
 
 $orderResult = $mysqli->query("SELECT * FROM orders WHERE order_id = '".$id."'");
 
+$totalRozn = 0;
 $totalNormal = 0;
 $totalAction = 0;
 $actionGoodsQuantity = 0;
@@ -107,6 +108,7 @@ while($order = $orderResult->fetch_assoc()) {
             $price = $good['price_opt'] * $currency[0];
         }
 
+        $totalRozn += $good['price'] * $currency[0] * $order['quantity'];
 		$totalNormal += $price * $order['quantity'];
 		$price = $price * (1 - $user['discount'] / 100);
 	} else {
@@ -154,7 +156,9 @@ while($order = $orderResult->fetch_assoc()) {
 								</div>
 							<div class='catalogueDescription'>
 				";
+
 				$strings = explode("<br />", $good['description']);
+
 				for($i = 0; $i < count($strings); $i++) {
 					$string = explode(':', $strings[$i]);
 					if(count($string) > 1) {
@@ -163,6 +167,7 @@ while($order = $orderResult->fetch_assoc()) {
 						echo $string[0]."<br />";
 					}
 				}
+
 				echo "
 					<br />
 					<b>Артикул: </b>".$good['code']."
@@ -170,8 +175,7 @@ while($order = $orderResult->fetch_assoc()) {
                     <b>Наличие: </b>"; if($good['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} echo "
 					<br />
 					<div id='goodPrice".$good['id']."'>
-						<span><b>Цена за ".$unit['short_name']; if($user['discount'] > 0) {echo " с учётом скидки";} echo ": </b>"; if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";} echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span'>";} echo "
-				";
+						<span><b>Цена за ".$unit['short_name']; if($user['discount'] > 0) {echo " с учётом скидки";} echo ": </b>"; if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";} echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span'>";}
 
 				if($good['sketch'] != '') {
 					echo "<br /><br /><a href='/img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-options='skin: \"light\"'><span class='sketchFont'>Чертёж</span></a>";
@@ -188,7 +192,7 @@ while($order = $orderResult->fetch_assoc()) {
 							<br /><br />
 							<form method='post'>
 								<label for='quantityInput".$good['id']."'>Кол-во в ".$unit['in_name'].":</label>
-								<input type='number' id='quantityInput".$good['id']."' min='1' step='1' value='".$order['quantity']."' class='itemQuantityInput' onchange='changeQuantityDetailed(\"".$good['id']."\", \"".$id."\")' onkeyup='changeQuantityDetailed(\"".$good['id']."\", \"".$id."\")' />
+								<input type='number' id='quantityInput".$good['id']."' min='1' step='1' value='".$order['quantity']."' class='itemQuantityInput' onchange='changeQuantityDetailed(\"".$good['id']."\", \"".$id."\")' onkeyup='changeQuantityDetailed(\"".$good['id']."\", \"".$id."\")' onblur='checkQuantityActive(\"".$good['id']."\", \"".$id."\")' />
 							</form>
 							<br />
 							<div class='addingResult' id='addingResult".$good['id']."' onclick='hideBlock(\"addingResult".$good['id']."\")'></div>
@@ -223,7 +227,7 @@ if(strlen($kopeck) == 1) {
 
 $total = $roubles." руб. ".$kopeck." коп.";
 
-$totalWOD = $totalAction + $totalNormal;
+$totalWOD = $totalAction + $totalRozn;
 $roubles = floor($totalWOD);
 $kopeck = ceil(($totalWOD - $roubles) * 100);
 
@@ -247,7 +251,7 @@ echo "
 
 if($user['discount'] > 0) {
     echo "
-    <div style='float: right;'><b>Общая стоимость без скидки: </b><span>".$totalWOD."</span></div>
+    <div style='float: right;'><b>Общая стоимость без скидки: </b><span id='totalPriceWODText'>".$totalWOD."</span></div>
 	<br /><br />
 	<div style='float: right;'><b>Ваша дополнительная скидка: </b><span>".$user['discount']."%</span></div>
 	<br />

@@ -118,6 +118,10 @@ if($mysqli->query("UPDATE basket SET quantity = '".$quantity."' WHERE user_id = 
 	$roubles = floor($total);
 	$kopeck = ceil(($total - $roubles) * 100);
 
+	if(strlen($kopeck) == 1) {
+	    $kopeck = "0".$kopeck;
+    }
+
 	if($kopeck == 100) {
 		$kopeck = 0;
 		$roubles++;

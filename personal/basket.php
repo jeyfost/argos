@@ -105,7 +105,6 @@ if(isset($_SESSION['userID'])) {
     <script type="text/javascript" src="/js/menu1.js"></script>
 	<script type="text/javascript" src="/js/common.js"></script>
 	<script type="text/javascript" src="/js/basket.js"></script>
-	<script type="text/javascript" src="/js/basketFunctions.js"></script>
 	<script type="text/javascript" src="/js/notify.js"></script>
 	<!--[if lt IE 9]>
   		<script type="text/javascript" src="/js/lightview/js/excanvas/excanvas.js"></script>
@@ -379,6 +378,7 @@ if(isset($_SESSION['userID'])) {
 						echo "<span style='font-size: 15px;'><b>На данный момент ваша корзина пуста. Чтобы в ней появились товары, добавьте их <a href='/catalogue/index.php?type=fa&p=1' style='color: #ff282b;'>из каталога</a></b>.</span>";
 					} else {
 						echo "<span style='font-size: 15px;'>Всего групп товаров в коризне: <b id='basketQuantityText'>".$basketQuantity[0]."</b></span><br /><br />";
+						$totalRozn = 0;
 						$totalNormal = 0;
 						$totalAction = 0;
 						$aID = 0;
@@ -477,6 +477,7 @@ if(isset($_SESSION['userID'])) {
                                     $price = $good['price'] * $currency['rate'];
                                 }
 
+                                $totalRozn += $good['price'] * $currency['rate'] * $basket['quantity'];
 								$totalNormal += $price * $basket['quantity'];
 								$price = $price * (1 - $user['discount'] / 100);
 							} else {
@@ -556,7 +557,7 @@ if(isset($_SESSION['userID'])) {
 												<br /><br />
 												<form method='post'>
 													<label for='quantityInput".$good['id']."'>Кол-во в ".$unit['in_name'].":</label>
-													<input type='number' id='quantityInput".$good['id']."' min='1' step='1' value='".$basket['quantity']."' class='itemQuantityInput' onkeyup='changeQuantity(\"".$good['id']."\")' onchange='changeQuantity(\"".$good['id']."\")' />
+													<input type='number' id='quantityInput".$good['id']."' min='1' step='1' value='".$basket['quantity']."' class='itemQuantityInput' onkeyup='changeQuantity(\"".$good['id']."\")' onchange='changeQuantity(\"".$good['id']."\")' onblur='checkQuantity(\"quantityInput".$good['id']."\", \"".$good['id']."\")' />
 												</form>
 												<br />
 												<div class='addingResult' id='addingResult".$good['id']."' onclick='hideBlock(\"addingResult".$good['id']."\")'></div>
@@ -588,7 +589,7 @@ if(isset($_SESSION['userID'])) {
 
 						$total = $roubles." руб. ".$kopeck." коп.";
 
-                        $totalWOD = $totalAction + $totalNormal;
+                        $totalWOD = $totalRozn + $totalAction;
                         $roubles = floor($totalWOD);
                         $kopeck = ceil(($totalWOD - $roubles) * 100);
 
