@@ -8,7 +8,7 @@ ob_start();
 $row = 1;
 
 if(!empty($_FILES['csvFile']['tmp_name'])) {
-    /* Первая колонка в файле [0] — артикул, вторая [1] — цена розничная, третья [2] — цена оптовая, четвертая [3] - единицы измерения, пятая [4] — количество в остатке */
+    /* Первая колонка в файле [0] — артикул, вторая [1] — цена оптовая, третья [2] — цена розничная, четвертая [3] - единицы измерения, пятая [4] — количество в остатке */
 
 	$uploadDir = "../../../files/1C/";
 	$name = "update.csv";
@@ -27,8 +27,8 @@ if(!empty($_FILES['csvFile']['tmp_name'])) {
 			for ($c = 0; $c < $num; $c++) {
 				$stats = explode(";", $data[$c]);
 				$code = $stats[0];
-				$price = str_replace(" ", "", $stats[1]);
-				$price_opt = str_replace(" ", "", $stats[2]);
+				$price = str_replace(" ", "", $stats[2]);
+				$price_opt = str_replace(" ", "", $stats[1]);
 				$unit = $stats[3];
 				$quantity = $stats[4];
 
