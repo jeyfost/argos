@@ -454,12 +454,14 @@ if(isset($_SESSION['userID'])) {
                         ";
                     }
                 } else {
-                    $viewsResult = $mysqli->query("SELECT views FROM news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
-                    $views = $viewsResult->fetch_array(MYSQLI_NUM);
+                    if($_SESSION['userID'] != 1) {
+                        $viewsResult = $mysqli->query("SELECT views FROM news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+                        $views = $viewsResult->fetch_array(MYSQLI_NUM);
 
-                    $views = $views[0] + 1;
+                        $views = $views[0] + 1;
 
-                    $mysqli->query("UPDATE news SET views = '".$views."', last_view = '".date("Y-m-d H:i:s")."' WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+                        $mysqli->query("UPDATE news SET views = '".$views."', last_view = '".date("Y-m-d H:i:s")."' WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+                    }
 
                     $newsResult = $mysqli->query("SELECT * FROM news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
                     $news = $newsResult->fetch_assoc();
@@ -504,6 +506,24 @@ if(isset($_SESSION['userID'])) {
                         <div id='personalContent'>
                             <span style='color: #ff282b; font-style: italic; font-size: 14px;'>".$date."</span>
                             <br /><br />
+                    ";
+
+                    if($_SESSION['userID'] == 1) {
+                        echo "
+                            <table style='border: 1px dashed #4c4c4c;'>
+                                <tr>
+                                    <td style='padding: 5px;'>
+                                        <span style='font-style: italic; font-size: 14px;'><b>Количетсво просмотров:</b> ".$news['views']."</span>
+                                        <br />
+                                        <span style='font-style: italic; font-size: 14px;'><b>Последний просмотр:</b> ".$news['last_view']."</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                        ";
+                    }
+
+                    echo "
                             <h2>".$news['header']."</h2>
                             <p>".$news['text']."</p>
                             <a href='/news.php?p=1'><span style='color: #ff282b; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>Больше новостей</span></a>
