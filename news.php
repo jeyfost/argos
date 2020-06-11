@@ -454,6 +454,13 @@ if(isset($_SESSION['userID'])) {
                         ";
                     }
                 } else {
+                    $viewsResult = $mysqli->query("SELECT views FROM news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+                    $views = $viewsResult->fetch_array(MYSQLI_NUM);
+
+                    $views = $views[0] + 1;
+
+                    $mysqli->query("UPDATE news SET views = '".$views."', last_view = '".date("Y-m-d H:i:s")."' WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
+
                     $newsResult = $mysqli->query("SELECT * FROM news WHERE id = '".$mysqli->real_escape_string($_REQUEST['id'])."'");
                     $news = $newsResult->fetch_assoc();
 
