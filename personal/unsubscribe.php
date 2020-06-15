@@ -62,8 +62,8 @@
                 <a href='login.php'><img src='/img/system/login.png' title='Войти под своей учётной записью' id='loginIMG' onmouseover='changeIcon("loginIMG", "loginRed.png")' onmouseout='changeIcon("loginIMG", "login.png")' /></a>
             </div>
             <div id='searchBlock'>
-                <form method='post'>
-                    <input type='text' id='searchFieldInput' name='searchField' value='Поиск...' />
+                <form id='searchForm' method='post' action='/search/'>
+                    <input type='text' id='searchFieldInput' name='searchField' value='Поиск...' onkeyup='queryToSession()' />
                 </form>
             </div>
             <div style="clear: both;"></div>

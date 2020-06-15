@@ -7,6 +7,9 @@ $query = $mysqli->real_escape_string($_POST['query']);
 
 $searchResult = $mysqli->query("SELECT * FROM catalogue_new WHERE name LIKE '%".$query."%' OR code LIKE '%".$query."%' OR description LIKE '%".$query."%' ORDER BY name LIMIT 10");
 
+$searchFullResult = $mysqli->query("SELECT * FROM catalogue_new WHERE name LIKE '%".$query."%' OR code LIKE '%".$query."%' OR description LIKE '%".$query."%'");
+$searchFull = $searchFullResult->num_rows;
+
 if(isset($_SESSION['userID'])) {
     $userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
     $user = $userResult->fetch_assoc();
@@ -243,4 +246,11 @@ if($searchResult->num_rows == 0) {
 			<div style='clear: both;'></div>
 		";
 	}
+
+    if($searchFull > 10) {
+        echo "
+            <br />
+            <div style='margin: 0 auto; text-align: center;'><a href='/search/?query=".$query."'><span class='sketchFont'>Посмотреть все результаты</span></a></div>
+        ";
+    }
 }

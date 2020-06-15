@@ -80,6 +80,7 @@ if(time() - filemtime("sitemap.xml") >= 86400) {
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/menu.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
 	<!--[if lt IE 9]>
   		<script type="text/javascript" src="/js/lightview/js/excanvas/excanvas.js"></script>
 	<![endif]-->
@@ -168,8 +169,8 @@ if(time() - filemtime("sitemap.xml") >= 86400) {
 					}
 					echo "
 						<div id='searchBlock'>
-							<form method='post'>
-								<input type='text' id='searchFieldInput' name='searchField' value='Поиск...' />
+							<form id='searchForm' method='post' action='/search/'>
+								<input type='text' id='searchFieldInput' name='searchField' value='Поиск...' onkeyup='queryToSession()' />
 							</form>
 						</div>
 					";

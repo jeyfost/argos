@@ -100,3 +100,8 @@ function scrollFunction() {
         document.getElementById("scroll").style.display = "none";
     }
 }
+
+function queryToSession() {
+	var query = $('#searchFieldInput').val();
+	$('#searchForm').attr("action", "/search/?query=" + query + "&p=1");
+}
