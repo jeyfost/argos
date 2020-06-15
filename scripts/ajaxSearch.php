@@ -18,6 +18,12 @@ if(isset($_SESSION['userID'])) {
 if($searchResult->num_rows == 0) {
 	echo "<i>К сожалению, поиск не дал результата.</i>";
 } else {
+    echo "
+        <br />
+        <div style='margin: 0 auto; text-align: center;'><a href='/search/?query=".$query."'><span class='sketchFont'>Посмотреть все результаты</span></a></div>
+        <br />
+    ";
+
 	$j = 0;
 
 	while($search = $searchResult->fetch_assoc()) {
