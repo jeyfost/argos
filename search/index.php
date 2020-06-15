@@ -401,7 +401,7 @@
                     }
                     echo "
                         
-                        <a href='index.php?type=".$type['catalogue_type']."&p=1' onmouseover='subcategoryStyle(1, \"type".$type['id']."\")' onmouseout='subcategoryStyle(0, \"type".$type['id']."\")'><span id='type".$type['id']."'>".$type['type_name']."</span></a>
+                        <a href='/catalogue/index.php?type=".$type['catalogue_type']."&p=1' onmouseover='subcategoryStyle(1, \"type".$type['id']."\")' onmouseout='subcategoryStyle(0, \"type".$type['id']."\")'><span id='type".$type['id']."'>".$type['type_name']."</span></a>
                     ";
                 }
             ?>
