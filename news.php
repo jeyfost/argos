@@ -523,8 +523,12 @@ if(isset($_SESSION['userID'])) {
                         ";
                     }
 
+                    if($_SESSION['userID'] == 1) {
+                        echo "<h2 style='text-align: center;'>".$news['header']." <a href='/admin/news/edit.php?type=".$news['client']."&year=".$news['year']."&id=".$news['id']."'><i class='fa fa-pencil' aria-hidden='true'></i></a></h2>";
+                    } else {
+                        echo "<h2 style='text-align: center;'>".$news['header']."</h2>";
+                    }
                     echo "
-                            <h2 style='text-align: center;'>".$news['header']."</h2>
                             <p>".$news['text']."</p>
                             <a href='/news.php?p=1'><span style='color: #ff282b; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>Больше новостей</span></a>
                         </div>

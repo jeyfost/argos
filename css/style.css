@@ -4,12 +4,14 @@ label, a div table tr td {color: #4c4c4c; font-family: Calibri, Helvetica, Arial
 input {width: 300px; height: 30px; padding: 0 10px; font-style: italic;}
 h1 {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 50px;}
 h2 {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 30px; margin-top: 0;}
+h2 i {color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 20px !important; margin-top: 0; transition: .3s;}
 table {border: none; transition: .3s;}
 td {padding-left: 10px; padding-right: 10px;}
 select {height: 40px; line-height: 40px;}
 
 #breadCrumbs a span:hover, .basicLink:hover, .copy a:hover, p a:hover, .searchLink:hover, .addToBasketFont:hover, .link:hover, .headLink:hover {text-decoration: none;}
 #scroll:hover {color: #ff282b;}
+h2 i:hover {color: #ff282b;}
 
 .catalogueItemTextDecorated:hover {text-decoration: underline;}
 .catalogueDescription a span:hover, .sketchFont:hover, td a:hover, span b a:hover, .tdLink:hover {text-decoration: underline;}
