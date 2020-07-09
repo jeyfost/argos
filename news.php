@@ -524,7 +524,7 @@ if(isset($_SESSION['userID'])) {
                     }
 
                     echo "
-                            <h2>".$news['header']."</h2>
+                            <h2 style='text-align: center;'>".$news['header']."</h2>
                             <p>".$news['text']."</p>
                             <a href='/news.php?p=1'><span style='color: #ff282b; font-style: italic; font-size: 14px; text-decoration: underline;' class='yearFont'>Больше новостей</span></a>
                         </div>

@@ -44,7 +44,7 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catalogue/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="4352">
               <caret line="256" column="28" selection-start-line="256" selection-start-column="28" selection-end-line="256" selection-end-column="28" />
             </state>
           </provider>
@@ -53,8 +53,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/search/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+            <state relative-caret-position="364">
+              <caret line="401" column="26" lean-forward="true" selection-start-line="401" selection-start-column="26" selection-end-line="401" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -181,11 +181,11 @@
         <option value="$PROJECT_DIR$/personal/register.php" />
         <option value="$PROJECT_DIR$/personal/success.php" />
         <option value="$PROJECT_DIR$/personal/unsubscribe.php" />
-        <option value="$PROJECT_DIR$/search/index.php" />
         <option value="$PROJECT_DIR$/stores/company.php" />
         <option value="$PROJECT_DIR$/stores/representatives.php" />
         <option value="$PROJECT_DIR$/scripts/ajaxSearch.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" />
+        <option value="$PROJECT_DIR$/search/index.php" />
       </list>
     </option>
   </component>
@@ -516,13 +516,7 @@
       <workItem from="1591853229213" duration="1063000" />
       <workItem from="1592198777962" duration="7106000" />
       <workItem from="1592209238380" duration="244000" />
-    </task>
-    <task id="LOCAL-00330" summary="При выборе клиента в истории заказов исправлен просмотр детализации заказа">
-      <created>1580985873556</created>
-      <option name="number" value="00330" />
-      <option name="presentableId" value="LOCAL-00330" />
-      <option name="project" value="LOCAL" />
-      <updated>1580985873556</updated>
+      <workItem from="1592209867973" duration="116000" />
     </task>
     <task id="LOCAL-00331" summary="При поиске клиента в клиентской базе, по нему выдаётся больше информации">
       <created>1580990016042</created>
@@ -860,11 +854,18 @@
       <option name="project" value="LOCAL" />
       <updated>1592209461618</updated>
     </task>
-    <option name="localTasksCounter" value="379" />
+    <task id="LOCAL-00379" summary="Исправлены ссылки на разделы каталога на общей странице поиска">
+      <created>1592209964012</created>
+      <option name="number" value="00379" />
+      <option name="presentableId" value="LOCAL-00379" />
+      <option name="project" value="LOCAL" />
+      <updated>1592209964027</updated>
+    </task>
+    <option name="localTasksCounter" value="380" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="920662000" />
+    <option name="totallyTimeSpent" value="920778000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -877,6 +878,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4975" weight="0.31848854" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50385606" side_tool="true" weight="0.31529093" />
@@ -886,7 +888,7 @@
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32341" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28470436" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28856042" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.11696658" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -937,7 +939,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправлена функция установки нулевой скидки у клиента" />
     <MESSAGE value="В каталоге у администратора добавлена возможность видеть оптовую и розничную цену" />
     <MESSAGE value="Добавлена возможность видеть оптовую и розничную цену на странице товара у администратора" />
     <MESSAGE value="Добавлена возможность видеть оптовую и розничную цену в поиске у администратора" />
@@ -962,7 +963,8 @@
     <MESSAGE value="Добавлена возможность показа статистики просмотров новостей у администратора" />
     <MESSAGE value="Добавлена страница со всеми результатами поиска" />
     <MESSAGE value="Доработан блок с мгновенными результатами поиска" />
-    <option name="LAST_COMMIT_MESSAGE" value="Доработан блок с мгновенными результатами поиска" />
+    <MESSAGE value="Исправлены ссылки на разделы каталога на общей странице поиска" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлены ссылки на разделы каталога на общей странице поиска" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1218,7 +1220,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/catalogue/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="4352">
           <caret line="256" column="28" selection-start-line="256" selection-start-column="28" selection-end-line="256" selection-end-column="28" />
         </state>
       </provider>
@@ -1444,15 +1446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1460,17 +1453,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
           <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/search/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+        <state relative-caret-position="364">
+          <caret line="401" column="26" lean-forward="true" selection-start-line="401" selection-start-column="26" selection-end-line="401" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
