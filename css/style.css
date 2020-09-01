@@ -45,6 +45,7 @@ h2 i:hover {color: #ff282b;}
     .mobileMenuPointBig {font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 18px; color: #4c4c4c;}
     .mobileMenuPointSmall {font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 14px; color: #4c4c4c;}
     .subMenu {margin-left: 10px;}
+    .cardContainer {margin: 0 auto;}
 }
 
 /* screen */
@@ -209,3 +210,6 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .goodInfo {position: relative; float: left; margin-left: 20px;}
 .goodName {margin-left: 10px; height: 30px; padding-left: 10px; padding-right: 10px; line-height: 30px;}
 .goodDescription {margin-left: 37px; margin-top: 10px; font-size: 15px;}
+.cardContainer {width: 320px; height: 203px; background: url("/img/system/card_d.jpg") no-repeat; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4); }
+.cardTextContainer {margin-left: 270px;}
+.cardText {color: #000; font-family: 'Monda', sans-serif;}

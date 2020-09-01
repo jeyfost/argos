@@ -107,6 +107,9 @@ if(isset($_SESSION['userID'])) {
     <link rel='stylesheet' media='screen' type='text/css' href='/css/style.css'>
 	<link rel="stylesheet" type="text/css" href="/js/lightview/css/lightview/lightview.css" />
     <link rel="stylesheet" href="/js/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Monda&display=swap" rel="stylesheet">
+
     <?php
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== false) {
 			echo "<link rel='stylesheet' media='screen' type='text/css' href='/css/styleOpera.css'>";
@@ -710,6 +713,20 @@ if(isset($_SESSION['userID'])) {
 								<label>Ваша дополнительная скидка на все товары:</label>
 								<br />
 								<input type='text' value='".$personal['discount']."%' readonly style='background-color: #ddd; border: none;'>
+						";
+
+						if($user['card'] !== "0") {
+                            echo "
+                                <br /><br />
+								<div class='cardContainer'>
+								    <div class='cardTextContainer'>
+								        <span class='cardText'><br /><br /><br /><br /><br />".$user['card']."</span>
+								    </div>
+                                </div>
+                            ";
+                        }
+
+						echo "
 								<br /><br />
 								<input type='button' value='Редактировать' id='personalSubmit' onmouseover='buttonChange(\"personalSubmit\", 1)' onmouseout='buttonChange(\"personalSubmit\", 0)' onclick='editUserInfo()' />
 							</form>
