@@ -647,6 +647,10 @@ if(isset($_SESSION['userID'])) {
 									<br /><br />
                                     <label for='optPriceCheckbox'>Оптовые цены</label>
                                     <input type='checkbox' class='checkbox' id='optPriceCheckbox' name='optPrice'"; if($user['opt'] == 1) {echo " checked";} echo ">
+                                    <br /><br />
+									<label for='userCardNumberInput'>Номер дисконтной карты:</label>
+									<br />
+									<input type='text' id='userCardNumberInput' value='".$user['card']."' />
 									<br /><br />
 									<label for='userDiscountInput'>Дополнительная скидка в %:</label>
 									<br />

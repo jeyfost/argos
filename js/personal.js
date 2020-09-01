@@ -48,6 +48,7 @@ function adminEditUser(id) {
 	var position = $('#userPositionInput').val();
 	var phone = $('#userPhoneInput').val();
 	var discount = $('#userDiscountInput').val();
+	var card = $('#userCardNumberInput').val();
 	var response_field = $('#responseFiled');
     var checkbox;
 
@@ -56,6 +57,10 @@ function adminEditUser(id) {
     } else {
         checkbox = 0;
     }
+
+    if (card === '') {
+    	card = '0';
+	}
 
 	if (login !== '' && email !== '' && name !== '' && phone !== '' && discount !== '') {
 		if (discount >= 0 && discount < 100) {
@@ -70,6 +75,7 @@ function adminEditUser(id) {
 					"name": name,
 					"position": position,
 					"phone": phone,
+					"card": card,
 					"discount": discount,
 					"checkbox": checkbox
 				},
