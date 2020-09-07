@@ -374,7 +374,8 @@ if(isset($_SESSION['userID'])) {
 					<br />
 					<span>понедельник - пятница</span>
 					<br />
-					<span>8:30 - 17:30</span>
+					<span>8:00 - 17:00</span><br />
+                    <span>обед: 13:00 - 14:00</span>
 				</div>
 				<div style="clear: both;"></div>
 			</div>
