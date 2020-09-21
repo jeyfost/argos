@@ -184,6 +184,16 @@ $total = $roubles." руб. ".$kopeck." коп.";
 echo "
 	<br /><br />
 	<div style='float: right;'><b>Цены клиента: </b><span> "; if($user['opt'] == 1) {echo "оптовые";} else {echo "розничные";} echo "</span></div>
+";
+
+if(!empty($user['card']) and $user['card'] != "0" and $user['card'] != "0000") {
+    echo "
+        <br />
+	    <div style='float: right;'><b>Номер дисконтной карты клиента: </b><span>".$user['card']."</span></div>
+    ";
+}
+
+echo "
 	<br />
 	<div style='float: right;'><b>Дополнительная скидка клиента: </b><span>".$user['discount']."%</span></div>
 	<br />
