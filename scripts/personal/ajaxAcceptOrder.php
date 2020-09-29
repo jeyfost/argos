@@ -116,7 +116,7 @@ while($order = $orderResult->fetch_assoc()) {
 	}
 }
 
-$total = $totalAction + $totalNormal * (1 - $customer['discount'] / 100);
+$total = $totalAction + $totalNormal / ($customer['discount'] / 100 + 1);
 $roubles = floor($total);
 $kopeck = ceil(($total - $roubles) * 100);
 

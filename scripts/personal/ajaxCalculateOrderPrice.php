@@ -112,7 +112,7 @@ while($order = $orderResult->fetch_assoc()) {
 $discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$userID[0]."'");
 $discount = $discountResult->fetch_array(MYSQLI_NUM);
 
-$total = $totalAction + $totalNormal * (1 - $discount[0] / 100);
+$total = $totalAction + $totalNormal / ($discount[0] / 100 + 1);
 $roubles = floor($total);
 $kopeck = ceil(($total - $roubles) * 100);
 

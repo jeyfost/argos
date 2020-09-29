@@ -110,7 +110,7 @@ while($order = $orderResult->fetch_assoc()) {
 
         $totalRozn += $good['price'] * $currency[0] * $order['quantity'];
 		$totalNormal += $price * $order['quantity'];
-		$price = $price * (1 - $user['discount'] / 100);
+		$price = $price / ($user['discount'] / 100 + 1);
 	} else {
 		$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$order['good_id']."' AND action_id = '".$aID."'");
 		$actionGood = $actionGoodResult->fetch_assoc();
@@ -210,7 +210,7 @@ while($order = $orderResult->fetch_assoc()) {
 	";
 }
 
-$total = $totalAction + $totalNormal * (1 - $user['discount'] / 100);
+$total = $totalAction + $totalNormal / ($user['discount'] / 100 + 1);
 $roubles = floor($total);
 $kopeck = ceil(($total - $roubles) * 100);
 

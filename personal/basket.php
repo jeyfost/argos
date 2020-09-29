@@ -479,7 +479,7 @@ if(isset($_SESSION['userID'])) {
 
                                 $totalRozn += $good['price'] * $currency['rate'] * $basket['quantity'];
 								$totalNormal += $price * $basket['quantity'];
-								$price = $price * (1 - $user['discount'] / 100);
+								$price = $price / ($user['discount'] / 100 + 1);
 							} else {
 								$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$basket['good_id']."' AND action_id = '".$aID."'");
 								$actionGood = $actionGoodResult->fetch_assoc();
@@ -574,7 +574,7 @@ if(isset($_SESSION['userID'])) {
 							";
 						}
 
-						$total = $totalAction + $totalNormal * (1 - $user['discount'] / 100);
+						$total = $totalAction + $totalNormal / ($user['discount'] / 100 + 1);
 						$roubles = floor($total);
 						$kopeck = ceil(($total - $roubles) * 100);
 

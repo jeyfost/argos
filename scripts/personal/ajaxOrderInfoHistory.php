@@ -49,7 +49,7 @@ while($order = $orderResult->fetch_assoc()) {
             $price = $good['price_opt'] * $currency[0];
         }
 
-		$price = $price * (1 - $user['discount'] / 100);
+		$price = $price / ($user['discount'] / 100 + 1);
 	} else {
 		$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$good['id']."' AND action_id = '".$aID."'");
 		if($actionGoodResult->num_rows > 0) {
@@ -65,7 +65,7 @@ while($order = $orderResult->fetch_assoc()) {
                 $price = $good['price_opt'] * $currency[0];
             }
 
-			$price = $price * (1 - $user['discount'] / 100);
+			$price = $price / ($user['discount'] / 100 + 1);
 		}
 	}
 

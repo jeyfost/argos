@@ -104,7 +104,7 @@ while($basket = $basketResult->fetch_assoc()) {
 $discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$_SESSION['userID']."'");
 $discount = $discountResult->fetch_array(MYSQLI_NUM);
 
-$total = $totalAction + $totalNormal * (1 - $discount[0] / 100);
+$total = $totalAction + $totalNormal / ($discount[0] / 100 + 1);
 $roubles = floor($total);
 $kopeck = ceil(($total - $roubles) * 100);
 

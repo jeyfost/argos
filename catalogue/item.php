@@ -468,7 +468,7 @@ if(!empty($good['subcategory2'])) {
                             $price = $price_opt;
                         }
 
-						$price = $price * (1 - $discount[0] / 100);
+						$price = $price / ($discount[0] / 100 + 1);
 					}
 				} else {
 					$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$good['id']."' AND action_id = '".$aID."'");

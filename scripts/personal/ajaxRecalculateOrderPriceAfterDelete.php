@@ -49,7 +49,7 @@ while($order = $orderResult->fetch_assoc()) {
             $price = $good['price'];
         }
 
-        $totalPrice += ($price - $price * $user['discount'] / 100) * $currency['rate'] * $order['quantity'];
+        $totalPrice += $price / ($user['discount'] / 100 + 1) * $currency['rate'] * $order['quantity'];
     } else {
         $actionPriceResult = $mysqli->query("SELECT price FROM action_goods WHERE action_id = '".$aID."'");
         $actionPrice = $actionPriceResult->fetch_array(MYSQLI_NUM);
