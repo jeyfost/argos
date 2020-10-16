@@ -21,7 +21,7 @@ if($searchResult->num_rows == 0) {
     if($searchFull > 10) {
         echo "
             <br />
-            <div style='margin: 0 auto; text-align: center;'><a href='/search/?query=".$query."'><span class='sketchFont'>Посмотреть все результаты</span></a></div>
+            <div style='margin: 0 auto; text-align: center;'><a href='/search/?query=".$query."'><span class='sketchFont'>Посмотреть все результаты (".$searchFull.")</span></a></div>
             <br />
         ";
     }
@@ -266,7 +266,7 @@ if($searchResult->num_rows == 0) {
     if($searchFull > 10) {
         echo "
             <br />
-            <div style='margin: 0 auto; text-align: center;'><a href='/search/?query=".$query."'><span class='sketchFont'>Посмотреть все результаты</span></a></div>
+            <div style='margin: 0 auto; text-align: center;'><a href='/search/?query=".$query."'><span class='sketchFont'>Посмотреть все результаты (".$searchFull.")</span></a></div>
         ";
     }
 }

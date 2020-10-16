@@ -6,24 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue/item.php" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue/item.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personal/basket.php" beforeDir="false" afterPath="$PROJECT_DIR$/personal/basket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/ajaxSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ajaxSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxCalculateOrderPrice.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxCalculateOrderPrice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxCalculateTotalPrice.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxCalculateTotalPrice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxChangeQuantity.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxChangeQuantity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxChangeQuantityDetailed.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxChangeQuantityDetailed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderInfo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderInfoHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderInfoHistory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxOrderSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxOrderSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxRecalculateOrderPriceAfterDelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxRecalculateOrderPriceAfterDelete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/search/index.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,8 +68,8 @@
       <file leaf-file-name="basket.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/personal/basket.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="481" column="78" selection-start-line="481" selection-start-column="78" selection-end-line="481" selection-end-column="78" />
+            <state relative-caret-position="2057">
+              <caret line="483" column="163" selection-start-line="483" selection-start-column="163" selection-end-line="483" selection-end-column="163" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#b#0;n#span#0;n#!!top" expanded="true" />
@@ -141,9 +123,9 @@
       <find>checkQuan</find>
       <find>changeQ</find>
       <find>chang</find>
-      <find>Общая сто</find>
+      <find />
       <find>changeQua</find>
-      <find>с уч</find>
+      <find />
       <find>show</find>
       <find>catalogueReds</find>
       <find>search</find>
@@ -160,7 +142,7 @@
     <replaceStrings>
       <replace>catalogue/index.php</replace>
       <replace>ff282b</replace>
-      <replace>$price = $price / ($discount[0] / 100 + 1);</replace>
+      <replace />
     </replaceStrings>
     <dirStrings>
       <dir>D:\Programs\OpenServer\domains\argos.local\admin</dir>
@@ -559,14 +541,7 @@
       <workItem from="1598945740589" duration="5220000" />
       <workItem from="1599456607766" duration="200000" />
       <workItem from="1600675182491" duration="786000" />
-      <workItem from="1601375879936" duration="656000" />
-    </task>
-    <task id="LOCAL-00337" summary="Добавлена функция установки оптовых цен в разделе редактирования товара">
-      <created>1581070178659</created>
-      <option name="number" value="00337" />
-      <option name="presentableId" value="LOCAL-00337" />
-      <option name="project" value="LOCAL" />
-      <updated>1581070178659</updated>
+      <workItem from="1601375879936" duration="1050000" />
     </task>
     <task id="LOCAL-00338" summary="В каталоге добавлено отображение оптовых цен">
       <created>1581323130513</created>
@@ -904,11 +879,18 @@
       <option name="project" value="LOCAL" />
       <updated>1600675949746</updated>
     </task>
-    <option name="localTasksCounter" value="386" />
+    <task id="LOCAL-00386" summary="Изменена схема расчёта дополнительных скидок от оптовой цены">
+      <created>1601376621111</created>
+      <option name="number" value="00386" />
+      <option name="presentableId" value="LOCAL-00386" />
+      <option name="project" value="LOCAL" />
+      <updated>1601376621111</updated>
+    </task>
+    <option name="localTasksCounter" value="387" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="928981000" />
+    <option name="totallyTimeSpent" value="929375000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -921,10 +903,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4975" weight="0.31848854" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50385606" side_tool="true" weight="0.31529093" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32341" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
@@ -945,7 +929,6 @@
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32882273" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -981,7 +964,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Изменена сортировка товара по наличию + по алфавиту" />
     <MESSAGE value="Добавлена кнопка прокрутки до верха страницы во всех разделах сайта" />
     <MESSAGE value="Добавлена загатовка под кнопки постраничной навигации в верхней части страницы каталога" />
     <MESSAGE value="Скрыто меню для полной версии сайта в мобильной версии" />
@@ -1006,7 +988,8 @@
     <MESSAGE value="Добавлено отображение дисконтной карты у пользователя в личном кабинете" />
     <MESSAGE value="Изменено время работы торгового объекта" />
     <MESSAGE value="Добавлен номер дисконтной карты клиента в детализации заказов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен номер дисконтной карты клиента в детализации заказов" />
+    <MESSAGE value="Изменена схема расчёта дополнительных скидок от оптовой цены" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменена схема расчёта дополнительных скидок от оптовой цены" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1453,8 +1436,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/personal/basket.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="481" column="78" selection-start-line="481" selection-start-column="78" selection-end-line="481" selection-end-column="78" />
+        <state relative-caret-position="2057">
+          <caret line="483" column="163" selection-start-line="483" selection-start-column="163" selection-end-line="483" selection-end-column="163" />
           <folding>
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#b#0;n#span#0;n#!!top" expanded="true" />
