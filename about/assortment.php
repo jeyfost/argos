@@ -332,7 +332,7 @@ if(isset($_SESSION['userID'])) {
 			<a href='vacancies.php'><div class='personalMenuLink' id='pbl5' onmouseover='buttonChange("pbl5", 1)' onmouseout='buttonChange("pbl5", 0)'>Вакансии</div></a>
 		</div>
 
-		<div id="personalContent">
+		<div id="personalContent" style="text-align: justify;">
 			<p><span style="color: #fe2427;"><b>«Аргос-ФМ»</b></span> является официальным  представителем многих ведущих брендов и производителей мебельной фурнитуры, комплектующих, мебельной кромки, инструмента, а также шторной фурнитуры и аксессуаров. Широкая география прямых поставок: Европа, Турция, Китай, Россия – позволяет всегда иметь в наличии большой  ассортимент продукции. Прямой контакт с производителями комплектующих и фурнитуры   позволяет постоянно совершенствовать качество изделий и работать над новыми образцами.</p>
             <br />
             <div style="width: 100%; text-align: center;">
