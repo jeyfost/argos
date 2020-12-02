@@ -179,11 +179,13 @@ if(isset($_SESSION['userID'])) {
                     <a href="/news.php">Новости</a>
                     <span class="slash"> /</span>
                 </div>
+                <!--
                 <div class="menuLink" id="storesLink" onmouseover="showDropdownList('1', 'storesLink')">
                     <a href="/stores/company.php">Где купить</a>
                     <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
+                -->
                 <div class="menuLinkNotDD">
                     <a href="/actions.php">Акции</a>
                     <span class="slash"> /</span>
@@ -247,6 +249,7 @@ if(isset($_SESSION['userID'])) {
             <div class="mobileMenuItem" style="margin-top: 0;">
                 <a href="/news.php" class="mobileMenuPointBig">Новости</a>
             </div>
+            <!--
             <hr />
             <div class="mobileMenuItem" style="margin-top: 0;">
                 <a href="/stores/company.php" class="mobileMenuPointBig">Где купить</a>
@@ -256,6 +259,7 @@ if(isset($_SESSION['userID'])) {
                     <a href="/stores/representatives.php" class="mobileMenuPointSmall">- Партнёрская сеть</a>
                 </div>
             </div>
+            -->
             <hr />
             <div class="mobileMenuItem" style="margin-top: 0;">
                 <a href="/actions.php" class="mobileMenuPointBig">Акции</a>
@@ -483,6 +487,7 @@ if(isset($_SESSION['userID'])) {
                     }
                 ?>
             </li>
+            <!--
             <li>
                 <a href="/stores/company.php" class="headLink">Где купить</a>
 
@@ -491,6 +496,7 @@ if(isset($_SESSION['userID'])) {
                     <li><a href="/stores/representatives.php" class="link">Партнёрская сеть</a></li>
                 </ul>
             </li>
+            -->
             <li>
                 <a href="/actions.php" class="headLink">Акции</a>
 

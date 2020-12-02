@@ -167,11 +167,13 @@ if(isset($_SESSION['userID'])) {
                     <a href="/news.php?p=1">Новости</a>
                     <span class="slash"> /</span>
                 </div>
+                <!--
                 <div class="menuLink" id="storesLink" onmouseover="showDropdownList('1', 'storesLink')">
                     <a href="/stores/company.php">Где купить</a>
                     <img src="/img/system/downArrow.png" />
                     <span class="slash"> /</span>
                 </div>
+                -->
                 <div class="menuLinkNotDD">
                     <a href="/actions.php">Акции</a>
                     <span class="slash"> /</span>
