@@ -19,7 +19,7 @@ while ($currency = $currencyResult->fetch_assoc()) {
 	$data = "";
 
 	while(empty($data)) {
-		$data = file_get_contents_curl("http://www.nbrb.by/API/ExRates/Rates/" . $currency['code'] . "?ParamMode=2");
+		$data = file_get_contents_curl("https://www.nbrb.by/API/ExRates/Rates/" . $currency['code'] . "?ParamMode=2");
 	}
 
 	$nb = json_decode($data);
