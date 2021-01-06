@@ -6,6 +6,9 @@ include("../connect.php");
 $totalNormal = 0;
 $totalAction = 0;
 
+$userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
+$user = $userResult->fetch_assoc();
+
 $basketResult = $mysqli->query("SELECT * FROM basket WHERE user_id = '".$_SESSION['userID']."'");
 while($basket = $basketResult->fetch_assoc()) {
 	$active = 0;
@@ -90,7 +93,12 @@ while($basket = $basketResult->fetch_assoc()) {
 	$currency = $currencyResult->fetch_array(MYSQLI_NUM);
 
 	if($aID == 0) {
-		$price = $good['price'] * $currency[0];
+	    if($user['opt'] == 1) {
+            $price = $good['price_opt'] * $currency[0];
+        } else {
+            $price = $good['price'] * $currency[0];
+        }
+
 		$totalNormal += $price * $basket['quantity'];
 	} else {
 		$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$basket['good_id']."' AND action_id = '".$aID."'");

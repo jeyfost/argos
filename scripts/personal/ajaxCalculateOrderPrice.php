@@ -11,6 +11,9 @@ $totalAction = 0;
 $userIDResult = $mysqli->query("SELECT user_id FROM orders_info WHERE id = '".$id."'");
 $userID = $userIDResult->fetch_array(MYSQLI_NUM);
 
+$userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$userID[0]."'");
+$user = $userResult->fetch_assoc();
+
 $discountResult = $mysqli->query("SELECT discount FROM users WHERE id = '".$userID[0]."'");
 $discount = $discountResult->fetch_array(MYSQLI_NUM);
 
@@ -98,7 +101,12 @@ while($order = $orderResult->fetch_assoc()) {
 	$currency = $currencyResult->fetch_array(MYSQLI_NUM);
 
 	if($aID == 0) {
-		$price = $good['price'] * $currency[0];
+	    if($user['opt'] == 1) {
+            $price = $good['price_opt'] * $currency[0];
+        } else {
+            $price = $good['price'] * $currency[0];
+        }
+
 		$totalNormal += $price * $order['quantity'];
 	} else {
 		$actionGoodResult = $mysqli->query("SELECT * FROM action_goods WHERE good_id = '".$order['good_id']."' AND action_id = '".$aID."'");
