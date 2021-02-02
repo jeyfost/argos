@@ -144,7 +144,7 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 #CVForm {background-color: #f3f3f3; padding: 10px; border: 1px solid #dedede; display: inline-block;}
 #messageInput, #commentInput {resize: none; transition: .3s; word-wrap: break-word; width: 452px; height: 25px; padding: 10px; font-style: italic; margin-top: 5px; color: #9e9e9e;}
 #itemPhotoContainer {width: 400px; padding: 10px; border: 1px solid #d7d5d1; float: left; text-align: center;}
-#itemPhoto {max-width: 400px;}
+#itemPhoto {max-width: 400px; transition: .3s;}
 #itemPhotoDescription {padding-left: 30px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; vertical-align: top;}
 #recomendedGoodsBlock {width: 100%;}
 #scroll {display: none; position: fixed; bottom: 80px; right: 30px; z-index: 1000; cursor: pointer; color: #4c4c4c; transition: .3s;}
