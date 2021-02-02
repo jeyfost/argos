@@ -500,7 +500,7 @@ if(!empty($good['subcategory2'])) {
 				<tbody>
 					<tr>
 						<td id="itemPhotoContainer">
-							<img src="/img/catalogue/big/<?= $good['picture'] ?>" id="itemPhoto" />
+                            <a href="/img/catalogue/big/<?= $good['picture'] ?>" class="lightview" data-lightview-options="skin: 'light'" data-lightview-group="item"><img src="/img/catalogue/big/<?= $good['picture'] ?>" id="itemPhoto" onmouseover="changeItemPhoto('itemPhoto', 1)" onmouseout="changeItemPhoto('itemPhoto', 0)" /></a>
 							<?php
 								if($active > 0) {
 									echo "
@@ -608,28 +608,35 @@ if(!empty($good['subcategory2'])) {
 				</tbody>
 			</table>
 			<br />
-			<h3>Дополнительные фотографии</h3>
-			<div id="previewContainer">
-				<a href="/img/catalogue/big/<?= $good['picture'] ?>" class="lightview" data-lightview-options="skin: 'light'" data-lightview-group="item"><img src="/img/catalogue/small/<?= $good['small'] ?>" class="previewPhoto" id="itemMainPhoto" onmouseover='changeItemPhoto("itemMainPhoto", 1)' onmouseout='changeItemPhoto("itemMainPhoto", 0)' /></a>
 
-				<?php
-					$photoResult = $mysqli->query("SELECT * FROM goods_photos WHERE good_id = '".$id."'");
-					while($photo = $photoResult->fetch_assoc()) {
-						echo "
-							<div style='width: 20px; display: inline-block;'></div>
-							<a href='/img/catalogue/photos/big/".$photo['big']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-group='item'><img src='/img/catalogue/photos/small/".$photo['small']."' id='itemPhoto".$photo['id']."' class='previewPhoto' onmouseover='changeItemPhoto(\"itemPhoto".$photo['id']."\", 1)' onmouseout='changeItemPhoto(\"itemPhoto".$photo['id']."\", 0)' /></a>
-						";
-					}
+            <?php
+                $goodPhotosCountResult = $mysqli->query("SELECT COUNT(id) FROM goods_photos WHERE good_id = '".$id."'");
+                $goodPhotosCount = $goodPhotosCountResult->fetch_array(MYSQLI_NUM);
 
-					if(!empty($good['sketch'])) {
-						echo "
-							<div style='width: 20px; display: inline-block;'></div>
-							<a href='/img/catalogue/sketch/".$good['sketch']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-group='item'><img src='/img/catalogue/sketch/".$good['sketch']."' style='width: 100px;' id='itemSketch' class='previewPhoto' onmouseover='changeItemPhoto(\"itemSketch\", 1)' onmouseout='changeItemPhoto(\"itemSketch\", 0)' /></a>
-						";
-					}
-				?>
+                if($goodPhotosCount[0] > 0 or !empty($good['sketch'])) {
+                    echo "
+                        <h3>Дополнительные фотографии</h3>
+			                <div id='previewContainer'>
+                    ";
 
-			</div>
+                    $photoResult = $mysqli->query("SELECT * FROM goods_photos WHERE good_id = '" . $id . "'");
+                    while ($photo = $photoResult->fetch_assoc()) {
+                        echo "
+						    <div style='width: 20px; display: inline-block;'></div>
+						    <a href='/img/catalogue/photos/big/" . $photo['big'] . "' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-group='item'><img src='/img/catalogue/photos/small/" . $photo['small'] . "' id='itemPhoto" . $photo['id'] . "' class='previewPhoto' onmouseover='changeItemPhoto(\"itemPhoto" . $photo['id'] . "\", 1)' onmouseout='changeItemPhoto(\"itemPhoto" . $photo['id'] . "\", 0)' /></a>
+						    ";
+                    }
+
+                    if (!empty($good['sketch'])) {
+                        echo "
+						    <div style='width: 20px; display: inline-block;'></div>
+						    <a href='/img/catalogue/sketch/" . $good['sketch'] . "' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-group='item'><img src='/img/catalogue/sketch/" . $good['sketch'] . "' style='width: 100px;' id='itemSketch' class='previewPhoto' onmouseover='changeItemPhoto(\"itemSketch\", 1)' onmouseout='changeItemPhoto(\"itemSketch\", 0)' /></a>
+					    ";
+                    }
+
+                    echo "</div>";
+                }
+            ?>
 
 			<div id="recomendedGoodsBlock">
 				<?php

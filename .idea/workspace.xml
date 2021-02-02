@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxCalculateOrderPrice.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxCalculateOrderPrice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxCalculateTotalPrice.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxCalculateTotalPrice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue/item.php" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue/item.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +42,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ajaxAcceptOrder.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php">
+      <file leaf-file-name="item.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/catalogue/item.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+            <state relative-caret-position="545">
+              <caret line="637" column="16" selection-start-line="637" selection-start-column="16" selection-end-line="637" selection-end-column="16" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,8 +68,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>closeGood</find>
-      <find>addGoodToO</find>
       <find>remove</find>
       <find>#ci</find>
       <find>ci</find>
@@ -94,6 +96,8 @@
       <find>Где куп</find>
       <find>menuLinks</find>
       <find>$price = $good['price'] * $currency[0]</find>
+      <find>preview</find>
+      <find>itemPre</find>
     </findStrings>
     <replaceStrings>
       <replace>catalogue/index.php</replace>
@@ -130,7 +134,6 @@
         <option value="$PROJECT_DIR$/about/awards.php" />
         <option value="$PROJECT_DIR$/about/info.php" />
         <option value="$PROJECT_DIR$/about/vacancies.php" />
-        <option value="$PROJECT_DIR$/catalogue/item.php" />
         <option value="$PROJECT_DIR$/contacts/mail.php" />
         <option value="$PROJECT_DIR$/contacts/main.php" />
         <option value="$PROJECT_DIR$/contacts/stores.php" />
@@ -162,6 +165,7 @@
         <option value="$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxCalculateOrderPrice.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxCalculateTotalPrice.php" />
+        <option value="$PROJECT_DIR$/catalogue/item.php" />
       </list>
     </option>
   </component>
@@ -194,7 +198,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -202,10 +205,16 @@
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="catalogue" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -504,14 +513,9 @@
       <workItem from="1606806934597" duration="623000" />
       <workItem from="1606889844971" duration="3116000" />
       <workItem from="1607321081615" duration="253000" />
-      <workItem from="1609910566566" duration="890000" />
-    </task>
-    <task id="LOCAL-00344" summary="В разделе акций добавлены оптовые цены">
-      <created>1581407015690</created>
-      <option name="number" value="00344" />
-      <option name="presentableId" value="LOCAL-00344" />
-      <option name="project" value="LOCAL" />
-      <updated>1581407015690</updated>
+      <workItem from="1609910566566" duration="1015000" />
+      <workItem from="1610615748951" duration="576000" />
+      <workItem from="1612242886987" duration="692000" />
     </task>
     <task id="LOCAL-00345" summary="Добавлено отображение оптовых цен в разделе активных заявок">
       <created>1581410399933</created>
@@ -849,11 +853,18 @@
       <option name="project" value="LOCAL" />
       <updated>1607321310234</updated>
     </task>
-    <option name="localTasksCounter" value="393" />
+    <task id="LOCAL-00393" summary="Исправлен пересчёт стоимости заказа в корзине и при принятии администратором заказа в работу">
+      <created>1609911540231</created>
+      <option name="number" value="00393" />
+      <option name="presentableId" value="LOCAL-00393" />
+      <option name="project" value="LOCAL" />
+      <updated>1609911540232</updated>
+    </task>
+    <option name="localTasksCounter" value="394" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="935999000" />
+    <option name="totallyTimeSpent" value="937392000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -871,27 +882,27 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4975" weight="0.31848854" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50385606" side_tool="true" weight="0.31529093" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32341" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2647815" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27120823" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.11696658" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
+      <window_info anchor="bottom" id="Thumbnails" order="13" weight="0.3293011" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Thumbnails" order="13" weight="0.3293011" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="12" weight="0.3293011" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32882273" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32882273" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -927,7 +938,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправлена панель постраничной навигации" />
     <MESSAGE value="В корзине убраны пункты меню в мобильной версии" />
     <MESSAGE value="Исправлено детектирование мобильных устройств в корзине" />
     <MESSAGE value="Добавлена возможность добавления новых товаров в активную заявку пользователя" />
@@ -952,7 +962,8 @@
     <MESSAGE value="Скрыт пункт меню «Где купить»" />
     <MESSAGE value="Убрано скрытие меню в мобильной версии каталога" />
     <MESSAGE value="API получения актуальных курсов валют переведён на протокол HTTPS" />
-    <option name="LAST_COMMIT_MESSAGE" value="API получения актуальных курсов валют переведён на протокол HTTPS" />
+    <MESSAGE value="Исправлен пересчёт стоимости заказа в корзине и при принятии администратором заказа в работу" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлен пересчёт стоимости заказа в корзине и при принятии администратором заказа в работу" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1050,8 +1061,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+        <state relative-caret-position="-1791">
+          <caret line="106" column="19" lean-forward="true" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catalogue/item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="637" column="16" selection-start-line="637" selection-start-column="16" selection-end-line="637" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
