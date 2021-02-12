@@ -92,7 +92,7 @@ echo "
 	<div class='goodInfo'>
 		<div class='goodName'>
 			<div style='width: 5px; height: 30px; background-color: #ff282b; position: relative; float: left;'></div>
-			<div style='margin-left: 15px;'>".$good['name']."</div>
+			<div style='margin-left: 15px;'><a href='/catalogue/item.php?id=".$good['id']."' target='_blank'><span class='catalogueNameLink'>".$good['name']."</span></a></div>
 			<div style='clear: both;'></div>
 		</div>
 		<div class='goodDescription'>

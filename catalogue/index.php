@@ -764,7 +764,7 @@ if(isset($_SESSION['userID'])) {
 										<div class='catalogueInfo'>
 												<div class='catalogueName'>
 													<div style='width: 5px; height: 30px; background-color: #ff282b; position: relative; float: left;'></div>
-													<div style='margin-left: 15px;'><a href='item.php?id=".$catalogue['id']."' class='catalogueNameLink'>".$catalogue['name']."</a></div>
+													<div style='margin-left: 15px;'><a href='item.php?id=".$catalogue['id']."' target='_blank'><span class='catalogueNameLink'>".$catalogue['name']."</span></a></div>
 													<div style='clear: both;'></div>
 												</div>
 												<div class='catalogueDescription'>

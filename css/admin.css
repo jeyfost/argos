@@ -19,7 +19,7 @@ a:hover.tooltips span { visibility: visible; opacity: 0.7; bottom: 30px; left: 5
 .searchLink .searchItem:hover {background-color: #f3f3f3;}
 .sketchFont:hover {text-decoration: underline;}
 .districtButton:hover {color: #ff282b; background-color: #ddd;}
-.font-awesome-link:hover {color: #ff282b;}
+.font-awesome-link:hover, .catalogueNameLink:hover {color: #ff282b;}
 
 #loginBlock {position: relative; margin: 0 auto; padding: 20px; background-color: #fff; width: 320px; box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.4);}
 #loginSubmit {width: 100px; height: 30px; border: none; background-color: #dedede; color: #4c4c4c; font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; cursor: pointer;}
@@ -81,3 +81,4 @@ a:hover.tooltips span { visibility: visible; opacity: 0.7; bottom: 30px; left: 5
 .goodPhotoContainer {display: inline-block; margin-left: 10px; width: 30px; text-align: center; padding: 5px; border: 1px solid #d7d5d1; vertical-align: top; transition: .3s;}
 .goodPhoto {width: 30px; transition: .3s;}
 .font-awesome-link {color: #4c4c4c; cursor: pointer;}
+.catalogueNameLink {color: #4c4c4c; transition: .3s;}
