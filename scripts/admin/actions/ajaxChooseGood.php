@@ -129,7 +129,7 @@ echo "
 			<br /><br >
 			<label for='np_".$randomID."'>Акционная стоимость в <b>".$currency['code']." (".$currency['currency_name'].")</b>:</label>
 			<br />
-			<input type='number' min='0.0001' step='0.0001' class='actionGoodPrice' id='np_".$randomID."' />
+			<input type='number' min='0.0001' step='0.0001' class='actionGoodPrice' id='np_".$randomID."' name='price' />
 ";
 
 if($good['sketch'] != '') {

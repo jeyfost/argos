@@ -96,7 +96,22 @@ function addGoodBlock() {
 	var random_id = md5(Math.random(0, 1000000) + md5(Date.now()));
 	var new_html = "<div class='actionGoodBlock' id='" + random_id + "' style='background-color: #f8f8f8;'><div style='float: right;'><img src='/img/system/delete.png' style='cursor: pointer;' id='di" + random_id + "' onmouseover='changeDeleteIcon(\"di" + random_id + "\", 1)' onmouseout='changeDeleteIcon(\"di" + random_id + "\", 0)' title='Убрать этот блок' onclick='closeGoodBlock(\"" + random_id +"\")' /></div><div style='clear: both;'></div><br /><input type='text' id='search_" + random_id + "' class='searchFieldInput' value='Поиск...' onfocus='searchFocus(\"search_" + random_id + "\")' onblur='searchBlur(\"search_" + random_id + "\")' onkeyup='searchGood(\"search_" + random_id +"\")' /><br /><div id='g_" + random_id + "' class='goodBlock'></div><div style='clear: both;'></div></div></div>";
 
+	var inputs = $("input[name*='price']");
+	var prices = [];
+	var ids = [];
+
+	inputs.each(function () {
+		prices.push(this.value);
+		ids.push(this.id);
+    });
+
 	$('#goodsBlock').html(base_html + new_html);
+
+	var i = ids.length;
+
+	for(var j = 0; j < i; j++) {
+		$('#' + ids[j]).val(prices[j]);
+	}
 }
 
 function addAction() {

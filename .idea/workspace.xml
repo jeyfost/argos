@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue/item.php" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue/item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/admin/actions/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin/actions/add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/admin/actions/ajaxChooseGood.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/admin/actions/ajaxChooseGood.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,17 +42,53 @@
     <favorites_list name="argos" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="item.php" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="item.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catalogue/item.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="637" column="16" selection-start-line="637" selection-start-column="16" selection-end-line="637" selection-end-column="16" />
+            <state relative-caret-position="52">
+              <caret line="695" column="16" lean-forward="true" selection-start-line="695" selection-start-column="16" selection-end-line="695" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/admin/actions/add.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="113" column="5" lean-forward="true" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxChooseGood.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/actions/ajaxChooseGood.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="538">
+              <caret line="122" column="45" lean-forward="true" selection-start-line="122" selection-start-column="45" selection-end-line="122" selection-end-column="45" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,11 +105,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>remove</find>
-      <find>#ci</find>
-      <find>ci</find>
-      <find>searchBl</find>
-      <find>checkQuan</find>
       <find>changeQ</find>
       <find>chang</find>
       <find>Общая сто</find>
@@ -98,6 +130,11 @@
       <find>$price = $good['price'] * $currency[0]</find>
       <find>preview</find>
       <find>itemPre</find>
+      <find>itemPhotoC</find>
+      <find>#itemPhiti</find>
+      <find>addgoodb</find>
+      <find>choosegood</find>
+      <find>ajaxchoos</find>
     </findStrings>
     <replaceStrings>
       <replace>catalogue/index.php</replace>
@@ -115,8 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxUpdate.php" />
-        <option value="$PROJECT_DIR$/scripts/const.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxQueryToSession.php" />
         <option value="$PROJECT_DIR$/scripts/ajaxQueryToSession.php" />
         <option value="$PROJECT_DIR$/js/common.js" />
@@ -124,7 +159,6 @@
         <option value="$PROJECT_DIR$/stores/representatives.php" />
         <option value="$PROJECT_DIR$/js/personal.js" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxAdminEditUser.php" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" />
         <option value="$PROJECT_DIR$/scripts/ajaxSearch.php" />
@@ -166,6 +200,9 @@
         <option value="$PROJECT_DIR$/scripts/personal/ajaxCalculateOrderPrice.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxCalculateTotalPrice.php" />
         <option value="$PROJECT_DIR$/catalogue/item.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/scripts/admin/actions/ajaxChooseGood.php" />
+        <option value="$PROJECT_DIR$/js/admin/actions/add.js" />
       </list>
     </option>
   </component>
@@ -198,6 +235,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,11 +248,33 @@
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="catalogue" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="actions" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -515,21 +575,8 @@
       <workItem from="1607321081615" duration="253000" />
       <workItem from="1609910566566" duration="1015000" />
       <workItem from="1610615748951" duration="576000" />
-      <workItem from="1612242886987" duration="692000" />
-    </task>
-    <task id="LOCAL-00345" summary="Добавлено отображение оптовых цен в разделе активных заявок">
-      <created>1581410399933</created>
-      <option name="number" value="00345" />
-      <option name="presentableId" value="LOCAL-00345" />
-      <option name="project" value="LOCAL" />
-      <updated>1581410399933</updated>
-    </task>
-    <task id="LOCAL-00346" summary="Исправлена таблица на странице активных заявок при выборе пользователя">
-      <created>1581410804825</created>
-      <option name="number" value="00346" />
-      <option name="presentableId" value="LOCAL-00346" />
-      <option name="project" value="LOCAL" />
-      <updated>1581410804825</updated>
+      <workItem from="1612242886987" duration="1633000" />
+      <workItem from="1613119806019" duration="2252000" />
     </task>
     <task id="LOCAL-00347" summary="Добавлено отображение оптовых цен в разделе истории заказов администратора">
       <created>1581411316214</created>
@@ -860,11 +907,25 @@
       <option name="project" value="LOCAL" />
       <updated>1609911540232</updated>
     </task>
-    <option name="localTasksCounter" value="394" />
+    <task id="LOCAL-00394" summary="Добавлена возможность просмотра галереи дополнительных фотографий путём нажатия на главное фото на странице товара">
+      <created>1612243742193</created>
+      <option name="number" value="00394" />
+      <option name="presentableId" value="LOCAL-00394" />
+      <option name="project" value="LOCAL" />
+      <updated>1612243742199</updated>
+    </task>
+    <task id="LOCAL-00395" summary="Добавлена плавное изменение прозрачности при наведении на главное фото на странице товара">
+      <created>1612243891356</created>
+      <option name="number" value="00395" />
+      <option name="presentableId" value="LOCAL-00395" />
+      <option name="project" value="LOCAL" />
+      <updated>1612243891356</updated>
+    </task>
+    <option name="localTasksCounter" value="396" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="937392000" />
+    <option name="totallyTimeSpent" value="940585000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -883,16 +944,17 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50385606" side_tool="true" weight="0.31529093" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32341" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32341" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27120823" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2744216" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.11696658" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Thumbnails" order="13" weight="0.3293011" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -902,7 +964,6 @@
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32882273" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -938,8 +999,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="В корзине убраны пункты меню в мобильной версии" />
-    <MESSAGE value="Исправлено детектирование мобильных устройств в корзине" />
     <MESSAGE value="Добавлена возможность добавления новых товаров в активную заявку пользователя" />
     <MESSAGE value="Добавлен пересчёт общей стоимости заказа при изменении количества товара в корзине" />
     <MESSAGE value="Добавлен пересчёт общей стоимости заказа при изменении количества товара в активной заявке у пользователя" />
@@ -963,7 +1022,9 @@
     <MESSAGE value="Убрано скрытие меню в мобильной версии каталога" />
     <MESSAGE value="API получения актуальных курсов валют переведён на протокол HTTPS" />
     <MESSAGE value="Исправлен пересчёт стоимости заказа в корзине и при принятии администратором заказа в работу" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлен пересчёт стоимости заказа в корзине и при принятии администратором заказа в работу" />
+    <MESSAGE value="Добавлена возможность просмотра галереи дополнительных фотографий путём нажатия на главное фото на странице товара" />
+    <MESSAGE value="Добавлена плавное изменение прозрачности при наведении на главное фото на странице товара" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена плавное изменение прозрачности при наведении на главное фото на странице товара" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1038,6 +1099,19 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/catalogue/item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12121">
+          <caret line="713" column="62" lean-forward="true" selection-start-line="713" selection-start-column="62" selection-end-line="713" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxRecalculateOrderPriceFromInput.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-244">
@@ -1066,15 +1140,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="146" column="46" selection-start-line="146" selection-start-column="46" selection-end-line="146" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/catalogue/item.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="637" column="16" selection-start-line="637" selection-start-column="16" selection-end-line="637" selection-end-column="16" />
+        <state relative-caret-position="52">
+          <caret line="695" column="16" lean-forward="true" selection-start-line="695" selection-start-column="16" selection-end-line="695" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/orders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="676" column="9" selection-start-line="676" selection-start-column="9" selection-end-line="676" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/actions/ajaxChooseGood.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="122" column="45" lean-forward="true" selection-start-line="122" selection-start-column="45" selection-end-line="122" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/actions/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="113" column="5" lean-forward="true" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
