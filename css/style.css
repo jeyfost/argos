@@ -16,7 +16,7 @@ h2 i:hover {color: #ff282b;}
 .catalogueItemTextDecorated:hover {text-decoration: underline;}
 .catalogueDescription a span:hover, .sketchFont:hover, td a:hover, span b a:hover, .tdLink:hover {text-decoration: underline;}
 .newsPreview:hover {background-color: #ededed;}
-.font-awesome-link:hover, .catalogueNameLink:hover {color: #ff282b;}
+.font-awesome-link:hover, .catalogueNameLink:hover {color: #ff282b !important;}
 
 /* mobile */
 @media screen and (max-width: 960px) {
@@ -197,7 +197,7 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .font-awesome-link {color: #4c4c4c;}
 .previewPhoto {display: inline-block; vertical-align: middle; transition: .3s; width: 100px;}
 .recomendedGoodContainer {padding: 10px; display: inline-block; text-align: center; transition: .3s; border: 1px solid #fff; max-width: 150px;}
-.catalogueNameLink {color: #4c4c4c;}
+.catalogueNameLink {color: #4c4c4c !important;}
 .addToBasketFont {color: #ff282b; text-decoration: underline; cursor: pointer;}
 .orderSearchInput {width: 180px; height: 20px; line-height: 20px; color: #777;}
 .newsContent, .newsNumbers {text-align: left;}
