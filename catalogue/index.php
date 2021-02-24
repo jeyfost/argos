@@ -854,7 +854,7 @@ if(isset($_SESSION['userID'])) {
 									    <br /><br />
 										<form method='post'>
 											<label for='quantityInput".$catalogue['id']."'>Кол-во в ".$unit['in_name'].":</label>
-											<input type='number' id='quantityInput".$catalogue['id']."' min='1' step='1' value='1' class='itemQuantityInput' />
+											<input type='number' id='quantityInput".$catalogue['id']."' min='0.001' step='1' value='1' class='itemQuantityInput' />
 										</form>
 										<br />
 										<div class='addingResult' id='addingResult".$catalogue['id']."' onclick='hideBlock(\"addingResult".$catalogue['id']."\")'></div>

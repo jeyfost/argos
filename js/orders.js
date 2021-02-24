@@ -411,7 +411,7 @@ function goToPage(page, user) {
 function changeQuantityDetailed(id, order_id) {
 	var input = "quantityInput" + id;
 
-	if($('#' + input).val() !== '' && parseInt($('#' + input).val()) > 0) {
+	if($('#' + input).val() !== '' && parseFloat($('#' + input).val()) > 0) {
 		$.ajax({
 			type: "POST",
 			data: {
@@ -727,7 +727,7 @@ function recalculateOrderPrice(user_id, order_id, good_id) {
 function recalculatePriceFromInput(good_id, user_id, order_id, block) {
 	var quantity = $('#' + block).val();
 
-	if(quantity !== "" && parseInt(quantity) > 0) {
+	if(quantity !== "" && parseFloat(quantity) > 0) {
         $.ajax({
 			type: "POST",
 			data: {
@@ -767,7 +767,7 @@ function recalculateOrderPriceAfterDelete(user_id, order_id) {
 function checkQuantity(block, order_id, user_id, good_id) {
 	var quantity = $('#' + block).val();
 
-	if(quantity === '' || parseInt(quantity) <= 0) {
+	if(quantity === '' || parseFloat(quantity) <= 0) {
 		$('#' + block).val("1");
 		recalculatePriceFromInput(good_id, user_id, order_id, block);
 	}

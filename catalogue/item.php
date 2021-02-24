@@ -585,7 +585,7 @@ if(!empty($good['subcategory2'])) {
 											<br /><br />
 											<form method='post'>
 												<label for='quantityInput".$id."'>Кол-во в ".$unit['in_name'].":</label>
-												<input type='number' id='quantityInput".$id."' min='1' step='1' value='1' class='itemQuantityInput' />
+												<input type='number' id='quantityInput".$id."' min='0.001' step='1' value='1' class='itemQuantityInput' />
 											</form>
 											<br />
 											<div class='addingResult' id='addingResult".$id."' onclick='hideBlock(\"addingResult".$id."\")'></div>

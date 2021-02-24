@@ -1,5 +1,5 @@
 function addToBasket(good_id, input, response_field) {
-	var quantity = parseInt(document.getElementById(input).value);
+	var quantity = parseFloat(document.getElementById(input).value);
 
 	if(quantity > 0) {
 		$.ajax({

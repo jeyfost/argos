@@ -561,7 +561,7 @@ if(isset($_SESSION['userID'])) {
 												<br /><br />
 												<form method='post'>
 													<label for='quantityInput".$good['id']."'>Кол-во в ".$unit['in_name'].":</label>
-													<input type='number' id='quantityInput".$good['id']."' min='1' step='1' value='".$basket['quantity']."' class='itemQuantityInput' onkeyup='changeQuantity(\"".$good['id']."\")' onchange='changeQuantity(\"".$good['id']."\")' onblur='checkQuantity(\"quantityInput".$good['id']."\", \"".$good['id']."\")' />
+													<input type='number' id='quantityInput".$good['id']."' min='0.001' step='1' value='".$basket['quantity']."' class='itemQuantityInput' onkeyup='changeQuantity(\"".$good['id']."\")' onchange='changeQuantity(\"".$good['id']."\")' onblur='checkQuantity(\"quantityInput".$good['id']."\", \"".$good['id']."\")' />
 												</form>
 												<br />
 												<div class='addingResult' id='addingResult".$good['id']."' onclick='hideBlock(\"addingResult".$good['id']."\")'></div>
