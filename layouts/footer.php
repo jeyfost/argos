@@ -6,6 +6,8 @@
  * Time: 16:23
  */
 
+include("../scripts/const.php");
+
 function footer() {
     return "
         <div class='container'>
