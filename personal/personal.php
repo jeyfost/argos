@@ -423,7 +423,7 @@ if(isset($_SESSION['userID'])) {
 						$currencyResult = $mysqli->query("SELECT * FROM currency");
 						while($currency = $currencyResult->fetch_assoc()) {
 							echo "
-								<label for='currencyInput".$currency['id']."'>1 ".$currency['currency_name'].":</label>
+								<label for='currencyInput".$currency['id']."'>".$currency['currency_name'].":</label>
 								<br />
 								<input type='number' min='0.00001' step='0.00001' id='currencyInput".$currency['id']."' value='".$currency['rate']."' "; if($currency['code'] == "BYN") {echo "readonly";} echo " />
 								<br /><br />
