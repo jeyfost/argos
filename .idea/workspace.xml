@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personal/personal.php" beforeDir="false" afterPath="$PROJECT_DIR$/personal/personal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/personal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/personal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/personal/ajaxSetOfficialRates.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/personal/ajaxSetOfficialRates.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,8 +55,26 @@
       <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
+            <state relative-caret-position="629">
               <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxUpdate.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxUpdate.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxSetOfficialRates.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSetOfficialRates.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="21" column="116" selection-start-line="21" selection-start-column="116" selection-end-line="21" selection-end-column="116" />
             </state>
           </provider>
         </entry>
@@ -63,8 +82,8 @@
       <file leaf-file-name="personal.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/personal/personal.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="425" column="78" selection-start-line="425" selection-start-column="78" selection-end-line="425" selection-end-column="78" />
+            <state relative-caret-position="476">
+              <caret line="435" column="238" lean-forward="true" selection-start-line="435" selection-start-column="238" selection-end-line="435" selection-end-column="238" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -102,9 +121,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajaxSetOfficialRates.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSetOfficialRates.php">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="personal.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/personal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1343">
+              <caret line="675" column="74" selection-start-line="675" selection-start-column="74" selection-end-line="675" selection-end-column="74" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -166,7 +189,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/stores/representatives.php" />
-        <option value="$PROJECT_DIR$/js/personal.js" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxAdminEditUser.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfo.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxOrderDetailedInfoHistory.php" />
@@ -196,7 +218,6 @@
         <option value="$PROJECT_DIR$/news.php" />
         <option value="$PROJECT_DIR$/sitemap.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxCheckRates.php" />
-        <option value="$PROJECT_DIR$/scripts/personal/ajaxSetOfficialRates.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxAcceptOrder.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxCalculateOrderPrice.php" />
         <option value="$PROJECT_DIR$/scripts/personal/ajaxCalculateTotalPrice.php" />
@@ -216,6 +237,8 @@
         <option value="$PROJECT_DIR$/contacts/main.php" />
         <option value="$PROJECT_DIR$/css/admin.css" />
         <option value="$PROJECT_DIR$/personal/personal.php" />
+        <option value="$PROJECT_DIR$/scripts/personal/ajaxSetOfficialRates.php" />
+        <option value="$PROJECT_DIR$/js/personal.js" />
       </list>
     </option>
   </component>
@@ -255,6 +278,11 @@
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="personal" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
@@ -586,14 +614,9 @@
       <workItem from="1640242108637" duration="37000" />
       <workItem from="1643622694022" duration="830000" />
       <workItem from="1646372291360" duration="14000" />
-      <workItem from="1647494243409" duration="688000" />
-    </task>
-    <task id="LOCAL-00355" summary="В каталоге у администратора добавлена возможность видеть оптовую и розничную цену">
-      <created>1581419281389</created>
-      <option name="number" value="00355" />
-      <option name="presentableId" value="LOCAL-00355" />
-      <option name="project" value="LOCAL" />
-      <updated>1581419281390</updated>
+      <workItem from="1647494243409" duration="874000" />
+      <workItem from="1647527286913" duration="1009000" />
+      <workItem from="1647592131285" duration="531000" />
     </task>
     <task id="LOCAL-00356" summary="Добавлена возможность видеть оптовую и розничную цену на странице товара у администратора">
       <created>1581419368457</created>
@@ -931,11 +954,18 @@
       <option name="project" value="LOCAL" />
       <updated>1643623495166</updated>
     </task>
-    <option name="localTasksCounter" value="404" />
+    <task id="LOCAL-00404" summary="В раздел с курсами валют добавлен Китайский Юань">
+      <created>1647495094696</created>
+      <option name="number" value="00404" />
+      <option name="presentableId" value="LOCAL-00404" />
+      <option name="project" value="LOCAL" />
+      <updated>1647495094698</updated>
+    </task>
+    <option name="localTasksCounter" value="405" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="951503000" />
+    <option name="totallyTimeSpent" value="953229000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -954,16 +984,16 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50385606" side_tool="true" weight="0.31529093" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32341" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25642672" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.11696658" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
       <window_info anchor="bottom" id="Thumbnails" order="13" weight="0.3293011" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1009,7 +1039,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправлены ссылки на разделы каталога на общей странице поиска" />
     <MESSAGE value="Отцентрован заголовок новости" />
     <MESSAGE value="Добавлена кнопка редактирования новости возле её заголовка для администратора" />
     <MESSAGE value="Добавлена возможность привязывать дисконтную карту к пользователю" />
@@ -1034,7 +1063,8 @@
     <MESSAGE value="Исправлено отображение номеров телефонов в футере" />
     <MESSAGE value="Изменена информация о контактных номерах головного офиса" />
     <MESSAGE value="Исправлено выравнивание с таблицей товаров из выбранного раздела в разделах добавления, удаления и редактирования товаров в панели администрирования" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлено выравнивание с таблицей товаров из выбранного раздела в разделах добавления, удаления и редактирования товаров в панели администрирования" />
+    <MESSAGE value="В раздел с курсами валют добавлен Китайский Юань" />
+    <option name="LAST_COMMIT_MESSAGE" value="В раздел с курсами валют добавлен Китайский Юань" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1109,20 +1139,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/contacts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6052">
-          <caret line="356" column="35" selection-start-line="356" selection-start-column="35" selection-end-line="356" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contacts/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6052">
@@ -1408,25 +1424,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8880" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSetRates.php">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/js/admin/goods/update.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/goods/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="206" column="221" selection-start-line="206" selection-start-column="221" selection-end-line="206" selection-end-column="221" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxUpdate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSetOfficialRates.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="116" selection-start-line="21" selection-start-column="116" selection-end-line="21" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/personal/personal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="425" column="78" selection-start-line="425" selection-start-column="78" selection-end-line="425" selection-end-column="78" />
+        <state relative-caret-position="476">
+          <caret line="435" column="238" lean-forward="true" selection-start-line="435" selection-start-column="238" selection-end-line="435" selection-end-column="238" />
           <folding>
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -1463,8 +1511,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxSetOfficialRates.php">
+    <entry file="file://$PROJECT_DIR$/scripts/personal/ajaxGetRate.php">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/personal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="675" column="74" selection-start-line="675" selection-start-column="74" selection-end-line="675" selection-end-column="74" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

@@ -679,6 +679,15 @@ function setOfficialRates() {
 									}
 								});
 
+                                $.ajax({
+                                    type: "POST",
+                                    data: {"code": "CNY"},
+                                    url: "/scripts/personal/ajaxGetRate.php",
+                                    success: function (rate) {
+                                        $('#currencyInput5').val(rate);
+                                    }
+                                });
+
 								if (response_field.css('opacity') === 1) {
 									response_field.css('opacity', '0');
 									setTimeout(function () {
