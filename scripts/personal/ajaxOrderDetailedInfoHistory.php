@@ -125,7 +125,7 @@ while($order = $orderResult->fetch_assoc()) {
 					<br />
 					<b>Артикул: </b>".$good['code']."
 					<br />
-                    <b>Наличие: </b>"; if($good['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} echo "
+                    <b>Наличие: </b>"; if($good['quantity'] > 0) {echo "на складе";} else {echo "<span style='color: #870000;'>нет на складе</span>";} echo "
 					<br />
 					<div id='goodPrice".$good['id']."'>
 						<span><b>Цена за ".$unit['short_name'].": </b>"; if($active > 0) {echo "<span style='color: #ff282b; font-weight: bold;'>";} echo $roubles." руб. "; $kopeck = ceil($kopeck); if(strlen($kopeck) == 1) {$kopeck = "0".$kopeck;} echo $kopeck." коп.</span>"; if($active > 0) {echo "</span>";}

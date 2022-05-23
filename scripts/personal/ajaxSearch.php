@@ -154,7 +154,7 @@ if($searchResult->num_rows == 0) {
 					<br />
 					<b>Артикул: </b>".$search['code']."
 					<br />
-                    <b>Наличие: </b>"; if($search['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} echo "
+                    <b>Наличие: </b>"; if($search['quantity'] > 0) {echo "на складе";} else {echo "<span style='color: #870000;'>нет на складе</span>";} echo "
 					<br />
 					
 		";

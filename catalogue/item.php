@@ -538,7 +538,7 @@ if(!empty($good['subcategory2'])) {
 							<br />
 							<b>Артикул: </b><?= $good['code'] ?>
                             <br />
-                            <b>Наличие: </b><?php if($good['quantity'] > 0) {echo "на складе";} else {echo "нет на складе";} ?>
+                            <b>Наличие: </b><?php if($good['quantity'] > 0) {echo "на складе";} else {echo "<span style='color: #870000;'>нет на складе</span>";} ?>
 							<br />
 							<?php
 								echo "
