@@ -75,6 +75,10 @@ if(!empty($good['subcategory2'])) {
 	$goodSubcategory2 = $goodSubcategory2Result->fetch_assoc();
 }
 
+if($_SESSION['userID'] != 1) {
+   $mysqli->query("UPDATE catalogue_new SET views_count = '".($good['views_count'] + 1)."' WHERE id = '".$good['id']."'");
+}
+
 ?>
 
 <!doctype html>
