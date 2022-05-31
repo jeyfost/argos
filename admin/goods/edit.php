@@ -285,6 +285,7 @@ if(!empty($_REQUEST['id'])) {
 			<a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
 			<a href="update.php"><input type="button" class="button" id="correctionButton" value="Выгрузка 1С" onmouseover="buttonChange('correctionButton', 1)" onmouseout="buttonChange('correctionButton', 0)" /></a>
 			<a href="codes.php"><input type="button" class="button" id="codesButton" value="Артикулы" onmouseover="buttonChange('codesButton', 1)" onmouseout="buttonChange('codesButton', 0)" /></a>
+            <a href="top.php"><input type="button" class="button" id="topButton" value="Топ товаров" onmouseover="buttonChange('topButton', 1)" onmouseout="buttonChange('topButton', 0)" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
 			<form id="editForm" method="post" enctype="multipart/form-data">
