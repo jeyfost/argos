@@ -23,11 +23,7 @@ if(isset($_SESSION['userID'])) {
 if(!empty($_REQUEST['quantity']) and $_REQUEST['quantity'] != 10) {
     $quantity = $mysqli->real_escape_string($_REQUEST['quantity']);
 } else {
-    if($_REQUEST['quantity'] == 0) {
-        $quantity = 1;
-    } else {
-        $quantity = 10;
-    }
+    $quantity = 10;
 }
 
 ?>
@@ -222,6 +218,7 @@ if(!empty($_REQUEST['quantity']) and $_REQUEST['quantity'] != 10) {
                     <tr>
                         <td style="background-color: #ededed;">№</td>
                         <td style="background-color: #ededed; width: 100px;">Фото</td>
+                        <td style="background-color: #ededed; width: 100px;">Артикул</td>
                         <td style="background-color: #ededed;">Название</td>
                         <td style="background-color: #ededed;">Просмотры</td>
                     </tr>
@@ -242,6 +239,7 @@ if(!empty($_REQUEST['quantity']) and $_REQUEST['quantity'] != 10) {
                                 <td style='width: 100px; border-bottom: 1px dashed ".$color.";'>
                                     <a href='/img/catalogue/big/".$good['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$good['name']."' data-lightview-caption='".nl2br(strip_tags($good['description']))."'><img src='/img/catalogue/small/".$good['small']."' /></a>
                                 </td>
+                                <td style='background-color: #ededed; border-bottom: 1px dashed ".$color.";'>".$good['code']."</td>
                                 <td style='border-bottom: 1px dashed ".$color.";'><a href='/catalogue/item.php?id=".$good['id']."' target='_blank'><span class='link'>".$good['name']."</span></a></td>
                                 <td style='background-color: #ededed; border-bottom: 1px dashed ".$color.";'>".$good['views_count']."</td>
                             </tr>
