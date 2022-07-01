@@ -346,6 +346,8 @@ if(isset($_SESSION['userID'])) {
 					<b>Телефон:</b>
 					<br />
 					<span><?= SALES_CITY ?></span>
+                    <br />
+                    <span><?= SALES_MOBILE ?></span>
 					<br /><br />
 					<b>Время работы:</b>
 					<br />
@@ -359,13 +361,40 @@ if(isset($_SESSION['userID'])) {
 				</div>
 				<div style="clear: both;"></div>
 			</div>
+            <br /><br />
+            <div class="mapContainer">
+                <div class="map">
+                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A37a9788d8058775f398c68f31f236ff639a62d1548cc4b66666ff50c8507d4de&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                </div>
+                <div class="mapDescription">
+                    <h2>2. Торговый объект «Мебельная Фурнитура»</h2>
+                    <b>Адрес:</b>
+                    <br />
+                    <span>212026, Республика Беларусь, г. Могилёв, ул. Якубовского, 55</span>
+                    <br /><br />
+                    <b>Телефон:</b>
+                    <br />
+                    <span><?= YAKUBOVSKOGO_CITY ?></span>
+                    <br /><br />
+                    <b>Время работы:</b>
+                    <br />
+                    <span>понедельник - пятница</span>
+                    <br />
+                    <span>9:00 - 18:00</span>
+                    <br /><br />
+                    <span>суббота</span>
+                    <br />
+                    <span>9:00 - 16:00</span>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
 			<br /><br />
 			<div class="mapContainer">
 				<div class="map">
 					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=om0QHqcbbq7ki3IzQujwQF5MaychC7ZG&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
 				</div>
 				<div class="mapDescription">
-					<h2>2. Торговый объект «Мебельная Фурнитура»</h2>
+					<h2>3. Торговый объект «Мебельная Фурнитура»</h2>
 					<b>Адрес:</b>
 					<br />
 					<span>212011, Республика Беларусь, г. Могилёв, ул. Калужская, 13</span>
@@ -376,28 +405,16 @@ if(isset($_SESSION['userID'])) {
 					<br /><br />
 					<b>Время работы:</b>
 					<br />
+                    <!--
 					<span>понедельник - пятница</span>
 					<br />
 					<span>8:00 - 17:00</span><br />
                     <span>обед: 13:00 - 14:00</span>
+                    -->
+                    <span style="text-decoration: underline;">Временно закрыт на ремонт</span>
 				</div>
 				<div style="clear: both;"></div>
 			</div>
-            <br /><br />
-            <div class="mapContainer">
-                <div class="map">
-                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A37a9788d8058775f398c68f31f236ff639a62d1548cc4b66666ff50c8507d4de&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
-                </div>
-                <div class="mapDescription">
-                    <h2>3. Торговый объект «Мебельная Фурнитура»</h2>
-                    <b>Адрес:</b>
-                    <br />
-                    <span>212026, Республика Беларусь, г. Могилёв, ул. Якубовского, 55</span>
-                    <br /><br />
-                    <b>Скоро открытие!</b>
-                </div>
-                <div style="clear: both;"></div>
-            </div>
 		</div>
 	</div>
 

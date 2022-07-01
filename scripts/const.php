@@ -21,3 +21,4 @@ define("SALES_CITY", "+375 (222) 747-800");
 define("GM_CITY", "+375 (222) 703-900");
 
 define("KALUZHSKAYA_CITY", "+375 (222) 707-766");
+define("YAKUBOVSKOGO_CITY", "+375 (222) 770-045");
