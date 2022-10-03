@@ -27,10 +27,10 @@ if(!empty($_FILES['csvFile']['tmp_name'])) {
 			for ($c = 0; $c < $num; $c++) {
 				$stats = explode(";", $data[$c]);
 				$code = $stats[0];
-				$price = str_replace(" ", "", $stats[2]);
-				$price_opt = str_replace(" ", "", $stats[1]);
+				$price = str_replace(" ", "", str_replace(",", ".", $stats[2]));
+				$price_opt = str_replace(" ", "", str_replace(",", ".", $stats[1]));
 				$unit = $stats[3];
-				$quantity = $stats[4];
+				$quantity = str_replace(",", ".", $stats[4]);
 
 				if(!empty($price) and $price > 0 and !empty($price_opt) and $price_opt > 0) {
                     if(!empty($code)) {
