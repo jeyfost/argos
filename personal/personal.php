@@ -409,6 +409,8 @@ if(isset($_SESSION['userID'])) {
 						<a href='personal.php?section=1'><div "; if($_REQUEST['section'] == 1) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='p1' onmouseover='buttonChange(\"p1\", 1)' onmouseout='buttonChange(\"p1\", 0)'";} echo ">Курсы валют</div></a>
 						<div style='width: 100%; height: 5px;'></div>
 						<a href='personal.php?section=2&p=1'><div "; if($_REQUEST['section'] == 2) {echo "class='personalMenuLinkActive'";} else {echo "class='personalMenuLink' id='p2' onmouseover='buttonChange(\"p2\", 1)' onmouseout='buttonChange(\"p2\", 0)'";} echo ">Управление пользователями</div></a>
+                        <div style='width: 100%; height: 5px;'></div>
+						<a href='/admin/clients/discount.php'><div class='personalMenuLink' id='p4' onmouseover='buttonChange(\"p4\", 1)' onmouseout='buttonChange(\"p4\", 0)'>Обновление скидок</div></a>
 						<div style='width: 100%; height: 5px;'></div>
 						<a href='/admin'><div class='personalMenuLink' id='p3' onmouseover='buttonChange(\"p3\", 1)' onmouseout='buttonChange(\"p3\", 0)'>Панель администрирования</div></a>
 					</div>
