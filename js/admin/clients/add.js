@@ -47,6 +47,7 @@ function addClient() {
 										break;
 									case "group":
 										$.notify("Выберите группу.", "error");
+										break;
 									default:
 										$.notify(response, "warn");
 										break;
@@ -63,11 +64,11 @@ function addClient() {
 				error: function(jqXHR, textStatus, errorThrown) {
 					$.notify(textStatus + "; " + errorThrown, "error");
 				}
-			})
+			});
 		} else {
 			$.notify("Введите email-адрес.", "error");
 		}
 	} else {
-		$.notify("Введите имя / название организации", "error");
+		$.notify("Введите имя / название организации.", "error");
 	}
 }

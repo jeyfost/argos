@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: jeyfost
+ * Date: 01.02.2023
+ * Time: 10:03
+ */
 
 session_start();
 include("../../scripts/connect.php");
@@ -24,24 +30,16 @@ if(isset($_SESSION['userID'])) {
 
     <meta charset="utf-8">
 
-    <title>Добавление записи в клиентскую базу</title>
+    <title>Обновление скидок по дисконтным картым</title>
 
     <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='/css/admin.css'>
-	<link rel="stylesheet" type="text/css" href="/js/lightview/css/lightview/lightview.css" />
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<!--[if lt IE 9]>
-  		<script type="text/javascript" src="/js/lightview/js/excanvas/excanvas.js"></script>
-	<![endif]-->
-	<script type="text/javascript" src="/js/lightview/js/spinners/spinners.min.js"></script>
-	<script type="text/javascript" src="/js/lightview/js/lightview/lightview.js"></script>
-	<script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="/js/notify.js"></script>
 	<script type="text/javascript" src="/js/common.js"></script>
-	<script type="text/javascript" src="/js/md5.js"></script>
 	<script type="text/javascript" src="/js/admin/admin.js"></script>
-	<script type="text/javascript" src="/js/admin/clients/add.js"></script>
+	<script type="text/javascript" src="/js/admin/clients/discount.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -182,58 +180,27 @@ if(isset($_SESSION['userID'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="/img/system/admin/icons/client.png" title="Клиентская база" /></div><div id="breadCrumbsTextContainer"><a href="/admin/admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Клиентская база</span></a> > <a href="add.php"><span class="breadCrumbsText">Добавление записей</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="/img/system/admin/icons/client.png" title="Клиентская база" /></div><div id="breadCrumbsTextContainer"><a href="/admin/admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Клиентская база</span></a> > <a href="discount.php"><span class="breadCrumbsText">Обновление скидок</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
 			<h2>Добавление записи в клиентскую базу</h2>
 			<a href="database.php"><input type="button" class="button" id="databaseButton" style="margin-left: 0;" value="Клиентская база" onmouseover="buttonChange('databaseButton', 1)" onmouseout="buttonChange('databaseButton', 0)" /></a>
-			<a href="add.php"><input type="button" class="buttonActive" id="addButton" value="Добавление" /></a>
+			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
 			<a href="inactive.php"><input type="button" class="button" id="inactiveButton" value="Кто отписался?" onmouseover="buttonChange('inactiveButton', 1)" onmouseout="buttonChange('inactiveButton', 0)" /></a>
-            <a href="discount.php"><input type="button" class="button" id="discountButton" value="Обновление скидок" onmouseover="buttonChange('discountButton', 1)" onmouseout="buttonChange('discountButton', 0)" /></a>
+            <a href="discount.php"><input type="button" class="buttonActive" id="discountButton" value="Обновление скидок" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
-			<form id="addForm" method="post">
-				<label for='nameInput'>Имя человека / название организации:</label>
+			<form id="updateForm" method="post">
+				<label for='cardInput'>Номер дисконтной карты:</label>
 				<br />
-				<input type='text' id='nameInput' name='name' />
+				<input type='number' id='cardInput' name='card' min="0" step="1" />
 				<br /><br />
-				<label for='emailInput'>Email:</label>
+				<label for='discountInput'>Процент скидки:</label>
 				<br />
-				<input type='text' id='emailInput' name='email' />
+				<input type='number' id='discountInput' name='discount' min="0" max="7" step="1"/>
 				<br /><br />
-				<label for='districtSelect'>Выберите область / город:</label>
-				<br />
-				<select id="districtSelect" name="district">
-					<option value="">- Выберите область / город -</option>
-					<?php
-						$districtResult = $mysqli->query("SELECT * FROM locations ORDER BY id");
-						while($district = $districtResult->fetch_assoc()) {
-							echo "<option value='".$district['id']."'>".$district['name']."</option>";
-						}
-					?>
-				</select>
-				<br /><br />
-				<label for="groupSelect">Выберите группу:</label>
-				<br />
-				<select id="groupSelect" name="group">
-					<option value="">- Выберите группу -</option>
-					<?php
-						$groupResult = $mysqli->query("SELECT * FROM filters ORDER BY name");
-						while($group = $groupResult->fetch_assoc()) {
-							echo "<option value='".$group['id']."'>".$group['name']."</option>";
-						}
-					?>
-				</select>
-				<br /><br />
-				<label for='phoneInput'>Номер телефона (опционально):</label>
-				<br />
-				<input type='text' id='phoneInput' name='phone' />
-				<br /><br />
-				<label for="textInput">Заметки (опционально):</label>
-				<br />
-				<textarea id="textInput" name="text"></textarea>
-				<br /><br />
-				<input type='button' class='button' style='margin: 0;' id='addClientButton' onmouseover='buttonChange("addClientButton", 1)' onmouseout='buttonChange("addClientButton", 0)' onclick='addClient()' value='Добавить' />
+				<input type='button' class='button' style='margin: 0;' id='setButton' onmouseover='buttonChange("setButton", 1)' onmouseout='buttonChange("setButton", 0)' onclick='setDiscount()' value='Установить скидку' />
+                <input type='button' class='button' style='margin: 0 auto auto 20px;' id='resetButton' onmouseover='buttonChange("resetButton", 1)' onmouseout='buttonChange("resetButton", 0)' onclick='resetDiscount()' value='Обнулить скидки'  />
 			</form>
 			<div style="clear: both;"></div>
 		</div>
@@ -242,10 +209,6 @@ if(isset($_SESSION['userID'])) {
 	</div>
 
 	<div style="clear: both;"></div>
-
-	<script type="text/javascript">
-		CKEDITOR.replace("text");
-	</script>
 
 </body>
 

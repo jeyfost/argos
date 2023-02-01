@@ -251,6 +251,7 @@ $start = intval($page) * 10 - 10;
 			<a href="database.php"><input type="button" class="buttonActive" id="databaseButton" style="margin-left: 0;" value="Клиентская база" /></a>
 			<a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
 			<a href="inactive.php"><input type="button" class="button" id="inactiveButton" value="Кто отписался?" onmouseover="buttonChange('inactiveButton', 1)" onmouseout="buttonChange('inactiveButton', 0)" /></a>
+            <a href="discount.php"><input type="button" class="button" id="discountButton" value="Обновление скидок" onmouseover="buttonChange('discountButton', 1)" onmouseout="buttonChange('discountButton', 0)" /></a>
 			<div style="clear: both;"></div>
 			<br /><br />
 			<div id="searchList" style="padding-right: 18px;"></div>
