@@ -50,9 +50,11 @@ function resetDiscount() {
             url: "/scripts/admin/clients/ajaxResetDiscount.php",
             success: function (response) {
                 switch (response) {
-                    case "ok":
+                    case '"ok"':
+                        $.notify("Скдики обнулены.", "success");
                         break;
-                    case "failed":
+                    case '"failed"':
+                        $.notify("При обнулении скидкок произошла ошибка.", "error");
                         break;
                     default:
                         break;
