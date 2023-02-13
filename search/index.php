@@ -20,9 +20,9 @@
 
         $query = $mysqli->real_escape_string($_REQUEST['query']);
 
-        $searchCountResult = $mysqli->query("SELECT COUNT(id) FROM catalogue_new WHERE name LIKE '%".$query."%' OR code LIKE '%".$query."%' OR description LIKE '%".$query."%'");
+        $searchCountResult = $mysqli->query("SELECT catalogue_new.id, MATCH (`name`, `description`, `code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS relevance, MATCH (`name`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS name_relevance, MATCH (`code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS code_relevance, `quantity` AS quantity_relevance FROM catalogue_new WHERE MATCH (`name`, `description`, `code`) AGAINST ('*".$query."*' IN BOOLEAN MODE) ORDER BY quantity_relevance DESC, name_relevance DESC, code_relevance DESC, relevance DESC");
 
-        $quantity = $searchCountResult->fetch_array(MYSQLI_NUM);
+        $quantity[0] = $searchCountResult->num_rows;
 
         if($quantity[0] > 10) {
             if($quantity[0] % 10 != 0) {
@@ -383,9 +383,9 @@
     <div id="page">
         <div id='searchList'></div>
         <div style="width: 100%; height: 1px;"></div>
-        <h1>Поиск по запросу «<?= $mysqli->real_escape_string($_REQUEST['query']) ?>»</h1>
+        <h1>Поиск по запросу «<?= $query ?>»</h1>
         <div id='breadCrumbs'>
-            <a href='/'><span class='breadCrumbsText'>Главная</span></a> > <a href='/search/?query=<?= $mysqli->real_escape_string($_REQUEST['query']) ?>&p=<?= $mysqli->real_escape_string($_REQUEST['p']) ?>'><span class='breadCrumbsText'>Поиск по запросу «<?= $mysqli->real_escape_string($_REQUEST['query']) ?>»</span></a>
+            <a href='/'><span class='breadCrumbsText'>Главная</span></a> > <a href='/search/?query=<?= $mysqli->real_escape_string($_REQUEST['query']) ?>&p=<?= $mysqli->real_escape_string($_REQUEST['p']) ?>'><span class='breadCrumbsText'>Поиск по запросу «<?= $query ?>»</span></a>
         </div>
 
         <div id="catalogueMenu">
@@ -546,7 +546,7 @@
                 }
 
                 /* ОТОБРАЖЕНИЕ ТОВАРОВ */
-                $catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE name LIKE '%".$query."%' OR code LIKE '%".$query."%' OR description LIKE '%".$query."%' ORDER BY quantity > 0 DESC, name ASC LIMIT ".$start.", 10");
+                $catalogueResult = $mysqli->query("SELECT catalogue_new.*, MATCH (`name`, `description`, `code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS relevance, MATCH (`name`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS name_relevance, MATCH (`code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS code_relevance, `quantity` AS quantity_relevance  FROM catalogue_new WHERE MATCH (`name`, `description`, `code`) AGAINST ('*".$query."*' IN BOOLEAN MODE) ORDER BY quantity_relevance DESC, name_relevance DESC, code_relevance DESC, relevance DESC LIMIT ".$start.", 10");
 
                 while($catalogue = $catalogueResult->fetch_array()) {
                     $unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$catalogue['unit']."'");

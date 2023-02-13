@@ -5,9 +5,16 @@ include("../connect.php");
 
 $query = $mysqli->real_escape_string($_POST['query']);
 
-$searchResult = $mysqli->query("SELECT * FROM catalogue_new WHERE name LIKE '%".$query."%' OR code LIKE '%".$query."%' OR description LIKE '%".$query."%' ORDER BY quantity > 0 DESC, name LIMIT 10");
+/*
+ * $searchResult = $mysqli->query("SELECT * FROM catalogue_new WHERE name LIKE '%".$query."%' OR code LIKE '%".$query."%' OR description LIKE '%".$query."%' ORDER BY quantity > 0 DESC, name LIMIT 10");
 
-$searchFullResult = $mysqli->query("SELECT * FROM catalogue_new WHERE name LIKE '%".$query."%' OR code LIKE '%".$query."%' OR description LIKE '%".$query."%'");
+ *  $searchFullResult = $mysqli->query("SELECT * FROM catalogue_new WHERE name LIKE '%".$query."%' OR code LIKE '%".$query."%' OR description LIKE '%".$query."%'");
+ */
+
+$searchResult = $mysqli->query("SELECT catalogue_new.*, MATCH (`name`, `description`, `code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS relevance, MATCH (`name`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS name_relevance, MATCH (`code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS code_relevance, `quantity` AS quantity_relevance  FROM catalogue_new WHERE MATCH (`name`, `description`, `code`) AGAINST ('*".$query."*' IN BOOLEAN MODE) ORDER BY quantity_relevance DESC, name_relevance DESC, code_relevance DESC, relevance DESC LIMIT 10");
+
+$searchFullResult = $mysqli->query("SELECT catalogue_new.*, MATCH (`name`, `description`, `code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS relevance, MATCH (`name`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS name_relevance, MATCH (`code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS code_relevance, `quantity` AS quantity_relevance  FROM catalogue_new WHERE MATCH (`name`, `description`, `code`) AGAINST ('*".$query."*' IN BOOLEAN MODE) ORDER BY quantity_relevance DESC, name_relevance DESC, code_relevance DESC, relevance DESC");
+
 $searchFull = $searchFullResult->num_rows;
 
 if(isset($_SESSION['userID'])) {
