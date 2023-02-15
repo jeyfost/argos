@@ -502,7 +502,7 @@ if(isset($_SESSION['userID'])) {
 								";
 							}
 
-							echo "</table>";
+							echo "</table><br />";
 
 							echo "<div id='pageNumbers'>";
 
