@@ -23,7 +23,7 @@ if(isset($_SESSION['userID'])) {
 }
 
 if($searchResult->num_rows == 0) {
-	echo "<i>К сожалению, поиск не дал результата.</i>";
+    echo "<i>К сожалению, поиск не дал результата.</i>";
 } else {
     if($searchFull > 10) {
         echo "
