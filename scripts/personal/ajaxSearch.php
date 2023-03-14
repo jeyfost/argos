@@ -11,11 +11,28 @@ $query = $mysqli->real_escape_string($_POST['query']);
  *  $searchFullResult = $mysqli->query("SELECT * FROM catalogue_new WHERE name LIKE '%".$query."%' OR code LIKE '%".$query."%' OR description LIKE '%".$query."%'");
  */
 
+/*
 $searchResult = $mysqli->query("SELECT catalogue_new.*, MATCH (`name`, `description`, `code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS relevance, MATCH (`name`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS name_relevance, MATCH (`code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS code_relevance, `quantity` AS quantity_relevance  FROM catalogue_new WHERE MATCH (`name`, `description`, `code`) AGAINST ('*".$query."*' IN BOOLEAN MODE) ORDER BY quantity_relevance DESC, name_relevance DESC, code_relevance DESC, relevance DESC LIMIT 10");
 
 $searchFullResult = $mysqli->query("SELECT catalogue_new.*, MATCH (`name`, `description`, `code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS relevance, MATCH (`name`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS name_relevance, MATCH (`code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS code_relevance, `quantity` AS quantity_relevance  FROM catalogue_new WHERE MATCH (`name`, `description`, `code`) AGAINST ('*".$query."*' IN BOOLEAN MODE) ORDER BY quantity_relevance DESC, name_relevance DESC, code_relevance DESC, relevance DESC");
+*/
 
+$keywords = explode(" ", $query);
+$searchConditions = array();
+
+foreach ($keywords as $keyword) {
+    $keyword = trim($keyword);
+    if(!empty($keyword)) {
+        $condition = "name LIKE '%".$keyword."%' OR code LIKE '%".$keyword."%'";
+    }
+
+    $searchConditions[] = $condition;
+}
+
+$searchFullResult = $mysqli->query("SELECT * FROM catalogue_new WHERE ".implode(" AND ", $searchConditions));
 $searchFull = $searchFullResult->num_rows;
+
+$searchResult = $mysqli->query("SELECT * FROM catalogue_new WHERE ".implode(" AND ", $searchConditions)." ORDER BY quantity > 0 DESC, name ASC LIMIT 10");
 
 if(isset($_SESSION['userID'])) {
     $userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
