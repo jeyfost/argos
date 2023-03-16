@@ -203,6 +203,14 @@ if(!empty($_REQUEST['subcategory2'])) {
         </a>
         <div style="clear: both;"></div>
 		<div class="line"></div>
+        <a href="/admin/filters/">
+            <div class="menuPoint">
+                <div class="menuIMG"><img src="/img/system/admin/filters.png" /></div>
+                <div class="menuText">Фильтры</div>
+            </div>
+        </a>
+        <div style="clear: both;"></div>
+        <div class="line"></div>
 		<a href="/">
 			<div class="menuPoint">
 				<div class="menuIMG"><img src="/img/system/admin/home.png" /></div>
