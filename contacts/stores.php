@@ -347,6 +347,8 @@ if(isset($_SESSION['userID'])) {
 					<br />
 					<span><?= SALES_CITY ?></span>
                     <br />
+                    <span><?= SALES_2_MOBILE ?></span>
+                    <br />
                     <span><?= SALES_MOBILE ?></span>
 					<br /><br />
 					<b>Время работы:</b>
@@ -375,6 +377,8 @@ if(isset($_SESSION['userID'])) {
                     <b>Телефон:</b>
                     <br />
                     <span><?= YAKUBOVSKOGO_CITY ?></span>
+                    <br />
+                    <span><?= YAKUBOVSKOGO_MOBILE ?></span>
                     <br /><br />
                     <b>Время работы:</b>
                     <br />
@@ -388,33 +392,6 @@ if(isset($_SESSION['userID'])) {
                 </div>
                 <div style="clear: both;"></div>
             </div>
-			<br /><br />
-			<div class="mapContainer">
-				<div class="map">
-					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=om0QHqcbbq7ki3IzQujwQF5MaychC7ZG&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
-				</div>
-				<div class="mapDescription">
-					<h2>3. Торговый объект «Мебельная Фурнитура»</h2>
-					<b>Адрес:</b>
-					<br />
-					<span>212011, Республика Беларусь, г. Могилёв, ул. Калужская, 13</span>
-					<br /><br />
-					<b>Телефон:</b>
-					<br />
-					<span><?= KALUZHSKAYA_CITY ?></span>
-					<br /><br />
-					<b>Время работы:</b>
-					<br />
-                    <!--
-					<span>понедельник - пятница</span>
-					<br />
-					<span>8:00 - 17:00</span><br />
-                    <span>обед: 13:00 - 14:00</span>
-                    -->
-                    <span style="text-decoration: underline;">Временно закрыт на ремонт</span>
-				</div>
-				<div style="clear: both;"></div>
-			</div>
 		</div>
 	</div>
 

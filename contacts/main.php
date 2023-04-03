@@ -343,6 +343,8 @@ if(isset($_SESSION['userID'])) {
 					<span>212040, Республика Беларусь, г. Могилёв, ул. Залуцкого, 21</span>
 					<br /><br />
 					<b>Телефон/факс (отдел сбыта):</b>
+                    <br />
+                    <span><?= SALES_2_MOBILE ?></span>
 					<br />
                     <span><?= SALES_MOBILE ?></span>
                     <br />

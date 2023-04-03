@@ -16,9 +16,11 @@ define("MARKETING_MOBILE", "+375 (29) 500-02-33");
 define("MARKETING_CITY", "+375 (222) 707-707");
 
 define("SALES_MOBILE", "+375 (29) 500-02-31");
+define("SALES_2_MOBILE", "+375 (29) 500-02-30");
 define("SALES_CITY", "+375 (222) 747-800");
 
 define("GM_CITY", "+375 (222) 703-900");
 
 define("KALUZHSKAYA_CITY", "+375 (222) 707-766");
 define("YAKUBOVSKOGO_CITY", "+375 (222) 770-045");
+define("YAKUBOVSKOGO_MOBILE", "+375 (29) 500-02-37");

@@ -49,6 +49,10 @@ h2 i:hover {color: #ff282b;}
     .cardContainer {margin: 0 auto;}
 }
 
+@media screen and (max-width: 730px) {
+    #footerContacts {display: none;}
+}
+
 @media screen and (max-width: 1311px) {
     .boxIMGContainer, .widthContainer {width: 100% !important; text-align: center; position: inherit; float: none; max-width: none !important;}
 }
