@@ -16,7 +16,7 @@ h2 i:hover {color: #ff282b;}
 .catalogueItemTextDecorated:hover {text-decoration: underline;}
 .catalogueDescription a span:hover, .sketchFont:hover, td a:hover, span b a:hover, .tdLink:hover {text-decoration: underline;}
 .newsPreview:hover {background-color: #ededed;}
-.font-awesome-link:hover, .catalogueNameLink:hover {color: #ff282b !important;}
+.font-awesome-link:hover, .catalogueNameLink:hover, .printButton:hover {color: #ff282b !important;}
 .wContainer:hover {background-color: #ededed;}
 
 /* mobile */
@@ -242,3 +242,4 @@ a .categoryContainer .categoryNameContainer, a .subcategoryContainer, a .subcate
 .list-group-item {display: flex; flex-direction: row; float: left; position: relative; max-height: 400px;}
 .imgChangeIconContainer {position: absolute; top: 10px; left: 10px;}
 .list-group {max-height: 400px;}
+.printButton {cursor: pointer; transition: .3s;}

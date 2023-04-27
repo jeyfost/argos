@@ -772,3 +772,15 @@ function checkQuantity(block, order_id, user_id, good_id) {
 		recalculatePriceFromInput(good_id, user_id, order_id, block);
 	}
 }
+
+function printOrder() {
+    const responseField = document.getElementById('responseField');
+    const printWindow = window.open('', '', 'height=800,width=1000');
+
+    printWindow.document.write(responseField.innerHTML);
+
+    printWindow.document.close();
+    printWindow.focus();
+    printWindow.print();
+    printWindow.close();
+}

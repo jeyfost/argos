@@ -18,7 +18,7 @@ $totalNormal = 0;
 $totalAction = 0;
 $actionGoodsQuantity = 0;
 
-echo "<div style='width: 100%; background-color: #ffeecb; height: 40px; line-height: 40px; font-size: 16px; text-align: center;'>Детализация заказа №".$id."</div><br /><br />";
+echo "<div style='width: 100%; background-color: #ffeecb; height: 40px; line-height: 40px; font-size: 16px; text-align: center;'>Детализация заказа №".$id."&nbsp;&nbsp;&nbsp;<i class='fa fa-print printButton' aria-hidden='true' onclick='printOrder()'></i></div><br /><br />";
 
 if($user['discount'] > 0) {
 	echo "<p>В детализации показаны цены на товары с учётом личной скидки клиента. Размер скидки составляет <b>".$user['discount']."%.</b><span style='color: #ff282b;'> На акционные товары скидка не распространяется.</span></p><br /><br />";
