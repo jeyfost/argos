@@ -196,7 +196,7 @@ if(isset($_SESSION['userID'])) {
             <div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="/img/system/admin/icons/employees.png" title="Сотрудники" /></div><div id="breadCrumbsTextContainer"><a href="/admin/admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Сотрудники</span></a> > <a href="list.php"><span class="breadCrumbsText">Список сотрудников</span></a></div></div>
             <div style="clear: both;"></div>
             <br />
-            <h2>&darr; Для продолжения работы выберите раздел</h2>
+            <h2>Список сотрудников</h2>
             <a href="list.php"><input type="button" class="buttonActive" id="listButton" value="Список сотрудников" style="margin-left: 0;" /></a>
             <a href="add.php"><input type="button" class="button" id="addButton" value="Добавление" onmouseover="buttonChange('addButton', 1)" onmouseout="buttonChange('addButton', 0)" /></a>
             <a href="edit.php"><input type="button" class="button" id="editButton" value="Редактирование" onmouseover="buttonChange('editButton', 1)" onmouseout="buttonChange('editButton', 0)" /></a>
