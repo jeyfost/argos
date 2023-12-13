@@ -2,22 +2,22 @@
 /**
  * Created by PhpStorm.
  * User: jeyfost
- * Date: 16.03.2023
- * Time: 14:09
+ * Date: 13.12.2023
+ * Time: 14:49
  */
 
 session_start();
-include("../../scripts/connect.php");
+include("../../../scripts/connect.php");
 
 if(isset($_SESSION['userID'])) {
-	if($_SESSION['userID'] != 1) {
-		header("Location: ../../");
-	} else {
-		$userLoginResult = $mysqli->query("SELECT login from users WHERE id = '".$_SESSION['userID']."'");
-		$userLogin = $userLoginResult->fetch_array(MYSQLI_NUM);
-	}
+    if($_SESSION['userID'] != 1) {
+        header("Location: ../../../");
+    } else {
+        $userLoginResult = $mysqli->query("SELECT login from users WHERE id = '".$_SESSION['userID']."'");
+        $userLogin = $userLoginResult->fetch_array(MYSQLI_NUM);
+    }
 } else {
-	header("Location: ../index.php");
+    header("Location: ../../index.php");
 }
 
 ?>
@@ -30,7 +30,7 @@ if(isset($_SESSION['userID'])) {
 
     <meta charset="utf-8">
 
-    <title>Панель администрирования</title>
+    <title>Добавление бренда</title>
 
     <link rel='shortcut icon' href='/img/icons/favicon.ico' type='image/x-icon'>
     <link rel='stylesheet' media='screen' type='text/css' href='/css/admin.css'>
@@ -42,8 +42,10 @@ if(isset($_SESSION['userID'])) {
 	<![endif]-->
 	<script type="text/javascript" src="/js/lightview/js/spinners/spinners.min.js"></script>
 	<script type="text/javascript" src="/js/lightview/js/lightview/lightview.js"></script>
+    <script type="text/javascript" src="/js/notify.js"></script>
 	<script type="text/javascript" src="/js/common.js"></script>
 	<script type="text/javascript" src="/js/admin/admin.js"></script>
+	<script type="text/javascript" src="/js/admin/filters/brands/add.js"></script>
 
 	<style>
 		#page-preloader {position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff; z-index: 100500;}
@@ -193,16 +195,23 @@ if(isset($_SESSION['userID'])) {
 		</div>
 		<br />
 		<div id="admContent">
-			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="/img/system/admin/icons/filters.png" title="Фильтры" /></div><div id="breadCrumbsTextContainer"><a href="/admin/admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="index.php"><span class="breadCrumbsText">Фильтры</span></a></div></div>
+			<div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="/img/system/admin/icons/filters.png" title="Фильтры" /></div><div id="breadCrumbsTextContainer"><a href="/admin/admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="/admin/filters/"><span class="breadCrumbsText">Фильтры</span></a> > <a href="/admin/filters/brands/"><span class="breadCrumbsText">Бренды ручек</span></a> > <a href="/admin/filters/brands/add.php"><span class="breadCrumbsText">Добавление бренда</span></a></div></div>
 			<div style="clear: both;"></div>
 			<br />
-			<h2>&darr; Для продолжения работы выберите раздел</h2>
-			<a href="/admin/filters/brands/"><input type="button" class="button" id="brandButton" value="Бренды ручек" onmouseover="buttonChange('brandButton', 1)" onmouseout="buttonChange('brandButton', 0)" style="margin-left: 0;" /></a>
-			<a href="/admin/filters/types/"><input type="button" class="button" id="typeButton" value="Типы ручек" onmouseover="buttonChange('typeButton', 1)" onmouseout="buttonChange('typeButton', 0)" /></a>
-			<a href="/admin/filters/sizes/"><input type="button" class="button" id="sizeButton" value="Размеры ручек" onmouseover="buttonChange('sizeButton', 1)" onmouseout="buttonChange('sizeButton', 0)" /></a>
-			<a href="/admin/filters/colors/"><input type="button" class="button" id="colorButton" value="Цвета ручек" onmouseover="buttonChange('colorButton', 1)" onmouseout="buttonChange('colorButton', 0)" /></a>
-			<a href="/admin/filters/materials"><input type="button" class="button" id="materialButton" value="Материалы ручек" onmouseover="buttonChange('materialButton', 1)" onmouseout="buttonChange('materialButton', 0)" /></a>
+			<h2>Добавление бренда</h2>
+			<a href="add.php"><input type="button" class="buttonActive" value="Добавление" style="margin-left: 0;" /></a>
+			<a href="edit.php"><input type="button" class="button" id="editButton" value="Редактирование" onmouseover="buttonChange('editButton', 1)" onmouseout="buttonChange('editButton', 0)" /></a>
+			<a href="delete.php"><input type="button" class="button" id="deleteButton" value="Удаление" onmouseover="buttonChange('deleteButton', 1)" onmouseout="buttonChange('deleteButton', 0)" /></a>
 			<div style="clear: both;"></div>
+            <br /><br />
+            <form id="addForm" method="post">
+                <label for="nameInput">Название бренда:</label>
+                <br />
+                <input type="text" id="nameInput" />
+                <br /><br />
+                <input type="button" class="button" style="margin: 0" id="addBrandButton" onmouseover='buttonChange("addBrandButton", 1)' onmouseout='buttonChange("addBrandButton", 0)' onclick='addBrand()' value='Добавить' />
+            </form>
+            <div style="clear: both;"></div>
 		</div>
 		<div style="clear: both;"></div>
 	</div>
