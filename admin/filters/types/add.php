@@ -205,9 +205,9 @@ if(isset($_SESSION['userID'])) {
             <div style="clear: both;"></div>
             <br /><br />
             <form id="addForm" method="post">
-                <label for="nameInput">Название типа:</label>
+                <label for="typeInput">Название типа:</label>
                 <br />
-                <input type="text" id="nameInput" />
+                <input type="text" id="typeInput" />
                 <br /><br />
                 <input type="button" class="button" style="margin: 0" id="addTypeButton" onmouseover='buttonChange("addTypeButton", 1)' onmouseout='buttonChange("addTypeButton", 0)' onclick='addType()' value='Добавить' />
             </form>

@@ -1,10 +1,10 @@
 function addType() {
-    var name = $("#nameInput").val();
+    var type = $("#typeInput").val();
 
-    if(name !== '') {
+    if(type !== '') {
         $.ajax({
             type: "POST",
-            data: {"name": name},
+            data: {"type": type},
             url: "/scripts/admin/filters/types/ajaxAddType.php",
             success: function (response) {
                 switch(response) {
@@ -15,7 +15,7 @@ function addType() {
                         $.notify("Во время добавления произошла ошибка.", "error");
                         break;
                     case "duplicate":
-                        $.notify("Такой бренд уже существует.", "error");
+                        $.notify("Такой тип уже существует.", "error");
                         break;
                     default:
                         $.notify(response, "warn");
