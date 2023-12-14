@@ -6,6 +6,8 @@
  * Time: 15:33
  */
 
+include("../../connect.php");
+
 $id = $mysqli->real_escape_string($_POST['id']);
 
 if($mysqli->query("DELETE FROM employees WHERE id = '".$id."'")) {
