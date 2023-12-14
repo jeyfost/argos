@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/filters/types/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/admin/filters/types/edit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/admin/filters/types/ajaxEditType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/filters/types/delete.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/admin/filters/types/delete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/admin/filters/types/ajaxDeleteType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
@@ -44,32 +44,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/filters/types/edit.php">
+      <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/filters/types/delete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="237" column="38" lean-forward="true" selection-start-line="237" selection-start-column="38" selection-end-line="237" selection-end-column="38" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="442">
+              <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/admin/filters/types/edit.js">
+      <file leaf-file-name="delete.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/admin/filters/types/delete.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+            <state relative-caret-position="255">
+              <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajaxEditType.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/admin/filters/types/ajaxEditType.php">
+      <file leaf-file-name="ajaxDeleteType.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/filters/types/ajaxDeleteType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+            <state relative-caret-position="85">
+              <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -133,9 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/goods/edit.php" />
-        <option value="$PROJECT_DIR$/admin/goods/index.php" />
-        <option value="$PROJECT_DIR$/admin/goods/top.php" />
         <option value="$PROJECT_DIR$/admin/goods/update.php" />
         <option value="$PROJECT_DIR$/admin/messages/index.php" />
         <option value="$PROJECT_DIR$/admin/news/add.php" />
@@ -172,8 +166,6 @@
         <option value="$PROJECT_DIR$/admin/employees/edit.php" />
         <option value="$PROJECT_DIR$/admin/employees/delete.php" />
         <option value="$PROJECT_DIR$/admin/employees/add.php" />
-        <option value="$PROJECT_DIR$/admin/filters/brands/delete.php" />
-        <option value="$PROJECT_DIR$/scripts/admin/filters/brands/ajaxDeleteBrand.php" />
         <option value="$PROJECT_DIR$/js/admin/filters/brands/delete.js" />
         <option value="$PROJECT_DIR$/scripts/admin/employees/ajaxDeleteEmployee.php" />
         <option value="$PROJECT_DIR$/admin/filters/types/index.php" />
@@ -181,9 +173,14 @@
         <option value="$PROJECT_DIR$/admin/filters/types/add.php" />
         <option value="$PROJECT_DIR$/js/admin/filters/types/add.js" />
         <option value="$PROJECT_DIR$/scripts/admin/filters/types/ajaxAddType.php" />
+        <option value="$PROJECT_DIR$/scripts/admin/filters/types/ajaxEditType.php" />
         <option value="$PROJECT_DIR$/admin/filters/types/edit.php" />
         <option value="$PROJECT_DIR$/js/admin/filters/types/edit.js" />
-        <option value="$PROJECT_DIR$/scripts/admin/filters/types/ajaxEditType.php" />
+        <option value="$PROJECT_DIR$/admin/filters/brands/delete.php" />
+        <option value="$PROJECT_DIR$/admin/filters/types/delete.php" />
+        <option value="$PROJECT_DIR$/js/admin/filters/types/delete.js" />
+        <option value="$PROJECT_DIR$/scripts/admin/filters/brands/ajaxDeleteBrand.php" />
+        <option value="$PROJECT_DIR$/scripts/admin/filters/types/ajaxDeleteType.php" />
       </list>
     </option>
   </component>
@@ -688,14 +685,7 @@
       <workItem from="1701325553012" duration="10000" />
       <workItem from="1702468064394" duration="2801000" />
       <workItem from="1702470925046" duration="5181000" />
-      <workItem from="1702557256640" duration="2942000" />
-    </task>
-    <task id="LOCAL-00384" summary="Изменено время работы торгового объекта">
-      <created>1599456789753</created>
-      <option name="number" value="00384" />
-      <option name="presentableId" value="LOCAL-00384" />
-      <option name="project" value="LOCAL" />
-      <updated>1599456789754</updated>
+      <workItem from="1702557256640" duration="3583000" />
     </task>
     <task id="LOCAL-00385" summary="Добавлен номер дисконтной карты клиента в детализации заказов">
       <created>1600675949745</created>
@@ -1033,11 +1023,18 @@
       <option name="project" value="LOCAL" />
       <updated>1702559348408</updated>
     </task>
-    <option name="localTasksCounter" value="433" />
+    <task id="LOCAL-00433" summary="Добавлена возможность редактирования типа мебельных ручек в разделе фильтров в панели администрироания">
+      <created>1702560452166</created>
+      <option name="number" value="00433" />
+      <option name="presentableId" value="LOCAL-00433" />
+      <option name="project" value="LOCAL" />
+      <updated>1702560452167</updated>
+    </task>
+    <option name="localTasksCounter" value="434" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1057078000" />
+    <option name="totallyTimeSpent" value="1057719000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1137,7 +1134,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Изменён цвет шрифта в описании товара во всех разделах сайта при отсутствии его на складе" />
     <MESSAGE value="Добавлен счётчик просмотров товаров" />
     <MESSAGE value="Добавлена возможность формирования таблицы количества просмотров товаров в панели администрирования" />
     <MESSAGE value="Исправлен модуль формирования таблицы количества просмотров товаров в панели администрирования" />
@@ -1162,7 +1158,8 @@
     <MESSAGE value="Исправлен скрипт удаления сотрудника в панели администрирования" />
     <MESSAGE value="Добавлена стартовая страница раздела управления типами мебельных ручек в разделе фильтров в панели администрироания" />
     <MESSAGE value="Добавлена возможность добавления типа мебельных ручек в разделе фильтров в панели администрироания" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность добавления типа мебельных ручек в разделе фильтров в панели администрироания" />
+    <MESSAGE value="Добавлена возможность редактирования типа мебельных ручек в разделе фильтров в панели администрироания" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность редактирования типа мебельных ручек в разделе фильтров в панели администрироания" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1237,27 +1234,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/sections/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="219" column="32" selection-start-line="219" selection-start-column="32" selection-end-line="219" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/sections/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="219" column="32" selection-start-line="219" selection-start-column="32" selection-end-line="219" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/sections/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="167" column="32" selection-start-line="167" selection-start-column="32" selection-end-line="167" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/vacancies/edit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
@@ -1450,34 +1426,10 @@
         <state relative-caret-position="-499" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/brands/ajaxDeleteBrand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/brands/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="214" column="51" selection-start-line="214" selection-start-column="51" selection-end-line="214" selection-end-column="51" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/employees/delete.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3032">
           <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/filters/brands/delete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1568,27 +1520,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/types/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="237" column="38" lean-forward="true" selection-start-line="237" selection-start-column="38" selection-end-line="237" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/admin/filters/brands/edit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/filters/types/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1603,6 +1538,65 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/filters/types/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/filters/types/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3219">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/filters/brands/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/filters/types/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/filters/brands/delete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/filters/types/delete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/brands/ajaxDeleteBrand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/types/ajaxDeleteType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
         </state>
       </provider>
     </entry>
