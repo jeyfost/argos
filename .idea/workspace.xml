@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/filters/brands/delete.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/admin/filters/brands/delete.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/admin/filters/brands/ajaxDeleteBrand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/filters/types/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
@@ -44,9 +42,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ajaxDeleteEmployee.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/admin/employees/ajaxDeleteEmployee.php">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/filters/types/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="26" column="6" lean-forward="true" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/filters/brands/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="205" column="10" lean-forward="true" selection-start-line="205" selection-start-column="10" selection-end-line="205" selection-end-column="10" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -108,8 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/clients/index.php" />
-        <option value="$PROJECT_DIR$/admin/email/history.php" />
         <option value="$PROJECT_DIR$/admin/email/index.php" />
         <option value="$PROJECT_DIR$/admin/email/send.php" />
         <option value="$PROJECT_DIR$/admin/employees/index.php" />
@@ -159,6 +168,8 @@
         <option value="$PROJECT_DIR$/admin/filters/brands/delete.php" />
         <option value="$PROJECT_DIR$/scripts/admin/filters/brands/ajaxDeleteBrand.php" />
         <option value="$PROJECT_DIR$/js/admin/filters/brands/delete.js" />
+        <option value="$PROJECT_DIR$/scripts/admin/employees/ajaxDeleteEmployee.php" />
+        <option value="$PROJECT_DIR$/admin/filters/types/index.php" />
       </list>
     </option>
   </component>
@@ -207,12 +218,6 @@
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="employees" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
-              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="filters" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -225,12 +230,6 @@
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vacancies" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
-              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -238,13 +237,6 @@
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
-              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="employees" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
@@ -271,13 +263,6 @@
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
-              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="employees" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
@@ -666,21 +651,7 @@
       <workItem from="1701325553012" duration="10000" />
       <workItem from="1702468064394" duration="2801000" />
       <workItem from="1702470925046" duration="5181000" />
-      <workItem from="1702557256640" duration="1118000" />
-    </task>
-    <task id="LOCAL-00380" summary="Отцентрован заголовок новости">
-      <created>1594281749756</created>
-      <option name="number" value="00380" />
-      <option name="presentableId" value="LOCAL-00380" />
-      <option name="project" value="LOCAL" />
-      <updated>1594281749756</updated>
-    </task>
-    <task id="LOCAL-00381" summary="Добавлена кнопка редактирования новости возле её заголовка для администратора">
-      <created>1594282815898</created>
-      <option name="number" value="00381" />
-      <option name="presentableId" value="LOCAL-00381" />
-      <option name="project" value="LOCAL" />
-      <updated>1594282815898</updated>
+      <workItem from="1702557256640" duration="1409000" />
     </task>
     <task id="LOCAL-00382" summary="Добавлена возможность привязывать дисконтную карту к пользователю">
       <created>1598948212493</created>
@@ -1011,11 +982,25 @@
       <option name="project" value="LOCAL" />
       <updated>1702475010884</updated>
     </task>
-    <option name="localTasksCounter" value="429" />
+    <task id="LOCAL-00429" summary="Добавлена возможность удаления бренда мебельных ручек в разделе фильтров в панели администрирования">
+      <created>1702558430250</created>
+      <option name="number" value="00429" />
+      <option name="presentableId" value="LOCAL-00429" />
+      <option name="project" value="LOCAL" />
+      <updated>1702558430251</updated>
+    </task>
+    <task id="LOCAL-00430" summary="Исправлен скрипт удаления сотрудника в панели администрирования">
+      <created>1702558523941</created>
+      <option name="number" value="00430" />
+      <option name="presentableId" value="LOCAL-00430" />
+      <option name="project" value="LOCAL" />
+      <updated>1702558523941</updated>
+    </task>
+    <option name="localTasksCounter" value="431" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1055254000" />
+    <option name="totallyTimeSpent" value="1055545000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1115,8 +1100,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправлено выравнивание с таблицей товаров из выбранного раздела в разделах добавления, удаления и редактирования товаров в панели администрирования" />
-    <MESSAGE value="В раздел с курсами валют добавлен Китайский Юань" />
     <MESSAGE value="Исправлен скрипт обновления курсов валют" />
     <MESSAGE value="Изменён цвет шрифта в описании товара при отсутствии его на складе" />
     <MESSAGE value="Изменён цвет шрифта в описании товара во всех разделах сайта при отсутствии его на складе" />
@@ -1140,7 +1123,9 @@
     <MESSAGE value="Добавлена возможность добавления бренда в фильтрах мебельных ручек" />
     <MESSAGE value="Добавлена возможность редактирования бренда в фильтрах мебельных ручек в панели администрирования" />
     <MESSAGE value="Исправлены заголовки страницы в разделе операций с сотрудниками в панели администрирования" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлены заголовки страницы в разделе операций с сотрудниками в панели администрирования" />
+    <MESSAGE value="Добавлена возможность удаления бренда мебельных ручек в разделе фильтров в панели администрирования" />
+    <MESSAGE value="Исправлен скрипт удаления сотрудника в панели администрирования" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлен скрипт удаления сотрудника в панели администрирования" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1215,13 +1200,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/news/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="198" column="32" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/news/edit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
@@ -1397,13 +1375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/brands/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="206" lean-forward="true" selection-start-line="206" selection-end-line="206" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/filters/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
@@ -1572,7 +1543,28 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/admin/employees/ajaxDeleteEmployee.php">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding>
+            <element signature="e#6#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/filters/brands/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="205" column="10" lean-forward="true" selection-start-line="205" selection-start-column="10" selection-end-line="205" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/filters/types/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="26" column="6" lean-forward="true" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
