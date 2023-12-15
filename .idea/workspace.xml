@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/filters/colors/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/admin/filters/colors/edit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/admin/filters/colors/ajaxEditColor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/filters/colors/delete.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/admin/filters/colors/delete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/admin/filters/colors/ajaxDeleteColor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
@@ -44,29 +44,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="edit.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/filters/colors/edit.php">
+      <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/filters/colors/delete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+            <state relative-caret-position="425">
+              <caret line="224" column="21" lean-forward="true" selection-start-line="224" selection-start-column="21" selection-end-line="224" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/admin/filters/colors/edit.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxEditColor.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/admin/filters/colors/ajaxEditColor.php">
+      <file leaf-file-name="delete.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/admin/filters/colors/delete.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxDeleteColor.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/filters/colors/ajaxDeleteColor.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -130,9 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/filters/brands/index.php" />
-        <option value="$PROJECT_DIR$/scripts/const.php" />
-        <option value="$PROJECT_DIR$/contacts/stores.php" />
         <option value="$PROJECT_DIR$/contacts/main.php" />
         <option value="$PROJECT_DIR$/layouts/footer.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
@@ -173,7 +170,6 @@
         <option value="$PROJECT_DIR$/scripts/admin/filters/sizes/ajaxEditSize.php" />
         <option value="$PROJECT_DIR$/admin/filters/sizes/delete.php" />
         <option value="$PROJECT_DIR$/js/admin/filters/sizes/delete.js" />
-        <option value="$PROJECT_DIR$/scripts/admin/filters/sizes/ajaxDeleteSize.php" />
         <option value="$PROJECT_DIR$/admin/filters/colors/index.php" />
         <option value="$PROJECT_DIR$/js/admin/filters/colors/add.js" />
         <option value="$PROJECT_DIR$/scripts/admin/filters/colors/ajaxAddColor.php" />
@@ -181,6 +177,10 @@
         <option value="$PROJECT_DIR$/js/admin/filters/colors/edit.js" />
         <option value="$PROJECT_DIR$/scripts/admin/filters/colors/ajaxEditColor.php" />
         <option value="$PROJECT_DIR$/admin/filters/colors/edit.php" />
+        <option value="$PROJECT_DIR$/admin/filters/colors/delete.php" />
+        <option value="$PROJECT_DIR$/js/admin/filters/colors/delete.js" />
+        <option value="$PROJECT_DIR$/scripts/admin/filters/sizes/ajaxDeleteSize.php" />
+        <option value="$PROJECT_DIR$/scripts/admin/filters/colors/ajaxDeleteColor.php" />
       </list>
     </option>
   </component>
@@ -686,14 +686,7 @@
       <workItem from="1702468064394" duration="2801000" />
       <workItem from="1702470925046" duration="5181000" />
       <workItem from="1702557256640" duration="5051000" />
-      <workItem from="1702619105462" duration="2886000" />
-    </task>
-    <task id="LOCAL-00393" summary="Исправлен пересчёт стоимости заказа в корзине и при принятии администратором заказа в работу">
-      <created>1609911540231</created>
-      <option name="number" value="00393" />
-      <option name="presentableId" value="LOCAL-00393" />
-      <option name="project" value="LOCAL" />
-      <updated>1609911540232</updated>
+      <workItem from="1702619105462" duration="3900000" />
     </task>
     <task id="LOCAL-00394" summary="Добавлена возможность просмотра галереи дополнительных фотографий путём нажатия на главное фото на странице товара">
       <created>1612243742193</created>
@@ -1031,11 +1024,18 @@
       <option name="project" value="LOCAL" />
       <updated>1702620603317</updated>
     </task>
-    <option name="localTasksCounter" value="442" />
+    <task id="LOCAL-00442" summary="Добавлена возможность редактирования цветов мебельных ручек в разделе фильтров в панели администрирования">
+      <created>1702622034730</created>
+      <option name="number" value="00442" />
+      <option name="presentableId" value="LOCAL-00442" />
+      <option name="project" value="LOCAL" />
+      <updated>1702622034730</updated>
+    </task>
+    <option name="localTasksCounter" value="443" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1062073000" />
+    <option name="totallyTimeSpent" value="1063087000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1135,7 +1135,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Доработан скрипт обнуления скидок по дисконтным картам для зарегистрированных пользователей" />
     <MESSAGE value="Модель поиска по товарам переделана на полнотекстовую" />
     <MESSAGE value="Увеличен отступ блока постраничной навигации от таблицы с зарегистрированными пользователями в разделе управления пользователями" />
     <MESSAGE value="Добавлен конструктор наборных вкладышей" />
@@ -1160,7 +1159,8 @@
     <MESSAGE value="Добавлена возможность удаления размеров мебельных ручек в разделе фильтров в панели администрирования" />
     <MESSAGE value="Добавлена стартовая страница раздела управления цветами мебельных ручек в разделе фильтров в панели администрироания" />
     <MESSAGE value="Добавлена возможность добавления цветов мебельных ручек в разделе фильтров в панели администрирования" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность добавления цветов мебельных ручек в разделе фильтров в панели администрирования" />
+    <MESSAGE value="Добавлена возможность редактирования цветов мебельных ручек в разделе фильтров в панели администрирования" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность редактирования цветов мебельных ручек в разделе фильтров в панели администрирования" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1235,27 +1235,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/vacancies/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/vacancies/ajaxAddVacancy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/employees/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="29" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="31" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/admin/employees/ajaxEditEmployee.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1462,28 +1441,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/sizes/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="214" column="45" selection-start-line="214" selection-start-column="45" selection-end-line="214" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/filters/sizes/delete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/admin/filters/types/ajaxDeleteType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/sizes/ajaxDeleteSize.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
@@ -1585,6 +1543,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/filters/sizes/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="214" column="45" selection-start-line="214" selection-start-column="45" selection-end-line="214" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/filters/sizes/delete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/filters/colors/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="224" column="21" lean-forward="true" selection-start-line="224" selection-start-column="21" selection-end-line="224" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/filters/colors/delete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/sizes/ajaxDeleteSize.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/colors/ajaxDeleteColor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
         </state>
       </provider>
     </entry>
