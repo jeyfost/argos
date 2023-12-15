@@ -4,10 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/personal/basket.php" line="726" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="Добавлена возможность добавления цветов мебельных ручек в разделе фильтров в панели администрирования">
-      <change afterPath="$PROJECT_DIR$/admin/filters/colors/add.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/admin/filters/colors/add.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/admin/filters/colors/ajaxAddColor.php" afterDir="false" />
+    <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/admin/filters/colors/edit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/admin/filters/colors/edit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/admin/filters/colors/ajaxEditColor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
@@ -44,17 +44,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="add.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/filters/colors/add.php">
+      <file leaf-file-name="edit.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/filters/colors/edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="208" column="18" lean-forward="true" selection-start-line="208" selection-start-column="18" selection-end-line="208" selection-end-column="18" />
+            <state relative-caret-position="357">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/admin/filters/colors/add.js">
+      <file leaf-file-name="edit.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/admin/filters/colors/edit.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
               <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
@@ -62,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajaxAddColor.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/admin/filters/colors/ajaxAddColor.php">
+      <file leaf-file-name="ajaxEditColor.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/filters/colors/ajaxEditColor.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="13" column="57" lean-forward="true" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+            <state relative-caret-position="51">
+              <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -130,9 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/vacancies/delete.php" />
-        <option value="$PROJECT_DIR$/admin/vacancies/edit.php" />
-        <option value="$PROJECT_DIR$/admin/vacancies/index.php" />
         <option value="$PROJECT_DIR$/admin/filters/brands/index.php" />
         <option value="$PROJECT_DIR$/scripts/const.php" />
         <option value="$PROJECT_DIR$/contacts/stores.php" />
@@ -181,6 +178,9 @@
         <option value="$PROJECT_DIR$/js/admin/filters/colors/add.js" />
         <option value="$PROJECT_DIR$/scripts/admin/filters/colors/ajaxAddColor.php" />
         <option value="$PROJECT_DIR$/admin/filters/colors/add.php" />
+        <option value="$PROJECT_DIR$/js/admin/filters/colors/edit.js" />
+        <option value="$PROJECT_DIR$/scripts/admin/filters/colors/ajaxEditColor.php" />
+        <option value="$PROJECT_DIR$/admin/filters/colors/edit.php" />
       </list>
     </option>
   </component>
@@ -686,14 +686,7 @@
       <workItem from="1702468064394" duration="2801000" />
       <workItem from="1702470925046" duration="5181000" />
       <workItem from="1702557256640" duration="5051000" />
-      <workItem from="1702619105462" duration="1430000" />
-    </task>
-    <task id="LOCAL-00392" summary="API получения актуальных курсов валют переведён на протокол HTTPS">
-      <created>1607321310233</created>
-      <option name="number" value="00392" />
-      <option name="presentableId" value="LOCAL-00392" />
-      <option name="project" value="LOCAL" />
-      <updated>1607321310234</updated>
+      <workItem from="1702619105462" duration="2886000" />
     </task>
     <task id="LOCAL-00393" summary="Исправлен пересчёт стоимости заказа в корзине и при принятии администратором заказа в работу">
       <created>1609911540231</created>
@@ -1031,11 +1024,18 @@
       <option name="project" value="LOCAL" />
       <updated>1702620023871</updated>
     </task>
-    <option name="localTasksCounter" value="441" />
+    <task id="LOCAL-00441" summary="Добавлена возможность добавления цветов мебельных ручек в разделе фильтров в панели администрирования">
+      <created>1702620603317</created>
+      <option name="number" value="00441" />
+      <option name="presentableId" value="LOCAL-00441" />
+      <option name="project" value="LOCAL" />
+      <updated>1702620603317</updated>
+    </task>
+    <option name="localTasksCounter" value="442" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1060617000" />
+    <option name="totallyTimeSpent" value="1062073000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1135,7 +1135,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлена ссылка на раздел установки скидок по дисконтным картам для зарегистрированных пользователей в разделе управления пользователями" />
     <MESSAGE value="Доработан скрипт обнуления скидок по дисконтным картам для зарегистрированных пользователей" />
     <MESSAGE value="Модель поиска по товарам переделана на полнотекстовую" />
     <MESSAGE value="Увеличен отступ блока постраничной навигации от таблицы с зарегистрированными пользователями в разделе управления пользователями" />
@@ -1160,7 +1159,8 @@
     <MESSAGE value="Добавлена возможность редактирования размеров мебельных ручек в разделе фильтров в панели администрирования" />
     <MESSAGE value="Добавлена возможность удаления размеров мебельных ручек в разделе фильтров в панели администрирования" />
     <MESSAGE value="Добавлена стартовая страница раздела управления цветами мебельных ручек в разделе фильтров в панели администрироания" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена стартовая страница раздела управления цветами мебельных ручек в разделе фильтров в панели администрироания" />
+    <MESSAGE value="Добавлена возможность добавления цветов мебельных ручек в разделе фильтров в панели администрирования" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность добавления цветов мебельных ручек в разделе фильтров в панели администрирования" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1235,27 +1235,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="244" column="47" selection-start-line="244" selection-start-column="47" selection-end-line="244" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/vacancies/add.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="32" column="17" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="32" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/vacancies/add.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1469,27 +1448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/sizes/ajaxEditSize.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/filters/sizes/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/sizes/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="246" column="10" lean-forward="true" selection-start-line="246" selection-start-column="10" selection-end-line="246" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/filters/types/delete.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1762">
@@ -1560,17 +1518,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/filters/colors/add.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/admin/filters/sizes/ajaxAddSize.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/filters/colors/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="208" column="18" lean-forward="true" selection-start-line="208" selection-start-column="18" selection-end-line="208" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/filters/colors/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1581,10 +1546,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/colors/add.php">
+    <entry file="file://$PROJECT_DIR$/admin/filters/sizes/edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="208" column="18" lean-forward="true" selection-start-line="208" selection-start-column="18" selection-end-line="208" selection-end-column="18" />
+        <state relative-caret-position="510">
+          <caret line="246" column="10" lean-forward="true" selection-start-line="246" selection-start-column="10" selection-end-line="246" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/filters/sizes/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/sizes/ajaxEditSize.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" selection-start-line="8" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/filters/colors/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/colors/ajaxEditColor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/filters/colors/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
         </state>
       </provider>
     </entry>
