@@ -202,6 +202,7 @@ if(isset($_SESSION['userID'])) {
 			<a href="/admin/filters/sizes/"><input type="button" class="button" id="sizeButton" value="Размеры ручек" onmouseover="buttonChange('sizeButton', 1)" onmouseout="buttonChange('sizeButton', 0)" /></a>
 			<a href="/admin/filters/colors/"><input type="button" class="button" id="colorButton" value="Цвета ручек" onmouseover="buttonChange('colorButton', 1)" onmouseout="buttonChange('colorButton', 0)" /></a>
 			<a href="/admin/filters/materials"><input type="button" class="button" id="materialButton" value="Материалы ручек" onmouseover="buttonChange('materialButton', 1)" onmouseout="buttonChange('materialButton', 0)" /></a>
+            <a href="/admin/filters/set"><input type="button" class="button" id="setButton" value="Установка фильтров" onmouseover="buttonChange('setButton', 1)" onmouseout="buttonChange('setButton', 0)" /></a>
 			<div style="clear: both;"></div>
 		</div>
 		<div style="clear: both;"></div>
