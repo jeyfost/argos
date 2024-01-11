@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/filters/set/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/admin/filters/set/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetFilters.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetNewFiltersWithSize.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetNewFiltersWithoutSize.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/filters/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/filters/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/filters/set/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/filters/set/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/admin/filters/materials/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin/filters/materials/edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/const.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/const.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,25 +48,80 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/goods/edit.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/filters/index.php">
+      <file leaf-file-name="const.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/const.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="827">
-              <caret line="207" column="40" lean-forward="true" selection-start-line="207" selection-start-column="40" selection-end-line="207" selection-end-column="40" />
+            <state relative-caret-position="510">
+              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/filters/set/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="199" column="93" selection-start-line="199" selection-start-column="93" selection-end-line="199" selection-end-column="93" />
+            <state relative-caret-position="334">
+              <caret line="572" column="244" selection-start-line="572" selection-start-column="244" selection-end-line="572" selection-end-column="244" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#a#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/admin/filters/set/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="116" column="77" selection-start-line="116" selection-start-column="77" selection-end-line="116" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxSetNewFiltersWithoutSize.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetNewFiltersWithoutSize.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxSetNewFiltersWithSize.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetNewFiltersWithSize.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajaxSetFilters.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetFilters.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -77,9 +137,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>addgoodb</find>
-      <find>choosegood</find>
-      <find>ajaxchoos</find>
       <find>cata</find>
       <find>cataloguenameL</find>
       <find>.catalogueNameLink {color: #4c4c4c;}</find>
@@ -107,6 +164,9 @@
       <find>детали</find>
       <find>pointer</find>
       <find>color</find>
+      <find>#ff28</find>
+      <find>$catalogue</find>
+      <find>catalogueIte</find>
     </findStrings>
     <replaceStrings>
       <replace>catalogue/index.php</replace>
@@ -115,8 +175,8 @@
     </replaceStrings>
     <dirStrings>
       <dir>D:\Programs\OpenServer\domains\argos.local\admin</dir>
-      <dir>D:\Programs\OpenServer\domains\argos.local</dir>
       <dir>D:\Programs\OpenServer\domains\argos.local\js</dir>
+      <dir>D:\Programs\OpenServer\domains\argos.local</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -125,13 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/employees/list.php" />
-        <option value="$PROJECT_DIR$/admin/employees/edit.php" />
-        <option value="$PROJECT_DIR$/admin/employees/delete.php" />
-        <option value="$PROJECT_DIR$/admin/employees/add.php" />
-        <option value="$PROJECT_DIR$/js/admin/filters/brands/delete.js" />
-        <option value="$PROJECT_DIR$/scripts/admin/employees/ajaxDeleteEmployee.php" />
-        <option value="$PROJECT_DIR$/admin/filters/brands/add.php" />
         <option value="$PROJECT_DIR$/admin/filters/types/edit.php" />
         <option value="$PROJECT_DIR$/admin/filters/brands/delete.php" />
         <option value="$PROJECT_DIR$/admin/filters/types/delete.php" />
@@ -169,13 +222,20 @@
         <option value="$PROJECT_DIR$/admin/filters/materials/add.php" />
         <option value="$PROJECT_DIR$/scripts/admin/filters/materials/ajaxAddMaterial.php" />
         <option value="$PROJECT_DIR$/admin/filters/materials/edit.php" />
-        <option value="$PROJECT_DIR$/js/admin/filters/materials/edit.js" />
         <option value="$PROJECT_DIR$/scripts/admin/filters/materials/ajaxEditMaterial.php" />
         <option value="$PROJECT_DIR$/admin/filters/materials/delete.php" />
         <option value="$PROJECT_DIR$/js/admin/filters/materials/delete.js" />
         <option value="$PROJECT_DIR$/scripts/admin/filters/materials/ajaxDeleteMaterial.php" />
         <option value="$PROJECT_DIR$/admin/filters/index.php" />
+        <option value="$PROJECT_DIR$/admin/filters/set/add.php" />
+        <option value="$PROJECT_DIR$/scripts/const.php" />
+        <option value="$PROJECT_DIR$/catalogue/index.php" />
+        <option value="$PROJECT_DIR$/js/admin/filters/materials/edit.js" />
+        <option value="$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetFilters.php" />
+        <option value="$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetNewFiltersWithSize.php" />
         <option value="$PROJECT_DIR$/admin/filters/set/index.php" />
+        <option value="$PROJECT_DIR$/js/admin/filters/set/index.js" />
+        <option value="$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetNewFiltersWithoutSize.php" />
       </list>
     </option>
   </component>
@@ -207,6 +267,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,26 +278,75 @@
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="filters" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="filters" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="colors" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="filters" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="set" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="filters" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="filters" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="materials" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="argos.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="argos.local" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="filters" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="set" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -609,14 +719,9 @@
       <workItem from="1702619105462" duration="3932000" />
       <workItem from="1702625766864" duration="2503000" />
       <workItem from="1703242427717" duration="11000" />
-      <workItem from="1704866601471" duration="3101000" />
-    </task>
-    <task id="LOCAL-00399" summary="Исправлена функция заказа дробного количества товара">
-      <created>1614155574139</created>
-      <option name="number" value="00399" />
-      <option name="presentableId" value="LOCAL-00399" />
-      <option name="project" value="LOCAL" />
-      <updated>1614155574140</updated>
+      <workItem from="1704866601471" duration="8772000" />
+      <workItem from="1704885446934" duration="10147000" />
+      <workItem from="1704951944137" duration="7937000" />
     </task>
     <task id="LOCAL-00400" summary="В блоке быстрых результатов поиска изменён порядок следования товаров: сначала отображаются те товары, что удовлетворяют поисковому запросу и есть на складе">
       <created>1614344404475</created>
@@ -954,11 +1059,18 @@
       <option name="project" value="LOCAL" />
       <updated>1704867983608</updated>
     </task>
-    <option name="localTasksCounter" value="448" />
+    <task id="LOCAL-00448" summary="Добавлена стартовая страница раздела установки фильтров мебельных ручек в разделе фильтров в панели администрироания">
+      <created>1704871194855</created>
+      <option name="number" value="00448" />
+      <option name="presentableId" value="LOCAL-00448" />
+      <option name="project" value="LOCAL" />
+      <updated>1704871194855</updated>
+    </task>
+    <option name="localTasksCounter" value="449" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1068734000" />
+    <option name="totallyTimeSpent" value="1092489000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -977,16 +1089,16 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50385606" side_tool="true" weight="0.31529093" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32341" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18316196" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18830334" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.11118252" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
       <window_info anchor="bottom" id="Thumbnails" order="13" weight="0.3293011" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -998,32 +1110,6 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
-      <window_info anchor="bottom" id="Thumbnails" order="13" weight="0.3293011" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4975" weight="0.3179973" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
-      <window_info anchor="bottom" id="Command Line Tools Console" order="12" weight="0.3293011" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17544988" />
-      <window_info anchor="right" id="Database" order="4" weight="0.11118252" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32341" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50385606" side_tool="true" weight="0.31529093" />
-      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.49614397" weight="0.32070366" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32882273" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1058,7 +1144,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлена стартовая страница подраздела брендов раздела фильтров в панели администрирования" />
     <MESSAGE value="Добавлены новые контактные телефоны" />
     <MESSAGE value="Добавлена возможность вывести на печать активную заявку" />
     <MESSAGE value="Добавлена возможность добавления бренда в фильтрах мебельных ручек" />
@@ -1083,7 +1168,8 @@
     <MESSAGE value="Добавлена возможность добавления материалов мебельных ручек в разделе фильтров в панели администрирования" />
     <MESSAGE value="Добавлена возможность редактирования материалов мебельных ручек в разделе фильтров в панели администрирования" />
     <MESSAGE value="Добавлена возможность удаления материалов мебельных ручек в разделе фильтров в панели администрирования" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность удаления материалов мебельных ручек в разделе фильтров в панели администрирования" />
+    <MESSAGE value="Добавлена стартовая страница раздела установки фильтров мебельных ручек в разделе фильтров в панели администрироания" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена стартовая страница раздела установки фильтров мебельных ручек в разделе фильтров в панели администрироания" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1143,6 +1229,26 @@
           <line>764</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/admin/filters/set/index.php</url>
+          <line>439</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/admin/filters/set/index.php</url>
+          <line>357</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/admin/filters/set/index.php</url>
+          <line>523</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/admin/filters/set/index.php</url>
+          <line>459</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/admin/email/send.js</url>
           <line>91</line>
@@ -1154,66 +1260,10 @@
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="46" />
+      <option name="time" value="59" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/brands/ajaxAddBrand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/brands/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="224" column="33" selection-start-line="224" selection-start-column="33" selection-end-line="224" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/brands/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/filters/brands/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/brands/ajaxEditBrand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/brands/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/filters/brands/delete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/brands/ajaxDeleteBrand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/filters/types/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -1389,27 +1439,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/materials/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/admin/filters/materials/ajaxAddMaterial.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/materials/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="75" column="60" lean-forward="true" selection-start-line="75" selection-start-column="60" selection-end-line="75" selection-end-column="60" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1420,28 +1453,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/filters/colors/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/filters/materials/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/admin/filters/colors/ajaxEditColor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/materials/ajaxEditMaterial.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
@@ -1490,13 +1502,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/goods/edit.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/index.php">
+    <entry file="file://$PROJECT_DIR$/admin/filters/set/add.php" />
+    <entry file="file://$PROJECT_DIR$/admin/filters/materials/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="827">
-          <caret line="207" column="40" lean-forward="true" selection-start-line="207" selection-start-column="40" selection-end-line="207" selection-end-column="40" />
+        <state relative-caret-position="918">
+          <caret line="222" column="7" lean-forward="true" selection-start-line="222" selection-start-column="7" selection-end-line="222" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1507,10 +1517,123 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/filters/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="187" column="76" lean-forward="true" selection-start-line="187" selection-start-column="76" selection-end-line="187" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catalogue/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="710" column="59" lean-forward="true" selection-start-line="709" selection-start-column="16" selection-end-line="710" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_8.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="699" column="9" selection-start-line="699" selection-start-column="9" selection-end-line="699" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/filters/materials/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="683">
+          <caret line="239" column="32" selection-start-line="239" selection-start-column="32" selection-end-line="240" selection-end-column="266" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/clients/ajaxEditClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/materials/ajaxEditMaterial.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/filters/materials/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/filters/colors/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="99" selection-start-line="18" selection-start-column="99" selection-end-line="18" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/const.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetFilters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/filters/set/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="199" column="93" selection-start-line="199" selection-start-column="93" selection-end-line="199" selection-end-column="93" />
+        <state relative-caret-position="334">
+          <caret line="572" column="244" selection-start-line="572" selection-start-column="244" selection-end-line="572" selection-end-column="244" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#a#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/filters/set/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="116" column="77" selection-start-line="116" selection-start-column="77" selection-end-line="116" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetNewFiltersWithSize.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetNewFiltersWithoutSize.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
         </state>
       </provider>
     </entry>
