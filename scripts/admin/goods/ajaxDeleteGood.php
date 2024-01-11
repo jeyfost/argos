@@ -23,6 +23,10 @@ if($mysqli->query("DELETE FROM catalogue_new WHERE id = '".$goodID."'")) {
 
 	$mysqli->query("DELETE FROM goods_photos WHERE good_id = '".$goodID."'");
 
+	if($good['category'] == HANDLES_CATEGORY) {
+	    $mysqli->query("DELETE FROM handles_specifications WHERE catalogue_id = '".$good['id']."'");
+    }
+
 	echo "ok";
 } else {
 	echo "failed";
