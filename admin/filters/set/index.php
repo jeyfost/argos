@@ -227,7 +227,7 @@ if(!empty($_REQUEST['id'])) {
     <br />
     <div id="admContent">
         <br />
-        <div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="/img/system/admin/icons/filters.png" title="Фильтры" /></div><div id="breadCrumbsTextContainer"><a href="/admin/admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="/admin/filters/"><span class="breadCrumbsText">Фильтры</span></a> > <a href="/admin/filters/materials/"><span class="breadCrumbsText">Материалы ручек</span></a> > <a href="/admin/filters/materials/edit.php"><span class="breadCrumbsText">Редактирование материалов ручек</span></a></div></div>
+        <div id="breadCrumbs"><div id="breadCrumbsIcon"><img src="/img/system/admin/icons/filters.png" title="Фильтры" /></div><div id="breadCrumbsTextContainer"><a href="/admin/admin.php"><span class="breadCrumbsText">Панель администрирования</span></a> > <a href="/admin/filters/"><span class="breadCrumbsText">Фильтры</span></a> > <a href="/admin/filters/set/"><span class="breadCrumbsText">Установка фильтров</span></a></div></div>
         <div style="clear: both;"></div>
         <br />
         <h2>
@@ -247,6 +247,7 @@ if(!empty($_REQUEST['id'])) {
         <a href="/admin/filters/colors/"><input type="button" class="button" id="colorButton" value="Цвета ручек" onmouseover="buttonChange('colorButton', 1)" onmouseout="buttonChange('colorButton', 0)" /></a>
         <a href="/admin/filters/materials"><input type="button" class="button" id="materialButton" value="Материалы ручек" onmouseover="buttonChange('materialButton', 1)" onmouseout="buttonChange('materialButton', 0)" /></a>
         <a href="/admin/filters/set"><input type="button" class="buttonActive" value="Установка фильтров" /></a>
+        <a href="/admin/filters/list"><input type="button" class="button" id="listButton" value="Ручки без фильтров" onmouseover="buttonChange('listButton', 1)" onmouseout="buttonChange('listButton', 0)" /></a>
         <div style="clear: both;"></div>
         <br /><br />
         <form id="setForm" method="post">

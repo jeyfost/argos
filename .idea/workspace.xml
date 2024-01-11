@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e62d7b0-2511-43e0-8f5c-885a0c8258ff" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/admin/filters/list/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/filters/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/filters/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/filters/set/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/filters/set/index.php" afterDir="false" />
     </list>
     <ignored path="argos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,7 +43,7 @@
     <favorites_list name="argos" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -51,7 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cata</find>
       <find>cataloguenameL</find>
       <find>.catalogueNameLink {color: #4c4c4c;}</find>
       <find>4c4c4c</find>
@@ -81,6 +83,7 @@
       <find>#ff28</find>
       <find>$catalogue</find>
       <find>catalogueIte</find>
+      <find>#ff</find>
     </findStrings>
     <replaceStrings>
       <replace>catalogue/index.php</replace>
@@ -99,8 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/filters/types/edit.php" />
-        <option value="$PROJECT_DIR$/admin/filters/brands/delete.php" />
         <option value="$PROJECT_DIR$/admin/filters/types/delete.php" />
         <option value="$PROJECT_DIR$/js/admin/filters/types/delete.js" />
         <option value="$PROJECT_DIR$/scripts/admin/filters/brands/ajaxDeleteBrand.php" />
@@ -140,16 +141,18 @@
         <option value="$PROJECT_DIR$/admin/filters/materials/delete.php" />
         <option value="$PROJECT_DIR$/js/admin/filters/materials/delete.js" />
         <option value="$PROJECT_DIR$/scripts/admin/filters/materials/ajaxDeleteMaterial.php" />
-        <option value="$PROJECT_DIR$/admin/filters/index.php" />
         <option value="$PROJECT_DIR$/admin/filters/set/add.php" />
         <option value="$PROJECT_DIR$/scripts/const.php" />
         <option value="$PROJECT_DIR$/catalogue/index.php" />
         <option value="$PROJECT_DIR$/js/admin/filters/materials/edit.js" />
         <option value="$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetFilters.php" />
         <option value="$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetNewFiltersWithSize.php" />
-        <option value="$PROJECT_DIR$/admin/filters/set/index.php" />
         <option value="$PROJECT_DIR$/scripts/admin/filters/set/ajaxSetNewFiltersWithoutSize.php" />
         <option value="$PROJECT_DIR$/js/admin/filters/set/index.js" />
+        <option value="$PROJECT_DIR$/scripts/admin/goods/ajaxDeleteGood.php" />
+        <option value="$PROJECT_DIR$/admin/filters/set/index.php" />
+        <option value="$PROJECT_DIR$/admin/filters/index.php" />
+        <option value="$PROJECT_DIR$/admin/filters/list/index.php" />
       </list>
     </option>
   </component>
@@ -568,13 +571,8 @@
       <workItem from="1704866601471" duration="8772000" />
       <workItem from="1704885446934" duration="10147000" />
       <workItem from="1704951944137" duration="8137000" />
-    </task>
-    <task id="LOCAL-00401" summary="Исправлено отображение номеров телефонов в футере">
-      <created>1621933628569</created>
-      <option name="number" value="00401" />
-      <option name="presentableId" value="LOCAL-00401" />
-      <option name="project" value="LOCAL" />
-      <updated>1621933628570</updated>
+      <workItem from="1704960412682" duration="758000" />
+      <workItem from="1704964139534" duration="2353000" />
     </task>
     <task id="LOCAL-00402" summary="Изменена информация о контактных номерах головного офиса">
       <created>1633089527490</created>
@@ -912,11 +910,18 @@
       <option name="project" value="LOCAL" />
       <updated>1704960169726</updated>
     </task>
-    <option name="localTasksCounter" value="450" />
+    <task id="LOCAL-00450" summary="Добавлено удаление настроек фильтров при удалении мебельной ручки из каталога">
+      <created>1704960552489</created>
+      <option name="number" value="00450" />
+      <option name="presentableId" value="LOCAL-00450" />
+      <option name="project" value="LOCAL" />
+      <updated>1704960552500</updated>
+    </task>
+    <option name="localTasksCounter" value="451" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1092689000" />
+    <option name="totallyTimeSpent" value="1095800000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -938,9 +943,10 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32882273" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.13753213" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18830334" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19344473" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.11118252" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
@@ -953,7 +959,6 @@
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32882273" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32793522" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -989,7 +994,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлена возможность вывести на печать активную заявку" />
     <MESSAGE value="Добавлена возможность добавления бренда в фильтрах мебельных ручек" />
     <MESSAGE value="Добавлена возможность редактирования бренда в фильтрах мебельных ручек в панели администрирования" />
     <MESSAGE value="Исправлены заголовки страницы в разделе операций с сотрудниками в панели администрирования" />
@@ -1014,7 +1018,8 @@
     <MESSAGE value="Добавлена возможность удаления материалов мебельных ручек в разделе фильтров в панели администрирования" />
     <MESSAGE value="Добавлена стартовая страница раздела установки фильтров мебельных ручек в разделе фильтров в панели администрироания" />
     <MESSAGE value="Добавлена возможность установки и редактирования фильтров мебельных ручек." />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность установки и редактирования фильтров мебельных ручек." />
+    <MESSAGE value="Добавлено удаление настроек фильтров при удалении мебельной ручки из каталога" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлено удаление настроек фильтров при удалении мебельной ручки из каталога" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1074,26 +1079,6 @@
           <line>764</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/admin/filters/set/index.php</url>
-          <line>439</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/admin/filters/set/index.php</url>
-          <line>357</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/admin/filters/set/index.php</url>
-          <line>523</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/admin/filters/set/index.php</url>
-          <line>459</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/admin/email/send.js</url>
           <line>91</line>
@@ -1109,20 +1094,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/filters/types/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="197" column="22" lean-forward="true" selection-start-line="197" selection-start-column="22" selection-end-line="197" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/types/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="202" column="197" selection-start-line="202" selection-start-column="197" selection-end-line="202" selection-end-column="197" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/admin/filters/types/ajaxAddType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1362,13 +1333,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="187" column="76" lean-forward="true" selection-start-line="187" selection-start-column="76" selection-end-line="187" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/catalogue/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1444,41 +1408,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/filters/set/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="572" column="244" selection-start-line="572" selection-start-column="244" selection-end-line="572" selection-end-column="244" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#a#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/const.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/admin/goods/ajaxDeleteGood.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="100" selection-start-line="26" selection-start-column="100" selection-end-line="26" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/filters/set/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="229" column="423" selection-start-line="229" selection-start-column="423" selection-end-line="229" selection-end-column="423" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/filters/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="205" column="195" selection-start-line="205" selection-start-column="195" selection-end-line="205" selection-end-column="195" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/filters/list/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="231" column="113" selection-start-line="231" selection-start-column="113" selection-end-line="231" selection-end-column="113" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#0;n#table#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
