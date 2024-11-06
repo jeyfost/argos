@@ -442,7 +442,7 @@ if(!empty($_REQUEST['subcategory2'])) {
 				<select id='unitSelect' name='goodUnit'>
 		";
 			while($unit = $unitResult->fetch_assoc()) {
-				echo "<option value='".$unit['id']."'>".$unit['full_name']."</option>";
+				echo "<option value='".$unit['id']."'"; if($unit['id'] == 7) {echo " selected";} echo ">".$unit['full_name']."</option>";
 			}
 		echo "
 				</select>
