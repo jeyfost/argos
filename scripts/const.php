@@ -37,3 +37,5 @@ define("HANDLES_KS", "8"); //керамические скобы
 define("HANDLES_DD", "9"); //для двери
 define("HANDLES_KK", "10"); //керамические кнопки
 define("HANDLES_VR", "11"); //врезные раковины
+
+define("ADMIN_ID", "1");

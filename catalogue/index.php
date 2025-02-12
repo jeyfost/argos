@@ -482,7 +482,20 @@ if(isset($_SESSION['userID'])) {
 			</div>
 			";
 		?>
-		<div id="catalogueMenu">
+        <div id="catalogueMenu">
+            <?php
+                if($mysqli->real_escape_string($_REQUEST['c']) == HANDLES_CATEGORY and $_SESSION['userID'] == ADMIN_ID) {
+                    echo "
+                        <div id='filtersContainer'>
+                            <center style='transition: .3s; cursor: pointer;' onclick='showFilters()'><span>Подбор мебельных ручек</span><br /><i class=\"fa fa-angle-double-down\" aria-hidden=\"true\"></i><i class=\"fa fa-angle-double-down\" aria-hidden=\"true\"></i><i class=\"fa fa-angle-double-down\" aria-hidden=\"true\"></i></center>
+                        </div>
+                        <div style='clear: both;'></div>
+                        <div style='width: 100%; height: 1px; background-color: #d7d5d1; margin-top: 10px;'></div>
+                        <br />
+                    ";
+                }
+            ?>
+
 			<?php
 				echo "
 					<center><a href='index.php?type=".$type['catalogue_type']."&p=1'><span style='color: #ff282b;'>".$type['type_name']."</span></a></center>

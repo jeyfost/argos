@@ -151,8 +151,6 @@ function saveGoodPrice(good_id, block, currency, unit, rate) {
 					price = " по запросу";
 				}
 
-                console.log(price);
-
 				document.getElementById(block).innerHTML = "<span style='cursor: pointer;' onclick='changePrice(\"" + good_id + "\", \"" + block + "\", \"" + $('#changeGoodPriceInput').val() + "\", \"" + currency + "\", \"" + unit + "\", \"" + rate + "\")' title='Изменить стоимость товара'><b>Цена за " + unit + ": </b>" + price + "</span>";
 			} else {
 				if($('#goodResponseField').css('opacity') === '0') {
@@ -168,4 +166,127 @@ function saveGoodPrice(good_id, block, currency, unit, rate) {
 			}
 		}
 	});
+}
+
+function hideFilters() {
+	let content = "<center style='transition: .3s; cursor: pointer;' onclick='showFilters()'><span>Подбор мебельных ручек</span><br /><i class=\"fa fa-angle-double-down\" aria-hidden=\"true\"></i><i class=\"fa fa-angle-double-down\" aria-hidden=\"true\"></i><i class=\"fa fa-angle-double-down\" aria-hidden=\"true\"></i></center>";
+
+    $('#filtersContainer').hide(300);
+    setTimeout($('#filtersContainer').html(content), 600);
+    $('#filtersContainer').show(300);
+}
+
+function showFilters() {
+	$('#filtersContainer').hide(300);
+
+    let content = '';
+
+	content = "<center style='transition: .3s;'><span style='color: #fe2427;'>Подбор мебельных ручек</span></center><div style='width: 100%; height: 1px; background-color: #d7d5d1; margin-top: 10px;'></div><br />";
+	content += "<div id='handleTypeContainer' style='transition: .3s;'><span style='cursor: pointer;' onclick='closeFilterContainer(\"handleTypeContainer\")'><i class=\"fa fa-arrow-circle-up\" aria-hidden=\"true\"></i> Тип ручки</span><br />";
+
+    showFilterContainer("handleTypeContainer");
+
+    content += "</div>";
+    content += "<br /><div id='handleColorContainer' style='transition: .3s;'><span style='cursor: pointer;' onclick='closeFilterContainer(\"handleColorContainer\")'><i class=\"fa fa-arrow-circle-up\" aria-hidden=\"true\"></i> Цвет ручки</span><br />";
+
+    showFilterContainer("handleColorContainer");
+
+    content += "</div>";
+    content += "<br /><div id='handleSizeContainer' style='transition: .3s;'><span style='cursor: pointer;' onclick='closeFilterContainer(\"handleSizeContainer\")'><i class=\"fa fa-arrow-circle-up\" aria-hidden=\"true\"></i> Размер ручки</span><br />";
+
+    showFilterContainer("handleSizeContainer");
+
+    content += "</div>";
+    content += "<br /><div id='handleMaterialContainer' style='transition: .3s;'><span style='cursor: pointer;' onclick='closeFilterContainer(\"handleMaterialContainer\")'><i class=\"fa fa-arrow-circle-up\" aria-hidden=\"true\"></i> Материал ручки</span><br />";
+
+    showFilterContainer("handleMaterialContainer");
+
+    content += "</div>";
+    content += "<br /><div id='handleBrandContainer' style='transition: .3s;'><span style='cursor: pointer;' onclick='closeFilterContainer(\"handleBrandContainer\")'><i class=\"fa fa-arrow-circle-up\" aria-hidden=\"true\"></i> Производитель ручки</span><br />";
+
+    showFilterContainer("handleBrandContainer");
+
+    content += "</div><center style='transition: .3s; cursor: pointer;' onclick='hideFilters()'><i class=\"fa fa-angle-double-up\" aria-hidden=\"true\"></i><i class=\"fa fa-angle-double-up\" aria-hidden=\"true\"></i><i class=\"fa fa-angle-double-up\" aria-hidden=\"true\"></i><br /><span>Скрыть фильтры</span></center>";
+
+    setTimeout($('#filtersContainer').html(content), 600);
+
+	$('#filtersContainer').show(300);
+}
+
+function markCheckbox(id) {
+    if($('#' + id).is(":checked")) {
+        $('#' + id).prop('checked', false);
+	} else {
+        $('#' + id).prop('checked', true);
+	}
+}
+
+function closeFilterContainer(id) {
+	let containerHeader = "";
+
+	switch (id) {
+		case "handleTypeContainer":
+			containerHeader = "Тип ручки";
+			break;
+        case "handleColorContainer":
+            containerHeader = "Цвет ручки";
+            break;
+        case "handleSizeContainer":
+            containerHeader = "Размер ручки";
+            break;
+        case "handleBrandContainer":
+            containerHeader = "Производитель ручки";
+            break;
+        case "handleMaterialContainer":
+            containerHeader = "Тип ручки";
+            break;
+		default:
+			break;
+	}
+
+    $('#' + id).hide(300);
+	setTimeout($('#' + id).html("<span style='cursor: pointer;' onclick='showFilterContainer(\"" + id + "\")'><i class=\"fa fa-arrow-circle-down\" aria-hidden=\"true\"></i> " + containerHeader + "</span><br /><div style='width: 100%; height: 1px; background-color: #d7d5d1; margin-top: 10px;'></div>"), 600);
+    $('#' + id).show(300);
+}
+
+function showFilterContainer(id) {
+    $('#' + id).hide(300);
+
+    let content = "";
+    let containerHeader = "";
+
+    switch (id) {
+        case "handleTypeContainer":
+            containerHeader = "Тип ручки";
+            break;
+        case "handleColorContainer":
+            containerHeader = "Цвет ручки";
+            break;
+        case "handleSizeContainer":
+            containerHeader = "Размер ручки";
+            break;
+        case "handleBrandContainer":
+            containerHeader = "Производитель ручки";
+            break;
+        case "handleMaterialContainer":
+            containerHeader = "Материал ручки";
+            break;
+        default:
+            break;
+    }
+
+    content += "<div id='" + id + "' style='transition: .3s;'><span style='cursor: pointer;' onclick='closeFilterContainer(\"" + id + "\")'><i class=\"fa fa-arrow-circle-up\" aria-hidden=\"true\"></i> " + containerHeader + "</span><br />";
+
+    $.ajax({
+        type: "POST",
+		data: {"id": id},
+        url: "/scripts/catalogue/ajaxShowFilterCells.php",
+        success: function (filterCells) {
+            content += filterCells + "</div><div style='width: 100%; height: 1px; background-color: #d7d5d1; margin-top: 10px;'></div>";
+            setTimeout($('#' + id).html(content), 600);
+        }
+    });
+
+    setTimeout($('#' + id).html("<span style='cursor: pointer;' onclick='closeFilterContainer(\"" + id + "\")'><i class=\"fa fa-arrow-circle-down\" aria-hidden=\"true\"></i> " + containerHeader + "</span><br />"), 600);
+    $('#' + id).show(300);
 }
