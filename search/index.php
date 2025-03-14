@@ -30,13 +30,13 @@
         foreach ($keywords as $keyword) {
             $keyword = trim($keyword);
             if(!empty($keyword)) {
-                $condition = "name LIKE '%".$keyword."%' OR code LIKE '%".$keyword."%'";
+                $condition = "(name LIKE '%$keyword%' OR description LIKE '%$keyword%' OR code = '$keyword')";
             }
 
             $searchConditions[] = $condition;
         }
 
-        $searchFullResult = $mysqli->query("SELECT * FROM catalogue_new WHERE ".implode(" AND ", $searchConditions));
+        $searchFullResult = $mysqli->query("SELECT * FROM catalogue_new WHERE " . implode(' AND ', $searchConditions));
         $quantity[0] = $searchFullResult->num_rows;
 
         if($quantity[0] > 10) {
@@ -565,7 +565,11 @@
                 $catalogueResult = $mysqli->query("SELECT catalogue_new.*, MATCH (`name`, `description`, `code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS relevance, MATCH (`name`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS name_relevance, MATCH (`code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS code_relevance, `quantity` AS quantity_relevance  FROM catalogue_new WHERE MATCH (`name`, `description`, `code`) AGAINST ('*".$query."*' IN BOOLEAN MODE) ORDER BY quantity_relevance DESC, name_relevance DESC, code_relevance DESC, relevance DESC LIMIT ".$start.", 10");
                 */
 
-                $catalogueResult = $mysqli->query("SELECT * FROM catalogue_new WHERE ".implode(" AND ", $searchConditions)." ORDER BY quantity > 0 DESC, name ASC LIMIT ".$start.", 10");
+                $catalogueResult = $mysqli->query("SELECT *, (CASE WHEN quantity > 0 THEN 0 ELSE 1 END) AS out_of_stock 
+                    FROM catalogue_new 
+                    WHERE " . implode(' AND ', $searchConditions) . " 
+                    ORDER BY out_of_stock, name 
+                    LIMIT ".$start.", 10");
 
                 while($catalogue = $catalogueResult->fetch_array()) {
                     $unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$catalogue['unit']."'");

@@ -7,6 +7,8 @@ include ("scripts/helpers.php");
 include ("layouts/footer.php");
 require_once ("scripts/mobileDetect.php");
 
+header("Location: /catalogue/");
+
 $detect = new Mobile_Detect;
 
 if($detect->isMobile()) {

@@ -17,30 +17,36 @@ $searchResult = $mysqli->query("SELECT catalogue_new.*, MATCH (`name`, `descript
 $searchFullResult = $mysqli->query("SELECT catalogue_new.*, MATCH (`name`, `description`, `code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS relevance, MATCH (`name`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS name_relevance, MATCH (`code`) AGAINST ('*.$query.*' IN BOOLEAN MODE) AS code_relevance, `quantity` AS quantity_relevance  FROM catalogue_new WHERE MATCH (`name`, `description`, `code`) AGAINST ('*".$query."*' IN BOOLEAN MODE) ORDER BY quantity_relevance DESC, name_relevance DESC, code_relevance DESC, relevance DESC");
 */
 
+if(isset($_SESSION['userID'])) {
+    $userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
+    $user = $userResult->fetch_assoc();
+}
+
 $keywords = explode(" ", $query);
 $searchConditions = array();
 
 foreach ($keywords as $keyword) {
     $keyword = trim($keyword);
     if(!empty($keyword)) {
-        $condition = "name LIKE '%".$keyword."%' OR code LIKE '%".$keyword."%'";
+        $condition = "(name LIKE '%$keyword%' OR description LIKE '%$keyword%' OR code = '$keyword')";
     }
 
     $searchConditions[] = $condition;
 }
 
-$searchFullResult = $mysqli->query("SELECT * FROM catalogue_new WHERE ".implode(" AND ", $searchConditions));
+$searchFullResult = $mysqli->query("SELECT * FROM catalogue_new WHERE " . implode(' AND ', $searchConditions));
 $searchFull = $searchFullResult->num_rows;
 
-$searchResult = $mysqli->query("SELECT * FROM catalogue_new WHERE ".implode(" AND ", $searchConditions)." ORDER BY quantity > 0 DESC, name ASC LIMIT 10");
+$sql = "SELECT *, (CASE WHEN quantity > 0 THEN 0 ELSE 1 END) AS out_of_stock 
+        FROM catalogue_new 
+        WHERE " . implode(' AND ', $searchConditions) . " 
+        ORDER BY out_of_stock, name 
+        LIMIT 10";
+$searchResult = $mysqli->query($sql);
 
-if(isset($_SESSION['userID'])) {
-    $userResult = $mysqli->query("SELECT * FROM users WHERE id = '".$_SESSION['userID']."'");
-    $user = $userResult->fetch_assoc();
-}
 
 if($searchResult->num_rows == 0) {
-	echo "<i>К сожалению, поиск не дал результата.</i>";
+    echo "<i>К сожалению, поиск не дал результата.</i>";
 } else {
     echo "
         <br />
@@ -48,12 +54,12 @@ if($searchResult->num_rows == 0) {
         <br />
     ";
 
-	$j = 0;
+    $j = 0;
 
-	while($search = $searchResult->fetch_assoc()) {
-		$j++;
-		$unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$search['unit']."'");
-		$unit = $unitResult->fetch_assoc();
+    while($search = $searchResult->fetch_assoc()) {
+        $j++;
+        $unitResult = $mysqli->query("SELECT * FROM units WHERE id = '".$search['unit']."'");
+        $unit = $unitResult->fetch_assoc();
 
         $active = 0;
 
@@ -74,7 +80,7 @@ if($searchResult->num_rows == 0) {
         }
 
         if(($user['opt'] == 1 and ($search['price'] == 0 or $search['price'] == null or $search['price_opt'] == 0)) or ($user['opt'] == 0 and ($search['price'] == 0 or $search['price'] == null))) {
-		    $price = " по запросу";
+            $price = " по запросу";
         } else {
             $rateResult = $mysqli->query("SELECT rate FROM currency WHERE id = '".$search['currency']."'");
             $rate = $rateResult->fetch_array(MYSQLI_NUM);
@@ -121,22 +127,22 @@ if($searchResult->num_rows == 0) {
             $price = $roubles." руб. ".$kopeck." коп.";
         }
 
-		$typeResult = $mysqli->query("SELECT type_name FROM types WHERE catalogue_type = '".$search['type']."'");
-		$type = $typeResult->fetch_array(MYSQLI_NUM);
-		$categoryResult = $mysqli->query("SELECT name FROM categories_new WHERE id = '".$search['category']."'");
-		$category = $categoryResult->fetch_array(MYSQLI_NUM);
+        $typeResult = $mysqli->query("SELECT type_name FROM types WHERE catalogue_type = '".$search['type']."'");
+        $type = $typeResult->fetch_array(MYSQLI_NUM);
+        $categoryResult = $mysqli->query("SELECT name FROM categories_new WHERE id = '".$search['category']."'");
+        $category = $categoryResult->fetch_array(MYSQLI_NUM);
 
-		if(!empty($search['subcategory'])) {
-			$subcategoryResult = $mysqli->query("SELECT name FROM subcategories_new WHERE id = '".$search['subcategory']."'");
-			$subcategory = $subcategoryResult->fetch_array(MYSQLI_NUM);
-		}
+        if(!empty($search['subcategory'])) {
+            $subcategoryResult = $mysqli->query("SELECT name FROM subcategories_new WHERE id = '".$search['subcategory']."'");
+            $subcategory = $subcategoryResult->fetch_array(MYSQLI_NUM);
+        }
 
-		if(!empty($search['subcategory2'])) {
-			$subcategory2Result = $mysqli->query("SELECT name FROM subcategories2 WHERE id = '".$search['subcategory2']."'");
-			$subcategory2 = $subcategory2Result->fetch_array(MYSQLI_NUM);
-		}
+        if(!empty($search['subcategory2'])) {
+            $subcategory2Result = $mysqli->query("SELECT name FROM subcategories2 WHERE id = '".$search['subcategory2']."'");
+            $subcategory2 = $subcategory2Result->fetch_array(MYSQLI_NUM);
+        }
 
-		echo "
+        echo "
 			<div class='searchItem'"; if($j % 2 == 0) {echo " style='background-color: #d9d9d9;'";} echo ">
 				<div class='searchIMG'>
 					<a href='/img/catalogue/big/".$search['picture']."' class='lightview' data-lightview-options='skin: \"light\"' data-lightview-title='".$search['name']."' data-lightview-caption='".nl2br(strip_tags($search['description']))."'><img src='/img/catalogue/small/".$search['small']."' /></a>
@@ -146,7 +152,7 @@ if($searchResult->num_rows == 0) {
             echo "<img src='/img/system/action.png' class='actionIMGSearch' />";
         }
 
-		echo "
+        echo "
 				</div>
 				<div class='searchInfo'>
 					<span style='font-size: 18px; font-style: italic;'><a href='/catalogue/item.php?id=".$search['id']."' class='catalogueNameLink'>".$search['name']."</a></span>
@@ -155,17 +161,17 @@ if($searchResult->num_rows == 0) {
 					<br /><br />
 		";
 
-		$strings = explode("<br />", $search['description']);
-		for($i = 0; $i < count($strings); $i++) {
-			$string = explode(':', $strings[$i]);
-			if(count($string) > 1) {
-				echo "<b>".$string[0].":</b>".$string[1]."<br />";
-			} else {
-				echo $string[0]."<br />";
-			}
-		}
+        $strings = explode("<br />", $search['description']);
+        for($i = 0; $i < count($strings); $i++) {
+            $string = explode(':', $strings[$i]);
+            if(count($string) > 1) {
+                echo "<b>".$string[0].":</b>".$string[1]."<br />";
+            } else {
+                echo $string[0]."<br />";
+            }
+        }
 
-		echo "
+        echo "
 					<br />
 					<b>Артикул: </b>".$search['code']."
 					<br />
@@ -264,18 +270,18 @@ if($searchResult->num_rows == 0) {
                 ";
         }
 
-		if($search['sketch'] != '') {
-			echo "<br /><br /><a href='/img/catalogue/sketch/".$search['sketch']."' class='lightview' data-lightview-options='skin: \"light\"'><span class='sketchFont'>Чертёж</span></a>";
-		}
+        if($search['sketch'] != '') {
+            echo "<br /><br /><a href='/img/catalogue/sketch/".$search['sketch']."' class='lightview' data-lightview-options='skin: \"light\"'><span class='sketchFont'>Чертёж</span></a>";
+        }
 
-		echo "
+        echo "
 					<br /><br />
 				</div>
 				<div style='clear: both;'></div>
 			</div>
 			<div style='clear: both;'></div>
 		";
-	}
+    }
 
     if($searchFull > 10) {
         echo "
